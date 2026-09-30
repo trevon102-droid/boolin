@@ -14,28 +14,38 @@ LEAGUES = {
     "NHL": ("hockey", "nhl"),
     "NFL": ("football", "nfl"),
     "MLB": ("baseball", "mlb"),
+    "CFB": ("football", "college-football"),
 }
+# Extra scoreboard params: CFB needs groups=80 (all FBS) or ESPN only returns featured games.
+EXTRA = {"CFB": {"groups": "80", "limit": "300"}}
 
 
 def scoreboard(league: str, day: dt.date) -> list[dict]:
     sport, lg = LEAGUES[league]
-    data = C.get_json(f"{SITE}/{sport}/{lg}/scoreboard", {"dates": day.strftime("%Y%m%d")})
+    data = C.get_json(f"{SITE}/{sport}/{lg}/scoreboard", {"dates": day.strftime("%Y%m%d"), **EXTRA.get(league, {})})
     out = []
     for ev in data.get("events", []):
         comp = (ev.get("competitions") or [{}])[0]
         teams = {}
         for c in comp.get("competitors", []):
             t = c.get("team", {})
+            rank = (c.get("curatedRank") or {}).get("current")
             teams[c.get("homeAway")] = {
                 "id": t.get("id"), "abbr": t.get("abbreviation"), "name": t.get("displayName"),
                 "record": next((r.get("summary") for r in c.get("records", []) if r.get("type") in ("total", None)), None),
+                "rank": rank if rank and rank <= 25 else None,
+                "conference_id": t.get("conferenceId"),
             }
         odds = (comp.get("odds") or [{}])[0]
+        venue = comp.get("venue") or {}
         out.append({
             "espn_id": ev.get("id"), "name": ev.get("shortName"), "start_et": C.to_et(ev.get("date")),
             "status": ((ev.get("status") or {}).get("type") or {}).get("description"),
             "note": "; ".join(n.get("headline", "") for n in comp.get("notes", []) if n.get("headline")) or None,
             "away": teams.get("away"), "home": teams.get("home"),
+            "neutral_site": comp.get("neutralSite"), "conference_game": comp.get("conferenceCompetition"),
+            "venue": venue.get("fullName"), "indoor": venue.get("indoor"),
+            "tv": ", ".join(b.get("names", [""])[0] for b in comp.get("broadcasts", []) if b.get("names")) or None,
             "espn_line": {"details": odds.get("details"), "total": odds.get("overUnder"),
                           "provider": (odds.get("provider") or {}).get("name")} if odds else None,
         })
@@ -72,7 +82,8 @@ def summary(league: str, event_id: str) -> dict:
                 if a.get("id") and a["id"] not in [x["id"] for x in ids]:
                     ids.append({"id": a["id"], "name": a.get("displayName"), "cat": cat.get("name")})
         leaders[abbr] = ids
-    return {"injuries": injuries, "predictor": predictor, "leaders": leaders}
+    return {"injuries": injuries, "predictor": predictor, "leaders": leaders,
+            "weather": (s.get("gameInfo") or {}).get("weather")}
 
 
 def gamelog(league: str, athlete_id: str, last: int = 10) -> list[dict]:

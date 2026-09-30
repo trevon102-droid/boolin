@@ -58,6 +58,7 @@ jobs:
       - name: Pull data
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
           RUN_ODDS: ${{ steps.plan.outputs.run_odds }}
           PROPS: ${{ inputs.props || '0' }}
           SLATE_DATE: ${{ inputs.slate_date }}

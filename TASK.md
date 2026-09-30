@@ -6,6 +6,23 @@ Instructions for the daily Claude run that turns this repo's data into a priced 
 The board does all sizing math itself (edge, fair odds, quarter Kelly, caps). The job here is to
 supply honest **prices** and **model probabilities**, plus the reasoning.
 
+## 0. Football comes first
+
+**NFL and college football (ranked AND unranked games) are the priority sports.** On any day with
+football (CFB Saturdays plus Tue–Fri weeknight games; NFL Thursday, Sunday, Monday, and international/holiday games):
+
+- **Research football first and deepest.** Price every game on the card, including unranked vs unranked.
+  That means sides, totals, and team totals where there's a real read, plus player props when you
+  can find real prices. Spend most of the research budget here.
+- **Same method, same standards.** Football gets more depth, not looser rules. Same sharp-line start,
+  same edge bar, same honesty about passes. MLB/NHL/WNBA still get priced the normal way on
+  football days, just with less depth (main markets + the best 1–3 props per game).
+- **Football-specific checks:** QB status and backup quality, OL/DL injuries, key numbers (3, 7, 10 in the NFL;
+  3, 7, 10, 14, 17 in CFB), wind (15+ mph matters for totals and kicking), travel/rest (short weeks, cross-country,
+  bye), neutral sites, look-ahead/letdown spots, and for CFB: tempo, returning production, FCS or
+  G5 mismatches, and conference-game familiarity.
+- **Exposure:** on football days, football can take most of the 8u daily cap. Keep the ≤3u per game limit.
+
 ## 1. Load the data
 
 ```
@@ -26,6 +43,7 @@ Files in `data/latest/`:
 | `nhl.json` | Back-to-back flags, standings form, goalie usage + GSAx (this + last season), 5v5 xG% (MoneyPuck) |
 | `wnba.json` | ESPN line + win projection, injuries, last-10 logs for each team's leaders, team stats |
 | `nfl.json` | This week's games (rest, roof, wind, QBs, nflverse lines), team EPA/success splits + ranks, injury report |
+| `cfb.json` | Every FBS game today (AP rank, neutral site, conference game, FPI projection, weather, injuries), AP Top 25, next 3 days' schedule, and team EPA + SP+ if the optional CFBD key is set |
 | `injuries.json` | ESPN injury lists for today's NHL and MLB games |
 
 ## 2. Fill the gaps with the web (every run)
@@ -49,7 +67,8 @@ Always verify with WebSearch/WebFetch, because the data can be hours old:
 
 ## 4. Build the slate
 
-Price every game the user cares about (MLB, NHL, WNBA daily; NFL on game weeks). Include **passes**:
+Price every game the user cares about: **NFL and CFB first on football days**, then MLB, NHL,
+WNBA daily. Include **passes**:
 a play the user might like with no edge at the current price goes on the board with a `betTo` number,
 so they know what line would make it a bet.
 
@@ -85,7 +104,11 @@ so they know what line would make it a bet.
 Category names are what performance is grouped by, so keep them stable:
 `MLB sides`, `MLB K props`, `MLB pitcher props`, `MLB first inning`, `MLB batter props`,
 `NHL sides`, `NHL player props`, `WNBA sides`, `WNBA totals`, `WNBA player props`,
-`NFL sides`, `NFL totals`, `NFL player props`, `NFL TD scorers`.
+`NFL sides`, `NFL totals`, `NFL player props`, `NFL TD scorers`,
+`CFB sides`, `CFB totals`, `CFB player props`.
+
+Use `"sport": "CFB"` for college football and put the rank in `game` when there is one,
+like `"#8 Oregon @ Penn State"`.
 
 ### Writing it
 

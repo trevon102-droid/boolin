@@ -24,15 +24,17 @@ SPORTS = {
     "WNBA": "basketball_wnba",
     "NHL": "icehockey_nhl",
     "NFL": "americanfootball_nfl",
+    "CFB": "americanfootball_ncaaf",
 }
 PROP_MARKETS = {
     "baseball_mlb": "pitcher_strikeouts,pitcher_outs",
     "basketball_wnba": "player_points,player_assists,player_rebounds",
     "icehockey_nhl": "player_shots_on_goal,player_points",
     "americanfootball_nfl": "player_pass_yds,player_rush_yds,player_reception_yds,player_anytime_td",
+    "americanfootball_ncaaf": "player_pass_yds,player_rush_yds,player_reception_yds,player_anytime_td",
 }
 # How far ahead to look: today's slate for daily sports, the whole week for NFL.
-WINDOW_HOURS = {"americanfootball_nfl": 24 * 7}
+WINDOW_HOURS = {"americanfootball_nfl": 24 * 7, "americanfootball_ncaaf": 24 * 3}
 
 
 def _dec(american: float) -> float:
