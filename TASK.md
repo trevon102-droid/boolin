@@ -75,7 +75,7 @@ so they know what line would make it a bet.
 - Use the **best available price** from `odds.json` (`best_price`/`best_book`), not just FanDuel.
 - Put the Pinnacle two-way prices in `sharp` when there's a Pinnacle line (`{"odds": side, "other": other side}`).
 - Ladders only when you have real alt-line prices for every rung.
-- Keep total sized exposure near the daily cap (8u) and ≤3u per game. If you're over, drop the lowest-edge plays.
+- Keep total sized exposure (board + Top 5 props + SGPs + parlays) near the daily cap (8u) and ≤3u per game. If you're over, drop the lowest-edge plays or parlays first.
 - `why` is one or two plain sentences. `inputs` is 1–3 short data points.
 
 ### Schema (write to collection `slates`, doc id = `YYYY-MM-DD`)
@@ -154,6 +154,28 @@ where the edges are. Only include games that haven't started when the run finish
 
 Player props in `odds.json` only exist when the morning run pulled them (repo variable `PROPS_DAILY=1`)
 or a manual run did. Otherwise find prop prices on the web and name the book.
+
+### Cross-game parlays (`parlays`)
+
+Also write 2–3 cross-game parlays for the Parlays tab. Rules:
+- **Every leg must clear the edge bar on its own** (a sized play on the board or a Top 5 prop). Never add a leg
+  just to pump the payout.
+- **One leg per game.** Same-game combos are SGPs and belong in `featured`.
+- 2–3 legs for the staked parlays. Longer builds (4+ legs) go in as `"pass": true` references.
+- Spread risk: staked parlays shouldn't share legs, so one loss doesn't sink them all.
+- Leave out `modelP` for independent legs (the board multiplies the legs). Only set it when there's a real
+  cross-game correlation, like two teams in the same weather system or a playoff tiebreaker scenario.
+- Each leg carries `pick`, `game`, `sport`, `odds`, `modelP`, `start` (so the builder can hide games that already started).
+
+```json
+"parlays": [
+  {"name": "Fried + Bueckers", "why": "Two cleanest edges, different games.",
+   "legs": [{"pick": "Fried Under 4.5 hits allowed", "game": "BOS @ NYY", "sport": "MLB", "odds": -120, "modelP": 0.565, "start": "8:00 PM ET"},
+            {"pick": "Bueckers Over 19.5 points", "game": "GSV @ DAL", "sport": "WNBA", "odds": -106, "modelP": 0.54, "start": "9:00 PM ET"}]}
+]
+```
+
+Parlay stakes are capped at 0.5u each and count toward the 8u daily total (not the per-game cap).
 
 ### Writing it
 
