@@ -1,36 +1,45 @@
 {
  "slate_date": "2026-09-30",
- "run_at_et": "2026-09-30T12:59-04:00",
+ "run_at_et": "2026-09-30T13:13-04:00",
  "sources": {
-  "mlb": {
-   "status": "ok",
-   "games": 4,
-   "seconds": 2.0
-  },
-  "nhl": {
-   "status": "ok",
-   "games": 3,
-   "seconds": 2.6
-  },
-  "wnba": {
-   "status": "ok",
-   "games": 2,
-   "seconds": 1.3
-  },
   "nfl": {
    "status": "ok",
    "games": 16,
    "seconds": 0.7
   },
+  "cfb": {
+   "status": "ok",
+   "games": 0,
+   "ranked_games": 0,
+   "upcoming_3d": 59,
+   "cfbd": "skipped",
+   "seconds": 0.3
+  },
+  "mlb": {
+   "status": "ok",
+   "games": 4,
+   "seconds": 0.6
+  },
+  "nhl": {
+   "status": "ok",
+   "games": 3,
+   "seconds": 1.6
+  },
+  "wnba": {
+   "status": "ok",
+   "games": 2,
+   "seconds": 0.9
+  },
   "injuries": {
    "status": "ok",
    "games": 7,
-   "seconds": 0.3
+   "seconds": 0.5
   },
   "odds": {
-   "status": "skipped",
-   "reason": "ODDS_API_KEY secret not set",
-   "seconds": 0.0
+   "status": "ok",
+   "events": 52,
+   "credits_remaining": "485",
+   "seconds": 0.5
   }
  }
 }
