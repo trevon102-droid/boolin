@@ -151,6 +151,25 @@ def summarize_props(ev_odds: dict) -> list[dict]:
     return sorted(rows, key=lambda r: (r["market"], r["player"] or "", r["line"] or 0))
 
 
+def _carry_props(result: dict, day: dt.date) -> None:
+    """Keep props from an earlier run the same day when this run didn't pull them (they cost credits)."""
+    prev_path = C.DATA / "latest" / "odds.json"
+    if not prev_path.exists():
+        return
+    try:
+        import json
+        prev = json.loads(prev_path.read_text())
+    except (ValueError, OSError):
+        return
+    if not str(prev.get("pulled_at_et", "")).startswith(day.isoformat()):
+        return
+    for label, entry in result["sports"].items():
+        old = (prev.get("sports", {}).get(label) or {})
+        if "props" not in entry and old.get("props"):
+            entry["props"] = old["props"]
+            entry["props_pulled_at_et"] = old.get("props_pulled_at_et") or prev.get("pulled_at_et")
+
+
 def run(day: dt.date) -> dict:
     key = os.environ.get("ODDS_API_KEY")
     if not key:
@@ -190,8 +209,10 @@ def run(day: dt.date) -> dict:
                 props[ev["id"]] = {"game": f"{ev['away']} @ {ev['home']}", "start_et": ev["start_et"],
                                    "rows": summarize_props(pr.json())}
             entry["props"] = props
+            entry["props_pulled_at_et"] = C.now_et().isoformat(timespec="minutes")
         result["sports"][label] = entry
     result["credits_remaining"] = remaining
+    _carry_props(result, day)
     C.write("odds", result, day)
     n = sum(len(v.get("events", [])) for v in result["sports"].values())
     return {"status": "ok", "events": n, "credits_remaining": remaining}

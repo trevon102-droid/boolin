@@ -152,7 +152,9 @@ where the edges are. Only include games that haven't started when the run finish
 ]
 ```
 
-Player props in `odds.json` only exist when the morning run pulled them (repo variable `PROPS_DAILY=1`)
+**Only use books Kaire can bet.** If a play is only available at a book he doesn't use, mark it `pass` and say so; don't build parlays around it.
+
+Player props in `odds.json` (with `props_pulled_at_et`, since they can be carried over from an earlier run) only exist when the morning run pulled them (repo variable `PROPS_DAILY=1`)
 or a manual run did. Otherwise find prop prices on the web and name the book.
 
 ### Cross-game parlays (`parlays`)
