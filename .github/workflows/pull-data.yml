@@ -57,6 +57,8 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then ODDS="${{ inputs.run_odds }}"; fi
           echo "run_odds=$ODDS" >> "$GITHUB_OUTPUT"
           PROPS="${{ inputs.props || '0' }}"
+          # Repo variable PROPS_DAILY=1 (Settings > Secrets and variables > Actions > Variables) adds props to the morning run.
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$ODDS" = "1" ] && [ "${{ vars.PROPS_DAILY }}" = "1" ]; then PROPS=1; fi
           # A push whose commit message contains [props] also pulls player props (today's games only).
           if [ "${{ github.event_name }}" = "push" ] && printf '%s' "$HEAD_MSG" | grep -q "\[props\]"; then PROPS=1; ODDS=1; echo "run_odds=1" >> "$GITHUB_OUTPUT"; fi
           echo "props=$PROPS" >> "$GITHUB_OUTPUT"

@@ -41,8 +41,10 @@ Any push that changes `pipeline/` also triggers a run. You can run it by hand fr
 The job asks for 10 books at once (counts as 1 region) and 3 markets, so about **3 credits per
 in-season sport per odds run**. One odds run a day across 4–5 sports is ~12–15 credits, or ~360–450 a month,
 which fits the 500-credit free tier with little room. Upgrade before adding more odds runs or props.
-Player props (`PROPS=1`) cost markets × games, so they're off by default. Turn them on once
-you're on a paid tier.
+Player props cost markets × games (about 30 credits a day across today's games), so they're off by default.
+Once you're on a paid tier, set the repo **variable** `PROPS_DAILY` to `1`
+(Settings → Secrets and variables → Actions → Variables) to add props to the morning run.
+A push whose commit message contains `[props]` also pulls them once.
 
 ## Output
 

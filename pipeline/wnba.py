@@ -7,12 +7,14 @@ import datetime as dt
 from . import common as C
 from . import espn
 
-KEEP = ("PTS", "REB", "AST", "3PM", "MIN", "FG", "3PT", "TO", "points", "rebounds", "assists", "minutes")
+KEEP = ("points", "totalRebounds", "rebounds", "assists", "minutes", "turnovers", "steals", "blocks",
+        "threePointFieldGoalsMade-threePointFieldGoalsAttempted", "fieldGoalsMade-fieldGoalsAttempted",
+        "PTS", "REB", "AST", "MIN", "3PT", "FG", "TO")
 
 
 def _team_stats(team_id: str) -> dict:
     try:
-        d = C.get_json(f"{espn.SITE}/basketball/wnba/teams/{team_id}/statistics")
+        d = C.get_json(f"{espn.SITE}/basketball/wnba/teams/{team_id}/statistics", {"seasontype": "2"})  # regular season
     except Exception as e:  # noqa: BLE001
         return {"error": str(e)}
     out = {}

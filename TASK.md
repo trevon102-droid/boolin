@@ -110,6 +110,51 @@ Category names are what performance is grouped by, so keep them stable:
 Use `"sport": "CFB"` for college football and put the rank in `game` when there is one,
 like `"#8 Oregon @ Penn State"`.
 
+### Top 5 games (`featured`)
+
+Every slate also carries a `featured` array: the day's **five biggest games**, broken down in
+depth for the board's Top 5 tab.
+
+**Picking the five:** football first. On NFL/CFB days, the top games are the biggest football games
+(primetime NFL, ranked-vs-ranked CFB, then ranked teams and big spreads), and other sports only fill
+the leftover slots. Otherwise rank by stakes (playoff/elimination > rivalry/primetime > regular) and then by
+where the edges are. Only include games that haven't started when the run finishes.
+
+**Per game, write:**
+- `lines`: moneyline, spread/run line/puck line, total, each with best prices and the Pinnacle no-vig fair.
+- `script`: one paragraph telling how the game is likely to play out and where the edge is (or isn't).
+- `matchup`: 6–8 rows of the numbers that decide the game, with `edge: "a"|"b"|null` marking the side it favors.
+  MLB: starters, K%/BB%, outs rates, lineup K% and OPS vs hand, bullpen load, ump/weather.
+  NFL/CFB: EPA/play off & def (+ ranks), success rate, pass/rush splits, rest, QB, OL/DL injuries, wind.
+  WNBA/NBA: records, pace, ratings, top scorers/creators L10, absences. NHL: xG%, goalies + GSAx, rest.
+- `injuries`: short strings, including news that changes the read.
+- `props`: 2–4 props with **real prices** (from `odds.json` props or the web), sized the same way as board picks.
+  Mark props that are also on the board with `"onBoard": true` so exposure isn't double counted.
+- `sgps`: 1–2 same-game parlays. Legs should share one game script with real positive correlation. Give each leg
+  its price and model %, and set the SGP's `modelP` to your correlated joint probability (always above
+  the independent product when the correlation is positive; say by how much in `correlation`).
+  The board shows the fair price and a **Bet only at** price, because books reprice SGPs for correlation. Mark extra
+  builds `"pass": true` so only the best SGP per game gets a stake. Never build SGPs from negatively correlated legs.
+
+```json
+"featured": [
+  {"rank": 1, "sport": "NFL", "game": "PIT @ CLE", "start": "8:15 PM ET", "tv": "Prime Video",
+   "context": "TNF · AFC North", "headline": "One line on why this game matters",
+   "lines": [{"label": "Spread", "value": "PIT -2.5 -112 · CLE +2.5 -108", "fair": "Pinnacle no-vig: PIT 51%"}],
+   "script": "How the game plays out and where the edge is.",
+   "injuries": ["Dowdle (toe): out"],
+   "matchup": {"cols": ["PIT", "CLE"], "rows": [{"label": "Off EPA/play (rank)", "a": "-0.05 (22)", "b": "-0.12 (29)", "edge": "a"}]},
+   "props": [{"pick": "Jaylen Warren Over 66.5 rush yds", "market": "Player prop", "category": "NFL player props",
+              "odds": -115, "book": "FanDuel", "modelP": 0.56, "betTo": "69.5 at -115", "why": "…", "onBoard": true}],
+   "sgps": [{"name": "Grind script", "legs": [{"pick": "Under 38.5", "odds": -118, "modelP": 0.57},
+             {"pick": "Warren Over 66.5 rush yds", "odds": -115, "modelP": 0.56}], "modelP": 0.36,
+             "script": "…", "correlation": "…"}]}
+]
+```
+
+Player props in `odds.json` only exist when the morning run pulled them (repo variable `PROPS_DAILY=1`)
+or a manual run did. Otherwise find prop prices on the web and name the book.
+
 ### Writing it
 
 Use the `ArtifactData` tool with the board URL above:
@@ -119,5 +164,5 @@ Use the `ArtifactData` tool with the board URL above:
 
 ## 5. Report
 
-Finish with a short message: number of plays, top 3 by edge, total units, anything that needs a
-check before start (goalies, lineups), and any data source that failed.
+Finish with a short message: number of plays, top 3 by edge, the Top 5 games picked, total units
+(including SGP stakes), anything that needs a check before start (goalies, lineups), and any data source that failed.
