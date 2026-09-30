@@ -19,6 +19,7 @@ BOOKS = os.environ.get(
     "ODDS_BOOKS",
     "pinnacle,fanduel,draftkings,betmgm,williamhill_us,espnbet,fanatics,betrivers,betonlineag,lowvig",
 )
+MY_BOOK = os.environ.get("MY_BOOK", "fanduel")
 SPORTS = {
     "MLB": "baseball_mlb",
     "WNBA": "basketball_wnba",
@@ -67,6 +68,10 @@ def _summarize(book_prices: dict[str, dict[str, float]], names: list[str]) -> di
             "best_book": best[0],
             "pinnacle": book_prices.get("pinnacle", {}).get(n),
             "edge_at_best_vs_fair": round(fp * _dec(best[1]) - 1, 4) if fp and best[1] else None,
+            # The user's book. Every play on the board is priced here; other books only inform the fair line.
+            MY_BOOK: book_prices.get(MY_BOOK, {}).get(n),
+            "edge_at_my_book": (round(fp * _dec(book_prices[MY_BOOK][n]) - 1, 4)
+                                if fp and n in book_prices.get(MY_BOOK, {}) else None),
             "books": {b: p[n] for b, p in book_prices.items() if n in p},
         })
     hold = None

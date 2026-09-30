@@ -72,7 +72,7 @@ WNBA daily. Include **passes**:
 a play the user might like with no edge at the current price goes on the board with a `betTo` number,
 so they know what line would make it a bet.
 
-- Use the **best available price** from `odds.json` (`best_price`/`best_book`), not just FanDuel.
+- Use **FanDuel's price** from `odds.json` (the `fanduel` field on each outcome). `best_price`/`best_book` are context only.
 - Put the Pinnacle two-way prices in `sharp` when there's a Pinnacle line (`{"odds": side, "other": other side}`).
 - Ladders only when you have real alt-line prices for every rung.
 - Keep total sized exposure (board + Top 5 props + SGPs + parlays) near the daily cap (8u) and ≤3u per game. If you're over, drop the lowest-edge plays or parlays first.
@@ -152,7 +152,10 @@ where the edges are. Only include games that haven't started when the run finish
 ]
 ```
 
-**Only use books Kaire can bet.** If a play is only available at a book he doesn't use, mark it `pass` and say so; don't build parlays around it.
+**FanDuel only.** Kaire bets at FanDuel and nowhere else. Every `odds` on the slate, in `featured` props, SGP legs and parlays is FanDuel's price
+(`odds.json` has it per outcome under `fanduel`, with `edge_at_my_book`). Other books and Pinnacle are only for the fair line and line moves.
+If FanDuel doesn't offer a market, it can't be a play: list it as a pass with `"betTo": "Not on FanDuel"` only if it's useful context.
+SGP `Bet only at` prices refer to FanDuel's SGP slip.
 
 Player props in `odds.json` (with `props_pulled_at_et`, since they can be carried over from an earlier run) only exist when the morning run pulled them (repo variable `PROPS_DAILY=1`)
 or a manual run did. Otherwise find prop prices on the web and name the book.
