@@ -175,14 +175,20 @@ def run(day: dt.date) -> dict:
                 events.append(summarize_event(ev))
         entry: dict = {"status": "ok", "events": events}
         if os.environ.get("PROPS") == "1" and events:
+            # Only games on the slate day that haven't started: each event costs markets x credits.
             cap = int(os.environ.get("PROPS_MAX_EVENTS", "6"))
+            now_utc = dt.datetime.now(dt.timezone.utc)
+            todays = [ev for ev in events
+                      if (t := dt.datetime.fromisoformat(ev["commence_time"].replace("Z", "+00:00"))) > now_utc
+                      and t.astimezone(C.ET).date() == day]
             props = {}
-            for ev in events[:cap]:
+            for ev in todays[:cap]:
                 pr = C.get(f"{API}/sports/{sk}/events/{ev['id']}/odds", {
                     "apiKey": key, "bookmakers": BOOKS, "markets": PROP_MARKETS[sk], "oddsFormat": "american",
                 })
                 remaining = pr.headers.get("x-requests-remaining", remaining)
-                props[ev["id"]] = summarize_props(pr.json())
+                props[ev["id"]] = {"game": f"{ev['away']} @ {ev['home']}", "start_et": ev["start_et"],
+                                   "rows": summarize_props(pr.json())}
             entry["props"] = props
         result["sports"][label] = entry
     result["credits_remaining"] = remaining

@@ -48,19 +48,25 @@ jobs:
 
       - name: Decide what to pull
         id: plan
+        env:
+          HEAD_MSG: ${{ github.event.head_commit.message }}
         run: |
           ODDS=0
           if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" = "15 11 * * *" ]; then ODDS=1; fi
           if [ "${{ github.event_name }}" = "push" ]; then ODDS=1; fi
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then ODDS="${{ inputs.run_odds }}"; fi
           echo "run_odds=$ODDS" >> "$GITHUB_OUTPUT"
+          PROPS="${{ inputs.props || '0' }}"
+          # A push whose commit message contains [props] also pulls player props (today's games only).
+          if [ "${{ github.event_name }}" = "push" ] && printf '%s' "$HEAD_MSG" | grep -q "\[props\]"; then PROPS=1; ODDS=1; echo "run_odds=1" >> "$GITHUB_OUTPUT"; fi
+          echo "props=$PROPS" >> "$GITHUB_OUTPUT"
 
       - name: Pull data
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
           RUN_ODDS: ${{ steps.plan.outputs.run_odds }}
-          PROPS: ${{ inputs.props || '0' }}
+          PROPS: ${{ steps.plan.outputs.props }}
           SLATE_DATE: ${{ inputs.slate_date }}
         run: python -m pipeline.build_all
 
