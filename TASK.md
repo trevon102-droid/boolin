@@ -72,14 +72,26 @@ For every sized play and every Top 10 prop, build OUR number before comparing it
 - `factors`: `[{"f": "what it is", "adj": +2.5}]` in percentage points, each tied to a named data point:
   - **Usage**: snap %, route participation, target share/TPRR, carries, red-zone and end-zone looks, TOI/PP time, lineup spot.
   - **Scheme**: defense's man vs zone rate, single-high rate, blitz/pressure, nickel; the player's YPRR/TPRR vs that coverage; run D (YPC, explosive runs, YAC); pace and plays per game.
-  - **Splits and history**: platoon (vs LHP/RHP), batter vs pitcher, times through the order, home/road, recent game logs. Regress hard: BvP under ~50 PA and 3–5 game logs move a number 0.5–1 pt, never 5.
+  - **Splits**: platoon splits regressed toward league average (~1,000 PA for LHB, ~2,200 for RHB, ~600 switch), times through the order as a gradual penalty, home/road.
+  - **Do not use as factors**: batter-vs-pitcher history, hot/cold streaks, 3–5 game logs, WR-vs-CB matchups, goalie back-to-back fatigue. They're noise at the samples we have. Mention them in `why` as color only.
+  - **Coverage scheme** (man/zone fit) is weakly supported: cap it at ±1 pt.
   - **Context**: injuries and who absorbs the usage, weather/wind, rest, script (favorite runs, underdog throws), goalie/umpire.
 - `modelP` must equal prior + sum of factors. Total moves over ~6 pts from the market need two independent reasons.
 - Line moves are information. Record `open`, `move` and `steam`:
-  - `"with"`: the market moved toward our side. Confirms the read; if FanDuel already moved, re-check that the price still beats our line.
+  - `"with"`: the market moved toward our side. Re-price from the NEW sharp price; never add the move as a bonus factor (that double counts).
   - `"stale"`: other books moved and FanDuel hasn't. This is the best spot; bet before it adjusts.
-  - `"against"`: sharp money went the other way. Lower the stake or pass unless a named factor explains it.
+  - `"against"`: sharp money went the other way. Re-price from the new sharp price, which lowers our number. Don't just tag it.
   - A longshot that went +700 → +200 is a bet only if our line is shorter than +200. The move tells us the true price is shorter, not that +200 is value.
+
+### 3c. Pricing rules (rev 7)
+
+- **Fresh prices only.** Set `priceAt` (ISO time) on every pick, longshot and ladder, and `pricesAt` on the slate. The board won't stake a price older than its `staleMin` setting (60 min). Re-check prices in the last hour before start; never stake overnight HR/TD prices without a re-check.
+- **Blend toward the market.** The board shows prior + modelWeight × (modelP − prior). Keep `prior` honest so the blend works.
+- **Distributions, not bumps, for player stats.** Project the mean and spread (yards: simulate or use a skewed distribution; counts like K, receptions, SOG: Poisson/binomial/neg-binomial), compare to the median, and price every ladder rung from the same distribution.
+- **Longshots from expected counts.** P(at least one) = 1 − e^(−λ). TD λ = team implied TDs × player share. Goal λ = individual xG/60 × expected TOI. HR = 1 − (1 − HR/PA)^expected PA, with park, weather and pitcher HR rate.
+- **Floors.** Sides/totals use the min-edge setting, props 4%, longshots 20% relative. A two-way prop edge over 10% is almost always a data or price error: flag it, don't stake it.
+- **One game = one position.** All plays, props, SGPs and longshots on one game share the 3u cap. SGPs are pass by default unless a joint simulation beats FanDuel's slip price.
+- **Log every factor.** Keep `factors` on every pick so we can measure which ones help once the bet log has ~300 bets with closing prices.
 
 ## 4. Build the slate
 
@@ -211,7 +223,14 @@ Use the `ArtifactData` tool with the board URL above:
 - Doc already exists (a rerun): `get` it first, then `set` with its `version` as `if_version`.
 - Don't touch `bets` or `settings`. Those belong to the user.
 
+### Spreadsheet copy
+
+After writing the slate, also save it as a workbook and send it:
+1. Write the exact slate JSON to `/tmp/slate.json`.
+2. `cd /home/claude/boolin && python -m pipeline.slate_xlsx /tmp/slate.json "/tmp/Sharp Board YYYY-MM-DD.xlsx"`
+3. Send the .xlsx with SendUserFile (status proactive on scheduled runs). Edge and units in it are live formulas off its Settings sheet.
+
 ## 5. Report
 
-Finish with a short message: number of plays, top 3 by edge, the Top 5 games picked, total units
+Finish with a short message: number of plays, top 3 by edge, the Top 10 games picked, total units
 (including SGP stakes), anything that needs a check before start (goalies, lineups), and any data source that failed.
