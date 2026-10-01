@@ -46,6 +46,10 @@ Files in `data/latest/`:
 | `cfb.json` | Every FBS game today (AP rank, neutral site, conference game, FPI projection, weather, injuries), AP Top 25, next 3 days' schedule, and team EPA + SP+ if the optional CFBD key is set |
 | `injuries.json` | ESPN injury lists for today's NHL and MLB games |
 
+Also read the weekly prep data from the board's database (`ArtifactData` `list` on collection `prep`):
+the newest `nfl-…`/`cfb-…` docs (usage, coverage, run D, pace, injuries) and the newest `review-…` doc
+(which categories and factors are beating the close). Use them as inputs and say in `notes` if they're missing or more than 8 days old.
+
 ## 2. Fill the gaps with the web (every run)
 
 Always verify with WebSearch/WebFetch, because the data can be hours old:
