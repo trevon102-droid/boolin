@@ -65,6 +65,22 @@ Always verify with WebSearch/WebFetch, because the data can be hours old:
 4. **Trends are not inputs.** "Team X is 9-0 in spot Y" can go in `inputs` as color, never as the reason.
 5. Aim to be calibrated, not bold. Most plays should land 0–5% edge. If the edge is huge, you're probably wrong.
 
+### 3b. Model lines (our odds first)
+
+For every sized play and every Top 10 prop, build OUR number before comparing it to FanDuel, and write the steps into the pick:
+- `prior` + `priorLabel`: the market starting point (Pinnacle/consensus no-vig; FanDuel's own two-way only if nothing else exists; for one-sided markets like HR/TD/goal, a base rate from season frequency with a playoff/opponent haircut).
+- `factors`: `[{"f": "what it is", "adj": +2.5}]` in percentage points, each tied to a named data point:
+  - **Usage**: snap %, route participation, target share/TPRR, carries, red-zone and end-zone looks, TOI/PP time, lineup spot.
+  - **Scheme**: defense's man vs zone rate, single-high rate, blitz/pressure, nickel; the player's YPRR/TPRR vs that coverage; run D (YPC, explosive runs, YAC); pace and plays per game.
+  - **Splits and history**: platoon (vs LHP/RHP), batter vs pitcher, times through the order, home/road, recent game logs. Regress hard: BvP under ~50 PA and 3–5 game logs move a number 0.5–1 pt, never 5.
+  - **Context**: injuries and who absorbs the usage, weather/wind, rest, script (favorite runs, underdog throws), goalie/umpire.
+- `modelP` must equal prior + sum of factors. Total moves over ~6 pts from the market need two independent reasons.
+- Line moves are information. Record `open`, `move` and `steam`:
+  - `"with"`: the market moved toward our side. Confirms the read; if FanDuel already moved, re-check that the price still beats our line.
+  - `"stale"`: other books moved and FanDuel hasn't. This is the best spot; bet before it adjusts.
+  - `"against"`: sharp money went the other way. Lower the stake or pass unless a named factor explains it.
+  - A longshot that went +700 → +200 is a bet only if our line is shorter than +200. The move tells us the true price is shorter, not that +200 is value.
+
 ## 4. Build the slate
 
 Price every game the user cares about: **NFL and CFB first on football days**, then MLB, NHL,
@@ -159,6 +175,12 @@ SGP `Bet only at` prices refer to FanDuel's SGP slip.
 
 Player props in `odds.json` (with `props_pulled_at_et`, since they can be carried over from an earlier run) only exist when the morning run pulled them (repo variable `PROPS_DAILY=1`)
 or a manual run did. Otherwise find prop prices on the web and name the book.
+
+### Top 10, longshots and ladders
+
+- `featured` holds the day's **ten** biggest games (football first), same format as above. College player props aren't available to Kaire: CFB is main lines only.
+- `longshots`: `[{"id","type":"Anytime TD"|"First TD"|"Home run"|"Anytime goal","sport","game","start","pick","odds","book","modelP","prior","priorLabel","factors","open","move","steam","why","category"}]`. Leave out `odds` when FanDuel's price isn't found; the board then shows the price to bet at. Stakes are capped by the `longMax` setting.
+- `ladders`: `[{"id","sport","game","start","pick","base","why","category","rungs":[{"label":"80+","odds":120,"modelP":0.42}]}]`. Climb from a main Over that has a real read; rungs without a FanDuel price show the price to bet at.
 
 ### Cross-game parlays (`parlays`)
 
