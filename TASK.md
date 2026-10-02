@@ -90,11 +90,11 @@ For every sized play and every Top 10 prop, build OUR number before comparing it
 
 ### 3c. Pricing rules (rev 7)
 
-- **Fresh prices only.** Set `priceAt` (ISO time) on every pick, longshot and ladder, and `pricesAt` on the slate. The board won't stake a price older than its `staleMin` setting (60 min). Re-check prices in the last hour before start; never stake overnight HR/TD prices without a re-check.
+- **Price timestamps.** Set `priceAt` (ISO time) on every pick, longshot and ladder, and `pricesAt` on the slate. There's no FanDuel feed, so a same-day FanDuel price that's roughly still there is fine to stake; the board only blocks prices older than its `staleMin` setting (24 h). The 10:50 AM and 4:50 PM re-checks catch real moves (news, injuries, steam). Don't pass a good play just because its price is a few hours old.
 - **Blend toward the market.** The board shows prior + modelWeight × (modelP − prior). Keep `prior` honest so the blend works.
 - **Distributions, not bumps, for player stats.** Project the mean and spread (yards: simulate or use a skewed distribution; counts like K, receptions, SOG: Poisson/binomial/neg-binomial), compare to the median, and price every ladder rung from the same distribution.
 - **Longshots from expected counts.** P(at least one) = 1 − e^(−λ). TD λ = team implied TDs × player share. Goal λ = individual xG/60 × expected TOI. HR = 1 − (1 − HR/PA)^expected PA, with park, weather and pitcher HR rate.
-- **Floors.** Sides/totals use the min-edge setting, props 4%, longshots 20% relative. A two-way prop edge over 10% is almost always a data or price error: flag it, don't stake it.
+- **Floors.** Sides/totals use the min-edge setting, props use the `minEdgeProp` setting (3%), longshots 20% relative. A two-way prop edge over 10% is almost always a data or price error: flag it, don't stake it.
 - **One game = one position.** All plays, props, SGPs and longshots on one game share the 3u cap. SGPs are pass by default unless a joint simulation beats FanDuel's slip price.
 - **Log every factor.** Keep `factors` on every pick so we can measure which ones help once the bet log has ~300 bets with closing prices.
 

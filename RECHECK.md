@@ -2,7 +2,8 @@
 
 Instructions for the scheduled re-check that runs before start times. It does NOT build a new
 slate. It re-prices the plays already on today's slate with fresh prices and news, so the board's
-stale-price rule (no stake on a price older than 60 minutes) lets good plays through and kills bad ones.
+plays reflect current prices and news: good plays stay on, plays that moved past their bet-to or lost their edge come off.
+(The board's stale-price limit is 24 hours, so same-day prices are never blocked just for age.)
 
 Board: https://claude.ai/artifact/DbSgLx1GwBkC15aMK5YsPW (collection `slates`, doc id = today's date in ET).
 Pricing rules: TASK.md sections 3, 3b and 3c. FanDuel prices only.
