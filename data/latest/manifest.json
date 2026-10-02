@@ -1,11 +1,11 @@
 {
  "slate_date": "2026-10-02",
- "run_at_et": "2026-10-02T09:15-04:00",
+ "run_at_et": "2026-10-02T15:25-04:00",
  "sources": {
   "nfl": {
    "status": "ok",
    "games": 16,
-   "seconds": 0.6
+   "seconds": 0.8
   },
   "cfb": {
    "status": "ok",
@@ -13,7 +13,7 @@
    "ranked_games": 0,
    "upcoming_3d": 54,
    "cfbd": "skipped",
-   "seconds": 0.5
+   "seconds": 0.4
   },
   "mlb": {
    "status": "ok",
@@ -23,23 +23,29 @@
   "nhl": {
    "status": "ok",
    "games": 5,
-   "seconds": 4.9
+   "seconds": 3.5
   },
   "wnba": {
    "status": "ok",
    "games": 1,
-   "seconds": 1.5
+   "seconds": 0.4
+  },
+  "nba": {
+   "status": "skipped",
+   "reason": "NBA held until 2026-10-20 (regular season)",
+   "seconds": 0.0
   },
   "injuries": {
    "status": "ok",
    "games": 5,
-   "seconds": 0.5
+   "seconds": 0.1
   },
   "odds": {
    "status": "ok",
    "events": 88,
    "credits_remaining": "433",
-   "seconds": 3.5
+   "seconds": 3.5,
+   "from_earlier_run": "2026-10-02T09:15-04:00"
   }
  }
 }
