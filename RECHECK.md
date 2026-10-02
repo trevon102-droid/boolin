@@ -18,7 +18,7 @@ Pricing rules: TASK.md sections 3, 3b and 3c. FanDuel prices only.
      otherwise pages that label the price as FanDuel's). Never invent a price.
    - The sharp/consensus line for the prior (Pinnacle no-vig if findable; otherwise consensus).
    - News: inactives (NFL ~90 min before kickoff), confirmed MLB lineups and starters, confirmed NHL goalies
-     (Daily Faceoff), late scratches, weather changes.
+     (Daily Faceoff), NBA injury reports/rest and starting lineups, late scratches, weather changes.
 4. For each item checked:
    - Update `odds`, `priceAt` (ISO time now, ET offset), and `prior` if the sharp line moved.
    - If news changes the read, adjust `factors`/`modelP` with a named reason, or set `pass: true` and say why.
