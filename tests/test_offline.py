@@ -76,3 +76,10 @@ def test_nba_wired():
     assert "basketball_nba" in odds.PROP_MARKETS
     assert espn.LEAGUES["NBA"] == ("basketball", "nba")
     assert "nba" in build_all.SOURCES
+
+
+def test_nba_held_until_regular_season():
+    import datetime as dt
+    from pipeline import nba
+    assert nba.run(dt.date(2026, 10, 3))["status"] == "skipped"
+    assert odds.START_DATES["NBA"] == dt.date(2026, 10, 20)

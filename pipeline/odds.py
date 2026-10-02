@@ -36,6 +36,8 @@ PROP_MARKETS = {
     "americanfootball_nfl": "player_pass_yds,player_rush_yds,player_reception_yds,player_anytime_td",
     "americanfootball_ncaaf": "player_pass_yds,player_rush_yds,player_reception_yds,player_anytime_td",
 }
+# Leagues held off until a start date (no odds credits spent before it). NBA: regular season tips Oct 20, 2026.
+START_DATES = {"NBA": dt.date(2026, 10, 20)}
 # How far ahead to look: today's slate for daily sports, the whole week for NFL.
 WINDOW_HOURS = {"americanfootball_nfl": 24 * 7, "americanfootball_ncaaf": 24 * 3}
 
@@ -185,6 +187,9 @@ def run(day: dt.date) -> dict:
     result: dict = {"pulled_at_et": C.now_et().isoformat(timespec="minutes"), "books": BOOKS, "sports": {}}
     remaining = None
     for label, sk in SPORTS.items():
+        if label in START_DATES and day < START_DATES[label]:
+            result["sports"][label] = {"status": "off", "reason": f"held until {START_DATES[label].isoformat()}"}
+            continue
         if sk not in sports_live:
             result["sports"][label] = {"status": "off-season"}
             continue

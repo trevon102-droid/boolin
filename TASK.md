@@ -43,7 +43,7 @@ Files in `data/latest/`:
 | `mlb.json` | Probables (season K%, BB%, last 5 starts, K and outs hit-rate distributions), lineups, team K% vs the starter's hand, bullpen usage last 3 days, weather, HP ump, series status |
 | `nhl.json` | Back-to-back flags, standings form, goalie usage + GSAx (this + last season), 5v5 xG% (MoneyPuck) |
 | `wnba.json` | ESPN line + win projection, injuries, last-10 logs for each team's leaders, team stats |
-| `nba.json` | Same shape as `wnba.json` for today's NBA games (preseason games too; `preseason_note: true` when ESPN tags them) |
+| `nba.json` | Same shape as `wnba.json` for today's NBA games (starts Oct 20, 2026; skipped before then) |
 | `nfl.json` | This week's games (rest, roof, wind, QBs, nflverse lines), team EPA/success splits + ranks, injury report |
 | `cfb.json` | Every FBS game today (AP rank, neutral site, conference game, FPI projection, weather, injuries), AP Top 25, next 3 days' schedule, and team EPA + SP+ if the optional CFBD key is set |
 | `injuries.json` | ESPN injury lists for today's NHL and MLB games |
@@ -104,9 +104,8 @@ For every sized play and every Top 10 prop, build OUR number before comparing it
 **NBA notes.** Use `"sport": "NBA"` and the `NBA …` categories. Key inputs: injury report and rest
 (back-to-backs, load management; official reports post by 5 PM local the day before and update through
 the afternoon), starting lineups (~30 min before tip), pace and offensive/defensive rating, and minutes
-for props. **Preseason (until Oct 20, 2026):** starters play short, unpredictable minutes, rotations are
-experiments and lines are soft but noisy. Price sides/totals only off a confirmed rest/lineup report (e.g.
-"starters out") and pass player props unless minutes are announced. Say so in the pick's `why`.
+for props. **NBA is off until the regular season (Oct 20, 2026):** the pipeline skips NBA data and odds before then
+(`nba` shows `skipped` in the manifest). Don't add preseason NBA games to the slate.
 
 Price every game the user cares about: **NFL and CFB first on football days**, then MLB, NHL,
 NBA and WNBA daily. Include **passes**:
