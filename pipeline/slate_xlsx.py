@@ -27,15 +27,15 @@ THIN = Side(style="thin", color="D3DAE2")
 WRAP = Alignment(wrap_text=True, vertical="top")
 
 SETTINGS = [
-    ("Bankroll ($)", 1000, "$#,##0", "Money set aside for betting. Change to yours."),
+    ("Bankroll ($)", 500, "$#,##0", "Money set aside for betting. Change to yours."),
     ("1 unit = % of bankroll", 0.01, "0.0%", "1% is standard."),
     ("Kelly fraction", 0.25, "0.00", "Quarter Kelly."),
     ("Model weight (0-1)", 0.5, "0.00", "How far to trust our number over the market prior. Research suggests 0.1-0.3 until the bet log proves the model."),
-    ("Min edge, sides/totals", 0.02, "0.0%", "Below this, no stake."),
-    ("Min edge, props", 0.04, "0.0%", "Props carry more vig and noise."),
+    ("Min edge, sides/totals", 0.015, "0.0%", "Below this, no stake."),
+    ("Min edge, props", 0.03, "0.0%", "Props carry more vig and noise."),
     ("Min edge, longshots (relative)", 0.20, "0.0%", "TD, HR and goal bets."),
-    ("Max units per play", 2, "0.00", ""),
-    ("Max units per longshot", 0.25, "0.00", ""),
+    ("Max units per play", 5, "0.00", ""),
+    ("Max units per longshot", 3, "0.00", ""),
     ("Ladder Kelly haircut", 0.5, "0.00", "Rungs ride one outcome."),
 ]
 # Settings!B2..B11 in the order above
