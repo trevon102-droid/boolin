@@ -142,6 +142,8 @@ def build(slate, out):
         ws.cell(row=r, column=21, value=tier).font = BLUE
         tier_units = (f'MIN({cap_ref},IF(U{r}="A",{S["Tier A size (u)"]},IF(U{r}="B",{S["Tier B size (u)"]},'
                       f'{S["Tier C size (u)"]})){hair if kind == "Ladder rung" else ""})')
+        if x.get("units") not in (None, ""):
+            tier_units = f'MIN({cap_ref},{float(x["units"])})'
         ws[f"P{r}"] = (f'=IF(R{r}="Y",0,IF(U{r}<>"",{tier_units},IF(OR({G}="",K{r}=""),0,IF(N{r}<O{r},0,'
                        f'MIN({cap_ref},ROUND(MAX(0,{kelly})*{S["Kelly fraction"]}{hair}/{S["1 unit = % of bankroll"]}*4,0)/4)))))')
         ws[f"Q{r}"] = f"=P{r}*{S['Bankroll ($)']}*{S['1 unit = % of bankroll']}"
@@ -216,6 +218,24 @@ def build(slate, out):
         pw[f"F{r + 1}"] = f"=F{r}*G{r}-1"
         pw[f"F{r + 1}"].number_format = "0.0%"
         r += 3
+
+    # ---------- Hit rates ----------
+    hw = wb.create_sheet("Hit rates")
+    hcols = ["Sport", "Game", "Start", "Line", "Hits", "Of", "Rate", "FanDuel odds", "Log (newest first)", "Note"]
+    for c, (n, w) in enumerate(zip(hcols, [7, 26, 10, 40, 6, 5, 7, 11, 34, 50]), start=1):
+        cell = hw.cell(row=1, column=c, value=n)
+        cell.font, cell.fill = HEAD, HEAD_FILL
+        hw.column_dimensions[get_column_letter(c)].width = w
+    hr = sorted(slate.get("hitrates", []), key=lambda h: -(h.get("hits", 0) / (h.get("of") or 1)))
+    for i, h in enumerate(hr, start=2):
+        vals = [h.get("sport"), h.get("game"), h.get("start"), h.get("pick"), h.get("hits"), h.get("of"), None,
+                h.get("odds"), ", ".join(str(v) for v in h.get("log", [])), h.get("note", "")]
+        for c, v in enumerate(vals, start=1):
+            hw.cell(row=i, column=c, value=v).font = BLACK
+        hw[f"G{i}"] = f"=IF(F{i}>0,E{i}/F{i},\"\")"
+        hw[f"G{i}"].number_format = "0%"
+        hw[f"H{i}"].number_format = "+0;-0"
+    hw.freeze_panes = "E2"
 
     # ---------- Top 10 ----------
     tw = wb.create_sheet("Top 10")

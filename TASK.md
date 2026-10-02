@@ -27,8 +27,18 @@ tier (Settings → Sizing mode = Research). The price check (our % vs FanDuel's 
   still the best play" instead of a pass.
 - **`pass: true` only for real reasons:** player out/questionable, lineup or goalie news that breaks the read,
   FanDuel not offering the market, game started. Never for price or thin edge.
-- **Exposure:** tier sizes come from the board (A 1u, B 0.5u, C 0.25u by default). Keep the day near the 8u cap
-  and ≤3u per game; if over, drop C plays first.
+- **Sizes are suggestions, not tied to the tier.** Put a `units` number on every play: what you'd suggest
+  given the research (a C-tier longshot can still be 1u if the read is that good). Kaire sizes himself; the board
+  uses `units` when present, else the tier default (A 1u, B 0.5u, C 0.25u).
+- **Hit rates tab (`hitrates`, every day):** for each game on the card, list the lines that cleared in **7+ of the
+  last 10** (or every game this season for CFB/early season), overs or unders, with the game log:
+  `{"sport","game","start","pick":"Ovechkin Over 2.5 SOG","hits":9,"of":10,"log":[4,3,7,3,3,4,4,3,2,5],"odds":-122,"note":"which games, sample caveats"}`.
+  Use FanDuel's line and price; leave `odds` null with a note when FanDuel's price isn't found. Pull logs from the
+  NHL API (api-web.nhle.com/v1/player/{id}/game-log/...), StatMuse, ESPN/Basketball-Reference, Pro Football
+  Reference and cfbstats. Say what the window covers (playoffs, last season). Kaire builds slips from this tab.
+- **SGPs are 2–5 legs.** 1–2 per Top 10 game, built from the game's best research and hit-rate lines with a
+  shared script. When a game has great research, add one bigger "sprinkle" build (`"lottery": true`, still ≤5
+  legs) meant for a small stake.
 - Sections 3–3c below still describe how to build `modelP` (useful for the price check). Their edge bars and
   floors are **price-mode only** and don't gate plays in research mode.
 
@@ -196,7 +206,7 @@ where the edges are. Only include games that haven't started when the run finish
 - `props`: 3–5 props per game with **real FanDuel prices** (from `odds.json` props or the web), each with
   `conviction`, `why` and `inputs` (section 00). Rank them best first. CFB: none (main lines only).
   Mark props that are also on the board with `"onBoard": true` so exposure isn't double counted.
-- `sgps`: 1–2 same-game parlays. Legs should share one game script with real positive correlation. Give each leg
+- `sgps`: 1–2 same-game parlays of **2–5 legs** (plus an optional `"lottery": true` sprinkle build), each with `conviction` and `units`. Legs should share one game script with real positive correlation. Give each leg
   its price and model %, and set the SGP's `modelP` to your correlated joint probability (always above
   the independent product when the correlation is positive; say by how much in `correlation`).
   The board shows the fair price and a **Bet only at** price, because books reprice SGPs for correlation. Mark extra
