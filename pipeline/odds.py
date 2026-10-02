@@ -23,6 +23,7 @@ MY_BOOK = os.environ.get("MY_BOOK", "fanduel")
 SPORTS = {
     "MLB": "baseball_mlb",
     "WNBA": "basketball_wnba",
+    "NBA": "basketball_nba",
     "NHL": "icehockey_nhl",
     "NFL": "americanfootball_nfl",
     "CFB": "americanfootball_ncaaf",
@@ -30,6 +31,7 @@ SPORTS = {
 PROP_MARKETS = {
     "baseball_mlb": "pitcher_strikeouts,pitcher_outs",
     "basketball_wnba": "player_points,player_assists,player_rebounds",
+    "basketball_nba": "player_points,player_assists,player_rebounds",
     "icehockey_nhl": "player_shots_on_goal,player_points",
     "americanfootball_nfl": "player_pass_yds,player_rush_yds,player_reception_yds,player_anytime_td",
     "americanfootball_ncaaf": "player_pass_yds,player_rush_yds,player_reception_yds,player_anytime_td",

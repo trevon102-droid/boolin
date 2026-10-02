@@ -1,7 +1,7 @@
 """Run every source, never let one failure sink the rest, and write data/latest/manifest.json.
 
 Usage:  python -m pipeline.build_all
-Env:    SOURCES=nfl,cfb,mlb,nhl,wnba,injuries,odds   (default: all)
+Env:    SOURCES=nfl,cfb,mlb,nhl,wnba,nba,injuries,odds   (default: all)
         RUN_ODDS=0 to skip odds on this run (saves API credits)
         SLATE_DATE=YYYY-MM-DD to pull a specific day
 """
@@ -15,9 +15,9 @@ import time
 import traceback
 
 from . import common as C
-from . import cfb, injuries, mlb, nfl, nhl, odds, wnba
+from . import cfb, injuries, mlb, nba, nfl, nhl, odds, wnba
 
-SOURCES = {"nfl": nfl, "cfb": cfb, "mlb": mlb, "nhl": nhl, "wnba": wnba, "injuries": injuries, "odds": odds}
+SOURCES = {"nfl": nfl, "cfb": cfb, "mlb": mlb, "nhl": nhl, "wnba": wnba, "nba": nba, "injuries": injuries, "odds": odds}
 KEEP_DAYS = 45
 
 

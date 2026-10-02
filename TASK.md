@@ -15,7 +15,7 @@ football (CFB Saturdays plus Tue–Fri weeknight games; NFL Thursday, Sunday, Mo
   That means sides, totals, and team totals where there's a real read, plus player props when you
   can find real prices. Spend most of the research budget here.
 - **Same method, same standards.** Football gets more depth, not looser rules. Same sharp-line start,
-  same edge bar, same honesty about passes. MLB/NHL/WNBA still get priced the normal way on
+  same edge bar, same honesty about passes. MLB/NHL/NBA/WNBA still get priced the normal way on
   football days, just with less depth (main markets + the best 1–3 props per game).
 - **Football-specific checks:** QB status and backup quality, OL/DL injuries, key numbers (3, 7, 10 in the NFL;
   3, 7, 10, 14, 17 in CFB), wind (15+ mph matters for totals and kicking), travel/rest (short weeks, cross-country,
@@ -43,6 +43,7 @@ Files in `data/latest/`:
 | `mlb.json` | Probables (season K%, BB%, last 5 starts, K and outs hit-rate distributions), lineups, team K% vs the starter's hand, bullpen usage last 3 days, weather, HP ump, series status |
 | `nhl.json` | Back-to-back flags, standings form, goalie usage + GSAx (this + last season), 5v5 xG% (MoneyPuck) |
 | `wnba.json` | ESPN line + win projection, injuries, last-10 logs for each team's leaders, team stats |
+| `nba.json` | Same shape as `wnba.json` for today's NBA games (preseason games too; `preseason_note: true` when ESPN tags them) |
 | `nfl.json` | This week's games (rest, roof, wind, QBs, nflverse lines), team EPA/success splits + ranks, injury report |
 | `cfb.json` | Every FBS game today (AP rank, neutral site, conference game, FPI projection, weather, injuries), AP Top 25, next 3 days' schedule, and team EPA + SP+ if the optional CFBD key is set |
 | `injuries.json` | ESPN injury lists for today's NHL and MLB games |
@@ -100,8 +101,15 @@ For every sized play and every Top 10 prop, build OUR number before comparing it
 
 ## 4. Build the slate
 
+**NBA notes.** Use `"sport": "NBA"` and the `NBA …` categories. Key inputs: injury report and rest
+(back-to-backs, load management; official reports post by 5 PM local the day before and update through
+the afternoon), starting lineups (~30 min before tip), pace and offensive/defensive rating, and minutes
+for props. **Preseason (until Oct 20, 2026):** starters play short, unpredictable minutes, rotations are
+experiments and lines are soft but noisy. Price sides/totals only off a confirmed rest/lineup report (e.g.
+"starters out") and pass player props unless minutes are announced. Say so in the pick's `why`.
+
 Price every game the user cares about: **NFL and CFB first on football days**, then MLB, NHL,
-WNBA daily. Include **passes**:
+NBA and WNBA daily. Include **passes**:
 a play the user might like with no edge at the current price goes on the board with a `betTo` number,
 so they know what line would make it a bet.
 
@@ -136,7 +144,7 @@ so they know what line would make it a bet.
 
 Category names are what performance is grouped by, so keep them stable:
 `MLB sides`, `MLB K props`, `MLB pitcher props`, `MLB first inning`, `MLB batter props`,
-`NHL sides`, `NHL player props`, `WNBA sides`, `WNBA totals`, `WNBA player props`,
+`NHL sides`, `NHL player props`, `NBA sides`, `NBA totals`, `NBA player props`, `WNBA sides`, `WNBA totals`, `WNBA player props`,
 `NFL sides`, `NFL totals`, `NFL player props`, `NFL TD scorers`,
 `CFB sides`, `CFB totals`, `CFB player props`.
 

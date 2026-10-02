@@ -68,3 +68,11 @@ def test_props_grouping():
     r = rows[0]
     assert r["player"] == "Hunter Brown" and r["line"] == 5.5 and r["ref"] == "pinnacle"
     assert r["outcomes"][0]["name"] == "Over" and r["outcomes"][0]["best_price"] == -140
+
+
+def test_nba_wired():
+    from pipeline import build_all, espn
+    assert odds.SPORTS["NBA"] == "basketball_nba"
+    assert "basketball_nba" in odds.PROP_MARKETS
+    assert espn.LEAGUES["NBA"] == ("basketball", "nba")
+    assert "nba" in build_all.SOURCES

@@ -1,6 +1,6 @@
 # boolin
 
-Automated data pulls for the **Rackz Sharp Board** betting desk. Football first (NFL + college football), plus MLB, NHL and WNBA.
+Automated data pulls for the **Rackz Sharp Board** betting desk. Football first (NFL + college football), plus MLB, NHL, NBA and WNBA.
 
 GitHub Actions pulls free data sources on a schedule and commits clean JSON to `data/`.
 A daily Claude scheduled task reads it, adds news from the web, prices every play, and writes the
@@ -14,6 +14,7 @@ slate to the board. See [`TASK.md`](TASK.md) for that playbook.
 | MLB | MLB Stats API: probables, game logs, lineups, splits, bullpen usage, weather, umps | none |
 | NHL | NHL web API + MoneyPuck CSVs: rest, standings, goalies, 5v5 xG%, GSAx | none |
 | WNBA | ESPN public API: schedule, injuries, projections, player game logs | none |
+| NBA | ESPN public API (same as WNBA): schedule, injuries, projections, team stats, player game logs | none |
 | NFL | nflverse: schedule/lines, play-by-play EPA, injury reports | none |
 | CFB | ESPN (every FBS game, AP rank, FPI, weather, injuries) + optional CollegeFootballData (team EPA, SP+) | `CFBD_API_KEY` (optional, free) |
 | Injuries | ESPN game summaries (NHL, MLB) | none |

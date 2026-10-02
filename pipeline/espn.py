@@ -1,5 +1,5 @@
 """ESPN public site API helpers (no key): scoreboard, per-game summary (injuries, predictor,
-ESPN's posted line), and player game logs. Used for WNBA and for injuries in every sport."""
+ESPN's posted line), and player game logs. Used for WNBA/NBA and for injuries in every sport."""
 from __future__ import annotations
 
 import datetime as dt
@@ -11,6 +11,7 @@ WEB = "https://site.web.api.espn.com/apis/common/v3/sports"
 
 LEAGUES = {
     "WNBA": ("basketball", "wnba"),
+    "NBA": ("basketball", "nba"),
     "NHL": ("hockey", "nhl"),
     "NFL": ("football", "nfl"),
     "MLB": ("baseball", "mlb"),
