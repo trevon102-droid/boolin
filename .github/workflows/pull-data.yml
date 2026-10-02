@@ -2,9 +2,11 @@ name: Pull sports data
 
 on:
   schedule:
-    # Times are UTC. During EDT: 12:30 PM ET (an hour earlier in ET under EST), ahead of the 2:10 PM re-check.
+    # Times are UTC. During EDT: 10:30 AM and 4:30 PM ET (an hour earlier in ET under EST),
+    # ~20 min ahead of the 10:50 AM and 4:50 PM re-check task.
     # No scheduled odds pull: the daily slate task (8:54 AM ET) triggers this workflow by hand (workflow_dispatch) with odds + props.
-    - cron: "30 16 * * *"   # midday: lineups, injuries (no odds, saves credits)
+    - cron: "30 14 * * *"   # late morning: lineups, injuries (no odds, saves credits)
+    - cron: "30 20 * * *"   # late afternoon: lineups, injuries (no odds)
   workflow_dispatch:
     inputs:
       run_odds:

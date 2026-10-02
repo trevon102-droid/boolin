@@ -21,7 +21,8 @@ slate to the board. See [`TASK.md`](TASK.md) for that playbook.
 ## Schedule (UTC cron; ET shown for daylight time)
 
 - **8:54 AM ET (on demand)**: the daily slate task triggers a manual run with odds + props (workflow_dispatch). There is no scheduled odds pull.
-- **12:30 PM ET**: refresh lineups/injuries (no odds)
+- **10:30 AM ET**: refresh lineups/injuries (no odds), ahead of the 10:50 AM re-check
+- **4:30 PM ET**: refresh lineups/injuries (no odds), ahead of the 4:50 PM re-check
 
 Any push that changes `pipeline/` also triggers a run. You can run it by hand from
 **Actions → Pull sports data → Run workflow** (with options for odds, props, or a specific date).
