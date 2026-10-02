@@ -2,8 +2,8 @@ name: Pull sports data
 
 on:
   schedule:
-    # Times are UTC. During EDT: 7:15 AM, 12:30 PM, 5:30 PM ET (an hour earlier in ET under EST).
-    - cron: "15 11 * * *"   # morning: everything + odds
+    # Times are UTC. During EDT: 12:30 PM, 5:30 PM ET (an hour earlier in ET under EST).
+    # No scheduled odds pull: the daily slate task (8:54 AM ET) triggers this workflow by hand (workflow_dispatch) with odds + props.
     - cron: "30 16 * * *"   # midday: lineups, injuries (no odds, saves credits)
     - cron: "30 21 * * *"   # evening: lineups, injuries (no odds)
   workflow_dispatch:
@@ -52,13 +52,10 @@ jobs:
           HEAD_MSG: ${{ github.event.head_commit.message }}
         run: |
           ODDS=0
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" = "15 11 * * *" ]; then ODDS=1; fi
           if [ "${{ github.event_name }}" = "push" ]; then ODDS=1; fi
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then ODDS="${{ inputs.run_odds }}"; fi
           echo "run_odds=$ODDS" >> "$GITHUB_OUTPUT"
           PROPS="${{ inputs.props || '0' }}"
-          # Repo variable PROPS_DAILY=1 (Settings > Secrets and variables > Actions > Variables) adds props to the morning run.
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "$ODDS" = "1" ] && [ "${{ vars.PROPS_DAILY }}" = "1" ]; then PROPS=1; fi
           # A push whose commit message contains [props] also pulls player props (today's games only).
           if [ "${{ github.event_name }}" = "push" ] && printf '%s' "$HEAD_MSG" | grep -q "\[props\]"; then PROPS=1; ODDS=1; echo "run_odds=1" >> "$GITHUB_OUTPUT"; fi
           echo "props=$PROPS" >> "$GITHUB_OUTPUT"

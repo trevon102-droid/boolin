@@ -30,7 +30,8 @@ git -C /home/claude/boolin pull || git clone --depth 1 https://github.com/trevon
 ```
 
 Read `data/latest/manifest.json` first.
-- If `slate_date` isn't today (ET), the morning pull didn't run. Say so in the slate `notes` and
+- There is no scheduled morning pull: the slate run triggers the `pull-data.yml` workflow itself (see the task prompt).
+  If `slate_date` still isn't today (ET), that run failed. Say so in the slate `notes` and
   fall back to web research for everything.
 - If a source shows `error` or `skipped`, cover that part with web search and say so in `notes`.
 
@@ -189,7 +190,7 @@ where the edges are. Only include games that haven't started when the run finish
 If FanDuel doesn't offer a market, it can't be a play: list it as a pass with `"betTo": "Not on FanDuel"` only if it's useful context.
 SGP `Bet only at` prices refer to FanDuel's SGP slip.
 
-Player props in `odds.json` (with `props_pulled_at_et`, since they can be carried over from an earlier run) only exist when the morning run pulled them (repo variable `PROPS_DAILY=1`)
+Player props in `odds.json` (with `props_pulled_at_et`, since they can be carried over from an earlier run) only exist when a run pulled them with `props=1` (the slate task's manual run does)
 or a manual run did. Otherwise find prop prices on the web and name the book.
 
 ### Top 10, longshots and ladders

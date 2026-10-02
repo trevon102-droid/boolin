@@ -20,7 +20,7 @@ slate to the board. See [`TASK.md`](TASK.md) for that playbook.
 
 ## Schedule (UTC cron; ET shown for daylight time)
 
-- **7:15 AM ET**: everything + odds
+- **8:54 AM ET (on demand)**: the daily slate task triggers a manual run with odds + props (workflow_dispatch). There is no scheduled odds pull.
 - **12:30 PM ET**: refresh lineups/injuries (no odds)
 - **5:30 PM ET**: refresh lineups/injuries (no odds)
 
@@ -41,9 +41,8 @@ Any push that changes `pipeline/` also triggers a run. You can run it by hand fr
 The job asks for 10 books at once (counts as 1 region) and 3 markets, so about **3 credits per
 in-season sport per odds run**. One odds run a day across 4–5 sports is ~12–15 credits, or ~360–450 a month,
 which fits the 500-credit free tier with little room. Upgrade before adding more odds runs or props.
-Player props cost markets × games (about 30 credits a day across today's games), so they're off by default.
-Once you're on a paid tier, set the repo **variable** `PROPS_DAILY` to `1`
-(Settings → Secrets and variables → Actions → Variables) to add props to the morning run.
+Player props cost markets × games (about 25 credits a day across today's games). The slate task's manual run
+pulls them while more than 100 credits are left (odds + props was 37 credits on Oct 2, 2026).
 A push whose commit message contains `[props]` also pulls them once.
 
 ## Output
