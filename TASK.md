@@ -3,8 +3,34 @@
 Instructions for the daily Claude run that turns this repo's data into a priced card on the
 **Rackz Sharp Board** artifact: https://claude.ai/artifact/DbSgLx1GwBkC15aMK5YsPW
 
-The board does all sizing math itself (edge, fair odds, quarter Kelly, caps). The job here is to
-supply honest **prices** and **model probabilities**, plus the reasoning.
+**Rev 8: research first.** Kaire picks plays from research and stats, not from a price gate. The job is to
+find the best plays on the card from usage, matchups, form and news, explain each one with a real WHY and the
+stats behind it, rate it with a conviction **tier (A/B/C)**, and show FanDuel's price. The board sizes plays by
+tier (Settings → Sizing mode = Research). The price check (our % vs FanDuel's price) is shown as information,
+**never as a reason to pass**.
+
+## 00. Research-first rules (these override anything below that says "pass", "edge bar" or "floor")
+
+- **Every day:** research → Top 10 games → 3–5 props/plays per Top 10 game (main lines only for CFB) → the best
+  of them on the board (`picks`) → TD/HR/goal longshots → 2–3 parlays from tiered plays.
+- **Every play gets** `why` (2–3 sentences: the role, the matchup, the reason it hits), `inputs` (3–5 stats:
+  usage/snap/target or carry share, red-zone/goal-line share, L5/L10 game logs and hit rate on this line,
+  opponent allowed to the position, history vs this opponent, news), and `conviction`:
+  - **A**: role + matchup + recent usage all point the same way, the line has hit in most recent relevant games
+    (e.g. 7+ of last 10), no injury cloud. The plays Kaire should look at first.
+  - **B**: two of those three line up, or strong stats with one question mark.
+  - **C**: leans, longshots (anytime/2+ TD, HR, goals) and thinner evidence.
+- **Streaks, game logs and history vs the opponent are allowed as evidence** (show them in `inputs`), as long as
+  the WHY rests on role/usage first. Say the sample size ("4 of last 5", "3 games this season").
+- **Price is information.** Still record `odds` (FanDuel), `modelP`, `prior` and `factors` so the board can show the
+  price check and we can track results by tier later. Add a short `betTo` like "fine to -140" or "price is juiced;
+  still the best play" instead of a pass.
+- **`pass: true` only for real reasons:** player out/questionable, lineup or goalie news that breaks the read,
+  FanDuel not offering the market, game started. Never for price or thin edge.
+- **Exposure:** tier sizes come from the board (A 1u, B 0.5u, C 0.25u by default). Keep the day near the 8u cap
+  and ≤3u per game; if over, drop C plays first.
+- Sections 3–3c below still describe how to build `modelP` (useful for the price check). Their edge bars and
+  floors are **price-mode only** and don't gate plays in research mode.
 
 ## 0. Football comes first
 
@@ -69,7 +95,7 @@ Always verify with WebSearch/WebFetch, because the data can be hours old:
 3. **Props:** use hit-rate distributions (`k_dist`, `outs_dist`, last-10 logs) blended with the market.
    Regress small samples hard (one-inning NRFI rates, 5-game streaks).
 4. **Trends are not inputs.** "Team X is 9-0 in spot Y" can go in `inputs` as color, never as the reason.
-5. Aim to be calibrated, not bold. Most plays should land 0–5% edge. If the edge is huge, you're probably wrong.
+5. Aim to be calibrated, not bold. (Research mode: this is for `modelP` only; it never turns a play into a pass.)
 
 ### 3b. Model lines (our odds first)
 
@@ -108,15 +134,14 @@ for props. **NBA is off until the regular season (Oct 20, 2026):** the pipeline 
 (`nba` shows `skipped` in the manifest). Don't add preseason NBA games to the slate.
 
 Price every game the user cares about: **NFL and CFB first on football days**, then MLB, NHL,
-NBA and WNBA daily. Include **passes**:
-a play the user might like with no edge at the current price goes on the board with a `betTo` number,
-so they know what line would make it a bet.
+NBA and WNBA daily. Every play gets a `conviction` tier (A/B/C), a WHY and stats (section 00). Don't fill the
+board with price passes; list a play only if the research likes it, and use `pass: true` only for news.
 
 - Use **FanDuel's price** from `odds.json` (the `fanduel` field on each outcome). `best_price`/`best_book` are context only.
 - Put the Pinnacle two-way prices in `sharp` when there's a Pinnacle line (`{"odds": side, "other": other side}`).
 - Ladders only when you have real alt-line prices for every rung.
-- Keep total sized exposure (board + Top 5 props + SGPs + parlays) near the daily cap (8u) and ≤3u per game. If you're over, drop the lowest-edge plays or parlays first.
-- `why` is one or two plain sentences. `inputs` is 1–3 short data points.
+- Keep total sized exposure (board + Top 10 props + SGPs + parlays) near the daily cap (8u) and ≤3u per game. If you're over, drop C-tier plays first.
+- `why` is two or three plain sentences. `inputs` is 3–5 short stats.
 
 ### Schema (write to collection `slates`, doc id = `YYYY-MM-DD`)
 
@@ -168,7 +193,8 @@ where the edges are. Only include games that haven't started when the run finish
   NFL/CFB: EPA/play off & def (+ ranks), success rate, pass/rush splits, rest, QB, OL/DL injuries, wind.
   WNBA/NBA: records, pace, ratings, top scorers/creators L10, absences. NHL: xG%, goalies + GSAx, rest.
 - `injuries`: short strings, including news that changes the read.
-- `props`: 2–4 props with **real prices** (from `odds.json` props or the web), sized the same way as board picks.
+- `props`: 3–5 props per game with **real FanDuel prices** (from `odds.json` props or the web), each with
+  `conviction`, `why` and `inputs` (section 00). Rank them best first. CFB: none (main lines only).
   Mark props that are also on the board with `"onBoard": true` so exposure isn't double counted.
 - `sgps`: 1–2 same-game parlays. Legs should share one game script with real positive correlation. Give each leg
   its price and model %, and set the SGP's `modelP` to your correlated joint probability (always above
@@ -203,14 +229,14 @@ or a manual run did. Otherwise find prop prices on the web and name the book.
 ### Top 10, longshots and ladders
 
 - `featured` holds the day's **ten** biggest games (football first), same format as above. College player props aren't available to Kaire: CFB is main lines only.
-- `longshots`: `[{"id","type":"Anytime TD"|"First TD"|"Home run"|"Anytime goal","sport","game","start","pick","odds","book","modelP","prior","priorLabel","factors","open","move","steam","why","category"}]`. Leave out `odds` when FanDuel's price isn't found; the board then shows the price to bet at. Stakes are capped by the `longMax` setting.
+- `longshots`: `[{"id","type":"Anytime TD"|"2+ TDs"|"First TD"|"Home run"|"Anytime goal","sport","game","start","pick","odds","book","conviction","modelP","prior","priorLabel","factors","inputs","why","category"}]`. On NFL days list the best anytime and 2+ TD candidates by usage (red-zone/goal-line share, snaps, TD history, team implied total), each tiered. Leave out `odds` when FanDuel's price isn't found; the board then shows the price to bet at. Stakes are capped by the `longMax` setting.
 - `ladders`: `[{"id","sport","game","start","pick","base","why","category","rungs":[{"label":"80+","odds":120,"modelP":0.42}]}]`. Climb from a main Over that has a real read; rungs without a FanDuel price show the price to bet at.
 
 ### Cross-game parlays (`parlays`)
 
 Also write 2–3 cross-game parlays for the Parlays tab. Rules:
-- **Every leg must clear the edge bar on its own** (a sized play on the board or a Top 5 prop). Never add a leg
-  just to pump the payout.
+- **Build from tiered research plays** (A or B, or C longshots in a clearly labeled lottery build). Never add a
+  leg just to pump the payout. Give the parlay a `why` that says why these legs.
 - **One leg per game.** Same-game combos are SGPs and belong in `featured`.
 - 2–3 legs for the staked parlays. Longer builds (4+ legs) go in as `"pass": true` references.
 - Spread risk: staked parlays shouldn't share legs, so one loss doesn't sink them all.
@@ -244,5 +270,5 @@ After writing the slate, also save it as a workbook and send it:
 
 ## 5. Report
 
-Finish with a short message: number of plays, top 3 by edge, the Top 10 games picked, total units
+Finish with a short message: number of plays by tier, the A-tier plays with FanDuel price and why in one line, the Top 10 games picked, total units
 (including SGP stakes), anything that needs a check before start (goalies, lineups), and any data source that failed.

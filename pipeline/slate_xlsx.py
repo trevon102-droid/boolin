@@ -37,6 +37,9 @@ SETTINGS = [
     ("Max units per play", 5, "0.00", ""),
     ("Max units per longshot", 3, "0.00", ""),
     ("Ladder Kelly haircut", 0.5, "0.00", "Rungs ride one outcome."),
+    ("Tier A size (u)", 1, "0.00", "Research mode: a play's tier sets its stake. Price is info, not a gate."),
+    ("Tier B size (u)", 0.5, "0.00", ""),
+    ("Tier C size (u)", 0.25, "0.00", "Leans and longshots."),
 ]
 # Settings!B2..B11 in the order above
 S = {name: f"Settings!$B${i + 2}" for i, (name, *_rest) in enumerate(SETTINGS)}
@@ -75,8 +78,9 @@ def build(slate, out):
     st.cell(row=r, column=1, value="How to use").font = BOLD
     for j, line in enumerate([
         "Yellow cells with blue text are inputs. Edit them and every sheet re-sizes.",
+        "Research mode: a play with a Tier (A/B/C, last column) is staked at that tier's size. 'Price check' is info only.",
         "On Plays, type the price you see in the FanDuel app into column 'FanDuel odds' to re-check a play before betting.",
-        "Prices are as of the 'Price as of' column. Don't bet a price that's more than an hour old without re-checking it.",
+        "Prices are as of the 'Price as of' column. Glance at the app before betting; a move of a few cents doesn't change a research play.",
         f"Slate: {slate.get('date', '')} - {slate.get('updated', '')}",
     ], start=1):
         st.cell(row=r + j, column=1, value=line).font = BLACK
@@ -88,8 +92,8 @@ def build(slate, out):
     ws = wb.create_sheet("Plays")
     cols = ["Type", "Sport", "Game", "Start", "Play", "Category", "FanDuel odds", "Price as of",
             "Market prior", "Model (raw)", "Model (blended)", "Implied by price", "Our line",
-            "Edge", "Min edge", "Units", "Stake ($)", "Manual pass", "Bet to", "Why"]
-    widths = [11, 7, 22, 10, 38, 18, 11, 17, 10, 10, 11, 10, 9, 9, 9, 8, 9, 8, 26, 70]
+            "Price check", "Min edge (price mode)", "Units", "Stake ($)", "Manual pass", "Bet to", "Why + stats", "Tier"]
+    widths = [11, 7, 22, 10, 38, 18, 11, 17, 10, 10, 11, 10, 9, 9, 9, 8, 9, 8, 26, 80, 6]
     header(ws, cols, widths)
 
     rows = []
@@ -97,6 +101,12 @@ def build(slate, out):
         if p.get("ladder"):
             continue
         rows.append(("Straight", p))
+    for f in slate.get("featured", []):
+        for pr in f.get("props", []):
+            if pr.get("onBoard"):
+                continue
+            rows.append(("Top 10 prop", {**pr, "sport": f.get("sport", ""), "game": f.get("game", ""),
+                                         "start": f.get("start", "")}))
     for x in slate.get("longshots", []):
         rows.append(("Longshot", x))
     for ld in slate.get("ladders", []):
@@ -127,20 +137,28 @@ def build(slate, out):
         ws[f"N{r}"] = f'=IF(OR({G}="",K{r}=""),"",K{r}*{dec}-1)'
         ws[f"O{r}"] = f"={floor_ref}"
         kelly = f"(({dec}-1)*K{r}-(1-K{r}))/({dec}-1)"
-        ws[f"P{r}"] = (f'=IF(OR({G}="",K{r}="",R{r}="Y"),0,IF(N{r}<O{r},0,'
-                       f'MIN({cap_ref},ROUND(MAX(0,{kelly})*{S["Kelly fraction"]}{hair}/{S["1 unit = % of bankroll"]}*4,0)/4)))')
+        tier = (x.get("conviction") or "").strip().upper()
+        tier = tier if tier in ("A", "B", "C") else None
+        ws.cell(row=r, column=21, value=tier).font = BLUE
+        tier_units = (f'MIN({cap_ref},IF(U{r}="A",{S["Tier A size (u)"]},IF(U{r}="B",{S["Tier B size (u)"]},'
+                      f'{S["Tier C size (u)"]})){hair if kind == "Ladder rung" else ""})')
+        ws[f"P{r}"] = (f'=IF(R{r}="Y",0,IF(U{r}<>"",{tier_units},IF(OR({G}="",K{r}=""),0,IF(N{r}<O{r},0,'
+                       f'MIN({cap_ref},ROUND(MAX(0,{kelly})*{S["Kelly fraction"]}{hair}/{S["1 unit = % of bankroll"]}*4,0)/4)))))')
         ws[f"Q{r}"] = f"=P{r}*{S['Bankroll ($)']}*{S['1 unit = % of bankroll']}"
         ws.cell(row=r, column=18, value="Y" if x.get("pass") else None).font = BLUE
         ws.cell(row=r, column=19, value=x.get("betTo", ""))
-        ws.cell(row=r, column=20, value=x.get("why", ""))
+        why = x.get("why", "")
+        if x.get("inputs"):
+            why += "\n" + "\n".join(f"- {i}" for i in x["inputs"])
+        ws.cell(row=r, column=20, value=why)
         if x.get("factors"):
             txt = "\n".join(f"{f['adj']:+.1f}  {f['f']}" for f in x["factors"])
             ws[f"J{r}"].comment = Comment(f"Start: {x.get('priorLabel', 'market')}\n{txt}", "Sharp Board")
-        for c in range(1, 21):
+        for c in range(1, 22):
             cell = ws.cell(row=r, column=c)
             if c >= 19:
                 cell.alignment = WRAP
-            if c not in (7, 9, 10, 18):
+            if c not in (7, 9, 10, 18, 21):
                 cell.font = BLACK
         for col, fmt in (("I", "0.0%"), ("J", "0.0%"), ("K", "0.0%"), ("L", "0.0%"), ("M", "+0;-0"),
                          ("N", "0.0%;-0.0%;-"), ("O", "0.0%"), ("P", "0.00;-0.00;-"), ("Q", "$#,##0;($#,##0);-"),
@@ -149,11 +167,11 @@ def build(slate, out):
         r += 1
     last = r - 1
     if last >= 2:
-        tab = Table(displayName="Plays", ref=f"A1:T{last}")
+        tab = Table(displayName="Plays", ref=f"A1:U{last}")
         tab.tableStyleInfo = TableStyleInfo(name="TableStyleLight1", showRowStripes=True)
         ws.add_table(tab)
         green = PatternFill("solid", fgColor="DCF0E6")
-        ws.conditional_formatting.add(f"A2:T{last}", FormulaRule(formula=[f"$P2>0"], fill=green))
+        ws.conditional_formatting.add(f"A2:U{last}", FormulaRule(formula=[f"$P2>0"], fill=green))
         ws.conditional_formatting.add(f"N2:N{last}", FormulaRule(formula=["AND(ISNUMBER($N2),$N2<0)"], font=Font(name=FONT, color="AE3228")))
     tr = last + 2
     ws.cell(row=tr, column=15, value="Total units").font = BOLD
