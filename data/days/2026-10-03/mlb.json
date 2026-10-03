@@ -5,14 +5,18 @@
   {
    "game_pk": 849829,
    "start_et": "1:00 PM ET",
-   "status": "Scheduled",
+   "status": "In Progress",
    "game_type": "D",
    "series": "AL Division Series",
    "series_game": 1,
    "series_status": "AL Division Series",
    "venue": "Progressive Field",
-   "weather": null,
-   "hp_umpire": null,
+   "weather": {
+    "condition": "Partly Cloudy",
+    "temp": "63",
+    "wind": "9 mph, R To L"
+   },
+   "hp_umpire": "Cory Blaser",
    "away": {
     "id": 145,
     "name": "Chicago White Sox",
@@ -60,11 +64,21 @@
        "h": 2,
        "er": 0,
        "pitches": 38
+      },
+      {
+       "date": "2026-10-03",
+       "opp": "Cleveland Guardians",
+       "outs": 8,
+       "k": 4,
+       "bb": 3,
+       "h": 0,
+       "er": 0,
+       "pitches": 51
       }
      ],
      "k_dist": {
-      "3": 0.5,
-      "4": 0.0,
+      "3": 0.667,
+      "4": 0.333,
       "5": 0.0,
       "6": 0.0,
       "7": 0.0,
@@ -81,9 +95,19 @@
       "19": 0.0,
       "20": 0.0
      },
-     "starts_counted": 2
+     "starts_counted": 3
     },
-    "lineup": null,
+    "lineup": [
+     "Chase Meidroth",
+     "Randal Grichuk",
+     "Miguel Vargas",
+     "Munetaka Murakami",
+     "Tommy Pham",
+     "Brenton Doyle",
+     "Kyle Teel",
+     "Braden Montgomery",
+     "Colson Montgomery"
+    ],
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2437,
@@ -165,16 +189,6 @@
      },
      "last5": [
       {
-       "date": "2026-09-05",
-       "opp": "Detroit Tigers",
-       "outs": 18,
-       "k": 12,
-       "bb": 2,
-       "h": 7,
-       "er": 3,
-       "pitches": 103
-      },
-      {
        "date": "2026-09-11",
        "opp": "Minnesota Twins",
        "outs": 16,
@@ -213,30 +227,50 @@
        "h": 6,
        "er": 1,
        "pitches": 64
+      },
+      {
+       "date": "2026-10-03",
+       "opp": "Chicago White Sox",
+       "outs": 9,
+       "k": 6,
+       "bb": 1,
+       "h": 1,
+       "er": 0,
+       "pitches": 54
       }
      ],
      "k_dist": {
-      "3": 0.938,
-      "4": 0.906,
-      "5": 0.75,
-      "6": 0.562,
-      "7": 0.312,
-      "8": 0.25,
-      "9": 0.188,
-      "10": 0.094
+      "3": 0.939,
+      "4": 0.909,
+      "5": 0.758,
+      "6": 0.576,
+      "7": 0.303,
+      "8": 0.242,
+      "9": 0.182,
+      "10": 0.091
      },
      "outs_dist": {
-      "12": 0.969,
-      "15": 0.938,
-      "16": 0.719,
-      "17": 0.688,
-      "18": 0.469,
-      "19": 0.25,
-      "20": 0.25
+      "12": 0.939,
+      "15": 0.909,
+      "16": 0.697,
+      "17": 0.667,
+      "18": 0.455,
+      "19": 0.242,
+      "20": 0.242
      },
-     "starts_counted": 32
+     "starts_counted": 33
     },
-    "lineup": null,
+    "lineup": [
+     "Steven Kwan",
+     "José Ramírez",
+     "Chase DeLauter",
+     "Jo Adell",
+     "Angel Martínez",
+     "David Fry",
+     "Travis Bazzana",
+     "Austin Hedges",
+     "Brayan Rocchio"
+    ],
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2125,
@@ -264,14 +298,18 @@
   {
    "game_pk": 849828,
    "start_et": "4:00 PM ET",
-   "status": "Scheduled",
+   "status": "Pre-Game",
    "game_type": "D",
    "series": "NL Division Series",
    "series_game": 1,
    "series_status": "NL Division Series",
    "venue": "UNIQLO Field at Dodger Stadium",
-   "weather": null,
-   "hp_umpire": null,
+   "weather": {
+    "condition": "Sunny",
+    "temp": "94",
+    "wind": "2 mph, Varies"
+   },
+   "hp_umpire": "Roberto Ortiz",
    "away": {
     "id": 144,
     "name": "Atlanta Braves",
@@ -281,6 +319,25 @@
      "losses": 0,
      "ties": 0,
      "pct": ".000"
+    },
+    "probable": {
+     "id": 689266,
+     "name": "Dylan Dodd",
+     "throws": "L",
+     "season": {
+      "gs": 0,
+      "ip": "49.2",
+      "era": "2.54",
+      "whip": "0.91",
+      "k": 53,
+      "bb": 14,
+      "bf": 194,
+      "k_pct": 0.2732,
+      "bb_pct": 0.0722,
+      "k9": "9.60",
+      "hr9": "1.27"
+     },
+     "last5": []
     },
     "lineup": null,
     "bats": {
@@ -457,7 +514,17 @@
      },
      "starts_counted": 26
     },
-    "lineup": null,
+    "lineup": [
+     "Mookie Betts",
+     "Shohei Ohtani",
+     "Will Smith",
+     "Freddie Freeman",
+     "Teoscar Hernández",
+     "Kyle Tucker",
+     "Andy Pages",
+     "Max Muncy",
+     "Tommy Edman"
+    ],
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2003,
@@ -479,7 +546,7 @@
      "likely_limited": [],
      "detail": {}
     },
-    "k_pct_vs_opp_starter_hand": null
+    "k_pct_vs_opp_starter_hand": 0.2003
    }
   },
   {
