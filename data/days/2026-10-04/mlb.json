@@ -5,16 +5,16 @@
   {
    "game_pk": 849825,
    "start_et": "4:00 PM ET",
-   "status": "Pre-Game",
+   "status": "Game Over",
    "game_type": "D",
    "series": "NL Division Series",
    "series_game": 2,
    "series_status": "NL Division Series",
    "venue": "American Family Field",
    "weather": {
-    "condition": "Roof Closed",
-    "temp": "69",
-    "wind": "0 mph, None"
+    "condition": "Sunny",
+    "temp": "68",
+    "wind": "11 mph, Out To CF"
    },
    "hp_umpire": "Lance Barrett",
    "away": {
@@ -23,7 +23,7 @@
     "abbr": "SD",
     "record": {
      "wins": 0,
-     "losses": 1,
+     "losses": 2,
      "ties": 0,
      "pct": ".000"
     },
@@ -45,16 +45,6 @@
       "hr9": "0.97"
      },
      "last5": [
-      {
-       "date": "2026-09-06",
-       "opp": "New York Yankees",
-       "outs": 18,
-       "k": 3,
-       "bb": 3,
-       "h": 4,
-       "er": 0,
-       "pitches": 96
-      },
       {
        "date": "2026-09-12",
        "opp": "San Francisco Giants",
@@ -94,28 +84,38 @@
        "h": 1,
        "er": 0,
        "pitches": 97
+      },
+      {
+       "date": "2026-10-04",
+       "opp": "Milwaukee Brewers",
+       "outs": 15,
+       "k": 6,
+       "bb": 0,
+       "h": 3,
+       "er": 1,
+       "pitches": 72
       }
      ],
      "k_dist": {
-      "3": 0.939,
-      "4": 0.879,
-      "5": 0.636,
-      "6": 0.364,
-      "7": 0.152,
-      "8": 0.091,
-      "9": 0.03,
+      "3": 0.941,
+      "4": 0.882,
+      "5": 0.647,
+      "6": 0.382,
+      "7": 0.147,
+      "8": 0.088,
+      "9": 0.029,
       "10": 0.0
      },
      "outs_dist": {
-      "12": 0.97,
-      "15": 0.879,
-      "16": 0.758,
-      "17": 0.758,
-      "18": 0.697,
-      "19": 0.212,
-      "20": 0.212
+      "12": 0.971,
+      "15": 0.882,
+      "16": 0.735,
+      "17": 0.735,
+      "18": 0.676,
+      "19": 0.206,
+      "20": 0.206
      },
-     "starts_counted": 33
+     "starts_counted": 34
     },
     "lineup": [
      "Fernando Tatis Jr.",
@@ -123,7 +123,7 @@
      "Manny Machado",
      "Ty France",
      "Jackson Merrill",
-     "Ethan Salas",
+     "Gavin Sheets",
      "Xander Bogaerts",
      "Luis Campusano",
      "Jake Cronenworth"
@@ -185,7 +185,7 @@
     "name": "Milwaukee Brewers",
     "abbr": "MIL",
     "record": {
-     "wins": 1,
+     "wins": 2,
      "losses": 0,
      "ties": 0,
      "pct": "1.000"
@@ -208,16 +208,6 @@
       "hr9": "1.28"
      },
      "last5": [
-      {
-       "date": "2026-08-28",
-       "opp": "Texas Rangers",
-       "outs": 21,
-       "k": 7,
-       "bb": 0,
-       "h": 1,
-       "er": 1,
-       "pitches": 91
-      },
       {
        "date": "2026-09-03",
        "opp": "Chicago Cubs",
@@ -257,28 +247,38 @@
        "h": 4,
        "er": 1,
        "pitches": 87
+      },
+      {
+       "date": "2026-10-04",
+       "opp": "San Diego Padres",
+       "outs": 15,
+       "k": 4,
+       "bb": 3,
+       "h": 2,
+       "er": 1,
+       "pitches": 72
       }
      ],
      "k_dist": {
       "3": 1.0,
-      "4": 0.889,
-      "5": 0.722,
-      "6": 0.667,
-      "7": 0.556,
-      "8": 0.222,
-      "9": 0.056,
+      "4": 0.895,
+      "5": 0.684,
+      "6": 0.632,
+      "7": 0.526,
+      "8": 0.211,
+      "9": 0.053,
       "10": 0.0
      },
      "outs_dist": {
-      "12": 0.944,
-      "15": 0.944,
-      "16": 0.5,
-      "17": 0.444,
-      "18": 0.389,
-      "19": 0.222,
-      "20": 0.167
+      "12": 0.947,
+      "15": 0.947,
+      "16": 0.474,
+      "17": 0.421,
+      "18": 0.368,
+      "19": 0.211,
+      "20": 0.158
      },
-     "starts_counted": 18
+     "starts_counted": 19
     },
     "lineup": [
      "Jackson Chourio",
@@ -354,14 +354,18 @@
   {
    "game_pk": 849823,
    "start_et": "8:00 PM ET",
-   "status": "Scheduled",
+   "status": "Pre-Game",
    "game_type": "D",
    "series": "NL Division Series",
    "series_game": 2,
    "series_status": "NL Division Series",
    "venue": "UNIQLO Field at Dodger Stadium",
-   "weather": null,
-   "hp_umpire": null,
+   "weather": {
+    "condition": "Partly Cloudy",
+    "temp": "88",
+    "wind": "4 mph, Varies"
+   },
+   "hp_umpire": "Chris Guccione",
    "away": {
     "id": 144,
     "name": "Atlanta Braves",
@@ -432,7 +436,17 @@
      },
      "starts_counted": 2
     },
-    "lineup": null,
+    "lineup": [
+     "Drake Baldwin",
+     "Ronald Acuña Jr.",
+     "Matt Olson",
+     "Ozzie Albies",
+     "Michael Harris II",
+     "Mauricio Dubón",
+     "Sean Murphy",
+     "Austin Riley",
+     "Lane Thomas"
+    ],
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2143,
@@ -615,7 +629,17 @@
      },
      "starts_counted": 9
     },
-    "lineup": null,
+    "lineup": [
+     "Mookie Betts",
+     "Shohei Ohtani",
+     "Will Smith",
+     "Freddie Freeman",
+     "Teoscar Hernández",
+     "Kyle Tucker",
+     "Andy Pages",
+     "Miguel Rojas",
+     "Tommy Edman"
+    ],
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2003,
