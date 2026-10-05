@@ -10,6 +10,7 @@
   --good:#11734F; --good-soft:#DCF0E6;
   --warn:#935700; --warn-soft:#F8EBD4;
   --bad:#AE3228; --bad-soft:#F8E0DC;
+  --sunk:#F5F7FA; --derived:#5A49B0; --derived-soft:#E9E6F7;
   --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
   --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
@@ -22,6 +23,7 @@
     --good:#4DC896; --good-soft:#12302A;
     --warn:#F0B55C; --warn-soft:#36290F;
     --bad:#F18B7F; --bad-soft:#3A1C19;
+    --sunk:#18211E; --derived:#A99CF0; --derived-soft:#231F3D;
   }
 }
 :root[data-theme="dark"]{
@@ -31,6 +33,7 @@
   --good:#4DC896; --good-soft:#12302A;
   --warn:#F0B55C; --warn-soft:#36290F;
   --bad:#F18B7F; --bad-soft:#3A1C19;
+  --sunk:#18211E; --derived:#A99CF0; --derived-soft:#231F3D;
 }
 *{box-sizing:border-box}
 html,body{background:var(--bg)}
@@ -231,6 +234,84 @@ table.mu td.adv{font-weight:600;color:var(--good)}
 @media (max-width:900px){.slip{position:static}}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:4px;font-size:.88rem;z-index:30}
 @media (prefers-reduced-motion:no-preference){.sheet{animation:up .16s ease-out}@keyframes up{from{transform:translateY(12px);opacity:.6}to{transform:none;opacity:1}}}
+
+/* ---------- research tab (shared with research/render.py, scoped to .rx) ---------- */
+.rx h2{font-size:1.6rem}
+.rx h3{font-size:1.05rem;text-transform:uppercase;letter-spacing:.06em}
+.rx p{margin:0}
+.rx .num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:.86em}
+.rx .muted{color:var(--muted)} .rx .small{font-size:.84rem}
+.rx .label{font:600 .68rem/1.2 var(--f-body);text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.rx .list{display:flex;flex-direction:column;gap:14px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 110px);max-height:calc(100vh - 130px);overflow:auto;padding-right:4px}
+@media (max-width:900px){.rx .list{position:static;max-height:none}}
+.rx .layout{display:grid;grid-template-columns:330px minmax(0,1fr);gap:22px;align-items:start}
+@media (max-width:900px){.rx .layout{grid-template-columns:minmax(0,1fr)}}
+.rx .group{display:flex;flex-direction:column;gap:6px}
+.rx .game{all:unset;box-sizing:border-box;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:4px 10px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:9px 11px;cursor:pointer}
+.rx .game:hover{border-color:var(--accent)}
+.rx .game:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.rx .game[aria-current="true"]{border-color:var(--accent);box-shadow:inset 3px 0 0 var(--accent)}
+.rx .game .mt{font-weight:600}
+.rx .game .why{grid-column:2/-1;font-size:.78rem;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rx .lg{font:700 .7rem/1 var(--f-display);letter-spacing:.06em;background:var(--ink);color:var(--bg);border-radius:3px;padding:4px 5px;margin-top:2px}
+.rx .pips{display:flex;gap:2px;margin-top:5px}
+.rx .pips i{width:6px;height:6px;border-radius:1px;background:var(--line)}
+.rx .pips i.on{background:var(--warn)} .rx .pips i.hot{background:var(--bad)}
+.rx .chip{display:inline-block;font:600 .68rem/1 var(--f-body);text-transform:uppercase;letter-spacing:.07em;padding:4px 7px;border-radius:3px;white-space:nowrap;border:1px solid transparent}
+.rx .k-confirmed{background:var(--good-soft);color:var(--good)} .rx .k-projected{background:var(--warn-soft);color:var(--warn)}
+.rx .k-reported{background:var(--accent-soft);color:var(--accent)} .rx .k-derived{background:var(--derived-soft);color:var(--derived)}
+.rx .k-unknown{background:transparent;color:var(--muted);border-color:var(--line)}
+.rx .s-lean{background:var(--accent);color:var(--surface)} .rx .s-watch{background:var(--warn-soft);color:var(--warn)}
+.rx .s-pass{background:var(--sunk);color:var(--muted);border-color:var(--line)} .rx .s-insufficient{background:var(--bad-soft);color:var(--bad)}
+.rx .sev-alert{background:var(--bad-soft);color:var(--bad)} .rx .sev-watch{background:var(--warn-soft);color:var(--warn)} .rx .sev-info{background:var(--sunk);color:var(--muted);border-color:var(--line)}
+.rx .h-ok{background:var(--good-soft);color:var(--good)} .rx .h-partial{background:var(--warn-soft);color:var(--warn)} .rx .h-error{background:var(--bad-soft);color:var(--bad)} .rx .h-skipped,.rx .h-unknown{background:var(--sunk);color:var(--muted);border-color:var(--line)}
+.rx .dossier{display:flex;flex-direction:column;gap:16px;min-width:0}
+.rx .head{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.rx .head .meta{display:flex;flex-wrap:wrap;gap:6px 14px;color:var(--muted);font-size:.86rem}
+.rx .concl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;align-items:start;border-top:1px dashed var(--line);padding-top:10px}
+.rx .sec{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.rx .sec > header{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.rx .q{font:600 .7rem/1.2 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.rx .scroll{overflow-x:auto}
+.rx table{border-collapse:collapse;width:100%;font-size:.86rem}
+.rx th,.rx td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+.rx th{font:600 .66rem/1.2 var(--f-body);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);background:var(--sunk);white-space:nowrap}
+.rx td.n,.rx th.n{text-align:right;white-space:nowrap}
+.rx tr:last-child td{border-bottom:0}
+.rx .sub{display:block;font-size:.76rem;color:var(--muted)}
+.rx .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.rx ul.ev{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px;font-size:.9rem}
+.rx .ev-sup li::marker{color:var(--good)} .rx .ev-con li::marker{color:var(--bad)} .rx .ev-unk li::marker{color:var(--warn)}
+.rx .tl{display:flex;flex-direction:column}
+.rx .tl .row{display:grid;grid-template-columns:7.5em 7em minmax(0,1fr);gap:4px 10px;padding:7px 0;border-bottom:1px solid var(--line);font-size:.86rem}
+.rx .tl .row:last-child{border-bottom:0}
+@media (max-width:560px){.rx .tl .row{grid-template-columns:minmax(0,1fr)}}
+.rx .chg{font-family:var(--f-mono);font-size:.8rem}
+.rx .cause{display:block;font-size:.78rem;color:var(--muted)}
+.rx details.group > summary{cursor:pointer;list-style:none}
+.rx details.group > summary::-webkit-details-marker{display:none}
+.rx details.group > summary h3::after{content:" ▸";color:var(--muted)}
+.rx details.group[open] > summary h3::after{content:" ▾"}
+.rx .contrib{display:flex;flex-direction:column;gap:5px}
+.rx .cb{display:grid;grid-template-columns:minmax(0,14em) minmax(0,1fr) 4.5em;gap:8px;align-items:center;font-size:.82rem}
+.rx .cb .track{height:10px;background:var(--sunk);border:1px solid var(--line);position:relative;border-radius:2px}
+.rx .cb .track span{position:absolute;top:0;bottom:0;background:var(--derived)}
+.rx .cb .track .zero{position:absolute;top:-2px;bottom:-2px;width:1px;background:var(--ink);left:50%}
+@media (max-width:560px){.rx .cb{grid-template-columns:minmax(0,1fr) 4.5em}.rx .cb .track{grid-column:1/-1;grid-row:2}}
+.rx .spark svg{width:100%;height:70px;display:block}
+.rx .flags{display:flex;flex-direction:column;gap:6px}
+.rx .flag{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 10px;font-size:.86rem}
+.rx .flag .why{grid-column:2;color:var(--muted);font-size:.8rem}
+.rx .empty{color:var(--muted);font-size:.86rem}
+.rx .note{font-size:.8rem;color:var(--muted);max-width:75ch}
+.rx .legend{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.rx code{font-family:var(--f-mono);font-size:.78rem;background:var(--sunk);padding:1px 4px;border-radius:3px;overflow-wrap:anywhere}
+.rx .hist{border-left:3px solid var(--derived);padding-left:10px}
+@media (prefers-reduced-motion:no-preference){.rx .dossier{animation:fade .18s ease-out}@keyframes fade{from{opacity:.4}to{opacity:1}}}
+
+.rx .empty{background:none;border:0;padding:0;max-width:none;display:block}
+.rx .rxhead{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:flex-end;justify-content:space-between}
+.rx .health{display:flex;flex-wrap:wrap;gap:6px}
 </style>
 
 <header class="bar">
@@ -243,6 +324,7 @@ table.mu td.adv{font-weight:600;color:var(--good)}
     <nav class="tabs" role="tablist" aria-label="Desk">
       <button role="tab" data-tab="board" aria-selected="true">Board</button>
       <button role="tab" data-tab="top" aria-selected="false">Top 10</button>
+      <button role="tab" data-tab="research" aria-selected="false">Research</button>
       <button role="tab" data-tab="hits" aria-selected="false">Hit rates</button>
       <button role="tab" data-tab="parlays" aria-selected="false">Parlays</button>
       <button role="tab" data-tab="long" aria-selected="false">Longshots</button>
@@ -258,6 +340,7 @@ table.mu td.adv{font-weight:600;color:var(--good)}
 <main class="wrap">
   <section class="view" id="v-board"></section>
   <section class="view" id="v-top" hidden></section>
+  <section class="view rx" id="v-research" hidden></section>
   <section class="view" id="v-hits" hidden></section>
   <section class="view" id="v-parlays" hidden></section>
   <section class="view" id="v-long" hidden></section>
@@ -274,6 +357,164 @@ table.mu td.adv{font-weight:600;color:var(--good)}
 (function(){
 "use strict";
 
+/* ---------- research module (generated from research/render.py RX_JS) ---------- */
+const RX=(function(){
+"use strict";
+const esc=s=>String(s===undefined||s===null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const am=o=>o===null||o===undefined?'—':(o>0?'+'+o:String(o));
+const pct=(x,d=1)=>x===null||x===undefined?'—':(x*100).toFixed(d)+'%';
+const sgn=(x,d=1)=>x===null||x===undefined?'—':(x>0?'+':'')+Number(x).toFixed(d);
+const line=x=>x===null||x===undefined?'—':(x>0?'+':'')+x;
+function tET(iso){ if(!iso) return '—'; const d=new Date(iso); if(isNaN(d)) return esc(iso); return d.toLocaleString('en-US',{timeZone:'America/New_York',weekday:'short',hour:'numeric',minute:'2-digit'})+' ET'; }
+function ageMin(iso){ const d=new Date(iso); return isNaN(d)?null:Math.max(0,(Date.now()-d.getTime())/60000); }
+function ageLbl(m){ if(m===null) return 'unknown age'; if(m<1) return 'just now'; if(m<60) return Math.round(m)+' min old'; if(m<2880) return (m/60).toFixed(m<600?1:0)+' h old'; return Math.round(m/1440)+' d old'; }
+const kindChip=k=>`<span class="chip k-${esc(k||'unknown')}">${esc((k||'unknown'))}</span>`;
+const statusCls=s=>s==='lean'?'s-lean':s==='watch'?'s-watch':s==='pass'?'s-pass':'s-insufficient';
+const fact=f=>!f?'<span class="muted">—</span>':(f.value===null||f.value===undefined?`<span class="muted">unknown</span> ${kindChip('unknown')}<span class="sub">${esc(f.reason||'')}</span>`:`${esc(typeof f.value==='object'?JSON.stringify(f.value):f.value)} ${kindChip(f.kind)}${f.source?`<span class="sub">${esc(f.source)}${f.note?' · '+esc(f.note):''}</span>`:''}`);
+
+/* ---------- board ---------- */
+function pips(score){ const n=Math.min(8,Math.round(score)); return `<span class="pips" aria-label="importance ${score}">${Array.from({length:8},(_,i)=>`<i class="${i<n?(n>=6?'hot':'on'):''}"></i>`).join('')}</span>`; }
+function item(e){ return `<button class="game" data-key="${esc(e.key)}" aria-current="false"><span class="lg">${esc(e.league)}</span>
+  <span><span class="mt">${esc(e.matchup)}</span><span class="sub">${esc(e.start||'')}</span>${pips(e.importance)}</span>
+  <span class="chip ${statusCls(e.research_status)}">${esc(e.research_status==='insufficient information'?'need info':e.research_status||'—')}</span>
+  ${e.reasons&&e.reasons.length?`<span class="why">${esc(e.reasons[0])}</span>`:(e.why_stable?`<span class="why">${esc(e.why_stable)}</span>`:'')}</button>`; }
+function group(title,note,rows){ return `<section class="group"><div><h3>${esc(title)} <span class="muted num">${rows.length}</span></h3>${note?`<p class="note">${esc(note)}</p>`:''}</div>${rows.length?rows.map(item).join(''):'<p class="empty">None.</p>'}</section>`; }
+/* ---------- dossier ---------- */
+function spark(series){
+  const pts=(series||[]).filter(p=>p.spread_home!==null&&p.spread_home!==undefined);
+  if(pts.length<2) return '<p class="empty">Not enough observations for a line chart yet.</p>';
+  const W=600,H=70,L=34,R=8,T=8,Bm=16; const ys=pts.map(p=>p.spread_home); let lo=Math.min(...ys),hi=Math.max(...ys); if(hi-lo<1){hi+=0.5;lo-=0.5;}
+  const x=i=>L+(W-L-R)*i/(pts.length-1), y=v=>T+(H-T-Bm)*(v-lo)/(hi-lo);
+  const d=pts.map((p,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(p.spread_home).toFixed(1)).join(' ');
+  return `<div class="spark"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Home spread from ${line(ys[0])} to ${line(ys[ys.length-1])}">
+    <text x="${L-6}" y="${(y(hi)+4).toFixed(1)}" text-anchor="end" font-size="10" fill="var(--muted)" font-family="var(--f-mono)">${line(hi)}</text>
+    <text x="${L-6}" y="${(y(lo)+4).toFixed(1)}" text-anchor="end" font-size="10" fill="var(--muted)" font-family="var(--f-mono)">${line(lo)}</text>
+    <path d="${d}" fill="none" stroke="var(--accent)" stroke-width="2"/>
+    ${pts.map((p,i)=>`<circle cx="${x(i).toFixed(1)}" cy="${y(p.spread_home).toFixed(1)}" r="${i===pts.length-1?4:2.5}" fill="${i===pts.length-1?'var(--accent)':'var(--surface)'}" stroke="var(--accent)" stroke-width="1.5"/>`).join('')}
+    <text x="${L}" y="${H-3}" font-size="10" fill="var(--muted)" font-family="var(--f-mono)">first seen</text><text x="${W-R}" y="${H-3}" text-anchor="end" font-size="10" fill="var(--muted)" font-family="var(--f-mono)">latest</text>
+  </svg></div>`;
+}
+function px(side){ if(!side) return '—'; return `<span class="num">${am(side.fanduel)}</span><span class="sub">DK ${am(side.draftkings)} · best ${am(side.best)}${side.best_book?' '+esc(side.best_book):''}</span>`; }
+function mrow(label,pt,kind,c){
+  if(!pt) return `<tr><td>${label}</td><td colspan="4" class="muted">—</td></tr>`;
+  const ts=`<span class="sub">${tET(pt.t)}${pt.last_seen&&pt.last_seen!==pt.t?' → '+tET(pt.last_seen):''}</span>`;
+  if(kind==='spread') return `<tr><td>${label}${ts}</td><td class="n num">${esc(c.game.home.abbr)} ${line(pt.home_line)}</td><td class="n">${px(pt.away)}</td><td class="n">${px(pt.home)}</td><td class="n num">${pct(pt.fair_home)}</td></tr>`;
+  if(kind==='total') return `<tr><td>${label}${ts}</td><td class="n num">${pt.line}</td><td class="n">${px(pt.over)}</td><td class="n">${px(pt.under)}</td><td class="n num">${pct(pt.fair_over)}</td></tr>`;
+  return `<tr><td>${label}${ts}</td><td class="n num">—</td><td class="n">${px(pt.away)}</td><td class="n">${px(pt.home)}</td><td class="n num">${pct(pt.fair_home)}</td></tr>`;
+}
+function marketSec(c){
+  const m=c.market||{}; const blocks=['spread','moneyline','total'].map(k=>{ const x=m[k]||{};
+    if(!x.available) return `<div><span class="label">${k}</span><p class="empty">${esc(x.reason||'no data')}</p></div>`;
+    const cols=k==='total'?['Line','Over (FanDuel)','Under (FanDuel)','No-vig over']:k==='spread'?['Line','Away (FanDuel)','Home (FanDuel)','No-vig home cover']:['','Away (FanDuel)','Home (FanDuel)','No-vig home win'];
+    const mv=x.movement||{}; const mvs=[];
+    if(mv.home_line) mvs.push(`line ${sgn(mv.home_line,1)} toward ${esc(mv.toward==='home'?c.game.home.abbr:c.game.away.abbr)}`);
+    if(mv.line) mvs.push(`total ${sgn(mv.line,1)} (${esc(mv.toward)})`);
+    if(mv.fair_home) mvs.push(`no-vig home ${sgn(mv.fair_home*100,1)} pp`);
+    if(mv.fair_over) mvs.push(`no-vig over ${sgn(mv.fair_over*100,1)} pp`);
+    Object.entries(mv).filter(([kk])=>kk.startsWith('fanduel_')).forEach(([kk,v])=>mvs.push(`FanDuel ${esc(kk.slice(8))} ${am(v.from)} → ${am(v.to)} (${sgn(v.implied_change*100,1)} pp implied)`));
+    return `<div class="scroll"><table><thead><tr><th>${esc(k)} · ${x.observations} obs</th>${cols.map(h=>`<th class="n">${h}</th>`).join('')}</tr></thead><tbody>
+      ${mrow('Open (first seen)',x.open,k,c)}${mrow('Current',x.current,k,c)}${x.close?mrow('Close (last before start)',x.close,k,c):`<tr><td colspan="5" class="muted small">Close: ${esc(x.close_note)}</td></tr>`}</tbody></table>
+      <p class="small">${mvs.length?'<strong>Movement:</strong> '+mvs.join(' · '):'<span class="muted">No movement since first seen.</span>'}</p></div>`; }).join('');
+  return `<section class="sec"><header><div><span class="q">What does the market say · how did it move</span><h2>Market</h2></div>
+    <span class="legend">${kindChip('reported')}<span class="small muted">FanDuel = actionable · DK/best = context · no-vig = estimate, not a price</span></span></header>
+    ${spark(m.series)}${blocks}${(m.event_flags||[]).length?`<p class="note">Feed flags: ${m.event_flags.map(esc).join('; ')}</p>`:''}</section>`;
+}
+function modelSec(c){
+  const m=c.model||{}, cmp=c.comparison||{};
+  if(!m.available) return `<section class="sec"><header><div><span class="q">What does Boolin think</span><h2>Boolin view</h2></div>${kindChip('unknown')}</header><p class="empty">${esc(m.reason||'No projection.')}</p></section>`;
+  const maxAbs=Math.max(0.01,...(m.contributions||[]).map(x=>Math.abs(x.margin)));
+  const bars=(m.contributions||[]).map(x=>{ const w=Math.abs(x.margin)/maxAbs*50; const left=x.margin>=0?50:50-w;
+    return `<div class="cb"><span>${esc(x.name)}<span class="sub">${esc(x.note||'')}</span></span><span class="track"><span style="left:${left}%;width:${w}%"></span><span class="zero"></span></span><span class="num" style="text-align:right">${sgn(x.margin,2)}</span></div>`; }).join('');
+  const rows=(cmp.rows||[]).map(r=>`<tr><td>${esc(r.dimension)}${r.note?`<span class="sub">${esc(r.note)}</span>`:''}</td><td class="n num">${r.unit==='pp'?pct(r.market):r.dimension==='Total'?r.market:line(r.market)}</td><td class="n num">${r.unit==='pp'?pct(r.boolin):r.dimension==='Total'?r.boolin:line(r.boolin)}</td><td class="n num">${sgn(r.difference,1)} ${esc(r.unit)}</td><td><span class="chip ${r.label==='aligned'?'s-pass':r.label==='mild disagreement'?'sev-info':r.label==='significant disagreement'?'sev-watch':'sev-alert'}">${esc(r.label)}</span><span class="sub">${esc(r.direction)}</span></td></tr>`).join('');
+  return `<section class="sec"><header><div><span class="q">What does Boolin think · where does it disagree</span><h2>Boolin vs market</h2></div>
+    <span class="legend">${kindChip('derived')}<span class="small muted">${esc(m.version)} · confidence ${esc(m.confidence)}</span></span></header>
+    <div class="two"><div><span class="label">Projection</span><p class="num" style="font-size:1rem">${esc(c.game.home.abbr)} ${pct(m.home_win_p)} · line ${esc(c.game.home.abbr)} ${line(Math.round(-m.proj_margin_home*10)/10)} · total ${m.proj_total??'—'}</p></div>
+      <div><span class="label">Overall</span><p>${esc(cmp.overall||'—')}</p>${cmp.caveat?`<p class="note">${esc(cmp.caveat)}</p>`:''}</div></div>
+    ${rows?`<div class="scroll"><table><thead><tr><th>Measure</th><th class="n">Market</th><th class="n">Boolin</th><th class="n">Gap</th><th>Label</th></tr></thead><tbody>${rows}</tbody></table></div>`:''}
+    <div><span class="label">Why Boolin has this number (home-margin units, sums to the projection)</span><div class="contrib" style="margin-top:6px">${bars}</div></div>
+    ${(m.sample_warnings||[]).length?`<ul class="ev ev-unk">${m.sample_warnings.map(w=>`<li>${esc(w)}</li>`).join('')}</ul>`:''}
+    <p class="note">Assumptions: ${(m.assumptions||[]).map(esc).join(' ')} ${esc(cmp.reminder||'')}</p></section>`;
+}
+function changesSec(c){
+  const ev=(c.recent_changes||[]).slice().reverse();
+  return `<section class="sec"><header><div><span class="q">What changed</span><h2>Timeline · last 24 h</h2></div><span class="small muted">${c.change_count_total||0} change(s) on record for this game</span></header>
+    ${ev.length?`<div class="tl">${ev.map(e=>`<div class="row"><span class="num muted">${tET(e.t)}</span><span class="chip ${e.type==='model'?'k-derived':e.type==='injury_status'||e.type==='starter'?'sev-watch':'k-reported'}">${esc(e.type.replace('_',' '))}</span>
+      <span><strong>${esc(e.field)}</strong> <span class="chg">${esc(e.old)} → ${esc(e.new)}</span><span class="cause">${esc(e.cause)} · ${esc(e.source)}</span></span></div>`).join('')}</div>`:'<p class="empty">No changes recorded in the last 24 hours.</p>'}</section>`;
+}
+function evidenceSec(c){
+  const s=c.summary||{}; const L=(arr,cls)=>arr&&arr.length?`<ul class="ev ${cls}">${arr.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p class="empty">None in the data.</p>';
+  return `<section class="sec"><header><div><span class="q">What supports it · what argues against it · what's unknown</span><h2>Evidence</h2></div>
+    <span class="small muted">Judged relative to: ${esc(s.thesis_team||'—')} (${esc(s.thesis_basis||'')})</span></header>
+    <div><span class="label">Why this game matters</span>${L(s.why_it_matters,'')}</div>
+    <div class="two"><div><span class="label">Supporting</span>${L(s.supporting,'ev-sup')}</div><div><span class="label">Contradicting</span>${L(s.contradicting,'ev-con')}</div></div>
+    <div><span class="label">Unknowns / unresolved</span>${L(s.unknowns,'ev-unk')}</div></section>`;
+}
+function availSec(c){
+  const a=c.availability||{}; const st=a.starters||{}; const lu=a.lineups||{};
+  const inj=(a.injuries||[]);
+  return `<section class="sec"><header><div><span class="q">Who is playing</span><h2>Availability</h2></div><span class="legend">${['confirmed','reported','projected','unknown'].map(kindChip).join('')}</span></header>
+    <div class="two">${['away','home'].map(s=>`<div><span class="label">${esc(c.game[s].abbr)} starter</span><p>${fact(st[s])}</p>${lu[s]?`<span class="label">Lineup</span><p>${lu[s].value?`posted ${kindChip(lu[s].kind)}`:fact(lu[s])}</p>`:''}</div>`).join('')}</div>
+    ${inj.length?`<div class="scroll"><table><thead><tr><th>Player</th><th>Team</th><th>Status</th><th>Detail</th><th>Source</th></tr></thead><tbody>${inj.map(r=>`<tr><td>${esc(r.player)}${r.key_player?' <span class="chip sev-watch">key</span>':''}<span class="sub">${esc(r.pos||'')}</span></td><td>${esc(r.team)}</td><td>${esc(r.status)}${r.practice?`<span class="sub">${esc(r.practice)}</span>`:''}</td><td class="small">${esc(r.detail||'')}</td><td class="small muted">${kindChip(r.kind)}<span class="sub">${esc(r.source)}</span></td></tr>`).join('')}</tbody></table></div>`:'<p class="empty">No injuries listed in the data for this game.</p>'}
+    ${a.injury_report&&a.injury_report.week?`<p class="note">NFL statuses are the week ${esc(a.injury_report.week)} report; game-day inactives come ~90 min before kickoff.</p>`:''}</section>`;
+}
+function envSec(c){
+  const e=c.environment||{}; const rows=Object.entries(e).filter(([k,v])=>v&&typeof v==='object'&&'kind' in v);
+  return `<section class="sec"><header><div><span class="q">Conditions</span><h2>Environment</h2></div><span class="small muted">${e.outdoors===true?'outdoors':e.outdoors===false?'indoors':'roof unknown'}${e.venue?' · '+esc(e.venue):c.game.venue?' · '+esc(c.game.venue):''}</span></header>
+    ${rows.length?`<div class="two">${rows.map(([k,v])=>`<div><span class="label">${esc(k.replace('_mph',' (mph)').replace('_f',' (°F)').replace('_',' '))}</span><p>${fact(v)}</p></div>`).join('')}</div>`:'<p class="empty">No environment data for this league.</p>'}</section>`;
+}
+function freshSec(c){
+  const f=c.freshness||{};
+  return `<section class="sec"><header><div><span class="q">How fresh is it</span><h2>Data freshness</h2></div></header><div class="scroll"><table><thead><tr><th>Component</th><th>Age</th><th>Kind</th><th>Status</th><th>Source</th></tr></thead><tbody>
+    ${Object.entries(f).map(([k,v])=>{ const live=v.as_of?ageLbl(ageMin(v.as_of)):'unknown age'; return `<tr><td>${esc(k.replace('_',' '))}</td><td class="num">${esc(live)}<span class="sub">${tET(v.as_of)}</span></td><td>${kindChip(v.kind)}</td><td><span class="chip h-${esc(v.status)}">${esc(v.status)}</span></td><td class="small">${esc(v.source)}</td></tr>`; }).join('')}
+    </tbody></table></div><p class="note">Ages update live from the stored timestamps. Projected and reported items are never shown as confirmed.</p></section>`;
+}
+function flagsSec(c){
+  const f=c.flags||[];
+  return `<section class="sec"><header><div><span class="q">What needs a look</span><h2>Research flags</h2></div><span class="small muted">${f.length} flag(s)</span></header>
+    ${f.length?`<div class="flags">${f.map(x=>`<div class="flag"><span class="chip sev-${esc(x.severity)}">${esc(x.severity)}</span><strong>${esc(x.title)}</strong><span class="why">${esc(x.why)}</span></div>`).join('')}</div>`:'<p class="empty">No flags.</p>'}</section>`;
+}
+function scenSec(c){
+  const s=c.scenarios||{}; const rows=s.scenarios||[];
+  return `<section class="sec"><header><div><span class="q">What if</span><h2>Scenarios</h2></div>${kindChip('derived')}</header>
+    ${s.baseline?`<p class="small">Baseline: ${esc(c.game.home.abbr)} ${pct(s.baseline.home_win_p)} · margin ${sgn(s.baseline.proj_margin_home,2)} · total ${s.baseline.proj_total??'—'}</p>`:''}
+    ${rows.length?`<div class="scroll"><table><thead><tr><th>Scenario</th><th class="n">${esc(c.game.home.abbr)} win</th><th class="n">Δ</th><th class="n">Margin</th><th class="n">Total</th></tr></thead><tbody>
+    ${rows.map(r=>r.supported?`<tr><td>${esc(r.name)}${r.note?`<span class="sub">${esc(r.note)}</span>`:''}</td><td class="n num">${pct(r.home_win_p)}</td><td class="n num">${sgn(r.delta.home_win_p*100,1)} pp</td><td class="n num">${sgn(r.proj_margin_home,2)} <span class="sub">${sgn(r.delta.proj_margin_home,2)}</span></td><td class="n num">${r.proj_total??'—'} <span class="sub">${r.delta.proj_total===null?'':sgn(r.delta.proj_total,2)}</span></td></tr>`:`<tr><td>${esc(r.name)}</td><td colspan="4" class="muted small">Not modeled: ${esc(r.reason)}</td></tr>`).join('')}</tbody></table></div>`:`<p class="empty">${esc(s.note||'No scenarios.')}</p>`}
+    <p class="note">${esc(s.note||'')}</p></section>`;
+}
+function compSec(c){
+  const h=c.comparables||{};
+  const rows=(h.situations||[]);
+  return `<section class="sec hist"><header><div><span class="q">${esc(h.label||'HISTORICAL CONTEXT')}</span><h2>Comparable situations</h2></div><span class="small muted">${esc(h.source||'')}</span></header>
+    ${rows.length?`<div class="scroll"><table><thead><tr><th>Situation</th><th class="n">Games</th><th class="n">Home cover / win</th><th class="n">Margin vs spread</th><th class="n">Over %</th></tr></thead><tbody>
+    ${rows.map(r=>`<tr><td>${esc(r.situation)}${r.seasons?`<span class="sub">${esc(r.seasons)}</span>`:''}${r.warning?`<span class="sub" style="color:var(--warn)">${esc(r.warning)}</span>`:''}</td><td class="n num">${r.n}</td><td class="n num">${r.home_cover_pct!==undefined?pct(r.home_cover_pct,0):pct(r.home_win_pct,0)}</td><td class="n num">${r.avg_home_margin_vs_spread!==undefined?sgn(r.avg_home_margin_vs_spread,1):'—'}</td><td class="n num">${r.over_pct!==undefined?pct(r.over_pct,0):'—'}</td></tr>`).join('')}</tbody></table></div>`:`<p class="empty">${esc(h.reason||'No comparable situations computed.')}</p>`}
+    ${(h.unsupported||[]).map(u=>`<p class="note">${esc(u)}</p>`).join('')}<p class="note">${esc(h.caution||'Historical context only; not evidence this game will go the same way.')}</p></section>`;
+}
+function notebookSec(c){
+  const n=c.notebook; const pg=c.postgame;
+  const g=pg&&pg.grade; const comps=g?Object.entries(g.components):[];
+  return `<section class="sec"><header><div><span class="q">Analyst notebook · postgame</span><h2>Notebook</h2></div></header>
+    ${n?`<div class="two"><div><span class="label">Thesis</span><p>${esc((n.thesis||{}).statement||'—')}</p><p class="small muted">${esc((n.thesis||{}).market||'')} ${esc((n.thesis||{}).side||'')}</p></div>
+      <div><span class="label">Decision</span><p>${esc(n.decision||'—')}</p>${n.entry_trigger?`<p class="small">Entry trigger: ${esc(n.entry_trigger)}</p>`:''}${n.position?`<p class="small num">Position: ${esc(n.position.market)} ${esc(n.position.side)} ${n.position.line??''} ${am(n.position.price)} (${esc(n.position.book||'')})</p>`:''}</div></div>
+      ${n.postgame_review?`<div><span class="label">Postgame review</span><p>${esc(n.postgame_review.text||'')}</p><p class="small muted">Thesis correct: ${esc(n.postgame_review.thesis_correct||'—')}</p></div>`:''}
+      <p class="note">Updated ${tET(n.updated_at)} · ${n.history?n.history.length:0} edit(s).</p>`
+    :`<p class="empty">No notebook for this game yet.</p><p class="note">Add one: <code>python -m research.notebook set ${esc(c.key)} --thesis "..." --side home --market spread --decision monitor --trigger "..."</code></p>`}
+    ${g?`<div><span class="label">Postgame grade</span><p class="num" style="font-size:1rem">Final ${esc(c.game.away.abbr)} ${pg.result.away_score} – ${esc(c.game.home.abbr)} ${pg.result.home_score} · overall ${esc(g.overall.grade||'not gradable')}</p>
+      <div class="scroll"><table><thead><tr><th>Component</th><th>Grade</th><th>Detail</th></tr></thead><tbody>${comps.map(([k,v])=>`<tr><td>${esc(k.replace('_',' '))}</td><td class="num">${v.gradable?esc(v.grade):'—'}</td><td class="small">${v.gradable?esc(Object.entries(v).filter(([kk])=>!['gradable','score','grade'].includes(kk)).map(([kk,vv])=>kk+': '+(typeof vv==='object'?JSON.stringify(vv):vv)).join(' · ')):esc(v.reason)}</td></tr>`).join('')}</tbody></table></div><p class="note">${esc(g.note)}</p></div>`:''}</section>`;
+}
+function dossier(c){
+  if(!c) return '<section class="sec"><p class="empty">Pick a game.</p></section>';
+  const s=(c.summary||{}).conclusion||{};
+  return `<header class="head"><div><span class="label">${esc(c.league)} · ${esc(c.status)}${c.game.context&&c.game.context.series?' · '+esc(c.game.context.series):''}</span><h2>${esc(c.game.away.name)} @ ${esc(c.game.home.name)}</h2></div>
+    <div class="meta"><span>${esc(c.start_label)}</span>${c.game.venue?`<span>${esc(c.game.venue)}</span>`:''}<span>TV: ${c.game.tv&&c.game.tv.value?esc(c.game.tv.value):'unknown'}</span><span>built ${tET(c.built_at)}</span></div>
+    <div class="concl"><span class="chip ${statusCls(s.status)}">${esc(s.status||'—')}</span><div><p>${esc(s.detail||'')}</p>
+      ${s.analyst_decision?`<p class="small">Analyst decision: <strong>${esc(s.analyst_decision)}</strong></p>`:''}
+      ${s.trigger?`<p class="small muted">Trigger: ${esc(s.trigger)}</p>`:''}
+      ${(s.would_change_if||[]).length?`<p class="small muted">Would change if: ${s.would_change_if.map(esc).join(' · ')}</p>`:''}</div></div></header>
+    ${marketSec(c)}${modelSec(c)}${changesSec(c)}${evidenceSec(c)}${availSec(c)}${flagsSec(c)}${envSec(c)}${freshSec(c)}${scenSec(c)}${compSec(c)}${notebookSec(c)}`;
+}
+return {esc,item,group,dossier,tET,ageMin,ageLbl,statusCls};
+})();
+
 /* ---------- state ---------- */
 const DEFAULTS = {bankroll:1000, unitPct:1, kellyFrac:0.25, minEdge:2, maxUnits:2, dailyCap:8, gameCap:3, ladderHaircut:0.5, sgpMax:0.5, sgpMinEdge:5, parlayMax:0.5, longMax:0.25, modelWeight:0.5, minEdgeProp:3, longMinRel:20, staleMin:1440, mode:'research', convA:1, convB:0.5, convC:0.25};
 const S = {
@@ -281,10 +522,11 @@ const S = {
   slates:[], slatesLoaded:false, slateId:null,
   bets:[], betsLoaded:false,
   tab:'board', sport:'All', pb:[], hb:[], hmin:0.8, hgame:'All',
-  db:null, dbState:'loading', sheet:null, dirty:{}
+  db:null, dbState:'loading', sheet:null, dirty:{},
+  rx:{date:null, summary:null, parts:{}, unsub:null, loaded:false}, rxKey:null
 };
 try{ const t = localStorage.getItem('rsb-tab'); if(t) S.tab = t; }catch(e){}
-if(/^#(board|top|hits|parlays|long|ladder|log|perf|calc|settings)$/.test(location.hash)) S.tab = location.hash.slice(1);
+if(/^#(board|top|research|hits|parlays|long|ladder|log|perf|calc|settings)$/.test(location.hash)) S.tab = location.hash.slice(1);
 
 /* ---------- odds math ---------- */
 function toNum(v){ if(v===null||v===undefined||v==='') return null; const n = Number(String(v).replace(/^\+/,'').trim()); return Number.isFinite(n) ? n : null; }
@@ -424,7 +666,8 @@ function moveTag(x){
 function actions(x, units, extra){
   const stake = units>0 ? (uu(units)+' ($'+(units*unitDollars()).toFixed(0)+')') : '';
   const txt = [x.pick, am(x.odds), x.book||'FanDuel', stake].filter(Boolean).join(' · ');
-  return `<div class="actions">${x.link?`<a class="fdlink" href="${esc(x.link)}" target="_blank" rel="noopener">Open in FanDuel</a>`:''}<button class="copybtn" data-copy="${esc(txt)}">Copy</button>${extra||''}</div>`;
+  const rk = rxKeyFor(x.sport, x.game);
+  return `<div class="actions">${x.link?`<a class="fdlink" href="${esc(x.link)}" target="_blank" rel="noopener">Open in FanDuel</a>`:''}<button class="copybtn" data-copy="${esc(txt)}">Copy</button>${rk?`<button class="copybtn" data-rx="${esc(rk)}">Research</button>`:''}${extra||''}</div>`;
 }
 function longEval(ls, st){
   const p=blendP(ls, st); const fl=floorFor(ls, st, 'long'); const s=sizeIt(p, ls.odds, st, 1, fl);
@@ -467,8 +710,9 @@ function busy(id){ const el=document.getElementById(id); const a=document.active
 function render(){
   document.getElementById('unit-line').textContent = research(S.settings) ? ('1u = '+money(unitDollars())+' · Research mode · A '+uu(toNum(S.settings.convA)??1)+' / B '+uu(toNum(S.settings.convB)??0.5)+' / C '+uu(toNum(S.settings.convC)??0.25)) : ('1u = '+money(unitDollars())+' · '+fracName(S.settings.kellyFrac)+' Kelly · min edge '+S.settings.minEdge+'%');
   document.querySelectorAll('nav.tabs button').forEach(b=>b.setAttribute('aria-selected', String(b.dataset.tab===S.tab)));
-  ['board','top','hits','parlays','long','ladder','log','perf','calc','settings'].forEach(t=>{ document.getElementById('v-'+t).hidden = t!==S.tab; });
-  const map = {board:renderBoard, top:renderTop, hits:renderHits, parlays:renderParlays, long:renderLong, ladder:renderLadders, log:renderLog, perf:renderPerf, calc:renderCalc, settings:renderSettings};
+  ['board','top','research','hits','parlays','long','ladder','log','perf','calc','settings'].forEach(t=>{ document.getElementById('v-'+t).hidden = t!==S.tab; });
+  { const sl0=currentSlate(); if(S.db && sl0 && sl0.date) rxSubscribe(sl0.date); }
+  const map = {board:renderBoard, top:renderTop, research:renderResearch, hits:renderHits, parlays:renderParlays, long:renderLong, ladder:renderLadders, log:renderLog, perf:renderPerf, calc:renderCalc, settings:renderSettings};
   const id = 'v-'+S.tab;
   if(busy(id)){ S.dirty[S.tab]=true; return; }
   map[S.tab]();
@@ -590,6 +834,47 @@ function renderBoard(){
   v.innerHTML = html;
 }
 
+/* ---------- RESEARCH ---------- */
+function rxSubscribe(date){
+  if(!S.db || S.rx.date===date) return;
+  if(S.rx.unsub){ try{ S.rx.unsub(); }catch(_){ } }
+  S.rx = {date, summary:null, parts:{}, unsub:null, loaded:false};
+  S.rx.unsub = S.db.collection('research').where('date','==',date).onSnapshot(q=>{
+    const parts={}; let summary=null;
+    q.docs.forEach(d=>{ const x=d.data(); if(x.kind==='summary') summary=x; else if(x.kind==='cards') parts[x.part]=x.cards||[]; });
+    S.rx.summary=summary; S.rx.parts=parts; S.rx.loaded=true; render();
+  }, ()=>{ S.rx.loaded=true; render(); });
+}
+function rxCards(){
+  const sm=S.rx.summary; if(!sm) return {};
+  const out={}; for(let i=1;i<=(sm.chunks||0);i++) (S.rx.parts[i]||[]).forEach(c=>{ out[c.key]=c; });
+  return out;
+}
+function rxKeyFor(sport, game){
+  if(!S.rx.summary || !game) return null;
+  const g=String(game).replace(/^#\d+\s+/,'').trim(); const cards=rxCards();
+  const hit=Object.values(cards).find(c=>c.league===sport && c.game && (c.game.home_away===g || (c.game.away.name+' @ '+c.game.home.name)===g));
+  return hit?hit.key:null;
+}
+function renderResearch(){
+  const v=document.getElementById('v-research');
+  if(S.dbState==='loading' || (S.dbState==='on' && (!S.slatesLoaded || !S.rx.loaded))){ v.innerHTML='<p class="muted">Loading research…</p>'; return; }
+  const sl=currentSlate();
+  if(S.dbState==='off'){ v.innerHTML='<div class="empty"><h3>Research needs saved data</h3><p>Open the page from your Claude account to see the research cards.</p></div>'; return; }
+  const sm=S.rx.summary;
+  if(!sm){ v.innerHTML=`<div><h2>Research</h2><p class="note">Why each game matters: line history, what changed, Boolin vs the market, availability and data freshness.</p></div>${slatePicker('slate-pick-rx',sl)}<p class="empty">No research written for ${esc(niceDate(sl&&sl.date))} yet. The daily slate task copies it here after the morning data pull, and the 10:50 AM / 4:50 PM re-checks refresh it.</p>`; return; }
+  const cards=rxCards(); const B=sm.board||{}; const M=sm.manifest||{};
+  if(!S.rxKey || !cards[S.rxKey]) S.rxKey=((B.attention||[])[0]||(B.stable||[])[0]||(B.upcoming||[])[0]||{}).key||null;
+  const health=Object.entries(M.inputs||{}).filter(([k,x])=>x.status).map(([k,x])=>`<span class="chip h-${esc(x.status)}">${esc(k)} ${esc(x.status)}</span>`).join('');
+  const list=RX.group('Needs attention','Ranked by what changed, what is unresolved and where Boolin splits from the market. Not a bet ranking.',B.attention||[])+
+    RX.group('Stable','No meaningful change, no strong split, inputs fresh.',B.stable||[])+
+    `<details class="group"><summary><h3>Upcoming <span class="muted num">${(B.upcoming||[]).length}</span></h3><p class="note">Later games already tracked for line history.</p></summary>${(B.upcoming||[]).slice(0,25).map(RX.item).join('')}</details>`;
+  v.innerHTML=`<div class="rxhead"><div><h2>Research</h2><p class="note">Research built ${RX.tET(sm.built_at)} (${RX.ageLbl(RX.ageMin(sm.built_at))}) · ${Object.keys(cards).length} games · ${esc(M.status||'')}. Evidence and uncertainty, not picks.</p></div>
+    <div class="row">${slatePicker('slate-pick-rx',sl)}<div class="health">${health}</div></div></div>
+    <div class="layout"><nav class="list" aria-label="Research board">${list}</nav><article class="dossier" id="rx-dossier">${RX.dossier(cards[S.rxKey])}</article></div>`;
+  v.querySelectorAll('.game').forEach(b=>b.setAttribute('aria-current',String(b.dataset.key===S.rxKey)));
+}
+
 /* ---------- TOP 5 ---------- */
 function propRows(f, st){
   return (f.props||[]).map((pk,i)=>{
@@ -642,7 +927,7 @@ function renderTop(){
       <div class="feat-head"><span class="rankno">${esc(f.rank)}</span>
         <h2>${esc(f.game)}</h2>
         <span class="sub">${esc(f.sport||'')} · ${esc(f.start||'')}${f.tv?' · '+esc(f.tv):''}${f.context?' · '+esc(f.context):''}</span>
-        <span class="headline">${esc(f.headline||'')}</span></div>
+        <span class="headline">${esc(f.headline||'')}</span>${rxKeyFor(f.sport,f.game)?`<span><button class="copybtn" data-rx="${esc(rxKeyFor(f.sport,f.game))}">Open research</button></span>`:''}</div>
       <div class="feat-body">
         ${Array.isArray(f.lines)&&f.lines.length?`<div class="out">${f.lines.map(l=>`<div><span class="label">${esc(l.label)}</span><span class="v" style="font-size:1rem">${esc(l.value)}</span>${l.fair?`<span class="small muted">${esc(l.fair)}</span>`:''}</div>`).join('')}</div>`:''}
         <div class="two">
@@ -1012,6 +1297,9 @@ document.addEventListener('click', async e=>{
   if(t.dataset.copy!==undefined){ const txt=t.dataset.copy; try{ await navigator.clipboard.writeText(txt); toast('Copied: '+txt); }catch(_){ toast(txt); } return; }
   if(t.dataset.whymore){ const tr=t.closest('tr'); if(tr){ tr.classList.toggle('open'); t.textContent = tr.classList.contains('open')?'Hide the math':'Show the math'; } return; }
   if(t.id==='sheet-back' && e.target===t){ closeSheet(); return; }
+  if(t.dataset.rx){ S.rxKey=t.dataset.rx; S.tab='research'; try{localStorage.setItem('rsb-tab',S.tab);}catch(_){ } render(); window.scrollTo(0,0); return; }
+  if(t.classList.contains('game') && t.dataset.key){ S.rxKey=t.dataset.key; render();
+    if(window.matchMedia('(max-width:900px)').matches){ const d=document.getElementById('rx-dossier'); if(d) d.scrollIntoView({behavior:'smooth',block:'start'}); } return; }
   if(t.dataset.tab){ S.tab=t.dataset.tab; try{localStorage.setItem('rsb-tab',S.tab);}catch(_){ } render(); return; }
   if(t.dataset.sport){ S.sport=t.dataset.sport; render(); return; }
   if(t.dataset.hmin){ S.hmin=Number(t.dataset.hmin); render(); return; }
@@ -1064,7 +1352,7 @@ document.addEventListener('change', async e=>{
   const t=e.target;
   if(t.dataset.hleg){ const k=t.dataset.hleg; S.hb = t.checked ? [...S.hb, k] : S.hb.filter(x=>x!==k); render(); return; }
   if(t.dataset.leg){ const k=t.dataset.leg; S.pb = t.checked ? [...S.pb, k] : S.pb.filter(x=>x!==k); render(); return; }
-  if(t.id==='slate-pick' || t.id==='slate-pick-top' || t.id==='slate-pick-par' || t.id==='slate-pick-long' || t.id==='slate-pick-lad' || t.id==='slate-pick-hits'){ S.slateId=t.value; render(); return; }
+  if(t.id==='slate-pick' || t.id==='slate-pick-top' || t.id==='slate-pick-rx' || t.id==='slate-pick-par' || t.id==='slate-pick-long' || t.id==='slate-pick-lad' || t.id==='slate-pick-hits'){ S.slateId=t.value; S.rxKey=null; render(); return; }
   if(t.dataset.res && S.db){ try{ await S.db.doc('bets/'+t.dataset.res).update({result:t.value}); }catch(_){ toast('Couldn\'t save the result'); } return; }
   if(t.dataset.close && S.db){
     const raw=t.value.trim(); const n=toNum(raw);

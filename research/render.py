@@ -16,51 +16,55 @@ def _data(board: dict, cards: list[dict], manifest: dict) -> str:
 
 
 def page(board: dict, cards: list[dict], manifest: dict, standalone: bool = True) -> str:
-    html = TEMPLATE.replace("/*__DATA__*/null", _data(board, cards, manifest))
+    html = (TEMPLATE.replace("/*__RX_CSS__*/", scope_css(RX_CSS, ".rx"))
+            .replace("/*__RX_JS__*/", RX_JS)
+            .replace("/*__DATA__*/null", _data(board, cards, manifest)))
     return (HEAD + html + "</body></html>") if standalone else html
 
 
-TEMPLATE = r"""<title>Boolin Research Desk</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<style>
-/* Layout: sticky slate bar; left = research board ranked by importance; right = the selected game's dossier, read top to bottom in the analyst's question order */
-:root{
-  --bg:#F1F3EF; --surface:#FFFFFF; --sunk:#F7F8F5; --ink:#17201C; --muted:#5A6660; --line:#D6DBD4;
-  --accent:#0E6B66; --accent-soft:#DDEFEC;
-  --good:#2D7A3A; --good-soft:#E1F1E3; --warn:#9A5B00; --warn-soft:#F7EAD2; --bad:#B03A2E; --bad-soft:#F7E1DE;
-  --derived:#5A49B0; --derived-soft:#E9E6F7;
-  --f-display:"Saira Condensed","Arial Narrow",Arial,sans-serif;
-  --f-body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  color-scheme:dark; --bg:#0D1311; --surface:#141C19; --sunk:#18211E; --ink:#E2E9E5; --muted:#93A29B; --line:#26322D;
-  --accent:#5CC4BB; --accent-soft:#16302D; --good:#6CC67A; --good-soft:#15291A; --warn:#E6B05C; --warn-soft:#332611;
-  --bad:#EF8C80; --bad-soft:#3A1C18; --derived:#A99CF0; --derived-soft:#231F3D;}}
-:root[data-theme="dark"]{
-  color-scheme:dark; --bg:#0D1311; --surface:#141C19; --sunk:#18211E; --ink:#E2E9E5; --muted:#93A29B; --line:#26322D;
-  --accent:#5CC4BB; --accent-soft:#16302D; --good:#6CC67A; --good-soft:#15291A; --warn:#E6B05C; --warn-soft:#332611;
-  --bad:#EF8C80; --bad-soft:#3A1C18; --derived:#A99CF0; --derived-soft:#231F3D;}
-*{box-sizing:border-box}
-html,body{background:var(--bg)}
-body{margin:0;color:var(--ink);font:15px/1.5 var(--f-body)}
-h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.05;letter-spacing:.01em;text-wrap:balance}
-h1{font-size:1.9rem;text-transform:uppercase}
-h2{font-size:1.6rem}
+def scope_css(css: str, scope: str) -> str:
+    """Prefix every selector with `scope` (inside @media blocks too), so the research components can
+    live inside another page (the Sharp Board) without leaking styles."""
+    out, i, n = [], 0, len(css)
+    def rule(sel_block: str) -> str:
+        sels, _, body = sel_block.partition("{")
+        pref = ",".join(f"{scope} {s.strip()}" for s in sels.split(",") if s.strip())
+        return pref + "{" + body
+    while i < n:
+        j = css.find("{", i)
+        if j < 0:
+            out.append(css[i:]); break
+        head = css[i:j]
+        if head.strip().startswith("@media"):
+            depth, k = 1, j + 1
+            while depth and k < n:
+                depth += {"{": 1, "}": -1}.get(css[k], 0); k += 1
+            inner = css[j + 1:k - 1]
+            out.append(head + "{" + scope_css(inner, scope) + "}")
+            i = k
+        elif head.strip().startswith("@keyframes"):
+            depth, k = 1, j + 1
+            while depth and k < n:
+                depth += {"{": 1, "}": -1}.get(css[k], 0); k += 1
+            out.append(css[i:k]); i = k
+        else:
+            k = css.find("}", j) + 1
+            lead = head[:len(head) - len(head.lstrip())]
+            out.append(lead + rule(css[i + len(lead):k]))
+            i = k
+    return "".join(out)
+
+
+RX_CSS = r"""h2{font-size:1.6rem}
 h3{font-size:1.05rem;text-transform:uppercase;letter-spacing:.06em}
 p{margin:0}
 .num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:.86em}
 .muted{color:var(--muted)} .small{font-size:.84rem}
 .label{font:600 .68rem/1.2 var(--f-body);text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:4;background:var(--bg);border-bottom:2px solid var(--ink)}
-.bar-in{max-width:1280px;margin:0 auto;padding:12px 16px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:flex-end;justify-content:space-between}
-.health{display:flex;flex-wrap:wrap;gap:6px}
-.wrap{max-width:1280px;margin:0 auto;padding-inline:16px;padding-block:18px 64px;display:grid;grid-template-columns:330px minmax(0,1fr);gap:22px;align-items:start}
-@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr)}}
-.list{display:flex;flex-direction:column;gap:14px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 86px);max-height:calc(100vh - 100px);overflow:auto;padding-right:4px}
+.list{display:flex;flex-direction:column;gap:14px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 110px);max-height:calc(100vh - 130px);overflow:auto;padding-right:4px}
 @media (max-width:900px){.list{position:static;max-height:none}}
+.layout{display:grid;grid-template-columns:330px minmax(0,1fr);gap:22px;align-items:start}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr)}}
 .group{display:flex;flex-direction:column;gap:6px}
 .game{all:unset;box-sizing:border-box;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:4px 10px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:9px 11px;cursor:pointer}
 .game:hover{border-color:var(--accent)}
@@ -103,7 +107,6 @@ ul.ev{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px;font
 @media (max-width:560px){.tl .row{grid-template-columns:minmax(0,1fr)}}
 .chg{font-family:var(--f-mono);font-size:.8rem}
 .cause{display:block;font-size:.78rem;color:var(--muted)}
-@media (max-width:600px){.bar{position:static}}
 details.group > summary{cursor:pointer;list-style:none}
 details.group > summary::-webkit-details-marker{display:none}
 details.group > summary h3::after{content:" ▸";color:var(--muted)}
@@ -124,21 +127,10 @@ details.group[open] > summary h3::after{content:" ▾"}
 code{font-family:var(--f-mono);font-size:.78rem;background:var(--sunk);padding:1px 4px;border-radius:3px;overflow-wrap:anywhere}
 .hist{border-left:3px solid var(--derived);padding-left:10px}
 @media (prefers-reduced-motion:no-preference){.dossier{animation:fade .18s ease-out}@keyframes fade{from{opacity:.4}to{opacity:1}}}
-</style>
-<header class="bar"><div class="bar-in">
-  <div><span class="label">Research desk · evidence, uncertainty, market context</span><h1>Boolin Research Desk</h1>
-    <span class="small muted" id="slate"></span></div>
-  <div class="health" id="health" aria-label="Source health"></div>
-</div></header>
-<main class="wrap">
-  <nav class="list" id="list" aria-label="Research board"></nav>
-  <article class="dossier" id="dossier" aria-live="polite"></article>
-</main>
-<script>
-(function(){
+"""
+
+RX_JS = r"""const RX=(function(){
 "use strict";
-const D=/*__DATA__*/null;
-const cards=Object.fromEntries((D.cards||[]).map(c=>[c.key,c]));
 const esc=s=>String(s===undefined||s===null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const am=o=>o===null||o===undefined?'—':(o>0?'+'+o:String(o));
 const pct=(x,d=1)=>x===null||x===undefined?'—':(x*100).toFixed(d)+'%';
@@ -151,11 +143,6 @@ const kindChip=k=>`<span class="chip k-${esc(k||'unknown')}">${esc((k||'unknown'
 const statusCls=s=>s==='lean'?'s-lean':s==='watch'?'s-watch':s==='pass'?'s-pass':'s-insufficient';
 const fact=f=>!f?'<span class="muted">—</span>':(f.value===null||f.value===undefined?`<span class="muted">unknown</span> ${kindChip('unknown')}<span class="sub">${esc(f.reason||'')}</span>`:`${esc(typeof f.value==='object'?JSON.stringify(f.value):f.value)} ${kindChip(f.kind)}${f.source?`<span class="sub">${esc(f.source)}${f.note?' · '+esc(f.note):''}</span>`:''}`);
 
-/* ---------- top bar ---------- */
-const M=D.manifest||{}; const B=D.board||{};
-document.getElementById('slate').textContent=`Slate ${B.slate_date||'—'} · built ${tET(M.built_at)} (${ageLbl(ageMin(M.built_at))}) · ${M.cards||0} cards · research ${M.status||'?'}`;
-document.getElementById('health').innerHTML=Object.entries(M.inputs||{}).filter(([k,v])=>v.status).map(([k,v])=>`<span class="chip h-${esc(v.status)}" title="${esc(k)} pulled ${esc(v.pulled_at_et||'')}">${esc(k)} ${esc(v.status)}</span>`).join('');
-
 /* ---------- board ---------- */
 function pips(score){ const n=Math.min(8,Math.round(score)); return `<span class="pips" aria-label="importance ${score}">${Array.from({length:8},(_,i)=>`<i class="${i<n?(n>=6?'hot':'on'):''}"></i>`).join('')}</span>`; }
 function item(e){ return `<button class="game" data-key="${esc(e.key)}" aria-current="false"><span class="lg">${esc(e.league)}</span>
@@ -163,11 +150,6 @@ function item(e){ return `<button class="game" data-key="${esc(e.key)}" aria-cur
   <span class="chip ${statusCls(e.research_status)}">${esc(e.research_status==='insufficient information'?'need info':e.research_status||'—')}</span>
   ${e.reasons&&e.reasons.length?`<span class="why">${esc(e.reasons[0])}</span>`:(e.why_stable?`<span class="why">${esc(e.why_stable)}</span>`:'')}</button>`; }
 function group(title,note,rows){ return `<section class="group"><div><h3>${esc(title)} <span class="muted num">${rows.length}</span></h3>${note?`<p class="note">${esc(note)}</p>`:''}</div>${rows.length?rows.map(item).join(''):'<p class="empty">None.</p>'}</section>`; }
-document.getElementById('list').innerHTML=
-  group('Needs attention','Ranked by what changed, what is unresolved and where Boolin splits from the market. Not a bet ranking.',B.attention||[])+
-  group('Stable','No meaningful change, no strong split, inputs fresh.',B.stable||[])+
-  `<details class="group"><summary><h3>Upcoming <span class="muted num">${(B.upcoming||[]).length}</span></h3><p class="note">Later games already tracked for line history.</p></summary>${(B.upcoming||[]).slice(0,25).map(item).join('')}</details>`;
-
 /* ---------- dossier ---------- */
 function spark(series){
   const pts=(series||[]).filter(p=>p.spread_home!==null&&p.spread_home!==undefined);
@@ -290,17 +272,92 @@ function notebookSec(c){
     ${g?`<div><span class="label">Postgame grade</span><p class="num" style="font-size:1rem">Final ${esc(c.game.away.abbr)} ${pg.result.away_score} – ${esc(c.game.home.abbr)} ${pg.result.home_score} · overall ${esc(g.overall.grade||'not gradable')}</p>
       <div class="scroll"><table><thead><tr><th>Component</th><th>Grade</th><th>Detail</th></tr></thead><tbody>${comps.map(([k,v])=>`<tr><td>${esc(k.replace('_',' '))}</td><td class="num">${v.gradable?esc(v.grade):'—'}</td><td class="small">${v.gradable?esc(Object.entries(v).filter(([kk])=>!['gradable','score','grade'].includes(kk)).map(([kk,vv])=>kk+': '+(typeof vv==='object'?JSON.stringify(vv):vv)).join(' · ')):esc(v.reason)}</td></tr>`).join('')}</tbody></table></div><p class="note">${esc(g.note)}</p></div>`:''}</section>`;
 }
-function show(key){
-  const c=cards[key]; const el=document.getElementById('dossier'); if(!c){ el.innerHTML='<section class="sec"><p class="empty">Pick a game.</p></section>'; return; }
-  document.querySelectorAll('.game').forEach(b=>b.setAttribute('aria-current',String(b.dataset.key===key)));
+function dossier(c){
+  if(!c) return '<section class="sec"><p class="empty">Pick a game.</p></section>';
   const s=(c.summary||{}).conclusion||{};
-  el.innerHTML=`<header class="head"><div><span class="label">${esc(c.league)} · ${esc(c.status)}${c.game.context&&c.game.context.series?' · '+esc(c.game.context.series):''}</span><h2>${esc(c.game.away.name)} @ ${esc(c.game.home.name)}</h2></div>
+  return `<header class="head"><div><span class="label">${esc(c.league)} · ${esc(c.status)}${c.game.context&&c.game.context.series?' · '+esc(c.game.context.series):''}</span><h2>${esc(c.game.away.name)} @ ${esc(c.game.home.name)}</h2></div>
     <div class="meta"><span>${esc(c.start_label)}</span>${c.game.venue?`<span>${esc(c.game.venue)}</span>`:''}<span>TV: ${c.game.tv&&c.game.tv.value?esc(c.game.tv.value):'unknown'}</span><span>built ${tET(c.built_at)}</span></div>
     <div class="concl"><span class="chip ${statusCls(s.status)}">${esc(s.status||'—')}</span><div><p>${esc(s.detail||'')}</p>
       ${s.analyst_decision?`<p class="small">Analyst decision: <strong>${esc(s.analyst_decision)}</strong></p>`:''}
       ${s.trigger?`<p class="small muted">Trigger: ${esc(s.trigger)}</p>`:''}
       ${(s.would_change_if||[]).length?`<p class="small muted">Would change if: ${s.would_change_if.map(esc).join(' · ')}</p>`:''}</div></div></header>
     ${marketSec(c)}${modelSec(c)}${changesSec(c)}${evidenceSec(c)}${availSec(c)}${flagsSec(c)}${envSec(c)}${freshSec(c)}${scenSec(c)}${compSec(c)}${notebookSec(c)}`;
+}
+return {esc,item,group,dossier,tET,ageMin,ageLbl,statusCls};
+})();"""
+
+TEMPLATE = r"""<title>Boolin Research Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+
+/* Layout: sticky slate bar; left = research board ranked by importance; right = the selected game's dossier, read top to bottom in the analyst's question order */
+:root{
+  --bg:#F1F3EF; --surface:#FFFFFF; --sunk:#F7F8F5; --ink:#17201C; --muted:#5A6660; --line:#D6DBD4;
+  --accent:#0E6B66; --accent-soft:#DDEFEC;
+  --good:#2D7A3A; --good-soft:#E1F1E3; --warn:#9A5B00; --warn-soft:#F7EAD2; --bad:#B03A2E; --bad-soft:#F7E1DE;
+  --derived:#5A49B0; --derived-soft:#E9E6F7;
+  --f-display:"Saira Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  color-scheme:dark; --bg:#0D1311; --surface:#141C19; --sunk:#18211E; --ink:#E2E9E5; --muted:#93A29B; --line:#26322D;
+  --accent:#5CC4BB; --accent-soft:#16302D; --good:#6CC67A; --good-soft:#15291A; --warn:#E6B05C; --warn-soft:#332611;
+  --bad:#EF8C80; --bad-soft:#3A1C18; --derived:#A99CF0; --derived-soft:#231F3D;}}
+:root[data-theme="dark"]{
+  color-scheme:dark; --bg:#0D1311; --surface:#141C19; --sunk:#18211E; --ink:#E2E9E5; --muted:#93A29B; --line:#26322D;
+  --accent:#5CC4BB; --accent-soft:#16302D; --good:#6CC67A; --good-soft:#15291A; --warn:#E6B05C; --warn-soft:#332611;
+  --bad:#EF8C80; --bad-soft:#3A1C18; --derived:#A99CF0; --derived-soft:#231F3D;}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{margin:0;color:var(--ink);font:15px/1.5 var(--f-body)}
+h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.05;letter-spacing:.01em;text-wrap:balance}
+h1{font-size:1.9rem;text-transform:uppercase}
+h2{font-size:1.6rem}
+h3{font-size:1.05rem;text-transform:uppercase;letter-spacing:.06em}
+p{margin:0}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:.86em}
+.muted{color:var(--muted)} .small{font-size:.84rem}
+.label{font:600 .68rem/1.2 var(--f-body);text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:4;background:var(--bg);border-bottom:2px solid var(--ink)}
+.bar-in{max-width:1280px;margin:0 auto;padding:12px 16px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:flex-end;justify-content:space-between}
+.health{display:flex;flex-wrap:wrap;gap:6px}
+.wrap{max-width:1280px;margin:0 auto;padding-inline:16px;padding-block:18px 64px;display:grid;grid-template-columns:330px minmax(0,1fr);gap:22px;align-items:start}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:600px){.bar{position:static}}
+/*__RX_CSS__*/
+</style>
+<header class="bar rx"><div class="bar-in">
+  <div><span class="label">Research desk · evidence, uncertainty, market context</span><h1>Boolin Research Desk</h1>
+    <span class="small muted" id="slate"></span></div>
+  <div class="health" id="health" aria-label="Source health"></div>
+</div></header>
+<main class="wrap rx">
+  <nav class="list" id="list" aria-label="Research board"></nav>
+  <article class="dossier" id="dossier" aria-live="polite"></article>
+</main>
+<script>
+/*__RX_JS__*/
+(function(){
+"use strict";
+const D=/*__DATA__*/null;
+const cards=Object.fromEntries((D.cards||[]).map(c=>[c.key,c]));
+const {esc,item,group,tET,ageMin,ageLbl}=RX;
+/* ---------- top bar ---------- */
+const M=D.manifest||{}; const B=D.board||{};
+document.getElementById('slate').textContent=`Slate ${B.slate_date||'—'} · built ${tET(M.built_at)} (${ageLbl(ageMin(M.built_at))}) · ${M.cards||0} cards · research ${M.status||'?'}`;
+document.getElementById('health').innerHTML=Object.entries(M.inputs||{}).filter(([k,v])=>v.status).map(([k,v])=>`<span class="chip h-${esc(v.status)}" title="${esc(k)} pulled ${esc(v.pulled_at_et||'')}">${esc(k)} ${esc(v.status)}</span>`).join('');
+
+document.getElementById('list').innerHTML=
+  group('Needs attention','Ranked by what changed, what is unresolved and where Boolin splits from the market. Not a bet ranking.',B.attention||[])+
+  group('Stable','No meaningful change, no strong split, inputs fresh.',B.stable||[])+
+  `<details class="group"><summary><h3>Upcoming <span class="muted num">${(B.upcoming||[]).length}</span></h3><p class="note">Later games already tracked for line history.</p></summary>${(B.upcoming||[]).slice(0,25).map(item).join('')}</details>`;
+
+function show(key){
+  const c=cards[key]; document.querySelectorAll('.game').forEach(b=>b.setAttribute('aria-current',String(b.dataset.key===key)));
+  document.getElementById('dossier').innerHTML=RX.dossier(c);
 }
 document.getElementById('list').addEventListener('click',e=>{ const b=e.target.closest('.game'); if(!b) return; show(b.dataset.key); try{ history.replaceState(null,'','#'+b.dataset.key); }catch(_){}
   if(window.matchMedia('(max-width:900px)').matches) document.getElementById('dossier').scrollIntoView({behavior:'smooth',block:'start'}); });

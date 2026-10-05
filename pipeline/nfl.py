@@ -72,8 +72,9 @@ def injuries(season: int) -> dict:
                  "teams": {}}
     for _, r in cur.iterrows():
         out["teams"].setdefault(r["team"], []).append({
-            "player": r.get("full_name"), "pos": r.get("position"), "status": r.get("report_status"),
-            "practice": r.get("practice_status"), "injury": r.get("report_primary_injury"),
+            "player": _clean(r.get("full_name")), "pos": _clean(r.get("position")),
+            "status": _clean(r.get("report_status")),
+            "practice": _clean(r.get("practice_status")), "injury": _clean(r.get("report_primary_injury")),
             "reported": (str(r.get("date_modified"))[:16] if r.get("date_modified") is not None
                          and not pd.isna(r.get("date_modified")) else None),
         })

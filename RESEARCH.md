@@ -35,6 +35,11 @@ data/reference/nfl_games_history.json.gz   nflverse closing lines + results sinc
 data/research/latest/index.html            the Research Desk view (not committed; regenerate any time)
 ```
 
+**Where to look:** the Sharp Board's **Research** tab. The board page can't read GitHub, so the daily slate task
+copies the research into the board's database (`python -m research.export`, see TASK.md "Research tab"):
+collection `research`, doc `<date>` (board + manifest + keys) and `<date>~c1..n` (cards, packed under the 256 KiB
+document cap). Every play and Top 10 game links to its card. `index.html` remains for local viewing.
+
 `python -m research.build --backfill` replays `data/days/*` oldest first to seed market history and the timeline.
 
 ## Provenance (every value)

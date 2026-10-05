@@ -62,6 +62,17 @@ def get_json(url: str, params: dict | None = None, **kw) -> Any:
     return get(url, params, **kw).json()
 
 
+def finite(obj: Any) -> Any:
+    """NaN/inf -> None, so every file is strict JSON (pandas leaves NaN in missing cells)."""
+    if isinstance(obj, float) and (obj != obj or obj in (float("inf"), float("-inf"))):
+        return None
+    if isinstance(obj, dict):
+        return {k: finite(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [finite(v) for v in obj]
+    return obj
+
+
 def write(name: str, payload: Any, day: dt.date) -> Path:
     """Write data/latest/<name>.json (plain) and a gzipped daily snapshot data/days/<day>/<name>.json.gz.
 
@@ -70,7 +81,7 @@ def write(name: str, payload: Any, day: dt.date) -> Path:
     """
     if isinstance(payload, dict) and "pulled_at_et" not in payload:
         payload = {"pulled_at_et": now_et().isoformat(timespec="minutes"), **payload}
-    body = json.dumps(payload, indent=1, ensure_ascii=False, default=str)
+    body = json.dumps(finite(payload), indent=1, ensure_ascii=False, default=str, allow_nan=False)
     out = DATA / "days" / day.isoformat() / f"{name}.json.gz"
     out.parent.mkdir(parents=True, exist_ok=True)
     plain = out.with_suffix("")  # an older plain snapshot of the same file, if any
