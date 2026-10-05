@@ -1,0 +1,434 @@
+{
+ "validation_version": "validation-1.0",
+ "model_version": "baseline-0.1",
+ "data_cutoff": "2026-10-04",
+ "calibration_status": "uncalibrated (baseline-0.1 has never been fit to outcomes)",
+ "NFL": {
+  "nfl_replay": {
+   "development": {
+    "levels": [
+     {
+      "confidence": "high",
+      "n": 1701,
+      "brier": 0.2237,
+      "log_loss": 0.6401,
+      "accuracy": 0.6474,
+      "calibration_error": 0.0582,
+      "favorite_overconfidence": -0.0571,
+      "avg_margin_error": 10.757,
+      "market_brier_same_games": 0.2054,
+      "vs_market": "market Brier better (t=7.4)",
+      "interpretable": true
+     },
+     {
+      "confidence": "medium",
+      "n": 508,
+      "brier": 0.2351,
+      "log_loss": 0.6645,
+      "accuracy": 0.596,
+      "calibration_error": 0.0283,
+      "favorite_overconfidence": -0.0221,
+      "avg_margin_error": 10.599,
+      "market_brier_same_games": 0.2186,
+      "vs_market": "market Brier better (t=3.5)",
+      "interpretable": true
+     },
+     {
+      "confidence": "low",
+      "n": 320,
+      "brier": 0.2407,
+      "log_loss": 0.6773,
+      "accuracy": 0.5723,
+      "calibration_error": 0.032,
+      "favorite_overconfidence": -0.0031,
+      "avg_margin_error": 10.79,
+      "market_brier_same_games": 0.2227,
+      "vs_market": "market Brier better (t=2.6)",
+      "interpretable": true
+     }
+    ],
+    "validated": false,
+    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2237 (market 0.2054), medium Brier 0.2351 (market 0.2186), low Brier 0.2407 (market 0.2227). Higher confidence is not reliably better.",
+    "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
+   },
+   "holdout": {
+    "levels": [
+     {
+      "confidence": "high",
+      "n": 745,
+      "brier": 0.2202,
+      "log_loss": 0.632,
+      "accuracy": 0.6559,
+      "calibration_error": 0.0631,
+      "favorite_overconfidence": -0.0631,
+      "avg_margin_error": 10.02,
+      "market_brier_same_games": 0.2019,
+      "vs_market": "market Brier better (t=5.2)",
+      "interpretable": true
+     },
+     {
+      "confidence": "medium",
+      "n": 217,
+      "brier": 0.2425,
+      "log_loss": 0.6795,
+      "accuracy": 0.5463,
+      "calibration_error": 0.0864,
+      "favorite_overconfidence": 0.0338,
+      "avg_margin_error": 9.856,
+      "market_brier_same_games": 0.2161,
+      "vs_market": "market Brier better (t=3.5)",
+      "interpretable": true
+     },
+     {
+      "confidence": "low",
+      "n": 160,
+      "brier": 0.2518,
+      "log_loss": 0.6969,
+      "accuracy": 0.4688,
+      "calibration_error": 0.1131,
+      "favorite_overconfidence": 0.0974,
+      "avg_margin_error": 10.908,
+      "market_brier_same_games": 0.2404,
+      "vs_market": "no detectable difference in Brier (t=1.0)",
+      "interpretable": true
+     }
+    ],
+    "validated": false,
+    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2202 (market 0.2019), medium Brier 0.2425 (market 0.2161), low Brier 0.2518 (market 0.2404). Higher confidence is not reliably better.",
+    "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
+   },
+   "all": {
+    "levels": [
+     {
+      "confidence": "high",
+      "n": 2446,
+      "brier": 0.2226,
+      "log_loss": 0.6376,
+      "accuracy": 0.65,
+      "calibration_error": 0.0596,
+      "favorite_overconfidence": -0.0589,
+      "avg_margin_error": 10.532,
+      "market_brier_same_games": 0.2044,
+      "vs_market": "market Brier better (t=9.0)",
+      "interpretable": true
+     },
+     {
+      "confidence": "medium",
+      "n": 725,
+      "brier": 0.2373,
+      "log_loss": 0.6689,
+      "accuracy": 0.5811,
+      "calibration_error": 0.0125,
+      "favorite_overconfidence": -0.0054,
+      "avg_margin_error": 10.376,
+      "market_brier_same_games": 0.2178,
+      "vs_market": "market Brier better (t=4.8)",
+      "interpretable": true
+     },
+     {
+      "confidence": "low",
+      "n": 480,
+      "brier": 0.2444,
+      "log_loss": 0.6839,
+      "accuracy": 0.5377,
+      "calibration_error": 0.0371,
+      "favorite_overconfidence": 0.0304,
+      "avg_margin_error": 10.829,
+      "market_brier_same_games": 0.2286,
+      "vs_market": "market Brier better (t=2.7)",
+      "interpretable": true
+     }
+    ],
+    "validated": false,
+    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2226 (market 0.2044), medium Brier 0.2373 (market 0.2178), low Brier 0.2444 (market 0.2286). Higher confidence is not reliably better.",
+    "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
+   }
+  },
+  "live_archive": {
+   "development": {
+    "levels": [
+     {
+      "confidence": "high",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "accuracy": null,
+      "calibration_error": null,
+      "favorite_overconfidence": null,
+      "avg_margin_error": null,
+      "market_brier_same_games": null,
+      "vs_market": null,
+      "interpretable": false
+     },
+     {
+      "confidence": "medium",
+      "n": 15,
+      "brier": 0.202,
+      "log_loss": 0.5935,
+      "accuracy": 0.7333,
+      "calibration_error": 0.1404,
+      "favorite_overconfidence": -0.1404,
+      "avg_margin_error": 4.715,
+      "market_brier_same_games": 0.2145,
+      "vs_market": "too few games to tell (n=15)",
+      "interpretable": false
+     },
+     {
+      "confidence": "low",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "accuracy": null,
+      "calibration_error": null,
+      "favorite_overconfidence": null,
+      "avg_margin_error": null,
+      "market_brier_same_games": null,
+      "vs_market": null,
+      "interpretable": false
+     }
+    ],
+    "validated": null,
+    "verdict": "Not enough games in at least two confidence levels to test the labels.",
+    "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
+   },
+   "all": {
+    "levels": [
+     {
+      "confidence": "high",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "accuracy": null,
+      "calibration_error": null,
+      "favorite_overconfidence": null,
+      "avg_margin_error": null,
+      "market_brier_same_games": null,
+      "vs_market": null,
+      "interpretable": false
+     },
+     {
+      "confidence": "medium",
+      "n": 15,
+      "brier": 0.202,
+      "log_loss": 0.5935,
+      "accuracy": 0.7333,
+      "calibration_error": 0.1404,
+      "favorite_overconfidence": -0.1404,
+      "avg_margin_error": 4.715,
+      "market_brier_same_games": 0.2145,
+      "vs_market": "too few games to tell (n=15)",
+      "interpretable": false
+     },
+     {
+      "confidence": "low",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "accuracy": null,
+      "calibration_error": null,
+      "favorite_overconfidence": null,
+      "avg_margin_error": null,
+      "market_brier_same_games": null,
+      "vs_market": null,
+      "interpretable": false
+     }
+    ],
+    "validated": null,
+    "verdict": "Not enough games in at least two confidence levels to test the labels.",
+    "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
+   }
+  }
+ },
+ "NHL": {
+  "live_archive": {
+   "development": {
+    "levels": [
+     {
+      "confidence": "high",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "accuracy": null,
+      "calibration_error": null,
+      "favorite_overconfidence": null,
+      "avg_margin_error": null,
+      "market_brier_same_games": null,
+      "vs_market": null,
+      "interpretable": false
+     },
+     {
+      "confidence": "medium",
+      "n": 31,
+      "brier": 0.2257,
+      "log_loss": 0.6411,
+      "accuracy": 0.6129,
+      "calibration_error": 0.1402,
+      "favorite_overconfidence": -0.0242,
+      "avg_margin_error": 2.243,
+      "market_brier_same_games": 0.231,
+      "vs_market": "no detectable difference in Brier (t=-0.4)",
+      "interpretable": true
+     },
+     {
+      "confidence": "low",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "accuracy": null,
+      "calibration_error": null,
+      "favorite_overconfidence": null,
+      "avg_margin_error": null,
+      "market_brier_same_games": null,
+      "vs_market": null,
+      "interpretable": false
+     }
+    ],
+    "validated": null,
+    "verdict": "Not enough games in at least two confidence levels to test the labels.",
+    "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
+   },
+   "all": {
+    "levels": [
+     {
+      "confidence": "high",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "accuracy": null,
+      "calibration_error": null,
+      "favorite_overconfidence": null,
+      "avg_margin_error": null,
+      "market_brier_same_games": null,
+      "vs_market": null,
+      "interpretable": false
+     },
+     {
+      "confidence": "medium",
+      "n": 31,
+      "brier": 0.2257,
+      "log_loss": 0.6411,
+      "accuracy": 0.6129,
+      "calibration_error": 0.1402,
+      "favorite_overconfidence": -0.0242,
+      "avg_margin_error": 2.243,
+      "market_brier_same_games": 0.231,
+      "vs_market": "no detectable difference in Brier (t=-0.4)",
+      "interpretable": true
+     },
+     {
+      "confidence": "low",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "accuracy": null,
+      "calibration_error": null,
+      "favorite_overconfidence": null,
+      "avg_margin_error": null,
+      "market_brier_same_games": null,
+      "vs_market": null,
+      "interpretable": false
+     }
+    ],
+    "validated": null,
+    "verdict": "Not enough games in at least two confidence levels to test the labels.",
+    "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
+   }
+  }
+ },
+ "MLB": {
+  "live_archive": {
+   "development": {
+    "levels": [
+     {
+      "confidence": "high",
+      "n": 2,
+      "brier": 0.1639,
+      "log_loss": 0.5189,
+      "accuracy": 1.0,
+      "calibration_error": 0.4047,
+      "favorite_overconfidence": -0.4046,
+      "avg_margin_error": 0.231,
+      "market_brier_same_games": 0.1661,
+      "vs_market": "too few games to tell (n=2)",
+      "interpretable": false
+     },
+     {
+      "confidence": "medium",
+      "n": 2,
+      "brier": 0.1578,
+      "log_loss": 0.506,
+      "accuracy": 1.0,
+      "calibration_error": 0.397,
+      "favorite_overconfidence": -0.397,
+      "avg_margin_error": 0.635,
+      "market_brier_same_games": 0.1509,
+      "vs_market": "too few games to tell (n=2)",
+      "interpretable": false
+     },
+     {
+      "confidence": "low",
+      "n": 3,
+      "brier": 0.2596,
+      "log_loss": 0.7133,
+      "accuracy": 0.6667,
+      "calibration_error": 0.5046,
+      "favorite_overconfidence": -0.1027,
+      "avg_margin_error": 2.706,
+      "market_brier_same_games": 0.3048,
+      "vs_market": "too few games to tell (n=3)",
+      "interpretable": false
+     }
+    ],
+    "validated": null,
+    "verdict": "Not enough games in at least two confidence levels to test the labels.",
+    "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
+   },
+   "all": {
+    "levels": [
+     {
+      "confidence": "high",
+      "n": 2,
+      "brier": 0.1639,
+      "log_loss": 0.5189,
+      "accuracy": 1.0,
+      "calibration_error": 0.4047,
+      "favorite_overconfidence": -0.4046,
+      "avg_margin_error": 0.231,
+      "market_brier_same_games": 0.1661,
+      "vs_market": "too few games to tell (n=2)",
+      "interpretable": false
+     },
+     {
+      "confidence": "medium",
+      "n": 2,
+      "brier": 0.1578,
+      "log_loss": 0.506,
+      "accuracy": 1.0,
+      "calibration_error": 0.397,
+      "favorite_overconfidence": -0.397,
+      "avg_margin_error": 0.635,
+      "market_brier_same_games": 0.1509,
+      "vs_market": "too few games to tell (n=2)",
+      "interpretable": false
+     },
+     {
+      "confidence": "low",
+      "n": 3,
+      "brier": 0.2596,
+      "log_loss": 0.7133,
+      "accuracy": 0.6667,
+      "calibration_error": 0.5046,
+      "favorite_overconfidence": -0.1027,
+      "avg_margin_error": 2.706,
+      "market_brier_same_games": 0.3048,
+      "vs_market": "too few games to tell (n=3)",
+      "interpretable": false
+     }
+    ],
+    "validated": null,
+    "verdict": "Not enough games in at least two confidence levels to test the labels.",
+    "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
+   }
+  }
+ }
+}
