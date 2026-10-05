@@ -292,6 +292,20 @@ Use the `ArtifactData` tool with the board URL above:
 - Doc already exists (a rerun): `get` it first, then `set` with its `version` as `if_version`.
 - Don't touch `bets` or `settings`. Those belong to the user.
 
+### Research tab
+
+After writing the slate, copy the research layer into the board so its Research tab (and the "Research" buttons
+on plays and Top 10 games) show today's cards:
+
+1. `cd /home/claude/boolin && python -m research.export --out /tmp/research-export`
+2. `ArtifactData` `query` on collection `research` with `where date == <today>`: for each document that
+   already exists, note its `version`. If any exist, re-run step 1 adding `--version <doc_id>=<version>` for each.
+3. `ArtifactData` `batch` with the writes in `/tmp/research-export/batch.json` (a summary doc `<date>` plus card
+   chunks `<date>~c1..n`, all in collection `research`).
+
+Never touch `bets` or `settings`. Research docs older than 30 days can be deleted (`research` collection,
+pass each doc's version) to keep the database small.
+
 ### Spreadsheet copy
 
 After writing the slate, also save it as a workbook and send it:

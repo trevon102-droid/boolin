@@ -84,8 +84,9 @@ def _archive_path(root: Path, date: str) -> Path:
 
 
 def _write(p: Path, obj) -> None:
+    from pipeline.common import finite
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps(obj, indent=1, ensure_ascii=False, default=str))
+    p.write_text(json.dumps(finite(obj), indent=1, ensure_ascii=False, default=str, allow_nan=False))
 
 
 def situations(card: dict) -> dict:
@@ -195,7 +196,8 @@ def build(raw: dict, now: dt.datetime, root: Path = RESEARCH, results_fetcher=es
         arch.update(upd)
         p.parent.mkdir(parents=True, exist_ok=True)
         with gzip.open(p, "wt", encoding="utf-8", compresslevel=9) as f:
-            json.dump(arch, f, ensure_ascii=False, default=str)
+            from pipeline.common import finite
+            json.dump(finite(arch), f, ensure_ascii=False, default=str, allow_nan=False)
 
     grades_done, result_errors = grade_finished(root, now, results_fetcher, cards)
     errors += result_errors

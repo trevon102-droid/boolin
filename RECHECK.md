@@ -27,7 +27,9 @@ Pricing rules: TASK.md sections 3, 3b and 3c. FanDuel prices only.
    - Record moves in `open`/`move`/`steam` (re-price from the new sharp price; never add the move as a bonus).
 5. Write back with `ArtifactData` `set` using the doc's `version` as `if_version`. Update `updated` and add one line
    to the top of `notes` saying what was re-checked and when. Never touch `bets` or `settings`.
-6. Rebuild the spreadsheet (TASK.md, "Spreadsheet copy") and send it only if a play turned on or off,
+6. Refresh the board's Research tab: trigger nothing new, just `git pull`, then follow TASK.md "Research tab"
+   (export with the existing docs' versions, then `batch`).
+7. Rebuild the spreadsheet (TASK.md, "Spreadsheet copy") and send it only if a play turned on or off,
    or its tier changed.
-7. Notify (PushNotification) only when something changed that Kaire would act on: lead with the play, the new
+8. Notify (PushNotification) only when something changed that Kaire would act on: lead with the play, the new
    FanDuel price and the stake, then anything that went off. If nothing changed, stay silent.

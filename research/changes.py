@@ -207,5 +207,6 @@ class Timeline:
     def save(self) -> None:
         self.root.mkdir(parents=True, exist_ok=True)
         for d in sorted(self._dirty):
-            (self.root / f"{d}.json").write_text(json.dumps(self._cache[d], indent=1))
+            from pipeline.common import finite
+            (self.root / f"{d}.json").write_text(json.dumps(finite(self._cache[d]), indent=1, allow_nan=False))
         self._dirty.clear()

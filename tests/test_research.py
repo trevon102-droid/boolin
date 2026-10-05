@@ -555,3 +555,34 @@ def test_nhl_goalie_tie_goes_to_last_seasons_starter():
     g = next(x for x in C.enumerate_games(raw, "2026-10-05") if x["league"] == "NHL")
     st = C.nhl_section(raw, g)["starters"]["home"]
     assert st["value"] == "Starter" and st["kind"] == "projected"
+
+
+def test_nan_never_reaches_json_files():
+    import math
+    with tempfile.TemporaryDirectory() as d:
+        raw = raw_fixture()
+        raw["nfl"]["injuries"]["teams"]["NO"][0]["practice"] = float("nan")
+        _build(raw, "2026-10-05T10:05-04:00", d)
+        for f in Path(d).rglob("*.json"):
+            json.loads(f.read_text(), parse_constant=lambda c: (_ for _ in ()).throw(ValueError(f"{f}: {c}")))
+    from pipeline.common import finite
+    assert finite({"a": [1.0, float("nan")], "b": float("inf")}) == {"a": [1.0, None], "b": None}
+
+
+def test_export_packs_cards_under_doc_cap():
+    from research import export
+    with tempfile.TemporaryDirectory() as d:
+        _build(raw_fixture(), "2026-10-05T10:05-04:00", d)
+        out = Path(d) / "x"
+        r = export.export(Path(d), out, {"2026-10-05": 3})
+        batch = json.loads((out / "batch.json").read_text())
+        assert batch[0]["doc_id"] == "2026-10-05" and batch[0]["if_version"] == 3
+        assert all(w["collection"] == "research" for w in batch)
+        keys = set()
+        for w in batch:
+            body = json.loads(Path(w["file_path"]).read_text())
+            assert len(json.dumps(body)) <= export.MAX_DOC + 64 * 1024 and body["date"] == "2026-10-05"
+            if body["kind"] == "cards":
+                keys |= {c["key"] for c in body["cards"]}
+        summary = json.loads((out / "2026-10-05.json").read_text())
+        assert keys == set(summary["keys"]) and summary["chunks"] == len(batch) - 1

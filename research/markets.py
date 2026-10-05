@@ -161,7 +161,8 @@ class MarketHistory:
     def save(self) -> None:
         self.root.mkdir(parents=True, exist_ok=True)
         for date in sorted(self._dirty):
-            self._file(date).write_text(json.dumps(self._cache[date], indent=1, sort_keys=True))
+            from pipeline.common import finite
+            self._file(date).write_text(json.dumps(finite(self._cache[date]), indent=1, sort_keys=True, allow_nan=False))
         self._dirty.clear()
 
 
