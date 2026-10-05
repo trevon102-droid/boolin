@@ -19,7 +19,7 @@ slate to the board. See [`TASK.md`](TASK.md) for that playbook.
 | CFB | ESPN (every FBS game, AP rank, FPI, weather, injuries) + optional CollegeFootballData (team EPA, SP+) | `CFBD_API_KEY` (optional, free) |
 | Injuries | ESPN game summaries (NHL, MLB) | none |
 
-## Schedule (UTC cron; ET shown for daylight time)
+## Schedule (ET all year: each time has an EDT and an EST cron, and the workflow keeps the matching one)
 
 - **8:54 AM ET (on demand)**: the daily slate task triggers a manual run with odds + props (workflow_dispatch). There is no scheduled odds pull.
 - **10:30 AM ET**: refresh lineups/injuries (no odds), ahead of the 10:50 AM re-check
@@ -49,10 +49,24 @@ A push whose commit message contains `[props]` also pulls them once.
 ## Output
 
 ```
-data/latest/manifest.json   # what ran, status per source, credits left
-data/latest/{odds,nfl,cfb,mlb,nhl,wnba,injuries}.json
-data/days/YYYY-MM-DD/...     # daily snapshots, kept 45 days
+data/latest/manifest.json   # health + status per source (ok / partial / error / skipped), components, errors, credits left
+data/latest/{odds,nfl,cfb,mlb,nhl,wnba,injuries}.json   # plain JSON, each with pulled_at_et
+data/days/YYYY-MM-DD/*.json.gz   # gzipped daily snapshots, kept 45 days
 ```
+
+A source is `partial` when its file was written but a piece failed (for example NFL schedule loaded but EPA
+didn't). `build_all` also scans every file for `error` / `*_error` keys and checks the file is today's, so a
+failure inside a source can't show up as `ok`. `error` means that source's latest file is from an earlier day.
+
+Daily snapshots are gzipped to keep the git history small (~10x smaller than plain JSON). Files committed
+before this change stay in history; shrinking that would need a history rewrite (not done).
+
+## Tests
+
+```
+python -m pytest -q tests          # or, without pytest:  python tests/run_offline.py
+```
+The workflow runs the offline tests before every pull.
 
 ## Run locally
 

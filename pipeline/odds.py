@@ -113,6 +113,7 @@ def summarize_event(ev: dict) -> dict:
     out = {
         "id": ev["id"],
         "commence_time": ev["commence_time"],
+        "date_et": _date_et(ev["commence_time"]),
         "start_et": C.to_et(ev["commence_time"]),
         "away": away,
         "home": home,
@@ -137,7 +138,36 @@ def summarize_event(ev: dict) -> dict:
         t["line"] = tp
         t["other_lines"] = sorted(totals.keys())
         out["markets"]["total"] = t
+    missing = [k for k, m in out["markets"].items() if all(o.get(MY_BOOK) is None for o in m["outcomes"])]
+    if missing:
+        out["flags"] = [f"no {MY_BOOK} price: {', '.join(missing)}"]
     return out
+
+
+def _date_et(iso_utc: str) -> str | None:
+    try:
+        return dt.datetime.fromisoformat(iso_utc.replace("Z", "+00:00")).astimezone(C.ET).date().isoformat()
+    except ValueError:
+        return None
+
+
+def prop_quality(rows: list[dict]) -> dict:
+    """Sanity flags for one game's props at MY_BOOK: how many rows have a price, and whether every
+    two-way row is priced identically (a sign the feed is serving placeholder prices)."""
+    priced = [r for r in rows if any(o.get(MY_BOOK) is not None for o in r["outcomes"])]
+    two_way = [r for r in priced if len(r["outcomes"]) == 2
+               and all(o.get(MY_BOOK) is not None for o in r["outcomes"])]
+    prices = {o[MY_BOOK] for r in two_way for o in r["outcomes"]}
+    q: dict = {"rows": len(rows), f"rows_with_{MY_BOOK}": len(priced), "two_way_rows": len(two_way)}
+    flags = []
+    if rows and not priced:
+        flags.append(f"no {MY_BOOK} prices in this game's props")
+    if len(two_way) >= 8 and len(prices) == 1:
+        flags.append(f"every two-way {MY_BOOK} prop is {next(iter(prices))} on both sides: likely placeholder "
+                     "prices from the feed. Confirm on the FanDuel app before using them.")
+    if flags:
+        q["flags"] = flags
+    return q
 
 
 def summarize_props(ev_odds: dict) -> list[dict]:
@@ -179,13 +209,63 @@ def _carry_props(result: dict, day: dt.date) -> None:
             entry["props_pulled_at_et"] = old.get("props_pulled_at_et") or prev.get("pulled_at_et")
 
 
+def _pull_sport(key: str, sk: str, day: dt.date, remaining):
+    r = C.get(f"{API}/sports/{sk}/odds", {
+        "apiKey": key, "bookmakers": BOOKS, "markets": "h2h,spreads,totals",
+        "oddsFormat": "american", "dateFormat": "iso",
+    })
+    remaining = r.headers.get("x-requests-remaining", remaining)
+    horizon = C.now_et() + dt.timedelta(hours=WINDOW_HOURS.get(sk, 36))
+    events = []
+    for ev in r.json():
+        start = dt.datetime.fromisoformat(ev["commence_time"].replace("Z", "+00:00"))
+        if start.astimezone(C.ET) <= horizon:
+            e = summarize_event(ev)
+            e["on_slate_day"] = e["date_et"] == day.isoformat()
+            events.append(e)
+    events.sort(key=lambda e: (not e["on_slate_day"], e["commence_time"]))
+    entry: dict = {"status": "ok", "slate_day_events": sum(e["on_slate_day"] for e in events),
+                   "later_events": sum(not e["on_slate_day"] for e in events), "events": events}
+    if os.environ.get("PROPS") == "1" and events:
+        # Only games on the slate day that haven't started: each event costs markets x credits.
+        cap = int(os.environ.get("PROPS_MAX_EVENTS", "6"))
+        now_utc = dt.datetime.now(dt.timezone.utc)
+        todays = [ev for ev in events
+                  if ev["on_slate_day"]
+                  and dt.datetime.fromisoformat(ev["commence_time"].replace("Z", "+00:00")) > now_utc]
+        props = {}
+        try:
+            for ev in todays[:cap]:
+                pr = C.get(f"{API}/sports/{sk}/events/{ev['id']}/odds", {
+                    "apiKey": key, "bookmakers": BOOKS, "markets": PROP_MARKETS[sk], "oddsFormat": "american",
+                })
+                remaining = pr.headers.get("x-requests-remaining", remaining)
+                rows = summarize_props(pr.json())
+                props[ev["id"]] = {"game": f"{ev['away']} @ {ev['home']}", "start_et": ev["start_et"],
+                                   "date_et": ev["date_et"], "quality": prop_quality(rows), "rows": rows}
+        except Exception as e:  # noqa: BLE001
+            entry["props_error"] = f"{type(e).__name__}: {e}"[:300]
+        entry["props"] = props
+        entry["props_pulled_at_et"] = C.now_et().isoformat(timespec="minutes")
+    return entry, remaining
+
+
 def run(day: dt.date) -> dict:
     key = os.environ.get("ODDS_API_KEY")
     if not key:
         return {"status": "skipped", "reason": "ODDS_API_KEY secret not set"}
     sports_live = {s["key"] for s in C.get_json(f"{API}/sports", {"apiKey": key}) if s.get("active")}
-    result: dict = {"pulled_at_et": C.now_et().isoformat(timespec="minutes"), "books": BOOKS, "sports": {}}
+    result: dict = {
+        "pulled_at_et": C.now_et().isoformat(timespec="minutes"), "slate_date": day.isoformat(),
+        "books": BOOKS, "actionable_book": MY_BOOK,
+        "field_guide": (f"Bet only at `{MY_BOOK}` prices. fair_prob/fair_odds = no-vig market (Pinnacle, else "
+                        "consensus): the estimate, not a price. best_price/best_book = context only. "
+                        "Events are tagged date_et / on_slate_day: weekly sports list later games too, so filter "
+                        "on on_slate_day for today's card. `flags` mark missing or suspicious prices."),
+        "sports": {},
+    }
     remaining = None
+    comps = C.Components()
     for label, sk in SPORTS.items():
         if label in START_DATES and day < START_DATES[label]:
             result["sports"][label] = {"status": "off", "reason": f"held until {START_DATES[label].isoformat()}"}
@@ -193,38 +273,17 @@ def run(day: dt.date) -> dict:
         if sk not in sports_live:
             result["sports"][label] = {"status": "off-season"}
             continue
-        r = C.get(f"{API}/sports/{sk}/odds", {
-            "apiKey": key, "bookmakers": BOOKS, "markets": "h2h,spreads,totals",
-            "oddsFormat": "american", "dateFormat": "iso",
-        })
-        remaining = r.headers.get("x-requests-remaining", remaining)
-        horizon = C.now_et() + dt.timedelta(hours=WINDOW_HOURS.get(sk, 36))
-        events = []
-        for ev in r.json():
-            start = dt.datetime.fromisoformat(ev["commence_time"].replace("Z", "+00:00"))
-            if start.astimezone(C.ET) <= horizon:
-                events.append(summarize_event(ev))
-        entry: dict = {"status": "ok", "events": events}
-        if os.environ.get("PROPS") == "1" and events:
-            # Only games on the slate day that haven't started: each event costs markets x credits.
-            cap = int(os.environ.get("PROPS_MAX_EVENTS", "6"))
-            now_utc = dt.datetime.now(dt.timezone.utc)
-            todays = [ev for ev in events
-                      if (t := dt.datetime.fromisoformat(ev["commence_time"].replace("Z", "+00:00"))) > now_utc
-                      and t.astimezone(C.ET).date() == day]
-            props = {}
-            for ev in todays[:cap]:
-                pr = C.get(f"{API}/sports/{sk}/events/{ev['id']}/odds", {
-                    "apiKey": key, "bookmakers": BOOKS, "markets": PROP_MARKETS[sk], "oddsFormat": "american",
-                })
-                remaining = pr.headers.get("x-requests-remaining", remaining)
-                props[ev["id"]] = {"game": f"{ev['away']} @ {ev['home']}", "start_et": ev["start_et"],
-                                   "rows": summarize_props(pr.json())}
-            entry["props"] = props
-            entry["props_pulled_at_et"] = C.now_et().isoformat(timespec="minutes")
+        try:
+            entry, remaining = _pull_sport(key, sk, day, remaining)
+            comps.mark(label, C.ERROR if entry.get("props_error") else C.OK, entry.get("props_error"))
+        except Exception as e:  # noqa: BLE001
+            entry = {"status": "error", "error": f"{type(e).__name__}: {e}"[:300], "events": []}
+            comps.mark(label, C.ERROR, entry["error"])
         result["sports"][label] = entry
     result["credits_remaining"] = remaining
     _carry_props(result, day)
+    result["components"] = dict(comps.status)
     C.write("odds", result, day)
     n = sum(len(v.get("events", [])) for v in result["sports"].values())
-    return {"status": "ok", "events": n, "credits_remaining": remaining}
+    today = sum(v.get("slate_day_events", 0) for v in result["sports"].values())
+    return comps.result(events=n, slate_day_events=today, credits_remaining=remaining)

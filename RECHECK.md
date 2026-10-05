@@ -12,7 +12,7 @@ Pricing rules: TASK.md sections 3, 3b and 3c. FanDuel prices only.
 
 1. `get` today's slate doc. If it doesn't exist, stop quietly (nothing to re-check).
 2. Find games on today's slate that haven't started yet. If none, stop quietly.
-3. For those games, check with WebSearch/WebFetch:
+3. Read `data/latest/manifest.json` (`health`, per-source `status`: ok / partial / error) and use `on_slate_day` events only. Then, for those games, check with WebSearch/WebFetch:
    - FanDuel's current price for every pick, longshot and ladder rung on the slate (FanDuel team and
      player pages: sportsbook.fanduel.com/teams/<league>/<team>/odds and /teams/<league>/roster/<player>/player-props;
      otherwise pages that label the price as FanDuel's). Never invent a price.

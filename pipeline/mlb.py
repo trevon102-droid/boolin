@@ -58,19 +58,47 @@ def pitcher(pid: int, season: int) -> dict:
                         "bb": st.get("baseOnBalls"), "h": st.get("hits"), "er": st.get("earnedRuns"),
                         "pitches": st.get("numberOfPitches"),
                     })
-        except Exception:  # noqa: BLE001
+        except Exception as e:  # noqa: BLE001
+            out[f"gamelog_{game_type.replace(',', '')}_error"] = str(e)
             continue
     starts.sort(key=lambda x: x["date"] or "")
-    last = starts[-5:]
-    out["last5"] = last
-    if starts:
-        ks = [s["k"] for s in starts if s["k"] is not None]
-        outs = [s["outs"] for s in starts if s["outs"] is not None]
-        out["k_dist"] = {str(n): round(sum(k >= n for k in ks) / len(ks), 3) for n in range(3, 11)} if ks else {}
-        out["outs_dist"] = {str(n): round(sum(o >= n for o in outs) / len(outs), 3)
-                            for n in (12, 15, 16, 17, 18, 19, 20)} if outs else {}
-        out["starts_counted"] = len(starts)
+    out["last5"] = starts[-5:]
+    out.update(distributions(starts))
     return out
+
+
+def _dist(vals: list[int], points) -> dict:
+    return {str(n): round(sum(v >= n for v in vals) / len(vals), 3) for n in points} if vals else {}
+
+
+def distributions(starts: list[dict]) -> dict:
+    """K and outs hit-rate distributions for the season, last 10 and last 5 starts, with means and
+    sample sizes, so the reader can regress the short windows toward the season baseline."""
+    if not starts:
+        return {"starts_counted": 0, "sample_quality": "none"}
+    ks = [s["k"] for s in starts if s.get("k") is not None]
+    outs = [s["outs"] for s in starts if s.get("outs") is not None]
+    out: dict = {
+        "starts_counted": len(starts),
+        "sample_quality": C.sample_quality(len(starts), tiny=3, small=8),
+        "k_dist": _dist(ks, range(3, 11)),            # season (kept for compatibility)
+        "outs_dist": _dist(outs, (12, 15, 16, 17, 18, 19, 20)),
+        "k_dist_last10": _dist(ks[-10:], range(3, 11)),
+        "outs_dist_last10": _dist(outs[-10:], (12, 15, 16, 17, 18, 19, 20)),
+        "k_mean": {"season": _mean(ks), "last10": _mean(ks[-10:]), "last5": _mean(ks[-5:])},
+        "outs_mean": {"season": _mean(outs), "last10": _mean(outs[-10:]), "last5": _mean(outs[-5:])},
+        "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season.",
+    }
+    # short-start flag: openers / bulk-relief setups are not marked by the MLB API
+    recent = [o for o in outs[-5:]]
+    if recent and _mean(recent) is not None and _mean(recent) < 10.5:
+        out["short_start_flag"] = (f"Averaged {_mean(recent)} outs over the last {len(recent)} starts: "
+                                   "possible opener / bulk-relief usage. Verify the pitching plan.")
+    return out
+
+
+def _mean(vals: list) -> float | None:
+    return round(sum(vals) / len(vals), 2) if vals else None
 
 
 def team_k_vs_hand(team_id: int, season: int) -> dict:
@@ -158,6 +186,8 @@ def run(day: dt.date) -> dict:
                 "record": t.get("leagueRecord"),
             }
             pp = t.get("probablePitcher")
+            row[side]["probable_status"] = ("announced (MLB probable; openers/bulk relievers are not flagged)"
+                                            if pp else "TBD: no probable announced")
             if pp:
                 try:
                     row[side]["probable"] = pitcher(pp["id"], season)
@@ -165,6 +195,7 @@ def run(day: dt.date) -> dict:
                     row[side]["probable"] = {"id": pp["id"], "name": pp.get("fullName"), "error": str(e)}
             lu = (g.get("lineups") or {}).get(f"{side}Players")
             row[side]["lineup"] = [p.get("fullName") for p in lu] if lu else None
+            row[side]["lineup_status"] = "confirmed" if lu else "not posted yet"
             if team["id"] not in k_cache:
                 k_cache[team["id"]] = team_k_vs_hand(team["id"], season)
             row[side]["bats"] = k_cache[team["id"]]
@@ -178,5 +209,7 @@ def run(day: dt.date) -> dict:
             key = {"L": "vs_LHP", "R": "vs_RHP"}.get(hand or "")
             row[side]["k_pct_vs_opp_starter_hand"] = (row[side]["bats"].get(key) or {}).get("k_pct") if key else None
         games.append(row)
-    C.write("mlb", {"date": day.isoformat(), "season": season, "games": games}, day)
-    return {"status": "ok", "games": len(games)}
+    C.write("mlb", {"date": day.isoformat(), "season": season, "games": games,
+                    "note": ("probable_status / lineup_status say what is confirmed. Start times are MLB's "
+                             "(trust these over the odds feed's commence time).")}, day)
+    return {"status": "ok", "games": len(games), "components": {"schedule": "ok"}}

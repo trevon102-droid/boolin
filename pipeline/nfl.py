@@ -29,14 +29,18 @@ def team_epa(season: int) -> dict:
     plays = df[((df["pass"] == 1) | (df["rush"] == 1)) & df["epa"].notna()]
     if plays.empty:
         return {}
-    last_weeks = sorted(plays["week"].unique())[-3:]
+    weeks = sorted(plays["week"].unique())
+    last_weeks, last_week = weeks[-3:], weeks[-1:]
     out = {}
     for team in sorted(set(plays["posteam"].dropna()) | set(plays["defteam"].dropna())):
         o, d = plays[plays["posteam"] == team], plays[plays["defteam"] == team]
         o3, d3 = o[o["week"].isin(last_weeks)], d[d["week"].isin(last_weeks)]
+        o1, d1 = o[o["week"].isin(last_week)], d[d["week"].isin(last_week)]
+        n_games = int(o["week"].nunique())
         early = o[o["down"].isin([1, 2])]
         out[team] = {
-            "games": int(o["week"].nunique()),
+            "games": n_games,
+            "sample_quality": C.sample_quality(n_games, tiny=3, small=6),
             "off_epa_play": _r(o["epa"].mean()), "off_success": _r(o["success"].mean()),
             "off_pass_epa": _r(o.loc[o["pass"] == 1, "epa"].mean()),
             "off_rush_epa": _r(o.loc[o["rush"] == 1, "epa"].mean()),
@@ -45,13 +49,16 @@ def team_epa(season: int) -> dict:
             "def_pass_epa": _r(d.loc[d["pass"] == 1, "epa"].mean()),
             "def_rush_epa": _r(d.loc[d["rush"] == 1, "epa"].mean()),
             "off_epa_last3": _r(o3["epa"].mean()), "def_epa_last3": _r(d3["epa"].mean()),
+            "off_epa_last1": _r(o1["epa"].mean()), "def_epa_last1": _r(d1["epa"].mean()),
         }
     # league ranks (1 = best) so the slate can say "3rd-best defense"
     for key, best_high in (("off_epa_play", True), ("def_epa_play", False)):
         ranked = sorted(out, key=lambda t: (out[t][key] is None, -(out[t][key] or 0) if best_high else (out[t][key] or 0)))
         for i, t in enumerate(ranked, 1):
             out[t][key + "_rank"] = i
-    return {"weeks_in_sample": [int(w) for w in sorted(plays["week"].unique())], "teams": out}
+    return {"weeks_in_sample": [int(w) for w in weeks],
+            "sample_note": "sample_quality: tiny < 3 games, small < 6. Regress tiny samples hard toward last season / market.",
+            "teams": out}
 
 
 def injuries(season: int) -> dict:
@@ -60,11 +67,15 @@ def injuries(season: int) -> dict:
         return {}
     wk = df["week"].max()
     cur = df[(df["week"] == wk) & df["report_status"].isin(["Out", "Doubtful", "Questionable"])]
-    out: dict = {"week": int(wk), "teams": {}}
+    out: dict = {"week": int(wk), "report_week": int(wk),
+                 "note": "Latest weekly report, not inactives. Final status comes ~90 min before kickoff.",
+                 "teams": {}}
     for _, r in cur.iterrows():
         out["teams"].setdefault(r["team"], []).append({
             "player": r.get("full_name"), "pos": r.get("position"), "status": r.get("report_status"),
             "practice": r.get("practice_status"), "injury": r.get("report_primary_injury"),
+            "reported": (str(r.get("date_modified"))[:16] if r.get("date_modified") is not None
+                         and not pd.isna(r.get("date_modified")) else None),
         })
     return out
 
@@ -85,15 +96,22 @@ def run(day: dt.date) -> dict:
     games = [{k: (None if pd.isna(v) else (v.isoformat() if hasattr(v, "isoformat") else v))
               for k, v in row.items()} for row in upcoming[[c for c in cols if c in upcoming]].to_dict("records")]
     payload: dict = {"date": day.isoformat(), "season": season,
-                     "note": "spread_line is home-team margin (positive = home favored), per nflverse",
+                     "note": "spread_line is home-team margin (positive = home favored), per nflverse. "
+                             "Injury statuses are the latest weekly report (see injuries.report_week), "
+                             "not game-day inactives: confirm inactives ~90 min before kickoff.",
                      "games": games}
-    try:
-        payload["team_epa"] = team_epa(season)
-    except Exception as e:  # noqa: BLE001
-        payload["team_epa_error"] = str(e)
-    try:
-        payload["injuries"] = injuries(season)
-    except Exception as e:  # noqa: BLE001
-        payload["injuries_error"] = str(e)
+    comps = C.Components()
+    comps.mark("schedule", C.OK)
+    epa = comps.run("team_epa", team_epa, season)
+    if epa is not None:
+        payload["team_epa"] = epa
+    else:
+        payload["team_epa_error"] = comps.errors.get("team_epa")
+    inj = comps.run("injuries", injuries, season)
+    if inj is not None:
+        payload["injuries"] = inj
+    else:
+        payload["injuries_error"] = comps.errors.get("injuries")
+    payload["components"] = dict(comps.status)
     C.write("nfl", payload, day)
-    return {"status": "ok", "games": len(games)}
+    return comps.result(core=("schedule",), games=len(games))

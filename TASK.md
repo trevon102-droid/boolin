@@ -70,13 +70,28 @@ Read `data/latest/manifest.json` first.
   If `slate_date` still isn't today (ET), that run failed. Say so in the slate `notes` and
   fall back to web research for everything.
 - If a source shows `error` or `skipped`, cover that part with web search and say so in `notes`.
+- **Statuses:** `ok` (every component loaded), `partial` (file written but a piece failed: read its `errors` /
+  `components` and web-search that piece), `error` (the source failed; its `data/latest` file is NOT today's, so
+  don't read it), `skipped` (intentionally not pulled). `health` at the top rolls them up. Each file carries
+  `pulled_at_et`; say in `notes` if anything you used is more than a few hours old.
+- **Confirmed vs projected:** MLB `probable_status` / `lineup_status` (`short_start_flag` = possible opener or bulk
+  setup: verify the pitching plan), NHL `starting_goalie.status` is always `unconfirmed` (Daily Faceoff decides),
+  NFL injuries are the weekly report (`report_week`), not inactives. Start times: trust `mlb.json`/`nhl.json`
+  over the odds feed.
+- **Small samples:** `sample_quality` (`tiny`/`small`/`ok`) is on NHL standings and 5v5 xG, NFL team EPA and MLB
+  pitcher distributions. Treat `tiny` as descriptive only and lean on last season and the market. MLB has
+  `k_dist_last10`, `k_mean` and `outs_mean` (season/last10/last5) next to the season `k_dist`.
+- **Odds quality:** every event has `date_et` and `on_slate_day`; NFL/CFB lists include later games, so filter on
+  `on_slate_day` for today's card. `flags` mark markets with no FanDuel price. Each props game has `quality`; a
+  flag that every FanDuel prop is the same price on both sides means the feed served placeholder prices, so
+  confirm on FanDuel before using them.
 
 Files in `data/latest/`:
 
 | File | What's in it |
 |---|---|
-| `odds.json` | Per game: best price + book for every side, **Pinnacle no-vig fair prob**, hold, other lines. Props if pulled. |
-| `mlb.json` | Probables (season K%, BB%, last 5 starts, K and outs hit-rate distributions), lineups, team K% vs the starter's hand, bullpen usage last 3 days, weather, HP ump, series status |
+| `odds.json` | Per game: `date_et`/`on_slate_day`, FanDuel price (`fanduel`, the only actionable price), **Pinnacle no-vig fair prob**, best price + book (context), hold, other lines, `flags`. Props (with `quality`) if pulled. |
+| `mlb.json` | Probables (season K%, BB%, last 5 starts, K and outs hit-rate distributions for season and last 10, means, `short_start_flag`), `probable_status`, lineups + `lineup_status`, team K% vs the starter's hand, bullpen usage last 3 days, weather, HP ump, series status |
 | `nhl.json` | Back-to-back flags, standings form, goalie usage + GSAx (this + last season), 5v5 xG% (MoneyPuck) |
 | `wnba.json` | ESPN line + win projection, injuries, last-10 logs for each team's leaders, team stats |
 | `nba.json` | Same shape as `wnba.json` for today's NBA games (starts Oct 20, 2026; skipped before then) |
