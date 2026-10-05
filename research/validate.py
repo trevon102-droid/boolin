@@ -242,14 +242,14 @@ def devig_ml(home_ml, away_ml) -> float | None:
     return round(d[0], 4) if d else None
 
 
-def replay_model(g: dict) -> dict:
-    """The live NFL model on the replayed inputs (same function, same parameters)."""
+def replay_model(g: dict, P: dict | None = None) -> dict:
+    """The live NFL model on the replayed inputs (same function; current parameters unless P is given)."""
     roof = g.get("roof")
     outdoors = roof in ("outdoors", "open") if roof else None
     h, a = g["inputs"]["home"], g["inputs"]["away"]
     return models.nfl({"home": {"off_epa": h["off_epa"], "def_epa": h["def_epa"], "games": h["games"], "rest": g.get("home_rest")},
                        "away": {"off_epa": a["off_epa"], "def_epa": a["def_epa"], "games": a["games"], "rest": g.get("away_rest")},
-                       "outdoors": outdoors, "wind_mph": None, "neutral": False})
+                       "outdoors": outdoors, "wind_mph": None, "neutral": False}, P)
 
 
 def replay_rows(path: Path = REPLAY) -> tuple[list[dict], list[dict], dict]:
@@ -270,6 +270,7 @@ def replay_rows(path: Path = REPLAY) -> tuple[list[dict], list[dict], dict]:
             if oc.get("home_margin") is None:
                 ex("no final score"); continue
             m = replay_model(g)
+            m01 = replay_model(g, models.NFL_V01)
             if not m.get("available"):
                 ex(f"model unavailable: {m.get('reason')}"); continue
             mc = g.get("market_close") or {}
@@ -300,6 +301,8 @@ def replay_rows(path: Path = REPLAY) -> tuple[list[dict], list[dict], dict]:
                 "model_version": base_version(m["version"]), "model_version_full": m["version"],
                 "model_confidence": m["confidence"],
                 "model_home_p": m["home_win_p"], "model_margin": m["proj_margin_home"], "model_total": m["proj_total"],
+                "previous_version": {"model_version": base_version(models.NFL_V01["version"]),
+                                     "model_home_p": m01.get("home_win_p"), "model_margin": m01.get("proj_margin_home")},
                 "market_kind": "closing (nflverse games.csv, no-vig moneyline)", "market_ref": "nflverse close",
                 "market_home_p": devig_ml(mc.get("home_moneyline"), mc.get("away_moneyline")),
                 "market_spread_home": -mc["spread_line"] if mc.get("spread_line") is not None else None,
@@ -802,7 +805,10 @@ def scorecard_entry(league: str, primary: list[dict], primary_label: str, extra:
             reasons.append(f"holdout vs market: {(mc.get('brier_paired') or {}).get('verdict')}")
     cal_status = ("uncalibrated (insufficient sample)" if n < MIN_HOLDOUT else
                   "calibrated in holdout" if cal_ok else "needs_calibration")
-    return {"model_version": base_version(models.VERSION), "validation_version": VALIDATION_VERSION,
+    behind_market = t is not None and t >= 2
+    if rec in LEAN_OK and behind_market:
+        reasons.append("calibrated, but the market is better in the holdout: disagreement isn't backed, so no leans")
+    return {"model_version": base_version(models.VERSIONS.get(league, models.VERSION)), "validation_version": VALIDATION_VERSION,
             "data_cutoff": max((r["date"] for r in primary), default=None),
             "primary_evidence": primary_label, "sample_size": n,
             "development_size": len([r for r in primary if r["split"] == "development"]),
@@ -815,7 +821,7 @@ def scorecard_entry(league: str, primary: list[dict], primary_label: str, extra:
             "market_spread_mae": (((sp.get("same_games") or {}).get("market_implied") or {}).get("mae")),
             "confidence_validated": conf.get("validated"), "calibration_status": cal_status,
             "validation_status": vstat, "recommendation": rec, "reasons": reasons,
-            "lean_allowed": rec in LEAN_OK, **extra}
+            "lean_allowed": rec in LEAN_OK and not behind_market, **extra}
 
 
 # ======================================================================== orchestration
@@ -838,21 +844,29 @@ def run(root: Path = RESEARCH, replay_path: Path = REPLAY, out: Path | None = No
             (root / "validation" / "filtered" / "-".join(x for x in (league, since, until) if x))
     out.mkdir(parents=True, exist_ok=True)
 
-    head = {"validation_version": VALIDATION_VERSION, "model_version": base_version(models.VERSION),
+    head = {"validation_version": VALIDATION_VERSION,
+            "model_version": {lg: base_version(models.VERSIONS[lg]) for lg in MODELED},
             "model_versions_in_rows": versions, "built_at": T.iso_et(now),
             "data_cutoff": max((r["date"] for r in rows), default=None), "filters": {"league": league, "since": since, "until": until},
-            "calibration_status": "uncalibrated (baseline-0.1 has never been fit to outcomes)",
+            "calibration_status": {"NFL": f"{models.NFL_VERSION}: coefficients fit on replay seasons < {REPLAY_HOLDOUT_FROM} "
+                                          "(research/fit_nfl.py); holdout result in model_scorecard.json",
+                                   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
+                                   "MLB": "baseline-0.1: never fit to outcomes (uncalibrated)"},
             "splits": {"live_archive": f"development = games on or before {MODEL_FROZEN_AT} (parameters last changed); holdout = after",
                        "nfl_replay": f"development = seasons < {REPLAY_HOLDOUT_FROM}; holdout = {REPLAY_HOLDOUT_FROM}+"}}
     if len(versions) > 1:
-        head["warning"] = f"rows span model versions {versions}: every table below is per version-compatible source"
+        head["warning"] = (f"rows span model versions {versions}: each table is per league and per source, and rows "
+                           "from an older version sit in their own '<source> @<version>' slice")
 
+    # one model version per slice: rows from an older version get their own "<source> @<version>" slice
     slices = {}
     for lg in MODELED:
+        cur = base_version(models.VERSIONS[lg])
         for src in ("nfl_replay", "live_archive"):
             rs = [r for r in rows if r["league"] == lg and r["source"] == src]
-            if rs:
-                slices[(lg, src)] = rs
+            for v in sorted({r["model_version"] for r in rs}):
+                part = [r for r in rs if r["model_version"] == v]
+                slices[(lg, src if v == cur else f"{src} @{v}")] = part
 
     def per_split(fn, *a):
         res = {}
@@ -894,19 +908,32 @@ def run(root: Path = RESEARCH, replay_path: Path = REPLAY, out: Path | None = No
     files["sample_validation.json"].setdefault("NFL", {})["k_games_diagnostic"] = shrinkage_diagnostic(nfl_dev, raw_games)
 
     # replay fidelity: the same game seen live and in the replay should get (nearly) the same number
-    live_nfl = {r["key"]: r for r in slices.get(("NFL", "live_archive"), [])}
+    live_nfl = {r["key"]: r for (lg, src), rs in slices.items() if lg == "NFL" and src.startswith("live_archive") for r in rs}
     both = [(live_nfl[r["key"]], r) for r in slices.get(("NFL", "nfl_replay"), []) if r["key"] in live_nfl]
-    fidelity = {"n_overlap": len(both),
-                "mean_abs_prob_diff": _r(V.mean(abs(a["model_home_p"] - b["model_home_p"]) for a, b in both)) if both else None,
-                "max_abs_prob_diff": _r(max((abs(a["model_home_p"] - b["model_home_p"]) for a, b in both), default=None)),
-                "note": "Live card vs replay for the same game. Large gaps would mean the replay isn't the live model."}
+
+    def same_version_p(live, rep_):
+        """The replay's probability under the model version the live card used."""
+        if live["model_version"] == rep_["model_version"]:
+            return rep_["model_home_p"]
+        pv = rep_.get("previous_version") or {}
+        return pv.get("model_home_p") if pv.get("model_version") == live["model_version"] else None
+    pairs = [(a["model_home_p"], same_version_p(a, b)) for a, b in both]
+    pairs = [(x, y) for x, y in pairs if y is not None]
+    fidelity = {"n_overlap": len(pairs),
+                "identical": sum(1 for x, y in pairs if abs(x - y) < 1e-4),
+                "mean_abs_prob_diff": _r(V.mean(abs(x - y) for x, y in pairs)) if pairs else None,
+                "max_abs_prob_diff": _r(max((abs(x - y) for x, y in pairs), default=None)),
+                "note": "Live card vs replay for the same game, same model version. Gaps mean the live pull saw "
+                        "different inputs than the replay (cause not confirmed per game)."}
 
     score = {}
     for lg in MODELED:
         if league and lg != league:
             continue
         rp, lv = slices.get((lg, "nfl_replay"), []), slices.get((lg, "live_archive"), [])
+        lv_all = [r for (l2, src), rs in slices.items() if l2 == lg and src.startswith("live_archive") for r in rs]
         live_info = {"live_archive": {"n": len(lv), "holdout": len([r for r in lv if r["split"] == "holdout"]),
+                                      "older_version_rows": len(lv_all) - len(lv),
                                       **({k: v for k, v in market_comparison(lv).items() if k in ("n", "boolin", "market", "brier_paired")} if lv else {})}}
         if lg == "NFL" and rp:
             score[lg] = scorecard_entry(lg, rp, f"nfl_replay holdout ({REPLAY_HOLDOUT_FROM}+), closing-line benchmark",
@@ -920,6 +947,7 @@ def run(root: Path = RESEARCH, replay_path: Path = REPLAY, out: Path | None = No
     summary = {**head, "rows": len(rows), "excluded": len(excluded),
                "by_source": {f"{lg} {src}": {"rows": len(rs), "development": sum(r["split"] == "development" for r in rs),
                                              "holdout": sum(r["split"] == "holdout" for r in rs),
+                                             "model_versions": sorted({r["model_version"] for r in rs}),
                                              "first": rs[0]["date"], "last": rs[-1]["date"]} for (lg, src), rs in slices.items()},
                "excluded_by_reason": _count(excluded),
                "replay": replay_meta, "replay_fidelity": fidelity,
@@ -962,7 +990,7 @@ def status_for(statuses: dict, league: str) -> dict:
     """What the research layer shows and gates on. No scorecard = not validated."""
     s = statuses.get(league)
     if not s:
-        return {"model_version": base_version(models.VERSION), "calibration_status": "uncalibrated",
+        return {"model_version": base_version(models.VERSIONS.get(league, models.VERSION)), "calibration_status": "uncalibrated",
                 "validation_status": "not validated (no scorecard)", "recommendation": "NOT READY",
                 "lean_allowed": False, "sample_size": 0}
     return {k: s.get(k) for k in ("model_version", "validation_version", "data_cutoff", "calibration_status",

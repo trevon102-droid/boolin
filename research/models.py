@@ -1,7 +1,9 @@
 """Boolin baseline models: small, deterministic and fully explained.
 
-These are *baseline* projections built only from data the pipeline already stores. They are
-uncalibrated (no backtest yet) and every output carries that label. Each model is additive in
+These are *baseline* projections built only from data the pipeline already stores. Every output
+carries its model version. NFL baseline-0.2 has coefficients fit to outcomes on the 2012-2021
+replay (research/fit_nfl.py, data/research/validation/nfl_fit.json) and checked on 2022+; NHL and
+MLB are still baseline-0.1, uncalibrated (no history to fit them on yet). Each model is additive in
 home-margin units, so every projection decomposes exactly into named contributions; that is
 what the "why did it move" explanation reads. Win probability is a fixed transform of the margin.
 
@@ -14,7 +16,9 @@ from __future__ import annotations
 
 import math
 
-VERSION = "baseline-0.1 (uncalibrated)"
+VERSION = "baseline-0.1 (uncalibrated)"          # NHL, MLB
+NFL_VERSION = "baseline-0.2 (NFL fit 2012-2021)"
+VERSIONS = {"NFL": NFL_VERSION, "NHL": VERSION, "MLB": VERSION}
 
 
 def _phi(x: float) -> float:
@@ -37,25 +41,33 @@ def confidence(weights: list[float]) -> str:
     return "high" if w >= 0.6 else "medium" if w >= 0.35 else "low"
 
 
-def unavailable(reason: str) -> dict:
-    return {"available": False, "version": VERSION, "reason": reason}
+def unavailable(reason: str, league: str | None = None) -> dict:
+    return {"available": False, "version": VERSIONS.get(league, VERSION), "reason": reason}
 
 
 # ---------------------------------------------------------------- NFL
 
-NFL = {"plays": 62, "hfa": 1.5, "k_games": 4, "base_ppg": 22.5, "margin_sd": 13.5,
-       "rest_pts_per_day": 0.1, "rest_cap": 1.0, "wind_floor": 10, "wind_pts_per_mph": 0.15}
+# baseline-0.1: hand-set (62 plays / 2 points per EPA/play, 1.5 HFA, SD 13.5). Kept for comparison.
+NFL_V01 = {"version": VERSION, "off_coef": 31.0, "def_coef": 31.0, "hfa": 1.5, "k_games": 4, "base_total": 45.0,
+           "total_coef": 31.0, "margin_sd": 13.5, "rest_pts_per_day": 0.1, "rest_cap": 1.0,
+           "wind_floor": 10, "wind_pts_per_mph": 0.15}
+# baseline-0.2: least squares on the 2012-2021 replay (point-in-time inputs, k_games kept at 4 because
+# leave-one-season-out CV couldn't tell k=4..8 apart). Wind is not fitted (no pregame wind history).
+# Must match data/research/validation/nfl_fit.json (a test checks).
+NFL = {"version": NFL_VERSION, "off_coef": 58.15, "def_coef": 32.45, "hfa": 1.92, "k_games": 4, "base_total": 45.52,
+       "total_coef": 21.83, "margin_sd": 13.63, "rest_pts_per_day": 0.0716, "rest_cap": 0.72,
+       "wind_floor": 10, "wind_pts_per_mph": 0.15}
 
 
-def nfl(inp: dict) -> dict:
+def nfl(inp: dict, P: dict | None = None) -> dict:
     """inp = {"home": {"off_epa", "def_epa", "games", "rest"}, "away": {...},
               "outdoors": bool|None, "wind_mph": float|None, "neutral": bool}
     def_epa is EPA/play ALLOWED (lower is better)."""
-    P = NFL
+    P = P or NFL
     h, a = inp.get("home") or {}, inp.get("away") or {}
     need = [h.get("off_epa"), h.get("def_epa"), a.get("off_epa"), a.get("def_epa")]
-    if any(v is None for v in need):
-        return unavailable("team EPA missing for one side (nfl.json team_epa)")
+    if any(v is None for v in need) or not h.get("games") or not a.get("games"):
+        return {**unavailable("team EPA missing for one side (nfl.json team_epa)", "NFL"), "version": P["version"]}
     oh, wh = regress(h["off_epa"], h.get("games"), P["k_games"])
     dh, _ = regress(h["def_epa"], h.get("games"), P["k_games"])
     oa, wa = regress(a["off_epa"], a.get("games"), P["k_games"])
@@ -63,11 +75,11 @@ def nfl(inp: dict) -> dict:
     contrib = []
     hfa = 0.0 if inp.get("neutral") else P["hfa"]
     contrib.append({"name": "Home field", "margin": hfa,
-                    "note": "neutral site" if inp.get("neutral") else f"{P['hfa']} pts standard"})
-    contrib.append({"name": "Offense (EPA/play, regressed)", "margin": round(P["plays"] * (oh - oa) / 2, 2),
-                    "note": f"home {oh:+.3f} vs away {oa:+.3f} EPA/play"})
-    contrib.append({"name": "Defense (EPA/play allowed, regressed)", "margin": round(P["plays"] * (da - dh) / 2, 2),
-                    "note": f"home allows {dh:+.3f} vs away allows {da:+.3f}"})
+                    "note": "neutral site" if inp.get("neutral") else f"{P['hfa']} pts"})
+    contrib.append({"name": "Offense (EPA/play, regressed)", "margin": round(P["off_coef"] * (oh - oa), 2),
+                    "note": f"home {oh:+.3f} vs away {oa:+.3f} EPA/play x {P['off_coef']:g}"})
+    contrib.append({"name": "Defense (EPA/play allowed, regressed)", "margin": round(P["def_coef"] * (da - dh), 2),
+                    "note": f"home allows {dh:+.3f} vs away allows {da:+.3f} x {P['def_coef']:g}"})
     rest_note, rest = "rest unknown", 0.0
     if h.get("rest") is not None and a.get("rest") is not None:
         d = h["rest"] - a["rest"]
@@ -75,9 +87,9 @@ def nfl(inp: dict) -> dict:
         rest_note = f"{h['rest']} vs {a['rest']} days"
     contrib.append({"name": "Rest", "margin": round(rest, 2), "note": rest_note})
     margin = round(sum(c["margin"] for c in contrib), 2)
-    total_parts = [{"name": "League baseline", "points": 2 * P["base_ppg"]},
+    total_parts = [{"name": "League baseline", "points": P["base_total"]},
                    {"name": "Both offenses and defenses (EPA/play)",
-                    "points": round(P["plays"] * (oh + da + oa + dh) / 2, 2)}]
+                    "points": round(P["total_coef"] * (oh + da + oa + dh), 2)}]
     wind = inp.get("wind_mph")
     if inp.get("outdoors") and wind is not None and wind > P["wind_floor"]:
         total_parts.append({"name": f"Wind {wind:g} mph", "points": round(-(wind - P["wind_floor"]) * P["wind_pts_per_mph"], 2)})
@@ -87,10 +99,13 @@ def nfl(inp: dict) -> dict:
         if (t.get("games") or 0) < 3:
             warnings.append(f"Small sample: {side} team EPA from {t.get('games') or 0} game(s); regressed hard toward average.")
     assumptions = ["Team EPA/play stands in for team strength; no player-level injury adjustments.",
-                   "Margin SD 13.5 pts converts margin to win probability."]
+                   f"Margin SD {P['margin_sd']:g} pts converts margin to win probability."]
+    if P is NFL:
+        assumptions.append("Coefficients fit on 2012-2021 games; on 2022+ the market's closing line is still "
+                           "clearly better, so disagreement with it is not evidence of edge.")
     if inp.get("outdoors") and wind is None:
         assumptions.append("Wind unknown for an outdoor game: no weather adjustment applied.")
-    return {"available": True, "version": VERSION, "league": "NFL",
+    return {"available": True, "version": P["version"], "league": "NFL",
             "proj_margin_home": margin, "home_win_p": round(_phi(margin / P["margin_sd"]), 4),
             "proj_total": total, "contributions": contrib, "total_contributions": total_parts,
             "regression_weights": {"home": wh, "away": wa}, "confidence": confidence([wh, wa]),
@@ -129,7 +144,7 @@ def nhl(inp: dict) -> dict:
         xgf, w1 = _blend_rate(t.get("xg_now"), t.get("xg_prev"), "xgf", P["k_gp"])
         xga, _ = _blend_rate(t.get("xg_now"), t.get("xg_prev"), "xga", P["k_gp"])
         if xgf is None or xga is None:
-            return unavailable(f"5v5 xG missing for the {s} team (MoneyPuck)")
+            return unavailable(f"5v5 xG missing for the {s} team (MoneyPuck)", "NHL")
         g = t.get("goalie") or {}
         gs = ((g["gsax"] / g["gp"]) * (g["gp"] / (g["gp"] + P["k_goalie_gp"]))
               if g.get("gp") and g.get("gsax") is not None else 0.0)
@@ -212,7 +227,7 @@ def mlb(inp: dict) -> dict:
     P = MLB
     h, a = inp.get("home") or {}, inp.get("away") or {}
     if not h.get("bats_vs_opp_hand") or not a.get("bats_vs_opp_hand"):
-        return unavailable("lineup splits vs the opposing starter's hand missing (mlb.json bats)")
+        return unavailable("lineup splits vs the opposing starter's hand missing (mlb.json bats)", "MLB")
     neutral_pen = {"tired": False}
     env = P["postseason_env"] if inp.get("postseason") else 1.0
 
@@ -275,7 +290,7 @@ MODELS = {"NFL": nfl, "NHL": nhl, "MLB": mlb}
 def run(league: str, inp: dict | None) -> dict:
     fn = MODELS.get(league)
     if not fn:
-        return unavailable(f"no Boolin model for {league} yet")
+        return unavailable(f"no Boolin model for {league} yet", league)
     if not inp:
-        return unavailable("model inputs could not be assembled")
+        return unavailable("model inputs could not be assembled", league)
     return fn(inp)

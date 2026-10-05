@@ -105,7 +105,8 @@ timeline, flags, Boolin's baseline view and the unknowns. Use it to decide where
 an uncalibrated baseline: treat its disagreement as a prompt to dig, never as a play by itself. `review required`
 means a strong Boolin/market split that validation doesn't back (see `data/research/validation/model_scorecard.json`):
 research it, never cite it as the reason for a play. There are no research `lean`s until a league's scorecard says
-`CALIBRATED / RESEARCH READY`. If you form a thesis
+`CALIBRATED / RESEARCH READY` and the market isn't better in its holdout. Today: NFL (baseline-0.2) trails the closing
+line in the 2022+ holdout; NHL and MLB don't have enough games to judge. If you form a thesis
 on a game, record it with `python -m research.notebook set <game_key> ...` so it gets graded after the game.
 
 Also read the weekly prep data from the board's database (`ArtifactData` `list` on collection `prep`):

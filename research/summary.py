@@ -196,7 +196,9 @@ def gate(card, base: dict) -> dict:
     if not reasons:
         return {**base, "gate": info}
     info.update(applied=True, reasons=reasons)
-    cal = "uncalibrated" if unvalidated else "validated"
+    cal = ("validated" if not unvalidated else
+           "uncalibrated" if str(v.get("calibration_status") or "uncalibrated").startswith("uncalibrated")
+           else "not validated against the market")
     if overall == "extreme disagreement" or small or keyp:
         head = EXTREME_TEXT.format(cal=cal) if overall == "extreme disagreement" else \
             f"{overall.capitalize()} with {'a small sample' if small else 'an unresolved key player'}. Review required."

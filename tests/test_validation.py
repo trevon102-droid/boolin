@@ -114,7 +114,8 @@ def test_chronological_split_and_order():
         for name in ("summary", "calibration", "market_comparison", "spread_validation", "total_validation",
                      "confidence_validation", "disagreement_validation", "failure_modes", "model_scorecard"):
             body = json.loads((root / "v" / f"{name}.json").read_text())
-            assert body["validation_version"] == VA.VALIDATION_VERSION and body["model_version"] == "baseline-0.1"
+            assert body["validation_version"] == VA.VALIDATION_VERSION
+            assert body["model_version"] == {"NFL": "baseline-0.2", "NHL": "baseline-0.1", "MLB": "baseline-0.1"}
             assert "calibration_status" in body
 
 
@@ -343,3 +344,66 @@ def test_shrinkage_diagnostic_leaves_parameters_alone():
 def test_board_page_carries_the_current_research_module():
     html = (ROOT / render.BOARD).read_text()
     assert render.sync_board(html) == html, "run: python -m research.render --sync-board"
+
+
+# ------------------------------------------------------------------ NFL fit (baseline-0.2)
+
+def test_live_nfl_coefficients_match_the_fit_file():
+    from research import fit_nfl  # noqa: F401
+    p = ROOT / "data" / "research" / "validation" / "nfl_fit.json"
+    if not p.exists():
+        return
+    fit = json.loads(p.read_text())["params"]
+    for k in ("k_games", "hfa", "off_coef", "def_coef", "rest_pts_per_day", "base_total", "total_coef", "margin_sd", "rest_cap"):
+        assert abs(models.NFL[k] - fit[k]) < 1e-9, f"models.NFL[{k}]={models.NFL[k]} but nfl_fit.json says {fit[k]}"
+
+
+def test_fit_recovers_known_coefficients_and_uses_development_only():
+    import random
+    from research import fit_nfl as FN
+    rnd = random.Random(7)
+    games = []
+    for season in range(2012, 2025):
+        for i in range(120):
+            h = {"off_epa": rnd.gauss(0, .1), "def_epa": rnd.gauss(0, .1), "games": 8, "weeks_used": list(range(1, 9))}
+            a = {"off_epa": rnd.gauss(0, .1), "def_epa": rnd.gauss(0, .1), "games": 8, "weeks_used": list(range(1, 9))}
+            g = {"season": season, "week": 9, "inputs": {"home": h, "away": a}, "home_rest": 7, "away_rest": 7 + rnd.choice([-3, 0, 3])}
+            f, ft = FN.features(g, 4)
+            m = 2.0 + 50 * f[1] + 30 * f[2] + 0.1 * f[3] + rnd.gauss(0, 13)
+            if season >= 2022:
+                m = -m                                   # holdout deliberately poisoned: must not leak into the fit
+            g["outcome"] = {"home_margin": round(m), "total": round(44 + 20 * ft[1] + rnd.gauss(0, 10))}
+            games.append(g)
+    prm = FN.fit([g for g in games if g["season"] < 2022], 4)
+    assert abs(prm["off_coef"] - 50) < 8 and abs(prm["def_coef"] - 30) < 8 and abs(prm["hfa"] - 2) < 1
+    assert 11 < prm["margin_sd"] < 15
+
+
+def test_calibrated_but_behind_the_market_cannot_lean():
+    # well calibrated (outcomes drawn at Boolin's probability) but the market is sharper
+    import random
+    rnd = random.Random(3)
+    rows = []
+    for i in range(800):
+        q = rnd.choice([0.2, 0.35, 0.5, 0.65, 0.8])        # true probability (market knows it)
+        p = 0.5 + (q - 0.5) * 0.5                          # Boolin shrinks it...
+        y = 1.0 if rnd.random() < q else 0.0
+        rows.append(_row(i, p, q, y))
+    sc = VA.scorecard_entry("NFL", rows, "test", {})
+    assert sc["lean_allowed"] is False
+    assert "market" in (sc["market_comparison"] or "")
+
+
+def test_older_model_versions_get_their_own_slice():
+    with tempfile.TemporaryDirectory() as d:
+        root = Path(d)
+        old = _card("a")                                   # baseline-0.1 NFL card from before the fit
+        new = _card("b", start="2026-10-12T13:00-04:00", built="2026-10-12T09:00-04:00")
+        new["model"]["version"] = models.NFL_VERSION
+        _write_archive(root, "2026-10-04", {"a": old}, {"a": {"home_margin": 3, "total": 40}})
+        _write_archive(root, "2026-10-12", {"b": new}, {"b": {"home_margin": 3, "total": 40}})
+        VA.run(root, root / "none.json.gz", out=root / "v")
+        cal = json.loads((root / "v" / "calibration.json").read_text())["NFL"]
+        assert set(cal) == {"live_archive", "live_archive @baseline-0.1"}
+        sc = json.loads((root / "v" / "model_scorecard.json").read_text())["NFL"]
+        assert sc["model_version"] == "baseline-0.2" and sc["live_archive"]["older_version_rows"] == 1
