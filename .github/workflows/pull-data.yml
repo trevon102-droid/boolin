@@ -27,7 +27,7 @@ on:
         required: false
   push:
     branches: [main]
-    paths: ["pipeline/**", ".github/workflows/pull-data.yml", "requirements.txt"]
+    paths: ["pipeline/**", "research/**", ".github/workflows/pull-data.yml", "requirements.txt"]
 
 permissions:
   contents: write
@@ -88,6 +88,12 @@ jobs:
           PROPS: ${{ steps.plan.outputs.props }}
           SLATE_DATE: ${{ inputs.slate_date }}
         run: python -m pipeline.build_all
+
+      - name: Build research layer
+        # Derived research (cards, market history, timeline, board, grades). Never blocks the data commit.
+        if: steps.plan.outputs.skip != '1'
+        continue-on-error: true
+        run: python -m research.build
 
       - name: Commit data
         if: steps.plan.outputs.skip != '1'

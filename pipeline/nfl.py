@@ -80,10 +80,47 @@ def injuries(season: int) -> dict:
     return out
 
 
+HISTORY_COLS = ["season", "week", "gameday", "away_team", "home_team", "result", "total", "spread_line",
+                "total_line", "home_rest", "away_rest", "roof", "wind", "temp", "div_game"]
+HISTORY_FROM = 2012
+
+
+def _clean(v):
+    if v is None or (not isinstance(v, str) and pd.isna(v)):
+        return None
+    return v if isinstance(v, str) else float(v)
+
+
+def write_history(allg: pd.DataFrame, season: int) -> str:
+    """Slim history of completed games (closing spread/total, result, rest, weather) for the research
+    layer's comparable-game queries: data/reference/nfl_games_history.json.gz. Refreshed each run."""
+    import gzip
+    import json
+    try:
+        h = allg[(allg["season"] >= HISTORY_FROM) & allg["result"].notna()][[c for c in HISTORY_COLS if c in allg]]
+        rows = []
+        for r in h.to_dict("records"):
+            rows.append({"season": int(r["season"]), "week": int(r["week"]), "gameday": str(r["gameday"])[:10],
+                         "away": r["away_team"], "home": r["home_team"],
+                         **{k: _clean(r.get(k)) for k in ("result", "total", "spread_line", "total_line", "home_rest",
+                                                          "away_rest", "roof", "wind", "temp", "div_game")}})
+        out = C.DATA / "reference" / "nfl_games_history.json.gz"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        body = json.dumps({"source": "nflverse games.csv", "built_at_et": C.now_et().isoformat(timespec="minutes"),
+                           "note": "spread_line/total_line are closing numbers; spread_line > 0 = home favored; "
+                                   "result = home score - away score", "games": rows}, separators=(",", ":"))
+        with gzip.open(out, "wt", encoding="utf-8", compresslevel=9) as f:
+            f.write(body)
+        return "ok"
+    except Exception as e:  # noqa: BLE001
+        return f"error: {e}"
+
+
 def run(day: dt.date) -> dict:
     season = day.year if day.month >= 3 else day.year - 1
-    g = pd.read_csv(io.StringIO(C.get(GAMES, timeout=60).text))
-    g = g[g["season"] == season]
+    allg = pd.read_csv(io.StringIO(C.get(GAMES, timeout=60).text))
+    history_status = write_history(allg, season)
+    g = allg[allg["season"] == season].copy()
     g["gameday"] = pd.to_datetime(g["gameday"]).dt.date
     upcoming = g[(g["gameday"] >= day) & (g["gameday"] <= day + dt.timedelta(days=7)) & g["result"].isna()]
     if upcoming.empty:
@@ -100,8 +137,11 @@ def run(day: dt.date) -> dict:
                              "Injury statuses are the latest weekly report (see injuries.report_week), "
                              "not game-day inactives: confirm inactives ~90 min before kickoff.",
                      "games": games}
-    comps = C.Components()
+    comps = C.Components({"schedule": "nflverse games.csv", "history": "nflverse games.csv",
+                           "team_epa": "nflverse play-by-play", "injuries": "nflverse injury reports"})
     comps.mark("schedule", C.OK)
+    comps.mark("history", C.OK if history_status == "ok" else C.ERROR,
+               None if history_status == "ok" else history_status)
     epa = comps.run("team_epa", team_epa, season)
     if epa is not None:
         payload["team_epa"] = epa

@@ -95,9 +95,11 @@ class Components:
     Statuses: ok | error | skipped.  `overall(core=...)` rolls them up into ok / partial / error.
     """
 
-    def __init__(self) -> None:
+    def __init__(self, sources: dict[str, str] | None = None) -> None:
         self.status: dict[str, str] = {}
         self.errors: dict[str, str] = {}
+        self.fetched_at: dict[str, str] = {}
+        self.sources = dict(sources or {})
 
     def run(self, name: str, fn, *args, **kw):
         try:
@@ -114,6 +116,7 @@ class Components:
         if self.status.get(name) == ERROR and status != ERROR:
             return
         self.status[name] = status
+        self.fetched_at[name] = now_et().isoformat(timespec="seconds")
         if error:
             self.errors[name] = error[:300]
 
@@ -121,7 +124,10 @@ class Components:
         return rollup(self.status, core)
 
     def result(self, core: tuple[str, ...] = (), **extra) -> dict:
-        res = {"status": self.overall(core), "components": dict(self.status), **extra}
+        res = {"status": self.overall(core), "components": dict(self.status),
+               "component_detail": {k: {"status": v, "fetched_at": self.fetched_at.get(k),
+                                        "source": self.sources.get(k), "error": self.errors.get(k)}
+                                    for k, v in self.status.items()}, **extra}
         if self.errors:
             res["component_errors"] = dict(self.errors)
         return res
