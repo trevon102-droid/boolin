@@ -99,6 +99,143 @@
    "new": 0.5208,
    "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-NFL-ATL-NO",
+   "type": "moneyline",
+   "field": "ATL ML (FanDuel)",
+   "old": -102,
+   "new": 100,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-NFL-ATL-NO",
+   "type": "moneyline",
+   "field": "NO ML (FanDuel)",
+   "old": -116,
+   "new": -118,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-NFL-ATL-NO",
+   "type": "model",
+   "field": "Boolin NO win probability",
+   "old": 0.5577,
+   "new": 0.631,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 55.8% to 63.1% (home margin +1.96 \u2192 +4.56). Model components that moved: 1. Offense (EPA/play, regressed) +2.17 (home +0.010 vs away -0.069 EPA/play x 58.15); 2. Home field +0.42 (1.92 pts); 3. Rest +0.09 (8 vs 11 days); 4. Defense (EPA/play allowed, regressed) -0.08 (home allows +0.029 vs away allows -0.027 x 32.45). Data updates in the same pull: ATL ML (FanDuel): -102 \u2192 100; NO ML (FanDuel): -116 \u2192 -118.",
+   "detail": {
+    "text": "Boolin moved from 55.8% to 63.1% (home margin +1.96 \u2192 +4.56). Model components that moved: 1. Offense (EPA/play, regressed) +2.17 (home +0.010 vs away -0.069 EPA/play x 58.15); 2. Home field +0.42 (1.92 pts); 3. Rest +0.09 (8 vs 11 days); 4. Defense (EPA/play allowed, regressed) -0.08 (home allows +0.029 vs away allows -0.027 x 32.45). Data updates in the same pull: ATL ML (FanDuel): -102 \u2192 100; NO ML (FanDuel): -116 \u2192 -118.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 2.17,
+      "now": "home +0.010 vs away -0.069 EPA/play x 58.15"
+     },
+     {
+      "component": "Home field",
+      "margin_change": 0.42,
+      "now": "1.92 pts"
+     },
+     {
+      "component": "Rest",
+      "margin_change": 0.09,
+      "now": "8 vs 11 days"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.08,
+      "now": "home allows +0.029 vs away allows -0.027 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "ATL ML (FanDuel): -102 \u2192 100",
+     "NO ML (FanDuel): -116 \u2192 -118"
+    ]
+   }
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-NFL-ATL-NO",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "NO -2.0",
+   "new": "NO -4.6",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 55.8% to 63.1% (home margin +1.96 \u2192 +4.56). Model components that moved: 1. Offense (EPA/play, regressed) +2.17 (home +0.010 vs away -0.069 EPA/play x 58.15); 2. Home field +0.42 (1.92 pts); 3. Rest +0.09 (8 vs 11 days); 4. Defense (EPA/play allowed, regressed) -0.08 (home allows +0.029 vs away allows -0.027 x 32.45). Data updates in the same pull: ATL ML (FanDuel): -102 \u2192 100; NO ML (FanDuel): -116 \u2192 -118.",
+   "detail": {
+    "text": "Boolin moved from 55.8% to 63.1% (home margin +1.96 \u2192 +4.56). Model components that moved: 1. Offense (EPA/play, regressed) +2.17 (home +0.010 vs away -0.069 EPA/play x 58.15); 2. Home field +0.42 (1.92 pts); 3. Rest +0.09 (8 vs 11 days); 4. Defense (EPA/play allowed, regressed) -0.08 (home allows +0.029 vs away allows -0.027 x 32.45). Data updates in the same pull: ATL ML (FanDuel): -102 \u2192 100; NO ML (FanDuel): -116 \u2192 -118.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 2.17,
+      "now": "home +0.010 vs away -0.069 EPA/play x 58.15"
+     },
+     {
+      "component": "Home field",
+      "margin_change": 0.42,
+      "now": "1.92 pts"
+     },
+     {
+      "component": "Rest",
+      "margin_change": 0.09,
+      "now": "8 vs 11 days"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.08,
+      "now": "home allows +0.029 vs away allows -0.027 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "ATL ML (FanDuel): -102 \u2192 100",
+     "NO ML (FanDuel): -116 \u2192 -118"
+    ]
+   }
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-NFL-ATL-NO",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 43.2,
+   "new": 44.3,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 55.8% to 63.1% (home margin +1.96 \u2192 +4.56). Model components that moved: 1. Offense (EPA/play, regressed) +2.17 (home +0.010 vs away -0.069 EPA/play x 58.15); 2. Home field +0.42 (1.92 pts); 3. Rest +0.09 (8 vs 11 days); 4. Defense (EPA/play allowed, regressed) -0.08 (home allows +0.029 vs away allows -0.027 x 32.45). Data updates in the same pull: ATL ML (FanDuel): -102 \u2192 100; NO ML (FanDuel): -116 \u2192 -118.",
+   "detail": {
+    "text": "Boolin moved from 55.8% to 63.1% (home margin +1.96 \u2192 +4.56). Model components that moved: 1. Offense (EPA/play, regressed) +2.17 (home +0.010 vs away -0.069 EPA/play x 58.15); 2. Home field +0.42 (1.92 pts); 3. Rest +0.09 (8 vs 11 days); 4. Defense (EPA/play allowed, regressed) -0.08 (home allows +0.029 vs away allows -0.027 x 32.45). Data updates in the same pull: ATL ML (FanDuel): -102 \u2192 100; NO ML (FanDuel): -116 \u2192 -118.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 2.17,
+      "now": "home +0.010 vs away -0.069 EPA/play x 58.15"
+     },
+     {
+      "component": "Home field",
+      "margin_change": 0.42,
+      "now": "1.92 pts"
+     },
+     {
+      "component": "Rest",
+      "margin_change": 0.09,
+      "now": "8 vs 11 days"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.08,
+      "now": "home allows +0.029 vs away allows -0.027 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "ATL ML (FanDuel): -102 \u2192 100",
+     "NO ML (FanDuel): -116 \u2192 -118"
+    ]
+   }
   }
  ],
  "2026-10-05-MLB-CWS-CLE": [
@@ -230,6 +367,56 @@
    "old": 155,
    "new": 152,
    "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-MLB-CWS-CLE",
+   "type": "lineup",
+   "field": "CWS lineup",
+   "old": "not posted",
+   "new": "posted",
+   "source": "MLB lineup card",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-MLB-CWS-CLE",
+   "type": "lineup",
+   "field": "CLE lineup",
+   "old": "not posted",
+   "new": "posted",
+   "source": "MLB lineup card",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-MLB-CWS-CLE",
+   "type": "weather",
+   "field": "wind (mph)",
+   "old": "unknown",
+   "new": 12,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-MLB-CWS-CLE",
+   "type": "weather",
+   "field": "temp (\u00b0F)",
+   "old": "unknown",
+   "new": 60.0,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-MLB-CWS-CLE",
+   "type": "weather",
+   "field": "condition",
+   "old": "unknown",
+   "new": "Clear",
+   "source": "MLB Stats API weather",
    "cause": "Change detected; cause not confirmed."
   }
  ],
@@ -423,6 +610,26 @@
    "new": -166,
    "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-MLB-NYY-TB",
+   "type": "price",
+   "field": "spread away (FanDuel)",
+   "old": 138,
+   "new": 146,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-MLB-NYY-TB",
+   "type": "price",
+   "field": "spread home (FanDuel)",
+   "old": -166,
+   "new": -178,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
   }
  ],
  "2026-10-05-NHL-PHI-TBL": [
@@ -513,6 +720,56 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-NHL-OTT-BOS",
+   "type": "total",
+   "field": "total",
+   "old": 6.0,
+   "new": 5.5,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-NHL-OTT-BOS",
+   "type": "moneyline",
+   "field": "OTT ML (FanDuel)",
+   "old": -120,
+   "new": -118,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-NHL-OTT-BOS",
+   "type": "moneyline",
+   "field": "BOS ML (FanDuel)",
+   "old": 100,
+   "new": -102,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-NHL-OTT-BOS",
+   "type": "price",
+   "field": "spread away (FanDuel)",
+   "old": 210,
+   "new": 220,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-05T13:07-04:00",
+   "game_key": "2026-10-05-NHL-OTT-BOS",
+   "type": "price",
+   "field": "spread home (FanDuel)",
+   "old": -265,
+   "new": -280,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
   }
  ],
  "2026-10-05-NHL-WPG-PIT": [

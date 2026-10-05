@@ -1,27 +1,35 @@
 {
  "validation_version": "validation-1.0",
- "model_version": "baseline-0.1",
+ "model_version": {
+  "NFL": "baseline-0.2",
+  "NHL": "baseline-0.1",
+  "MLB": "baseline-0.1"
+ },
  "data_cutoff": "2026-10-04",
- "calibration_status": "uncalibrated (baseline-0.1 has never been fit to outcomes)",
+ "calibration_status": {
+  "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
+  "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
+  "MLB": "baseline-0.1: never fit to outcomes (uncalibrated)"
+ },
  "NFL": {
   "nfl_replay": {
    "development": {
     "boolin_margin": {
      "n": 2529,
-     "mae": 10.729,
-     "rmse": 13.813,
-     "mean_error": 0.471,
-     "median_error": 0.55,
-     "directional_accuracy": 0.6276
+     "mae": 10.594,
+     "rmse": 13.627,
+     "mean_error": 0.0,
+     "median_error": -0.2,
+     "directional_accuracy": 0.6275
     },
     "same_games": {
      "n": 2529,
      "boolin": {
       "n": 2529,
-      "mae": 10.729,
-      "rmse": 13.813,
-      "mean_error": 0.471,
-      "median_error": 0.55
+      "mae": 10.594,
+      "rmse": 13.627,
+      "mean_error": 0.0,
+      "median_error": -0.2
      },
      "market_implied": {
       "n": 2529,
@@ -33,10 +41,10 @@
      },
      "abs_error_paired": {
       "n": 2529,
-      "mean_diff": 0.57233,
-      "se": 0.07275,
-      "t": 7.87,
-      "verdict": "market margin abs error better (t=7.9)",
+      "mean_diff": 0.43743,
+      "se": 0.06554,
+      "t": 6.67,
+      "verdict": "market margin abs error better (t=6.7)",
       "note": "mean of Boolin minus market per-game margin abs error; negative favours Boolin"
      }
     },
@@ -44,30 +52,30 @@
      "rows": [
       {
        "gap": "1-2.5 pts",
-       "n": 683,
-       "pushes": 18,
-       "boolin_side_cover_rate": 0.4797,
+       "n": 784,
+       "pushes": 21,
+       "boolin_side_cover_rate": 0.5164,
        "interpretable": true
       },
       {
        "gap": "2.5-5 pts",
-       "n": 892,
-       "pushes": 19,
-       "boolin_side_cover_rate": 0.4926,
+       "n": 746,
+       "pushes": 21,
+       "boolin_side_cover_rate": 0.4814,
        "interpretable": true
       },
       {
        "gap": "5+ pts",
-       "n": 505,
-       "pushes": 12,
-       "boolin_side_cover_rate": 0.499,
+       "n": 365,
+       "pushes": 7,
+       "boolin_side_cover_rate": 0.4888,
        "interpretable": true
       },
       {
        "gap": "1+ pts",
-       "n": 2080,
+       "n": 1895,
        "pushes": 49,
-       "boolin_side_cover_rate": 0.4899,
+       "boolin_side_cover_rate": 0.4973,
        "interpretable": true
       }
      ],
@@ -77,20 +85,20 @@
    "holdout": {
     "boolin_margin": {
      "n": 1122,
-     "mae": 10.115,
-     "rmse": 13.08,
-     "mean_error": 0.786,
-     "median_error": 0.415,
-     "directional_accuracy": 0.6079
+     "mae": 10.123,
+     "rmse": 12.988,
+     "mean_error": 0.311,
+     "median_error": -0.425,
+     "directional_accuracy": 0.6095
     },
     "same_games": {
      "n": 1122,
      "boolin": {
       "n": 1122,
-      "mae": 10.115,
-      "rmse": 13.08,
-      "mean_error": 0.786,
-      "median_error": 0.415
+      "mae": 10.123,
+      "rmse": 12.988,
+      "mean_error": 0.311,
+      "median_error": -0.425
      },
      "market_implied": {
       "n": 1122,
@@ -102,10 +110,10 @@
      },
      "abs_error_paired": {
       "n": 1122,
-      "mean_diff": 0.56872,
-      "se": 0.10583,
-      "t": 5.37,
-      "verdict": "market margin abs error better (t=5.4)",
+      "mean_diff": 0.57669,
+      "se": 0.10439,
+      "t": 5.52,
+      "verdict": "market margin abs error better (t=5.5)",
       "note": "mean of Boolin minus market per-game margin abs error; negative favours Boolin"
      }
     },
@@ -113,30 +121,30 @@
      "rows": [
       {
        "gap": "1-2.5 pts",
-       "n": 331,
-       "pushes": 8,
-       "boolin_side_cover_rate": 0.4613,
+       "n": 336,
+       "pushes": 10,
+       "boolin_side_cover_rate": 0.4785,
        "interpretable": true
       },
       {
        "gap": "2.5-5 pts",
-       "n": 377,
-       "pushes": 10,
-       "boolin_side_cover_rate": 0.4823,
+       "n": 338,
+       "pushes": 8,
+       "boolin_side_cover_rate": 0.4939,
        "interpretable": true
       },
       {
        "gap": "5+ pts",
-       "n": 215,
-       "pushes": 7,
-       "boolin_side_cover_rate": 0.5481,
+       "n": 201,
+       "pushes": 5,
+       "boolin_side_cover_rate": 0.551,
        "interpretable": true
       },
       {
        "gap": "1+ pts",
-       "n": 923,
-       "pushes": 25,
-       "boolin_side_cover_rate": 0.49,
+       "n": 875,
+       "pushes": 23,
+       "boolin_side_cover_rate": 0.5012,
        "interpretable": true
       }
      ],
@@ -146,20 +154,20 @@
    "all": {
     "boolin_margin": {
      "n": 3651,
-     "mae": 10.54,
-     "rmse": 13.592,
-     "mean_error": 0.568,
-     "median_error": 0.51,
-     "directional_accuracy": 0.6216
+     "mae": 10.449,
+     "rmse": 13.434,
+     "mean_error": 0.096,
+     "median_error": -0.28,
+     "directional_accuracy": 0.622
     },
     "same_games": {
      "n": 3651,
      "boolin": {
       "n": 3651,
-      "mae": 10.54,
-      "rmse": 13.592,
-      "mean_error": 0.568,
-      "median_error": 0.51
+      "mae": 10.449,
+      "rmse": 13.434,
+      "mean_error": 0.096,
+      "median_error": -0.28
      },
      "market_implied": {
       "n": 3651,
@@ -171,10 +179,10 @@
      },
      "abs_error_paired": {
       "n": 3651,
-      "mean_diff": 0.57122,
-      "se": 0.05997,
-      "t": 9.53,
-      "verdict": "market margin abs error better (t=9.5)",
+      "mean_diff": 0.48023,
+      "se": 0.05559,
+      "t": 8.64,
+      "verdict": "market margin abs error better (t=8.6)",
       "note": "mean of Boolin minus market per-game margin abs error; negative favours Boolin"
      }
     },
@@ -182,30 +190,30 @@
      "rows": [
       {
        "gap": "1-2.5 pts",
-       "n": 1014,
-       "pushes": 26,
-       "boolin_side_cover_rate": 0.4737,
+       "n": 1120,
+       "pushes": 31,
+       "boolin_side_cover_rate": 0.5051,
        "interpretable": true
       },
       {
        "gap": "2.5-5 pts",
-       "n": 1269,
+       "n": 1084,
        "pushes": 29,
-       "boolin_side_cover_rate": 0.4895,
+       "boolin_side_cover_rate": 0.4853,
        "interpretable": true
       },
       {
        "gap": "5+ pts",
-       "n": 720,
-       "pushes": 19,
-       "boolin_side_cover_rate": 0.5136,
+       "n": 566,
+       "pushes": 12,
+       "boolin_side_cover_rate": 0.5108,
        "interpretable": true
       },
       {
        "gap": "1+ pts",
-       "n": 3003,
-       "pushes": 74,
-       "boolin_side_cover_rate": 0.4899,
+       "n": 2770,
+       "pushes": 72,
+       "boolin_side_cover_rate": 0.4985,
        "interpretable": true
       }
      ],
@@ -213,7 +221,7 @@
     }
    }
   },
-  "live_archive": {
+  "live_archive @baseline-0.1": {
    "development": {
     "boolin_margin": {
      "n": 15,

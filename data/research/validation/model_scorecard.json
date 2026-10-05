@@ -1,65 +1,53 @@
 {
  "validation_version": "validation-1.0",
- "model_version": "baseline-0.1",
+ "model_version": {
+  "NFL": "baseline-0.2",
+  "NHL": "baseline-0.1",
+  "MLB": "baseline-0.1"
+ },
  "data_cutoff": "2026-10-04",
- "calibration_status": "uncalibrated (baseline-0.1 has never been fit to outcomes)",
+ "calibration_status": {
+  "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
+  "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
+  "MLB": "baseline-0.1: never fit to outcomes (uncalibrated)"
+ },
  "NFL": {
-  "model_version": "baseline-0.1",
+  "model_version": "baseline-0.2",
   "validation_version": "validation-1.0",
   "data_cutoff": "2026-10-04",
   "primary_evidence": "nfl_replay holdout (2022+), closing-line benchmark",
   "sample_size": 1122,
   "development_size": 2529,
-  "brier": 0.229,
+  "brier": 0.2267,
   "market_brier": 0.2101,
-  "log_loss": 0.6504,
+  "log_loss": 0.6445,
   "market_log_loss": 0.6082,
-  "accuracy": 0.6079,
-  "calibration_error": 0.0401,
-  "favorite_overconfidence": -0.0215,
-  "market_comparison": "market Brier better (t=6.0)",
-  "spread_mae": 10.115,
+  "accuracy": 0.6095,
+  "calibration_error": 0.0329,
+  "favorite_overconfidence": 0.0184,
+  "market_comparison": "market Brier better (t=5.3)",
+  "spread_mae": 10.123,
   "market_spread_mae": 9.546,
   "confidence_validated": false,
   "calibration_status": "needs_calibration",
   "validation_status": "validated: calibration off",
   "recommendation": "CALIBRATION NEEDED",
   "reasons": [
-   "holdout calibration error 0.0401, favourite overconfidence -0.0215 (needs <= 0.025 / +-0.02 with n >= 300)",
-   "worse than the market in the holdout (market Brier better (t=6.0))"
+   "holdout calibration error 0.0329, favourite overconfidence 0.0184 (needs <= 0.025 / +-0.02 with n >= 300)",
+   "worse than the market in the holdout (market Brier better (t=5.3))"
   ],
   "lean_allowed": false,
   "live_archive": {
-   "n": 15,
+   "n": 0,
    "holdout": 0,
-   "boolin": {
-    "brier": 0.202,
-    "log_loss": 0.5935,
-    "accuracy": 0.7333,
-    "calibration_error": 0.1404,
-    "favorite_overconfidence": -0.1404
-   },
-   "market": {
-    "brier": 0.2145,
-    "log_loss": 0.6136,
-    "accuracy": 0.6,
-    "calibration_error": 0.2011,
-    "favorite_overconfidence": 0.0582
-   },
-   "brier_paired": {
-    "n": 15,
-    "mean_diff": -0.0125,
-    "se": 0.03512,
-    "t": -0.36,
-    "verdict": "too few games to tell (n=15)",
-    "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
-   }
+   "older_version_rows": 15
   },
   "replay_fidelity": {
    "n_overlap": 15,
+   "identical": 6,
    "mean_abs_prob_diff": 0.0162,
    "max_abs_prob_diff": 0.0541,
-   "note": "Live card vs replay for the same game. Large gaps would mean the replay isn't the live model."
+   "note": "Live card vs replay for the same game, same model version. Gaps mean the live pull saw different inputs than the replay (cause not confirmed per game)."
   }
  },
  "NHL": {
@@ -90,6 +78,7 @@
   "live_archive": {
    "n": 31,
    "holdout": 0,
+   "older_version_rows": 0,
    "boolin": {
     "brier": 0.2257,
     "log_loss": 0.6411,
@@ -143,6 +132,7 @@
   "live_archive": {
    "n": 7,
    "holdout": 0,
+   "older_version_rows": 0,
    "boolin": {
     "brier": 0.2032,
     "log_loss": 0.5985,

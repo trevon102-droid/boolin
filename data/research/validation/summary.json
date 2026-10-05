@@ -1,21 +1,31 @@
 {
  "validation_version": "validation-1.0",
- "model_version": "baseline-0.1",
+ "model_version": {
+  "NFL": "baseline-0.2",
+  "NHL": "baseline-0.1",
+  "MLB": "baseline-0.1"
+ },
  "model_versions_in_rows": [
-  "baseline-0.1"
+  "baseline-0.1",
+  "baseline-0.2"
  ],
- "built_at": "2026-10-05T12:20-04:00",
+ "built_at": "2026-10-05T13:07-04:00",
  "data_cutoff": "2026-10-04",
  "filters": {
   "league": null,
   "since": null,
   "until": null
  },
- "calibration_status": "uncalibrated (baseline-0.1 has never been fit to outcomes)",
+ "calibration_status": {
+  "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
+  "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
+  "MLB": "baseline-0.1: never fit to outcomes (uncalibrated)"
+ },
  "splits": {
   "live_archive": "development = games on or before 2026-10-05 (parameters last changed); holdout = after",
   "nfl_replay": "development = seasons < 2022; holdout = 2022+"
  },
+ "warning": "rows span model versions ['baseline-0.1', 'baseline-0.2']: each table is per league and per source, and rows from an older version sit in their own '<source> @<version>' slice",
  "rows": 3704,
  "excluded": 319,
  "by_source": {
@@ -23,13 +33,19 @@
    "rows": 3651,
    "development": 2529,
    "holdout": 1122,
+   "model_versions": [
+    "baseline-0.2"
+   ],
    "first": "2012-09-13",
    "last": "2026-10-04"
   },
-  "NFL live_archive": {
+  "NFL live_archive @baseline-0.1": {
    "rows": 15,
    "development": 15,
    "holdout": 0,
+   "model_versions": [
+    "baseline-0.1"
+   ],
    "first": "2026-10-01",
    "last": "2026-10-04"
   },
@@ -37,6 +53,9 @@
    "rows": 31,
    "development": 31,
    "holdout": 0,
+   "model_versions": [
+    "baseline-0.1"
+   ],
    "first": "2026-10-01",
    "last": "2026-10-04"
   },
@@ -44,6 +63,9 @@
    "rows": 7,
    "development": 7,
    "holdout": 0,
+   "model_versions": [
+    "baseline-0.1"
+   ],
    "first": "2026-10-01",
    "last": "2026-10-04"
   }
@@ -55,41 +77,42 @@
  },
  "replay": {
   "version": "nfl-replay-1",
-  "built_at_et": "2026-10-05T12:20-04:00",
+  "built_at_et": "2026-10-05T13:07-04:00",
   "status": {
-   "2012": "built 267 games",
-   "2013": "built 267 games",
-   "2014": "built 267 games",
-   "2015": "built 267 games",
-   "2016": "built 267 games",
-   "2017": "built 267 games",
-   "2018": "built 267 games",
-   "2019": "built 267 games",
-   "2020": "built 269 games",
-   "2021": "built 285 games",
-   "2022": "built 284 games",
-   "2023": "built 285 games",
-   "2024": "built 285 games",
-   "2025": "built 285 games",
+   "2012": "kept",
+   "2013": "kept",
+   "2014": "kept",
+   "2015": "kept",
+   "2016": "kept",
+   "2017": "kept",
+   "2018": "kept",
+   "2019": "kept",
+   "2020": "kept",
+   "2021": "kept",
+   "2022": "kept",
+   "2023": "kept",
+   "2024": "kept",
+   "2025": "kept",
    "2026": "built 63 games"
   },
   "present": true
  },
  "replay_fidelity": {
   "n_overlap": 15,
+  "identical": 6,
   "mean_abs_prob_diff": 0.0162,
   "max_abs_prob_diff": 0.0541,
-  "note": "Live card vs replay for the same game. Large gaps would mean the replay isn't the live model."
+  "note": "Live card vs replay for the same game, same model version. Gaps mean the live pull saw different inputs than the replay (cause not confirmed per game)."
  },
  "headline": {
   "NFL": {
    "sample_size": 1122,
-   "brier": 0.229,
+   "brier": 0.2267,
    "market_brier": 0.2101,
-   "log_loss": 0.6504,
-   "calibration_error": 0.0401,
-   "market_comparison": "market Brier better (t=6.0)",
-   "spread_mae": 10.115,
+   "log_loss": 0.6445,
+   "calibration_error": 0.0329,
+   "market_comparison": "market Brier better (t=5.3)",
+   "spread_mae": 10.123,
    "confidence_validated": false,
    "calibration_status": "needs_calibration",
    "validation_status": "validated: calibration off",
