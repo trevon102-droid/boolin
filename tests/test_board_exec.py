@@ -136,6 +136,11 @@ def test_key_numbers_three_and_seven():
     assert f["key_numbers_crossed"] == []
 
 
+def test_known_taken_line_without_closing_line_has_no_price_clv():
+    f = clv({"pick": "Chiefs -2.5", "market_type": "spread", "taken_line": -2.5, "taken_price": -110, "close_price": -120})
+    assert f["price_clv"] is None and f["combined_clv"] is None and "closing line" in f["clv_note"]
+
+
 def test_legacy_bet_records_stay_readable():
     old = clv({"pick": "Under 38.5", "odds": -110, "close": -120})                   # pre-schema-2 record
     assert old["price_clv"] is not None and old["taken_price"] == -110 and old["close_price"] == -120
