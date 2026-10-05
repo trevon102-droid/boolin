@@ -668,8 +668,11 @@ function clvFields(b){
       keys.forEach(k=>{ const lo=Math.min(Math.abs(takenLine),Math.abs(closeLine)), hi=Math.max(Math.abs(takenLine),Math.abs(closeLine));
         if(lo<=k && k<=hi) o.key_numbers_crossed.push(k); });
     if(o.key_numbers_crossed.length) o.clv_note=(o.clv_note||'')+' Key number '+o.key_numbers_crossed.join(' & ')+' in the move: '+(o.line_clv>0?'you hold the better side of it.':'the close is on the better side of it.');
+  } else if(lineMarket && takenLine!==null){
+    // number taken is known but the closing number isn't: never assume the close was on the same line
+    if(o.close_price!==null) o.clv_note='Enter the closing line too: price CLV needs the close on your number.';
   } else if(lineMarket){
-    o.clv_note='Line not recorded: price CLV assumes the close was entered at your number.';
+    if(o.close_price!==null) o.clv_note='Line not recorded: price CLV assumes the close was entered at your number.';
     o.price_clv=pc; o.combined_clv=null;
   } else {
     o.price_clv=pc; o.combined_clv=pc;   // moneyline / no-line markets: price CLV is the whole story
@@ -880,8 +883,11 @@ function tier(u){
   return ['Max','p-max'];
 }
 function pl(b){ const d=dec(b.odds), s=toNum(b.stake)||0; if(b.result==='win' && d) return s*(d-1); if(b.result==='loss') return -s; return 0; }
+/* older bets (before schema 2) carry no market/line: read them from the logged pick text, flagged as inferred */
+function betView(b){ if(b.market_type) return b; const mt=marketType(b); const ln=EXEC.currentLine(b);
+  return (['spread','total','prop'].includes(mt) && ln!==null) ? {...b, market_type:mt, taken_line:ln, line_inferred:true} : b; }
 /* price CLV only where it is comparable (same number, or a market without a line); see EXEC.clvFields */
-function clv(b){ return EXEC.clvFields(b).price_clv; }
+function clv(b){ return EXEC.clvFields(betView(b)).price_clv; }
 
 /* ---------- format ---------- */
 const esc = s => String(s===undefined||s===null?'':s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -1301,13 +1307,13 @@ function renderLog(){
   html += `<div class="strip"><div><span class="label">Open</span><span class="big">${open.length}</span></div><div><span class="label">Missing close</span><span class="big ${needClose?'t-warn':''}">${needClose}</span></div><div><span class="label">Logged</span><span class="big">${bets.length}</span></div></div>`;
   html += `<div class="scroll"><table class="log-t"><thead><tr><th>Date</th><th>Play</th><th>Sport · category</th><th class="n">Taken</th><th class="n">Stake</th><th>Close (line · price)</th><th>CLV</th><th>Result</th><th class="n">P/L</th><th></th></tr></thead><tbody>`;
   bets.forEach(b=>{
-    const cf = EXEC.clvFields(b), p = pl(b); const lineMkt=['spread','total','prop'].includes(b.market_type);
+    const bv = betView(b); const cf = EXEC.clvFields(bv), p = pl(b); const lineMkt=['spread','total','prop'].includes(bv.market_type);
     const cv = x=>x===null||x===undefined?'—':spct(x); const cls=x=>x===null||x===undefined?'':(x>0?'t-good':x<0?'t-bad':'');
     html += `<tr>
       <td class="num small">${esc(b.date||'')}</td>
       <td><span class="pick">${esc(b.pick)}</span><span class="sub">${esc(b.game||'')}${b.book?' · '+esc(b.book):''}</span></td>
       <td class="small">${esc(b.sport||'')}<span class="sub">${esc(b.category||'')}</span></td>
-      <td class="n num">${cf.taken_line!==null&&cf.taken_line!==undefined?esc(cf.taken_line)+' ':''}${am(cf.taken_price)}${b.market_type?'<span class="sub">'+esc(b.market_type)+'</span>':'<span class="sub">line not recorded</span>'}</td>
+      <td class="n num">${cf.taken_line!==null&&cf.taken_line!==undefined?esc(bv.market_type==='spread'&&cf.taken_line>0?'+'+cf.taken_line:cf.taken_line)+' ':''}${am(cf.taken_price)}${bv.market_type?'<span class="sub">'+esc(bv.market_type)+(bv.line_inferred?' · line from bet text':'')+'</span>':'<span class="sub">no line</span>'}</td>
       <td class="n num">${uu(toNum(b.stake)||0)}</td>
       <td><div class="closein">${lineMkt?`<input class="num" id="cline-${esc(b.id)}" data-cline="${esc(b.id)}" inputmode="decimal" placeholder="line" value="${b.close_line===null||b.close_line===undefined?'':esc(b.close_line)}" aria-label="Closing line">`:''}<input class="num" id="close-${esc(b.id)}" data-close="${esc(b.id)}" inputmode="numeric" placeholder="-110" value="${cf.close_price===null?'':esc(am(cf.close_price))}" aria-label="Closing price"></div></td>
       <td><div class="clvcell"><span><b>Price CLV</b> <span class="num ${cls(cf.price_clv)}">${cv(cf.price_clv)}</span></span>${lineMkt?`<span><b>Line CLV</b> <span class="num ${cls(cf.line_clv)}">${cf.line_clv===null?'—':(cf.line_clv>0?'+':'')+cf.line_clv+' pts'}</span>${cf.key_numbers_crossed.length?' <span class="pill p-strong">key '+cf.key_numbers_crossed.join('/')+'</span>':''}</span><span><b>Combined</b> <span class="num ${cls(cf.combined_clv)}">${cf.combined_clv===null?(cf.line_changed?'unavailable':'—'):spct(cf.combined_clv)}</span></span>`:''}${cf.clv_note?`<span class="sub">${esc(cf.clv_note)}</span>`:''}</div></td>
@@ -1327,7 +1333,7 @@ function agg(list){
   const units = settled.reduce((a,b)=>a+pl(b),0);
   const risked = settled.filter(b=>b.result!=='push').reduce((a,b)=>a+(toNum(b.stake)||0),0);
   const cl = list.map(clv).filter(x=>x!==null);
-  const lc = list.map(b=>EXEC.clvFields(b).line_clv).filter(x=>x!==null);
+  const lc = list.map(b=>EXEC.clvFields(betView(b)).line_clv).filter(x=>x!==null);
   return {n:settled.length, w, l, pu, units, roi: risked? units/risked : null, clv: cl.length? cl.reduce((a,b)=>a+b,0)/cl.length : null, beat: cl.length? cl.filter(x=>x>0).length/cl.length : null, clvN: cl.length,
           lineClv: lc.length? lc.reduce((a,b)=>a+b,0)/lc.length : null, lineN: lc.length, lineBeat: lc.length? lc.filter(x=>x>0).length/lc.length : null};
 }
@@ -1578,12 +1584,13 @@ document.addEventListener('change', async e=>{
   if(t.id==='slate-pick' || t.id==='slate-pick-top' || t.id==='slate-pick-rx' || t.id==='slate-pick-par' || t.id==='slate-pick-long' || t.id==='slate-pick-lad' || t.id==='slate-pick-hits'){ S.slateId=t.value; S.rxKey=null; render(); return; }
   if(t.dataset.res && S.db){ try{ await S.db.doc('bets/'+t.dataset.res).update({result:t.value}); }catch(_){ toast('Couldn\'t save the result'); } return; }
   if((t.dataset.close || t.dataset.cline) && S.db){
-    const id=t.dataset.close||t.dataset.cline; const b=S.bets.find(x=>x.id===id); if(!b) return;
+    const id=t.dataset.close||t.dataset.cline; const b0=S.bets.find(x=>x.id===id); if(!b0) return; const b=betView(b0);
     const pr=(document.getElementById('close-'+id)||{}).value; const ln=(document.getElementById('cline-'+id)||{}).value;
     const price=toNum((pr||'').trim()); const line=toNum((ln||'').trim());
     if((pr||'').trim()!=='' && !validAm(price)){ toast('Closing odds should look like -110 or +150'); return; }
     const upd={close: validAm(price)?price:null, close_price: validAm(price)?price:null};
     if(document.getElementById('cline-'+id)) upd.close_line = line;
+    if(b.line_inferred){ upd.market_type=b.market_type; upd.taken_line=b.taken_line; upd.taken_price=toNum(b.odds); upd.line_inferred=true; }
     const f=EXEC.clvFields({...b, ...upd});
     ['line_delta','line_changed','price_clv','line_clv','combined_clv','key_numbers_crossed'].forEach(k=>{ upd[k]=f[k]; });
     try{ await S.db.doc('bets/'+id).update(upd); }catch(_){ toast('Couldn\'t save the close'); }
