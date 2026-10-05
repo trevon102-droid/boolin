@@ -22,9 +22,19 @@ tier (Settings → Sizing mode = Research). The price check (our % vs FanDuel's 
   - **C**: leans, longshots (anytime/2+ TD, HR, goals) and thinner evidence.
 - **Streaks, game logs and history vs the opponent are allowed as evidence** (show them in `inputs`), as long as
   the WHY rests on role/usage first. Say the sample size ("4 of last 5", "3 games this season").
-- **Price is information.** Still record `odds` (FanDuel), `modelP`, `prior` and `factors` so the board can show the
-  price check and we can track results by tier later. Add a short `betTo` like "fine to -140" or "price is juiced;
-  still the best play" instead of a pass.
+- **Price is information for the tier; `betTo` is the execution gate.** Research conviction ≠ bet permission.
+  Record `odds` (FanDuel), `priceAt`, `line` (spreads/totals/props), `modelP`, `prior` and `factors`. `betTo` is the
+  **hard execution threshold** and must be machine-readable: a price, or a line and a price, e.g. `"-140"`,
+  `"+150 or better"`, `"38.5 to -125"`, `"-2.5 to -120"`, `"69.5 at -115"` (or set `betToPrice` / `betToLine`).
+  The board marks each play **BET** only when FanDuel's current price has a timestamp, isn't stale, and is at or
+  better than `betTo` (line first: a worse number is never made up for by a better price). Otherwise the play stays
+  on the card as research with **WAIT / RECHECK** (no/stale price, no threshold) or **NOT BETTABLE AT CURRENT
+  PRICE** ("I still like it, I hate the price"). Never loosen `betTo` to make a play bettable; set it from the
+  research before looking at FanDuel, and leave the tier alone when the price moves.
+- **The market is the anchor.** `prior` is the market (Pinnacle/consensus no-vig); `modelP` is the research
+  probability = prior + analyst adjustments. The board labels it "Research probability / analyst estimate"
+  because no league's model is validated yet (data/research/validation/model_scorecard.json); a big gap to the
+  market is a reason to re-check, not a stronger play.
 - **`pass: true` only for real reasons:** player out/questionable, lineup or goalie news that breaks the read,
   FanDuel not offering the market, game started. Never for price or thin edge.
 - **Sizes are suggestions, not tied to the tier.** Put a `units` number on every play: what you'd suggest
@@ -234,6 +244,10 @@ where the edges are. Only include games that haven't started when the run finish
 - `sgps`: 1–2 same-game parlays of **2–5 legs** (plus an optional `"lottery": true` sprinkle build), each with `conviction` and `units`. Legs should share one game script with real positive correlation. Give each leg
   its price and model %, and set the SGP's `modelP` to your correlated joint probability (always above
   the independent product when the correlation is positive; say by how much in `correlation`).
+  Set `joint_probability_method`: `"analyst"` (your judgment; the default when `modelP` is set), `"simulation"`
+  (only if you actually simulated it) or `"independent"`. Never `"validated"`: no SGP validation exists, and the
+  board shows any such claim as an analyst estimate. An SGP is **BET** only with FanDuel's actual slip price in
+  `bookPrice` and its time in `bookPriceAt`, at or better than the Bet-only-at price; otherwise WAIT / RECHECK.
   The board shows the fair price and a **Bet only at** price, because books reprice SGPs for correlation. Mark extra
   builds `"pass": true` so only the best SGP per game gets a stake. Never build SGPs from negatively correlated legs.
 
@@ -249,7 +263,8 @@ where the edges are. Only include games that haven't started when the run finish
               "odds": -115, "book": "FanDuel", "modelP": 0.56, "betTo": "69.5 at -115", "why": "…", "onBoard": true}],
    "sgps": [{"name": "Grind script", "legs": [{"pick": "Under 38.5", "odds": -118, "modelP": 0.57},
              {"pick": "Warren Over 66.5 rush yds", "odds": -115, "modelP": 0.56}], "modelP": 0.36,
-             "script": "…", "correlation": "…"}]}
+             "script": "…", "correlation": "…", "joint_probability_method": "analyst",
+             "bookPrice": 230, "bookPriceAt": "2026-10-01T16:20:00-04:00"}]}
 ]
 ```
 
@@ -319,5 +334,6 @@ After writing the slate, also save it as a workbook and send it:
 
 ## 5. Report
 
-Finish with a short message: number of plays by tier, the A-tier plays with FanDuel price and why in one line, the Top 10 games picked, total units
+Finish with a short message: number of plays by tier, the A-tier plays with FanDuel price, `betTo` and execution
+status (BET / WAIT / NOT BETTABLE AT CURRENT PRICE) and why in one line, the Top 10 games picked, total units
 (including SGP stakes), anything that needs a check before start (goalies, lineups), and any data source that failed.

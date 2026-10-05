@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 failed = 0
-for mod in ("tests.test_offline", "tests.test_health", "tests.test_research", "tests.test_validation"):
+for mod in ("tests.test_offline", "tests.test_health", "tests.test_research", "tests.test_validation", "tests.test_board_exec"):
     m = importlib.import_module(mod)
     for name in sorted(n for n in dir(m) if n.startswith("test_")):
         try:
