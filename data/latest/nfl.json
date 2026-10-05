@@ -1,7 +1,8 @@
 {
+ "pulled_at_et": "2026-10-05T10:40-04:00",
  "date": "2026-10-05",
  "season": 2026,
- "note": "spread_line is home-team margin (positive = home favored), per nflverse",
+ "note": "spread_line is home-team margin (positive = home favored), per nflverse. Injury statuses are the latest weekly report (see injuries.report_week), not game-day inactives: confirm inactives ~90 min before kickoff.",
  "games": [
   {
    "game_id": "2026_04_ATL_NO",
@@ -19,8 +20,8 @@
    "total_line": 47.5,
    "over_odds": -115.0,
    "under_odds": -105.0,
-   "away_moneyline": 102.0,
-   "home_moneyline": -122.0,
+   "away_moneyline": 100.0,
+   "home_moneyline": -120.0,
    "div_game": 1,
    "roof": "dome",
    "surface": "sportturf",
@@ -103,8 +104,8 @@
    "total_line": 44.5,
    "over_odds": -105.0,
    "under_odds": -115.0,
-   "away_moneyline": -142.0,
-   "home_moneyline": 120.0,
+   "away_moneyline": -148.0,
+   "home_moneyline": 124.0,
    "div_game": 1,
    "roof": "outdoors",
    "surface": "grass",
@@ -159,8 +160,8 @@
    "total_line": 44.5,
    "over_odds": -115.0,
    "under_odds": -105.0,
-   "away_moneyline": 164.0,
-   "home_moneyline": -198.0,
+   "away_moneyline": 160.0,
+   "home_moneyline": -192.0,
    "div_game": 0,
    "roof": "outdoors",
    "surface": "fieldturf",
@@ -266,13 +267,13 @@
    "away_rest": 7,
    "home_rest": 7,
    "spread_line": -6.5,
-   "away_spread_odds": -105.0,
-   "home_spread_odds": -115.0,
+   "away_spread_odds": -110.0,
+   "home_spread_odds": -110.0,
    "total_line": 39.5,
    "over_odds": -110.0,
    "under_odds": -110.0,
-   "away_moneyline": -305.0,
-   "home_moneyline": 245.0,
+   "away_moneyline": -325.0,
+   "home_moneyline": 260.0,
    "div_game": 1,
    "roof": "outdoors",
    "surface": "grass",
@@ -297,8 +298,8 @@
    "away_spread_odds": -105.0,
    "home_spread_odds": -115.0,
    "total_line": 43.5,
-   "over_odds": -115.0,
-   "under_odds": -105.0,
+   "over_odds": -118.0,
+   "under_odds": -102.0,
    "away_moneyline": 142.0,
    "home_moneyline": -170.0,
    "div_game": 1,
@@ -327,8 +328,8 @@
    "total_line": 42.5,
    "over_odds": -110.0,
    "under_odds": -110.0,
-   "away_moneyline": -180.0,
-   "home_moneyline": 150.0,
+   "away_moneyline": -185.0,
+   "home_moneyline": 154.0,
    "div_game": 1,
    "roof": "dome",
    "surface": "matrixturf",
@@ -459,9 +460,11 @@
    3,
    4
   ],
+  "sample_note": "sample_quality: tiny < 3 games, small < 6. Regress tiny samples hard toward last season / market.",
   "teams": {
    "ARI": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.019,
     "off_success": 0.462,
     "off_pass_epa": 0.01,
@@ -473,11 +476,14 @@
     "def_rush_epa": -0.229,
     "off_epa_last3": -0.075,
     "def_epa_last3": 0.158,
+    "off_epa_last1": -0.206,
+    "def_epa_last1": -0.065,
     "off_epa_play_rank": 17,
     "def_epa_play_rank": 28
    },
    "ATL": {
     "games": 3,
+    "sample_quality": "small",
     "off_epa_play": -0.162,
     "off_success": 0.455,
     "off_pass_epa": -0.353,
@@ -489,11 +495,14 @@
     "def_rush_epa": -0.312,
     "off_epa_last3": -0.077,
     "def_epa_last3": 0.031,
+    "off_epa_last1": null,
+    "def_epa_last1": null,
     "off_epa_play_rank": 32,
     "def_epa_play_rank": 8
    },
    "BAL": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": 0.16,
     "off_success": 0.502,
     "off_pass_epa": 0.328,
@@ -505,11 +514,14 @@
     "def_rush_epa": -0.027,
     "off_epa_last3": 0.144,
     "def_epa_last3": 0.07,
+    "off_epa_last1": 0.13,
+    "def_epa_last1": -0.054,
     "off_epa_play_rank": 4,
     "def_epa_play_rank": 15
    },
    "BUF": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": 0.195,
     "off_success": 0.478,
     "off_pass_epa": 0.27,
@@ -521,11 +533,14 @@
     "def_rush_epa": -0.05,
     "off_epa_last3": 0.171,
     "def_epa_last3": 0.135,
+    "off_epa_last1": 0.109,
+    "def_epa_last1": 0.191,
     "off_epa_play_rank": 3,
     "def_epa_play_rank": 30
    },
    "CAR": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": 0.086,
     "off_success": 0.433,
     "off_pass_epa": 0.212,
@@ -537,11 +552,14 @@
     "def_rush_epa": -0.099,
     "off_epa_last3": 0.072,
     "def_epa_last3": -0.108,
+    "off_epa_last1": 0.286,
+    "def_epa_last1": 0.152,
     "off_epa_play_rank": 9,
     "def_epa_play_rank": 16
    },
    "CHI": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": 0.116,
     "off_success": 0.487,
     "off_pass_epa": 0.264,
@@ -553,11 +571,14 @@
     "def_rush_epa": -0.019,
     "off_epa_last3": 0.037,
     "def_epa_last3": -0.165,
+    "off_epa_last1": 0.104,
+    "def_epa_last1": -0.137,
     "off_epa_play_rank": 8,
     "def_epa_play_rank": 5
    },
    "CIN": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": 0.046,
     "off_success": 0.447,
     "off_pass_epa": 0.11,
@@ -569,11 +590,14 @@
     "def_rush_epa": -0.099,
     "off_epa_last3": 0.06,
     "def_epa_last3": -0.006,
+    "off_epa_last1": 0.04,
+    "def_epa_last1": 0.109,
     "off_epa_play_rank": 10,
     "def_epa_play_rank": 10
    },
    "CLE": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.006,
     "off_success": 0.439,
     "off_pass_epa": 0.166,
@@ -585,11 +609,14 @@
     "def_rush_epa": -0.034,
     "off_epa_last3": 0.048,
     "def_epa_last3": -0.058,
+    "off_epa_last1": 0.126,
+    "def_epa_last1": 0.117,
     "off_epa_play_rank": 16,
     "def_epa_play_rank": 17
    },
    "DAL": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": 0.199,
     "off_success": 0.491,
     "off_pass_epa": 0.323,
@@ -601,11 +628,14 @@
     "def_rush_epa": -0.09,
     "off_epa_last3": 0.179,
     "def_epa_last3": 0.131,
+    "off_epa_last1": 0.203,
+    "def_epa_last1": 0.185,
     "off_epa_play_rank": 2,
     "def_epa_play_rank": 31
    },
    "DEN": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.021,
     "off_success": 0.412,
     "off_pass_epa": 0.013,
@@ -617,11 +647,14 @@
     "def_rush_epa": 0.058,
     "off_epa_last3": 0.071,
     "def_epa_last3": 0.023,
+    "off_epa_last1": 0.056,
+    "def_epa_last1": 0.123,
     "off_epa_play_rank": 18,
     "def_epa_play_rank": 23
    },
    "DET": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": 0.144,
     "off_success": 0.496,
     "off_pass_epa": 0.274,
@@ -633,11 +666,14 @@
     "def_rush_epa": 0.025,
     "off_epa_last3": 0.21,
     "def_epa_last3": 0.282,
+    "off_epa_last1": 0.152,
+    "def_epa_last1": 0.286,
     "off_epa_play_rank": 6,
     "def_epa_play_rank": 32
    },
    "GB": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.074,
     "off_success": 0.388,
     "off_pass_epa": 0.072,
@@ -649,11 +685,14 @@
     "def_rush_epa": -0.039,
     "off_epa_last3": -0.033,
     "def_epa_last3": 0.069,
+    "off_epa_last1": 0.013,
+    "def_epa_last1": -0.035,
     "off_epa_play_rank": 25,
     "def_epa_play_rank": 27
    },
    "HOU": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.03,
     "off_success": 0.426,
     "off_pass_epa": 0.072,
@@ -665,11 +704,14 @@
     "def_rush_epa": -0.126,
     "off_epa_last3": -0.073,
     "def_epa_last3": 0.007,
+    "off_epa_last1": 0.185,
+    "def_epa_last1": 0.203,
     "off_epa_play_rank": 19,
     "def_epa_play_rank": 25
    },
    "IND": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.048,
     "off_success": 0.437,
     "off_pass_epa": -0.171,
@@ -681,11 +723,14 @@
     "def_rush_epa": -0.042,
     "off_epa_last3": -0.001,
     "def_epa_last3": -0.016,
+    "off_epa_last1": -0.086,
+    "def_epa_last1": -0.226,
     "off_epa_play_rank": 23,
     "def_epa_play_rank": 22
    },
    "JAX": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": 0.137,
     "off_success": 0.483,
     "off_pass_epa": 0.212,
@@ -697,11 +742,14 @@
     "def_rush_epa": -0.147,
     "off_epa_last3": 0.085,
     "def_epa_last3": -0.027,
+    "off_epa_last1": 0.109,
+    "def_epa_last1": 0.04,
     "off_epa_play_rank": 7,
     "def_epa_play_rank": 7
    },
    "KC": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": 0.157,
     "off_success": 0.481,
     "off_pass_epa": 0.198,
@@ -713,11 +761,14 @@
     "def_rush_epa": -0.145,
     "off_epa_last3": 0.17,
     "def_epa_last3": 0.048,
+    "off_epa_last1": 0.127,
+    "def_epa_last1": 0.075,
     "off_epa_play_rank": 5,
     "def_epa_play_rank": 9
    },
    "LA": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": 0.006,
     "off_success": 0.463,
     "off_pass_epa": 0.056,
@@ -729,11 +780,14 @@
     "def_rush_epa": -0.13,
     "off_epa_last3": 0.068,
     "def_epa_last3": -0.198,
+    "off_epa_last1": 0.015,
+    "def_epa_last1": -0.28,
     "off_epa_play_rank": 15,
     "def_epa_play_rank": 4
    },
    "LAC": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.146,
     "off_success": 0.408,
     "off_pass_epa": -0.115,
@@ -745,11 +799,14 @@
     "def_rush_epa": -0.12,
     "off_epa_last3": -0.141,
     "def_epa_last3": -0.084,
+    "off_epa_last1": -0.063,
+    "def_epa_last1": -0.09,
     "off_epa_play_rank": 30,
     "def_epa_play_rank": 11
    },
    "LV": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": 0.03,
     "off_success": 0.442,
     "off_pass_epa": 0.215,
@@ -761,11 +818,14 @@
     "def_rush_epa": -0.183,
     "off_epa_last3": 0.048,
     "def_epa_last3": -0.089,
+    "off_epa_last1": 0.075,
+    "def_epa_last1": 0.127,
     "off_epa_play_rank": 11,
     "def_epa_play_rank": 2
    },
    "MIA": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.144,
     "off_success": 0.348,
     "off_pass_epa": -0.099,
@@ -777,11 +837,14 @@
     "def_rush_epa": -0.137,
     "off_epa_last3": -0.113,
     "def_epa_last3": 0.136,
+    "off_epa_last1": -0.24,
+    "def_epa_last1": -0.056,
     "off_epa_play_rank": 29,
     "def_epa_play_rank": 29
    },
    "MIN": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.084,
     "off_success": 0.347,
     "off_pass_epa": -0.048,
@@ -793,11 +856,14 @@
     "def_rush_epa": -0.268,
     "off_epa_last3": -0.136,
     "def_epa_last3": -0.22,
+    "off_epa_last1": -0.056,
+    "def_epa_last1": -0.24,
     "off_epa_play_rank": 27,
     "def_epa_play_rank": 1
    },
    "NE": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.039,
     "off_success": 0.433,
     "off_pass_epa": 0.045,
@@ -809,11 +875,14 @@
     "def_rush_epa": 0.028,
     "off_epa_last3": -0.019,
     "def_epa_last3": -0.021,
+    "off_epa_last1": 0.191,
+    "def_epa_last1": 0.109,
     "off_epa_play_rank": 21,
     "def_epa_play_rank": 12
    },
    "NO": {
     "games": 3,
+    "sample_quality": "small",
     "off_epa_play": 0.024,
     "off_success": 0.474,
     "off_pass_epa": 0.048,
@@ -825,11 +894,14 @@
     "def_rush_epa": -0.038,
     "off_epa_last3": 0.027,
     "def_epa_last3": 0.125,
+    "off_epa_last1": null,
+    "def_epa_last1": null,
     "off_epa_play_rank": 12,
     "def_epa_play_rank": 26
    },
    "NYG": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.047,
     "off_success": 0.406,
     "off_pass_epa": 0.061,
@@ -841,11 +913,14 @@
     "def_rush_epa": -0.055,
     "off_epa_last3": -0.19,
     "def_epa_last3": -0.044,
+    "off_epa_last1": -0.065,
+    "def_epa_last1": -0.206,
     "off_epa_play_rank": 22,
     "def_epa_play_rank": 20
    },
    "NYJ": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": 0.018,
     "off_success": 0.434,
     "off_pass_epa": 0.159,
@@ -857,11 +932,14 @@
     "def_rush_epa": -0.129,
     "off_epa_last3": -0.022,
     "def_epa_last3": 0.063,
+    "off_epa_last1": -0.137,
+    "def_epa_last1": 0.104,
     "off_epa_play_rank": 14,
     "def_epa_play_rank": 18
    },
    "PHI": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.11,
     "off_success": 0.367,
     "off_pass_epa": -0.084,
@@ -873,11 +951,14 @@
     "def_rush_epa": -0.003,
     "off_epa_last3": -0.149,
     "def_epa_last3": 0.062,
+    "off_epa_last1": -0.28,
+    "def_epa_last1": 0.015,
     "off_epa_play_rank": 28,
     "def_epa_play_rank": 24
    },
    "PIT": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.072,
     "off_success": 0.426,
     "off_pass_epa": -0.092,
@@ -889,11 +970,14 @@
     "def_rush_epa": -0.087,
     "off_epa_last3": -0.013,
     "def_epa_last3": 0.121,
+    "off_epa_last1": 0.117,
+    "def_epa_last1": 0.126,
     "off_epa_play_rank": 24,
     "def_epa_play_rank": 13
    },
    "SEA": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": 0.019,
     "off_success": 0.451,
     "off_pass_epa": 0.199,
@@ -905,11 +989,14 @@
     "def_rush_epa": -0.238,
     "off_epa_last3": 0.017,
     "def_epa_last3": -0.107,
+    "off_epa_last1": -0.09,
+    "def_epa_last1": -0.063,
     "off_epa_play_rank": 13,
     "def_epa_play_rank": 3
    },
    "SF": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": 0.274,
     "off_success": 0.541,
     "off_pass_epa": 0.539,
@@ -921,11 +1008,14 @@
     "def_rush_epa": -0.108,
     "off_epa_last3": 0.306,
     "def_epa_last3": 0.073,
+    "off_epa_last1": 0.123,
+    "def_epa_last1": 0.056,
     "off_epa_play_rank": 1,
     "def_epa_play_rank": 14
    },
    "TB": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.159,
     "off_success": 0.389,
     "off_pass_epa": -0.215,
@@ -937,11 +1027,14 @@
     "def_rush_epa": -0.253,
     "off_epa_last3": -0.181,
     "def_epa_last3": -0.091,
+    "off_epa_last1": -0.035,
+    "def_epa_last1": 0.013,
     "off_epa_play_rank": 31,
     "def_epa_play_rank": 6
    },
    "TEN": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.074,
     "off_success": 0.412,
     "off_pass_epa": -0.079,
@@ -953,11 +1046,14 @@
     "def_rush_epa": -0.117,
     "off_epa_last3": -0.055,
     "def_epa_last3": 0.01,
+    "off_epa_last1": -0.054,
+    "def_epa_last1": 0.13,
     "off_epa_play_rank": 26,
     "def_epa_play_rank": 21
    },
    "WAS": {
     "games": 4,
+    "sample_quality": "small",
     "off_epa_play": -0.036,
     "off_success": 0.386,
     "off_pass_epa": 0.042,
@@ -969,6 +1065,8 @@
     "def_rush_epa": -0.113,
     "off_epa_last3": -0.069,
     "def_epa_last3": 0.029,
+    "off_epa_last1": -0.226,
+    "def_epa_last1": -0.086,
     "off_epa_play_rank": 20,
     "def_epa_play_rank": 19
    }
@@ -976,6 +1074,8 @@
  },
  "injuries": {
   "week": 4,
+  "report_week": 4,
+  "note": "Latest weekly report, not inactives. Final status comes ~90 min before kickoff.",
   "teams": {
    "ARI": [
     {
@@ -983,14 +1083,16 @@
      "pos": "LB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Not injury related - resting player"
+     "injury": "Not injury related - resting player",
+     "reported": null
     },
     {
      "player": "Dadrion Taylor-Demerson",
      "pos": "S",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Back"
+     "injury": "Back",
+     "reported": null
     }
    ],
    "ATL": [
@@ -999,21 +1101,24 @@
      "pos": "DE",
      "status": "Questionable",
      "practice": "Full Participation in Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "Divine Deablo",
      "pos": "LB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "Yasir Abdullah",
      "pos": "LB",
      "status": "Questionable",
      "practice": "Full Participation in Practice",
-     "injury": "Illness"
+     "injury": "Illness",
+     "reported": null
     }
    ],
    "BAL": [
@@ -1022,42 +1127,48 @@
      "pos": "WR",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Ankle"
+     "injury": "Ankle",
+     "reported": null
     },
     {
      "player": "Ronnie Stanley",
      "pos": "T",
      "status": "Questionable",
      "practice": "Did Not Participate In Practice",
-     "injury": "Toe"
+     "injury": "Toe",
+     "reported": null
     },
     {
      "player": "Ethan Pocic",
      "pos": "C",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Trey Hendrickson",
      "pos": "LB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Finger"
+     "injury": "Finger",
+     "reported": null
     },
     {
      "player": "Jovaughn Gwyn",
      "pos": "C",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Ankle"
+     "injury": "Ankle",
+     "reported": null
     },
     {
      "player": "Zay Flowers",
      "pos": "WR",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     }
    ],
    "BUF": [
@@ -1066,21 +1177,24 @@
      "pos": "CB",
      "status": "Questionable",
      "practice": "Did Not Participate In Practice",
-     "injury": "Toe"
+     "injury": "Toe",
+     "reported": null
     },
     {
      "player": "Ray Davis",
      "pos": "RB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "T.J. Sanders",
      "pos": "DE",
      "status": "Doubtful",
      "practice": "Limited Participation in Practice",
-     "injury": "Illness"
+     "injury": "Illness",
+     "reported": null
     }
    ],
    "CAR": [
@@ -1089,42 +1203,48 @@
      "pos": "G",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Elbow"
+     "injury": "Elbow",
+     "reported": null
     },
     {
      "player": "Xavier Legette",
      "pos": "WR",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Jalen Coker",
      "pos": "WR",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Quadricep"
+     "injury": "Quadricep",
+     "reported": null
     },
     {
      "player": "Cam Jackson",
      "pos": "DT",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Monroe Freeling",
      "pos": "T",
      "status": "Questionable",
      "practice": "Full Participation in Practice",
-     "injury": "Concussion"
+     "injury": "Concussion",
+     "reported": null
     },
     {
      "player": "Lee Hunter",
      "pos": "DT",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Foot"
+     "injury": "Foot",
+     "reported": null
     }
    ],
    "CHI": [
@@ -1133,42 +1253,48 @@
      "pos": "S",
      "status": "Doubtful",
      "practice": "Did Not Participate In Practice",
-     "injury": "Hip"
+     "injury": "Hip",
+     "reported": null
     },
     {
      "player": "Braxton Jones",
      "pos": "T",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Kyler Gordon",
      "pos": "CB",
      "status": "Out",
      "practice": "Full Participation in Practice",
-     "injury": "Calf"
+     "injury": "Calf",
+     "reported": null
     },
     {
      "player": "Noah Sewell",
      "pos": "LB",
      "status": "Out",
      "practice": "Full Participation in Practice",
-     "injury": "Achilles"
+     "injury": "Achilles",
+     "reported": null
     },
     {
      "player": "Caleb Williams",
      "pos": "QB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "Shemar Turner",
      "pos": "DE",
      "status": "Out",
      "practice": "Full Participation in Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     }
    ],
    "CIN": [
@@ -1177,42 +1303,48 @@
      "pos": "DT",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Achilles"
+     "injury": "Achilles",
+     "reported": null
     },
     {
      "player": "Dalton Risner",
      "pos": "G",
      "status": "Questionable",
      "practice": "Full Participation in Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Kyle Dugger",
      "pos": "S",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Quadricep"
+     "injury": "Quadricep",
+     "reported": null
     },
     {
      "player": "Bryan Cook",
      "pos": "S",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Ankle"
+     "injury": "Ankle",
+     "reported": null
     },
     {
      "player": "Swayze Bozeman",
      "pos": "LB",
      "status": "Questionable",
      "practice": "Did Not Participate In Practice",
-     "injury": "Groin"
+     "injury": "Groin",
+     "reported": null
     },
     {
      "player": "Colbie Young",
      "pos": "WR",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     }
    ],
    "CLE": [
@@ -1221,21 +1353,24 @@
      "pos": "C",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Concussion"
+     "injury": "Concussion",
+     "reported": null
     },
     {
      "player": "Tylan Wallace",
      "pos": "WR",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Teven Jenkins",
      "pos": "G",
      "status": "Out",
      "practice": "Limited Participation in Practice",
-     "injury": "Back"
+     "injury": "Back",
+     "reported": null
     }
    ],
    "DAL": [
@@ -1244,14 +1379,16 @@
      "pos": "CB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "DeMarvion Overshown",
      "pos": "LB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     }
    ],
    "DEN": [
@@ -1260,7 +1397,8 @@
      "pos": "LB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     }
    ],
    "DET": [
@@ -1269,14 +1407,16 @@
      "pos": "CB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Rib"
+     "injury": "Rib",
+     "reported": null
     },
     {
      "player": "Ben Bartch",
      "pos": "G",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Foot"
+     "injury": "Foot",
+     "reported": null
     }
    ],
    "GB": [
@@ -1285,42 +1425,48 @@
      "pos": "G",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Jacob Monk",
      "pos": "C",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Quadricep"
+     "injury": "Quadricep",
+     "reported": null
     },
     {
      "player": "Edgerrin Cooper",
      "pos": "LB",
      "status": "Questionable",
      "practice": "Full Participation in Practice",
-     "injury": "Shoulder"
+     "injury": "Shoulder",
+     "reported": null
     },
     {
      "player": "Warren Brinson",
      "pos": "DT",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Calf"
+     "injury": "Calf",
+     "reported": null
     },
     {
      "player": "Anthony Campbell",
      "pos": "DT",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Ankle"
+     "injury": "Ankle",
+     "reported": null
     },
     {
      "player": "Jager Burton",
      "pos": "C",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Groin"
+     "injury": "Groin",
+     "reported": null
     }
    ],
    "HOU": [
@@ -1329,42 +1475,48 @@
      "pos": "DE",
      "status": "Questionable",
      "practice": "Did Not Participate In Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "M.J. Stewart",
      "pos": "S",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Azeez Al-Shaair",
      "pos": "LB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Groin"
+     "injury": "Groin",
+     "reported": null
     },
     {
      "player": "Jake Hansen",
      "pos": "LB",
      "status": "Questionable",
      "practice": "Full Participation in Practice",
-     "injury": "Calf"
+     "injury": "Calf",
+     "reported": null
     },
     {
      "player": "Logan Hall",
      "pos": "DE",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Ed Ingram",
      "pos": "G",
      "status": "Questionable",
      "practice": "Full Participation in Practice",
-     "injury": "Groin"
+     "injury": "Groin",
+     "reported": null
     }
    ],
    "IND": [
@@ -1373,14 +1525,16 @@
      "pos": "WR",
      "status": "Questionable",
      "practice": "Did Not Participate In Practice",
-     "injury": "Not injury related - resting player"
+     "injury": "Not injury related - resting player",
+     "reported": null
     },
     {
      "player": "Ashton Dulin",
      "pos": "WR",
      "status": "Questionable",
      "practice": "Full Participation in Practice",
-     "injury": "Ankle"
+     "injury": "Ankle",
+     "reported": null
     }
    ],
    "JAX": [
@@ -1389,21 +1543,24 @@
      "pos": "CB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "Christian Braswell",
      "pos": "CB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Albert Regis",
      "pos": "DT",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Elbow"
+     "injury": "Elbow",
+     "reported": null
     }
    ],
    "KC": [
@@ -1412,7 +1569,8 @@
      "pos": "T",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Back"
+     "injury": "Back",
+     "reported": null
     }
    ],
    "LA": [
@@ -1421,35 +1579,40 @@
      "pos": "DT",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Back"
+     "injury": "Back",
+     "reported": null
     },
     {
      "player": "Colby Parkinson",
      "pos": "TE",
      "status": "Questionable",
      "practice": "Did Not Participate In Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Jaylen Watson",
      "pos": "CB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Shoulder"
+     "injury": "Shoulder",
+     "reported": null
     },
     {
      "player": "Josaiah Stewart",
      "pos": "LB",
      "status": "Questionable",
      "practice": "Did Not Participate In Practice",
-     "injury": "Groin"
+     "injury": "Groin",
+     "reported": null
     },
     {
      "player": "Terrance Ferguson",
      "pos": "TE",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Ankle"
+     "injury": "Ankle",
+     "reported": null
     }
    ],
    "LAC": [
@@ -1458,63 +1621,72 @@
      "pos": "DT",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "Donte Jackson",
      "pos": "CB",
      "status": "Questionable",
      "practice": "Full Participation in Practice",
-     "injury": "Concussion"
+     "injury": "Concussion",
+     "reported": null
     },
     {
      "player": "Derwin James",
      "pos": "S",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "Kayode Awosika",
      "pos": "G",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Fibula"
+     "injury": "Fibula",
+     "reported": null
     },
     {
      "player": "Elijah Molden",
      "pos": "S",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "Trey Lance",
      "pos": "QB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Groin"
+     "injury": "Groin",
+     "reported": null
     },
     {
      "player": "Charlie Kolar",
      "pos": "TE",
      "status": "Out",
      "practice": "Limited Participation in Practice",
-     "injury": "Forearm"
+     "injury": "Forearm",
+     "reported": null
     },
     {
      "player": "Ladd McConkey",
      "pos": "WR",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Foot"
+     "injury": "Foot",
+     "reported": null
     },
     {
      "player": "Brenen Thompson",
      "pos": "WR",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Quadricep"
+     "injury": "Quadricep",
+     "reported": null
     }
    ],
    "LV": [
@@ -1523,14 +1695,16 @@
      "pos": "QB",
      "status": "Questionable",
      "practice": "Did Not Participate In Practice",
-     "injury": "Not injury related - personal matter"
+     "injury": "Not injury related - personal matter",
+     "reported": null
     },
     {
      "player": "Jackson Powers-Johnson",
      "pos": "G",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Groin"
+     "injury": "Groin",
+     "reported": null
     }
    ],
    "MIA": [
@@ -1539,21 +1713,24 @@
      "pos": "LB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "Storm Duck",
      "pos": "CB",
      "status": "Out",
      "practice": "Full Participation in Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Caleb Douglas",
      "pos": "WR",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Ankle"
+     "injury": "Ankle",
+     "reported": null
     }
    ],
    "MIN": [
@@ -1562,21 +1739,24 @@
      "pos": "WR",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Ankle"
+     "injury": "Ankle",
+     "reported": null
     },
     {
      "player": "Charles Demmings",
      "pos": "CB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "Brett Thorson",
      "pos": "P",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     }
    ],
    "NE": [
@@ -1585,70 +1765,80 @@
      "pos": "T",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Foot"
+     "injury": "Foot",
+     "reported": null
     },
     {
      "player": "Dre'Mont Jones",
      "pos": "LB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Shoulder"
+     "injury": "Shoulder",
+     "reported": null
     },
     {
      "player": "Reggie Gilliam",
      "pos": "FB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Christian Elliss",
      "pos": "LB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Chest"
+     "injury": "Chest",
+     "reported": null
     },
     {
      "player": "Christian Barmore",
      "pos": "DT",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Shoulder"
+     "injury": "Shoulder",
+     "reported": null
     },
     {
      "player": "Brenden Schooler",
      "pos": "S",
      "status": "Out",
      "practice": "Limited Participation in Practice",
-     "injury": "Back"
+     "injury": "Back",
+     "reported": null
     },
     {
      "player": "Christian Gonzalez",
      "pos": "CB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Shoulder"
+     "injury": "Shoulder",
+     "reported": null
     },
     {
      "player": "Craig Woodson",
      "pos": "S",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Shoulder"
+     "injury": "Shoulder",
+     "reported": null
     },
     {
      "player": "Channing Canada",
      "pos": "CB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "Eli Raridon",
      "pos": "TE",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Thigh"
+     "injury": "Thigh",
+     "reported": null
     }
    ],
    "NO": [
@@ -1657,35 +1847,40 @@
      "pos": "LB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Calf"
+     "injury": "Calf",
+     "reported": null
     },
     {
      "player": "Carl Granderson",
      "pos": "LB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Ankle"
+     "injury": "Ankle",
+     "reported": null
     },
     {
      "player": "Noah Fant",
      "pos": "TE",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Abdomen"
+     "injury": "Abdomen",
+     "reported": null
     },
     {
      "player": "Anfernee Jennings",
      "pos": "LB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Pete Werner",
      "pos": "LB",
      "status": "Questionable",
      "practice": "Did Not Participate In Practice",
-     "injury": "Shoulder"
+     "injury": "Shoulder",
+     "reported": null
     }
    ],
    "NYJ": [
@@ -1694,49 +1889,56 @@
      "pos": "DE",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Dylan Parham",
      "pos": "G",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Breece Hall",
      "pos": "RB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Quadricep"
+     "injury": "Quadricep",
+     "reported": null
     },
     {
      "player": "Adonai Mitchell",
      "pos": "WR",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Finger"
+     "injury": "Finger",
+     "reported": null
     },
     {
      "player": "Francisco Mauigoa",
      "pos": "LB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Quadricep"
+     "injury": "Quadricep",
+     "reported": null
     },
     {
      "player": "Mason Taylor",
      "pos": "TE",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Thumb"
+     "injury": "Thumb",
+     "reported": null
     },
     {
      "player": "Kenyon Sadiq",
      "pos": "TE",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Back"
+     "injury": "Back",
+     "reported": null
     }
    ],
    "PHI": [
@@ -1745,42 +1947,48 @@
      "pos": "TE",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Fred Johnson",
      "pos": "T",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Marcus Epps",
      "pos": "S",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Groin"
+     "injury": "Groin",
+     "reported": null
     },
     {
      "player": "Marquise Brown",
      "pos": "WR",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Ankle"
+     "injury": "Ankle",
+     "reported": null
     },
     {
      "player": "Zack Baun",
      "pos": "LB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Concussion"
+     "injury": "Concussion",
+     "reported": null
     },
     {
      "player": "DeVonta Smith",
      "pos": "WR",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     }
    ],
    "PIT": [
@@ -1789,28 +1997,32 @@
      "pos": "CB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Wrist"
+     "injury": "Wrist",
+     "reported": null
     },
     {
      "player": "Rico Dowdle",
      "pos": "RB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Toe"
+     "injury": "Toe",
+     "reported": null
     },
     {
      "player": "Joey Porter Jr.",
      "pos": "CB",
      "status": "Out",
      "practice": "Limited Participation in Practice",
-     "injury": "Not injury related - other"
+     "injury": "Not injury related - other",
+     "reported": null
     },
     {
      "player": "Yahya Black",
      "pos": "DT",
      "status": "Questionable",
      "practice": NaN,
-     "injury": "Not injury related - personal matter"
+     "injury": "Not injury related - personal matter",
+     "reported": null
     }
    ],
    "SEA": [
@@ -1819,28 +2031,32 @@
      "pos": "LB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Calf"
+     "injury": "Calf",
+     "reported": null
     },
     {
      "player": "Ty Okada",
      "pos": "S",
      "status": "Questionable",
      "practice": "Full Participation in Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "Zach Charbonnet",
      "pos": "RB",
      "status": "Out",
      "practice": "Limited Participation in Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Jadarian Price",
      "pos": "RB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Chest"
+     "injury": "Chest",
+     "reported": null
     }
    ],
    "SF": [
@@ -1849,49 +2065,56 @@
      "pos": "WR",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Ribs"
+     "injury": "Ribs",
+     "reported": null
     },
     {
      "player": "Dre Greenlaw",
      "pos": "LB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Quadricep"
+     "injury": "Quadricep",
+     "reported": null
     },
     {
      "player": "Nick Bosa",
      "pos": "DE",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Keion White",
      "pos": "DE",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "Mykel Williams",
      "pos": "DE",
      "status": "Out",
      "practice": "Limited Participation in Practice",
-     "injury": "Knee"
+     "injury": "Knee",
+     "reported": null
     },
     {
      "player": "Jaden Dugger",
      "pos": "LB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Shoulder"
+     "injury": "Shoulder",
+     "reported": null
     },
     {
      "player": "James Thompson Jr.",
      "pos": "DT",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Ankle"
+     "injury": "Ankle",
+     "reported": null
     }
    ],
    "TB": [
@@ -1900,49 +2123,56 @@
      "pos": "DT",
      "status": "Questionable",
      "practice": "Full Participation in Practice",
-     "injury": "Ankle"
+     "injury": "Ankle",
+     "reported": null
     },
     {
      "player": "Baker Mayfield",
      "pos": "QB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Thumb"
+     "injury": "Thumb",
+     "reported": null
     },
     {
      "player": "Ko Kieft",
      "pos": "TE",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Elbow"
+     "injury": "Elbow",
+     "reported": null
     },
     {
      "player": "SirVocea Dennis",
      "pos": "LB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Calf"
+     "injury": "Calf",
+     "reported": null
     },
     {
      "player": "Jacob Parrish",
      "pos": "CB",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Not injury related - personal matter"
+     "injury": "Not injury related - personal matter",
+     "reported": null
     },
     {
      "player": "Benjamin Morrison",
      "pos": "CB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Quadricep"
+     "injury": "Quadricep",
+     "reported": null
     },
     {
      "player": "Rueben Bain Jr.",
      "pos": "LB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Groin"
+     "injury": "Groin",
+     "reported": null
     }
    ],
    "TEN": [
@@ -1951,14 +2181,16 @@
      "pos": "RB",
      "status": "Questionable",
      "practice": "Full Participation in Practice",
-     "injury": "Ankle"
+     "injury": "Ankle",
+     "reported": null
     },
     {
      "player": "Kevin Winston Jr.",
      "pos": "S",
      "status": "Questionable",
      "practice": "Did Not Participate In Practice",
-     "injury": "Shoulder"
+     "injury": "Shoulder",
+     "reported": null
     }
    ],
    "WAS": [
@@ -1967,44 +2199,55 @@
      "pos": "WR",
      "status": "Questionable",
      "practice": "Limited Participation in Practice",
-     "injury": "Hamstring"
+     "injury": "Hamstring",
+     "reported": null
     },
     {
      "player": "Sam Cosmi",
      "pos": "G",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Concussion"
+     "injury": "Concussion",
+     "reported": null
     },
     {
      "player": "Rachaad White",
      "pos": "RB",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Shoulder"
+     "injury": "Shoulder",
+     "reported": null
     },
     {
      "player": "Nick Cross",
      "pos": "S",
      "status": "Out",
      "practice": "Did Not Participate In Practice",
-     "injury": "Illness"
+     "injury": "Illness",
+     "reported": null
     },
     {
      "player": "Percy Butler",
      "pos": "S",
      "status": "Questionable",
      "practice": "Full Participation in Practice",
-     "injury": "Concussion"
+     "injury": "Concussion",
+     "reported": null
     },
     {
      "player": "Jayden Daniels",
      "pos": "QB",
      "status": "Out",
      "practice": "Limited Participation in Practice",
-     "injury": "Elbow"
+     "injury": "Elbow",
+     "reported": null
     }
    ]
   }
+ },
+ "components": {
+  "schedule": "ok",
+  "team_epa": "ok",
+  "injuries": "ok"
  }
 }

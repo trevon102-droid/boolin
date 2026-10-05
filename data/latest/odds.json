@@ -1,13 +1,19 @@
 {
- "pulled_at_et": "2026-10-05T08:55-04:00",
+ "pulled_at_et": "2026-10-05T10:40-04:00",
+ "slate_date": "2026-10-05",
  "books": "pinnacle,fanduel,draftkings,betmgm,williamhill_us,espnbet,fanatics,betrivers,betonlineag,lowvig",
+ "actionable_book": "fanduel",
+ "field_guide": "Bet only at `fanduel` prices. fair_prob/fair_odds = no-vig market (Pinnacle, else consensus): the estimate, not a price. best_price/best_book = context only. Events are tagged date_et / on_slate_day: weekly sports list later games too, so filter on on_slate_day for today's card. `flags` mark missing or suspicious prices.",
  "sports": {
   "MLB": {
    "status": "ok",
+   "slate_day_events": 2,
+   "later_events": 2,
    "events": [
     {
      "id": "ccd487a87bb73145e3f12dd3a765ad47",
      "commence_time": "2026-10-05T21:10:00Z",
+     "date_et": "2026-10-05",
      "start_et": "5:10 PM ET",
      "away": "Chicago White Sox",
      "home": "Cleveland Guardians",
@@ -24,96 +30,96 @@
      "markets": {
       "moneyline": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0203,
+       "pinnacle_hold": 0.0193,
        "outcomes": [
         {
          "name": "Chicago White Sox",
-         "fair_prob": 0.4135,
-         "fair_odds": 142,
-         "best_price": 140,
-         "best_book": "espnbet",
-         "pinnacle": 137,
-         "edge_at_best_vs_fair": -0.0075,
-         "fanduel": 130,
-         "edge_at_my_book": -0.0489,
+         "fair_prob": 0.421,
+         "fair_odds": 138,
+         "best_price": 143,
+         "best_book": "betrivers",
+         "pinnacle": 133,
+         "edge_at_best_vs_fair": 0.0231,
+         "fanduel": 128,
+         "edge_at_my_book": -0.04,
          "books": {
-          "fanduel": 130,
-          "draftkings": 130,
+          "fanduel": 128,
+          "draftkings": 123,
           "betmgm": 125,
-          "lowvig": 136,
-          "betonlineag": 136,
-          "espnbet": 140,
-          "betrivers": 128,
-          "pinnacle": 137
+          "lowvig": 135,
+          "betonlineag": 135,
+          "espnbet": 130,
+          "betrivers": 143,
+          "pinnacle": 133
          }
         },
         {
          "name": "Cleveland Guardians",
-         "fair_prob": 0.5865,
-         "fair_odds": -142,
-         "best_price": -149,
+         "fair_prob": 0.579,
+         "fair_odds": -138,
+         "best_price": -144,
          "best_book": "pinnacle",
-         "pinnacle": -149,
-         "edge_at_best_vs_fair": -0.0199,
-         "fanduel": -154,
-         "edge_at_my_book": -0.0327,
+         "pinnacle": -144,
+         "edge_at_best_vs_fair": -0.019,
+         "fanduel": -152,
+         "edge_at_my_book": -0.0401,
          "books": {
-          "fanduel": -154,
-          "draftkings": -157,
+          "fanduel": -152,
+          "draftkings": -149,
           "betmgm": -150,
-          "lowvig": -150,
-          "betonlineag": -150,
-          "espnbet": -165,
-          "betrivers": -155,
-          "pinnacle": -149
+          "lowvig": -149,
+          "betonlineag": -149,
+          "espnbet": -150,
+          "betrivers": -175,
+          "pinnacle": -144
          }
         }
        ]
       },
       "spread": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0261,
+       "pinnacle_hold": 0.0268,
        "outcomes": [
         {
          "name": "Chicago White Sox",
-         "fair_prob": 0.6163,
-         "fair_odds": -161,
-         "best_price": -172,
-         "best_book": "pinnacle",
-         "pinnacle": -172,
-         "edge_at_best_vs_fair": -0.0254,
-         "fanduel": -182,
-         "edge_at_my_book": -0.0451,
+         "fair_prob": 0.621,
+         "fair_odds": -164,
+         "best_price": -165,
+         "best_book": "betrivers",
+         "pinnacle": -176,
+         "edge_at_best_vs_fair": -0.0026,
+         "fanduel": -188,
+         "edge_at_my_book": -0.0486,
          "books": {
-          "fanduel": -182,
-          "draftkings": -180,
-          "betmgm": -185,
-          "lowvig": -173,
-          "betonlineag": -173,
-          "espnbet": -180,
-          "betrivers": -182,
-          "pinnacle": -172
+          "fanduel": -188,
+          "draftkings": -191,
+          "betmgm": -190,
+          "lowvig": -175,
+          "betonlineag": -175,
+          "espnbet": -190,
+          "betrivers": -165,
+          "pinnacle": -176
          }
         },
         {
          "name": "Cleveland Guardians",
-         "fair_prob": 0.3837,
-         "fair_odds": 161,
-         "best_price": 154,
-         "best_book": "pinnacle",
-         "pinnacle": 154,
-         "edge_at_best_vs_fair": -0.0254,
-         "fanduel": 150,
-         "edge_at_my_book": -0.0407,
+         "fair_prob": 0.379,
+         "fair_odds": 164,
+         "best_price": 160,
+         "best_book": "espnbet",
+         "pinnacle": 157,
+         "edge_at_best_vs_fair": -0.0147,
+         "fanduel": 155,
+         "edge_at_my_book": -0.0337,
          "books": {
-          "fanduel": 150,
-          "draftkings": 148,
-          "betmgm": 150,
-          "lowvig": 153,
-          "betonlineag": 152,
-          "espnbet": 150,
-          "betrivers": 148,
-          "pinnacle": 154
+          "fanduel": 155,
+          "draftkings": 157,
+          "betmgm": 154,
+          "lowvig": 154,
+          "betonlineag": 153,
+          "espnbet": 160,
+          "betrivers": 135,
+          "pinnacle": 157
          }
         }
        ],
@@ -125,18 +131,18 @@
       },
       "total": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.029,
+       "pinnacle_hold": 0.0289,
        "outcomes": [
         {
          "name": "Over",
-         "fair_prob": 0.5046,
-         "fair_odds": -102,
-         "best_price": -108,
+         "fair_prob": 0.5069,
+         "fair_odds": -103,
+         "best_price": -109,
          "best_book": "pinnacle",
-         "pinnacle": -108,
-         "edge_at_best_vs_fair": -0.0282,
+         "pinnacle": -109,
+         "edge_at_best_vs_fair": -0.0281,
          "fanduel": -115,
-         "edge_at_my_book": -0.0567,
+         "edge_at_my_book": -0.0524,
          "books": {
           "fanduel": -115,
           "draftkings": -115,
@@ -145,19 +151,19 @@
           "betonlineag": -120,
           "espnbet": -120,
           "betrivers": -117,
-          "pinnacle": -108
+          "pinnacle": -109
          }
         },
         {
          "name": "Under",
-         "fair_prob": 0.4954,
-         "fair_odds": 102,
+         "fair_prob": 0.4931,
+         "fair_odds": 103,
          "best_price": 103,
          "best_book": "lowvig",
-         "pinnacle": -104,
-         "edge_at_best_vs_fair": 0.0057,
+         "pinnacle": -103,
+         "edge_at_best_vs_fair": 0.001,
          "fanduel": -105,
-         "edge_at_my_book": -0.0328,
+         "edge_at_my_book": -0.0372,
          "books": {
           "fanduel": -105,
           "draftkings": -104,
@@ -166,7 +172,7 @@
           "betonlineag": 100,
           "espnbet": -105,
           "betrivers": -105,
-          "pinnacle": -104
+          "pinnacle": -103
          }
         }
        ],
@@ -175,11 +181,13 @@
         6.5
        ]
       }
-     }
+     },
+     "on_slate_day": true
     },
     {
      "id": "4be245ad03895bcafcdc42d7d926b675",
      "commence_time": "2026-10-06T00:00:00Z",
+     "date_et": "2026-10-05",
      "start_et": "8:00 PM ET",
      "away": "New York Yankees",
      "home": "Tampa Bay Rays",
@@ -196,47 +204,47 @@
      "markets": {
       "moneyline": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0209,
+       "pinnacle_hold": 0.0201,
        "outcomes": [
         {
          "name": "New York Yankees",
-         "fair_prob": 0.5423,
-         "fair_odds": -118,
-         "best_price": -124,
+         "fair_prob": 0.5264,
+         "fair_odds": -111,
+         "best_price": -116,
          "best_book": "pinnacle",
-         "pinnacle": -124,
-         "edge_at_best_vs_fair": -0.0204,
+         "pinnacle": -116,
+         "edge_at_best_vs_fair": -0.0197,
          "fanduel": -130,
-         "edge_at_my_book": -0.0406,
+         "edge_at_my_book": -0.0686,
          "books": {
           "fanduel": -130,
-          "draftkings": -131,
-          "betmgm": -135,
-          "lowvig": -127,
-          "betonlineag": -127,
+          "draftkings": -127,
+          "betmgm": -130,
+          "lowvig": -121,
+          "betonlineag": -121,
           "betrivers": -129,
-          "pinnacle": -124,
+          "pinnacle": -116,
           "espnbet": -130
          }
         },
         {
          "name": "Tampa Bay Rays",
-         "fair_prob": 0.4577,
-         "fair_odds": 118,
-         "best_price": 115,
-         "best_book": "lowvig",
-         "pinnacle": 114,
-         "edge_at_best_vs_fair": -0.0159,
+         "fair_prob": 0.4736,
+         "fair_odds": 111,
+         "best_price": 110,
+         "best_book": "fanduel",
+         "pinnacle": 107,
+         "edge_at_best_vs_fair": -0.0055,
          "fanduel": 110,
-         "edge_at_my_book": -0.0387,
+         "edge_at_my_book": -0.0055,
          "books": {
           "fanduel": 110,
-          "draftkings": 109,
-          "betmgm": 110,
-          "lowvig": 115,
-          "betonlineag": 115,
+          "draftkings": 105,
+          "betmgm": 105,
+          "lowvig": 110,
+          "betonlineag": 110,
           "betrivers": 108,
-          "pinnacle": 114,
+          "pinnacle": 107,
           "espnbet": 110
          }
         }
@@ -244,47 +252,47 @@
       },
       "spread": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0244,
+       "pinnacle_hold": 0.0261,
        "outcomes": [
         {
          "name": "New York Yankees",
-         "fair_prob": 0.3936,
-         "fair_odds": 154,
-         "best_price": 148,
+         "fair_prob": 0.3837,
+         "fair_odds": 161,
+         "best_price": 154,
          "best_book": "pinnacle",
-         "pinnacle": 148,
-         "edge_at_best_vs_fair": -0.0239,
-         "fanduel": 138,
-         "edge_at_my_book": -0.0632,
+         "pinnacle": 154,
+         "edge_at_best_vs_fair": -0.0254,
+         "fanduel": 142,
+         "edge_at_my_book": -0.0714,
          "books": {
-          "fanduel": 138,
+          "fanduel": 142,
           "draftkings": 142,
-          "betmgm": 140,
-          "lowvig": 143,
-          "betonlineag": 142,
+          "betmgm": 145,
+          "lowvig": 150,
+          "betonlineag": 149,
           "betrivers": 145,
-          "pinnacle": 148,
+          "pinnacle": 154,
           "espnbet": 145
          }
         },
         {
          "name": "Tampa Bay Rays",
-         "fair_prob": 0.6064,
-         "fair_odds": -154,
-         "best_price": -162,
+         "fair_prob": 0.6163,
+         "fair_odds": -161,
+         "best_price": -170,
          "best_book": "lowvig",
-         "pinnacle": -164,
-         "edge_at_best_vs_fair": -0.0193,
-         "fanduel": -166,
-         "edge_at_my_book": -0.0283,
+         "pinnacle": -172,
+         "edge_at_best_vs_fair": -0.0212,
+         "fanduel": -172,
+         "edge_at_my_book": -0.0254,
          "books": {
-          "fanduel": -166,
+          "fanduel": -172,
           "draftkings": -172,
-          "betmgm": -170,
-          "lowvig": -162,
-          "betonlineag": -162,
+          "betmgm": -180,
+          "lowvig": -170,
+          "betonlineag": -170,
           "betrivers": -180,
-          "pinnacle": -164,
+          "pinnacle": -172,
           "espnbet": -175
          }
         }
@@ -297,39 +305,39 @@
       },
       "total": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0308,
+       "pinnacle_hold": 0.0302,
        "outcomes": [
         {
          "name": "Over",
-         "fair_prob": 0.5125,
-         "fair_odds": -105,
+         "fair_prob": 0.5171,
+         "fair_odds": -107,
          "best_price": -110,
          "best_book": "lowvig",
-         "pinnacle": -112,
-         "edge_at_best_vs_fair": -0.0215,
+         "pinnacle": -114,
+         "edge_at_best_vs_fair": -0.0128,
          "fanduel": -118,
-         "edge_at_my_book": -0.0531,
+         "edge_at_my_book": -0.0447,
          "books": {
           "fanduel": -118,
-          "draftkings": -113,
+          "draftkings": -112,
           "betmgm": -115,
           "lowvig": -110,
           "betonlineag": -113,
           "betrivers": -115,
-          "pinnacle": -112,
+          "pinnacle": -114,
           "espnbet": -110
          }
         },
         {
          "name": "Under",
-         "fair_prob": 0.4875,
-         "fair_odds": 105,
-         "best_price": -101,
+         "fair_prob": 0.4829,
+         "fair_odds": 107,
+         "best_price": 101,
          "best_book": "pinnacle",
-         "pinnacle": -101,
-         "edge_at_best_vs_fair": -0.0299,
+         "pinnacle": 101,
+         "edge_at_best_vs_fair": -0.0293,
          "fanduel": -104,
-         "edge_at_my_book": -0.0438,
+         "edge_at_my_book": -0.0527,
          "books": {
           "fanduel": -104,
           "draftkings": -107,
@@ -337,7 +345,7 @@
           "lowvig": -104,
           "betonlineag": -107,
           "betrivers": -106,
-          "pinnacle": -101,
+          "pinnacle": 101,
           "espnbet": -110
          }
         }
@@ -347,11 +355,13 @@
         6.5
        ]
       }
-     }
+     },
+     "on_slate_day": true
     },
     {
      "id": "1bc3bf1d3034010bdfb31d928a71177a",
      "commence_time": "2026-10-06T22:00:00Z",
+     "date_et": "2026-10-06",
      "start_et": "6:00 PM ET",
      "away": "Los Angeles Dodgers",
      "home": "Atlanta Braves",
@@ -368,94 +378,94 @@
      "markets": {
       "moneyline": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0242,
+       "pinnacle_hold": 0.0244,
        "outcomes": [
         {
          "name": "Los Angeles Dodgers",
-         "fair_prob": 0.507,
-         "fair_odds": -103,
+         "fair_prob": 0.5,
+         "fair_odds": -100,
          "best_price": -105,
          "best_book": "betonlineag",
-         "pinnacle": -108,
-         "edge_at_best_vs_fair": -0.0102,
-         "fanduel": -112,
-         "edge_at_my_book": -0.0404,
+         "pinnacle": -105,
+         "edge_at_best_vs_fair": -0.0238,
+         "fanduel": -108,
+         "edge_at_my_book": -0.037,
          "books": {
           "draftkings": -110,
-          "fanduel": -112,
+          "fanduel": -108,
           "betmgm": -110,
           "betonlineag": -105,
           "lowvig": -105,
           "espnbet": -110,
-          "betrivers": -112,
-          "pinnacle": -108
+          "betrivers": -105,
+          "pinnacle": -105
          }
         },
         {
          "name": "Atlanta Braves",
-         "fair_prob": 0.493,
-         "fair_odds": 103,
-         "best_price": -102,
-         "best_book": "pinnacle",
-         "pinnacle": -102,
-         "edge_at_best_vs_fair": -0.0236,
-         "fanduel": -104,
-         "edge_at_my_book": -0.0329,
+         "fair_prob": 0.5,
+         "fair_odds": -100,
+         "best_price": -105,
+         "best_book": "betonlineag",
+         "pinnacle": -105,
+         "edge_at_best_vs_fair": -0.0238,
+         "fanduel": -108,
+         "edge_at_my_book": -0.037,
          "books": {
           "draftkings": -109,
-          "fanduel": -104,
+          "fanduel": -108,
           "betmgm": -110,
           "betonlineag": -105,
           "lowvig": -105,
           "espnbet": -110,
-          "betrivers": -107,
-          "pinnacle": -102
+          "betrivers": -114,
+          "pinnacle": -105
          }
         }
        ]
       },
       "spread": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0309,
+       "pinnacle_hold": 0.0312,
        "outcomes": [
         {
          "name": "Los Angeles Dodgers",
-         "fair_prob": 0.3633,
-         "fair_odds": 175,
-         "best_price": 171,
-         "best_book": "lowvig",
-         "pinnacle": 167,
-         "edge_at_best_vs_fair": -0.0154,
-         "fanduel": 168,
-         "edge_at_my_book": -0.0263,
+         "fair_prob": 0.3579,
+         "fair_odds": 179,
+         "best_price": 176,
+         "best_book": "fanduel",
+         "pinnacle": 171,
+         "edge_at_best_vs_fair": -0.0123,
+         "fanduel": 176,
+         "edge_at_my_book": -0.0123,
          "books": {
-          "draftkings": 157,
-          "fanduel": 168,
+          "draftkings": 160,
+          "fanduel": 176,
           "betonlineag": 170,
           "lowvig": 171,
-          "espnbet": 165,
-          "betrivers": 163,
-          "pinnacle": 167
+          "espnbet": 170,
+          "betrivers": 170,
+          "pinnacle": 171
          }
         },
         {
          "name": "Atlanta Braves",
-         "fair_prob": 0.6367,
-         "fair_odds": -175,
-         "best_price": -191,
+         "fair_prob": 0.6421,
+         "fair_odds": -179,
+         "best_price": -195,
          "best_book": "draftkings",
-         "pinnacle": -191,
-         "edge_at_best_vs_fair": -0.03,
-         "fanduel": -205,
-         "edge_at_my_book": -0.0527,
+         "pinnacle": -196,
+         "edge_at_best_vs_fair": -0.0285,
+         "fanduel": -215,
+         "edge_at_my_book": -0.0592,
          "books": {
-          "draftkings": -191,
-          "fanduel": -205,
+          "draftkings": -195,
+          "fanduel": -215,
           "betonlineag": -195,
           "lowvig": -195,
-          "espnbet": -200,
-          "betrivers": -200,
-          "pinnacle": -191
+          "espnbet": -215,
+          "betrivers": -215,
+          "pinnacle": -196
          }
         }
        ],
@@ -473,15 +483,15 @@
          "name": "Over",
          "fair_prob": 0.5191,
          "fair_odds": -108,
-         "best_price": -116,
-         "best_book": "draftkings",
+         "best_price": -115,
+         "best_book": "betmgm",
          "pinnacle": -116,
-         "edge_at_best_vs_fair": -0.0334,
+         "edge_at_best_vs_fair": -0.0295,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
           "draftkings": -116,
-          "betmgm": -118,
+          "betmgm": -115,
           "betonlineag": -118,
           "lowvig": -116,
           "pinnacle": -116
@@ -499,7 +509,7 @@
          "edge_at_my_book": null,
          "books": {
           "draftkings": -104,
-          "betmgm": -102,
+          "betmgm": -105,
           "betonlineag": -102,
           "lowvig": 101,
           "pinnacle": 101
@@ -512,7 +522,185 @@
         6.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: total"
+     ],
+     "on_slate_day": false
+    },
+    {
+     "id": "62d8e1c18355ab6b3913d7a28fa677c2",
+     "commence_time": "2026-10-07T01:30:00Z",
+     "date_et": "2026-10-06",
+     "start_et": "9:30 PM ET",
+     "away": "Milwaukee Brewers",
+     "home": "San Diego Padres",
+     "books": [
+      "betmgm",
+      "betonlineag",
+      "betrivers",
+      "draftkings",
+      "espnbet",
+      "fanduel",
+      "lowvig",
+      "pinnacle"
+     ],
+     "markets": {
+      "moneyline": {
+       "ref": "pinnacle",
+       "pinnacle_hold": 0.0251,
+       "outcomes": [
+        {
+         "name": "Milwaukee Brewers",
+         "fair_prob": 0.4414,
+         "fair_odds": 127,
+         "best_price": 121,
+         "best_book": "betonlineag",
+         "pinnacle": 121,
+         "edge_at_best_vs_fair": -0.0245,
+         "fanduel": 116,
+         "edge_at_my_book": -0.0466,
+         "books": {
+          "fanduel": 116,
+          "betmgm": 115,
+          "draftkings": 113,
+          "betrivers": 112,
+          "betonlineag": 121,
+          "lowvig": 121,
+          "pinnacle": 121,
+          "espnbet": 115
+         }
+        },
+        {
+         "name": "San Diego Padres",
+         "fair_prob": 0.5586,
+         "fair_odds": -127,
+         "best_price": -133,
+         "best_book": "betonlineag",
+         "pinnacle": -134,
+         "edge_at_best_vs_fair": -0.0214,
+         "fanduel": -134,
+         "edge_at_my_book": -0.0245,
+         "books": {
+          "fanduel": -134,
+          "betmgm": -140,
+          "draftkings": -136,
+          "betrivers": -136,
+          "betonlineag": -133,
+          "lowvig": -133,
+          "pinnacle": -134,
+          "espnbet": -135
+         }
+        }
+       ]
+      },
+      "spread": {
+       "ref": "pinnacle",
+       "pinnacle_hold": 0.0316,
+       "outcomes": [
+        {
+         "name": "Milwaukee Brewers",
+         "fair_prob": 0.6328,
+         "fair_odds": -172,
+         "best_price": -188,
+         "best_book": "pinnacle",
+         "pinnacle": -188,
+         "edge_at_best_vs_fair": -0.0306,
+         "fanduel": -194,
+         "edge_at_my_book": -0.041,
+         "books": {
+          "fanduel": -194,
+          "betmgm": -190,
+          "draftkings": -201,
+          "betrivers": -200,
+          "betonlineag": -195,
+          "lowvig": -195,
+          "pinnacle": -188,
+          "espnbet": -200
+         }
+        },
+        {
+         "name": "San Diego Padres",
+         "fair_prob": 0.3672,
+         "fair_odds": 172,
+         "best_price": 171,
+         "best_book": "lowvig",
+         "pinnacle": 164,
+         "edge_at_best_vs_fair": -0.0049,
+         "fanduel": 158,
+         "edge_at_my_book": -0.0526,
+         "books": {
+          "fanduel": 158,
+          "betmgm": 155,
+          "draftkings": 164,
+          "betrivers": 160,
+          "betonlineag": 170,
+          "lowvig": 171,
+          "pinnacle": 164,
+          "espnbet": 165
+         }
+        }
+       ],
+       "home_line": -1.5,
+       "away_line": 1.5,
+       "other_lines": [
+        -1.5
+       ]
+      },
+      "total": {
+       "ref": "pinnacle",
+       "pinnacle_hold": 0.0342,
+       "outcomes": [
+        {
+         "name": "Over",
+         "fair_prob": 0.5213,
+         "fair_odds": -109,
+         "best_price": -109,
+         "best_book": "draftkings",
+         "pinnacle": -117,
+         "edge_at_best_vs_fair": -0.0004,
+         "fanduel": null,
+         "edge_at_my_book": null,
+         "books": {
+          "betmgm": -120,
+          "draftkings": -109,
+          "betrivers": -117,
+          "betonlineag": -115,
+          "lowvig": -113,
+          "pinnacle": -117
+         }
+        },
+        {
+         "name": "Under",
+         "fair_prob": 0.4787,
+         "fair_odds": 109,
+         "best_price": 102,
+         "best_book": "pinnacle",
+         "pinnacle": 102,
+         "edge_at_best_vs_fair": -0.0331,
+         "fanduel": null,
+         "edge_at_my_book": null,
+         "books": {
+          "betmgm": 100,
+          "draftkings": -111,
+          "betrivers": -105,
+          "betonlineag": -105,
+          "lowvig": -102,
+          "pinnacle": 102
+         }
+        }
+       ],
+       "line": 7.0,
+       "other_lines": [
+        7.0,
+        7.5
+       ]
+      }
+     },
+     "flags": [
+      "no fanduel price: total"
+     ],
+     "on_slate_day": false
     }
    ],
    "props": {
@@ -1087,6 +1275,8 @@
   },
   "WNBA": {
    "status": "ok",
+   "slate_day_events": 0,
+   "later_events": 0,
    "events": []
   },
   "NBA": {
@@ -1095,10 +1285,13 @@
   },
   "NHL": {
    "status": "ok",
+   "slate_day_events": 4,
+   "later_events": 3,
    "events": [
     {
      "id": "d400aaff4870fbb91e584f1c8a8f05bf",
      "commence_time": "2026-10-05T23:10:00Z",
+     "date_et": "2026-10-05",
      "start_et": "7:10 PM ET",
      "away": "Philadelphia Flyers",
      "home": "Tampa Bay Lightning",
@@ -1115,47 +1308,47 @@
      "markets": {
       "moneyline": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0267,
+       "pinnacle_hold": 0.0272,
        "outcomes": [
         {
          "name": "Philadelphia Flyers",
-         "fair_prob": 0.3382,
-         "fair_odds": 196,
-         "best_price": 188,
-         "best_book": "betrivers",
-         "pinnacle": 188,
-         "edge_at_best_vs_fair": -0.026,
-         "fanduel": 168,
-         "edge_at_my_book": -0.0937,
+         "fair_prob": 0.3345,
+         "fair_odds": 199,
+         "best_price": 191,
+         "best_book": "lowvig",
+         "pinnacle": 191,
+         "edge_at_best_vs_fair": -0.0265,
+         "fanduel": 184,
+         "edge_at_my_book": -0.0499,
          "books": {
           "draftkings": 180,
-          "lowvig": 183,
-          "betonlineag": 183,
-          "fanduel": 168,
-          "betrivers": 188,
-          "pinnacle": 188,
-          "espnbet": 170,
+          "lowvig": 191,
+          "betonlineag": 191,
+          "fanduel": 184,
+          "betrivers": 185,
+          "pinnacle": 191,
+          "espnbet": 175,
           "betmgm": 170
          }
         },
         {
          "name": "Tampa Bay Lightning",
-         "fair_prob": 0.6618,
-         "fair_odds": -196,
-         "best_price": -200,
+         "fair_prob": 0.6655,
+         "fair_odds": -199,
+         "best_price": -210,
          "best_book": "espnbet",
-         "pinnacle": -212,
-         "edge_at_best_vs_fair": -0.0073,
-         "fanduel": -205,
-         "edge_at_my_book": -0.0154,
+         "pinnacle": -216,
+         "edge_at_best_vs_fair": -0.0177,
+         "fanduel": -225,
+         "edge_at_my_book": -0.0388,
          "books": {
           "draftkings": -218,
-          "lowvig": -210,
-          "betonlineag": -210,
-          "fanduel": -205,
-          "betrivers": -230,
-          "pinnacle": -212,
-          "espnbet": -200,
+          "lowvig": -220,
+          "betonlineag": -220,
+          "fanduel": -225,
+          "betrivers": -225,
+          "pinnacle": -216,
+          "espnbet": -210,
           "betmgm": -210
          }
         }
@@ -1163,47 +1356,47 @@
       },
       "spread": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0303,
+       "pinnacle_hold": 0.0279,
        "outcomes": [
         {
          "name": "Philadelphia Flyers",
-         "fair_prob": 0.5628,
-         "fair_odds": -129,
-         "best_price": -138,
+         "fair_prob": 0.5517,
+         "fair_odds": -123,
+         "best_price": -131,
          "best_book": "pinnacle",
-         "pinnacle": -138,
-         "edge_at_best_vs_fair": -0.0294,
-         "fanduel": -160,
-         "edge_at_my_book": -0.0855,
+         "pinnacle": -131,
+         "edge_at_best_vs_fair": -0.0272,
+         "fanduel": -150,
+         "edge_at_my_book": -0.0805,
          "books": {
-          "draftkings": -148,
-          "lowvig": -145,
-          "betonlineag": -145,
-          "fanduel": -160,
-          "betrivers": -143,
-          "pinnacle": -138,
-          "espnbet": -145,
+          "draftkings": -135,
+          "lowvig": -135,
+          "betonlineag": -135,
+          "fanduel": -150,
+          "betrivers": -148,
+          "pinnacle": -131,
+          "espnbet": -135,
           "betmgm": -140
          }
         },
         {
          "name": "Tampa Bay Lightning",
-         "fair_prob": 0.4372,
-         "fair_odds": 129,
-         "best_price": 130,
+         "fair_prob": 0.4483,
+         "fair_odds": 123,
+         "best_price": 120,
          "best_book": "fanduel",
-         "pinnacle": 122,
-         "edge_at_best_vs_fair": 0.0056,
-         "fanduel": 130,
-         "edge_at_my_book": 0.0056,
+         "pinnacle": 117,
+         "edge_at_best_vs_fair": -0.0137,
+         "fanduel": 120,
+         "edge_at_my_book": -0.0137,
          "books": {
-          "draftkings": 124,
-          "lowvig": 125,
-          "betonlineag": 125,
-          "fanduel": 130,
-          "betrivers": 115,
-          "pinnacle": 122,
-          "espnbet": 120,
+          "draftkings": 114,
+          "lowvig": 115,
+          "betonlineag": 115,
+          "fanduel": 120,
+          "betrivers": 120,
+          "pinnacle": 117,
+          "espnbet": 115,
           "betmgm": 115
          }
         }
@@ -1216,16 +1409,16 @@
       },
       "total": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0302,
+       "pinnacle_hold": 0.028,
        "outcomes": [
         {
          "name": "Over",
-         "fair_prob": 0.4829,
+         "fair_prob": 0.4839,
          "fair_odds": 107,
          "best_price": 101,
          "best_book": "pinnacle",
          "pinnacle": 101,
-         "edge_at_best_vs_fair": -0.0293,
+         "edge_at_best_vs_fair": -0.0273,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
@@ -1235,16 +1428,16 @@
         },
         {
          "name": "Under",
-         "fair_prob": 0.5171,
+         "fair_prob": 0.5161,
          "fair_odds": -107,
-         "best_price": -114,
+         "best_price": -113,
          "best_book": "pinnacle",
-         "pinnacle": -114,
-         "edge_at_best_vs_fair": -0.0293,
+         "pinnacle": -113,
+         "edge_at_best_vs_fair": -0.0273,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "pinnacle": -114,
+          "pinnacle": -113,
           "betmgm": -115
          }
         }
@@ -1255,11 +1448,16 @@
         6.0
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: total"
+     ],
+     "on_slate_day": true
     },
     {
      "id": "65b60049b3c77a94c346f74d8b897e4b",
      "commence_time": "2026-10-05T23:40:00Z",
+     "date_et": "2026-10-05",
      "start_et": "7:40 PM ET",
      "away": "Ottawa Senators",
      "home": "Boston Bruins",
@@ -1282,18 +1480,18 @@
          "name": "Ottawa Senators",
          "fair_prob": 0.5218,
          "fair_odds": -109,
-         "best_price": -115,
-         "best_book": "pinnacle",
+         "best_price": -113,
+         "best_book": "betrivers",
          "pinnacle": -115,
-         "edge_at_best_vs_fair": -0.0245,
+         "edge_at_best_vs_fair": -0.0164,
          "fanduel": -120,
          "edge_at_my_book": -0.0434,
          "books": {
           "draftkings": -118,
-          "lowvig": -116,
-          "betonlineag": -116,
+          "lowvig": -118,
+          "betonlineag": -118,
           "fanduel": -120,
-          "betrivers": -118,
+          "betrivers": -113,
           "pinnacle": -115,
           "espnbet": -120,
           "betmgm": -118
@@ -1304,17 +1502,17 @@
          "fair_prob": 0.4782,
          "fair_odds": 109,
          "best_price": 104,
-         "best_book": "pinnacle",
+         "best_book": "lowvig",
          "pinnacle": 104,
          "edge_at_best_vs_fair": -0.0245,
          "fanduel": 100,
          "edge_at_my_book": -0.0436,
          "books": {
           "draftkings": -102,
-          "lowvig": 102,
-          "betonlineag": 102,
+          "lowvig": 104,
+          "betonlineag": 104,
           "fanduel": 100,
-          "betrivers": 100,
+          "betrivers": -106,
           "pinnacle": 104,
           "espnbet": 100,
           "betmgm": -102
@@ -1330,10 +1528,10 @@
          "name": "Ottawa Senators",
          "fair_prob": 0.2998,
          "fair_odds": 234,
-         "best_price": 223,
-         "best_book": "pinnacle",
+         "best_price": 225,
+         "best_book": "betrivers",
          "pinnacle": 223,
-         "edge_at_best_vs_fair": -0.0316,
+         "edge_at_best_vs_fair": -0.0256,
          "fanduel": 210,
          "edge_at_my_book": -0.0705,
          "books": {
@@ -1341,9 +1539,9 @@
           "lowvig": 215,
           "betonlineag": 215,
           "fanduel": 210,
-          "betrivers": 220,
+          "betrivers": 225,
           "pinnacle": 223,
-          "espnbet": 190,
+          "espnbet": 200,
           "betmgm": 200
          }
         },
@@ -1362,9 +1560,9 @@
           "lowvig": -260,
           "betonlineag": -260,
           "fanduel": -265,
-          "betrivers": -286,
+          "betrivers": -295,
           "pinnacle": -261,
-          "espnbet": -265,
+          "espnbet": -275,
           "betmgm": -250
          }
         }
@@ -1416,11 +1614,16 @@
         6.0
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: total"
+     ],
+     "on_slate_day": true
     },
     {
      "id": "3da179dc46d7f7a5f06637fcd97ce367",
      "commence_time": "2026-10-05T23:40:00Z",
+     "date_et": "2026-10-05",
      "start_et": "7:40 PM ET",
      "away": "Winnipeg Jets",
      "home": "Pittsburgh Penguins",
@@ -1477,8 +1680,8 @@
           "espnbet": -170,
           "betmgm": -175,
           "pinnacle": -175,
-          "lowvig": -174,
-          "betonlineag": -174
+          "lowvig": -175,
+          "betonlineag": -175
          }
         }
        ]
@@ -1504,8 +1707,8 @@
           "espnbet": -165,
           "betmgm": -160,
           "pinnacle": -160,
-          "lowvig": -165,
-          "betonlineag": -165
+          "lowvig": -163,
+          "betonlineag": -163
          }
         },
         {
@@ -1521,12 +1724,12 @@
          "books": {
           "draftkings": 145,
           "fanduel": 138,
-          "betrivers": 133,
+          "betrivers": 135,
           "espnbet": 140,
           "betmgm": 135,
           "pinnacle": 141,
-          "lowvig": 145,
-          "betonlineag": 145
+          "lowvig": 143,
+          "betonlineag": 143
          }
         }
        ],
@@ -1553,7 +1756,7 @@
          "books": {
           "draftkings": 102,
           "fanduel": -105,
-          "betrivers": -110,
+          "betrivers": -112,
           "espnbet": 100,
           "betmgm": -102,
           "pinnacle": -103,
@@ -1574,7 +1777,7 @@
          "books": {
           "draftkings": -122,
           "fanduel": -115,
-          "betrivers": -113,
+          "betrivers": -112,
           "espnbet": -120,
           "betmgm": -118,
           "pinnacle": -109,
@@ -1588,11 +1791,13 @@
         6.5
        ]
       }
-     }
+     },
+     "on_slate_day": true
     },
     {
      "id": "db6ecbc6d2657c39084510cf3e94f510",
      "commence_time": "2026-10-06T00:10:00Z",
+     "date_et": "2026-10-05",
      "start_et": "8:10 PM ET",
      "away": "San Jose Sharks",
      "home": "Dallas Stars",
@@ -1609,48 +1814,48 @@
      "markets": {
       "moneyline": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0255,
+       "pinnacle_hold": 0.0253,
        "outcomes": [
         {
          "name": "San Jose Sharks",
-         "fair_prob": 0.3901,
-         "fair_odds": 156,
-         "best_price": 150,
+         "fair_prob": 0.3886,
+         "fair_odds": 157,
+         "best_price": 151,
          "best_book": "pinnacle",
-         "pinnacle": 150,
-         "edge_at_best_vs_fair": -0.0248,
+         "pinnacle": 151,
+         "edge_at_best_vs_fair": -0.0246,
          "fanduel": 140,
-         "edge_at_my_book": -0.0638,
+         "edge_at_my_book": -0.0674,
          "books": {
           "draftkings": 145,
-          "lowvig": 147,
-          "betonlineag": 147,
+          "lowvig": 145,
+          "betonlineag": 145,
           "fanduel": 140,
           "betrivers": 145,
-          "pinnacle": 150,
+          "pinnacle": 151,
           "espnbet": 145,
-          "betmgm": 145
+          "betmgm": 140
          }
         },
         {
          "name": "Dallas Stars",
-         "fair_prob": 0.6099,
-         "fair_odds": -156,
-         "best_price": -167,
+         "fair_prob": 0.6114,
+         "fair_odds": -157,
+         "best_price": -165,
          "best_book": "lowvig",
-         "pinnacle": -167,
-         "edge_at_best_vs_fair": -0.0248,
+         "pinnacle": -168,
+         "edge_at_best_vs_fair": -0.018,
          "fanduel": -170,
-         "edge_at_my_book": -0.0313,
+         "edge_at_my_book": -0.0289,
          "books": {
           "draftkings": -175,
-          "lowvig": -167,
-          "betonlineag": -167,
+          "lowvig": -165,
+          "betonlineag": -165,
           "fanduel": -170,
           "betrivers": -175,
-          "pinnacle": -167,
+          "pinnacle": -168,
           "espnbet": -170,
-          "betmgm": -175
+          "betmgm": -170
          }
         }
        ]
@@ -1663,42 +1868,42 @@
          "name": "San Jose Sharks",
          "fair_prob": 0.6086,
          "fair_odds": -155,
-         "best_price": -160,
-         "best_book": "betmgm",
+         "best_price": -165,
+         "best_book": "espnbet",
          "pinnacle": -168,
-         "edge_at_best_vs_fair": -0.0111,
+         "edge_at_best_vs_fair": -0.0226,
          "fanduel": -168,
          "edge_at_my_book": -0.0292,
          "books": {
           "draftkings": -175,
-          "lowvig": -170,
-          "betonlineag": -170,
+          "lowvig": -175,
+          "betonlineag": -175,
           "fanduel": -168,
-          "betrivers": -182,
+          "betrivers": -186,
           "pinnacle": -168,
           "espnbet": -165,
-          "betmgm": -160
+          "betmgm": -170
          }
         },
         {
          "name": "Dallas Stars",
          "fair_prob": 0.3914,
          "fair_odds": 155,
-         "best_price": 149,
+         "best_price": 153,
          "best_book": "lowvig",
          "pinnacle": 148,
-         "edge_at_best_vs_fair": -0.0253,
+         "edge_at_best_vs_fair": -0.0096,
          "fanduel": 136,
          "edge_at_my_book": -0.0762,
          "books": {
           "draftkings": 145,
-          "lowvig": 149,
-          "betonlineag": 149,
+          "lowvig": 153,
+          "betonlineag": 153,
           "fanduel": 136,
-          "betrivers": 145,
+          "betrivers": 148,
           "pinnacle": 148,
           "espnbet": 140,
-          "betmgm": 135
+          "betmgm": 140
          }
         }
        ],
@@ -1760,82 +1965,89 @@
         6.5
        ]
       }
-     }
+     },
+     "on_slate_day": true
     },
     {
      "id": "3b7b6520b0bc91f44cf9c9575d7e29f7",
      "commence_time": "2026-10-06T23:10:00Z",
+     "date_et": "2026-10-06",
      "start_et": "7:10 PM ET",
      "away": "Carolina Hurricanes",
      "home": "Montréal Canadiens",
      "books": [
-      "draftkings"
+      "draftkings",
+      "espnbet"
      ],
      "markets": {
       "moneyline": {
-       "ref": "consensus (1 books)",
+       "ref": "consensus (2 books)",
        "pinnacle_hold": null,
        "outcomes": [
         {
          "name": "Carolina Hurricanes",
-         "fair_prob": 0.5174,
-         "fair_odds": -107,
-         "best_price": -118,
-         "best_book": "draftkings",
+         "fair_prob": 0.5141,
+         "fair_odds": -106,
+         "best_price": -115,
+         "best_book": "espnbet",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0442,
+         "edge_at_best_vs_fair": -0.0389,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "draftkings": -118
+          "draftkings": -118,
+          "espnbet": -115
          }
         },
         {
          "name": "Montréal Canadiens",
-         "fair_prob": 0.4826,
-         "fair_odds": 107,
+         "fair_prob": 0.4859,
+         "fair_odds": 106,
          "best_price": -102,
          "best_book": "draftkings",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0442,
+         "edge_at_best_vs_fair": -0.0377,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "draftkings": -102
+          "draftkings": -102,
+          "espnbet": -105
          }
         }
        ]
       },
       "spread": {
-       "ref": "consensus (1 books)",
+       "ref": "consensus (2 books)",
        "pinnacle_hold": null,
        "outcomes": [
         {
          "name": "Carolina Hurricanes",
-         "fair_prob": 0.3194,
-         "fair_odds": 213,
+         "fair_prob": 0.3207,
+         "fair_odds": 212,
          "best_price": 200,
          "best_book": "draftkings",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0417,
+         "edge_at_best_vs_fair": -0.0378,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "draftkings": 200
+          "draftkings": 200,
+          "espnbet": 190
          }
         },
         {
          "name": "Montréal Canadiens",
-         "fair_prob": 0.6806,
-         "fair_odds": -213,
+         "fair_prob": 0.6793,
+         "fair_odds": -212,
          "best_price": -245,
          "best_book": "draftkings",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0417,
+         "edge_at_best_vs_fair": -0.0435,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "draftkings": -245
+          "draftkings": -245,
+          "espnbet": -265
          }
         }
        ],
@@ -1846,35 +2058,37 @@
        ]
       },
       "total": {
-       "ref": "consensus (1 books)",
+       "ref": "consensus (2 books)",
        "pinnacle_hold": null,
        "outcomes": [
         {
          "name": "Over",
-         "fair_prob": 0.4783,
-         "fair_odds": 109,
+         "fair_prob": 0.4837,
+         "fair_odds": 107,
          "best_price": 100,
          "best_book": "draftkings",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0435,
+         "edge_at_best_vs_fair": -0.0326,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "draftkings": 100
+          "draftkings": 100,
+          "espnbet": -105
          }
         },
         {
          "name": "Under",
-         "fair_prob": 0.5217,
-         "fair_odds": -109,
-         "best_price": -120,
-         "best_book": "draftkings",
+         "fair_prob": 0.5163,
+         "fair_odds": -107,
+         "best_price": -115,
+         "best_book": "espnbet",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0435,
+         "edge_at_best_vs_fair": -0.0348,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "draftkings": -120
+          "draftkings": -120,
+          "espnbet": -115
          }
         }
        ],
@@ -1883,20 +2097,26 @@
         6.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: moneyline, spread, total"
+     ],
+     "on_slate_day": false
     },
     {
      "id": "e77f5de1229c03c1338f5cf3eb6797ba",
      "commence_time": "2026-10-07T00:10:00Z",
+     "date_et": "2026-10-06",
      "start_et": "8:10 PM ET",
      "away": "St Louis Blues",
      "home": "Chicago Blackhawks",
      "books": [
-      "draftkings"
+      "draftkings",
+      "espnbet"
      ],
      "markets": {
       "moneyline": {
-       "ref": "consensus (1 books)",
+       "ref": "consensus (2 books)",
        "pinnacle_hold": null,
        "outcomes": [
         {
@@ -1910,7 +2130,8 @@
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "draftkings": -115
+          "draftkings": -115,
+          "espnbet": -115
          }
         },
         {
@@ -1924,41 +2145,44 @@
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "draftkings": -105
+          "draftkings": -105,
+          "espnbet": -105
          }
         }
        ]
       },
       "spread": {
-       "ref": "consensus (1 books)",
+       "ref": "consensus (2 books)",
        "pinnacle_hold": null,
        "outcomes": [
         {
          "name": "St Louis Blues",
-         "fair_prob": 0.3146,
-         "fair_odds": 218,
-         "best_price": 205,
-         "best_book": "draftkings",
+         "fair_prob": 0.3077,
+         "fair_odds": 225,
+         "best_price": 210,
+         "best_book": "espnbet",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0404,
+         "edge_at_best_vs_fair": -0.0462,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "draftkings": 205
+          "draftkings": 205,
+          "espnbet": 210
          }
         },
         {
          "name": "Chicago Blackhawks",
-         "fair_prob": 0.6854,
-         "fair_odds": -218,
+         "fair_prob": 0.6923,
+         "fair_odds": -225,
          "best_price": -250,
          "best_book": "draftkings",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0404,
+         "edge_at_best_vs_fair": -0.0308,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "draftkings": -250
+          "draftkings": -250,
+          "espnbet": -300
          }
         }
        ],
@@ -1969,7 +2193,7 @@
        ]
       },
       "total": {
-       "ref": "consensus (1 books)",
+       "ref": "consensus (2 books)",
        "pinnacle_hold": null,
        "outcomes": [
         {
@@ -1983,7 +2207,8 @@
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "draftkings": 100
+          "draftkings": 100,
+          "espnbet": 100
          }
         },
         {
@@ -1997,7 +2222,8 @@
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "draftkings": -120
+          "draftkings": -120,
+          "espnbet": -120
          }
         }
        ],
@@ -2006,7 +2232,146 @@
         5.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: moneyline, spread, total"
+     ],
+     "on_slate_day": false
+    },
+    {
+     "id": "3a95439904d3d0af12970bb0c8e66a3a",
+     "commence_time": "2026-10-07T02:40:00Z",
+     "date_et": "2026-10-06",
+     "start_et": "10:40 PM ET",
+     "away": "Florida Panthers",
+     "home": "Los Angeles Kings",
+     "books": [
+      "draftkings",
+      "espnbet"
+     ],
+     "markets": {
+      "moneyline": {
+       "ref": "consensus (2 books)",
+       "pinnacle_hold": null,
+       "outcomes": [
+        {
+         "name": "Florida Panthers",
+         "fair_prob": 0.5325,
+         "fair_odds": -114,
+         "best_price": -125,
+         "best_book": "draftkings",
+         "pinnacle": null,
+         "edge_at_best_vs_fair": -0.0416,
+         "fanduel": null,
+         "edge_at_my_book": null,
+         "books": {
+          "draftkings": -125,
+          "espnbet": -125
+         }
+        },
+        {
+         "name": "Los Angeles Kings",
+         "fair_prob": 0.4675,
+         "fair_odds": 114,
+         "best_price": 105,
+         "best_book": "draftkings",
+         "pinnacle": null,
+         "edge_at_best_vs_fair": -0.0416,
+         "fanduel": null,
+         "edge_at_my_book": null,
+         "books": {
+          "draftkings": 105,
+          "espnbet": 105
+         }
+        }
+       ]
+      },
+      "spread": {
+       "ref": "consensus (2 books)",
+       "pinnacle_hold": null,
+       "outcomes": [
+        {
+         "name": "Florida Panthers",
+         "fair_prob": 0.3272,
+         "fair_odds": 206,
+         "best_price": 195,
+         "best_book": "draftkings",
+         "pinnacle": null,
+         "edge_at_best_vs_fair": -0.0348,
+         "fanduel": null,
+         "edge_at_my_book": null,
+         "books": {
+          "draftkings": 195,
+          "espnbet": 185
+         }
+        },
+        {
+         "name": "Los Angeles Kings",
+         "fair_prob": 0.6728,
+         "fair_odds": -206,
+         "best_price": -238,
+         "best_book": "draftkings",
+         "pinnacle": null,
+         "edge_at_best_vs_fair": -0.0445,
+         "fanduel": null,
+         "edge_at_my_book": null,
+         "books": {
+          "draftkings": -238,
+          "espnbet": -250
+         }
+        }
+       ],
+       "home_line": 1.5,
+       "away_line": -1.5,
+       "other_lines": [
+        1.5
+       ]
+      },
+      "total": {
+       "ref": "consensus (2 books)",
+       "pinnacle_hold": null,
+       "outcomes": [
+        {
+         "name": "Over",
+         "fair_prob": 0.5477,
+         "fair_odds": -121,
+         "best_price": -130,
+         "best_book": "draftkings",
+         "pinnacle": null,
+         "edge_at_best_vs_fair": -0.031,
+         "fanduel": null,
+         "edge_at_my_book": null,
+         "books": {
+          "draftkings": -130,
+          "espnbet": -135
+         }
+        },
+        {
+         "name": "Under",
+         "fair_prob": 0.4523,
+         "fair_odds": 121,
+         "best_price": 115,
+         "best_book": "espnbet",
+         "pinnacle": null,
+         "edge_at_best_vs_fair": -0.0275,
+         "fanduel": null,
+         "edge_at_my_book": null,
+         "books": {
+          "draftkings": 110,
+          "espnbet": 115
+         }
+        }
+       ],
+       "line": 5.5,
+       "other_lines": [
+        5.5
+       ]
+      }
+     },
+     "flags": [
+      "no fanduel price: moneyline, spread, total"
+     ],
+     "on_slate_day": false
     }
    ],
    "props": {
@@ -8499,10 +8864,13 @@
   },
   "NFL": {
    "status": "ok",
+   "slate_day_events": 1,
+   "later_events": 14,
    "events": [
     {
      "id": "8bd90781e17e6d97df3941063cedae1e",
      "commence_time": "2026-10-06T00:15:00Z",
+     "date_et": "2026-10-05",
      "start_et": "8:15 PM ET",
      "away": "Atlanta Falcons",
      "home": "New Orleans Saints",
@@ -8519,89 +8887,87 @@
      "markets": {
       "moneyline": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0227,
+       "pinnacle_hold": 0.0229,
        "outcomes": [
         {
          "name": "Atlanta Falcons",
-         "fair_prob": 0.477,
-         "fair_odds": 110,
-         "best_price": 107,
-         "best_book": "betrivers",
-         "pinnacle": 105,
-         "edge_at_best_vs_fair": -0.0126,
-         "fanduel": 104,
-         "edge_at_my_book": -0.027,
+         "fair_prob": 0.4792,
+         "fair_odds": 109,
+         "best_price": 104,
+         "best_book": "pinnacle",
+         "pinnacle": 104,
+         "edge_at_best_vs_fair": -0.0224,
+         "fanduel": -102,
+         "edge_at_my_book": -0.051,
          "books": {
           "draftkings": 100,
-          "fanduel": 104,
+          "fanduel": -102,
           "betonlineag": -104,
           "lowvig": -104,
-          "betrivers": 107,
+          "betrivers": -104,
           "betmgm": 100,
-          "pinnacle": 105,
-          "espnbet": -105
+          "pinnacle": 104,
+          "espnbet": 100
          }
         },
         {
          "name": "New Orleans Saints",
-         "fair_prob": 0.523,
-         "fair_odds": -110,
-         "best_price": -115,
+         "fair_prob": 0.5208,
+         "fair_odds": -109,
+         "best_price": -114,
          "best_book": "pinnacle",
-         "pinnacle": -115,
-         "edge_at_best_vs_fair": -0.0222,
-         "fanduel": -122,
-         "edge_at_my_book": -0.0483,
+         "pinnacle": -114,
+         "edge_at_best_vs_fair": -0.0224,
+         "fanduel": -116,
+         "edge_at_my_book": -0.0303,
          "books": {
           "draftkings": -120,
-          "fanduel": -122,
+          "fanduel": -116,
           "betonlineag": -116,
           "lowvig": -116,
-          "betrivers": -130,
-          "betmgm": -120,
-          "pinnacle": -115,
-          "espnbet": -115
+          "betrivers": -118,
+          "betmgm": -118,
+          "pinnacle": -114,
+          "espnbet": -120
          }
         }
        ]
       },
       "spread": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0242,
+       "pinnacle_hold": 0.024,
        "outcomes": [
         {
          "name": "Atlanta Falcons",
-         "fair_prob": 0.507,
-         "fair_odds": -103,
-         "best_price": -105,
-         "best_book": "fanduel",
-         "pinnacle": -108,
-         "edge_at_best_vs_fair": -0.0102,
-         "fanduel": -105,
-         "edge_at_my_book": -0.0102,
+         "fair_prob": 0.5093,
+         "fair_odds": -104,
+         "best_price": -109,
+         "best_book": "pinnacle",
+         "pinnacle": -109,
+         "edge_at_best_vs_fair": -0.0235,
+         "fanduel": -110,
+         "edge_at_my_book": -0.0277,
          "books": {
           "draftkings": -112,
-          "fanduel": -105,
-          "betmgm": -110,
-          "pinnacle": -108,
+          "fanduel": -110,
+          "pinnacle": -109,
           "espnbet": -115
          }
         },
         {
          "name": "New Orleans Saints",
-         "fair_prob": 0.493,
-         "fair_odds": 103,
-         "best_price": -102,
+         "fair_prob": 0.4907,
+         "fair_odds": 104,
+         "best_price": -101,
          "best_book": "pinnacle",
-         "pinnacle": -102,
-         "edge_at_best_vs_fair": -0.0236,
-         "fanduel": -115,
-         "edge_at_my_book": -0.0783,
+         "pinnacle": -101,
+         "edge_at_best_vs_fair": -0.0235,
+         "fanduel": -110,
+         "edge_at_my_book": -0.0632,
          "books": {
           "draftkings": -108,
-          "fanduel": -115,
-          "betmgm": -108,
-          "pinnacle": -102,
+          "fanduel": -110,
+          "pinnacle": -101,
           "espnbet": -105
          }
         }
@@ -8609,41 +8975,42 @@
        "home_line": -1.5,
        "away_line": 1.5,
        "other_lines": [
-        -2.0,
         -1.5,
         -1.0
        ]
       },
       "total": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0294,
+       "pinnacle_hold": 0.0272,
        "outcomes": [
         {
          "name": "Over",
-         "fair_prob": 0.4762,
+         "fair_prob": 0.4772,
          "fair_odds": 110,
          "best_price": 104,
          "best_book": "pinnacle",
          "pinnacle": 104,
-         "edge_at_best_vs_fair": -0.0285,
+         "edge_at_best_vs_fair": -0.0265,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "pinnacle": 104
+          "pinnacle": 104,
+          "espnbet": -105
          }
         },
         {
          "name": "Under",
-         "fair_prob": 0.5238,
+         "fair_prob": 0.5228,
          "fair_odds": -110,
-         "best_price": -117,
-         "best_book": "pinnacle",
-         "pinnacle": -117,
-         "edge_at_best_vs_fair": -0.0285,
+         "best_price": -115,
+         "best_book": "espnbet",
+         "pinnacle": -116,
+         "edge_at_best_vs_fair": -0.0226,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
-          "pinnacle": -117
+          "pinnacle": -116,
+          "espnbet": -115
          }
         }
        ],
@@ -8654,11 +9021,16 @@
         48.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: total"
+     ],
+     "on_slate_day": true
     },
     {
      "id": "259b5df9aa0d10257f56de78523495e0",
      "commence_time": "2026-10-09T00:15:00Z",
+     "date_et": "2026-10-08",
      "start_et": "8:15 PM ET",
      "away": "Tampa Bay Buccaneers",
      "home": "Dallas Cowboys",
@@ -8740,7 +9112,6 @@
           "betonlineag": -110,
           "lowvig": -101,
           "betrivers": -108,
-          "betmgm": -112,
           "pinnacle": -107
          }
         },
@@ -8749,7 +9120,7 @@
          "fair_prob": 0.4977,
          "fair_odds": 101,
          "best_price": -105,
-         "best_book": "betmgm",
+         "best_book": "pinnacle",
          "pinnacle": -105,
          "edge_at_best_vs_fair": -0.0283,
          "fanduel": null,
@@ -8759,7 +9130,6 @@
           "betonlineag": -110,
           "lowvig": -109,
           "betrivers": -113,
-          "betmgm": -105,
           "pinnacle": -105
          }
         }
@@ -8822,11 +9192,16 @@
         47.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: spread"
+     ],
+     "on_slate_day": false
     },
     {
      "id": "21b26266f3d78af02eb672e606275d95",
      "commence_time": "2026-10-11T13:30:00Z",
+     "date_et": "2026-10-11",
      "start_et": "9:30 AM ET",
      "away": "Philadelphia Eagles",
      "home": "Jacksonville Jaguars",
@@ -8853,15 +9228,15 @@
          "best_book": "pinnacle",
          "pinnacle": 188,
          "edge_at_best_vs_fair": -0.0308,
-         "fanduel": 172,
-         "edge_at_my_book": -0.0846,
+         "fanduel": 176,
+         "edge_at_my_book": -0.0712,
          "books": {
           "draftkings": 180,
-          "fanduel": 172,
+          "fanduel": 176,
           "betmgm": 180,
           "espnbet": 175,
-          "betonlineag": 180,
-          "lowvig": 180,
+          "betonlineag": 183,
+          "lowvig": 183,
           "betrivers": 180,
           "pinnacle": 188
          }
@@ -8870,19 +9245,19 @@
          "name": "Jacksonville Jaguars",
          "fair_prob": 0.6635,
          "fair_odds": -197,
-         "best_price": -205,
+         "best_price": -210,
          "best_book": "fanduel",
          "pinnacle": -217,
-         "edge_at_best_vs_fair": -0.0129,
-         "fanduel": -205,
-         "edge_at_my_book": -0.0129,
+         "edge_at_best_vs_fair": -0.0206,
+         "fanduel": -210,
+         "edge_at_my_book": -0.0206,
          "books": {
           "draftkings": -218,
-          "fanduel": -205,
+          "fanduel": -210,
           "betmgm": -220,
           "espnbet": -210,
-          "betonlineag": -210,
-          "lowvig": -210,
+          "betonlineag": -215,
+          "lowvig": -215,
           "betrivers": -225,
           "pinnacle": -217
          }
@@ -8945,6 +9320,7 @@
          "edge_at_my_book": null,
          "books": {
           "betmgm": -110,
+          "betrivers": -112,
           "pinnacle": -107
          }
         },
@@ -8960,6 +9336,7 @@
          "edge_at_my_book": null,
          "books": {
           "betmgm": -108,
+          "betrivers": -109,
           "pinnacle": -107
          }
         }
@@ -8970,11 +9347,16 @@
         43.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: spread, total"
+     ],
+     "on_slate_day": false
     },
     {
      "id": "2caea57b1e5cfbba1334cfbfd46f6771",
      "commence_time": "2026-10-11T17:00:00Z",
+     "date_et": "2026-10-11",
      "start_et": "1:00 PM ET",
      "away": "Chicago Bears",
      "home": "Green Bay Packers",
@@ -8994,14 +9376,14 @@
        "outcomes": [
         {
          "name": "Chicago Bears",
-         "fair_prob": 0.5624,
+         "fair_prob": 0.5632,
          "fair_odds": -129,
          "best_price": -135,
          "best_book": "espnbet",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.021,
+         "edge_at_best_vs_fair": -0.0196,
          "fanduel": -136,
-         "edge_at_my_book": -0.024,
+         "edge_at_my_book": -0.0227,
          "books": {
           "draftkings": -148,
           "fanduel": -136,
@@ -9014,21 +9396,21 @@
         },
         {
          "name": "Green Bay Packers",
-         "fair_prob": 0.4376,
+         "fair_prob": 0.4368,
          "fair_odds": 129,
          "best_price": 125,
          "best_book": "betonlineag",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0154,
+         "edge_at_best_vs_fair": -0.0172,
          "fanduel": 116,
-         "edge_at_my_book": -0.0548,
+         "edge_at_my_book": -0.0565,
          "books": {
           "draftkings": 124,
           "fanduel": 116,
           "betonlineag": 125,
           "lowvig": 125,
           "betrivers": 112,
-          "betmgm": 120,
+          "betmgm": 125,
           "espnbet": 115
          }
         }
@@ -9040,41 +9422,41 @@
        "outcomes": [
         {
          "name": "Chicago Bears",
-         "fair_prob": 0.4986,
-         "fair_odds": 101,
-         "best_price": -105,
+         "fair_prob": 0.5047,
+         "fair_odds": -102,
+         "best_price": -108,
          "best_book": "lowvig",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0265,
+         "edge_at_best_vs_fair": -0.0279,
          "fanduel": -110,
-         "edge_at_my_book": -0.0481,
+         "edge_at_my_book": -0.0364,
          "books": {
-          "draftkings": -108,
+          "draftkings": -115,
           "fanduel": -110,
-          "betonlineag": -110,
-          "lowvig": -105,
+          "betonlineag": -115,
+          "lowvig": -108,
           "betrivers": -109,
-          "betmgm": -108,
+          "betmgm": -112,
           "espnbet": -110
          }
         },
         {
          "name": "Green Bay Packers",
-         "fair_prob": 0.5014,
-         "fair_odds": -101,
-         "best_price": -105,
+         "fair_prob": 0.4953,
+         "fair_odds": 102,
+         "best_price": -102,
          "best_book": "lowvig",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0211,
+         "edge_at_best_vs_fair": -0.0192,
          "fanduel": -110,
-         "edge_at_my_book": -0.0428,
+         "edge_at_my_book": -0.0545,
          "books": {
-          "draftkings": -112,
+          "draftkings": -105,
           "fanduel": -110,
-          "betonlineag": -110,
-          "lowvig": -105,
+          "betonlineag": -105,
+          "lowvig": -102,
           "betrivers": -112,
-          "betmgm": -110,
+          "betmgm": -105,
           "espnbet": -110
          }
         }
@@ -9132,11 +9514,13 @@
         44.5
        ]
       }
-     }
+     },
+     "on_slate_day": false
     },
     {
      "id": "c4647ca1201e6768501877267ca8251b",
      "commence_time": "2026-10-11T17:00:00Z",
+     "date_et": "2026-10-11",
      "start_et": "1:00 PM ET",
      "away": "Cincinnati Bengals",
      "home": "Miami Dolphins",
@@ -9202,35 +9586,35 @@
        "outcomes": [
         {
          "name": "Cincinnati Bengals",
-         "fair_prob": 0.5059,
-         "fair_odds": -102,
-         "best_price": -105,
+         "fair_prob": 0.5082,
+         "fair_odds": -103,
+         "best_price": -107,
          "best_book": "lowvig",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0123,
+         "edge_at_best_vs_fair": -0.0169,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
           "draftkings": -115,
-          "betonlineag": -110,
-          "lowvig": -105,
+          "betonlineag": -112,
+          "lowvig": -107,
           "betrivers": -117
          }
         },
         {
          "name": "Miami Dolphins",
-         "fair_prob": 0.4941,
-         "fair_odds": 102,
-         "best_price": -105,
-         "best_book": "draftkings",
+         "fair_prob": 0.4918,
+         "fair_odds": 103,
+         "best_price": -103,
+         "best_book": "lowvig",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0354,
+         "edge_at_best_vs_fair": -0.0306,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
           "draftkings": -105,
-          "betonlineag": -110,
-          "lowvig": -105,
+          "betonlineag": -108,
+          "lowvig": -103,
           "betrivers": -105
          }
         }
@@ -9286,11 +9670,16 @@
         42.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: spread"
+     ],
+     "on_slate_day": false
     },
     {
      "id": "9db4ed15fe34fca1fb62f040cd244591",
      "commence_time": "2026-10-11T17:00:00Z",
+     "date_et": "2026-10-11",
      "start_et": "1:00 PM ET",
      "away": "Cleveland Browns",
      "home": "New York Jets",
@@ -9371,7 +9760,7 @@
           "draftkings": -108,
           "fanduel": -102,
           "betonlineag": -110,
-          "lowvig": -105,
+          "lowvig": -102,
           "betrivers": -108,
           "pinnacle": -102
          }
@@ -9380,17 +9769,17 @@
          "name": "New York Jets",
          "fair_prob": 0.5092,
          "fair_odds": -104,
-         "best_price": -105,
+         "best_price": -108,
          "best_book": "lowvig",
          "pinnacle": -110,
-         "edge_at_best_vs_fair": -0.0059,
+         "edge_at_best_vs_fair": -0.0194,
          "fanduel": -120,
          "edge_at_my_book": -0.0665,
          "books": {
           "draftkings": -112,
           "fanduel": -120,
           "betonlineag": -110,
-          "lowvig": -105,
+          "lowvig": -108,
           "betrivers": -113,
           "pinnacle": -110
          }
@@ -9452,11 +9841,16 @@
         40.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: total"
+     ],
+     "on_slate_day": false
     },
     {
      "id": "cc52bba56e74f5cddbe9011046181c3d",
      "commence_time": "2026-10-11T17:00:00Z",
+     "date_et": "2026-10-11",
      "start_et": "1:00 PM ET",
      "away": "Houston Texans",
      "home": "Tennessee Titans",
@@ -9473,47 +9867,47 @@
      "markets": {
       "moneyline": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0344,
+       "pinnacle_hold": 0.0353,
        "outcomes": [
         {
          "name": "Houston Texans",
-         "fair_prob": 0.7157,
-         "fair_odds": -252,
-         "best_price": -285,
+         "fair_prob": 0.7232,
+         "fair_odds": -261,
+         "best_price": -298,
          "best_book": "pinnacle",
-         "pinnacle": -285,
-         "edge_at_best_vs_fair": -0.0332,
+         "pinnacle": -298,
+         "edge_at_best_vs_fair": -0.0341,
          "fanduel": -320,
-         "edge_at_my_book": -0.0607,
+         "edge_at_my_book": -0.0508,
          "books": {
-          "draftkings": -305,
+          "draftkings": -325,
           "fanduel": -320,
-          "betonlineag": -290,
-          "lowvig": -290,
+          "betonlineag": -305,
+          "lowvig": -305,
           "betrivers": -315,
-          "betmgm": -295,
-          "pinnacle": -285,
+          "betmgm": -300,
+          "pinnacle": -298,
           "espnbet": -320
          }
         },
         {
          "name": "Tennessee Titans",
-         "fair_prob": 0.2843,
-         "fair_odds": 252,
+         "fair_prob": 0.2768,
+         "fair_odds": 261,
          "best_price": 260,
-         "best_book": "fanduel",
-         "pinnacle": 240,
-         "edge_at_best_vs_fair": 0.0236,
+         "best_book": "draftkings",
+         "pinnacle": 249,
+         "edge_at_best_vs_fair": -0.0036,
          "fanduel": 260,
-         "edge_at_my_book": 0.0236,
+         "edge_at_my_book": -0.0036,
          "books": {
-          "draftkings": 245,
+          "draftkings": 260,
           "fanduel": 260,
-          "betonlineag": 237,
-          "lowvig": 237,
+          "betonlineag": 249,
+          "lowvig": 249,
           "betrivers": 250,
-          "betmgm": 240,
-          "pinnacle": 240,
+          "betmgm": 250,
+          "pinnacle": 249,
           "espnbet": 260
          }
         }
@@ -9521,47 +9915,47 @@
       },
       "spread": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.0291,
+       "pinnacle_hold": 0.0283,
        "outcomes": [
         {
          "name": "Houston Texans",
-         "fair_prob": 0.5,
-         "fair_odds": -100,
-         "best_price": -105,
-         "best_book": "draftkings",
-         "pinnacle": -106,
-         "edge_at_best_vs_fair": -0.0238,
+         "fair_prob": 0.5138,
+         "fair_odds": -106,
+         "best_price": -109,
+         "best_book": "lowvig",
+         "pinnacle": -112,
+         "edge_at_best_vs_fair": -0.0149,
          "fanduel": -115,
-         "edge_at_my_book": -0.0652,
+         "edge_at_my_book": -0.0395,
          "books": {
-          "draftkings": -105,
+          "draftkings": -110,
           "fanduel": -115,
-          "betonlineag": -110,
-          "lowvig": -105,
+          "betonlineag": -115,
+          "lowvig": -109,
           "betrivers": -109,
-          "betmgm": -105,
-          "pinnacle": -106,
+          "betmgm": -110,
+          "pinnacle": -112,
           "espnbet": -115
          }
         },
         {
          "name": "Tennessee Titans",
-         "fair_prob": 0.5,
-         "fair_odds": -100,
-         "best_price": -105,
-         "best_book": "fanduel",
-         "pinnacle": -106,
-         "edge_at_best_vs_fair": -0.0238,
+         "fair_prob": 0.4862,
+         "fair_odds": 106,
+         "best_price": 100,
+         "best_book": "pinnacle",
+         "pinnacle": 100,
+         "edge_at_best_vs_fair": -0.0275,
          "fanduel": -105,
-         "edge_at_my_book": -0.0238,
+         "edge_at_my_book": -0.0507,
          "books": {
-          "draftkings": -115,
+          "draftkings": -110,
           "fanduel": -105,
-          "betonlineag": -110,
-          "lowvig": -105,
+          "betonlineag": -105,
+          "lowvig": -101,
           "betrivers": -112,
-          "betmgm": -112,
-          "pinnacle": -106,
+          "betmgm": -108,
+          "pinnacle": 100,
           "espnbet": -105
          }
         }
@@ -9623,11 +10017,13 @@
         39.5
        ]
       }
-     }
+     },
+     "on_slate_day": false
     },
     {
      "id": "448d7cf18c6db4c811ed82ded1b72867",
      "commence_time": "2026-10-11T17:00:00Z",
+     "date_et": "2026-10-11",
      "start_et": "1:00 PM ET",
      "away": "Indianapolis Colts",
      "home": "Pittsburgh Steelers",
@@ -9661,7 +10057,7 @@
           "fanduel": 112,
           "betonlineag": 118,
           "lowvig": 118,
-          "betrivers": 110,
+          "betrivers": 115,
           "betmgm": 115,
           "pinnacle": 118,
           "espnbet": 110
@@ -9682,7 +10078,7 @@
           "fanduel": -132,
           "betonlineag": -138,
           "lowvig": -138,
-          "betrivers": -136,
+          "betrivers": -139,
           "betmgm": -140,
           "pinnacle": -133,
           "espnbet": -130
@@ -9707,7 +10103,6 @@
          "books": {
           "betonlineag": -105,
           "lowvig": 100,
-          "betrivers": -110,
           "pinnacle": -101
          }
         },
@@ -9724,7 +10119,6 @@
          "books": {
           "betonlineag": -115,
           "lowvig": -110,
-          "betrivers": -110,
           "pinnacle": -111
          }
         }
@@ -9779,11 +10173,16 @@
         44.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: spread, total"
+     ],
+     "on_slate_day": false
     },
     {
      "id": "6b024bad1abb54f597225e4ab9b39d89",
      "commence_time": "2026-10-11T17:00:00Z",
+     "date_et": "2026-10-11",
      "start_et": "1:00 PM ET",
      "away": "Las Vegas Raiders",
      "home": "New England Patriots",
@@ -9813,7 +10212,7 @@
          "fanduel": 168,
          "edge_at_my_book": -0.024,
          "books": {
-          "draftkings": 164,
+          "draftkings": 160,
           "fanduel": 168,
           "lowvig": 161,
           "betonlineag": 161,
@@ -9834,7 +10233,7 @@
          "fanduel": -200,
          "edge_at_my_book": -0.0463,
          "books": {
-          "draftkings": -198,
+          "draftkings": -192,
           "fanduel": -200,
           "lowvig": -185,
           "betonlineag": -185,
@@ -9863,7 +10262,7 @@
          "books": {
           "draftkings": -110,
           "fanduel": -104,
-          "lowvig": -105,
+          "lowvig": -104,
           "betonlineag": -110,
           "betrivers": -112,
           "betmgm": -108,
@@ -9875,16 +10274,16 @@
          "name": "New England Patriots",
          "fair_prob": 0.5023,
          "fair_odds": -101,
-         "best_price": -105,
+         "best_price": -106,
          "best_book": "lowvig",
          "pinnacle": -107,
-         "edge_at_best_vs_fair": -0.0193,
+         "edge_at_best_vs_fair": -0.0239,
          "fanduel": -118,
          "edge_at_my_book": -0.072,
          "books": {
           "draftkings": -110,
           "fanduel": -118,
-          "lowvig": -105,
+          "lowvig": -106,
           "betonlineag": -110,
           "betrivers": -109,
           "betmgm": -110,
@@ -9916,7 +10315,7 @@
          "books": {
           "lowvig": -107,
           "betonlineag": -110,
-          "betrivers": -108,
+          "betmgm": -108,
           "pinnacle": -108
          }
         },
@@ -9933,7 +10332,7 @@
          "books": {
           "lowvig": -107,
           "betonlineag": -110,
-          "betrivers": -113,
+          "betmgm": -112,
           "pinnacle": -106
          }
         }
@@ -9945,11 +10344,16 @@
         45.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: total"
+     ],
+     "on_slate_day": false
     },
     {
      "id": "2cda9bf0fbe35a2735f0dd8aaafe9eff",
      "commence_time": "2026-10-11T17:00:00Z",
+     "date_et": "2026-10-11",
      "start_et": "1:00 PM ET",
      "away": "Minnesota Vikings",
      "home": "New Orleans Saints",
@@ -10015,19 +10419,19 @@
        "outcomes": [
         {
          "name": "Minnesota Vikings",
-         "fair_prob": 0.4995,
+         "fair_prob": 0.4999,
          "fair_odds": 100,
-         "best_price": -105,
+         "best_price": -106,
          "best_book": "lowvig",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0247,
+         "edge_at_best_vs_fair": -0.0285,
          "fanduel": -110,
-         "edge_at_my_book": -0.0463,
+         "edge_at_my_book": -0.0457,
          "books": {
           "draftkings": -110,
           "fanduel": -110,
           "betonlineag": -110,
-          "lowvig": -105,
+          "lowvig": -106,
           "betrivers": -108,
           "betmgm": -110,
           "espnbet": -110
@@ -10035,19 +10439,19 @@
         },
         {
          "name": "New Orleans Saints",
-         "fair_prob": 0.5005,
+         "fair_prob": 0.5001,
          "fair_odds": -100,
-         "best_price": -105,
+         "best_price": -104,
          "best_book": "lowvig",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0229,
+         "edge_at_best_vs_fair": -0.019,
          "fanduel": -110,
-         "edge_at_my_book": -0.0446,
+         "edge_at_my_book": -0.0452,
          "books": {
           "draftkings": -110,
           "fanduel": -110,
           "betonlineag": -110,
-          "lowvig": -105,
+          "lowvig": -104,
           "betrivers": -113,
           "betmgm": -108,
           "espnbet": -110
@@ -10105,11 +10509,13 @@
         42.5
        ]
       }
-     }
+     },
+     "on_slate_day": false
     },
     {
      "id": "fbffd0b7722fd81d68d5d62472dc80e8",
      "commence_time": "2026-10-11T17:00:00Z",
+     "date_et": "2026-10-11",
      "start_et": "1:00 PM ET",
      "away": "New York Giants",
      "home": "Washington Commanders",
@@ -10126,18 +10532,18 @@
      "markets": {
       "moneyline": {
        "ref": "pinnacle",
-       "pinnacle_hold": 0.032,
+       "pinnacle_hold": 0.0307,
        "outcomes": [
         {
          "name": "New York Giants",
-         "fair_prob": 0.3771,
+         "fair_prob": 0.3775,
          "fair_odds": 165,
          "best_price": 157,
          "best_book": "lowvig",
          "pinnacle": 157,
-         "edge_at_best_vs_fair": -0.031,
+         "edge_at_best_vs_fair": -0.0298,
          "fanduel": 152,
-         "edge_at_my_book": -0.0498,
+         "edge_at_my_book": -0.0486,
          "books": {
           "draftkings": 142,
           "fanduel": 152,
@@ -10151,14 +10557,14 @@
         },
         {
          "name": "Washington Commanders",
-         "fair_prob": 0.6229,
+         "fair_prob": 0.6225,
          "fair_odds": -165,
          "best_price": -170,
          "best_book": "draftkings",
-         "pinnacle": -180,
-         "edge_at_best_vs_fair": -0.0106,
+         "pinnacle": -179,
+         "edge_at_best_vs_fair": -0.0114,
          "fanduel": -180,
-         "edge_at_my_book": -0.031,
+         "edge_at_my_book": -0.0317,
          "books": {
           "draftkings": -170,
           "fanduel": -180,
@@ -10166,7 +10572,7 @@
           "betonlineag": -180,
           "betrivers": -190,
           "betmgm": -185,
-          "pinnacle": -180,
+          "pinnacle": -179,
           "espnbet": -175
          }
         }
@@ -10272,11 +10678,16 @@
         44.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: total"
+     ],
+     "on_slate_day": false
     },
     {
      "id": "d1d408fdfd272046fb517fe992a1c5a0",
      "commence_time": "2026-10-11T20:05:00Z",
+     "date_et": "2026-10-11",
      "start_et": "4:05 PM ET",
      "away": "Denver Broncos",
      "home": "Los Angeles Chargers",
@@ -10296,39 +10707,39 @@
        "outcomes": [
         {
          "name": "Denver Broncos",
-         "fair_prob": 0.6233,
-         "fair_odds": -165,
-         "best_price": -175,
+         "fair_prob": 0.6253,
+         "fair_odds": -167,
+         "best_price": -177,
          "best_book": "betonlineag",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0205,
+         "edge_at_best_vs_fair": -0.0214,
          "fanduel": -188,
-         "edge_at_my_book": -0.0451,
+         "edge_at_my_book": -0.0421,
          "books": {
-          "draftkings": -180,
+          "draftkings": -185,
           "fanduel": -188,
-          "betonlineag": -175,
-          "lowvig": -175,
+          "betonlineag": -177,
+          "lowvig": -177,
           "betrivers": -195,
-          "betmgm": -185,
+          "betmgm": -190,
           "espnbet": -190
          }
         },
         {
          "name": "Los Angeles Chargers",
-         "fair_prob": 0.3767,
-         "fair_odds": 165,
+         "fair_prob": 0.3747,
+         "fair_odds": 167,
          "best_price": 160,
          "best_book": "betrivers",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0206,
+         "edge_at_best_vs_fair": -0.0258,
          "fanduel": 158,
-         "edge_at_my_book": -0.0282,
+         "edge_at_my_book": -0.0333,
          "books": {
-          "draftkings": 150,
+          "draftkings": 154,
           "fanduel": 158,
-          "betonlineag": 153,
-          "lowvig": 153,
+          "betonlineag": 155,
+          "lowvig": 155,
           "betrivers": 160,
           "betmgm": 155,
           "espnbet": 160
@@ -10434,59 +10845,67 @@
         42.5
        ]
       }
-     }
+     },
+     "on_slate_day": false
     },
     {
      "id": "f8e7f43f73aa983c5c99c189587f0118",
      "commence_time": "2026-10-11T20:25:00Z",
+     "date_et": "2026-10-11",
      "start_et": "4:25 PM ET",
      "away": "Detroit Lions",
      "home": "Arizona Cardinals",
      "books": [
       "betmgm",
+      "betonlineag",
       "betrivers",
       "draftkings",
       "espnbet",
-      "fanduel"
+      "fanduel",
+      "lowvig"
      ],
      "markets": {
       "moneyline": {
-       "ref": "consensus (5 books)",
+       "ref": "consensus (7 books)",
        "pinnacle_hold": null,
        "outcomes": [
         {
          "name": "Detroit Lions",
-         "fair_prob": 0.6587,
-         "fair_odds": -193,
-         "best_price": -215,
-         "best_book": "fanduel",
+         "fair_prob": 0.6553,
+         "fair_odds": -190,
+         "best_price": -205,
+         "best_book": "betonlineag",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0349,
+         "edge_at_best_vs_fair": -0.025,
          "fanduel": -215,
-         "edge_at_my_book": -0.0349,
+         "edge_at_my_book": -0.0398,
          "books": {
           "draftkings": -218,
           "fanduel": -215,
+          "betonlineag": -205,
+          "lowvig": -205,
           "betrivers": -230,
-          "betmgm": -220,
+          "betmgm": -210,
           "espnbet": -215
          }
         },
         {
          "name": "Arizona Cardinals",
-         "fair_prob": 0.3413,
-         "fair_odds": 193,
+         "fair_prob": 0.3447,
+         "fair_odds": 190,
          "best_price": 185,
          "best_book": "betrivers",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0274,
+         "edge_at_best_vs_fair": -0.0177,
          "fanduel": 180,
-         "edge_at_my_book": -0.0445,
+         "edge_at_my_book": -0.035,
          "books": {
           "draftkings": 180,
           "fanduel": 180,
+          "betonlineag": 177,
+          "lowvig": 177,
           "betrivers": 185,
-          "betmgm": 180,
+          "betmgm": 175,
           "espnbet": 180
          }
         }
@@ -10498,41 +10917,41 @@
        "outcomes": [
         {
          "name": "Detroit Lions",
-         "fair_prob": 0.4935,
-         "fair_odds": 103,
-         "best_price": -105,
-         "best_book": "draftkings",
+         "fair_prob": 0.4965,
+         "fair_odds": 101,
+         "best_price": 100,
+         "best_book": "lowvig",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0366,
-         "fanduel": -105,
-         "edge_at_my_book": -0.0366,
+         "edge_at_best_vs_fair": -0.0069,
+         "fanduel": null,
+         "edge_at_my_book": null,
          "books": {
-          "draftkings": -105,
-          "fanduel": -105,
-          "betrivers": -112,
-          "betmgm": -105
+          "betonlineag": -105,
+          "lowvig": 100,
+          "betmgm": -108,
+          "espnbet": -115
          }
         },
         {
          "name": "Arizona Cardinals",
-         "fair_prob": 0.5065,
-         "fair_odds": -103,
-         "best_price": -109,
-         "best_book": "betrivers",
+         "fair_prob": 0.5035,
+         "fair_odds": -101,
+         "best_price": -105,
+         "best_book": "espnbet",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0287,
-         "fanduel": -115,
-         "edge_at_my_book": -0.053,
+         "edge_at_best_vs_fair": -0.0171,
+         "fanduel": null,
+         "edge_at_my_book": null,
          "books": {
-          "draftkings": -115,
-          "fanduel": -115,
-          "betrivers": -109,
-          "betmgm": -112
+          "betonlineag": -115,
+          "lowvig": -110,
+          "betmgm": -110,
+          "espnbet": -105
          }
         }
        ],
-       "home_line": 4.5,
-       "away_line": -4.5,
+       "home_line": 4.0,
+       "away_line": -4.0,
        "other_lines": [
         4.0,
         4.5
@@ -10582,11 +11001,16 @@
         54.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: spread"
+     ],
+     "on_slate_day": false
     },
     {
      "id": "8e5d515b10d8a5ffb324640ed60bcc55",
      "commence_time": "2026-10-11T20:25:00Z",
+     "date_et": "2026-10-11",
      "start_et": "4:25 PM ET",
      "away": "San Francisco 49ers",
      "home": "Seattle Seahawks",
@@ -10716,7 +11140,10 @@
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
+          "betonlineag": -110,
+          "lowvig": -107,
           "betrivers": -112,
+          "betmgm": -110,
           "pinnacle": -105
          }
         },
@@ -10724,14 +11151,17 @@
          "name": "Under",
          "fair_prob": 0.5045,
          "fair_odds": -102,
-         "best_price": -109,
-         "best_book": "betrivers",
+         "best_price": -107,
+         "best_book": "lowvig",
          "pinnacle": -109,
-         "edge_at_best_vs_fair": -0.0326,
+         "edge_at_best_vs_fair": -0.024,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
+          "betonlineag": -110,
+          "lowvig": -107,
           "betrivers": -109,
+          "betmgm": -108,
           "pinnacle": -109
          }
         }
@@ -10742,11 +11172,16 @@
         47.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: total"
+     ],
+     "on_slate_day": false
     },
     {
      "id": "86457f91112732f21ad4bb7d37bd291c",
      "commence_time": "2026-10-12T00:20:00Z",
+     "date_et": "2026-10-11",
      "start_et": "8:20 PM ET",
      "away": "Baltimore Ravens",
      "home": "Atlanta Falcons",
@@ -10766,41 +11201,41 @@
        "outcomes": [
         {
          "name": "Baltimore Ravens",
-         "fair_prob": 0.6221,
-         "fair_odds": -165,
+         "fair_prob": 0.6234,
+         "fair_odds": -166,
          "best_price": -170,
-         "best_book": "betonlineag",
+         "best_book": "espnbet",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0119,
+         "edge_at_best_vs_fair": -0.0099,
          "fanduel": -178,
-         "edge_at_my_book": -0.0283,
+         "edge_at_my_book": -0.0263,
          "books": {
           "draftkings": -205,
           "fanduel": -178,
-          "betonlineag": -170,
-          "lowvig": -170,
-          "betrivers": -215,
-          "betmgm": -185,
+          "betonlineag": -180,
+          "lowvig": -180,
+          "betrivers": -190,
+          "betmgm": -190,
           "espnbet": -170
          }
         },
         {
          "name": "Atlanta Falcons",
-         "fair_prob": 0.3779,
-         "fair_odds": 165,
+         "fair_prob": 0.3766,
+         "fair_odds": 166,
          "best_price": 170,
          "best_book": "draftkings",
          "pinnacle": null,
-         "edge_at_best_vs_fair": 0.0202,
+         "edge_at_best_vs_fair": 0.0168,
          "fanduel": 150,
-         "edge_at_my_book": -0.0554,
+         "edge_at_my_book": -0.0586,
          "books": {
           "draftkings": 170,
           "fanduel": 150,
-          "betonlineag": 149,
-          "lowvig": 149,
-          "betrivers": 170,
-          "betmgm": 150,
+          "betonlineag": 157,
+          "lowvig": 157,
+          "betrivers": 155,
+          "betmgm": 155,
           "espnbet": 145
          }
         }
@@ -10812,35 +11247,35 @@
        "outcomes": [
         {
          "name": "Baltimore Ravens",
-         "fair_prob": 0.4867,
-         "fair_odds": 105,
+         "fair_prob": 0.4851,
+         "fair_odds": 106,
          "best_price": 100,
          "best_book": "betmgm",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0266,
+         "edge_at_best_vs_fair": -0.0298,
          "fanduel": -102,
-         "edge_at_my_book": -0.0361,
+         "edge_at_my_book": -0.0393,
          "books": {
           "draftkings": -105,
           "fanduel": -102,
-          "betrivers": -109,
+          "betrivers": -106,
           "betmgm": 100
          }
         },
         {
          "name": "Atlanta Falcons",
-         "fair_prob": 0.5133,
-         "fair_odds": -105,
-         "best_price": -112,
-         "best_book": "betrivers",
+         "fair_prob": 0.5149,
+         "fair_odds": -106,
+         "best_price": -115,
+         "best_book": "draftkings",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0284,
+         "edge_at_best_vs_fair": -0.0374,
          "fanduel": -120,
-         "edge_at_my_book": -0.059,
+         "edge_at_my_book": -0.056,
          "books": {
           "draftkings": -115,
           "fanduel": -120,
-          "betrivers": -112,
+          "betrivers": -115,
           "betmgm": -118
          }
         }
@@ -10853,37 +11288,39 @@
        ]
       },
       "total": {
-       "ref": "consensus (3 books)",
+       "ref": "consensus (4 books)",
        "pinnacle_hold": null,
        "outcomes": [
         {
          "name": "Over",
-         "fair_prob": 0.4942,
+         "fair_prob": 0.4949,
          "fair_odds": 102,
          "best_price": -105,
          "best_book": "espnbet",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0351,
+         "edge_at_best_vs_fair": -0.0339,
          "fanduel": -108,
-         "edge_at_my_book": -0.0482,
+         "edge_at_my_book": -0.0469,
          "books": {
           "fanduel": -108,
+          "betrivers": -109,
           "betmgm": -108,
           "espnbet": -105
          }
         },
         {
          "name": "Under",
-         "fair_prob": 0.5058,
+         "fair_prob": 0.5051,
          "fair_odds": -102,
          "best_price": -110,
          "best_book": "betmgm",
          "pinnacle": null,
-         "edge_at_best_vs_fair": -0.0344,
+         "edge_at_best_vs_fair": -0.0356,
          "fanduel": -112,
-         "edge_at_my_book": -0.0426,
+         "edge_at_my_book": -0.0438,
          "books": {
           "fanduel": -112,
+          "betrivers": -112,
           "betmgm": -110,
           "espnbet": -115
          }
@@ -10893,11 +11330,11 @@
        "other_lines": [
         45.0,
         45.5,
-        46.5,
-        47.5
+        46.5
        ]
       }
-     }
+     },
+     "on_slate_day": false
     }
    ],
    "props": {
@@ -14355,10 +14792,13 @@
   },
   "CFB": {
    "status": "ok",
+   "slate_day_events": 0,
+   "later_events": 3,
    "events": [
     {
      "id": "57ad14afc7db1843fd56f5971dadb058",
      "commence_time": "2026-10-07T00:00:00Z",
+     "date_et": "2026-10-06",
      "start_et": "8:00 PM ET",
      "away": "Southern Mississippi Golden Eagles",
      "home": "Troy Trojans",
@@ -14382,7 +14822,7 @@
          "fair_prob": 0.2269,
          "fair_odds": 341,
          "best_price": 340,
-         "best_book": "betrivers",
+         "best_book": "espnbet",
          "pinnacle": 320,
          "edge_at_best_vs_fair": -0.0017,
          "fanduel": 315,
@@ -14390,10 +14830,10 @@
          "books": {
           "fanduel": 315,
           "draftkings": 320,
-          "betrivers": 340,
+          "betrivers": 330,
           "betmgm": 320,
-          "lowvig": 324,
-          "betonlineag": 324,
+          "lowvig": 330,
+          "betonlineag": 330,
           "pinnacle": 320,
           "espnbet": 340
          }
@@ -14411,10 +14851,10 @@
          "books": {
           "fanduel": -410,
           "draftkings": -410,
-          "betrivers": -500,
+          "betrivers": -480,
           "betmgm": -425,
-          "lowvig": -410,
-          "betonlineag": -410,
+          "lowvig": -420,
+          "betonlineag": -420,
           "pinnacle": -430,
           "espnbet": -450
          }
@@ -14429,19 +14869,19 @@
          "name": "Southern Mississippi Golden Eagles",
          "fair_prob": 0.5022,
          "fair_odds": -101,
-         "best_price": -108,
+         "best_price": -106,
          "best_book": "lowvig",
          "pinnacle": -109,
-         "edge_at_best_vs_fair": -0.0328,
+         "edge_at_best_vs_fair": -0.024,
          "fanduel": -115,
          "edge_at_my_book": -0.0611,
          "books": {
           "fanduel": -115,
           "draftkings": -112,
-          "betrivers": -113,
+          "betrivers": -110,
           "betmgm": -110,
-          "lowvig": -108,
-          "betonlineag": -112,
+          "lowvig": -106,
+          "betonlineag": -110,
           "pinnacle": -109
          }
         },
@@ -14449,19 +14889,19 @@
          "name": "Troy Trojans",
          "fair_prob": 0.4978,
          "fair_odds": 101,
-         "best_price": -104,
-         "best_book": "lowvig",
+         "best_price": -105,
+         "best_book": "fanduel",
          "pinnacle": -107,
-         "edge_at_best_vs_fair": -0.0236,
+         "edge_at_best_vs_fair": -0.0282,
          "fanduel": -105,
          "edge_at_my_book": -0.0282,
          "books": {
           "fanduel": -105,
           "draftkings": -108,
-          "betrivers": -110,
+          "betrivers": -113,
           "betmgm": -108,
-          "lowvig": -104,
-          "betonlineag": -108,
+          "lowvig": -106,
+          "betonlineag": -110,
           "pinnacle": -107
          }
         }
@@ -14493,7 +14933,8 @@
           "betmgm": -105,
           "lowvig": -103,
           "betonlineag": -105,
-          "pinnacle": -106
+          "pinnacle": -106,
+          "espnbet": -110
          }
         },
         {
@@ -14512,22 +14953,24 @@
           "betmgm": -112,
           "lowvig": -114,
           "betonlineag": -115,
-          "pinnacle": -112
+          "pinnacle": -112,
+          "espnbet": -110
          }
         }
        ],
        "line": 49.5,
        "other_lines": [
-        48.5,
         49.0,
         49.5
        ]
       }
-     }
+     },
+     "on_slate_day": false
     },
     {
      "id": "c89488b9c83038e85e02e92481d093fe",
      "commence_time": "2026-10-07T23:00:00Z",
+     "date_et": "2026-10-07",
      "start_et": "7:00 PM ET",
      "away": "Jacksonville State Gamecocks",
      "home": "Kennesaw State Owls",
@@ -14684,11 +15127,16 @@
         50.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: spread, total"
+     ],
+     "on_slate_day": false
     },
     {
      "id": "9aa0a267b153a6cc0d6c3e5746e78213",
      "commence_time": "2026-10-07T23:30:00Z",
+     "date_et": "2026-10-07",
      "start_et": "7:30 PM ET",
      "away": "New Mexico State Aggies",
      "home": "Florida International Panthers",
@@ -14711,42 +15159,42 @@
          "name": "New Mexico State Aggies",
          "fair_prob": 0.3389,
          "fair_odds": 195,
-         "best_price": 186,
-         "best_book": "lowvig",
+         "best_price": 210,
+         "best_book": "espnbet",
          "pinnacle": 183,
-         "edge_at_best_vs_fair": -0.0309,
-         "fanduel": 168,
-         "edge_at_my_book": -0.0919,
+         "edge_at_best_vs_fair": 0.0504,
+         "fanduel": 188,
+         "edge_at_my_book": -0.0241,
          "books": {
-          "fanduel": 168,
+          "fanduel": 188,
           "draftkings": 180,
-          "betrivers": 165,
-          "betmgm": 180,
+          "betrivers": 185,
+          "betmgm": 185,
           "lowvig": 186,
           "betonlineag": 186,
           "pinnacle": 183,
-          "espnbet": 170
+          "espnbet": 210
          }
         },
         {
          "name": "Florida International Panthers",
          "fair_prob": 0.6611,
          "fair_odds": -195,
-         "best_price": -200,
-         "best_book": "espnbet",
+         "best_price": -218,
+         "best_book": "draftkings",
          "pinnacle": -222,
-         "edge_at_best_vs_fair": -0.0083,
-         "fanduel": -205,
-         "edge_at_my_book": -0.0163,
+         "edge_at_best_vs_fair": -0.0356,
+         "fanduel": -230,
+         "edge_at_my_book": -0.0514,
          "books": {
-          "fanduel": -205,
+          "fanduel": -230,
           "draftkings": -218,
-          "betrivers": -215,
-          "betmgm": -220,
+          "betrivers": -235,
+          "betmgm": -225,
           "lowvig": -220,
           "betonlineag": -220,
           "pinnacle": -222,
-          "espnbet": -200
+          "espnbet": -250
          }
         }
        ]
@@ -14763,41 +15211,33 @@
          "best_book": "pinnacle",
          "pinnacle": -104,
          "edge_at_best_vs_fair": -0.0367,
-         "fanduel": -110,
-         "edge_at_my_book": -0.0625,
+         "fanduel": null,
+         "edge_at_my_book": null,
          "books": {
-          "fanduel": -110,
-          "draftkings": -110,
-          "betmgm": -108,
-          "pinnacle": -104,
-          "espnbet": -110
+          "pinnacle": -104
          }
         },
         {
          "name": "Florida International Panthers",
          "fair_prob": 0.5089,
          "fair_odds": -104,
-         "best_price": -110,
-         "best_book": "fanduel",
+         "best_price": -112,
+         "best_book": "pinnacle",
          "pinnacle": -112,
-         "edge_at_best_vs_fair": -0.0284,
-         "fanduel": -110,
-         "edge_at_my_book": -0.0284,
+         "edge_at_best_vs_fair": -0.0367,
+         "fanduel": null,
+         "edge_at_my_book": null,
          "books": {
-          "fanduel": -110,
-          "draftkings": -110,
-          "betmgm": -110,
-          "pinnacle": -112,
-          "espnbet": -110
+          "pinnacle": -112
          }
         }
        ],
        "home_line": -5.5,
        "away_line": 5.5,
        "other_lines": [
+        -6.5,
         -6.0,
-        -5.5,
-        -5.0
+        -5.5
        ]
       },
       "total": {
@@ -14816,30 +15256,30 @@
          "edge_at_my_book": null,
          "books": {
           "draftkings": -112,
+          "betrivers": -112,
           "betmgm": -112,
           "lowvig": -108,
           "betonlineag": -110,
-          "pinnacle": -109,
-          "espnbet": -120
+          "pinnacle": -109
          }
         },
         {
          "name": "Under",
          "fair_prob": 0.5,
          "fair_odds": -100,
-         "best_price": 100,
-         "best_book": "espnbet",
+         "best_price": -105,
+         "best_book": "betmgm",
          "pinnacle": -109,
-         "edge_at_best_vs_fair": 0.0,
+         "edge_at_best_vs_fair": -0.0238,
          "fanduel": null,
          "edge_at_my_book": null,
          "books": {
           "draftkings": -108,
+          "betrivers": -112,
           "betmgm": -105,
           "lowvig": -108,
           "betonlineag": -110,
-          "pinnacle": -109,
-          "espnbet": 100
+          "pinnacle": -109
          }
         }
        ],
@@ -14849,12 +15289,21 @@
         47.5
        ]
       }
-     }
+     },
+     "flags": [
+      "no fanduel price: spread, total"
+     ],
+     "on_slate_day": false
     }
-   ],
-   "props": {},
-   "props_pulled_at_et": "2026-10-05T08:55-04:00"
+   ]
   }
  },
- "credits_remaining": "270"
+ "credits_remaining": "255",
+ "components": {
+  "MLB": "ok",
+  "WNBA": "ok",
+  "NHL": "ok",
+  "NFL": "ok",
+  "CFB": "ok"
+ }
 }

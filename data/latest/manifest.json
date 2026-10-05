@@ -1,34 +1,62 @@
 {
+ "pulled_at_et": "2026-10-05T10:40-04:00",
  "slate_date": "2026-10-05",
- "run_at_et": "2026-10-05T08:55-04:00",
+ "run_at_et": "2026-10-05T10:40-04:00",
  "sources": {
   "nfl": {
    "status": "ok",
+   "components": {
+    "schedule": "ok",
+    "team_epa": "ok",
+    "injuries": "ok"
+   },
    "games": 16,
-   "seconds": 0.7
+   "seconds": 0.7,
+   "pulled_at_et": "2026-10-05T10:40-04:00"
   },
   "cfb": {
    "status": "ok",
+   "components": {
+    "scoreboard": "ok",
+    "next_3_days": "ok",
+    "ap_poll": "ok",
+    "cfbd": "skipped"
+   },
    "games": 0,
    "ranked_games": 0,
    "upcoming_3d": 7,
    "cfbd": "skipped",
-   "seconds": 0.1
+   "seconds": 0.5,
+   "pulled_at_et": "2026-10-05T10:40-04:00"
   },
   "mlb": {
    "status": "ok",
    "games": 2,
-   "seconds": 0.9
+   "components": {
+    "schedule": "ok"
+   },
+   "seconds": 0.6,
+   "pulled_at_et": "2026-10-05T10:40-04:00"
   },
   "nhl": {
    "status": "ok",
+   "components": {
+    "schedule": "ok",
+    "back_to_back": "ok",
+    "standings": "ok",
+    "moneypuck_this_season": "ok",
+    "moneypuck_last_season": "ok",
+    "club_goalies": "ok"
+   },
    "games": 4,
-   "seconds": 2.3
+   "seconds": 1.8,
+   "pulled_at_et": "2026-10-05T10:40-04:00"
   },
   "wnba": {
    "status": "ok",
    "games": 0,
-   "seconds": 0.0
+   "seconds": 0.0,
+   "pulled_at_et": "2026-10-05T10:40-04:00"
   },
   "nba": {
    "status": "skipped",
@@ -38,13 +66,25 @@
   "injuries": {
    "status": "ok",
    "games": 6,
-   "seconds": 0.1
+   "seconds": 0.5,
+   "pulled_at_et": "2026-10-05T10:40-04:00"
   },
   "odds": {
    "status": "ok",
-   "events": 27,
-   "credits_remaining": "270",
-   "seconds": 1.2
+   "components": {
+    "MLB": "ok",
+    "WNBA": "ok",
+    "NHL": "ok",
+    "NFL": "ok",
+    "CFB": "ok"
+   },
+   "events": 29,
+   "slate_day_events": 7,
+   "credits_remaining": "255",
+   "seconds": 0.6,
+   "pulled_at_et": "2026-10-05T10:40-04:00"
   }
- }
+ },
+ "health": "ok",
+ "status_legend": "ok = every component loaded; partial = data written but some components failed (see components / errors); error = source failed, its latest file is NOT today's; skipped = intentionally not pulled"
 }

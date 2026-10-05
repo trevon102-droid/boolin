@@ -1,4 +1,5 @@
 {
+ "pulled_at_et": "2026-10-05T10:40-04:00",
  "date": "2026-10-05",
  "season": 2026,
  "games": [],
@@ -213,7 +214,7 @@
    "away_rank": null,
    "home_rank": null,
    "espn_line": {
-    "details": "FIU -5.5",
+    "details": "FIU -6",
     "total": 46.5,
     "provider": "DraftKings"
    }
@@ -250,7 +251,7 @@
    "home_rank": null,
    "espn_line": {
     "details": "UTSA -7",
-    "total": 52.5,
+    "total": 51.5,
     "provider": "DraftKings"
    }
   },
@@ -270,5 +271,12 @@
  "advanced": {
   "status": "skipped",
   "reason": "CFBD_API_KEY not set (optional)"
- }
+ },
+ "components": {
+  "scoreboard": "ok",
+  "next_3_days": "ok",
+  "ap_poll": "ok",
+  "cfbd": "skipped"
+ },
+ "note": "cfbd 'skipped' means team EPA / SP+ are NOT in this file (no CFBD_API_KEY)."
 }
