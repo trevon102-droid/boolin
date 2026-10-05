@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import gzip
 import json
 import os
 import time
@@ -62,15 +63,113 @@ def get_json(url: str, params: dict | None = None, **kw) -> Any:
 
 
 def write(name: str, payload: Any, day: dt.date) -> Path:
-    """Write data/days/<day>/<name>.json and data/latest/<name>.json."""
+    """Write data/latest/<name>.json (plain) and a gzipped daily snapshot data/days/<day>/<name>.json.gz.
+
+    Snapshots are gzipped (~10x smaller) so the daily history committed to git stays small.
+    Every dict payload gets `pulled_at_et` so readers can tell how fresh it is.
+    """
+    if isinstance(payload, dict) and "pulled_at_et" not in payload:
+        payload = {"pulled_at_et": now_et().isoformat(timespec="minutes"), **payload}
     body = json.dumps(payload, indent=1, ensure_ascii=False, default=str)
-    out = DATA / "days" / day.isoformat() / f"{name}.json"
+    out = DATA / "days" / day.isoformat() / f"{name}.json.gz"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(body)
+    plain = out.with_suffix("")  # an older plain snapshot of the same file, if any
+    if plain.exists():
+        plain.unlink()
+    with gzip.open(out, "wt", encoding="utf-8", compresslevel=9) as f:
+        f.write(body)
     latest = DATA / "latest" / f"{name}.json"
     latest.parent.mkdir(parents=True, exist_ok=True)
     latest.write_text(body)
     return out
+
+
+# ---------- health: component-level status so a partial failure never reads as "ok" ----------
+
+OK, PARTIAL, ERROR, SKIPPED = "ok", "partial", "error", "skipped"
+
+
+class Components:
+    """Track each piece of a source.  comps.run("epa", fn, *args) -> fn's result, or None on failure.
+
+    Statuses: ok | error | skipped.  `overall(core=...)` rolls them up into ok / partial / error.
+    """
+
+    def __init__(self) -> None:
+        self.status: dict[str, str] = {}
+        self.errors: dict[str, str] = {}
+
+    def run(self, name: str, fn, *args, **kw):
+        try:
+            out = fn(*args, **kw)
+        except Exception as e:  # noqa: BLE001
+            self.mark(name, ERROR, f"{type(e).__name__}: {e}")
+            return None
+        if self.status.get(name) is None:
+            self.mark(name, OK)
+        return out
+
+    def mark(self, name: str, status: str, error: str | None = None) -> None:
+        # a component that failed once stays failed (e.g. one game's summary out of ten)
+        if self.status.get(name) == ERROR and status != ERROR:
+            return
+        self.status[name] = status
+        if error:
+            self.errors[name] = error[:300]
+
+    def overall(self, core: tuple[str, ...] = ()) -> str:
+        return rollup(self.status, core)
+
+    def result(self, core: tuple[str, ...] = (), **extra) -> dict:
+        res = {"status": self.overall(core), "components": dict(self.status), **extra}
+        if self.errors:
+            res["component_errors"] = dict(self.errors)
+        return res
+
+
+def rollup(components: dict[str, str], core: tuple[str, ...] = ()) -> str:
+    """ok if nothing failed; error if a core component failed (or all did); partial otherwise."""
+    if not components:
+        return OK
+    failed = [k for k, v in components.items() if v == ERROR]
+    if not failed:
+        return OK
+    if any(k in core for k in failed) or len(failed) == len(components):
+        return ERROR
+    return PARTIAL
+
+
+def find_errors(obj: Any, path: str = "", limit: int = 25) -> list[str]:
+    """Paths of every `error` / `*_error` key inside a payload (recursive)."""
+    found: list[str] = []
+
+    def walk(o: Any, p: str) -> None:
+        if len(found) >= limit:
+            return
+        if isinstance(o, dict):
+            for k, v in o.items():
+                kp = f"{p}.{k}" if p else str(k)
+                if (k == "error" or str(k).endswith("_error")) and v:
+                    found.append(f"{kp}: {str(v)[:120]}")
+                else:
+                    walk(v, kp)
+        elif isinstance(o, list):
+            for i, v in enumerate(o):
+                walk(v, f"{p}[{i}]")
+
+    walk(obj, path)
+    return found
+
+
+def sample_quality(n: int | None, tiny: int = 5, small: int = 10) -> str:
+    """Label a sample so tiny early-season numbers aren't read as signal: tiny | small | ok | none."""
+    if not n:
+        return "none"
+    if n < tiny:
+        return "tiny"
+    if n < small:
+        return "small"
+    return "ok"
 
 
 # ---------- odds math (same formulas the Sharp Board uses) ----------

@@ -2,11 +2,14 @@ name: Pull sports data
 
 on:
   schedule:
-    # Times are UTC. During EDT: 10:30 AM and 4:30 PM ET (an hour earlier in ET under EST),
-    # ~20 min ahead of the 10:50 AM and 4:50 PM re-check task.
+    # Cron is UTC, so each ET time has two entries: one for EDT, one for EST. The "Decide" step
+    # keeps only the entry that matches today's offset, so runs land at 10:30 AM and 4:30 PM ET
+    # all year (~20 min ahead of the 10:50 AM and 4:50 PM re-check task).
     # No scheduled odds pull: the daily slate task (8:54 AM ET) triggers this workflow by hand (workflow_dispatch) with odds + props.
-    - cron: "30 14 * * *"   # late morning: lineups, injuries (no odds, saves credits)
-    - cron: "30 20 * * *"   # late afternoon: lineups, injuries (no odds)
+    - cron: "30 14 * * *"   # 10:30 AM EDT  (lineups, injuries; no odds)
+    - cron: "30 15 * * *"   # 10:30 AM EST
+    - cron: "30 20 * * *"   # 4:30 PM EDT
+    - cron: "30 21 * * *"   # 4:30 PM EST
   workflow_dispatch:
     inputs:
       run_odds:
@@ -45,13 +48,28 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements.txt pytest
+
+      - name: Offline tests
+        run: python -m pytest -q tests
 
       - name: Decide what to pull
         id: plan
         env:
           HEAD_MSG: ${{ github.event.head_commit.message }}
+          SCHEDULE: ${{ github.event.schedule }}
         run: |
+          SKIP=0
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            # keep the EDT crons when New York is on UTC-4, the EST crons when it's on UTC-5
+            OFFSET=$(TZ=America/New_York date +%z)
+            case "$OFFSET:$SCHEDULE" in
+              "-0400:30 14 * * *"|"-0400:30 20 * * *"|"-0500:30 15 * * *"|"-0500:30 21 * * *") SKIP=0 ;;
+              *) SKIP=1 ;;
+            esac
+            echo "offset=$OFFSET schedule='$SCHEDULE' skip=$SKIP"
+          fi
+          echo "skip=$SKIP" >> "$GITHUB_OUTPUT"
           ODDS=0
           if [ "${{ github.event_name }}" = "push" ]; then ODDS=1; fi
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then ODDS="${{ inputs.run_odds }}"; fi
@@ -62,6 +80,7 @@ jobs:
           echo "props=$PROPS" >> "$GITHUB_OUTPUT"
 
       - name: Pull data
+        if: steps.plan.outputs.skip != '1'
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
@@ -71,6 +90,7 @@ jobs:
         run: python -m pipeline.build_all
 
       - name: Commit data
+        if: steps.plan.outputs.skip != '1'
         run: |
           git config user.name "boolin-bot"
           git config user.email "boolin-bot@users.noreply.github.com"

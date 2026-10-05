@@ -54,10 +54,7 @@ def _moneypuck(y: int) -> dict:
 
 def _club_goalies(abbr: str, season: str | None) -> list[dict]:
     url = f"{API}/club-stats/{abbr}/now" if season is None else f"{API}/club-stats/{abbr}/{season}/2"
-    try:
-        gs = C.get_json(url).get("goalies", [])
-    except Exception:  # noqa: BLE001
-        return []
+    gs = C.get_json(url).get("goalies", [])
     return sorted([{
         "name": f"{(g.get('firstName') or {}).get('default', '')} {(g.get('lastName') or {}).get('default', '')}".strip(),
         "gp": g.get("gamesPlayed"), "gs": g.get("gamesStarted"),
@@ -65,26 +62,38 @@ def _club_goalies(abbr: str, season: str | None) -> list[dict]:
     } for g in gs], key=lambda g: -(g["gs"] or 0))
 
 
+def _xg(row: dict | None) -> dict | None:
+    if not row:
+        return row
+    return {**row, "sample_quality": C.sample_quality(row.get("gp"))}
+
+
 def run(day: dt.date) -> dict:
     games_raw = _games_on(day)
     if not games_raw:
         C.write("nhl", {"date": day.isoformat(), "games": []}, day)
-        return {"status": "ok", "games": 0}
-    yesterday = {t for g in _games_on(day - dt.timedelta(days=1))
+        return {"status": "ok", "games": 0, "components": {"schedule": "ok"}}
+    comps = C.Components()
+    comps.mark("schedule", C.OK)
+    yesterday = {t for g in (comps.run("back_to_back", _games_on, day - dt.timedelta(days=1)) or [])
                  for t in (g["awayTeam"]["abbrev"], g["homeTeam"]["abbrev"])}
-    try:
+
+    def _standings():
         st = C.get_json(f"{API}/standings/{day.isoformat()}").get("standings", [])
-        standings = {s["teamAbbrev"]["default"]: {
+        return {s["teamAbbrev"]["default"]: {
             "gp": s.get("gamesPlayed"), "pts": s.get("points"), "w": s.get("wins"), "l": s.get("losses"),
             "otl": s.get("otLosses"), "gf": s.get("goalFor"), "ga": s.get("goalAgainst"),
             "l10": f"{s.get('l10Wins')}-{s.get('l10Losses')}-{s.get('l10OtLosses')}",
             "streak": f"{s.get('streakCode', '')}{s.get('streakCount', '')}",
+            "sample_quality": C.sample_quality(s.get("gamesPlayed")),
         } for s in st}
-    except Exception:  # noqa: BLE001
-        standings = {}
+    standings = comps.run("standings", _standings) or {}
     y = C.season_year(day, 9)
     prev_label = f"{y - 1}{y}"
     mp_now, mp_prev = _moneypuck(y), _moneypuck(y - 1)
+    for label, mp in (("moneypuck_this_season", mp_now), ("moneypuck_last_season", mp_prev)):
+        errs = [mp[k] for k in ("teams_error", "goalies_error") if mp.get(k)]
+        comps.mark(label, C.ERROR if errs else C.OK, "; ".join(errs) if errs else None)
     games = []
     for g in games_raw:
         row = {
@@ -98,14 +107,20 @@ def run(day: dt.date) -> dict:
                 "abbr": abbr,
                 "back_to_back": abbr in yesterday,
                 "standings": standings.get(abbr),
-                "goalies_this_season": _club_goalies(abbr, None),
-                "goalies_last_season": _club_goalies(abbr, prev_label)[:3],
-                "xg_5v5_this_season": mp_now["teams"].get(abbr),
-                "xg_5v5_last_season": mp_prev["teams"].get(abbr),
+                "starting_goalie": {"status": "unconfirmed",
+                                    "note": "No free API confirms starters. Check Daily Faceoff before betting."},
+                "goalies_this_season": comps.run("club_goalies", _club_goalies, abbr, None) or [],
+                "goalies_last_season": (comps.run("club_goalies", _club_goalies, abbr, prev_label) or [])[:3],
+                "xg_5v5_this_season": _xg(mp_now["teams"].get(abbr)),
+                "xg_5v5_last_season": _xg(mp_prev["teams"].get(abbr)),
                 "gsax_this_season": mp_now["goalies"].get(abbr, [])[:3],
                 "gsax_last_season": mp_prev["goalies"].get(abbr, [])[:3],
             }
         games.append(row)
     C.write("nhl", {"date": day.isoformat(), "season_start_year": y, "games": games,
-                    "note": "Starting goalies are projected, not confirmed. Check Daily Faceoff before betting."}, day)
-    return {"status": "ok", "games": len(games)}
+                    "components": dict(comps.status),
+                    "moneypuck_errors": {k: v for k, v in comps.errors.items() if k.startswith("moneypuck")} or None,
+                    "note": ("Starting goalies are projected, not confirmed (starting_goalie.status). Check Daily Faceoff. "
+                             "sample_quality: tiny < 5 GP, small < 10 GP. Treat tiny samples as descriptive only "
+                             "and lean on last season.")}, day)
+    return comps.result(core=("schedule",), games=len(games))
