@@ -218,6 +218,10 @@ changed the status, why, and the ungated status.
 | significant/extreme + small sample, or + unresolved key player | `review required` (even for a validated model) |
 | significant/extreme, validated model, clean inputs | `lean` possible |
 
+The Sharp Board applies the same principle to plays: research tier and bet permission are separate, the
+probability is labelled a research/analyst estimate unless the league's scorecard has `lean_allowed`, and the
+market prior is shown next to the analyst adjustment (see README "Sharp Board: research vs execution, and CLV").
+
 `lean` needs a scorecard recommendation of `CALIBRATED / RESEARCH READY` or better. The board puts `review required`
 games in "Needs attention" with the reasons; the Research tab shows Model / Calibration / Validation per league and,
 on each card, model confidence, sample quality, calibration status and validation status.

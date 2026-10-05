@@ -72,10 +72,32 @@ Model validation (`python -m research.validate`, also in the workflow) scores th
 market, point in time, with a chronological holdout, and gates research conclusions on it
 (`data/research/validation/`).
 
+## Sharp Board: research vs execution, and CLV
+
+- **Research conviction ≠ bet permission.** Each play shows its research tier (A/B/C, a research size) and,
+  separately, an execution status: `BET` (FanDuel's timestamped, non-stale price is at or better than `betTo`,
+  line first), `WAIT / RECHECK` (no or stale price, no timestamp, no readable `betTo`), `NOT BETTABLE AT CURRENT
+  PRICE` (price or number worse than `betTo`) or `PASS` (news). "Log bet" only appears on `BET`. Logic:
+  `EXEC` in `board/rackz-sharp-board.html`, tested by `tests/test_board_exec.py`.
+- **CLV counts the line and the price.** Bets store `market_type`, `taken_line` + `taken_price`, and on close
+  `close_line` + `close_price`, `line_delta`, `line_changed`, `price_clv`, `line_clv`, `combined_clv`,
+  `key_numbers_crossed`. Price CLV is computed only on the same number (or markets without a line); when the line
+  moved, line CLV shows the points gained or given up (direction-aware for Over/Under and spreads; 3 and 7 flagged in
+  football) and combined CLV is left unavailable, because there is no validated price-per-point conversion. Old
+  records (`odds`/`close` only) still read: their price CLV is marked "line not recorded".
+- **SGP correlation estimates are not validated.** Each SGP shows the independent and joint probability, the
+  uplift, the method (`analyst`, `simulation`, `independent`) and FanDuel's slip price with its timestamp. A
+  `validated` label is only honoured once SGP validation exists in the repo (it doesn't yet). Stakes stay capped at 0.5u.
+- **The market is the anchor.** The board shows market prior → analyst adjustment → research probability →
+  current FanDuel price → bet permission. Probabilities are labelled "Research probability / analyst estimate"
+  until a league's validation scorecard allows otherwise; in price mode a research % more than 10 points from the
+  market gets no stake (review).
+
 ## Tests
 
 ```
 python -m pytest -q tests          # or, without pytest:  python tests/run_offline.py
+                                   # (tests/test_board_exec.py runs the board's EXEC module in node)
 ```
 The workflow runs the offline tests before every pull.
 

@@ -20,7 +20,9 @@ Pricing rules: TASK.md sections 3, 3b and 3c. FanDuel prices only.
    - News: inactives (NFL ~90 min before kickoff), confirmed MLB lineups and starters, confirmed NHL goalies
      (Daily Faceoff), NBA injury reports/rest and starting lineups, late scratches, weather changes.
 4. For each item checked:
-   - Update `odds`, `priceAt` (ISO time now, ET offset), and `prior` if the sharp line moved.
+   - Update `odds`, `line`, `priceAt` (ISO time now, ET offset), and `prior` if the sharp line moved. SGPs: rebuild the
+     slip and update `bookPrice` + `bookPriceAt`. Don't touch `betTo` or the tier: the board turns plays BET / NOT
+     BETTABLE AT CURRENT PRICE from the fresh price against the unchanged `betTo`.
    - If news changes the read, adjust `conviction`, `factors`/`modelP` and the `why` with a named reason, or set `pass: true` and say why.
    - Research mode: a price move alone never turns a play off. Update `odds` and `priceAt`, and note big moves in `move`.
    - If FanDuel took the market down, set `pass: true` with `betTo: "Off the board at FanDuel"`.
