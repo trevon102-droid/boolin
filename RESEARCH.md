@@ -12,7 +12,9 @@
 8. What would change the conclusion?
 9. What happened, and was the analysis any good?
 
-It does **not** produce picks. Conclusions are research statuses: `lean`, `watch`, `pass`, `insufficient information`.
+It does **not** produce picks. Conclusions are research statuses: `lean`, `watch`, `review required`, `pass`,
+`insufficient information`. A **validation gate** keeps strong model/market disagreement from becoming a `lean` until
+the league's model has validated holdout evidence (see "Model validation" below).
 
 ## Flow
 
@@ -73,7 +75,8 @@ Missing values are never filled: they're `unknown` with a reason. Projected valu
 | `flags` | `{id, category, severity, title, why}`; categories market / injury / data / performance / environment |
 | `recent_changes`, `changes_since_last_pull` | timeline events (last 24 h / this pull) |
 | `freshness` | per component: `as_of`, `age_min`, `label`, `status`, `source`, `kind` |
-| `summary` | `why_it_matters`, `supporting`, `contradicting`, `unknowns`, `conclusion {status, detail, trigger, would_change_if, analyst_decision}` |
+| `summary` | `why_it_matters`, `supporting`, `contradicting`, `unknowns`, `conclusion {status, detail, gate, trigger, would_change_if, analyst_decision}` |
+| `validation` | the league scorecard status the gate used: `calibration_status`, `validation_status`, `recommendation`, `lean_allowed` |
 | `scenarios` | baseline + one-input-changed reruns; unsupported scenarios listed with the reason |
 | `comparables` | `HISTORICAL CONTEXT`: situations, n, cover/over rates, warnings under 30 games |
 | `notebook`, `postgame` | the analyst notebook and, after the game, result + grades |
@@ -147,9 +150,71 @@ model (Brier vs the market's closing no-vig Brier), market read (CLV if there's 
 toward the thesis), thesis (won/lost at the closing number), weather (NFL wind, when both readings exist),
 availability (not gradable yet). Overall = average of the gradable parts, as a letter.
 
+## Model validation (`python -m research.validate`)
+
+Measures the existing models before anyone tunes them. Runs offline; the workflow runs it before every research build.
+
+```
+python -m research.validate                         # canonical: data/research/validation/
+python -m research.validate --league NFL            # filtered runs go to data/research/validation/filtered/ (not committed)
+python -m research.validate --since 2026-01-01 --until 2026-10-05
+```
+
+Sources, never pooled:
+
+| source | what | market benchmark |
+|---|---|---|
+| `live_archive` | the last pregame research card per game (`archive/`) + ESPN final (`results/`) | pregame no-vig price at the moment the model was built |
+| `nfl_replay` | `data/reference/nfl_replay_inputs.json.gz` (`python -m pipeline.nfl_replay`, CI): the live NFL model's exact inputs for every game since 2012, from play-by-play in **earlier weeks only** | the **closing** line (harder than the price at model time) |
+
+Point in time: a row is kept only if the model build and every market observation predate the start (replay: inputs
+only from weeks before the game; wind/temp excluded because nflverse records game-time weather). Everything else is
+in `excluded.jsonl` with the reason. Splits are chronological: live development = games on or before 2026-10-05
+(when baseline-0.1 parameters were last changed), holdout = after; replay development = seasons before 2022,
+holdout = 2022+.
+
+Outputs (each carries `model_version`, `validation_version`, `data_cutoff`, `calibration_status`; tables are per
+league → source → development / holdout / all):
+`games.jsonl` (one chronological row per game, with provenance back to the archived card or replay row),
+`summary.json`, `calibration.json` (Brier, log loss, accuracy, calibration buckets 50-55 … 80%+ folded to the
+favourite, calibration error, favourite overconfidence), `market_comparison.json` (Boolin vs market on the same games,
+paired t, disagreement buckets 0-2.5 … 20+ pp: does the side Boolin prefers win more often than the market said?),
+`spread_validation.json`, `total_validation.json`, `confidence_validation.json`, `sample_validation.json`
+(early-season groups + a k_games diagnostic on development games only), `disagreement_validation.json` (extreme
+audit: ≥10 pp, NFL spread ≥5, CFB ≥7, with five candidate explanations scored), `failure_modes.json`,
+`model_scorecard.json`.
+
+Scorecard recommendation (on the primary holdout): `NOT READY` (holdout < 150 games: "we don't know yet", or no skill),
+`CALIBRATION NEEDED` (calibration off and worse than the market), `PROMISING BUT UNCALIBRATED` (calibration off, not
+detectably worse than the market), `CALIBRATED / RESEARCH READY` (holdout ≥ 300, calibration error ≤ 0.025,
+favourite overconfidence within ±0.02), `OUTPERFORMING MARKET IN VALIDATED SAMPLE` (calibrated and better than the
+market with t ≤ −2). Nothing here changes a model parameter.
+
+### The gate (`research/summary.py`)
+
+Each card carries `validation` (the league's scorecard status). `summary.conclusion.gate` records whether the gate
+changed the status, why, and the ungated status.
+
+| situation | status |
+|---|---|
+| aligned | `pass` |
+| mild disagreement (any) or low confidence | `watch` |
+| significant disagreement, model not validated | `watch` at most, never `lean` |
+| extreme disagreement, model not validated | `review required` |
+| significant/extreme + small sample, or + unresolved key player | `review required` (even for a validated model) |
+| significant/extreme, validated model, clean inputs | `lean` possible |
+
+`lean` needs a scorecard recommendation of `CALIBRATED / RESEARCH READY` or better. The board puts `review required`
+games in "Needs attention" with the reasons; the Research tab shows Model / Calibration / Validation per league and,
+on each card, model confidence, sample quality, calibration status and validation status.
+
 ## Known limitations
 
-- Models are uncalibrated baselines; disagreement is a research prompt, not an edge.
+- Models are uncalibrated baselines; disagreement is a research prompt, not an edge. Validation measures them; it
+  doesn't fix them.
+- NHL and MLB have no historical replay: their validation is the live archive only, which starts 2026-10-01.
+- MLB bullpen workload counts only games whose starter MLB credits (`gamesStarted`); otherwise it is `unknown` and
+  the model treats the bullpen as league average.
 - Opening line = first seen by Boolin; close = last pull before start (pulls are 1–3 a day).
 - No confirmed goalie/lineup/inactive feed: those stay projected until a re-check confirms them.
 - Comparables for NHL/MLB come from Boolin's own graded archive and start empty.

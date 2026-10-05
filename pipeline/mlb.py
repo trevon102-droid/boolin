@@ -120,25 +120,49 @@ def team_k_vs_hand(team_id: int, season: int) -> dict:
     return out
 
 
-def bullpen(team_id: int, day: dt.date) -> dict:
-    """Reliever pitch counts over the 3 days before `day`."""
+def classify_pitchers(team_box: dict) -> dict:
+    """Starter vs relievers for one team's boxscore, from MLB's own credited start
+    (stats.pitching.gamesStarted), never from list position. If exactly one pitcher is credited
+    with the start the split is confirmed; otherwise it is unknown and nobody is guessed."""
+    pids = list(team_box.get("pitchers") or [])
+    players = team_box.get("players") or {}
+    credited = [pid for pid in pids
+                if (((players.get(f"ID{pid}") or {}).get("stats") or {}).get("pitching") or {}).get("gamesStarted")]
+    if len(credited) == 1:
+        return {"status": "confirmed", "starter": credited[0], "relievers": [p for p in pids if p != credited[0]],
+                "source": "MLB boxscore gamesStarted"}
+    reason = "no pitcher credited with the start" if not credited else f"{len(credited)} pitchers credited with a start"
+    return {"status": "unknown", "starter": None, "relievers": [], "unclassified": pids, "reason": reason,
+            "source": "MLB boxscore gamesStarted"}
+
+
+def bullpen(team_id: int, day: dt.date, fetch=None) -> dict:
+    """Reliever pitch counts over the 3 days before `day`. Games whose starter can't be identified
+    from the boxscore are left out and listed, and `classification` says how complete the picture is:
+    confirmed (every game split), partial, unknown (no game split), none (no games)."""
+    fetch = fetch or C.get_json
     start = (day - dt.timedelta(days=3)).isoformat()
     end = (day - dt.timedelta(days=1)).isoformat()
     try:
-        sched = C.get_json(f"{API}/schedule", {"sportId": 1, "teamId": team_id, "startDate": start, "endDate": end})
+        sched = fetch(f"{API}/schedule", {"sportId": 1, "teamId": team_id, "startDate": start, "endDate": end})
     except Exception as e:  # noqa: BLE001
-        return {"error": str(e)}
+        return {"error": str(e), "classification": "unknown"}
     usage: dict[str, dict] = {}
+    considered, classified, unclassified = 0, 0, []
     for d in sched.get("dates", []):
         for g in d.get("games", []):
             if (g.get("status") or {}).get("abstractGameState") != "Final":
                 continue
-            box = C.get_json(f"{API}/game/{g['gamePk']}/boxscore")
+            considered += 1
+            box = fetch(f"{API}/game/{g['gamePk']}/boxscore")
             side = "home" if g["teams"]["home"]["team"]["id"] == team_id else "away"
             t = box["teams"][side]
-            for i, pid in enumerate(t.get("pitchers", [])):
-                if i == 0:
-                    continue  # starter
+            split = classify_pitchers(t)
+            if split["status"] != "confirmed":
+                unclassified.append({"game_pk": g["gamePk"], "date": d["date"], "reason": split["reason"]})
+                continue
+            classified += 1
+            for pid in split["relievers"]:
                 pl = t["players"].get(f"ID{pid}", {})
                 pitches = ((pl.get("stats") or {}).get("pitching") or {}).get("numberOfPitches") or 0
                 name = (pl.get("person") or {}).get("fullName", str(pid))
@@ -151,7 +175,12 @@ def bullpen(team_id: int, day: dt.date) -> dict:
         u["back_to_back"] = yesterday in u["days"] and two_ago in u["days"]
     total = sum(u["pitches"] for u in usage.values())
     tired = sorted([n for n, u in usage.items() if u["back_to_back"] or u["pitches"] >= 35])
-    return {"reliever_pitches_last3": total, "likely_limited": tired, "detail": usage}
+    status = ("none" if not considered else "confirmed" if classified == considered
+              else "unknown" if not classified else "partial")
+    return {"reliever_pitches_last3": total, "likely_limited": tired, "detail": usage,
+            "classification": status, "games_considered": considered, "games_classified": classified,
+            "unclassified_games": unclassified,
+            "classification_source": "MLB boxscore gamesStarted (not list order)"}
 
 
 def run(day: dt.date) -> dict:

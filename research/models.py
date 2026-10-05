@@ -248,6 +248,11 @@ def mlb(inp: dict) -> dict:
             warnings.append(f"No {side} starter in the data: league-average starter assumed.")
         elif s.get("starts", 99) < 5:
             warnings.append(f"Small sample: {side} starter has {s.get('starts')} starts.")
+    for side, t in (("home", h), ("away", a)):
+        pen = t.get("bullpen") or {}
+        if pen.get("tired") is None and pen.get("classification") not in (None, "none", "confirmed"):
+            warnings.append(f"{side.capitalize()} bullpen workload unknown (starter/reliever split not confirmed): "
+                            "treated as league average.")
     ws = [x for x in (dh["w_ops"], da["w_ops"], dh["w_p"], da["w_p"]) if x is not None]
     return {"available": True, "version": VERSION, "league": "MLB",
             "proj_margin_home": margin, "home_win_p": round(p, 4), "proj_total": round(rh + ra, 2),

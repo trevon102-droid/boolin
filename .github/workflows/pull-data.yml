@@ -39,7 +39,7 @@ concurrency:
 jobs:
   pull:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
 
@@ -88,6 +88,20 @@ jobs:
           PROPS: ${{ steps.plan.outputs.props }}
           SLATE_DATE: ${{ inputs.slate_date }}
         run: python -m pipeline.build_all
+
+      - name: NFL replay inputs (validation)
+        # Point-in-time inputs for every NFL game since 2012. Past seasons are kept; only the current season
+        # is rebuilt (the first build downloads every season's play-by-play once). Never blocks the commit.
+        if: steps.plan.outputs.skip != '1'
+        continue-on-error: true
+        run: python -m pipeline.nfl_replay
+
+      - name: Validate models
+        # Measures the models against results and the market (data/research/validation/). The research
+        # build reads its scorecard to gate conclusions, so this runs first.
+        if: steps.plan.outputs.skip != '1'
+        continue-on-error: true
+        run: python -m research.validate
 
       - name: Build research layer
         # Derived research (cards, market history, timeline, board, grades). Never blocks the data commit.

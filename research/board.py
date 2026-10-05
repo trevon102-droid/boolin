@@ -24,6 +24,11 @@ def importance(card: dict) -> tuple[float, list[str]]:
                           f"{day[-1]['old']} → {day[-1]['new']}")
     d = (card.get("comparison") or {}).get("overall")
     score += DIS_W.get(d, 0)
+    concl = (card.get("summary") or {}).get("conclusion") or {}
+    if concl.get("status") == "review required":
+        score += 1.0
+        reasons.insert(0, "REVIEW REQUIRED: " + "; ".join((concl.get("gate") or {}).get("reasons") or [])
+                       + ". Interesting disagreement, not a validated edge.")
     return round(score, 2), reasons
 
 
@@ -35,6 +40,8 @@ def entry(card: dict) -> dict:
     return {"key": card["key"], "league": card["league"], "matchup": card["game"]["home_away"],
             "start": card.get("start_label"), "start_et": card.get("start_et"), "status": card["status"],
             "importance": s, "reasons": reasons[:4], "research_status": concl.get("status"),
+            "review_required": concl.get("status") == "review required",
+            "validation": (card.get("validation") or {}).get("recommendation"),
             "disagreement": (card.get("comparison") or {}).get("overall"),
             "alerts": sum(1 for f in card.get("flags") or [] if f["severity"] == "alert"),
             "changes": len(card.get("recent_changes") or []),
@@ -52,4 +59,6 @@ def build(cards: list[dict], slate_date: str, built_at: str) -> dict:
     return {"slate_date": slate_date, "built_at": built_at, "games": len(today),
             "attention": attention, "stable": stable,
             "upcoming": sorted((entry(c) for c in later), key=lambda e: (e["start_et"] or "", e["key"]))[:40],
-            "ranking_note": "Ranked by research importance (flags, changes, model/market split), not by bet confidence."}
+            "review_required": [r["key"] for r in rows if r.get("review_required")],
+            "ranking_note": "Ranked by research importance (flags, changes, model/market split), not by bet confidence. "
+                            "REVIEW REQUIRED = a strong model/market split the validation evidence doesn't back yet."}

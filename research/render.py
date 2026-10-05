@@ -82,6 +82,16 @@ p{margin:0}
 .k-unknown{background:transparent;color:var(--muted);border-color:var(--line)}
 .s-lean{background:var(--accent);color:var(--surface)} .s-watch{background:var(--warn-soft);color:var(--warn)}
 .s-pass{background:var(--sunk);color:var(--muted);border-color:var(--line)} .s-insufficient{background:var(--bad-soft);color:var(--bad)}
+.s-review{background:var(--bad);color:var(--surface)}
+.gatebox{grid-column:1/-1;border:1px solid var(--bad);border-left-width:4px;background:var(--bad-soft);border-radius:4px;padding:9px 12px;display:flex;flex-direction:column;gap:4px;font-size:.88rem}
+.gatebox strong{color:var(--bad)}
+.gatebox ul{margin:0;padding-left:18px}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.vgrid > div{background:var(--sunk);border:1px solid var(--line);border-radius:4px;padding:7px 9px;display:flex;flex-direction:column;gap:2px}
+.vgrid b{font:600 .9rem/1.25 var(--f-body)}
+.vline{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem}
+.vline span b{font-weight:600}
+.v-bad{color:var(--bad)} .v-warn{color:var(--warn)} .v-good{color:var(--good)}
 .sev-alert{background:var(--bad-soft);color:var(--bad)} .sev-watch{background:var(--warn-soft);color:var(--warn)} .sev-info{background:var(--sunk);color:var(--muted);border-color:var(--line)}
 .h-ok{background:var(--good-soft);color:var(--good)} .h-partial{background:var(--warn-soft);color:var(--warn)} .h-error{background:var(--bad-soft);color:var(--bad)} .h-skipped,.h-unknown{background:var(--sunk);color:var(--muted);border-color:var(--line)}
 .dossier{display:flex;flex-direction:column;gap:16px;min-width:0}
@@ -140,14 +150,22 @@ function tET(iso){ if(!iso) return '—'; const d=new Date(iso); if(isNaN(d)) re
 function ageMin(iso){ const d=new Date(iso); return isNaN(d)?null:Math.max(0,(Date.now()-d.getTime())/60000); }
 function ageLbl(m){ if(m===null) return 'unknown age'; if(m<1) return 'just now'; if(m<60) return Math.round(m)+' min old'; if(m<2880) return (m/60).toFixed(m<600?1:0)+' h old'; return Math.round(m/1440)+' d old'; }
 const kindChip=k=>`<span class="chip k-${esc(k||'unknown')}">${esc((k||'unknown'))}</span>`;
-const statusCls=s=>s==='lean'?'s-lean':s==='watch'?'s-watch':s==='pass'?'s-pass':'s-insufficient';
+const statusCls=s=>s==='lean'?'s-lean':s==='watch'?'s-watch':s==='pass'?'s-pass':s==='review required'?'s-review':'s-insufficient';
+const statusTxt=s=>s==='insufficient information'?'need info':s==='review required'?'review':(s||'—');
+const recCls=r=>!r||r==='NOT READY'||r==='CALIBRATION NEEDED'?'v-bad':r==='PROMISING BUT UNCALIBRATED'?'v-warn':'v-good';
+function calTxt(v){ const c=(v&&v.calibration_status)||'uncalibrated'; return c.startsWith('calibrated')?'CALIBRATED':c.startsWith('needs')?'NEEDS CALIBRATION':'UNCALIBRATED'; }
+/* one line per modeled league: Model · Calibration · Validation · Recommendation */
+function valBanner(map){
+  const ent=Object.entries(map||{}); if(!ent.length) return '';
+  return `<div class="vline" aria-label="Model validation status">${ent.map(([lg,v])=>`<span><b>${esc(lg)}</b> · Model: ${esc((v&&v.model_version)||'—')} · Calibration: <b class="${calTxt(v)==='CALIBRATED'?'v-good':'v-bad'}">${calTxt(v)}</b> · Validation: ${esc((v&&v.validation_status)||'not validated')} · <b class="${recCls(v&&v.recommendation)}">${esc((v&&v.recommendation)||'NOT READY')}</b></span>`).join('')}</div>`;
+}
 const fact=f=>!f?'<span class="muted">—</span>':(f.value===null||f.value===undefined?`<span class="muted">unknown</span> ${kindChip('unknown')}<span class="sub">${esc(f.reason||'')}</span>`:`${esc(typeof f.value==='object'?JSON.stringify(f.value):f.value)} ${kindChip(f.kind)}${f.source?`<span class="sub">${esc(f.source)}${f.note?' · '+esc(f.note):''}</span>`:''}`);
 
 /* ---------- board ---------- */
 function pips(score){ const n=Math.min(8,Math.round(score)); return `<span class="pips" aria-label="importance ${score}">${Array.from({length:8},(_,i)=>`<i class="${i<n?(n>=6?'hot':'on'):''}"></i>`).join('')}</span>`; }
 function item(e){ return `<button class="game" data-key="${esc(e.key)}" aria-current="false"><span class="lg">${esc(e.league)}</span>
   <span><span class="mt">${esc(e.matchup)}</span><span class="sub">${esc(e.start||'')}</span>${pips(e.importance)}</span>
-  <span class="chip ${statusCls(e.research_status)}">${esc(e.research_status==='insufficient information'?'need info':e.research_status||'—')}</span>
+  <span class="chip ${statusCls(e.research_status)}">${esc(statusTxt(e.research_status))}</span>
   ${e.reasons&&e.reasons.length?`<span class="why">${esc(e.reasons[0])}</span>`:(e.why_stable?`<span class="why">${esc(e.why_stable)}</span>`:'')}</button>`; }
 function group(title,note,rows){ return `<section class="group"><div><h3>${esc(title)} <span class="muted num">${rows.length}</span></h3>${note?`<p class="note">${esc(note)}</p>`:''}</div>${rows.length?rows.map(item).join(''):'<p class="empty">None.</p>'}</section>`; }
 /* ---------- dossier ---------- */
@@ -199,12 +217,20 @@ function modelSec(c){
   const rows=(cmp.rows||[]).map(r=>`<tr><td>${esc(r.dimension)}${r.note?`<span class="sub">${esc(r.note)}</span>`:''}</td><td class="n num">${r.unit==='pp'?pct(r.market):r.dimension==='Total'?r.market:line(r.market)}</td><td class="n num">${r.unit==='pp'?pct(r.boolin):r.dimension==='Total'?r.boolin:line(r.boolin)}</td><td class="n num">${sgn(r.difference,1)} ${esc(r.unit)}</td><td><span class="chip ${r.label==='aligned'?'s-pass':r.label==='mild disagreement'?'sev-info':r.label==='significant disagreement'?'sev-watch':'sev-alert'}">${esc(r.label)}</span><span class="sub">${esc(r.direction)}</span></td></tr>`).join('');
   return `<section class="sec"><header><div><span class="q">What does Boolin think · where does it disagree</span><h2>Boolin vs market</h2></div>
     <span class="legend">${kindChip('derived')}<span class="small muted">${esc(m.version)} · confidence ${esc(m.confidence)}</span></span></header>
+    ${valGrid(c)}
     <div class="two"><div><span class="label">Projection</span><p class="num" style="font-size:1rem">${esc(c.game.home.abbr)} ${pct(m.home_win_p)} · line ${esc(c.game.home.abbr)} ${line(Math.round(-m.proj_margin_home*10)/10)} · total ${m.proj_total??'—'}</p></div>
       <div><span class="label">Overall</span><p>${esc(cmp.overall||'—')}</p>${cmp.caveat?`<p class="note">${esc(cmp.caveat)}</p>`:''}</div></div>
     ${rows?`<div class="scroll"><table><thead><tr><th>Measure</th><th class="n">Market</th><th class="n">Boolin</th><th class="n">Gap</th><th>Label</th></tr></thead><tbody>${rows}</tbody></table></div>`:''}
     <div><span class="label">Why Boolin has this number (home-margin units, sums to the projection)</span><div class="contrib" style="margin-top:6px">${bars}</div></div>
     ${(m.sample_warnings||[]).length?`<ul class="ev ev-unk">${m.sample_warnings.map(w=>`<li>${esc(w)}</li>`).join('')}</ul>`:''}
     <p class="note">Assumptions: ${(m.assumptions||[]).map(esc).join(' ')} ${esc(cmp.reminder||'')}</p></section>`;
+}
+function valGrid(c){
+  const m=c.model||{}, v=c.validation||{}; const small=(m.sample_warnings||[]).filter(w=>w.startsWith('Small sample'));
+  return `<div class="vgrid"><div><span class="label">Model confidence</span><b>${esc(m.confidence||'—')}</b><span class="sub">from the smallest regression weight</span></div>
+    <div><span class="label">Sample quality</span><b class="${small.length?'v-warn':''}">${small.length?'small':'normal'}</b><span class="sub">${esc(small[0]||'no small-sample warning')}</span></div>
+    <div><span class="label">Calibration status</span><b class="${calTxt(v)==='CALIBRATED'?'v-good':'v-bad'}">${calTxt(v)}</b><span class="sub">${esc(v.model_version||m.version||'')}</span></div>
+    <div><span class="label">Validation status</span><b class="${recCls(v.recommendation)}">${esc(v.recommendation||'NOT READY')}</b><span class="sub">${esc(v.validation_status||'not validated')}${v.sample_size?` · holdout n=${v.sample_size}`:''}</span></div></div>`;
 }
 function changesSec(c){
   const ev=(c.recent_changes||[]).slice().reverse();
@@ -272,6 +298,14 @@ function notebookSec(c){
     ${g?`<div><span class="label">Postgame grade</span><p class="num" style="font-size:1rem">Final ${esc(c.game.away.abbr)} ${pg.result.away_score} – ${esc(c.game.home.abbr)} ${pg.result.home_score} · overall ${esc(g.overall.grade||'not gradable')}</p>
       <div class="scroll"><table><thead><tr><th>Component</th><th>Grade</th><th>Detail</th></tr></thead><tbody>${comps.map(([k,v])=>`<tr><td>${esc(k.replace('_',' '))}</td><td class="num">${v.gradable?esc(v.grade):'—'}</td><td class="small">${v.gradable?esc(Object.entries(v).filter(([kk])=>!['gradable','score','grade'].includes(kk)).map(([kk,vv])=>kk+': '+(typeof vv==='object'?JSON.stringify(vv):vv)).join(' · ')):esc(v.reason)}</td></tr>`).join('')}</tbody></table></div><p class="note">${esc(g.note)}</p></div>`:''}</section>`;
 }
+function gateBox(s){
+  const g=s&&s.gate; if(!g||!g.applied) return '';
+  const extreme=s.status==='review required'&&/Extreme/.test(s.detail||'');
+  return `<div class="gatebox" role="note"><strong>${s.status==='review required'?'REVIEW REQUIRED':'Validation gate applied'}</strong>
+    <span>${extreme?'Why the model is not trusted here yet:':'Why:'}</span>
+    <ul>${(g.reasons||[]).map(r=>`<li>${esc(r)}</li>`).join('')}</ul>
+    <span class="small">Without the gate this would read “${esc(g.ungated_status)}”. Interesting disagreement is not a validated edge.</span></div>`;
+}
 function dossier(c){
   if(!c) return '<section class="sec"><p class="empty">Pick a game.</p></section>';
   const s=(c.summary||{}).conclusion||{};
@@ -280,10 +314,11 @@ function dossier(c){
     <div class="concl"><span class="chip ${statusCls(s.status)}">${esc(s.status||'—')}</span><div><p>${esc(s.detail||'')}</p>
       ${s.analyst_decision?`<p class="small">Analyst decision: <strong>${esc(s.analyst_decision)}</strong></p>`:''}
       ${s.trigger?`<p class="small muted">Trigger: ${esc(s.trigger)}</p>`:''}
-      ${(s.would_change_if||[]).length?`<p class="small muted">Would change if: ${s.would_change_if.map(esc).join(' · ')}</p>`:''}</div></div></header>
+      ${(s.would_change_if||[]).length?`<p class="small muted">Would change if: ${s.would_change_if.map(esc).join(' · ')}</p>`:''}</div>
+      ${gateBox(s)}</div></header>
     ${marketSec(c)}${modelSec(c)}${changesSec(c)}${evidenceSec(c)}${availSec(c)}${flagsSec(c)}${envSec(c)}${freshSec(c)}${scenSec(c)}${compSec(c)}${notebookSec(c)}`;
 }
-return {esc,item,group,dossier,tET,ageMin,ageLbl,statusCls};
+return {esc,item,group,dossier,tET,ageMin,ageLbl,statusCls,valBanner};
 })();"""
 
 TEMPLATE = r"""<title>Boolin Research Desk</title>
@@ -331,7 +366,7 @@ p{margin:0}
 </style>
 <header class="bar rx"><div class="bar-in">
   <div><span class="label">Research desk · evidence, uncertainty, market context</span><h1>Boolin Research Desk</h1>
-    <span class="small muted" id="slate"></span></div>
+    <span class="small muted" id="slate"></span><div id="valid"></div></div>
   <div class="health" id="health" aria-label="Source health"></div>
 </div></header>
 <main class="wrap rx">
@@ -348,6 +383,7 @@ const {esc,item,group,tET,ageMin,ageLbl}=RX;
 /* ---------- top bar ---------- */
 const M=D.manifest||{}; const B=D.board||{};
 document.getElementById('slate').textContent=`Slate ${B.slate_date||'—'} · built ${tET(M.built_at)} (${ageLbl(ageMin(M.built_at))}) · ${M.cards||0} cards · research ${M.status||'?'}`;
+document.getElementById('valid').innerHTML=RX.valBanner(B.validation);
 document.getElementById('health').innerHTML=Object.entries(M.inputs||{}).filter(([k,v])=>v.status).map(([k,v])=>`<span class="chip h-${esc(v.status)}" title="${esc(k)} pulled ${esc(v.pulled_at_et||'')}">${esc(k)} ${esc(v.status)}</span>`).join('');
 
 document.getElementById('list').innerHTML=
@@ -367,6 +403,22 @@ show(first);
 </script>"""
 
 
+BOARD = "board/rackz-sharp-board.html"
+
+
+def sync_board(html: str) -> str:
+    """Replace the research module inside the Sharp Board page (between the RX_*_BEGIN/END markers)
+    with the current RX_CSS / RX_JS, so the board and the standalone desk never drift apart."""
+    import re
+    css = "/*RX_CSS_BEGIN*/\n" + scope_css(RX_CSS, ".rx") + "/*RX_CSS_END*/"
+    js = "/*RX_JS_BEGIN*/\n" + RX_JS + "\n/*RX_JS_END*/"
+    out, n1 = re.subn(r"/\*RX_CSS_BEGIN\*/.*?/\*RX_CSS_END\*/", lambda m: css, html, count=1, flags=re.S)
+    out, n2 = re.subn(r"/\*RX_JS_BEGIN\*/.*?/\*RX_JS_END\*/", lambda m: js, out, count=1, flags=re.S)
+    if n1 != 1 or n2 != 1:
+        raise ValueError("research module markers not found in the board page")
+    return out
+
+
 def main(argv=None) -> int:
     """python -m research.render [--artifact OUT]  — rebuild the HTML view from data/research/latest/*.json.
     index.html isn't committed (it duplicates cards.json), so this regenerates it on demand."""
@@ -376,7 +428,13 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="research.render")
     ap.add_argument("--root", default=str(RESEARCH))
     ap.add_argument("--artifact", help="also write a body-only copy (for publishing as a claude.ai artifact)")
+    ap.add_argument("--sync-board", action="store_true", help=f"refresh the research module inside {BOARD} and exit")
     a = ap.parse_args(argv)
+    if a.sync_board:
+        p = Path(__file__).resolve().parent.parent / BOARD
+        p.write_text(sync_board(p.read_text()))
+        print(p)
+        return 0
     latest = Path(a.root) / "latest"
     board = json.loads((latest / "board.json").read_text())
     cards = json.loads((latest / "cards.json").read_text())["cards"]

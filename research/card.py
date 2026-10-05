@@ -268,6 +268,10 @@ def mlb_section(raw: dict, g: dict) -> dict:
         hand = (o.get("probable") or {}).get("throws")
         bats = (t.get("bats") or {}).get({"L": "vs_LHP", "R": "vs_RHP"}.get(hand or ""), None)
         bp = t.get("bullpen") or {}
+        # Bullpen workload counts only when every recent game's starter/reliever split is known
+        # (MLB boxscore gamesStarted). Older files without a classification used list order: unknown.
+        pen_cls = bp.get("classification") or ("unknown" if bp else "none")
+        pen_known = pen_cls in ("confirmed", "none") and not bp.get("error")
         research[side] = {
             "starter": {"name": p.get("name"), "throws": p.get("throws"), "k_pct": s.get("k_pct"),
                         "bb_pct": s.get("bb_pct"), "era": s.get("era"), "starts": p.get("starts_counted"),
@@ -275,8 +279,14 @@ def mlb_section(raw: dict, g: dict) -> dict:
                         "outs_mean": p.get("outs_mean"), "short_start_flag": p.get("short_start_flag")},
             "bats_vs_opp_hand": fact(bats, "reported", f"MLB team splits vs {hand}HP", as_of) if bats
             else unknown("opposing starter's hand or splits unknown"),
-            "bullpen": {"pitches_last3": bp.get("reliever_pitches_last3"), "limited": bp.get("likely_limited") or [],
-                        "kind": "reported", "source": "MLB boxscores (last 3 days)"},
+            "bullpen": {"pitches_last3": bp.get("reliever_pitches_last3") if pen_known else None,
+                        "limited": (bp.get("likely_limited") or []) if pen_known else [],
+                        "classification": pen_cls, "unclassified_games": bp.get("unclassified_games") or [],
+                        "pitches_last3_classified_games_only": None if pen_known else bp.get("reliever_pitches_last3"),
+                        "kind": "reported" if pen_known else "unknown",
+                        "source": "MLB boxscores (last 3 days; starter = credited gamesStarted)",
+                        "note": None if pen_known else
+                        "Starter/reliever split not confirmed for every recent game; workload not used."},
             "record": t.get("record"),
         }
         lu = t.get("lineup")
@@ -288,8 +298,9 @@ def mlb_section(raw: dict, g: dict) -> dict:
                                 "era": _num(s.get("era")), "ip": _innings(s.get("ip")),
                                 "outs_mean": (p.get("outs_mean") or {}).get("season"),
                                 "starts": p.get("starts_counted"), "status": "projected"} if p.get("name") else None,
-                    "bullpen": {"tired": bool(bp.get("likely_limited")) or (bp.get("reliever_pitches_last3") or 0) >= 120,
-                                "pitches_last3": bp.get("reliever_pitches_last3")}}
+                    "bullpen": ({"tired": bool(bp.get("likely_limited")) or (bp.get("reliever_pitches_last3") or 0) >= 120,
+                                 "pitches_last3": bp.get("reliever_pitches_last3"), "classification": pen_cls}
+                                if pen_known else {"tired": None, "pitches_last3": None, "classification": pen_cls})}
     if not (mi["home"]["bats_vs_opp_hand"] and mi["away"]["bats_vs_opp_hand"]):
         mi = None
     else:

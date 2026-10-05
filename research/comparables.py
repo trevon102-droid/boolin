@@ -104,7 +104,7 @@ def archive(card: dict, graded: list[dict]) -> dict:
                 crit.append((f"{s} team on a back-to-back", lambda g, s=s: (g.get("situations") or {}).get(f"{s}_b2b")))
     if lg == "MLB":
         for s in ("home", "away"):
-            if ((card.get("research") or {}).get(s) or {}).get("bullpen", {}).get("pitches_last3", 0) >= 120:
+            if ((((card.get("research") or {}).get(s) or {}).get("bullpen") or {}).get("pitches_last3") or 0) >= 120:
                 crit.append((f"{s} bullpen taxed (120+ pitches, 3 days)",
                              lambda g, s=s: (g.get("situations") or {}).get(f"{s}_pen_taxed")))
     groups = []
