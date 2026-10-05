@@ -73,7 +73,9 @@ def run(day: dt.date) -> dict:
     if not games_raw:
         C.write("nhl", {"date": day.isoformat(), "games": []}, day)
         return {"status": "ok", "games": 0, "components": {"schedule": "ok"}}
-    comps = C.Components()
+    comps = C.Components({"schedule": "NHL API", "back_to_back": "NHL API", "standings": "NHL API",
+                           "moneypuck_this_season": "MoneyPuck", "moneypuck_last_season": "MoneyPuck",
+                           "club_goalies": "NHL API club stats"})
     comps.mark("schedule", C.OK)
     yesterday = {t for g in (comps.run("back_to_back", _games_on, day - dt.timedelta(days=1)) or [])
                  for t in (g["awayTeam"]["abbrev"], g["homeTeam"]["abbrev"])}

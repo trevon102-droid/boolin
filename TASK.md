@@ -99,6 +99,12 @@ Files in `data/latest/`:
 | `cfb.json` | Every FBS game today (AP rank, neutral site, conference game, FPI projection, weather, injuries), AP Top 25, next 3 days' schedule, and team EPA + SP+ if the optional CFBD key is set |
 | `injuries.json` | ESPN injury lists for today's NHL and MLB games |
 
+Also read the research layer (`data/research/latest/board.json` and `cards.json`, see RESEARCH.md): the board
+ranks today's games by what changed and what's unresolved, and each card has market open/current, the change
+timeline, flags, Boolin's baseline view and the unknowns. Use it to decide where to research first. Its model is
+an uncalibrated baseline: treat its disagreement as a prompt to dig, never as a play by itself. If you form a thesis
+on a game, record it with `python -m research.notebook set <game_key> ...` so it gets graded after the game.
+
 Also read the weekly prep data from the board's database (`ArtifactData` `list` on collection `prep`):
 the newest `nfl-…`/`cfb-…` docs (usage, coverage, run D, pace, injuries) and the newest `review-…` doc
 (which categories and factors are beating the close). Use them as inputs and say in `notes` if they're missing or more than 8 days old.

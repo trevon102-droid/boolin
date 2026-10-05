@@ -63,7 +63,8 @@ def cfbd(season: int) -> dict:
 
 def run(day: dt.date) -> dict:
     season = day.year if day.month >= 3 else day.year - 1
-    comps = C.Components()
+    comps = C.Components({"scoreboard": "ESPN", "summaries": "ESPN", "next_3_days": "ESPN", "ap_poll": "ESPN",
+                           "cfbd": "CollegeFootballData"})
     games = comps.run("scoreboard", espn.scoreboard, "CFB", day)
     if games is None:
         raise RuntimeError(f"ESPN CFB scoreboard failed: {comps.errors.get('scoreboard')}")

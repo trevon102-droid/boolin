@@ -61,6 +61,13 @@ failure inside a source can't show up as `ok`. `error` means that source's lates
 Daily snapshots are gzipped to keep the git history small (~10x smaller than plain JSON). Files committed
 before this change stay in history; shrinking that would need a history rewrite (not done).
 
+## Research desk
+
+`research/` builds the analyst layer on top of the raw data: game research cards (market open/current/close,
+Boolin vs market, availability with confirmed/projected labels, freshness), a "what changed" timeline, research
+flags, a daily research board, scenarios, historical comparables, analyst notebooks and postgame grades.
+The workflow runs `python -m research.build` after every pull. See [`RESEARCH.md`](RESEARCH.md).
+
 ## Tests
 
 ```

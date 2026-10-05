@@ -265,7 +265,7 @@ def run(day: dt.date) -> dict:
         "sports": {},
     }
     remaining = None
-    comps = C.Components()
+    comps = C.Components({k: "The Odds API" for k in SPORTS})
     for label, sk in SPORTS.items():
         if label in START_DATES and day < START_DATES[label]:
             result["sports"][label] = {"status": "off", "reason": f"held until {START_DATES[label].isoformat()}"}

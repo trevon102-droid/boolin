@@ -33,6 +33,7 @@ def scoreboard(league: str, day: dt.date) -> list[dict]:
             rank = (c.get("curatedRank") or {}).get("current")
             teams[c.get("homeAway")] = {
                 "id": t.get("id"), "abbr": t.get("abbreviation"), "name": t.get("displayName"),
+                "score": c.get("score"),
                 "record": next((r.get("summary") for r in c.get("records", []) if r.get("type") in ("total", None)), None),
                 "rank": rank if rank and rank <= 25 else None,
                 "conference_id": t.get("conferenceId"),
@@ -42,6 +43,9 @@ def scoreboard(league: str, day: dt.date) -> list[dict]:
         out.append({
             "espn_id": ev.get("id"), "name": ev.get("shortName"), "start_et": C.to_et(ev.get("date")),
             "status": ((ev.get("status") or {}).get("type") or {}).get("description"),
+            "completed": bool(((ev.get("status") or {}).get("type") or {}).get("completed")),
+            "away_score": _score((teams.get("away") or {}).get("score")),
+            "home_score": _score((teams.get("home") or {}).get("score")),
             "note": "; ".join(n.get("headline", "") for n in comp.get("notes", []) if n.get("headline")) or None,
             "away": teams.get("away"), "home": teams.get("home"),
             "neutral_site": comp.get("neutralSite"), "conference_game": comp.get("conferenceCompetition"),
@@ -51,6 +55,13 @@ def scoreboard(league: str, day: dt.date) -> list[dict]:
                           "provider": (odds.get("provider") or {}).get("name")} if odds else None,
         })
     return out
+
+
+def _score(x):
+    try:
+        return float(x) if x not in (None, "") else None
+    except (TypeError, ValueError):
+        return None
 
 
 def summary(league: str, event_id: str) -> dict:
