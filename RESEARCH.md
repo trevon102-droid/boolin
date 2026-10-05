@@ -107,11 +107,11 @@ moved enough, the text says the stored data doesn't identify a single confirmed 
 A new weekly NFL injury report is one `injury_report` event (not 30 player diffs), and a source starting to cover a
 game (e.g. the ESPN list once the game is on today's slate) is one event, not "added" per player.
 
-## Boolin baseline models (`baseline-0.1 (uncalibrated)`)
+## Boolin baseline models (NFL `baseline-0.2`, NHL/MLB `baseline-0.1 (uncalibrated)`)
 
 | league | inputs | notes |
 |---|---|---|
-| NFL | team EPA/play off/def (regressed n/(n+4)), rest, wind if outdoors | margin SD 13.5 → win prob |
+| NFL (0.2) | team EPA/play off/def (regressed n/(n+4)), rest, wind if outdoors | coefficients fit on the 2012-2021 replay (`python -m research.fit_nfl` → `validation/nfl_fit.json`): HFA 1.92, offense 58.15 and defense 32.45 pts per EPA/play, rest 0.072 pts/day (cap 0.72), margin SD 13.63; wind rule not fitted |
 | NHL | 5v5 xGF/xGA per game (this season regressed toward last, k=20 GP), projected goalie GSAx/gp (k=30), back-to-back | multiplicative goals model, sequential decomposition |
 | MLB | lineup OPS vs the starter's hand (k=600 PA), starter K-BB% + regressed ERA (half each), starter's average outs, bullpen load, postseason environment | Pythagorean 1.83 |
 | CFB, NBA, WNBA | — | `available: false` with the reason |
@@ -184,11 +184,25 @@ paired t, disagreement buckets 0-2.5 … 20+ pp: does the side Boolin prefers wi
 audit: ≥10 pp, NFL spread ≥5, CFB ≥7, with five candidate explanations scored), `failure_modes.json`,
 `model_scorecard.json`.
 
+### NFL fit (`python -m research.fit_nfl`)
+
+Fits the NFL coefficients on development seasons only (least squares on margin and total; SD of the residuals
+converts margin to win probability; k_games picked by leave-one-season-out log loss but kept at 4 unless another
+value is better by > 0.001). The holdout is scored once afterwards against baseline-0.1 and the closing market and
+written to `validation/nfl_fit.json`. The numbers are copied into `research/models.py` by hand (a test checks they
+match). It isn't run by the workflow: refitting is a deliberate change, not a side effect of a data pull.
+
+Result (2022+ holdout, n=1,122): Brier 0.2290 → 0.2267, log loss 0.6504 → 0.6445, calibration error 0.040 → 0.033;
+the improvement over 0.1 is not statistically significant (t≈−1.4), and the closing market (Brier 0.2101) is still
+clearly better (t≈5.3). Calibration was not the main problem: the inputs carry less information than the market.
+
 Scorecard recommendation (on the primary holdout): `NOT READY` (holdout < 150 games: "we don't know yet", or no skill),
 `CALIBRATION NEEDED` (calibration off and worse than the market), `PROMISING BUT UNCALIBRATED` (calibration off, not
 detectably worse than the market), `CALIBRATED / RESEARCH READY` (holdout ≥ 300, calibration error ≤ 0.025,
 favourite overconfidence within ±0.02), `OUTPERFORMING MARKET IN VALIDATED SAMPLE` (calibrated and better than the
-market with t ≤ −2). Nothing here changes a model parameter.
+market with t ≤ −2). `lean_allowed` additionally requires that the market is not significantly better in the
+holdout. Validation never changes a model parameter; rows from an older model version are reported in their own
+`<source> @<version>` slice, never mixed with the current version.
 
 ### The gate (`research/summary.py`)
 
