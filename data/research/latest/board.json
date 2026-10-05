@@ -1,8 +1,54 @@
 {
  "slate_date": "2026-10-05",
- "built_at": "2026-10-05T13:36-04:00",
+ "built_at": "2026-10-05T17:32-04:00",
  "games": 7,
  "attention": [
+  {
+   "key": "2026-10-05-MLB-NYY-TB",
+   "league": "MLB",
+   "matchup": "NYY @ TB",
+   "start": "Mon Oct 5, 8:00 PM ET",
+   "start_et": "2026-10-05T20:00-04:00",
+   "status": "scheduled",
+   "importance": 16.5,
+   "reasons": [
+    "5 change(s) since the last pull, latest: condition unknown → Dome",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since.",
+    "NYY starting pitcher not confirmed: Cam Schlittler is projected (announced probable, not a confirmed lineup card), not officially confirmed.",
+    "TB starting pitcher not confirmed: Freddy Peralta is projected (announced probable, not a confirmed lineup card), not officially confirmed."
+   ],
+   "research_status": "watch",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": "mild disagreement",
+   "alerts": 0,
+   "changes": 25,
+   "changes_since_last_pull": 5,
+   "oldest_input_min": 265.5
+  },
+  {
+   "key": "2026-10-05-MLB-CWS-CLE",
+   "league": "MLB",
+   "matchup": "CWS @ CLE",
+   "start": "Mon Oct 5, 5:10 PM ET",
+   "start_et": "2026-10-05T17:10-04:00",
+   "status": "started",
+   "importance": 16.0,
+   "reasons": [
+    "2 change(s) since the last pull, latest: temp (°F) 60.0 → 61.0",
+    "CWS starting pitcher not confirmed: Anthony Kay is projected (announced probable, not a confirmed lineup card), not officially confirmed.",
+    "CLE starting pitcher not confirmed: Gavin Williams is projected (announced probable, not a confirmed lineup card), not officially confirmed.",
+    "wind (mph) changed: unknown → 12 (MLB Stats API weather)."
+   ],
+   "research_status": "watch",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": "mild disagreement",
+   "alerts": 0,
+   "changes": 20,
+   "changes_since_last_pull": 2,
+   "oldest_input_min": 265.5
+  },
   {
    "key": "2026-10-05-NFL-ATL-NO",
    "league": "NFL",
@@ -10,7 +56,7 @@
    "start": "Mon Oct 5, 8:15 PM ET",
    "start_et": "2026-10-05T20:15-04:00",
    "status": "scheduled",
-   "importance": 11.75,
+   "importance": 13.25,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
     "9 change(s) in the last 24 h, latest: Boolin projected total 43.2 → 44.3",
@@ -24,7 +70,7 @@
    "alerts": 1,
    "changes": 9,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-05-NHL-OTT-BOS",
@@ -33,43 +79,21 @@
    "start": "Mon Oct 5, 7:40 PM ET",
    "start_et": "2026-10-05T19:40-04:00",
    "status": "scheduled",
-   "importance": 7.25,
+   "importance": 12.5,
    "reasons": [
-    "8 change(s) in the last 24 h, latest: spread home (FanDuel) -265 → -280",
+    "1 change(s) since the last pull, latest: Charlie McAvoy (BOS) Suspension → not listed",
     "Major total movement: Total moved 6 to 5.5.",
-    "Jake Sanderson (OTT) downgrade: Jake Sanderson (OTT): Day-To-Day → Out (ESPN injury list)."
+    "Stale odds: Odds are 4.4 h old; prices may have moved since.",
+    "OTT starting goalie not confirmed: Linus Ullmark is projected (most starts this season; not confirmed), not officially confirmed."
    ],
    "research_status": "watch",
    "review_required": false,
    "validation": "NOT READY",
    "disagreement": "mild disagreement",
    "alerts": 0,
-   "changes": 8,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
-  },
-  {
-   "key": "2026-10-05-MLB-CWS-CLE",
-   "league": "MLB",
-   "matchup": "CWS @ CLE",
-   "start": "Mon Oct 5, 5:10 PM ET",
-   "start_et": "2026-10-05T17:10-04:00",
-   "status": "scheduled",
-   "importance": 7.0,
-   "reasons": [
-    "18 change(s) in the last 24 h, latest: condition unknown → Clear",
-    "wind (mph) changed: unknown → 12 (MLB Stats API weather).",
-    "temp (°F) changed: unknown → 60.0 (MLB Stats API weather).",
-    "condition changed: unknown → Clear (MLB Stats API weather)."
-   ],
-   "research_status": "watch",
-   "review_required": false,
-   "validation": "NOT READY",
-   "disagreement": "mild disagreement",
-   "alerts": 0,
-   "changes": 18,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "changes": 9,
+   "changes_since_last_pull": 1,
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-05-NHL-PHI-TBL",
@@ -78,10 +102,12 @@
    "start": "Mon Oct 5, 7:10 PM ET",
    "start_et": "2026-10-05T19:10-04:00",
    "status": "scheduled",
-   "importance": 5.25,
+   "importance": 9.25,
    "reasons": [
     "5 change(s) in the last 24 h, latest: Denver Barkey (PHI) Injured Reserve → not listed",
-    "Emil Lilleberg (TBL) downgrade: Emil Lilleberg (TBL): Day-To-Day → Out (ESPN injury list)."
+    "Stale odds: Odds are 4.4 h old; prices may have moved since.",
+    "PHI starting goalie not confirmed: Joseph Woll is projected (most starts this season; not confirmed), not officially confirmed.",
+    "TBL starting goalie not confirmed: Andrei Vasilevskiy is projected (most starts this season; not confirmed), not officially confirmed."
    ],
    "research_status": "pass",
    "review_required": false,
@@ -90,7 +116,7 @@
    "alerts": 0,
    "changes": 5,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-05-NHL-SJS-DAL",
@@ -99,10 +125,12 @@
    "start": "Mon Oct 5, 8:10 PM ET",
    "start_et": "2026-10-05T20:10-04:00",
    "status": "scheduled",
-   "importance": 4.75,
+   "importance": 8.75,
    "reasons": [
     "7 change(s) in the last 24 h, latest: total under (FanDuel) -122 → -118",
-    "Sharp price movement: No-vig DAL win probability moved +3.3 pp since first seen."
+    "Sharp price movement: No-vig DAL win probability moved +3.3 pp since first seen.",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since.",
+    "SJS starting goalie not confirmed: Yaroslav Askarov is projected (most starts this season; not confirmed), not officially confirmed."
    ],
    "research_status": "pass",
    "review_required": false,
@@ -111,28 +139,7 @@
    "alerts": 0,
    "changes": 7,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
-  },
-  {
-   "key": "2026-10-05-MLB-NYY-TB",
-   "league": "MLB",
-   "matchup": "NYY @ TB",
-   "start": "Mon Oct 5, 8:00 PM ET",
-   "start_et": "2026-10-05T20:00-04:00",
-   "status": "scheduled",
-   "importance": 4.5,
-   "reasons": [
-    "21 change(s) in the last 24 h, latest: spread home (FanDuel) -166 → -178",
-    "Griffin Jax (TB) status unresolved: Listed Day-To-Day (ESPN injury list); final status not confirmed."
-   ],
-   "research_status": "watch",
-   "review_required": false,
-   "validation": "NOT READY",
-   "disagreement": "mild disagreement",
-   "alerts": 0,
-   "changes": 21,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-05-NHL-WPG-PIT",
@@ -141,9 +148,12 @@
    "start": "Mon Oct 5, 7:40 PM ET",
    "start_et": "2026-10-05T19:40-04:00",
    "status": "scheduled",
-   "importance": 3.25,
+   "importance": 7.25,
    "reasons": [
-    "9 change(s) in the last 24 h, latest: total under (FanDuel) -115 → -114"
+    "9 change(s) in the last 24 h, latest: total under (FanDuel) -115 → -114",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since.",
+    "WPG starting goalie not confirmed: Stuart Skinner is projected (most starts this season; not confirmed), not officially confirmed.",
+    "PIT starting goalie not confirmed: Arturs Silovs is projected (most starts this season; not confirmed), not officially confirmed."
    ],
    "research_status": "pass",
    "review_required": false,
@@ -152,7 +162,7 @@
    "alerts": 0,
    "changes": 9,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   }
  ],
  "stable": [],
@@ -164,9 +174,10 @@
    "start": "Tue Oct 6, 6:00 PM ET",
    "start_et": "2026-10-06T18:00-04:00",
    "status": "scheduled",
-   "importance": 0.75,
+   "importance": 2.25,
    "reasons": [
-    "2 change(s) in the last 24 h, latest: spread home (FanDuel) -215 → -210"
+    "2 change(s) in the last 24 h, latest: spread home (FanDuel) -215 → -210",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -175,7 +186,7 @@
    "alerts": 0,
    "changes": 2,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-06-NHL-CAR-MTL",
@@ -184,8 +195,10 @@
    "start": "Tue Oct 6, 7:10 PM ET",
    "start_et": "2026-10-06T19:10-04:00",
    "status": "scheduled",
-   "importance": 0.75,
-   "reasons": [],
+   "importance": 2.25,
+   "reasons": [
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": "NOT READY",
@@ -193,7 +206,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-06-NHL-MIN-BUF",
@@ -202,10 +215,11 @@
    "start": "Tue Oct 6, 7:10 PM ET",
    "start_et": "2026-10-06T19:10-04:00",
    "status": "scheduled",
-   "importance": 2.5,
+   "importance": 4.0,
    "reasons": [
     "1 change(s) in the last 24 h, latest: total 6.0 → 6.5",
-    "Major total movement: Total moved 6 to 6.5."
+    "Major total movement: Total moved 6 to 6.5.",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -214,7 +228,7 @@
    "alerts": 0,
    "changes": 1,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-06-NHL-NSH-TOR",
@@ -223,10 +237,11 @@
    "start": "Tue Oct 6, 7:10 PM ET",
    "start_et": "2026-10-06T19:10-04:00",
    "status": "scheduled",
-   "importance": 2.5,
+   "importance": 4.0,
    "reasons": [
     "1 change(s) in the last 24 h, latest: total 6.0 → 5.5",
-    "Major total movement: Total moved 6 to 5.5."
+    "Major total movement: Total moved 6 to 5.5.",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -235,7 +250,7 @@
    "alerts": 0,
    "changes": 1,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-06-NHL-OTT-DET",
@@ -244,9 +259,10 @@
    "start": "Tue Oct 6, 7:10 PM ET",
    "start_et": "2026-10-06T19:10-04:00",
    "status": "scheduled",
-   "importance": 0.5,
+   "importance": 2.0,
    "reasons": [
-    "1 change(s) in the last 24 h, latest: DET no-vig win prob 0.5108 → 0.4978"
+    "1 change(s) in the last 24 h, latest: DET no-vig win prob 0.5108 → 0.4978",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -255,7 +271,7 @@
    "alerts": 0,
    "changes": 1,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-06-NHL-UTA-NJD",
@@ -264,8 +280,10 @@
    "start": "Tue Oct 6, 7:10 PM ET",
    "start_et": "2026-10-06T19:10-04:00",
    "status": "scheduled",
-   "importance": 0.75,
-   "reasons": [],
+   "importance": 2.25,
+   "reasons": [
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": "NOT READY",
@@ -273,7 +291,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-06-NHL-NYI-NYR",
@@ -282,8 +300,10 @@
    "start": "Tue Oct 6, 7:40 PM ET",
    "start_et": "2026-10-06T19:40-04:00",
    "status": "scheduled",
-   "importance": 0.75,
-   "reasons": [],
+   "importance": 2.25,
+   "reasons": [
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": "NOT READY",
@@ -291,7 +311,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-06-CFB-SouthernMississippiGolde-TroyTrojans",
@@ -300,9 +320,10 @@
    "start": "Tue Oct 6, 8:00 PM ET",
    "start_et": "2026-10-06T20:00-04:00",
    "status": "scheduled",
-   "importance": 1.5,
+   "importance": 3.0,
    "reasons": [
-    "6 change(s) in the last 24 h, latest: total under (FanDuel) -108 → -115"
+    "6 change(s) in the last 24 h, latest: total under (FanDuel) -108 → -115",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -311,7 +332,7 @@
    "alerts": 0,
    "changes": 6,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-06-NHL-STL-CHI",
@@ -320,10 +341,11 @@
    "start": "Tue Oct 6, 8:10 PM ET",
    "start_et": "2026-10-06T20:10-04:00",
    "status": "scheduled",
-   "importance": 2.75,
+   "importance": 4.25,
    "reasons": [
     "2 change(s) in the last 24 h, latest: CHI no-vig win prob 0.4589 → 0.4479",
-    "Sharp price movement: No-vig CHI win probability moved -4.1 pp since first seen."
+    "Sharp price movement: No-vig CHI win probability moved -4.1 pp since first seen.",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -332,7 +354,7 @@
    "alerts": 0,
    "changes": 2,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-06-NHL-VGK-SEA",
@@ -341,8 +363,10 @@
    "start": "Tue Oct 6, 9:10 PM ET",
    "start_et": "2026-10-06T21:10-04:00",
    "status": "scheduled",
-   "importance": 0.75,
-   "reasons": [],
+   "importance": 2.25,
+   "reasons": [
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": "NOT READY",
@@ -350,7 +374,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-06-MLB-MIL-SD",
@@ -359,9 +383,10 @@
    "start": "Tue Oct 6, 9:30 PM ET",
    "start_et": "2026-10-06T21:30-04:00",
    "status": "scheduled",
-   "importance": 1.0,
+   "importance": 2.5,
    "reasons": [
-    "3 change(s) in the last 24 h, latest: spread home (FanDuel) 158 → 162"
+    "3 change(s) in the last 24 h, latest: spread home (FanDuel) 158 → 162",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -370,7 +395,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-06-NHL-FLA-LAK",
@@ -379,8 +404,10 @@
    "start": "Tue Oct 6, 10:40 PM ET",
    "start_et": "2026-10-06T22:40-04:00",
    "status": "scheduled",
-   "importance": 0.75,
-   "reasons": [],
+   "importance": 2.25,
+   "reasons": [
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": "NOT READY",
@@ -388,7 +415,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-07-CFB-JacksonvilleStateGamecoc-KennesawStateOwls",
@@ -397,9 +424,10 @@
    "start": "Wed Oct 7, 7:00 PM ET",
    "start_et": "2026-10-07T19:00-04:00",
    "status": "scheduled",
-   "importance": 1.0,
+   "importance": 2.5,
    "reasons": [
-    "2 change(s) in the last 24 h, latest: Kennesaw State Owls ML (FanDuel) 134 → 128"
+    "2 change(s) in the last 24 h, latest: Kennesaw State Owls ML (FanDuel) 134 → 128",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -408,7 +436,7 @@
    "alerts": 0,
    "changes": 2,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-07-CFB-NewMexicoStateAggies-FloridaInternationalPant",
@@ -417,8 +445,10 @@
    "start": "Wed Oct 7, 7:30 PM ET",
    "start_et": "2026-10-07T19:30-04:00",
    "status": "scheduled",
-   "importance": 0.5,
-   "reasons": [],
+   "importance": 2.0,
+   "reasons": [
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -426,7 +456,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-08-NFL-TB-DAL",
@@ -435,10 +465,11 @@
    "start": "Thu Oct 8, 8:15 PM ET",
    "start_et": "2026-10-08T20:15-04:00",
    "status": "scheduled",
-   "importance": 5.25,
+   "importance": 6.75,
    "reasons": [
     "9 change(s) in the last 24 h, latest: Boolin projected total 47.6 → 47.3",
-    "Boolin significant disagreement with market: Win probability (home): market 0.8096 vs Boolin 0.7253. Model confidence: medium."
+    "Boolin significant disagreement with market: Win probability (home): market 0.8096 vs Boolin 0.7253. Model confidence: medium.",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
@@ -447,7 +478,7 @@
    "alerts": 0,
    "changes": 9,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-11-NFL-PHI-JAX",
@@ -456,11 +487,12 @@
    "start": "Sun Oct 11, 9:30 AM ET",
    "start_et": "2026-10-11T09:30-04:00",
    "status": "scheduled",
-   "importance": 9.25,
+   "importance": 10.75,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
     "10 change(s) in the last 24 h, latest: Boolin projected total 45.4 → 45.8",
-    "Boolin extreme disagreement with market: Win probability (home): market 0.6786 vs Boolin 0.7929; Spread (JAX): market -4.0 vs Boolin -11.1. Model confidence: medium."
+    "Boolin extreme disagreement with market: Win probability (home): market 0.6786 vs Boolin 0.7929; Spread (JAX): market -4.0 vs Boolin -11.1. Model confidence: medium.",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
@@ -469,7 +501,7 @@
    "alerts": 1,
    "changes": 10,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-11-NFL-CHI-GB",
@@ -478,10 +510,11 @@
    "start": "Sun Oct 11, 1:00 PM ET",
    "start_et": "2026-10-11T13:00-04:00",
    "status": "scheduled",
-   "importance": 4.75,
+   "importance": 6.25,
    "reasons": [
     "4 change(s) in the last 24 h, latest: Boolin projected total 45.7 → 46.0",
-    "Boolin significant disagreement with market: Win probability (home): market 0.4342 vs Boolin 0.335; Spread (GB): market 2.5 vs Boolin 5.8. Model confidence: medium."
+    "Boolin significant disagreement with market: Win probability (home): market 0.4342 vs Boolin 0.335; Spread (GB): market 2.5 vs Boolin 5.8. Model confidence: medium.",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
@@ -490,7 +523,7 @@
    "alerts": 0,
    "changes": 4,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-11-NFL-CIN-MIA",
@@ -499,11 +532,12 @@
    "start": "Sun Oct 11, 1:00 PM ET",
    "start_et": "2026-10-11T13:00-04:00",
    "status": "scheduled",
-   "importance": 9.0,
+   "importance": 10.5,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
     "8 change(s) in the last 24 h, latest: Boolin projected total 44.5 → 45.2",
-    "Boolin extreme disagreement with market: Win probability (home): market 0.2385 vs Boolin 0.3441. Model confidence: medium."
+    "Boolin extreme disagreement with market: Win probability (home): market 0.2385 vs Boolin 0.3441. Model confidence: medium.",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
@@ -512,7 +546,7 @@
    "alerts": 1,
    "changes": 8,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-11-NFL-CLE-NYJ",
@@ -521,9 +555,10 @@
    "start": "Sun Oct 11, 1:00 PM ET",
    "start_et": "2026-10-11T13:00-04:00",
    "status": "scheduled",
-   "importance": 2.0,
+   "importance": 3.5,
    "reasons": [
-    "7 change(s) in the last 24 h, latest: Boolin projected total 45.8 → 46.1"
+    "7 change(s) in the last 24 h, latest: Boolin projected total 45.8 → 46.1",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "pass",
    "review_required": false,
@@ -532,7 +567,7 @@
    "alerts": 0,
    "changes": 7,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-11-NFL-HOU-TEN",
@@ -541,11 +576,12 @@
    "start": "Sun Oct 11, 1:00 PM ET",
    "start_et": "2026-10-11T13:00-04:00",
    "status": "scheduled",
-   "importance": 8.75,
+   "importance": 10.25,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
     "7 change(s) in the last 24 h, latest: Boolin projected total 45.0 → 45.5",
-    "Boolin extreme disagreement with market: Win probability (home): market 0.2705 vs Boolin 0.531; Spread (TEN): market 6.5 vs Boolin -1.1; Total: market 39.5 vs Boolin 45.5. Model confidence: medium."
+    "Boolin extreme disagreement with market: Win probability (home): market 0.2705 vs Boolin 0.531; Spread (TEN): market 6.5 vs Boolin -1.1; Total: market 39.5 vs Boolin 45.5. Model confidence: medium.",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
@@ -554,7 +590,7 @@
    "alerts": 1,
    "changes": 7,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-11-NFL-IND-PIT",
@@ -563,9 +599,10 @@
    "start": "Sun Oct 11, 1:00 PM ET",
    "start_et": "2026-10-11T13:00-04:00",
    "status": "scheduled",
-   "importance": 1.5,
+   "importance": 3.0,
    "reasons": [
-    "3 change(s) in the last 24 h, latest: Boolin projected total 43.7 → 44.6"
+    "3 change(s) in the last 24 h, latest: Boolin projected total 43.7 → 44.6",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "pass",
    "review_required": false,
@@ -574,7 +611,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-11-NFL-LV-NE",
@@ -583,12 +620,12 @@
    "start": "Sun Oct 11, 1:00 PM ET",
    "start_et": "2026-10-11T13:00-04:00",
    "status": "scheduled",
-   "importance": 10.5,
+   "importance": 12.0,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED); unresolved key player: Aidan O'Connell (LV, QB) Questionable. Interesting disagreement, not a validated edge.",
     "8 change(s) in the last 24 h, latest: Boolin projected total 42.8 → 44.0",
     "Boolin extreme disagreement with market: Win probability (home): market 0.6358 vs Boolin 0.4449; Spread (NE): market -3.5 vs Boolin 1.9. Model confidence: medium.",
-    "Aidan O'Connell (LV) status unresolved: Listed Questionable (NFL injury report week 4); final status not confirmed."
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
@@ -597,7 +634,7 @@
    "alerts": 1,
    "changes": 8,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-11-NFL-MIN-NO",
@@ -606,9 +643,10 @@
    "start": "Sun Oct 11, 1:00 PM ET",
    "start_et": "2026-10-11T13:00-04:00",
    "status": "scheduled",
-   "importance": 2.25,
+   "importance": 3.75,
    "reasons": [
-    "11 change(s) in the last 24 h, latest: Boolin projected total 41.7 → 43.2"
+    "11 change(s) in the last 24 h, latest: Boolin projected total 41.7 → 43.2",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
@@ -617,7 +655,7 @@
    "alerts": 0,
    "changes": 11,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-11-NFL-NYG-WAS",
@@ -626,10 +664,11 @@
    "start": "Sun Oct 11, 1:00 PM ET",
    "start_et": "2026-10-11T13:00-04:00",
    "status": "scheduled",
-   "importance": 5.5,
+   "importance": 7.0,
    "reasons": [
     "5 change(s) in the last 24 h, latest: Boolin projected total 44.6 → 45.3",
-    "Boolin significant disagreement with market: Win probability (home): market 0.6197 vs Boolin 0.5661. Model confidence: medium."
+    "Boolin significant disagreement with market: Win probability (home): market 0.6197 vs Boolin 0.5661. Model confidence: medium.",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
@@ -638,7 +677,7 @@
    "alerts": 0,
    "changes": 5,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-11-NFL-DEN-LAC",
@@ -647,12 +686,12 @@
    "start": "Sun Oct 11, 4:05 PM ET",
    "start_et": "2026-10-11T16:05-04:00",
    "status": "scheduled",
-   "importance": 10.0,
+   "importance": 11.5,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED); unresolved key player: Trey Lance (LAC, QB) Questionable. Interesting disagreement, not a validated edge.",
     "12 change(s) in the last 24 h, latest: Boolin projected total 42.8 → 44.0",
     "Boolin extreme disagreement with market: Win probability (home): market 0.3765 vs Boolin 0.4819; Spread (LAC): market 3.5 vs Boolin 0.6. Model confidence: medium.",
-    "Trey Lance (LAC) status unresolved: Listed Questionable (NFL injury report week 4); final status not confirmed."
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
@@ -661,7 +700,7 @@
    "alerts": 1,
    "changes": 12,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-11-NFL-DET-ARI",
@@ -670,11 +709,12 @@
    "start": "Sun Oct 11, 4:25 PM ET",
    "start_et": "2026-10-11T16:25-04:00",
    "status": "scheduled",
-   "importance": 8.75,
+   "importance": 10.25,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
     "6 change(s) in the last 24 h, latest: Boolin projected total 51.4 → 50.0",
-    "Boolin extreme disagreement with market: Win probability (home): market 0.3447 vs Boolin 0.4734; Spread (ARI): market 4.0 vs Boolin 0.9; Total: market 53.5 vs Boolin 50.0. Model confidence: medium."
+    "Boolin extreme disagreement with market: Win probability (home): market 0.3447 vs Boolin 0.4734; Spread (ARI): market 4.0 vs Boolin 0.9; Total: market 53.5 vs Boolin 50.0. Model confidence: medium.",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
@@ -683,7 +723,7 @@
    "alerts": 1,
    "changes": 6,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-11-NFL-SF-SEA",
@@ -692,11 +732,12 @@
    "start": "Sun Oct 11, 4:25 PM ET",
    "start_et": "2026-10-11T16:25-04:00",
    "status": "scheduled",
-   "importance": 8.5,
+   "importance": 10.0,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
     "4 change(s) in the last 24 h, latest: Boolin projected total 48.0 → 47.7",
-    "Boolin extreme disagreement with market: Win probability (home): market 0.5919 vs Boolin 0.3927; Spread (SEA): market -3.0 vs Boolin 3.7. Model confidence: medium."
+    "Boolin extreme disagreement with market: Win probability (home): market 0.5919 vs Boolin 0.3927; Spread (SEA): market -3.0 vs Boolin 3.7. Model confidence: medium.",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
@@ -705,7 +746,7 @@
    "alerts": 1,
    "changes": 4,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-11-NFL-BAL-ATL",
@@ -714,9 +755,10 @@
    "start": "Sun Oct 11, 8:20 PM ET",
    "start_et": "2026-10-11T20:20-04:00",
    "status": "scheduled",
-   "importance": 1.25,
+   "importance": 2.75,
    "reasons": [
-    "3 change(s) in the last 24 h, latest: Boolin projected total 44.6 → 45.3"
+    "3 change(s) in the last 24 h, latest: Boolin projected total 44.6 → 45.3",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
@@ -725,7 +767,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   },
   {
    "key": "2026-10-12-NFL-BUF-LA",
@@ -734,9 +776,10 @@
    "start": "Mon Oct 12, 8:15 PM ET",
    "start_et": "2026-10-12T20:15-04:00",
    "status": "scheduled",
-   "importance": 1.5,
+   "importance": 3.0,
    "reasons": [
-    "3 change(s) in the last 24 h, latest: Boolin projected total 48.4 → 47.9"
+    "3 change(s) in the last 24 h, latest: Boolin projected total 48.4 → 47.9",
+    "Stale odds: Odds are 4.4 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -745,7 +788,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 29.6
+   "oldest_input_min": 265.5
   }
  ],
  "review_required": [
