@@ -84,13 +84,13 @@ def raw_fixture(pulled="2026-10-05T10:00-04:00", spread=-3.0, nfl_inj_status="Qu
                                   "season": {"k_pct": 0.314, "bb_pct": 0.064, "bf": 761, "era": "1.95", "ip": "193.2"},
                                   "outs_mean": {"season": 17.4}},
                      "bats": {"vs_RHP": {"ops": ".714", "pa": 4034}, "vs_LHP": {"ops": ".733", "pa": 1963}},
-                     "bullpen": {"reliever_pitches_last3": 46, "likely_limited": []}},
+                     "bullpen": {"reliever_pitches_last3": 46, "likely_limited": [], "classification": "confirmed"}},
             "home": {"abbr": "TB", "name": "Tampa Bay Rays", "lineup": None,
                      "probable": {"name": "Freddy Peralta", "throws": "R", "starts_counted": 32, "sample_quality": "ok",
                                   "season": {"k_pct": 0.214, "bb_pct": 0.086, "bf": 730, "era": "4.42", "ip": "169.0"},
                                   "outs_mean": {"season": 15.8}},
                      "bats": {"vs_RHP": {"ops": ".752", "pa": 4134}},
-                     "bullpen": {"reliever_pitches_last3": 130, "likely_limited": ["Pete Fairbanks"]}}}]},
+                     "bullpen": {"reliever_pitches_last3": 130, "likely_limited": ["Pete Fairbanks"], "classification": "confirmed"}}}]},
         "injuries": {"pulled_at_et": pulled, "leagues": {"NHL": [{"game": "PHI @ TB", "injuries": {
             "TB": [{"player": "Yanni Gourde", "pos": "C", "status": "Injured Reserve", "detail": "Hip"}]}}],
             "MLB": [{"game": "NYY @ TB", "injuries": {"NYY": [{"player": "Aaron Judge", "pos": "RF", "status": "10-Day-IL"}]}}]}},
@@ -533,9 +533,15 @@ def test_summary_conclusions():
     rows = [{"dimension": "Win probability (home)", "difference": 8.0, "label": "significant disagreement", "boolin": 0.6, "market": 0.52}]
     c = {**base, "model": m, "comparison": {"available": True, "overall": "significant disagreement", "rows": rows,
                                             "model_confidence": "high"}}
+    # no validated model: a significant split is at most a watch
+    s = summary.build(c)
+    assert s["conclusion"]["status"] == "watch" and s["conclusion"]["gate"]["ungated_status"] == "lean"
+    # a league whose model has validated holdout evidence may lean
+    c = {**c, "validation": {"lean_allowed": True, "calibration_status": "calibrated in holdout",
+                             "validation_status": "validated", "recommendation": "CALIBRATED / RESEARCH READY"}}
     s = summary.build(c)
     assert s["conclusion"]["status"] == "lean" and s["conclusion"]["team"] == "NO"
-    assert "not a bet signal" in s["conclusion"]["detail"]
+    assert "not a bet signal" in s["conclusion"]["detail"] and not s["conclusion"]["gate"]["applied"]
     s = summary.build(c, {"thesis": {"side": "away"}, "decision": "pass", "entry_trigger": "ATL +3"})
     assert s["thesis_basis"] == "analyst thesis" and s["conclusion"]["trigger"] == "ATL +3"
     assert s["conclusion"]["analyst_decision"] == "pass"

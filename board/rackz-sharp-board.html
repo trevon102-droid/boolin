@@ -236,6 +236,7 @@ table.mu td.adv{font-weight:600;color:var(--good)}
 @media (prefers-reduced-motion:no-preference){.sheet{animation:up .16s ease-out}@keyframes up{from{transform:translateY(12px);opacity:.6}to{transform:none;opacity:1}}}
 
 /* ---------- research tab (shared with research/render.py, scoped to .rx) ---------- */
+/*RX_CSS_BEGIN*/
 .rx h2{font-size:1.6rem}
 .rx h3{font-size:1.05rem;text-transform:uppercase;letter-spacing:.06em}
 .rx p{margin:0}
@@ -263,6 +264,16 @@ table.mu td.adv{font-weight:600;color:var(--good)}
 .rx .k-unknown{background:transparent;color:var(--muted);border-color:var(--line)}
 .rx .s-lean{background:var(--accent);color:var(--surface)} .rx .s-watch{background:var(--warn-soft);color:var(--warn)}
 .rx .s-pass{background:var(--sunk);color:var(--muted);border-color:var(--line)} .rx .s-insufficient{background:var(--bad-soft);color:var(--bad)}
+.rx .s-review{background:var(--bad);color:var(--surface)}
+.rx .gatebox{grid-column:1/-1;border:1px solid var(--bad);border-left-width:4px;background:var(--bad-soft);border-radius:4px;padding:9px 12px;display:flex;flex-direction:column;gap:4px;font-size:.88rem}
+.rx .gatebox strong{color:var(--bad)}
+.rx .gatebox ul{margin:0;padding-left:18px}
+.rx .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.rx .vgrid > div{background:var(--sunk);border:1px solid var(--line);border-radius:4px;padding:7px 9px;display:flex;flex-direction:column;gap:2px}
+.rx .vgrid b{font:600 .9rem/1.25 var(--f-body)}
+.rx .vline{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem}
+.rx .vline span b{font-weight:600}
+.rx .v-bad{color:var(--bad)} .rx .v-warn{color:var(--warn)} .rx .v-good{color:var(--good)}
 .rx .sev-alert{background:var(--bad-soft);color:var(--bad)} .rx .sev-watch{background:var(--warn-soft);color:var(--warn)} .rx .sev-info{background:var(--sunk);color:var(--muted);border-color:var(--line)}
 .rx .h-ok{background:var(--good-soft);color:var(--good)} .rx .h-partial{background:var(--warn-soft);color:var(--warn)} .rx .h-error{background:var(--bad-soft);color:var(--bad)} .rx .h-skipped,.rx .h-unknown{background:var(--sunk);color:var(--muted);border-color:var(--line)}
 .rx .dossier{display:flex;flex-direction:column;gap:16px;min-width:0}
@@ -308,7 +319,7 @@ table.mu td.adv{font-weight:600;color:var(--good)}
 .rx code{font-family:var(--f-mono);font-size:.78rem;background:var(--sunk);padding:1px 4px;border-radius:3px;overflow-wrap:anywhere}
 .rx .hist{border-left:3px solid var(--derived);padding-left:10px}
 @media (prefers-reduced-motion:no-preference){.rx .dossier{animation:fade .18s ease-out}@keyframes fade{from{opacity:.4}to{opacity:1}}}
-
+/*RX_CSS_END*/
 .rx .empty{background:none;border:0;padding:0;max-width:none;display:block}
 .rx .rxhead{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:flex-end;justify-content:space-between}
 .rx .health{display:flex;flex-wrap:wrap;gap:6px}
@@ -358,6 +369,7 @@ table.mu td.adv{font-weight:600;color:var(--good)}
 "use strict";
 
 /* ---------- research module (generated from research/render.py RX_JS) ---------- */
+/*RX_JS_BEGIN*/
 const RX=(function(){
 "use strict";
 const esc=s=>String(s===undefined||s===null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -369,14 +381,22 @@ function tET(iso){ if(!iso) return '—'; const d=new Date(iso); if(isNaN(d)) re
 function ageMin(iso){ const d=new Date(iso); return isNaN(d)?null:Math.max(0,(Date.now()-d.getTime())/60000); }
 function ageLbl(m){ if(m===null) return 'unknown age'; if(m<1) return 'just now'; if(m<60) return Math.round(m)+' min old'; if(m<2880) return (m/60).toFixed(m<600?1:0)+' h old'; return Math.round(m/1440)+' d old'; }
 const kindChip=k=>`<span class="chip k-${esc(k||'unknown')}">${esc((k||'unknown'))}</span>`;
-const statusCls=s=>s==='lean'?'s-lean':s==='watch'?'s-watch':s==='pass'?'s-pass':'s-insufficient';
+const statusCls=s=>s==='lean'?'s-lean':s==='watch'?'s-watch':s==='pass'?'s-pass':s==='review required'?'s-review':'s-insufficient';
+const statusTxt=s=>s==='insufficient information'?'need info':s==='review required'?'review':(s||'—');
+const recCls=r=>!r||r==='NOT READY'||r==='CALIBRATION NEEDED'?'v-bad':r==='PROMISING BUT UNCALIBRATED'?'v-warn':'v-good';
+function calTxt(v){ const c=(v&&v.calibration_status)||'uncalibrated'; return c.startsWith('calibrated')?'CALIBRATED':c.startsWith('needs')?'NEEDS CALIBRATION':'UNCALIBRATED'; }
+/* one line per modeled league: Model · Calibration · Validation · Recommendation */
+function valBanner(map){
+  const ent=Object.entries(map||{}); if(!ent.length) return '';
+  return `<div class="vline" aria-label="Model validation status">${ent.map(([lg,v])=>`<span><b>${esc(lg)}</b> · Model: ${esc((v&&v.model_version)||'—')} · Calibration: <b class="${calTxt(v)==='CALIBRATED'?'v-good':'v-bad'}">${calTxt(v)}</b> · Validation: ${esc((v&&v.validation_status)||'not validated')} · <b class="${recCls(v&&v.recommendation)}">${esc((v&&v.recommendation)||'NOT READY')}</b></span>`).join('')}</div>`;
+}
 const fact=f=>!f?'<span class="muted">—</span>':(f.value===null||f.value===undefined?`<span class="muted">unknown</span> ${kindChip('unknown')}<span class="sub">${esc(f.reason||'')}</span>`:`${esc(typeof f.value==='object'?JSON.stringify(f.value):f.value)} ${kindChip(f.kind)}${f.source?`<span class="sub">${esc(f.source)}${f.note?' · '+esc(f.note):''}</span>`:''}`);
 
 /* ---------- board ---------- */
 function pips(score){ const n=Math.min(8,Math.round(score)); return `<span class="pips" aria-label="importance ${score}">${Array.from({length:8},(_,i)=>`<i class="${i<n?(n>=6?'hot':'on'):''}"></i>`).join('')}</span>`; }
 function item(e){ return `<button class="game" data-key="${esc(e.key)}" aria-current="false"><span class="lg">${esc(e.league)}</span>
   <span><span class="mt">${esc(e.matchup)}</span><span class="sub">${esc(e.start||'')}</span>${pips(e.importance)}</span>
-  <span class="chip ${statusCls(e.research_status)}">${esc(e.research_status==='insufficient information'?'need info':e.research_status||'—')}</span>
+  <span class="chip ${statusCls(e.research_status)}">${esc(statusTxt(e.research_status))}</span>
   ${e.reasons&&e.reasons.length?`<span class="why">${esc(e.reasons[0])}</span>`:(e.why_stable?`<span class="why">${esc(e.why_stable)}</span>`:'')}</button>`; }
 function group(title,note,rows){ return `<section class="group"><div><h3>${esc(title)} <span class="muted num">${rows.length}</span></h3>${note?`<p class="note">${esc(note)}</p>`:''}</div>${rows.length?rows.map(item).join(''):'<p class="empty">None.</p>'}</section>`; }
 /* ---------- dossier ---------- */
@@ -428,12 +448,20 @@ function modelSec(c){
   const rows=(cmp.rows||[]).map(r=>`<tr><td>${esc(r.dimension)}${r.note?`<span class="sub">${esc(r.note)}</span>`:''}</td><td class="n num">${r.unit==='pp'?pct(r.market):r.dimension==='Total'?r.market:line(r.market)}</td><td class="n num">${r.unit==='pp'?pct(r.boolin):r.dimension==='Total'?r.boolin:line(r.boolin)}</td><td class="n num">${sgn(r.difference,1)} ${esc(r.unit)}</td><td><span class="chip ${r.label==='aligned'?'s-pass':r.label==='mild disagreement'?'sev-info':r.label==='significant disagreement'?'sev-watch':'sev-alert'}">${esc(r.label)}</span><span class="sub">${esc(r.direction)}</span></td></tr>`).join('');
   return `<section class="sec"><header><div><span class="q">What does Boolin think · where does it disagree</span><h2>Boolin vs market</h2></div>
     <span class="legend">${kindChip('derived')}<span class="small muted">${esc(m.version)} · confidence ${esc(m.confidence)}</span></span></header>
+    ${valGrid(c)}
     <div class="two"><div><span class="label">Projection</span><p class="num" style="font-size:1rem">${esc(c.game.home.abbr)} ${pct(m.home_win_p)} · line ${esc(c.game.home.abbr)} ${line(Math.round(-m.proj_margin_home*10)/10)} · total ${m.proj_total??'—'}</p></div>
       <div><span class="label">Overall</span><p>${esc(cmp.overall||'—')}</p>${cmp.caveat?`<p class="note">${esc(cmp.caveat)}</p>`:''}</div></div>
     ${rows?`<div class="scroll"><table><thead><tr><th>Measure</th><th class="n">Market</th><th class="n">Boolin</th><th class="n">Gap</th><th>Label</th></tr></thead><tbody>${rows}</tbody></table></div>`:''}
     <div><span class="label">Why Boolin has this number (home-margin units, sums to the projection)</span><div class="contrib" style="margin-top:6px">${bars}</div></div>
     ${(m.sample_warnings||[]).length?`<ul class="ev ev-unk">${m.sample_warnings.map(w=>`<li>${esc(w)}</li>`).join('')}</ul>`:''}
     <p class="note">Assumptions: ${(m.assumptions||[]).map(esc).join(' ')} ${esc(cmp.reminder||'')}</p></section>`;
+}
+function valGrid(c){
+  const m=c.model||{}, v=c.validation||{}; const small=(m.sample_warnings||[]).filter(w=>w.startsWith('Small sample'));
+  return `<div class="vgrid"><div><span class="label">Model confidence</span><b>${esc(m.confidence||'—')}</b><span class="sub">from the smallest regression weight</span></div>
+    <div><span class="label">Sample quality</span><b class="${small.length?'v-warn':''}">${small.length?'small':'normal'}</b><span class="sub">${esc(small[0]||'no small-sample warning')}</span></div>
+    <div><span class="label">Calibration status</span><b class="${calTxt(v)==='CALIBRATED'?'v-good':'v-bad'}">${calTxt(v)}</b><span class="sub">${esc(v.model_version||m.version||'')}</span></div>
+    <div><span class="label">Validation status</span><b class="${recCls(v.recommendation)}">${esc(v.recommendation||'NOT READY')}</b><span class="sub">${esc(v.validation_status||'not validated')}${v.sample_size?` · holdout n=${v.sample_size}`:''}</span></div></div>`;
 }
 function changesSec(c){
   const ev=(c.recent_changes||[]).slice().reverse();
@@ -501,6 +529,14 @@ function notebookSec(c){
     ${g?`<div><span class="label">Postgame grade</span><p class="num" style="font-size:1rem">Final ${esc(c.game.away.abbr)} ${pg.result.away_score} – ${esc(c.game.home.abbr)} ${pg.result.home_score} · overall ${esc(g.overall.grade||'not gradable')}</p>
       <div class="scroll"><table><thead><tr><th>Component</th><th>Grade</th><th>Detail</th></tr></thead><tbody>${comps.map(([k,v])=>`<tr><td>${esc(k.replace('_',' '))}</td><td class="num">${v.gradable?esc(v.grade):'—'}</td><td class="small">${v.gradable?esc(Object.entries(v).filter(([kk])=>!['gradable','score','grade'].includes(kk)).map(([kk,vv])=>kk+': '+(typeof vv==='object'?JSON.stringify(vv):vv)).join(' · ')):esc(v.reason)}</td></tr>`).join('')}</tbody></table></div><p class="note">${esc(g.note)}</p></div>`:''}</section>`;
 }
+function gateBox(s){
+  const g=s&&s.gate; if(!g||!g.applied) return '';
+  const extreme=s.status==='review required'&&/Extreme/.test(s.detail||'');
+  return `<div class="gatebox" role="note"><strong>${s.status==='review required'?'REVIEW REQUIRED':'Validation gate applied'}</strong>
+    <span>${extreme?'Why the model is not trusted here yet:':'Why:'}</span>
+    <ul>${(g.reasons||[]).map(r=>`<li>${esc(r)}</li>`).join('')}</ul>
+    <span class="small">Without the gate this would read “${esc(g.ungated_status)}”. Interesting disagreement is not a validated edge.</span></div>`;
+}
 function dossier(c){
   if(!c) return '<section class="sec"><p class="empty">Pick a game.</p></section>';
   const s=(c.summary||{}).conclusion||{};
@@ -509,11 +545,13 @@ function dossier(c){
     <div class="concl"><span class="chip ${statusCls(s.status)}">${esc(s.status||'—')}</span><div><p>${esc(s.detail||'')}</p>
       ${s.analyst_decision?`<p class="small">Analyst decision: <strong>${esc(s.analyst_decision)}</strong></p>`:''}
       ${s.trigger?`<p class="small muted">Trigger: ${esc(s.trigger)}</p>`:''}
-      ${(s.would_change_if||[]).length?`<p class="small muted">Would change if: ${s.would_change_if.map(esc).join(' · ')}</p>`:''}</div></div></header>
+      ${(s.would_change_if||[]).length?`<p class="small muted">Would change if: ${s.would_change_if.map(esc).join(' · ')}</p>`:''}</div>
+      ${gateBox(s)}</div></header>
     ${marketSec(c)}${modelSec(c)}${changesSec(c)}${evidenceSec(c)}${availSec(c)}${flagsSec(c)}${envSec(c)}${freshSec(c)}${scenSec(c)}${compSec(c)}${notebookSec(c)}`;
 }
-return {esc,item,group,dossier,tET,ageMin,ageLbl,statusCls};
+return {esc,item,group,dossier,tET,ageMin,ageLbl,statusCls,valBanner};
 })();
+/*RX_JS_END*/
 
 /* ---------- state ---------- */
 const DEFAULTS = {bankroll:1000, unitPct:1, kellyFrac:0.25, minEdge:2, maxUnits:2, dailyCap:8, gameCap:3, ladderHaircut:0.5, sgpMax:0.5, sgpMinEdge:5, parlayMax:0.5, longMax:0.25, modelWeight:0.5, minEdgeProp:3, longMinRel:20, staleMin:1440, mode:'research', convA:1, convB:0.5, convC:0.25};
@@ -869,7 +907,7 @@ function renderResearch(){
   const list=RX.group('Needs attention','Ranked by what changed, what is unresolved and where Boolin splits from the market. Not a bet ranking.',B.attention||[])+
     RX.group('Stable','No meaningful change, no strong split, inputs fresh.',B.stable||[])+
     `<details class="group"><summary><h3>Upcoming <span class="muted num">${(B.upcoming||[]).length}</span></h3><p class="note">Later games already tracked for line history.</p></summary>${(B.upcoming||[]).slice(0,25).map(RX.item).join('')}</details>`;
-  v.innerHTML=`<div class="rxhead"><div><h2>Research</h2><p class="note">Research built ${RX.tET(sm.built_at)} (${RX.ageLbl(RX.ageMin(sm.built_at))}) · ${Object.keys(cards).length} games · ${esc(M.status||'')}. Evidence and uncertainty, not picks.</p></div>
+  v.innerHTML=`<div class="rxhead"><div><h2>Research</h2><p class="note">Research built ${RX.tET(sm.built_at)} (${RX.ageLbl(RX.ageMin(sm.built_at))}) · ${Object.keys(cards).length} games · ${esc(M.status||'')}. Evidence and uncertainty, not picks.</p>${RX.valBanner(B.validation)}</div>
     <div class="row">${slatePicker('slate-pick-rx',sl)}<div class="health">${health}</div></div></div>
     <div class="layout"><nav class="list" aria-label="Research board">${list}</nav><article class="dossier" id="rx-dossier">${RX.dossier(cards[S.rxKey])}</article></div>`;
   v.querySelectorAll('.game').forEach(b=>b.setAttribute('aria-current',String(b.dataset.key===S.rxKey)));

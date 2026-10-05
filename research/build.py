@@ -19,6 +19,7 @@ import traceback
 from pathlib import Path
 
 from . import SCHEMA_VERSION, board, card as C, changes, comparables, flags, grading, markets, notebook, scenarios, summary
+from . import validate
 from . import timeutil as T
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -64,7 +65,7 @@ def _read(p: Path, default):
 
 
 ARCHIVE_KEYS = ("schema", "key", "league", "status", "date_et", "start_et", "start_label", "built_at", "game",
-                "market", "model", "comparison", "environment", "situations")
+                "market", "model", "comparison", "environment", "situations", "validation")
 
 
 def slim(card: dict) -> dict:
@@ -98,8 +99,8 @@ def situations(card: dict) -> dict:
         if b2b is not None:
             out[f"{s}_b2b"] = bool(b2b)
         pen = (r.get(s) or {}).get("bullpen") or {}
-        if pen:
-            out[f"{s}_pen_taxed"] = (pen.get("pitches_last3") or 0) >= 120
+        if pen and pen.get("pitches_last3") is not None:
+            out[f"{s}_pen_taxed"] = pen["pitches_last3"] >= 120
     return out
 
 
@@ -144,6 +145,7 @@ def build(raw: dict, now: dt.datetime, root: Path = RESEARCH, results_fetcher=es
     if nfl_history is None:
         nfl_history = comparables.load_nfl_history(NFL_HISTORY)
     graded_archive = _graded_archive(root)
+    statuses = validate.load_status(root)
 
     games = C.enumerate_games(raw, slate_date)
     pulled = (raw.get("odds") or {}).get("pulled_at_et")
@@ -166,6 +168,7 @@ def build(raw: dict, now: dt.datetime, root: Path = RESEARCH, results_fetcher=es
             c["changes_since_last_pull"] = evs
             c["change_count_total"] = len(allev)
             c["flags"] = flags.build(c)
+            c["validation"] = validate.status_for(statuses, g["league"]) if g["league"] in validate.MODELED else None
             nb = notebook.load(root / "notebooks", g["key"])
             c["notebook"] = nb
             c["summary"] = summary.build(c, nb)
@@ -202,6 +205,7 @@ def build(raw: dict, now: dt.datetime, root: Path = RESEARCH, results_fetcher=es
     grades_done, result_errors = grade_finished(root, now, results_fetcher, cards)
     errors += result_errors
     b = board.build(cards, slate_date, now_iso)
+    b["validation"] = {lg: validate.status_for(statuses, lg) for lg in validate.MODELED}
     manifest = {
         "schema": SCHEMA_VERSION, "built_at": now_iso, "slate_date": slate_date,
         "status": "ok" if not errors else ("partial" if cards else "error"),
@@ -211,6 +215,7 @@ def build(raw: dict, now: dt.datetime, root: Path = RESEARCH, results_fetcher=es
                        "status": (((raw.get("manifest") or {}).get("sources") or {}).get(n) or {}).get("status")}
                    for n in RAW_NAMES if n != "manifest"},
         "raw_health": (raw.get("manifest") or {}).get("health"),
+        "validation": {lg: (statuses.get(lg) or {}).get("recommendation", "NOT READY") for lg in validate.MODELED},
     }
     _write(root / "latest" / "cards.json", {"built_at": now_iso, "slate_date": slate_date, "cards": cards})
     _write(root / "latest" / "board.json", b)

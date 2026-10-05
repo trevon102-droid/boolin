@@ -102,7 +102,10 @@ Files in `data/latest/`:
 Also read the research layer (`data/research/latest/board.json` and `cards.json`, see RESEARCH.md): the board
 ranks today's games by what changed and what's unresolved, and each card has market open/current, the change
 timeline, flags, Boolin's baseline view and the unknowns. Use it to decide where to research first. Its model is
-an uncalibrated baseline: treat its disagreement as a prompt to dig, never as a play by itself. If you form a thesis
+an uncalibrated baseline: treat its disagreement as a prompt to dig, never as a play by itself. `review required`
+means a strong Boolin/market split that validation doesn't back (see `data/research/validation/model_scorecard.json`):
+research it, never cite it as the reason for a play. There are no research `lean`s until a league's scorecard says
+`CALIBRATED / RESEARCH READY`. If you form a thesis
 on a game, record it with `python -m research.notebook set <game_key> ...` so it gets graded after the game.
 
 Also read the weekly prep data from the board's database (`ArtifactData` `list` on collection `prep`):

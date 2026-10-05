@@ -149,6 +149,12 @@ def build(card: dict) -> list[dict]:
                                 f"{card['game'][side]['abbr']} bullpen heavily used",
                                 f"Relievers threw {bp['pitches_last3']} pitches over the last 3 days"
                                 + (f"; likely limited: {', '.join(bp['limited'])}." if bp.get("limited") else ".")))
+            if bp.get("classification") in ("unknown", "partial"):
+                out.append(flag(f"data.bullpen_unclassified_{side}", "data", "info",
+                                f"{card['game'][side]['abbr']} bullpen workload unknown",
+                                "The starter couldn't be identified from MLB's credited start in "
+                                f"{len(bp.get('unclassified_games') or []) or 'some'} recent game(s), so reliever "
+                                "workload isn't counted and the model treats the bullpen as league average."))
             sp_ = ((card.get("research") or {}).get(side) or {}).get("starter") or {}
             if sp_.get("short_start_flag"):
                 out.append(flag(f"mlb.short_start_{side}", "injury", "watch", f"{card['game'][side]['abbr']} possible opener",

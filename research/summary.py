@@ -2,8 +2,9 @@
 
 Built only from the card's structured fields. Evidence is judged relative to a *thesis side*:
 the analyst's notebook thesis if there is one, otherwise the side Boolin rates higher than the
-market. The conclusion is a research status (lean / pass / insufficient information / watch),
-not a bet instruction.
+market. The conclusion is a research status (lean / watch / review required / pass / insufficient
+information), not a bet instruction. A validation gate (see `gate`) keeps strong disagreement from
+becoming a `lean` while the league's model has no validated holdout evidence.
 """
 from __future__ import annotations
 
@@ -116,37 +117,101 @@ def val_line(card):
     return (((card.get("market") or {}).get("total") or {}).get("current") or {}).get("line")
 
 
-def conclude(card, side, sup, con, unk, notebook) -> dict:
+REVIEW = "review required"
+EXTREME_TEXT = ("Extreme model/market disagreement. Model is currently {cal}. "
+                "Review required; disagreement is not evidence of edge.")
+
+
+def _base(card, side, sup, con) -> dict:
+    """The research status before the validation gate (what the evidence alone would say)."""
     m = card.get("model") or {}
     cmp_ = card.get("comparison") or {}
-    nb = notebook or {}
     team = {"home": card["game"]["home"]["abbr"], "away": card["game"]["away"]["abbr"]}
     critical = [f for f in card.get("flags") or [] if f["severity"] == "alert" and f["category"] in ("injury", "data")]
-    out: dict
     if not m.get("available"):
-        out = {"status": "insufficient information", "detail": f"No Boolin projection ({m.get('reason')})."}
-    elif critical:
-        out = {"status": "insufficient information",
-               "detail": "Unresolved: " + "; ".join(f["title"] for f in critical) + "."}
-    elif not cmp_.get("available"):
-        out = {"status": "insufficient information", "detail": "No market to compare against."}
-    elif cmp_["overall"] == "aligned":
-        out = {"status": "pass", "detail": "Boolin and the market agree; nothing in the data separates them."}
-    elif cmp_["overall"] == "mild disagreement" or cmp_.get("model_confidence") == "low":
-        out = {"status": "watch", "detail": f"{cmp_['overall'].capitalize()} with model confidence "
-                                             f"{cmp_.get('model_confidence')}; not enough to form a view yet."}
-    elif side not in ("home", "away"):
-        out = {"status": "watch", "detail": "Disagreement without a clear side; recheck after the next pull."}
-    else:
-        n_sup, n_con = len(sup), len(con)
-        if n_con > n_sup:
-            out = {"status": "watch", "detail": f"Boolin differs from the market toward {team.get(side, side)}, "
-                                                 f"but more evidence points the other way ({n_con} vs {n_sup})."}
-        else:
-            out = {"status": "lean", "side": side, "team": team.get(side, side),
-                   "detail": f"Research lean {team.get(side, side)}: {cmp_['overall']}, model confidence "
-                             f"{cmp_.get('model_confidence')}, {n_sup} supporting vs {n_con} contradicting items. "
-                             "Uncalibrated model: this is a research direction, not a bet signal."}
+        return {"status": "insufficient information", "detail": f"No Boolin projection ({m.get('reason')})."}
+    if critical:
+        return {"status": "insufficient information",
+                "detail": "Unresolved: " + "; ".join(f["title"] for f in critical) + "."}
+    if not cmp_.get("available"):
+        return {"status": "insufficient information", "detail": "No market to compare against."}
+    if cmp_["overall"] == "aligned":
+        return {"status": "pass", "detail": "Boolin and the market agree; nothing in the data separates them."}
+    if cmp_["overall"] == "mild disagreement" or cmp_.get("model_confidence") == "low":
+        return {"status": "watch", "detail": f"{cmp_['overall'].capitalize()} with model confidence "
+                                              f"{cmp_.get('model_confidence')}; not enough to form a view yet."}
+    if side not in ("home", "away"):
+        return {"status": "watch", "detail": "Disagreement without a clear side; recheck after the next pull."}
+    n_sup, n_con = len(sup), len(con)
+    if n_con > n_sup:
+        return {"status": "watch", "detail": f"Boolin differs from the market toward {team.get(side, side)}, "
+                                              f"but more evidence points the other way ({n_con} vs {n_sup})."}
+    return {"status": "lean", "side": side, "team": team.get(side, side),
+            "detail": f"Research lean {team.get(side, side)}: {cmp_['overall']}, model confidence "
+                      f"{cmp_.get('model_confidence')}, {n_sup} supporting vs {n_con} contradicting items. "
+                      "Research direction, not a bet signal."}
+
+
+def _unresolved_key_player(card) -> list[str]:
+    av = card.get("availability") or {}
+    out = [f"{r.get('player')} ({r.get('team')}, {r.get('pos')}) {r.get('status')}" for r in av.get("injuries") or []
+           if r.get("key_player") and r.get("status_norm") in ("questionable", "doubtful", "day-to-day")]
+    out += [f["title"] for f in card.get("flags") or [] if f["severity"] == "alert" and f["category"] == "injury"]
+    return out
+
+
+def gate(card, base: dict) -> dict:
+    """Validation gate. Strong disagreement is only allowed to become a `lean` once the league's
+    model has validated holdout evidence; until then it becomes `watch` or `review required`.
+      significant/extreme + model not validated     -> extreme: review required; significant: never lean
+      significant/extreme + small sample            -> review required
+      significant/extreme + unresolved key player   -> review required
+    Returns the gated conclusion with `gate` = {applied, reasons, ungated_status, validation}."""
+    m = card.get("model") or {}
+    cmp_ = card.get("comparison") or {}
+    v = card.get("validation") or {"calibration_status": "uncalibrated", "validation_status": "not validated",
+                                   "recommendation": "NOT READY", "lean_allowed": False}
+    overall = cmp_.get("overall") if cmp_.get("available") else None
+    info = {"applied": False, "reasons": [], "ungated_status": base["status"],
+            "validation": {k: v.get(k) for k in ("model_version", "calibration_status", "validation_status",
+                                                 "recommendation", "lean_allowed")}}
+    if not m.get("available") or overall not in ("significant disagreement", "extreme disagreement"):
+        if base["status"] == "lean" and not v.get("lean_allowed"):   # belt and braces: no lean without validation
+            info.update(applied=True, reasons=[f"model {v.get('calibration_status')}; validation: {v.get('validation_status')}"])
+            return {"status": "watch", "detail": base["detail"].replace("Research lean", "Possible direction") +
+                    " Not a lean: the model isn't validated yet.", "gate": info}
+        return {**base, "gate": info}
+    reasons = []
+    unvalidated = not v.get("lean_allowed")
+    if unvalidated:
+        reasons.append(f"model {v.get('calibration_status')}; validation: {v.get('validation_status')} "
+                       f"({v.get('recommendation')})")
+    small = [w for w in m.get("sample_warnings") or [] if w.startswith("Small sample")] or \
+        (["model confidence low"] if m.get("confidence") == "low" else [])
+    if small:
+        reasons.append("small sample: " + "; ".join(small[:2]))
+    keyp = _unresolved_key_player(card)
+    if keyp:
+        reasons.append("unresolved key player: " + "; ".join(keyp[:3]))
+    if not reasons:
+        return {**base, "gate": info}
+    info.update(applied=True, reasons=reasons)
+    cal = "uncalibrated" if unvalidated else "validated"
+    if overall == "extreme disagreement" or small or keyp:
+        head = EXTREME_TEXT.format(cal=cal) if overall == "extreme disagreement" else \
+            f"{overall.capitalize()} with {'a small sample' if small else 'an unresolved key player'}. Review required."
+        return {"status": REVIEW, "detail": head, "gate": info,
+                **({"side": base["side"], "team": base.get("team")} if base.get("side") else {})}
+    # significant disagreement, unvalidated model, nothing else wrong: at most a watch
+    if base["status"] == "lean":
+        return {"status": "watch", "detail": f"Significant disagreement toward {base.get('team')}, but the model is "
+                f"{cal} ({v.get('validation_status')}): a research direction to check, not a lean.", "gate": info}
+    return {**base, "gate": info}
+
+
+def conclude(card, side, sup, con, unk, notebook) -> dict:
+    nb = notebook or {}
+    out = gate(card, _base(card, side, sup, con))
     out["trigger"] = nb.get("entry_trigger") or trigger(card)
     if nb.get("decision"):
         out["analyst_decision"] = nb["decision"]

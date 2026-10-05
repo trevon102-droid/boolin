@@ -68,6 +68,10 @@ Boolin vs market, availability with confirmed/projected labels, freshness), a "w
 flags, a daily research board, scenarios, historical comparables, analyst notebooks and postgame grades.
 The workflow runs `python -m research.build` after every pull. See [`RESEARCH.md`](RESEARCH.md).
 
+Model validation (`python -m research.validate`, also in the workflow) scores the models against results and the
+market, point in time, with a chronological holdout, and gates research conclusions on it
+(`data/research/validation/`).
+
 ## Tests
 
 ```
