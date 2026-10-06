@@ -19041,6 +19041,300 @@
      }
     ]
    }
+  },
+  "live_archive": {
+   "development": {
+    "criteria": {
+     "probability_pp": 10.0,
+     "spread_pts": {
+      "NFL": 5.0,
+      "CFB": 7.0
+     },
+     "note": "NHL puck lines and MLB run lines are fixed at +/-1.5, so only win probability is used there."
+    },
+    "groups": [
+     {
+      "group": "all extreme disagreements",
+      "n": 1,
+      "boolin_brier": 0.3982,
+      "market_brier": 0.2769,
+      "brier_paired": {
+       "n": 1,
+       "mean_diff": 0.12127,
+       "se": null,
+       "t": null,
+       "verdict": "too few games to tell (n=1)",
+       "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
+      },
+      "boolin_side_actual_rate": 0.0,
+      "boolin_side_market_implied": 0.5262,
+      "boolin_side_boolin_implied": 0.631,
+      "boolin_side_z_vs_market": -1.05,
+      "boolin_beat_market_rate": 0.0,
+      "boolin_pick_win_rate": 0.0,
+      "market_favorite_win_rate": 0.0,
+      "interpretable": false
+     },
+     {
+      "group": "high confidence",
+      "n": 0
+     },
+     {
+      "group": "medium confidence",
+      "n": 1,
+      "boolin_brier": 0.3982,
+      "market_brier": 0.2769,
+      "brier_paired": {
+       "n": 1,
+       "mean_diff": 0.12127,
+       "se": null,
+       "t": null,
+       "verdict": "too few games to tell (n=1)",
+       "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
+      },
+      "boolin_side_actual_rate": 0.0,
+      "boolin_side_market_implied": 0.5262,
+      "boolin_side_boolin_implied": 0.631,
+      "boolin_side_z_vs_market": -1.05,
+      "boolin_beat_market_rate": 0.0,
+      "boolin_pick_win_rate": 0.0,
+      "market_favorite_win_rate": 0.0,
+      "interpretable": false
+     },
+     {
+      "group": "low confidence",
+      "n": 0
+     },
+     {
+      "group": "small samples",
+      "n": 0
+     },
+     {
+      "group": "normal samples",
+      "n": 1,
+      "boolin_brier": 0.3982,
+      "market_brier": 0.2769,
+      "brier_paired": {
+       "n": 1,
+       "mean_diff": 0.12127,
+       "se": null,
+       "t": null,
+       "verdict": "too few games to tell (n=1)",
+       "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
+      },
+      "boolin_side_actual_rate": 0.0,
+      "boolin_side_market_implied": 0.5262,
+      "boolin_side_boolin_implied": 0.631,
+      "boolin_side_z_vs_market": -1.05,
+      "boolin_beat_market_rate": 0.0,
+      "boolin_pick_win_rate": 0.0,
+      "market_favorite_win_rate": 0.0,
+      "interpretable": false
+     },
+     {
+      "group": "injury / player uncertainty",
+      "n": 0
+     },
+     {
+      "group": "clean data",
+      "n": 0
+     }
+    ],
+    "games": [
+     {
+      "key": "2026-10-05-NFL-ATL-NO",
+      "date": "2026-10-05",
+      "reasons": [
+       "win probability +10.5 pp"
+      ],
+      "boolin_win_p": 0.631,
+      "market_win_p": 0.5262,
+      "boolin_pick_won": false,
+      "market_favorite_won": false,
+      "boolin_beat_market": false,
+      "model_confidence": "medium",
+      "sample": 3,
+      "unresolved_injuries": false,
+      "qb_change": null,
+      "starter_unconfirmed": true,
+      "data_health": "degraded",
+      "model_version": "baseline-0.2"
+     }
+    ],
+    "hypotheses": [
+     {
+      "hypothesis": "useful contrarian signal",
+      "verdict": "inconclusive",
+      "evidence": "n=1; Boolin side won 0.0 vs market-implied 0.5262 (Boolin said 0.631); too few games to tell (n=1)"
+     },
+     {
+      "hypothesis": "early-season / small-sample instability",
+      "verdict": "inconclusive",
+      "evidence": "0 of 1 extremes; not enough games to compare"
+     },
+     {
+      "hypothesis": "stale or incomplete data",
+      "verdict": "inconclusive",
+      "evidence": "1 of 1 extremes; not enough games to compare"
+     },
+     {
+      "hypothesis": "missing player-level information",
+      "verdict": "inconclusive",
+      "evidence": "0 of 1 extremes; not enough games to compare"
+     },
+     {
+      "hypothesis": "systematic model bias",
+      "verdict": "inconclusive",
+      "evidence": "n=1 extremes"
+     }
+    ]
+   },
+   "all": {
+    "criteria": {
+     "probability_pp": 10.0,
+     "spread_pts": {
+      "NFL": 5.0,
+      "CFB": 7.0
+     },
+     "note": "NHL puck lines and MLB run lines are fixed at +/-1.5, so only win probability is used there."
+    },
+    "groups": [
+     {
+      "group": "all extreme disagreements",
+      "n": 1,
+      "boolin_brier": 0.3982,
+      "market_brier": 0.2769,
+      "brier_paired": {
+       "n": 1,
+       "mean_diff": 0.12127,
+       "se": null,
+       "t": null,
+       "verdict": "too few games to tell (n=1)",
+       "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
+      },
+      "boolin_side_actual_rate": 0.0,
+      "boolin_side_market_implied": 0.5262,
+      "boolin_side_boolin_implied": 0.631,
+      "boolin_side_z_vs_market": -1.05,
+      "boolin_beat_market_rate": 0.0,
+      "boolin_pick_win_rate": 0.0,
+      "market_favorite_win_rate": 0.0,
+      "interpretable": false
+     },
+     {
+      "group": "high confidence",
+      "n": 0
+     },
+     {
+      "group": "medium confidence",
+      "n": 1,
+      "boolin_brier": 0.3982,
+      "market_brier": 0.2769,
+      "brier_paired": {
+       "n": 1,
+       "mean_diff": 0.12127,
+       "se": null,
+       "t": null,
+       "verdict": "too few games to tell (n=1)",
+       "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
+      },
+      "boolin_side_actual_rate": 0.0,
+      "boolin_side_market_implied": 0.5262,
+      "boolin_side_boolin_implied": 0.631,
+      "boolin_side_z_vs_market": -1.05,
+      "boolin_beat_market_rate": 0.0,
+      "boolin_pick_win_rate": 0.0,
+      "market_favorite_win_rate": 0.0,
+      "interpretable": false
+     },
+     {
+      "group": "low confidence",
+      "n": 0
+     },
+     {
+      "group": "small samples",
+      "n": 0
+     },
+     {
+      "group": "normal samples",
+      "n": 1,
+      "boolin_brier": 0.3982,
+      "market_brier": 0.2769,
+      "brier_paired": {
+       "n": 1,
+       "mean_diff": 0.12127,
+       "se": null,
+       "t": null,
+       "verdict": "too few games to tell (n=1)",
+       "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
+      },
+      "boolin_side_actual_rate": 0.0,
+      "boolin_side_market_implied": 0.5262,
+      "boolin_side_boolin_implied": 0.631,
+      "boolin_side_z_vs_market": -1.05,
+      "boolin_beat_market_rate": 0.0,
+      "boolin_pick_win_rate": 0.0,
+      "market_favorite_win_rate": 0.0,
+      "interpretable": false
+     },
+     {
+      "group": "injury / player uncertainty",
+      "n": 0
+     },
+     {
+      "group": "clean data",
+      "n": 0
+     }
+    ],
+    "games": [
+     {
+      "key": "2026-10-05-NFL-ATL-NO",
+      "date": "2026-10-05",
+      "reasons": [
+       "win probability +10.5 pp"
+      ],
+      "boolin_win_p": 0.631,
+      "market_win_p": 0.5262,
+      "boolin_pick_won": false,
+      "market_favorite_won": false,
+      "boolin_beat_market": false,
+      "model_confidence": "medium",
+      "sample": 3,
+      "unresolved_injuries": false,
+      "qb_change": null,
+      "starter_unconfirmed": true,
+      "data_health": "degraded",
+      "model_version": "baseline-0.2"
+     }
+    ],
+    "hypotheses": [
+     {
+      "hypothesis": "useful contrarian signal",
+      "verdict": "inconclusive",
+      "evidence": "n=1; Boolin side won 0.0 vs market-implied 0.5262 (Boolin said 0.631); too few games to tell (n=1)"
+     },
+     {
+      "hypothesis": "early-season / small-sample instability",
+      "verdict": "inconclusive",
+      "evidence": "0 of 1 extremes; not enough games to compare"
+     },
+     {
+      "hypothesis": "stale or incomplete data",
+      "verdict": "inconclusive",
+      "evidence": "1 of 1 extremes; not enough games to compare"
+     },
+     {
+      "hypothesis": "missing player-level information",
+      "verdict": "inconclusive",
+      "evidence": "0 of 1 extremes; not enough games to compare"
+     },
+     {
+      "hypothesis": "systematic model bias",
+      "verdict": "inconclusive",
+      "evidence": "n=1 extremes"
+     }
+    ]
+   }
   }
  },
  "NHL": {

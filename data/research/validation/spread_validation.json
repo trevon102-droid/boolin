@@ -360,29 +360,169 @@
      "note": "Research only: how often the side Boolin's line preferred covered the stored market line. Not profit, not edge."
     }
    }
+  },
+  "live_archive": {
+   "development": {
+    "boolin_margin": {
+     "n": 1,
+     "mae": 25.56,
+     "rmse": 25.56,
+     "mean_error": -25.56,
+     "median_error": -25.56,
+     "directional_accuracy": 0.0
+    },
+    "same_games": {
+     "n": 1,
+     "boolin": {
+      "n": 1,
+      "mae": 25.56,
+      "rmse": 25.56,
+      "mean_error": -25.56,
+      "median_error": -25.56
+     },
+     "market_implied": {
+      "n": 1,
+      "mae": 22.5,
+      "rmse": 22.5,
+      "mean_error": -22.5,
+      "median_error": -22.5,
+      "directional_accuracy": 0.0
+     },
+     "abs_error_paired": {
+      "n": 1,
+      "mean_diff": 3.06,
+      "se": null,
+      "t": null,
+      "verdict": "too few games to tell (n=1)",
+      "note": "mean of Boolin minus market per-game margin abs error; negative favours Boolin"
+     }
+    },
+    "ats_research": {
+     "rows": [
+      {
+       "gap": "1-2.5 pts",
+       "n": 0,
+       "pushes": 0,
+       "boolin_side_cover_rate": null,
+       "interpretable": false
+      },
+      {
+       "gap": "2.5-5 pts",
+       "n": 1,
+       "pushes": 0,
+       "boolin_side_cover_rate": 0.0,
+       "interpretable": false
+      },
+      {
+       "gap": "5+ pts",
+       "n": 0,
+       "pushes": 0,
+       "boolin_side_cover_rate": null,
+       "interpretable": false
+      },
+      {
+       "gap": "1+ pts",
+       "n": 1,
+       "pushes": 0,
+       "boolin_side_cover_rate": 0.0,
+       "interpretable": false
+      }
+     ],
+     "note": "Research only: how often the side Boolin's line preferred covered the stored market line. Not profit, not edge."
+    }
+   },
+   "all": {
+    "boolin_margin": {
+     "n": 1,
+     "mae": 25.56,
+     "rmse": 25.56,
+     "mean_error": -25.56,
+     "median_error": -25.56,
+     "directional_accuracy": 0.0
+    },
+    "same_games": {
+     "n": 1,
+     "boolin": {
+      "n": 1,
+      "mae": 25.56,
+      "rmse": 25.56,
+      "mean_error": -25.56,
+      "median_error": -25.56
+     },
+     "market_implied": {
+      "n": 1,
+      "mae": 22.5,
+      "rmse": 22.5,
+      "mean_error": -22.5,
+      "median_error": -22.5,
+      "directional_accuracy": 0.0
+     },
+     "abs_error_paired": {
+      "n": 1,
+      "mean_diff": 3.06,
+      "se": null,
+      "t": null,
+      "verdict": "too few games to tell (n=1)",
+      "note": "mean of Boolin minus market per-game margin abs error; negative favours Boolin"
+     }
+    },
+    "ats_research": {
+     "rows": [
+      {
+       "gap": "1-2.5 pts",
+       "n": 0,
+       "pushes": 0,
+       "boolin_side_cover_rate": null,
+       "interpretable": false
+      },
+      {
+       "gap": "2.5-5 pts",
+       "n": 1,
+       "pushes": 0,
+       "boolin_side_cover_rate": 0.0,
+       "interpretable": false
+      },
+      {
+       "gap": "5+ pts",
+       "n": 0,
+       "pushes": 0,
+       "boolin_side_cover_rate": null,
+       "interpretable": false
+      },
+      {
+       "gap": "1+ pts",
+       "n": 1,
+       "pushes": 0,
+       "boolin_side_cover_rate": 0.0,
+       "interpretable": false
+      }
+     ],
+     "note": "Research only: how often the side Boolin's line preferred covered the stored market line. Not profit, not edge."
+    }
+   }
   }
  },
  "NHL": {
   "live_archive": {
    "development": {
     "boolin_margin": {
-     "n": 31,
-     "mae": 2.243,
-     "rmse": 2.777,
-     "mean_error": 0.583,
+     "n": 35,
+     "mae": 2.283,
+     "rmse": 2.774,
+     "mean_error": 0.557,
      "median_error": 0.7,
-     "directional_accuracy": 0.6129
+     "directional_accuracy": 0.6286
     },
     "market": "not applicable: puck/run lines are fixed at +/-1.5, so the market's margin estimate isn't stored; Boolin's margin is checked against results only"
    },
    "all": {
     "boolin_margin": {
-     "n": 31,
-     "mae": 2.243,
-     "rmse": 2.777,
-     "mean_error": 0.583,
+     "n": 35,
+     "mae": 2.283,
+     "rmse": 2.774,
+     "mean_error": 0.557,
      "median_error": 0.7,
-     "directional_accuracy": 0.6129
+     "directional_accuracy": 0.6286
     },
     "market": "not applicable: puck/run lines are fixed at +/-1.5, so the market's margin estimate isn't stored; Boolin's margin is checked against results only"
    }
@@ -392,23 +532,23 @@
   "live_archive": {
    "development": {
     "boolin_margin": {
-     "n": 8,
-     "mae": 1.411,
-     "rmse": 1.822,
-     "mean_error": -0.112,
-     "median_error": 0.18,
-     "directional_accuracy": 0.75
+     "n": 9,
+     "mae": 1.635,
+     "rmse": 2.064,
+     "mean_error": 0.282,
+     "median_error": 0.222,
+     "directional_accuracy": 0.6667
     },
     "market": "not applicable: puck/run lines are fixed at +/-1.5, so the market's margin estimate isn't stored; Boolin's margin is checked against results only"
    },
    "all": {
     "boolin_margin": {
-     "n": 8,
-     "mae": 1.411,
-     "rmse": 1.822,
-     "mean_error": -0.112,
-     "median_error": 0.18,
-     "directional_accuracy": 0.75
+     "n": 9,
+     "mae": 1.635,
+     "rmse": 2.064,
+     "mean_error": 0.282,
+     "median_error": 0.222,
+     "directional_accuracy": 0.6667
     },
     "market": "not applicable: puck/run lines are fixed at +/-1.5, so the market's margin estimate isn't stored; Boolin's margin is checked against results only"
    }
