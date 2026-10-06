@@ -158,6 +158,36 @@
     ],
     "same_pull_updates": []
    }
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-CIN-MIA",
+   "type": "moneyline",
+   "field": "CIN ML (FanDuel)",
+   "old": -375,
+   "new": -370,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-CIN-MIA",
+   "type": "moneyline",
+   "field": "MIA ML (FanDuel)",
+   "old": 300,
+   "new": 295,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-CIN-MIA",
+   "type": "price",
+   "field": "MIA no-vig win prob",
+   "old": 0.2385,
+   "new": 0.2514,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
   }
  ],
  "2026-10-11-NFL-LV-NE": [
@@ -583,6 +613,152 @@
      "spread home (FanDuel): -110 \u2192 -115"
     ]
    }
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-MIN-NO",
+   "type": "moneyline",
+   "field": "MIN ML (FanDuel)",
+   "old": -118,
+   "new": -130,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-MIN-NO",
+   "type": "moneyline",
+   "field": "NO ML (FanDuel)",
+   "old": 100,
+   "new": 110,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-MIN-NO",
+   "type": "price",
+   "field": "NO no-vig win prob",
+   "old": 0.4723,
+   "new": 0.4585,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-MIN-NO",
+   "type": "price",
+   "field": "spread away (FanDuel)",
+   "old": -105,
+   "new": -118,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-MIN-NO",
+   "type": "price",
+   "field": "spread home (FanDuel)",
+   "old": -115,
+   "new": -104,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-MIN-NO",
+   "type": "model",
+   "field": "Boolin NO win probability",
+   "old": 0.5167,
+   "new": 0.4623,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 51.7% to 46.2% (home margin +0.57 \u2192 -1.29). Model components that moved: 1. Defense (EPA/play allowed, regressed) -1.55 (home allows +0.076 vs away allows -0.104 x 32.45); 2. Offense (EPA/play, regressed) -0.31 (home +0.005 vs away -0.042 EPA/play x 58.15). Data updates in the same pull: MIN ML (FanDuel): -118 \u2192 -130; NO ML (FanDuel): 100 \u2192 110; NO no-vig win prob: 0.4723 \u2192 0.4585; spread away (FanDuel): -105 \u2192 -118; spread home (FanDuel): -115 \u2192 -104.",
+   "detail": {
+    "text": "Boolin moved from 51.7% to 46.2% (home margin +0.57 \u2192 -1.29). Model components that moved: 1. Defense (EPA/play allowed, regressed) -1.55 (home allows +0.076 vs away allows -0.104 x 32.45); 2. Offense (EPA/play, regressed) -0.31 (home +0.005 vs away -0.042 EPA/play x 58.15). Data updates in the same pull: MIN ML (FanDuel): -118 \u2192 -130; NO ML (FanDuel): 100 \u2192 110; NO no-vig win prob: 0.4723 \u2192 0.4585; spread away (FanDuel): -105 \u2192 -118; spread home (FanDuel): -115 \u2192 -104.",
+    "components": [
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -1.55,
+      "now": "home allows +0.076 vs away allows -0.104 x 32.45"
+     },
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.31,
+      "now": "home +0.005 vs away -0.042 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": [
+     "MIN ML (FanDuel): -118 \u2192 -130",
+     "NO ML (FanDuel): 100 \u2192 110",
+     "NO no-vig win prob: 0.4723 \u2192 0.4585",
+     "spread away (FanDuel): -105 \u2192 -118",
+     "spread home (FanDuel): -115 \u2192 -104"
+    ]
+   }
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-MIN-NO",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "NO -0.6",
+   "new": "NO +1.3",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 51.7% to 46.2% (home margin +0.57 \u2192 -1.29). Model components that moved: 1. Defense (EPA/play allowed, regressed) -1.55 (home allows +0.076 vs away allows -0.104 x 32.45); 2. Offense (EPA/play, regressed) -0.31 (home +0.005 vs away -0.042 EPA/play x 58.15). Data updates in the same pull: MIN ML (FanDuel): -118 \u2192 -130; NO ML (FanDuel): 100 \u2192 110; NO no-vig win prob: 0.4723 \u2192 0.4585; spread away (FanDuel): -105 \u2192 -118; spread home (FanDuel): -115 \u2192 -104.",
+   "detail": {
+    "text": "Boolin moved from 51.7% to 46.2% (home margin +0.57 \u2192 -1.29). Model components that moved: 1. Defense (EPA/play allowed, regressed) -1.55 (home allows +0.076 vs away allows -0.104 x 32.45); 2. Offense (EPA/play, regressed) -0.31 (home +0.005 vs away -0.042 EPA/play x 58.15). Data updates in the same pull: MIN ML (FanDuel): -118 \u2192 -130; NO ML (FanDuel): 100 \u2192 110; NO no-vig win prob: 0.4723 \u2192 0.4585; spread away (FanDuel): -105 \u2192 -118; spread home (FanDuel): -115 \u2192 -104.",
+    "components": [
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -1.55,
+      "now": "home allows +0.076 vs away allows -0.104 x 32.45"
+     },
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.31,
+      "now": "home +0.005 vs away -0.042 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": [
+     "MIN ML (FanDuel): -118 \u2192 -130",
+     "NO ML (FanDuel): 100 \u2192 110",
+     "NO no-vig win prob: 0.4723 \u2192 0.4585",
+     "spread away (FanDuel): -105 \u2192 -118",
+     "spread home (FanDuel): -115 \u2192 -104"
+    ]
+   }
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-MIN-NO",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 43.2,
+   "new": 44.1,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 51.7% to 46.2% (home margin +0.57 \u2192 -1.29). Model components that moved: 1. Defense (EPA/play allowed, regressed) -1.55 (home allows +0.076 vs away allows -0.104 x 32.45); 2. Offense (EPA/play, regressed) -0.31 (home +0.005 vs away -0.042 EPA/play x 58.15). Data updates in the same pull: MIN ML (FanDuel): -118 \u2192 -130; NO ML (FanDuel): 100 \u2192 110; NO no-vig win prob: 0.4723 \u2192 0.4585; spread away (FanDuel): -105 \u2192 -118; spread home (FanDuel): -115 \u2192 -104.",
+   "detail": {
+    "text": "Boolin moved from 51.7% to 46.2% (home margin +0.57 \u2192 -1.29). Model components that moved: 1. Defense (EPA/play allowed, regressed) -1.55 (home allows +0.076 vs away allows -0.104 x 32.45); 2. Offense (EPA/play, regressed) -0.31 (home +0.005 vs away -0.042 EPA/play x 58.15). Data updates in the same pull: MIN ML (FanDuel): -118 \u2192 -130; NO ML (FanDuel): 100 \u2192 110; NO no-vig win prob: 0.4723 \u2192 0.4585; spread away (FanDuel): -105 \u2192 -118; spread home (FanDuel): -115 \u2192 -104.",
+    "components": [
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -1.55,
+      "now": "home allows +0.076 vs away allows -0.104 x 32.45"
+     },
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.31,
+      "now": "home +0.005 vs away -0.042 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": [
+     "MIN ML (FanDuel): -118 \u2192 -130",
+     "NO ML (FanDuel): 100 \u2192 110",
+     "NO no-vig win prob: 0.4723 \u2192 0.4585",
+     "spread away (FanDuel): -105 \u2192 -118",
+     "spread home (FanDuel): -115 \u2192 -104"
+    ]
+   }
   }
  ],
  "2026-10-11-NFL-DEN-LAC": [
@@ -837,6 +1013,26 @@
      "total under (FanDuel): -110 \u2192 -108"
     ]
    }
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-DEN-LAC",
+   "type": "moneyline",
+   "field": "DEN ML (FanDuel)",
+   "old": -184,
+   "new": -186,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-DEN-LAC",
+   "type": "moneyline",
+   "field": "LAC ML (FanDuel)",
+   "old": 154,
+   "new": 156,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
   }
  ],
  "2026-10-11-NFL-DET-ARI": [
@@ -1010,6 +1206,56 @@
     ],
     "same_pull_updates": []
    }
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-DET-ARI",
+   "type": "spread",
+   "field": "ARI spread",
+   "old": "ARI +4",
+   "new": "ARI +5",
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-DET-ARI",
+   "type": "total",
+   "field": "total",
+   "old": 53.5,
+   "new": 54.5,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-DET-ARI",
+   "type": "moneyline",
+   "field": "DET ML (FanDuel)",
+   "old": -215,
+   "new": -240,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-DET-ARI",
+   "type": "moneyline",
+   "field": "ARI ML (FanDuel)",
+   "old": 180,
+   "new": 198,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-DET-ARI",
+   "type": "price",
+   "field": "ARI no-vig win prob",
+   "old": 0.3447,
+   "new": 0.3165,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
   }
  ],
  "2026-10-11-NFL-SF-SEA": [
@@ -1131,6 +1377,16 @@
     ],
     "same_pull_updates": []
    }
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-SF-SEA",
+   "type": "price",
+   "field": "SEA no-vig win prob",
+   "old": 0.5919,
+   "new": 0.5813,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
   }
  ],
  "2026-10-11-NFL-PHI-JAX": [
@@ -1296,6 +1552,46 @@
     ],
     "same_pull_updates": []
    }
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-PHI-JAX",
+   "type": "spread",
+   "field": "JAX spread",
+   "old": "JAX -4",
+   "new": "JAX -7",
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-PHI-JAX",
+   "type": "moneyline",
+   "field": "PHI ML (FanDuel)",
+   "old": 205,
+   "new": 235,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-PHI-JAX",
+   "type": "moneyline",
+   "field": "JAX ML (FanDuel)",
+   "old": -250,
+   "new": -290,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-PHI-JAX",
+   "type": "price",
+   "field": "JAX no-vig win prob",
+   "old": 0.6786,
+   "new": 0.7332,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
   }
  ],
  "2026-10-11-NFL-HOU-TEN": [
@@ -1416,6 +1712,16 @@
     ],
     "same_pull_updates": []
    }
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-HOU-TEN",
+   "type": "spread",
+   "field": "TEN spread",
+   "old": "TEN +6.5",
+   "new": "TEN +7",
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
   }
  ],
  "2026-10-11-NFL-CLE-NYJ": [
@@ -1662,6 +1968,66 @@
      "CHI starter: Case Keenum (projected) \u2192 Tyson Bagent (projected)"
     ]
    }
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-CHI-GB",
+   "type": "total",
+   "field": "total",
+   "old": 44.5,
+   "new": 45.0,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-CHI-GB",
+   "type": "moneyline",
+   "field": "CHI ML (FanDuel)",
+   "old": -136,
+   "new": -146,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-CHI-GB",
+   "type": "moneyline",
+   "field": "GB ML (FanDuel)",
+   "old": 116,
+   "new": 124,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-CHI-GB",
+   "type": "price",
+   "field": "GB no-vig win prob",
+   "old": 0.4342,
+   "new": 0.4187,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-CHI-GB",
+   "type": "price",
+   "field": "spread away (FanDuel)",
+   "old": -110,
+   "new": -114,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-CHI-GB",
+   "type": "price",
+   "field": "spread home (FanDuel)",
+   "old": -110,
+   "new": -106,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
   }
  ],
  "2026-10-11-NFL-IND-PIT": [
@@ -1718,6 +2084,36 @@
      "PIT ML (FanDuel): -132 \u2192 -134"
     ]
    }
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-IND-PIT",
+   "type": "spread",
+   "field": "PIT spread",
+   "old": "PIT -2",
+   "new": "PIT -2.5",
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-IND-PIT",
+   "type": "moneyline",
+   "field": "IND ML (FanDuel)",
+   "old": 114,
+   "new": 116,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-IND-PIT",
+   "type": "moneyline",
+   "field": "PIT ML (FanDuel)",
+   "old": -134,
+   "new": -136,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
   }
  ],
  "2026-10-11-NFL-NYG-WAS": [
@@ -1906,6 +2302,150 @@
      }
     ],
     "same_pull_updates": []
+   }
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-BAL-ATL",
+   "type": "spread",
+   "field": "ATL spread",
+   "old": "ATL +3.5",
+   "new": "ATL +2.5",
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-BAL-ATL",
+   "type": "moneyline",
+   "field": "BAL ML (FanDuel)",
+   "old": -178,
+   "new": -138,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-BAL-ATL",
+   "type": "moneyline",
+   "field": "ATL ML (FanDuel)",
+   "old": 150,
+   "new": 118,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-BAL-ATL",
+   "type": "price",
+   "field": "ATL no-vig win prob",
+   "old": 0.3766,
+   "new": 0.4444,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-BAL-ATL",
+   "type": "price",
+   "field": "total over (FanDuel)",
+   "old": -108,
+   "new": -115,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-BAL-ATL",
+   "type": "price",
+   "field": "total under (FanDuel)",
+   "old": -112,
+   "new": -105,
+   "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-BAL-ATL",
+   "type": "model",
+   "field": "Boolin ATL win probability",
+   "old": 0.3339,
+   "new": 0.4269,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 33.4% to 42.7% (home margin -5.85 \u2192 -2.51). Model components that moved: 1. Offense (EPA/play, regressed) +3.31 (home -0.013 vs away +0.080 EPA/play x 58.15). Data updates in the same pull: ATL spread: ATL +3.5 \u2192 ATL +2.5; BAL ML (FanDuel): -178 \u2192 -138; ATL ML (FanDuel): 150 \u2192 118; ATL no-vig win prob: 0.3766 \u2192 0.4444; total over (FanDuel): -108 \u2192 -115; total under (FanDuel): -112 \u2192 -105.",
+   "detail": {
+    "text": "Boolin moved from 33.4% to 42.7% (home margin -5.85 \u2192 -2.51). Model components that moved: 1. Offense (EPA/play, regressed) +3.31 (home -0.013 vs away +0.080 EPA/play x 58.15). Data updates in the same pull: ATL spread: ATL +3.5 \u2192 ATL +2.5; BAL ML (FanDuel): -178 \u2192 -138; ATL ML (FanDuel): 150 \u2192 118; ATL no-vig win prob: 0.3766 \u2192 0.4444; total over (FanDuel): -108 \u2192 -115; total under (FanDuel): -112 \u2192 -105.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 3.31,
+      "now": "home -0.013 vs away +0.080 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": [
+     "ATL spread: ATL +3.5 \u2192 ATL +2.5",
+     "BAL ML (FanDuel): -178 \u2192 -138",
+     "ATL ML (FanDuel): 150 \u2192 118",
+     "ATL no-vig win prob: 0.3766 \u2192 0.4444",
+     "total over (FanDuel): -108 \u2192 -115",
+     "total under (FanDuel): -112 \u2192 -105"
+    ]
+   }
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-BAL-ATL",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "ATL +5.8",
+   "new": "ATL +2.5",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 33.4% to 42.7% (home margin -5.85 \u2192 -2.51). Model components that moved: 1. Offense (EPA/play, regressed) +3.31 (home -0.013 vs away +0.080 EPA/play x 58.15). Data updates in the same pull: ATL spread: ATL +3.5 \u2192 ATL +2.5; BAL ML (FanDuel): -178 \u2192 -138; ATL ML (FanDuel): 150 \u2192 118; ATL no-vig win prob: 0.3766 \u2192 0.4444; total over (FanDuel): -108 \u2192 -115; total under (FanDuel): -112 \u2192 -105.",
+   "detail": {
+    "text": "Boolin moved from 33.4% to 42.7% (home margin -5.85 \u2192 -2.51). Model components that moved: 1. Offense (EPA/play, regressed) +3.31 (home -0.013 vs away +0.080 EPA/play x 58.15). Data updates in the same pull: ATL spread: ATL +3.5 \u2192 ATL +2.5; BAL ML (FanDuel): -178 \u2192 -138; ATL ML (FanDuel): 150 \u2192 118; ATL no-vig win prob: 0.3766 \u2192 0.4444; total over (FanDuel): -108 \u2192 -115; total under (FanDuel): -112 \u2192 -105.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 3.31,
+      "now": "home -0.013 vs away +0.080 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": [
+     "ATL spread: ATL +3.5 \u2192 ATL +2.5",
+     "BAL ML (FanDuel): -178 \u2192 -138",
+     "ATL ML (FanDuel): 150 \u2192 118",
+     "ATL no-vig win prob: 0.3766 \u2192 0.4444",
+     "total over (FanDuel): -108 \u2192 -115",
+     "total under (FanDuel): -112 \u2192 -105"
+    ]
+   }
+  },
+  {
+   "t": "2026-10-06T08:56-04:00",
+   "game_key": "2026-10-11-NFL-BAL-ATL",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 45.3,
+   "new": 46.5,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 33.4% to 42.7% (home margin -5.85 \u2192 -2.51). Model components that moved: 1. Offense (EPA/play, regressed) +3.31 (home -0.013 vs away +0.080 EPA/play x 58.15). Data updates in the same pull: ATL spread: ATL +3.5 \u2192 ATL +2.5; BAL ML (FanDuel): -178 \u2192 -138; ATL ML (FanDuel): 150 \u2192 118; ATL no-vig win prob: 0.3766 \u2192 0.4444; total over (FanDuel): -108 \u2192 -115; total under (FanDuel): -112 \u2192 -105.",
+   "detail": {
+    "text": "Boolin moved from 33.4% to 42.7% (home margin -5.85 \u2192 -2.51). Model components that moved: 1. Offense (EPA/play, regressed) +3.31 (home -0.013 vs away +0.080 EPA/play x 58.15). Data updates in the same pull: ATL spread: ATL +3.5 \u2192 ATL +2.5; BAL ML (FanDuel): -178 \u2192 -138; ATL ML (FanDuel): 150 \u2192 118; ATL no-vig win prob: 0.3766 \u2192 0.4444; total over (FanDuel): -108 \u2192 -115; total under (FanDuel): -112 \u2192 -105.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 3.31,
+      "now": "home -0.013 vs away +0.080 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": [
+     "ATL spread: ATL +3.5 \u2192 ATL +2.5",
+     "BAL ML (FanDuel): -178 \u2192 -138",
+     "ATL ML (FanDuel): 150 \u2192 118",
+     "ATL no-vig win prob: 0.3766 \u2192 0.4444",
+     "total over (FanDuel): -108 \u2192 -115",
+     "total under (FanDuel): -112 \u2192 -105"
+    ]
    }
   }
  ]

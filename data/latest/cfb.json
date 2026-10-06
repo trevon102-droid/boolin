@@ -1,10 +1,73 @@
 {
- "pulled_at_et": "2026-10-05T21:22-04:00",
- "date": "2026-10-05",
+ "pulled_at_et": "2026-10-06T08:55-04:00",
+ "date": "2026-10-06",
  "season": 2026,
- "games": [],
+ "games": [
+  {
+   "espn_id": "401871090",
+   "name": "USM @ TROY",
+   "start_et": "8:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2572",
+    "abbr": "USM",
+    "name": "Southern Miss Golden Eagles",
+    "score": "0",
+    "record": "1-3",
+    "rank": null,
+    "conference_id": "37"
+   },
+   "home": {
+    "id": "2653",
+    "abbr": "TROY",
+    "name": "Troy Trojans",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "37"
+   },
+   "neutral_site": false,
+   "conference_game": true,
+   "venue": "Veterans Memorial Stadium (AL)",
+   "indoor": false,
+   "tv": "ESPN2",
+   "espn_line": {
+    "details": "TROY -10.5",
+    "total": 50.5,
+    "provider": "DraftKings"
+   },
+   "fpi_projection": {
+    "home_win_pct": "67.7",
+    "away_win_pct": "32.3"
+   },
+   "injuries": null,
+   "weather": {
+    "temperature": 74,
+    "highTemperature": 74,
+    "lowTemperature": 74,
+    "conditionId": "7",
+    "gust": 6,
+    "precipitation": 0,
+    "link": {
+     "language": "en-US",
+     "rel": [
+      "36081"
+     ],
+     "href": "http://www.accuweather.com/en/us/veterans-memorial-stadium-al/36081/hourly-weather-forecast/53531_poi?day=1&hbhhour=19&lang=en-us",
+     "text": "Weather",
+     "shortText": "Weather",
+     "isExternal": true,
+     "isPremium": false
+    }
+   }
+  }
+ ],
  "games_ranked": 0,
- "games_unranked": 0,
+ "games_unranked": 1,
  "ap_top25": [
   {
    "rank": 1,
@@ -184,18 +247,6 @@
  ],
  "next_3_days": [
   {
-   "date": "2026-10-06",
-   "name": "USM @ TROY",
-   "start_et": "8:00 PM ET",
-   "away_rank": null,
-   "home_rank": null,
-   "espn_line": {
-    "details": "TROY -10.5",
-    "total": 50.5,
-    "provider": "DraftKings"
-   }
-  },
-  {
    "date": "2026-10-07",
    "name": "JXST @ KENN",
    "start_et": "7:00 PM ET",
@@ -251,7 +302,7 @@
    "home_rank": null,
    "espn_line": {
     "details": "UTSA -7",
-    "total": 49.5,
+    "total": 50.5,
     "provider": "DraftKings"
    }
   },
@@ -266,6 +317,66 @@
     "total": 57.5,
     "provider": "DraftKings"
    }
+  },
+  {
+   "date": "2026-10-09",
+   "name": "FSU @ LOU",
+   "start_et": "7:00 PM ET",
+   "away_rank": null,
+   "home_rank": null,
+   "espn_line": {
+    "details": "LOU -3.5",
+    "total": 58.5,
+    "provider": "DraftKings"
+   }
+  },
+  {
+   "date": "2026-10-09",
+   "name": "IOWA @ WASH",
+   "start_et": "9:00 PM ET",
+   "away_rank": 20,
+   "home_rank": null,
+   "espn_line": {
+    "details": "WASH -3",
+    "total": 41.5,
+    "provider": "DraftKings"
+   }
+  },
+  {
+   "date": "2026-10-09",
+   "name": "WSU @ USU",
+   "start_et": "9:00 PM ET",
+   "away_rank": null,
+   "home_rank": null,
+   "espn_line": {
+    "details": "USU -5.5",
+    "total": 43.5,
+    "provider": "DraftKings"
+   }
+  },
+  {
+   "date": "2026-10-09",
+   "name": "WYO @ SJSU",
+   "start_et": "9:00 PM ET",
+   "away_rank": null,
+   "home_rank": null,
+   "espn_line": {
+    "details": "SJSU -6",
+    "total": 43.5,
+    "provider": "DraftKings"
+   }
+  },
+  {
+   "date": "2026-10-09",
+   "name": "ISU @ BYU",
+   "start_et": "10:15 PM ET",
+   "away_rank": null,
+   "home_rank": 8,
+   "espn_line": {
+    "details": "BYU -10.5",
+    "total": 46.5,
+    "provider": "DraftKings"
+   }
   }
  ],
  "advanced": {
@@ -274,6 +385,7 @@
  },
  "components": {
   "scoreboard": "ok",
+  "summaries": "ok",
   "next_3_days": "ok",
   "ap_poll": "ok",
   "cfbd": "skipped"

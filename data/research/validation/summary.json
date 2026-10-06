@@ -9,8 +9,8 @@
   "baseline-0.1",
   "baseline-0.2"
  ],
- "built_at": "2026-10-05T21:22-04:00",
- "data_cutoff": "2026-10-04",
+ "built_at": "2026-10-06T08:56-04:00",
+ "data_cutoff": "2026-10-05",
  "filters": {
   "league": null,
   "since": null,
@@ -26,18 +26,18 @@
   "nfl_replay": "development = seasons < 2022; holdout = 2022+"
  },
  "warning": "rows span model versions ['baseline-0.1', 'baseline-0.2']: each table is per league and per source, and rows from an older version sit in their own '<source> @<version>' slice",
- "rows": 3704,
- "excluded": 319,
+ "rows": 3706,
+ "excluded": 318,
  "by_source": {
   "NFL nfl_replay": {
-   "rows": 3651,
+   "rows": 3652,
    "development": 2529,
-   "holdout": 1122,
+   "holdout": 1123,
    "model_versions": [
     "baseline-0.2"
    ],
    "first": "2012-09-13",
-   "last": "2026-10-04"
+   "last": "2026-10-05"
   },
   "NFL live_archive @baseline-0.1": {
    "rows": 15,
@@ -60,24 +60,24 @@
    "last": "2026-10-04"
   },
   "MLB live_archive": {
-   "rows": 7,
-   "development": 7,
+   "rows": 8,
+   "development": 8,
    "holdout": 0,
    "model_versions": [
     "baseline-0.1"
    ],
    "first": "2026-10-01",
-   "last": "2026-10-04"
+   "last": "2026-10-05"
   }
  },
  "excluded_by_reason": {
   "nfl_replay: no current-season plays before this week for a team (the live model has no projection either)": 241,
   "live_archive: no Boolin model for this league": 65,
-  "live_archive: no confirmed final score on file": 13
+  "live_archive: no confirmed final score on file": 12
  },
  "replay": {
   "version": "nfl-replay-1",
-  "built_at_et": "2026-10-05T21:22-04:00",
+  "built_at_et": "2026-10-06T08:56-04:00",
   "status": {
    "2012": "kept",
    "2013": "kept",
@@ -93,7 +93,7 @@
    "2023": "kept",
    "2024": "kept",
    "2025": "kept",
-   "2026": "built 63 games"
+   "2026": "built 64 games"
   },
   "present": true
  },
@@ -106,13 +106,13 @@
  },
  "headline": {
   "NFL": {
-   "sample_size": 1122,
-   "brier": 0.2267,
-   "market_brier": 0.2101,
-   "log_loss": 0.6445,
-   "calibration_error": 0.0329,
+   "sample_size": 1123,
+   "brier": 0.2268,
+   "market_brier": 0.2102,
+   "log_loss": 0.6448,
+   "calibration_error": 0.0323,
    "market_comparison": "market Brier better (t=5.3)",
-   "spread_mae": 10.123,
+   "spread_mae": 10.136,
    "confidence_validated": false,
    "calibration_status": "needs_calibration",
    "validation_status": "validated: calibration off",
