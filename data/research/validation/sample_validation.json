@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-10-05",
+ "data_cutoff": "2026-10-06",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -845,6 +845,90 @@
     ],
     "verdict": "Not enough games per sample group to tell."
    },
+   "holdout": {
+    "metric": "fewer team GP this season (5v5 xG)",
+    "groups": [
+     {
+      "group": "0 GP this season",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "favorite_overconfidence": null,
+      "market_brier_same_games": null,
+      "boolin_minus_market_brier": null,
+      "vs_market": null,
+      "margin_mae": null,
+      "share_extreme": null,
+      "interpretable": false
+     },
+     {
+      "group": "1-3 GP",
+      "n": 9,
+      "brier": 0.2506,
+      "log_loss": 0.6946,
+      "favorite_overconfidence": 0.1181,
+      "market_brier_same_games": 0.2302,
+      "boolin_minus_market_brier": 0.02034,
+      "vs_market": "too few games to tell (n=9)",
+      "margin_mae": 1.96,
+      "share_extreme": 0.2222,
+      "interpretable": false
+     },
+     {
+      "group": "4-10 GP",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "favorite_overconfidence": null,
+      "market_brier_same_games": null,
+      "boolin_minus_market_brier": null,
+      "vs_market": null,
+      "margin_mae": null,
+      "share_extreme": null,
+      "interpretable": false
+     },
+     {
+      "group": "11-20 GP",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "favorite_overconfidence": null,
+      "market_brier_same_games": null,
+      "boolin_minus_market_brier": null,
+      "vs_market": null,
+      "margin_mae": null,
+      "share_extreme": null,
+      "interpretable": false
+     },
+     {
+      "group": "21-40 GP",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "favorite_overconfidence": null,
+      "market_brier_same_games": null,
+      "boolin_minus_market_brier": null,
+      "vs_market": null,
+      "margin_mae": null,
+      "share_extreme": null,
+      "interpretable": false
+     },
+     {
+      "group": "41+ GP",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "favorite_overconfidence": null,
+      "market_brier_same_games": null,
+      "boolin_minus_market_brier": null,
+      "vs_market": null,
+      "margin_mae": null,
+      "share_extreme": null,
+      "interpretable": false
+     }
+    ],
+    "verdict": "Not enough games per sample group to tell."
+   },
    "all": {
     "metric": "fewer team GP this season (5v5 xG)",
     "groups": [
@@ -863,16 +947,16 @@
      },
      {
       "group": "1-3 GP",
-      "n": 22,
-      "brier": 0.2038,
-      "log_loss": 0.5964,
-      "favorite_overconfidence": -0.1273,
-      "market_brier_same_games": 0.2007,
-      "boolin_minus_market_brier": 0.00319,
-      "vs_market": "too few games to tell (n=22)",
-      "margin_mae": 2.103,
-      "share_extreme": 0.1364,
-      "interpretable": false
+      "n": 31,
+      "brier": 0.2174,
+      "log_loss": 0.6249,
+      "favorite_overconfidence": -0.0561,
+      "market_brier_same_games": 0.2092,
+      "boolin_minus_market_brier": 0.00817,
+      "vs_market": "no detectable difference in Brier (t=0.7)",
+      "margin_mae": 2.062,
+      "share_extreme": 0.1613,
+      "interpretable": true
      },
      {
       "group": "4-10 GP",
@@ -991,6 +1075,64 @@
     ],
     "verdict": "Not enough games per sample group to tell."
    },
+   "holdout": {
+    "metric": "fewer batters faced by a starter this season",
+    "groups": [
+     {
+      "group": "starter <100 BF",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "favorite_overconfidence": null,
+      "market_brier_same_games": null,
+      "boolin_minus_market_brier": null,
+      "vs_market": null,
+      "margin_mae": null,
+      "share_extreme": null,
+      "interpretable": false
+     },
+     {
+      "group": "starter 100-299 BF",
+      "n": 1,
+      "brier": 0.245,
+      "log_loss": 0.6832,
+      "favorite_overconfidence": -0.495,
+      "market_brier_same_games": 0.1936,
+      "boolin_minus_market_brier": 0.05143,
+      "vs_market": "too few games to tell (n=1)",
+      "margin_mae": 0.953,
+      "share_extreme": 0.0,
+      "interpretable": false
+     },
+     {
+      "group": "starter 300-599 BF",
+      "n": 0,
+      "brier": null,
+      "log_loss": null,
+      "favorite_overconfidence": null,
+      "market_brier_same_games": null,
+      "boolin_minus_market_brier": null,
+      "vs_market": null,
+      "margin_mae": null,
+      "share_extreme": null,
+      "interpretable": false
+     },
+     {
+      "group": "starter 600+ BF",
+      "n": 1,
+      "brier": 0.2708,
+      "log_loss": 0.7348,
+      "favorite_overconfidence": 0.5204,
+      "market_brier_same_games": 0.2407,
+      "boolin_minus_market_brier": 0.03013,
+      "vs_market": "too few games to tell (n=1)",
+      "margin_mae": 2.159,
+      "share_extreme": 0.0,
+      "interpretable": false
+     }
+    ],
+    "verdict": "Not enough games per sample group to tell."
+   },
    "all": {
     "metric": "fewer batters faced by a starter this season",
     "groups": [
@@ -1009,15 +1151,15 @@
      },
      {
       "group": "starter 100-299 BF",
-      "n": 2,
-      "brier": 0.185,
-      "log_loss": 0.5614,
-      "favorite_overconfidence": -0.428,
-      "market_brier_same_games": 0.2203,
-      "boolin_minus_market_brier": -0.03533,
-      "vs_market": "too few games to tell (n=2)",
-      "margin_mae": 1.911,
-      "share_extreme": 0.5,
+      "n": 3,
+      "brier": 0.205,
+      "log_loss": 0.602,
+      "favorite_overconfidence": -0.4503,
+      "market_brier_same_games": 0.2114,
+      "boolin_minus_market_brier": -0.00641,
+      "vs_market": "too few games to tell (n=3)",
+      "margin_mae": 1.591,
+      "share_extreme": 0.3333,
       "interpretable": false
      },
      {
@@ -1035,14 +1177,14 @@
      },
      {
       "group": "starter 600+ BF",
-      "n": 3,
-      "brier": 0.2545,
-      "log_loss": 0.7015,
-      "favorite_overconfidence": 0.2384,
-      "market_brier_same_games": 0.2496,
-      "boolin_minus_market_brier": 0.00493,
-      "vs_market": "too few games to tell (n=3)",
-      "margin_mae": 1.667,
+      "n": 4,
+      "brier": 0.2586,
+      "log_loss": 0.7098,
+      "favorite_overconfidence": 0.3089,
+      "market_brier_same_games": 0.2474,
+      "boolin_minus_market_brier": 0.01123,
+      "vs_market": "too few games to tell (n=4)",
+      "margin_mae": 1.79,
       "share_extreme": 0.0,
       "interpretable": false
      }
