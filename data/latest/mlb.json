@@ -1,19 +1,23 @@
 {
- "pulled_at_et": "2026-10-08T08:55-04:00",
+ "pulled_at_et": "2026-10-08T16:01-04:00",
  "date": "2026-10-08",
  "season": 2026,
  "games": [
   {
    "game_pk": 849832,
    "start_et": "8:00 PM ET",
-   "status": "Scheduled",
+   "status": "Pre-Game",
    "game_type": "D",
    "series": "AL Division Series",
    "series_game": 4,
    "series_status": "AL Division Series",
    "venue": "Rate Field",
-   "weather": null,
-   "hp_umpire": null,
+   "weather": {
+    "condition": "Clear",
+    "temp": "69",
+    "wind": "11 mph, Varies"
+   },
+   "hp_umpire": "Jansen Visconti",
    "away": {
     "id": 114,
     "name": "Cleveland Guardians",
@@ -344,8 +348,18 @@
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season.",
      "short_start_flag": "Averaged 7.67 outs over the last 3 starts: possible opener / bulk-relief usage. Verify the pitching plan."
     },
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "lineup": [
+     "Chase Meidroth",
+     "Randal Grichuk",
+     "Miguel Vargas",
+     "Munetaka Murakami",
+     "Tommy Pham",
+     "Brenton Doyle",
+     "Kyle Teel",
+     "Braden Montgomery",
+     "Colson Montgomery"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2437,

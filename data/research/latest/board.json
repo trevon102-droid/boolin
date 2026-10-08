@@ -1,8 +1,77 @@
 {
  "slate_date": "2026-10-08",
- "built_at": "2026-10-08T08:55-04:00",
+ "built_at": "2026-10-08T16:01-04:00",
  "games": 16,
  "attention": [
+  {
+   "key": "2026-10-08-MLB-CLE-CWS",
+   "league": "MLB",
+   "matchup": "CLE @ CWS",
+   "start": "Thu Oct 8, 8:00 PM ET",
+   "start_et": "2026-10-08T20:00-04:00",
+   "status": "scheduled",
+   "importance": 17.25,
+   "reasons": [
+    "4 change(s) since the last pull, latest: condition unknown → Clear",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since.",
+    "wind (mph) changed: unknown → 11 (MLB Stats API weather).",
+    "temp (°F) changed: unknown → 69.0 (MLB Stats API weather)."
+   ],
+   "research_status": "watch",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": "mild disagreement",
+   "alerts": 0,
+   "changes": 4,
+   "changes_since_last_pull": 4,
+   "oldest_input_min": 426.5
+  },
+  {
+   "key": "2026-10-08-NHL-PHI-OTT",
+   "league": "NHL",
+   "matchup": "PHI @ OTT",
+   "start": "Thu Oct 8, 7:10 PM ET",
+   "start_et": "2026-10-08T19:10-04:00",
+   "status": "scheduled",
+   "importance": 17.0,
+   "reasons": [
+    "REVIEW REQUIRED: model uncalibrated (insufficient sample); validation: insufficient sample (NOT READY); small sample: Small sample: home 5v5 xG leans on last season (this-season weight 0.13).; Small sample: away 5v5 xG leans on last season (this-season weight 0.17).. Interesting disagreement, not a validated edge.",
+    "4 change(s) since the last pull, latest: Linus Ullmark (OTT) Day-To-Day → not listed",
+    "Sharp price movement: No-vig OTT win probability moved +6.1 pp since first seen.",
+    "Boolin significant disagreement with market: Win probability (home): market 0.5867 vs Boolin 0.6556; Total: market 5.5 vs Boolin 6.09. Model confidence: medium."
+   ],
+   "research_status": "review required",
+   "review_required": true,
+   "validation": "NOT READY",
+   "disagreement": "significant disagreement",
+   "alerts": 0,
+   "changes": 10,
+   "changes_since_last_pull": 4,
+   "oldest_input_min": 426.5
+  },
+  {
+   "key": "2026-10-08-NHL-TOR-VGK",
+   "league": "NHL",
+   "matchup": "TOR @ VGK",
+   "start": "Thu Oct 8, 10:10 PM ET",
+   "start_et": "2026-10-08T22:10-04:00",
+   "status": "scheduled",
+   "importance": 13.25,
+   "reasons": [
+    "REVIEW REQUIRED: model uncalibrated (insufficient sample); validation: insufficient sample (NOT READY); small sample: Small sample: home 5v5 xG leans on last season (this-season weight 0.17).; Small sample: away 5v5 xG leans on last season (this-season weight 0.17).. Interesting disagreement, not a validated edge.",
+    "1 change(s) since the last pull, latest: Victor Olofsson (VGK) Day-To-Day → Out",
+    "Boolin extreme disagreement with market: Win probability (home): market 0.6054 vs Boolin 0.7271; Total: market 6.0 vs Boolin 6.91. Model confidence: medium.",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
+   "research_status": "review required",
+   "review_required": true,
+   "validation": "NOT READY",
+   "disagreement": "extreme disagreement",
+   "alerts": 1,
+   "changes": 1,
+   "changes_since_last_pull": 1,
+   "oldest_input_min": 426.5
+  },
   {
    "key": "2026-10-08-NHL-SJS-STL",
    "league": "NHL",
@@ -10,10 +79,10 @@
    "start": "Thu Oct 8, 8:10 PM ET",
    "start_et": "2026-10-08T20:10-04:00",
    "status": "scheduled",
-   "importance": 15.0,
+   "importance": 12.5,
    "reasons": [
     "REVIEW REQUIRED: model uncalibrated (insufficient sample); validation: insufficient sample (NOT READY); small sample: Small sample: home 5v5 xG leans on last season (this-season weight 0.13).; Small sample: away 5v5 xG leans on last season (this-season weight 0.13).. Interesting disagreement, not a validated edge.",
-    "7 change(s) since the last pull, latest: Boolin model availability unavailable → available",
+    "7 change(s) in the last 24 h, latest: Boolin model availability unavailable → available",
     "Major total movement: Total moved 5.5 to 6.",
     "Sharp price movement: No-vig STL win probability moved +6.4 pp since first seen."
    ],
@@ -23,96 +92,8 @@
    "disagreement": "significant disagreement",
    "alerts": 0,
    "changes": 7,
-   "changes_since_last_pull": 7,
-   "oldest_input_min": 0.9
-  },
-  {
-   "key": "2026-10-08-NHL-PHI-OTT",
-   "league": "NHL",
-   "matchup": "PHI @ OTT",
-   "start": "Thu Oct 8, 7:10 PM ET",
-   "start_et": "2026-10-08T19:10-04:00",
-   "status": "scheduled",
-   "importance": 14.75,
-   "reasons": [
-    "REVIEW REQUIRED: model uncalibrated (insufficient sample); validation: insufficient sample (NOT READY); small sample: Small sample: home 5v5 xG leans on last season (this-season weight 0.13).; Small sample: away 5v5 xG leans on last season (this-season weight 0.17).; unresolved key player: Linus Ullmark (OTT, G) Day-To-Day. Interesting disagreement, not a validated edge.",
-    "6 change(s) since the last pull, latest: Boolin model availability unavailable → available",
-    "Sharp price movement: No-vig OTT win probability moved +6.1 pp since first seen.",
-    "Boolin significant disagreement with market: Win probability (home): market 0.5867 vs Boolin 0.6556; Total: market 5.5 vs Boolin 6.09. Model confidence: medium."
-   ],
-   "research_status": "review required",
-   "review_required": true,
-   "validation": "NOT READY",
-   "disagreement": "significant disagreement",
-   "alerts": 0,
-   "changes": 6,
-   "changes_since_last_pull": 6,
-   "oldest_input_min": 0.9
-  },
-  {
-   "key": "2026-10-08-NFL-TB-DAL",
-   "league": "NFL",
-   "matchup": "TB @ DAL",
-   "start": "Thu Oct 8, 8:15 PM ET",
-   "start_et": "2026-10-08T20:15-04:00",
-   "status": "scheduled",
-   "importance": 11.0,
-   "reasons": [
-    "5 change(s) since the last pull, latest: DAL injury list not covered → 5 player(s) listed",
-    "Major spread movement: DAL spread moved -9.5 to -8 since Boolin first saw it (9 observations).",
-    "Boolin significant disagreement with market: Win probability (home): market 0.7868 vs Boolin 0.7253. Model confidence: medium."
-   ],
-   "research_status": "watch",
-   "review_required": false,
-   "validation": "CALIBRATION NEEDED",
-   "disagreement": "significant disagreement",
-   "alerts": 0,
-   "changes": 10,
-   "changes_since_last_pull": 5,
-   "oldest_input_min": 0.9
-  },
-  {
-   "key": "2026-10-08-NHL-TOR-VGK",
-   "league": "NHL",
-   "matchup": "TOR @ VGK",
-   "start": "Thu Oct 8, 10:10 PM ET",
-   "start_et": "2026-10-08T22:10-04:00",
-   "status": "scheduled",
-   "importance": 9.0,
-   "reasons": [
-    "REVIEW REQUIRED: model uncalibrated (insufficient sample); validation: insufficient sample (NOT READY); small sample: Small sample: home 5v5 xG leans on last season (this-season weight 0.17).; Small sample: away 5v5 xG leans on last season (this-season weight 0.17).. Interesting disagreement, not a validated edge.",
-    "Boolin extreme disagreement with market: Win probability (home): market 0.6054 vs Boolin 0.7271; Total: market 6.0 vs Boolin 6.91. Model confidence: medium."
-   ],
-   "research_status": "review required",
-   "review_required": true,
-   "validation": "NOT READY",
-   "disagreement": "extreme disagreement",
-   "alerts": 1,
-   "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
-  },
-  {
-   "key": "2026-10-08-CFB-SouthAlabamaJaguars-ArkansasStateRedWolves",
-   "league": "CFB",
-   "matchup": "South Alabama Jaguars @ Arkansas State Red Wolves",
-   "start": "Thu Oct 8, 7:30 PM ET",
-   "start_et": "2026-10-08T19:30-04:00",
-   "status": "scheduled",
-   "importance": 8.75,
-   "reasons": [
-    "5 change(s) since the last pull, latest: Arkansas State Red Wolves no-vig win prob 0.5235 → 0.5564",
-    "Major total movement: Total moved 57 to 60.",
-    "Sharp price movement: No-vig Arkansas State Red Wolves win probability moved +4.5 pp since first seen."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 9,
-   "changes_since_last_pull": 5,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-08-NHL-NSH-MTL",
@@ -121,204 +102,21 @@
    "start": "Thu Oct 8, 7:10 PM ET",
    "start_et": "2026-10-08T19:10-04:00",
    "status": "scheduled",
-   "importance": 8.0,
+   "importance": 12.25,
    "reasons": [
-    "REVIEW REQUIRED: model uncalibrated (insufficient sample); validation: insufficient sample (NOT READY); small sample: Small sample: home 5v5 xG leans on last season (this-season weight 0.13).; Small sample: away 5v5 xG leans on last season (this-season weight 0.13).; unresolved key player: Sam Montembeault (MTL, G) Day-To-Day. Interesting disagreement, not a validated edge.",
-    "Boolin significant disagreement with market: Win probability (home): market 0.6158 vs Boolin 0.5461; Total: market 6.0 vs Boolin 6.69. Model confidence: medium.",
-    "Sam Montembeault (MTL) status unresolved: Listed Day-To-Day (ESPN injury list); final status not confirmed."
+    "REVIEW REQUIRED: model uncalibrated (insufficient sample); validation: insufficient sample (NOT READY); small sample: Small sample: home 5v5 xG leans on last season (this-season weight 0.13).; Small sample: away 5v5 xG leans on last season (this-season weight 0.13).; unresolved key player: Sam Montembeault (MTL) downgrade. Interesting disagreement, not a validated edge.",
+    "1 change(s) since the last pull, latest: Sam Montembeault (MTL) Day-To-Day → Out",
+    "Sam Montembeault (MTL) downgrade: Sam Montembeault (MTL): Day-To-Day → Out (ESPN injury list). Key position.",
+    "Boolin significant disagreement with market: Win probability (home): market 0.6158 vs Boolin 0.5461; Total: market 6.0 vs Boolin 6.69. Model confidence: medium."
    ],
    "research_status": "review required",
    "review_required": true,
    "validation": "NOT READY",
    "disagreement": "significant disagreement",
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
-  },
-  {
-   "key": "2026-10-08-CFB-MissouriStateBears-WesternKentuckyHilltoppe",
-   "league": "CFB",
-   "matchup": "Missouri State Bears @ Western Kentucky Hilltoppers",
-   "start": "Thu Oct 8, 7:00 PM ET",
-   "start_et": "2026-10-08T19:00-04:00",
-   "status": "scheduled",
-   "importance": 7.25,
-   "reasons": [
-    "4 change(s) since the last pull, latest: Western Kentucky Hilltoppers no-vig win prob 0.5482 → 0.5216",
-    "Sharp price movement: No-vig Western Kentucky Hilltoppers win probability moved -3.7 pp since first seen."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 9,
-   "changes_since_last_pull": 4,
-   "oldest_input_min": 0.9
-  },
-  {
-   "key": "2026-10-08-NHL-CHI-NYI",
-   "league": "NHL",
-   "matchup": "CHI @ NYI",
-   "start": "Thu Oct 8, 7:40 PM ET",
-   "start_et": "2026-10-08T19:40-04:00",
-   "status": "scheduled",
-   "importance": 6.5,
-   "reasons": [
-    "REVIEW REQUIRED: model uncalibrated (insufficient sample); validation: insufficient sample (NOT READY); small sample: Small sample: home 5v5 xG leans on last season (this-season weight 0.13).; Small sample: away 5v5 xG leans on last season (this-season weight 0.17).. Interesting disagreement, not a validated edge.",
-    "Boolin significant disagreement with market: Win probability (home): market 0.6279 vs Boolin 0.7106; Total: market 6.0 vs Boolin 6.7. Model confidence: medium."
-   ],
-   "research_status": "review required",
-   "review_required": true,
-   "validation": "NOT READY",
-   "disagreement": "significant disagreement",
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
-  },
-  {
-   "key": "2026-10-08-MLB-CLE-CWS",
-   "league": "MLB",
-   "matchup": "CLE @ CWS",
-   "start": "Thu Oct 8, 8:00 PM ET",
-   "start_et": "2026-10-08T20:00-04:00",
-   "status": "scheduled",
-   "importance": 6.5,
-   "reasons": [
-    "CLE bullpen heavily used: Relievers threw 181 pitches over the last 3 days; likely limited: Foster Griffin.",
-    "CWS bullpen heavily used: Relievers threw 286 pitches over the last 3 days; likely limited: Noah Schultz, Sean Burke, Sean Newcomb.",
-    "CWS possible opener: Averaged 7.67 outs over the last 3 starts: possible opener / bulk-relief usage. Verify the pitching plan."
-   ],
-   "research_status": "watch",
-   "review_required": false,
-   "validation": "NOT READY",
-   "disagreement": "mild disagreement",
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
-  },
-  {
-   "key": "2026-10-08-NHL-VAN-CAR",
-   "league": "NHL",
-   "matchup": "VAN @ CAR",
-   "start": "Thu Oct 8, 7:10 PM ET",
-   "start_et": "2026-10-08T19:10-04:00",
-   "status": "scheduled",
-   "importance": 6.25,
-   "reasons": [
-    "REVIEW REQUIRED: model uncalibrated (insufficient sample); validation: insufficient sample (NOT READY); small sample: Small sample: home 5v5 xG leans on last season (this-season weight 0.17).; Small sample: away 5v5 xG leans on last season (this-season weight 0.17).. Interesting disagreement, not a validated edge.",
-    "Boolin significant disagreement with market: Win probability (home): market 0.7494 vs Boolin 0.8227; Total: market 6.5 vs Boolin 7.62. Model confidence: medium."
-   ],
-   "research_status": "review required",
-   "review_required": true,
-   "validation": "NOT READY",
-   "disagreement": "significant disagreement",
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
-  },
-  {
-   "key": "2026-10-08-CFB-SouthFloridaBulls-UTSARoadrunners",
-   "league": "CFB",
-   "matchup": "South Florida Bulls @ UTSA Roadrunners",
-   "start": "Thu Oct 8, 7:30 PM ET",
-   "start_et": "2026-10-08T19:30-04:00",
-   "status": "scheduled",
-   "importance": 5.75,
-   "reasons": [
-    "6 change(s) since the last pull, latest: total under (FanDuel) -110 → -114"
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 8,
-   "changes_since_last_pull": 6,
-   "oldest_input_min": 0.9
-  },
-  {
-   "key": "2026-10-08-CFB-SamHoustonStateBearkats-LibertyFlames",
-   "league": "CFB",
-   "matchup": "Sam Houston State Bearkats @ Liberty Flames",
-   "start": "Thu Oct 8, 7:00 PM ET",
-   "start_et": "2026-10-08T19:00-04:00",
-   "status": "scheduled",
-   "importance": 4.25,
-   "reasons": [
-    "3 change(s) since the last pull, latest: Liberty Flames ML (FanDuel) -630 → -580"
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 5,
-   "changes_since_last_pull": 3,
-   "oldest_input_min": 0.9
-  }
- ],
- "stable": [
-  {
-   "key": "2026-10-08-NHL-DAL-BUF",
-   "league": "NHL",
-   "matchup": "DAL @ BUF",
-   "start": "Thu Oct 8, 7:09 PM ET",
-   "start_et": "2026-10-08T19:09-04:00",
-   "status": "scheduled",
-   "importance": 2.5,
-   "reasons": [],
-   "research_status": "watch",
-   "review_required": false,
-   "validation": "NOT READY",
-   "disagreement": "mild disagreement",
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
-  },
-  {
-   "key": "2026-10-08-NHL-MIN-TBL",
-   "league": "NHL",
-   "matchup": "MIN @ TBL",
-   "start": "Thu Oct 8, 7:10 PM ET",
-   "start_et": "2026-10-08T19:10-04:00",
-   "status": "scheduled",
-   "importance": 2.5,
-   "reasons": [],
-   "research_status": "watch",
-   "review_required": false,
-   "validation": "NOT READY",
-   "disagreement": "mild disagreement",
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
-  },
-  {
-   "key": "2026-10-08-NHL-COL-CGY",
-   "league": "NHL",
-   "matchup": "COL @ CGY",
-   "start": "Thu Oct 8, 9:10 PM ET",
-   "start_et": "2026-10-08T21:10-04:00",
-   "status": "scheduled",
-   "importance": 2.25,
-   "reasons": [],
-   "research_status": "watch",
-   "review_required": false,
-   "validation": "NOT READY",
-   "disagreement": "mild disagreement",
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
+   "alerts": 1,
+   "changes": 1,
+   "changes_since_last_pull": 1,
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-08-NHL-UTA-BOS",
@@ -327,16 +125,239 @@
    "start": "Thu Oct 8, 7:00 PM ET",
    "start_et": "2026-10-08T19:00-04:00",
    "status": "scheduled",
-   "importance": 2.0,
-   "reasons": [],
+   "importance": 9.0,
+   "reasons": [
+    "2 change(s) since the last pull, latest: Charlie McAvoy (BOS) Suspension → not listed",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since.",
+    "UTA starting goalie not confirmed: Karel Vejmelka is projected (most starts this season; not confirmed), not officially confirmed.",
+    "BOS starting goalie not confirmed: Jeremy Swayman is projected (most starts this season; not confirmed), not officially confirmed."
+   ],
    "research_status": "pass",
    "review_required": false,
    "validation": "NOT READY",
    "disagreement": "aligned",
    "alerts": 0,
+   "changes": 2,
+   "changes_since_last_pull": 2,
+   "oldest_input_min": 426.5
+  },
+  {
+   "key": "2026-10-08-NFL-TB-DAL",
+   "league": "NFL",
+   "matchup": "TB @ DAL",
+   "start": "Thu Oct 8, 8:15 PM ET",
+   "start_et": "2026-10-08T20:15-04:00",
+   "status": "scheduled",
+   "importance": 8.25,
+   "reasons": [
+    "5 change(s) in the last 24 h, latest: DAL injury list not covered → 5 player(s) listed",
+    "Major spread movement: DAL spread moved -9.5 to -8 since Boolin first saw it (9 observations).",
+    "Boolin significant disagreement with market: Win probability (home): market 0.7868 vs Boolin 0.7253. Model confidence: medium.",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
+   "research_status": "watch",
+   "review_required": false,
+   "validation": "CALIBRATION NEEDED",
+   "disagreement": "significant disagreement",
+   "alerts": 0,
+   "changes": 5,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 426.5
+  },
+  {
+   "key": "2026-10-08-NHL-CHI-NYI",
+   "league": "NHL",
+   "matchup": "CHI @ NYI",
+   "start": "Thu Oct 8, 7:40 PM ET",
+   "start_et": "2026-10-08T19:40-04:00",
+   "status": "scheduled",
+   "importance": 8.0,
+   "reasons": [
+    "REVIEW REQUIRED: model uncalibrated (insufficient sample); validation: insufficient sample (NOT READY); small sample: Small sample: home 5v5 xG leans on last season (this-season weight 0.13).; Small sample: away 5v5 xG leans on last season (this-season weight 0.17).. Interesting disagreement, not a validated edge.",
+    "Boolin significant disagreement with market: Win probability (home): market 0.6279 vs Boolin 0.7106; Total: market 6.0 vs Boolin 6.7. Model confidence: medium.",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
+   "research_status": "review required",
+   "review_required": true,
+   "validation": "NOT READY",
+   "disagreement": "significant disagreement",
+   "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9,
+   "oldest_input_min": 426.5
+  },
+  {
+   "key": "2026-10-08-NHL-VAN-CAR",
+   "league": "NHL",
+   "matchup": "VAN @ CAR",
+   "start": "Thu Oct 8, 7:10 PM ET",
+   "start_et": "2026-10-08T19:10-04:00",
+   "status": "scheduled",
+   "importance": 7.75,
+   "reasons": [
+    "REVIEW REQUIRED: model uncalibrated (insufficient sample); validation: insufficient sample (NOT READY); small sample: Small sample: home 5v5 xG leans on last season (this-season weight 0.17).; Small sample: away 5v5 xG leans on last season (this-season weight 0.17).. Interesting disagreement, not a validated edge.",
+    "Boolin significant disagreement with market: Win probability (home): market 0.7494 vs Boolin 0.8227; Total: market 6.5 vs Boolin 7.62. Model confidence: medium.",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
+   "research_status": "review required",
+   "review_required": true,
+   "validation": "NOT READY",
+   "disagreement": "significant disagreement",
+   "alerts": 0,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 426.5
+  },
+  {
+   "key": "2026-10-08-NHL-MIN-TBL",
+   "league": "NHL",
+   "matchup": "MIN @ TBL",
+   "start": "Thu Oct 8, 7:10 PM ET",
+   "start_et": "2026-10-08T19:10-04:00",
+   "status": "scheduled",
+   "importance": 6.75,
+   "reasons": [
+    "1 change(s) since the last pull, latest: Nick Foligno (MIN) Day-To-Day → Out",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since.",
+    "Nick Foligno (MIN) downgrade: Nick Foligno (MIN): Day-To-Day → Out (ESPN injury list)."
+   ],
+   "research_status": "watch",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": "mild disagreement",
+   "alerts": 0,
+   "changes": 1,
+   "changes_since_last_pull": 1,
+   "oldest_input_min": 426.5
+  },
+  {
+   "key": "2026-10-08-CFB-SouthAlabamaJaguars-ArkansasStateRedWolves",
+   "league": "CFB",
+   "matchup": "South Alabama Jaguars @ Arkansas State Red Wolves",
+   "start": "Thu Oct 8, 7:30 PM ET",
+   "start_et": "2026-10-08T19:30-04:00",
+   "status": "scheduled",
+   "importance": 6.0,
+   "reasons": [
+    "5 change(s) in the last 24 h, latest: Arkansas State Red Wolves no-vig win prob 0.5235 → 0.5564",
+    "Major total movement: Total moved 57 to 60.",
+    "Sharp price movement: No-vig Arkansas State Red Wolves win probability moved +4.5 pp since first seen.",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 5,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 426.5
+  },
+  {
+   "key": "2026-10-08-CFB-MissouriStateBears-WesternKentuckyHilltoppe",
+   "league": "CFB",
+   "matchup": "Missouri State Bears @ Western Kentucky Hilltoppers",
+   "start": "Thu Oct 8, 7:00 PM ET",
+   "start_et": "2026-10-08T19:00-04:00",
+   "status": "scheduled",
+   "importance": 4.25,
+   "reasons": [
+    "4 change(s) in the last 24 h, latest: Western Kentucky Hilltoppers no-vig win prob 0.5482 → 0.5216",
+    "Sharp price movement: No-vig Western Kentucky Hilltoppers win probability moved -3.7 pp since first seen.",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 4,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 426.5
+  },
+  {
+   "key": "2026-10-08-NHL-DAL-BUF",
+   "league": "NHL",
+   "matchup": "DAL @ BUF",
+   "start": "Thu Oct 8, 7:09 PM ET",
+   "start_et": "2026-10-08T19:09-04:00",
+   "status": "scheduled",
+   "importance": 4.0,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
+   "research_status": "watch",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": "mild disagreement",
+   "alerts": 0,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 426.5
+  },
+  {
+   "key": "2026-10-08-NHL-COL-CGY",
+   "league": "NHL",
+   "matchup": "COL @ CGY",
+   "start": "Thu Oct 8, 9:10 PM ET",
+   "start_et": "2026-10-08T21:10-04:00",
+   "status": "scheduled",
+   "importance": 3.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
+   "research_status": "watch",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": "mild disagreement",
+   "alerts": 0,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 426.5
+  },
+  {
+   "key": "2026-10-08-CFB-SouthFloridaBulls-UTSARoadrunners",
+   "league": "CFB",
+   "matchup": "South Florida Bulls @ UTSA Roadrunners",
+   "start": "Thu Oct 8, 7:30 PM ET",
+   "start_et": "2026-10-08T19:30-04:00",
+   "status": "scheduled",
+   "importance": 3.25,
+   "reasons": [
+    "6 change(s) in the last 24 h, latest: total under (FanDuel) -110 → -114",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 6,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 426.5
+  }
+ ],
+ "stable": [
+  {
+   "key": "2026-10-08-CFB-SamHoustonStateBearkats-LibertyFlames",
+   "league": "CFB",
+   "matchup": "Sam Houston State Bearkats @ Liberty Flames",
+   "start": "Thu Oct 8, 7:00 PM ET",
+   "start_et": "2026-10-08T19:00-04:00",
+   "status": "scheduled",
+   "importance": 2.25,
+   "reasons": [
+    "3 change(s) in the last 24 h, latest: Liberty Flames ML (FanDuel) -630 → -580",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 3,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 426.5,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   }
  ],
@@ -348,9 +369,10 @@
    "start": "Fri Oct 9, 7:00 PM ET",
    "start_et": "2026-10-09T19:00-04:00",
    "status": "scheduled",
-   "importance": 5.25,
+   "importance": 2.75,
    "reasons": [
-    "4 change(s) since the last pull, latest: total under (FanDuel) -114 → -115"
+    "4 change(s) in the last 24 h, latest: total under (FanDuel) -114 → -115",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -358,8 +380,8 @@
    "disagreement": null,
    "alerts": 0,
    "changes": 4,
-   "changes_since_last_pull": 4,
-   "oldest_input_min": 0.9
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-09-WNBA-AtlantaDream-NewYorkLiberty",
@@ -368,8 +390,10 @@
    "start": "Fri Oct 9, 7:30 PM ET",
    "start_et": "2026-10-09T19:30-04:00",
    "status": "scheduled",
-   "importance": 0.0,
-   "reasons": [],
+   "importance": 1.5,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -377,7 +401,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-09-CFB-IowaHawkeyes-WashingtonHuskies",
@@ -386,9 +410,10 @@
    "start": "Fri Oct 9, 9:00 PM ET",
    "start_et": "2026-10-09T21:00-04:00",
    "status": "scheduled",
-   "importance": 5.25,
+   "importance": 2.75,
    "reasons": [
-    "4 change(s) since the last pull, latest: Washington Huskies no-vig win prob 0.6072 → 0.5964"
+    "4 change(s) in the last 24 h, latest: Washington Huskies no-vig win prob 0.6072 → 0.5964",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -396,8 +421,8 @@
    "disagreement": null,
    "alerts": 0,
    "changes": 4,
-   "changes_since_last_pull": 4,
-   "oldest_input_min": 0.9
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-09-CFB-WashingtonStateCougars-UtahStateAggies",
@@ -406,9 +431,10 @@
    "start": "Fri Oct 9, 9:00 PM ET",
    "start_et": "2026-10-09T21:00-04:00",
    "status": "scheduled",
-   "importance": 2.5,
+   "importance": 2.0,
    "reasons": [
-    "2 change(s) since the last pull, latest: Utah State Aggies no-vig win prob 0.6416 → 0.652"
+    "2 change(s) in the last 24 h, latest: Utah State Aggies no-vig win prob 0.6416 → 0.652",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -416,8 +442,8 @@
    "disagreement": null,
    "alerts": 0,
    "changes": 2,
-   "changes_since_last_pull": 2,
-   "oldest_input_min": 0.9
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-09-CFB-WyomingCowboys-SanJoseStateSpartans",
@@ -426,9 +452,10 @@
    "start": "Fri Oct 9, 9:00 PM ET",
    "start_et": "2026-10-09T21:00-04:00",
    "status": "scheduled",
-   "importance": 4.0,
+   "importance": 2.5,
    "reasons": [
-    "3 change(s) since the last pull, latest: San Jose State Spartans ML (FanDuel) -235 → -230"
+    "3 change(s) in the last 24 h, latest: San Jose State Spartans ML (FanDuel) -235 → -230",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -436,8 +463,8 @@
    "disagreement": null,
    "alerts": 0,
    "changes": 3,
-   "changes_since_last_pull": 3,
-   "oldest_input_min": 0.9
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-09-CFB-IowaStateCyclones-BYUCougars",
@@ -446,9 +473,10 @@
    "start": "Fri Oct 9, 10:15 PM ET",
    "start_et": "2026-10-09T22:15-04:00",
    "status": "scheduled",
-   "importance": 1.75,
+   "importance": 2.25,
    "reasons": [
-    "1 change(s) since the last pull, latest: total 47.5 → 46.0"
+    "1 change(s) in the last 24 h, latest: total 47.5 → 46.0",
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -456,8 +484,8 @@
    "disagreement": null,
    "alerts": 0,
    "changes": 1,
-   "changes_since_last_pull": 1,
-   "oldest_input_min": 0.9
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-ArizonaWildcats-WestVirginiaMountaineers",
@@ -466,8 +494,10 @@
    "start": "Sat Oct 10, 12:00 PM ET",
    "start_et": "2026-10-10T12:00-04:00",
    "status": "scheduled",
-   "importance": 0.5,
-   "reasons": [],
+   "importance": 2.0,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -475,7 +505,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-IndianaHoosiers-NebraskaCornhuskers",
@@ -484,8 +514,10 @@
    "start": "Sat Oct 10, 12:00 PM ET",
    "start_et": "2026-10-10T12:00-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -493,7 +525,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-NorthCarolinaTarHeels-PittsburghPanthers",
@@ -502,8 +534,10 @@
    "start": "Sat Oct 10, 12:00 PM ET",
    "start_et": "2026-10-10T12:00-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -511,7 +545,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-SacramentoStateHornets-BowlingGreenFalcons",
@@ -520,8 +554,10 @@
    "start": "Sat Oct 10, 12:00 PM ET",
    "start_et": "2026-10-10T12:00-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -529,7 +565,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-TexasAMAggies-MissouriTigers",
@@ -538,8 +574,10 @@
    "start": "Sat Oct 10, 12:00 PM ET",
    "start_et": "2026-10-10T12:00-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -547,7 +585,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-TulaneGreenWave-ArmyBlackKnights",
@@ -556,8 +594,10 @@
    "start": "Sat Oct 10, 12:00 PM ET",
    "start_et": "2026-10-10T12:00-04:00",
    "status": "scheduled",
-   "importance": 0.5,
-   "reasons": [],
+   "importance": 2.0,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -565,7 +605,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-UCFKnights-OklahomaStateCowboys",
@@ -574,8 +614,10 @@
    "start": "Sat Oct 10, 12:00 PM ET",
    "start_et": "2026-10-10T12:00-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -583,7 +625,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-WakeForestDemonDeacons-NCStateWolfpack",
@@ -592,8 +634,10 @@
    "start": "Sat Oct 10, 12:00 PM ET",
    "start_et": "2026-10-10T12:00-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -601,7 +645,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-BallStateCardinals-NorthwesternWildcats",
@@ -610,8 +654,10 @@
    "start": "Sat Oct 10, 12:30 PM ET",
    "start_et": "2026-10-10T12:30-04:00",
    "status": "scheduled",
-   "importance": 0.5,
-   "reasons": [],
+   "importance": 2.0,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -619,7 +665,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-SouthCarolinaGamecocks-FloridaGators",
@@ -628,8 +674,10 @@
    "start": "Sat Oct 10, 12:45 PM ET",
    "start_et": "2026-10-10T12:45-04:00",
    "status": "scheduled",
-   "importance": 0.5,
-   "reasons": [],
+   "importance": 2.0,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -637,7 +685,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-OldDominionMonarchs-AppalachianStateMountain",
@@ -646,8 +694,10 @@
    "start": "Sat Oct 10, 1:00 PM ET",
    "start_et": "2026-10-10T13:00-04:00",
    "status": "scheduled",
-   "importance": 0.0,
-   "reasons": [],
+   "importance": 1.5,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -655,7 +705,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-MiamiOHRedHawks-UMassMinutemen",
@@ -664,8 +714,10 @@
    "start": "Sat Oct 10, 2:00 PM ET",
    "start_et": "2026-10-10T14:00-04:00",
    "status": "scheduled",
-   "importance": 0.0,
-   "reasons": [],
+   "importance": 1.5,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -673,7 +725,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-BuffaloBulls-ToledoRockets",
@@ -682,8 +734,10 @@
    "start": "Sat Oct 10, 3:30 PM ET",
    "start_et": "2026-10-10T15:30-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -691,7 +745,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-CentralMichiganChippewas-OhioBobcats",
@@ -700,8 +754,10 @@
    "start": "Sat Oct 10, 3:30 PM ET",
    "start_et": "2026-10-10T15:30-04:00",
    "status": "scheduled",
-   "importance": 0.5,
-   "reasons": [],
+   "importance": 2.0,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -709,7 +765,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-Charlotte49ers-NorthTexasMeanGreen",
@@ -718,8 +774,10 @@
    "start": "Sat Oct 10, 3:30 PM ET",
    "start_et": "2026-10-10T15:30-04:00",
    "status": "scheduled",
-   "importance": 0.5,
-   "reasons": [],
+   "importance": 2.0,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -727,7 +785,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-DukeBlueDevils-GeorgiaTechYellowJackets",
@@ -736,8 +794,10 @@
    "start": "Sat Oct 10, 3:30 PM ET",
    "start_et": "2026-10-10T15:30-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -745,7 +805,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-EasternMichiganEagles-AkronZips",
@@ -754,8 +814,10 @@
    "start": "Sat Oct 10, 3:30 PM ET",
    "start_et": "2026-10-10T15:30-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -763,7 +825,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-HoustonCougars-KansasStateWildcats",
@@ -772,8 +834,10 @@
    "start": "Sat Oct 10, 3:30 PM ET",
    "start_et": "2026-10-10T15:30-04:00",
    "status": "scheduled",
-   "importance": 0.0,
-   "reasons": [],
+   "importance": 1.5,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -781,7 +845,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-IllinoisFightingIllini-MichiganStateSpartans",
@@ -790,8 +854,10 @@
    "start": "Sat Oct 10, 3:30 PM ET",
    "start_et": "2026-10-10T15:30-04:00",
    "status": "scheduled",
-   "importance": 0.0,
-   "reasons": [],
+   "importance": 1.5,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -799,7 +865,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-KentStateGoldenFlashes-WesternMichiganBroncos",
@@ -808,8 +874,10 @@
    "start": "Sat Oct 10, 3:30 PM ET",
    "start_et": "2026-10-10T15:30-04:00",
    "status": "scheduled",
-   "importance": 0.0,
-   "reasons": [],
+   "importance": 1.5,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -817,7 +885,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-OleMissRebels-VanderbiltCommodores",
@@ -826,8 +894,10 @@
    "start": "Sat Oct 10, 3:30 PM ET",
    "start_et": "2026-10-10T15:30-04:00",
    "status": "scheduled",
-   "importance": 0.5,
-   "reasons": [],
+   "importance": 2.0,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -835,7 +905,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-StanfordCardinal-NotreDameFightingIrish",
@@ -844,8 +914,10 @@
    "start": "Sat Oct 10, 3:30 PM ET",
    "start_et": "2026-10-10T15:30-04:00",
    "status": "scheduled",
-   "importance": 0.5,
-   "reasons": [],
+   "importance": 2.0,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -853,7 +925,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-TexasLonghorns-OklahomaSooners",
@@ -862,8 +934,10 @@
    "start": "Sat Oct 10, 3:30 PM ET",
    "start_et": "2026-10-10T15:30-04:00",
    "status": "scheduled",
-   "importance": 0.5,
-   "reasons": [],
+   "importance": 2.0,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -871,7 +945,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-TulsaGoldenHurricane-NavyMidshipmen",
@@ -880,8 +954,10 @@
    "start": "Sat Oct 10, 3:30 PM ET",
    "start_et": "2026-10-10T15:30-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -889,7 +965,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-UCLABruins-OregonDucks",
@@ -898,8 +974,10 @@
    "start": "Sat Oct 10, 3:30 PM ET",
    "start_et": "2026-10-10T15:30-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -907,7 +985,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-VirginiaTechHokies-CaliforniaGoldenBears",
@@ -916,8 +994,10 @@
    "start": "Sat Oct 10, 3:30 PM ET",
    "start_et": "2026-10-10T15:30-04:00",
    "status": "scheduled",
-   "importance": 0.5,
-   "reasons": [],
+   "importance": 2.0,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -925,7 +1005,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-UConnHuskies-TempleOwls",
@@ -934,8 +1014,10 @@
    "start": "Sat Oct 10, 3:45 PM ET",
    "start_et": "2026-10-10T15:45-04:00",
    "status": "scheduled",
-   "importance": 0.5,
-   "reasons": [],
+   "importance": 2.0,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -943,7 +1025,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-RiceOwls-EastCarolinaPirates",
@@ -952,8 +1034,10 @@
    "start": "Sat Oct 10, 4:00 PM ET",
    "start_et": "2026-10-10T16:00-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -961,7 +1045,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-MarylandTerrapins-OhioStateBuckeyes",
@@ -970,8 +1054,10 @@
    "start": "Sat Oct 10, 4:15 PM ET",
    "start_et": "2026-10-10T16:15-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -979,7 +1065,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-TennesseeVolunteers-ArkansasRazorbacks",
@@ -988,8 +1074,10 @@
    "start": "Sat Oct 10, 4:15 PM ET",
    "start_et": "2026-10-10T16:15-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -997,7 +1085,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-SanDiegoStateAztecs-OregonStateBeavers",
@@ -1006,8 +1094,10 @@
    "start": "Sat Oct 10, 6:00 PM ET",
    "start_et": "2026-10-10T18:00-04:00",
    "status": "scheduled",
-   "importance": 0.25,
-   "reasons": [],
+   "importance": 1.75,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -1015,7 +1105,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-CoastalCarolinaChanticle-MarshallThunderingHerd",
@@ -1024,8 +1114,10 @@
    "start": "Sat Oct 10, 7:00 PM ET",
    "start_et": "2026-10-10T19:00-04:00",
    "status": "scheduled",
-   "importance": 0.0,
-   "reasons": [],
+   "importance": 1.5,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -1033,7 +1125,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-LSUTigers-KentuckyWildcats",
@@ -1042,8 +1134,10 @@
    "start": "Sat Oct 10, 7:00 PM ET",
    "start_et": "2026-10-10T19:00-04:00",
    "status": "scheduled",
-   "importance": 0.5,
-   "reasons": [],
+   "importance": 2.0,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -1051,7 +1145,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   },
   {
    "key": "2026-10-10-CFB-NevadaWolfPack-UTEPMiners",
@@ -1060,8 +1154,10 @@
    "start": "Sat Oct 10, 7:00 PM ET",
    "start_et": "2026-10-10T19:00-04:00",
    "status": "scheduled",
-   "importance": 0.5,
-   "reasons": [],
+   "importance": 2.0,
+   "reasons": [
+    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+   ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -1069,13 +1165,13 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.9
+   "oldest_input_min": 426.5
   }
  ],
  "review_required": [
-  "2026-10-08-NHL-SJS-STL",
   "2026-10-08-NHL-PHI-OTT",
   "2026-10-08-NHL-TOR-VGK",
+  "2026-10-08-NHL-SJS-STL",
   "2026-10-08-NHL-NSH-MTL",
   "2026-10-08-NHL-CHI-NYI",
   "2026-10-08-NHL-VAN-CAR"
@@ -1097,14 +1193,14 @@
   "NHL": {
    "model_version": "baseline-0.1",
    "validation_version": "validation-1.0",
-   "data_cutoff": "2026-10-06",
+   "data_cutoff": "2026-10-07",
    "calibration_status": "uncalibrated (insufficient sample)",
    "validation_status": "insufficient sample",
    "recommendation": "NOT READY",
    "lean_allowed": false,
-   "sample_size": 9,
+   "sample_size": 12,
    "primary_evidence": "live_archive holdout (games after 2026-10-05)",
-   "market_comparison": "too few games to tell (n=9)"
+   "market_comparison": "too few games to tell (n=12)"
   },
   "MLB": {
    "model_version": "baseline-0.1",
@@ -1114,9 +1210,9 @@
    "validation_status": "insufficient sample",
    "recommendation": "NOT READY",
    "lean_allowed": false,
-   "sample_size": 3,
+   "sample_size": 6,
    "primary_evidence": "live_archive holdout (games after 2026-10-05)",
-   "market_comparison": "too few games to tell (n=3)"
+   "market_comparison": "too few games to tell (n=6)"
   }
  }
 }

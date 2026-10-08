@@ -9,7 +9,7 @@
   "baseline-0.1",
   "baseline-0.2"
  ],
- "built_at": "2026-10-08T08:55-04:00",
+ "built_at": "2026-10-08T16:01-04:00",
  "data_cutoff": "2026-10-07",
  "filters": {
   "league": null,
@@ -26,8 +26,8 @@
   "nfl_replay": "development = seasons < 2022; holdout = 2022+"
  },
  "warning": "rows span model versions ['baseline-0.1', 'baseline-0.2']: each table is per league and per source, and rows from an older version sit in their own '<source> @<version>' slice",
- "rows": 3724,
- "excluded": 323,
+ "rows": 3730,
+ "excluded": 333,
  "by_source": {
   "NFL nfl_replay": {
    "rows": 3652,
@@ -60,19 +60,19 @@
    "last": "2026-10-05"
   },
   "NHL live_archive": {
-   "rows": 44,
+   "rows": 47,
    "development": 35,
-   "holdout": 9,
+   "holdout": 12,
    "model_versions": [
     "baseline-0.1"
    ],
    "first": "2026-10-01",
-   "last": "2026-10-06"
+   "last": "2026-10-07"
   },
   "MLB live_archive": {
-   "rows": 12,
+   "rows": 15,
    "development": 9,
-   "holdout": 3,
+   "holdout": 6,
    "model_versions": [
     "baseline-0.1"
    ],
@@ -82,12 +82,12 @@
  },
  "excluded_by_reason": {
   "nfl_replay: no current-season plays before this week for a team (the live model has no projection either)": 241,
-  "live_archive: no Boolin model for this league": 70,
-  "live_archive: no confirmed final score on file": 12
+  "live_archive: no Boolin model for this league": 74,
+  "live_archive: no confirmed final score on file": 18
  },
  "replay": {
   "version": "nfl-replay-1",
-  "built_at_et": "2026-10-08T08:55-04:00",
+  "built_at_et": "2026-10-08T16:01-04:00",
   "status": {
    "2012": "kept",
    "2013": "kept",
@@ -129,26 +129,26 @@
    "recommendation": "CALIBRATION NEEDED"
   },
   "NHL": {
-   "sample_size": 9,
-   "brier": 0.2506,
-   "market_brier": 0.2302,
-   "log_loss": 0.6946,
-   "calibration_error": 0.2811,
-   "market_comparison": "too few games to tell (n=9)",
-   "spread_mae": 1.96,
+   "sample_size": 12,
+   "brier": 0.2675,
+   "market_brier": 0.2367,
+   "log_loss": 0.7313,
+   "calibration_error": 0.3488,
+   "market_comparison": "too few games to tell (n=12)",
+   "spread_mae": 2.053,
    "confidence_validated": null,
    "calibration_status": "uncalibrated (insufficient sample)",
    "validation_status": "insufficient sample",
    "recommendation": "NOT READY"
   },
   "MLB": {
-   "sample_size": 3,
-   "brier": 0.2679,
-   "market_brier": 0.2379,
-   "log_loss": 0.7289,
-   "calibration_error": 0.1873,
-   "market_comparison": "too few games to tell (n=3)",
-   "spread_mae": 3.14,
+   "sample_size": 6,
+   "brier": 0.256,
+   "market_brier": 0.2529,
+   "log_loss": 0.7053,
+   "calibration_error": 0.0401,
+   "market_comparison": "too few games to tell (n=6)",
+   "spread_mae": 2.51,
    "confidence_validated": null,
    "calibration_status": "uncalibrated (insufficient sample)",
    "validation_status": "insufficient sample",
