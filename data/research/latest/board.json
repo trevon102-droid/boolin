@@ -1,18 +1,87 @@
 {
  "slate_date": "2026-10-07",
- "built_at": "2026-10-07T16:02-04:00",
+ "built_at": "2026-10-07T20:19-04:00",
  "games": 11,
  "attention": [
+  {
+   "key": "2026-10-07-MLB-MIL-SD",
+   "league": "MLB",
+   "matchup": "MIL @ SD",
+   "start": "Wed Oct 7, 10:00 PM ET",
+   "start_et": "2026-10-07T22:00-04:00",
+   "status": "scheduled",
+   "importance": 23.0,
+   "reasons": [
+    "7 change(s) since the last pull, latest: Boolin model availability unavailable → available",
+    "Boolin significant disagreement with market: Win probability (home): market 0.5118 vs Boolin 0.443; Total: market 7.5 vs Boolin 8.54. Model confidence: high.",
+    "Stale odds: Odds are 11 h old; prices may have moved since.",
+    "MIL starting pitcher not confirmed: Robert Gasser is projected (announced probable, not a confirmed lineup card), not officially confirmed."
+   ],
+   "research_status": "watch",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": "significant disagreement",
+   "alerts": 0,
+   "changes": 9,
+   "changes_since_last_pull": 7,
+   "oldest_input_min": 683.0
+  },
+  {
+   "key": "2026-10-07-MLB-TB-NYY",
+   "league": "MLB",
+   "matchup": "TB @ NYY",
+   "start": "Wed Oct 7, 8:00 PM ET",
+   "start_et": "2026-10-07T20:00-04:00",
+   "status": "started",
+   "importance": 18.5,
+   "reasons": [
+    "3 change(s) since the last pull, latest: temp (°F) 61.0 → 64.0",
+    "Major total movement: Total moved 7 to 7.5.",
+    "TB starting pitcher not confirmed: Nick Martinez is projected (announced probable, not a confirmed lineup card), not officially confirmed.",
+    "NYY starting pitcher not confirmed: Max Fried is projected (announced probable, not a confirmed lineup card), not officially confirmed."
+   ],
+   "research_status": "watch",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": "mild disagreement",
+   "alerts": 0,
+   "changes": 18,
+   "changes_since_last_pull": 3,
+   "oldest_input_min": 683.0
+  },
+  {
+   "key": "2026-10-07-MLB-LAD-ATL",
+   "league": "MLB",
+   "matchup": "LAD @ ATL",
+   "start": "Wed Oct 7, 6:10 PM ET",
+   "start_et": "2026-10-07T18:10-04:00",
+   "status": "started",
+   "importance": 17.5,
+   "reasons": [
+    "2 change(s) since the last pull, latest: temp (°F) 77.0 → 79.0",
+    "LAD starting pitcher not confirmed: Tyler Glasnow is projected (announced probable, not a confirmed lineup card), not officially confirmed.",
+    "ATL starting pitcher not confirmed: Tyler Mahle is projected (announced probable, not a confirmed lineup card), not officially confirmed.",
+    "wind (mph) changed: unknown → 2 (MLB Stats API weather)."
+   ],
+   "research_status": "watch",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": "mild disagreement",
+   "alerts": 0,
+   "changes": 7,
+   "changes_since_last_pull": 2,
+   "oldest_input_min": 683.0
+  },
   {
    "key": "2026-10-07-MLB-CLE-CWS",
    "league": "MLB",
    "matchup": "CLE @ CWS",
    "start": "Wed Oct 7, 4:00 PM ET",
    "start_et": "2026-10-07T16:00-04:00",
-   "status": "started",
-   "importance": 20.0,
+   "status": "final",
+   "importance": 16.0,
    "reasons": [
-    "5 change(s) since the last pull, latest: condition unknown → Sunny",
+    "13 change(s) in the last 24 h, latest: condition unknown → Sunny",
     "Major total movement: Total moved 7.5 to 8.",
     "CLE starting pitcher not confirmed: Daniel Espino is projected (announced probable, not a confirmed lineup card), not officially confirmed.",
     "CWS starting pitcher not confirmed: Sean Newcomb is projected (announced probable, not a confirmed lineup card), not officially confirmed."
@@ -23,77 +92,8 @@
    "disagreement": "aligned",
    "alerts": 0,
    "changes": 13,
-   "changes_since_last_pull": 5,
-   "oldest_input_min": 426.5
-  },
-  {
-   "key": "2026-10-07-MLB-LAD-ATL",
-   "league": "MLB",
-   "matchup": "LAD @ ATL",
-   "start": "Wed Oct 7, 6:10 PM ET",
-   "start_et": "2026-10-07T18:10-04:00",
-   "status": "scheduled",
-   "importance": 17.75,
-   "reasons": [
-    "5 change(s) since the last pull, latest: condition unknown → Clear",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since.",
-    "LAD starting pitcher not confirmed: Tyler Glasnow is projected (announced probable, not a confirmed lineup card), not officially confirmed.",
-    "ATL starting pitcher not confirmed: Tyler Mahle is projected (announced probable, not a confirmed lineup card), not officially confirmed."
-   ],
-   "research_status": "watch",
-   "review_required": false,
-   "validation": "NOT READY",
-   "disagreement": "mild disagreement",
-   "alerts": 0,
-   "changes": 5,
-   "changes_since_last_pull": 5,
-   "oldest_input_min": 426.5
-  },
-  {
-   "key": "2026-10-07-MLB-TB-NYY",
-   "league": "MLB",
-   "matchup": "TB @ NYY",
-   "start": "Wed Oct 7, 8:00 PM ET",
-   "start_et": "2026-10-07T20:00-04:00",
-   "status": "scheduled",
-   "importance": 15.75,
-   "reasons": [
-    "4 change(s) since the last pull, latest: condition unknown → Clear",
-    "Major total movement: Total moved 7 to 7.5.",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since.",
-    "Griffin Jax (TB) status unresolved: Listed Day-To-Day (ESPN injury list); final status not confirmed."
-   ],
-   "research_status": "watch",
-   "review_required": false,
-   "validation": "NOT READY",
-   "disagreement": "mild disagreement",
-   "alerts": 0,
-   "changes": 15,
-   "changes_since_last_pull": 4,
-   "oldest_input_min": 426.5
-  },
-  {
-   "key": "2026-10-07-MLB-MIL-SD",
-   "league": "MLB",
-   "matchup": "MIL @ SD",
-   "start": "Wed Oct 7, 10:00 PM ET",
-   "start_et": "2026-10-07T22:00-04:00",
-   "status": "scheduled",
-   "importance": 12.75,
-   "reasons": [
-    "2 change(s) since the last pull, latest: Mason Miller (SD) paternity → not listed",
-    "MIL starting pitcher unknown: No starting pitcher in the data for MIL.",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since.",
-    "Adrian Morejon (SD) added to injury report: Adrian Morejon (SD): not listed → Day-To-Day (ESPN injury list)."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": "NOT READY",
-   "disagreement": null,
-   "alerts": 1,
-   "changes": 2,
-   "changes_since_last_pull": 2,
-   "oldest_input_min": 426.5
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-07-NHL-EDM-ANA",
@@ -102,21 +102,21 @@
    "start": "Wed Oct 7, 10:00 PM ET",
    "start_et": "2026-10-07T22:00-04:00",
    "status": "scheduled",
-   "importance": 10.75,
+   "importance": 14.0,
    "reasons": [
     "REVIEW REQUIRED: model uncalibrated (insufficient sample); validation: insufficient sample (NOT READY); small sample: Small sample: home 5v5 xG leans on last season (this-season weight 0.09).; Small sample: away 5v5 xG leans on last season (this-season weight 0.13).. Interesting disagreement, not a validated edge.",
-    "2 change(s) since the last pull, latest: Jason Dickinson (EDM) Injured Reserve → not listed",
+    "2 change(s) since the last pull, latest: Colton Dach (EDM) not listed → Injured Reserve",
     "Boolin significant disagreement with market: Win probability (home): market 0.4491 vs Boolin 0.5138; Total: market 6.5 vs Boolin 7.64. Model confidence: medium.",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
    "validation": "NOT READY",
    "disagreement": "significant disagreement",
    "alerts": 0,
-   "changes": 2,
+   "changes": 4,
    "changes_since_last_pull": 2,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-07-NHL-COL-WPG",
@@ -124,13 +124,13 @@
    "matchup": "COL @ WPG",
    "start": "Wed Oct 7, 7:30 PM ET",
    "start_et": "2026-10-07T19:30-04:00",
-   "status": "scheduled",
+   "status": "started",
    "importance": 9.25,
    "reasons": [
     "REVIEW REQUIRED: model uncalibrated (insufficient sample); validation: insufficient sample (NOT READY); small sample: Small sample: home 5v5 xG leans on last season (this-season weight 0.13).; Small sample: away 5v5 xG leans on last season (this-season weight 0.09).. Interesting disagreement, not a validated edge.",
-    "1 change(s) since the last pull, latest: Zachary L'Heureux (COL) Injured Reserve → not listed",
+    "1 change(s) in the last 24 h, latest: Zachary L'Heureux (COL) Injured Reserve → not listed",
     "Boolin significant disagreement with market: Win probability (home): market 0.3663 vs Boolin 0.289; Total: market 6.5 vs Boolin 7.09. Model confidence: medium.",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "COL starting goalie not confirmed: Mackenzie Blackwood is projected (most starts this season; not confirmed), not officially confirmed."
    ],
    "research_status": "review required",
    "review_required": true,
@@ -138,8 +138,8 @@
    "disagreement": "significant disagreement",
    "alerts": 0,
    "changes": 1,
-   "changes_since_last_pull": 1,
-   "oldest_input_min": 426.5
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-07-NHL-PIT-WSH",
@@ -147,11 +147,12 @@
    "matchup": "PIT @ WSH",
    "start": "Wed Oct 7, 7:40 PM ET",
    "start_et": "2026-10-07T19:40-04:00",
-   "status": "scheduled",
-   "importance": 8.5,
+   "status": "started",
+   "importance": 8.75,
    "reasons": [
-    "2 change(s) since the last pull, latest: Andrei Kuzmenko (PIT) not listed → Injured Reserve",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since.",
+    "1 change(s) since the last pull, latest: Bryan Rust (PIT) Injured Reserve → not listed",
+    "PIT starting goalie not confirmed: Arturs Silovs is projected (most starts this season; not confirmed), not officially confirmed.",
+    "WSH starting goalie not confirmed: Logan Thompson is projected (most starts this season; not confirmed), not officially confirmed.",
     "Matt Roy (WSH) downgrade: Matt Roy (WSH): Day-To-Day → Out (ESPN injury list)."
    ],
    "research_status": "pass",
@@ -159,77 +160,12 @@
    "validation": "NOT READY",
    "disagreement": "aligned",
    "alerts": 0,
-   "changes": 8,
-   "changes_since_last_pull": 2,
-   "oldest_input_min": 426.5
-  },
-  {
-   "key": "2026-10-07-WNBA-NewYorkLiberty-AtlantaDream",
-   "league": "WNBA",
-   "matchup": "New York Liberty @ Atlanta Dream",
-   "start": "Wed Oct 7, 7:30 PM ET",
-   "start_et": "2026-10-07T19:30-04:00",
-   "status": "scheduled",
-   "importance": 3.0,
-   "reasons": [
-    "5 change(s) in the last 24 h, latest: Atlanta Dream no-vig win prob 0.5699 → 0.5419",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 5,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "changes": 9,
+   "changes_since_last_pull": 1,
+   "oldest_input_min": 683.0
   }
  ],
  "stable": [
-  {
-   "key": "2026-10-07-CFB-JacksonvilleStateGamecoc-KennesawStateOwls",
-   "league": "CFB",
-   "matchup": "Jacksonville State Gamecocks @ Kennesaw State Owls",
-   "start": "Wed Oct 7, 7:00 PM ET",
-   "start_et": "2026-10-07T19:00-04:00",
-   "status": "scheduled",
-   "importance": 2.75,
-   "reasons": [
-    "4 change(s) in the last 24 h, latest: Kennesaw State Owls ML (FanDuel) 126 → 122",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 4,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
-  },
-  {
-   "key": "2026-10-07-CFB-NewMexicoStateAggies-FloridaInternationalPant",
-   "league": "CFB",
-   "matchup": "New Mexico State Aggies @ Florida International Panthers",
-   "start": "Wed Oct 7, 7:30 PM ET",
-   "start_et": "2026-10-07T19:30-04:00",
-   "status": "scheduled",
-   "importance": 2.75,
-   "reasons": [
-    "4 change(s) in the last 24 h, latest: Florida International Panthers no-vig win prob 0.6636 → 0.6848",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 4,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
-  },
   {
    "key": "2026-10-07-WNBA-LasVegasAces-GoldenStateValkyries",
    "league": "WNBA",
@@ -239,7 +175,7 @@
    "status": "scheduled",
    "importance": 1.75,
    "reasons": [
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -248,7 +184,70 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5,
+   "oldest_input_min": 683.0,
+   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
+  },
+  {
+   "key": "2026-10-07-WNBA-NewYorkLiberty-AtlantaDream",
+   "league": "WNBA",
+   "matchup": "New York Liberty @ Atlanta Dream",
+   "start": "Wed Oct 7, 7:30 PM ET",
+   "start_et": "2026-10-07T19:30-04:00",
+   "status": "started",
+   "importance": 1.5,
+   "reasons": [
+    "5 change(s) in the last 24 h, latest: Atlanta Dream no-vig win prob 0.5699 → 0.5419"
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 5,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 683.0,
+   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
+  },
+  {
+   "key": "2026-10-07-CFB-JacksonvilleStateGamecoc-KennesawStateOwls",
+   "league": "CFB",
+   "matchup": "Jacksonville State Gamecocks @ Kennesaw State Owls",
+   "start": "Wed Oct 7, 7:00 PM ET",
+   "start_et": "2026-10-07T19:00-04:00",
+   "status": "started",
+   "importance": 1.25,
+   "reasons": [
+    "4 change(s) in the last 24 h, latest: Kennesaw State Owls ML (FanDuel) 126 → 122"
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 4,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 683.0,
+   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
+  },
+  {
+   "key": "2026-10-07-CFB-NewMexicoStateAggies-FloridaInternationalPant",
+   "league": "CFB",
+   "matchup": "New Mexico State Aggies @ Florida International Panthers",
+   "start": "Wed Oct 7, 7:30 PM ET",
+   "start_et": "2026-10-07T19:30-04:00",
+   "status": "started",
+   "importance": 1.25,
+   "reasons": [
+    "4 change(s) in the last 24 h, latest: Florida International Panthers no-vig win prob 0.6636 → 0.6848"
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 4,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 683.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   }
  ],
@@ -263,7 +262,7 @@
    "importance": 2.75,
    "reasons": [
     "5 change(s) in the last 24 h, latest: spread home (FanDuel) -118 → -115",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -272,7 +271,7 @@
    "alerts": 0,
    "changes": 5,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-08-CFB-SamHoustonStateBearkats-LibertyFlames",
@@ -284,7 +283,7 @@
    "importance": 2.25,
    "reasons": [
     "2 change(s) in the last 24 h, latest: Liberty Flames ML (FanDuel) -650 → -630",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -293,7 +292,7 @@
    "alerts": 0,
    "changes": 2,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-08-NHL-PHI-OTT",
@@ -304,7 +303,7 @@
    "status": "scheduled",
    "importance": 2.25,
    "reasons": [
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -313,7 +312,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-08-CFB-SouthAlabamaJaguars-ArkansasStateRedWolves",
@@ -325,7 +324,7 @@
    "importance": 3.0,
    "reasons": [
     "4 change(s) in the last 24 h, latest: Arkansas State Red Wolves no-vig win prob 0.5111 → 0.5235",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -334,7 +333,7 @@
    "alerts": 0,
    "changes": 4,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-08-CFB-SouthFloridaBulls-UTSARoadrunners",
@@ -346,7 +345,7 @@
    "importance": 2.0,
    "reasons": [
     "2 change(s) in the last 24 h, latest: UTSA Roadrunners ML (FanDuel) -310 → -295",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -355,7 +354,7 @@
    "alerts": 0,
    "changes": 2,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-08-NHL-SJS-STL",
@@ -366,7 +365,7 @@
    "status": "scheduled",
    "importance": 2.25,
    "reasons": [
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -375,7 +374,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-08-NFL-TB-DAL",
@@ -389,7 +388,7 @@
     "5 change(s) in the last 24 h, latest: injury report week 4 → week 5",
     "Major spread movement: DAL spread moved -9.5 to -8 since Boolin first saw it (8 observations).",
     "Boolin significant disagreement with market: Win probability (home): market 0.7872 vs Boolin 0.7253. Model confidence: medium.",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
@@ -398,7 +397,7 @@
    "alerts": 0,
    "changes": 5,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-09-CFB-FloridaStateSeminoles-LouisvilleCardinals",
@@ -409,7 +408,7 @@
    "status": "scheduled",
    "importance": 1.75,
    "reasons": [
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -418,7 +417,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-09-CFB-IowaHawkeyes-WashingtonHuskies",
@@ -429,7 +428,7 @@
    "status": "scheduled",
    "importance": 1.5,
    "reasons": [
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -438,7 +437,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-09-CFB-WashingtonStateCougars-UtahStateAggies",
@@ -449,7 +448,7 @@
    "status": "scheduled",
    "importance": 1.75,
    "reasons": [
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -458,7 +457,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-09-CFB-WyomingCowboys-SanJoseStateSpartans",
@@ -469,7 +468,7 @@
    "status": "scheduled",
    "importance": 1.75,
    "reasons": [
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -478,7 +477,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-09-CFB-IowaStateCyclones-BYUCougars",
@@ -489,7 +488,7 @@
    "status": "scheduled",
    "importance": 1.75,
    "reasons": [
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -498,7 +497,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-11-NFL-PHI-JAX",
@@ -521,7 +520,7 @@
    "alerts": 0,
    "changes": 6,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-11-NFL-CHI-GB",
@@ -544,7 +543,7 @@
    "alerts": 0,
    "changes": 7,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-11-NFL-CIN-MIA",
@@ -557,7 +556,7 @@
    "reasons": [
     "3 change(s) in the last 24 h, latest: injury report week 4 → week 5",
     "Boolin significant disagreement with market: Win probability (home): market 0.2562 vs Boolin 0.3441. Model confidence: medium.",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
@@ -566,7 +565,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-11-NFL-CLE-NYJ",
@@ -578,7 +577,7 @@
    "importance": 2.75,
    "reasons": [
     "3 change(s) in the last 24 h, latest: injury report week 4 → week 5",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "pass",
    "review_required": false,
@@ -587,7 +586,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-11-NFL-HOU-TEN",
@@ -610,7 +609,7 @@
    "alerts": 1,
    "changes": 6,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-11-NFL-IND-PIT",
@@ -622,7 +621,7 @@
    "importance": 2.5,
    "reasons": [
     "3 change(s) in the last 24 h, latest: injury report week 4 → week 5",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "pass",
    "review_required": false,
@@ -631,7 +630,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-11-NFL-LV-NE",
@@ -645,7 +644,7 @@
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
     "5 change(s) in the last 24 h, latest: injury report week 4 → week 5",
     "Boolin extreme disagreement with market: Win probability (home): market 0.6434 vs Boolin 0.4449; Spread (NE): market -4.0 vs Boolin 1.9. Model confidence: medium.",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
@@ -654,7 +653,7 @@
    "alerts": 1,
    "changes": 5,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-11-NFL-MIN-NO",
@@ -667,7 +666,7 @@
    "reasons": [
     "3 change(s) in the last 24 h, latest: injury report week 4 → week 5",
     "Sharp price movement: No-vig NO win probability moved -3.5 pp since first seen.",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
@@ -676,7 +675,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-11-NFL-NYG-WAS",
@@ -689,7 +688,7 @@
    "reasons": [
     "6 change(s) in the last 24 h, latest: injury report week 4 → week 5",
     "Boolin significant disagreement with market: Win probability (home): market 0.6345 vs Boolin 0.5661. Model confidence: medium.",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
@@ -698,7 +697,7 @@
    "alerts": 0,
    "changes": 6,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-11-NFL-DEN-LAC",
@@ -711,7 +710,7 @@
    "reasons": [
     "4 change(s) in the last 24 h, latest: injury report week 4 → week 5",
     "Boolin significant disagreement with market: Win probability (home): market 0.3831 vs Boolin 0.4819; Spread (LAC): market 3.5 vs Boolin 0.6. Model confidence: medium.",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
@@ -720,7 +719,7 @@
    "alerts": 0,
    "changes": 4,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-11-NFL-DET-ARI",
@@ -743,7 +742,7 @@
    "alerts": 1,
    "changes": 5,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-11-NFL-SF-SEA",
@@ -757,7 +756,7 @@
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
     "2 change(s) in the last 24 h, latest: injury report week 4 → week 5",
     "Boolin extreme disagreement with market: Win probability (home): market 0.5925 vs Boolin 0.3927; Spread (SEA): market -3.0 vs Boolin 3.7. Model confidence: medium.",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
@@ -766,7 +765,7 @@
    "alerts": 1,
    "changes": 2,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-11-NFL-BAL-ATL",
@@ -789,7 +788,7 @@
    "alerts": 1,
    "changes": 6,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   },
   {
    "key": "2026-10-12-NFL-BUF-LA",
@@ -803,7 +802,7 @@
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
     "3 change(s) in the last 24 h, latest: injury report week 4 → week 5",
     "Boolin extreme disagreement with market: Win probability (home): market 0.5994 vs Boolin 0.4974; Spread (LA): market -3.0 vs Boolin 0.1; Total: market 54.5 vs Boolin 47.9. Model confidence: medium.",
-    "Stale odds: Odds are 7.1 h old; prices may have moved since."
+    "Stale odds: Odds are 11 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
@@ -812,7 +811,7 @@
    "alerts": 1,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 426.5
+   "oldest_input_min": 683.0
   }
  ],
  "review_required": [

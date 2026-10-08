@@ -1,12 +1,12 @@
 {
- "pulled_at_et": "2026-10-07T16:02-04:00",
+ "pulled_at_et": "2026-10-07T20:18-04:00",
  "date": "2026-10-07",
  "season": 2026,
  "games": [
   {
    "game_pk": 849833,
    "start_et": "4:00 PM ET",
-   "status": "Warmup",
+   "status": "Final",
    "game_type": "D",
    "series": "AL Division Series",
    "series_game": 3,
@@ -23,10 +23,10 @@
     "name": "Cleveland Guardians",
     "abbr": "CLE",
     "record": {
-     "wins": 0,
+     "wins": 1,
      "losses": 2,
      "ties": 0,
-     "pct": ".000"
+     "pct": ".333"
     },
     "probable_status": "announced (MLB probable; openers/bulk relievers are not flagged)",
     "probable": {
@@ -76,9 +76,19 @@
        "h": 0,
        "er": 0,
        "pitches": 17
+      },
+      {
+       "date": "2026-10-07",
+       "opp": "Chicago White Sox",
+       "outs": 2,
+       "k": 2,
+       "bb": 1,
+       "h": 2,
+       "er": 1,
+       "pitches": 20
       }
      ],
-     "starts_counted": 3,
+     "starts_counted": 4,
      "sample_quality": "small",
      "k_dist": {
       "3": 0.0,
@@ -119,17 +129,17 @@
       "20": 0.0
      },
      "k_mean": {
-      "season": 1.67,
-      "last10": 1.67,
-      "last5": 1.67
+      "season": 1.75,
+      "last10": 1.75,
+      "last5": 1.75
      },
      "outs_mean": {
-      "season": 4.0,
-      "last10": 4.0,
-      "last5": 4.0
+      "season": 3.5,
+      "last10": 3.5,
+      "last5": 3.5
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season.",
-     "short_start_flag": "Averaged 4.0 outs over the last 3 starts: possible opener / bulk-relief usage. Verify the pitching plan."
+     "short_start_flag": "Averaged 3.5 outs over the last 4 starts: possible opener / bulk-relief usage. Verify the pitching plan."
     },
     "lineup": [
      "Steven Kwan",
@@ -206,9 +216,9 @@
     "abbr": "CWS",
     "record": {
      "wins": 2,
-     "losses": 0,
+     "losses": 1,
      "ties": 0,
-     "pct": "1.000"
+     "pct": ".667"
     },
     "probable_status": "announced (MLB probable; openers/bulk relievers are not flagged)",
     "probable": {
@@ -229,16 +239,6 @@
       "hr9": "0.40"
      },
      "last5": [
-      {
-       "date": "2026-08-14",
-       "opp": "Detroit Tigers",
-       "outs": 4,
-       "k": 2,
-       "bb": 1,
-       "h": 0,
-       "er": 0,
-       "pitches": 25
-      },
       {
        "date": "2026-08-19",
        "opp": "Chicago Cubs",
@@ -278,13 +278,23 @@
        "h": 1,
        "er": 0,
        "pitches": 13
+      },
+      {
+       "date": "2026-10-07",
+       "opp": "Cleveland Guardians",
+       "outs": 6,
+       "k": 1,
+       "bb": 0,
+       "h": 1,
+       "er": 0,
+       "pitches": 22
       }
      ],
-     "starts_counted": 6,
+     "starts_counted": 7,
      "sample_quality": "small",
      "k_dist": {
-      "3": 0.5,
-      "4": 0.333,
+      "3": 0.429,
+      "4": 0.286,
       "5": 0.0,
       "6": 0.0,
       "7": 0.0,
@@ -302,8 +312,8 @@
       "20": 0.0
      },
      "k_dist_last10": {
-      "3": 0.5,
-      "4": 0.333,
+      "3": 0.429,
+      "4": 0.286,
       "5": 0.0,
       "6": 0.0,
       "7": 0.0,
@@ -321,17 +331,17 @@
       "20": 0.0
      },
      "k_mean": {
-      "season": 2.17,
-      "last10": 2.17,
-      "last5": 1.8
+      "season": 2.0,
+      "last10": 2.0,
+      "last5": 1.6
      },
      "outs_mean": {
-      "season": 5.33,
-      "last10": 5.33,
-      "last5": 4.6
+      "season": 5.43,
+      "last10": 5.43,
+      "last5": 5.0
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season.",
-     "short_start_flag": "Averaged 4.6 outs over the last 5 starts: possible opener / bulk-relief usage. Verify the pitching plan."
+     "short_start_flag": "Averaged 5.0 outs over the last 5 starts: possible opener / bulk-relief usage. Verify the pitching plan."
     },
     "lineup": [
      "Sam Antonacci",
@@ -402,7 +412,7 @@
   {
    "game_pk": 849822,
    "start_et": "6:00 PM ET",
-   "status": "Pre-Game",
+   "status": "In Progress",
    "game_type": "D",
    "series": "NL Division Series",
    "series_game": 4,
@@ -410,8 +420,8 @@
    "venue": "Truist Park",
    "weather": {
     "condition": "Clear",
-    "temp": "77",
-    "wind": "2 mph, L To R"
+    "temp": "79",
+    "wind": "3 mph, Varies"
    },
    "hp_umpire": "Tripp Gibson",
    "away": {
@@ -443,16 +453,6 @@
       "hr9": "0.85"
      },
      "last5": [
-      {
-       "date": "2026-08-30",
-       "opp": "Detroit Tigers",
-       "outs": 21,
-       "k": 6,
-       "bb": 1,
-       "h": 2,
-       "er": 1,
-       "pitches": 85
-      },
       {
        "date": "2026-09-05",
        "opp": "Washington Nationals",
@@ -492,57 +492,67 @@
        "h": 3,
        "er": 3,
        "pitches": 91
+      },
+      {
+       "date": "2026-10-07",
+       "opp": "Atlanta Braves",
+       "outs": 14,
+       "k": 5,
+       "bb": 5,
+       "h": 1,
+       "er": 1,
+       "pitches": 78
       }
      ],
-     "starts_counted": 13,
+     "starts_counted": 14,
      "sample_quality": "ok",
      "k_dist": {
-      "3": 0.923,
-      "4": 0.923,
-      "5": 0.923,
-      "6": 0.923,
-      "7": 0.769,
-      "8": 0.462,
-      "9": 0.385,
-      "10": 0.154
+      "3": 0.929,
+      "4": 0.929,
+      "5": 0.929,
+      "6": 0.857,
+      "7": 0.714,
+      "8": 0.429,
+      "9": 0.357,
+      "10": 0.143
      },
      "outs_dist": {
-      "12": 0.923,
-      "15": 0.846,
-      "16": 0.769,
-      "17": 0.769,
-      "18": 0.692,
-      "19": 0.308,
-      "20": 0.231
+      "12": 0.929,
+      "15": 0.786,
+      "16": 0.714,
+      "17": 0.714,
+      "18": 0.643,
+      "19": 0.286,
+      "20": 0.214
      },
      "k_dist_last10": {
       "3": 0.9,
       "4": 0.9,
       "5": 0.9,
-      "6": 0.9,
-      "7": 0.8,
+      "6": 0.8,
+      "7": 0.7,
       "8": 0.5,
       "9": 0.4,
       "10": 0.2
      },
      "outs_dist_last10": {
       "12": 0.9,
-      "15": 0.8,
-      "16": 0.7,
-      "17": 0.7,
-      "18": 0.6,
-      "19": 0.4,
-      "20": 0.3
+      "15": 0.7,
+      "16": 0.6,
+      "17": 0.6,
+      "18": 0.5,
+      "19": 0.3,
+      "20": 0.2
      },
      "k_mean": {
-      "season": 7.54,
-      "last10": 7.6,
-      "last5": 8.4
+      "season": 7.36,
+      "last10": 7.4,
+      "last5": 8.2
      },
      "outs_mean": {
-      "season": 17.08,
-      "last10": 16.8,
-      "last5": 17.6
+      "season": 16.86,
+      "last10": 16.1,
+      "last5": 16.2
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
@@ -669,16 +679,6 @@
      },
      "last5": [
       {
-       "date": "2026-09-06",
-       "opp": "Philadelphia Phillies",
-       "outs": 18,
-       "k": 3,
-       "bb": 1,
-       "h": 4,
-       "er": 0,
-       "pitches": 94
-      },
-      {
        "date": "2026-09-12",
        "opp": "Philadelphia Phillies",
        "outs": 21,
@@ -717,37 +717,47 @@
        "h": 6,
        "er": 1,
        "pitches": 95
+      },
+      {
+       "date": "2026-10-07",
+       "opp": "Los Angeles Dodgers",
+       "outs": 19,
+       "k": 4,
+       "bb": 1,
+       "h": 3,
+       "er": 0,
+       "pitches": 85
       }
      ],
-     "starts_counted": 28,
+     "starts_counted": 29,
      "sample_quality": "ok",
      "k_dist": {
       "3": 1.0,
-      "4": 0.75,
-      "5": 0.536,
-      "6": 0.393,
-      "7": 0.179,
-      "8": 0.143,
-      "9": 0.107,
+      "4": 0.759,
+      "5": 0.517,
+      "6": 0.379,
+      "7": 0.172,
+      "8": 0.138,
+      "9": 0.103,
       "10": 0.0
      },
      "outs_dist": {
       "12": 1.0,
-      "15": 0.857,
-      "16": 0.571,
-      "17": 0.536,
-      "18": 0.393,
-      "19": 0.214,
-      "20": 0.214
+      "15": 0.862,
+      "16": 0.586,
+      "17": 0.552,
+      "18": 0.414,
+      "19": 0.241,
+      "20": 0.207
      },
      "k_dist_last10": {
       "3": 1.0,
       "4": 0.7,
-      "5": 0.5,
-      "6": 0.5,
-      "7": 0.3,
-      "8": 0.2,
-      "9": 0.2,
+      "5": 0.4,
+      "6": 0.4,
+      "7": 0.2,
+      "8": 0.1,
+      "9": 0.1,
       "10": 0.0
      },
      "outs_dist_last10": {
@@ -756,18 +766,18 @@
       "16": 0.8,
       "17": 0.8,
       "18": 0.8,
-      "19": 0.4,
+      "19": 0.5,
       "20": 0.4
      },
      "k_mean": {
-      "season": 5.11,
-      "last10": 5.4,
-      "last5": 4.4
+      "season": 5.07,
+      "last10": 4.9,
+      "last5": 4.6
      },
      "outs_mean": {
-      "season": 16.71,
-      "last10": 18.4,
-      "last5": 18.6
+      "season": 16.79,
+      "last10": 18.5,
+      "last5": 18.8
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
@@ -869,7 +879,7 @@
   {
    "game_pk": 849838,
    "start_et": "8:00 PM ET",
-   "status": "Pre-Game",
+   "status": "In Progress",
    "game_type": "D",
    "series": "AL Division Series",
    "series_game": 3,
@@ -877,8 +887,8 @@
    "venue": "Yankee Stadium",
    "weather": {
     "condition": "Clear",
-    "temp": "61",
-    "wind": "8 mph, R To L"
+    "temp": "64",
+    "wind": "9 mph, R To L"
    },
    "hp_umpire": "Dan Bellino",
    "away": {
@@ -1013,8 +1023,18 @@
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "lineup": [
+     "Yandy Díaz",
+     "Jonathan Aranda",
+     "Junior Caminero",
+     "Victor Mesa Jr.",
+     "Ryan Vilade",
+     "Liam Hicks",
+     "Jonny DeLuca",
+     "Richie Palacios",
+     "Taylor Walls"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.1805,
@@ -1097,16 +1117,6 @@
      },
      "last5": [
       {
-       "date": "2026-09-04",
-       "opp": "San Diego Padres",
-       "outs": 17,
-       "k": 4,
-       "bb": 1,
-       "h": 4,
-       "er": 1,
-       "pitches": 72
-      },
-      {
        "date": "2026-09-10",
        "opp": "Colorado Rockies",
        "outs": 10,
@@ -1145,32 +1155,42 @@
        "h": 3,
        "er": 1,
        "pitches": 98
+      },
+      {
+       "date": "2026-10-07",
+       "opp": "Tampa Bay Rays",
+       "outs": 3,
+       "k": 1,
+       "bb": 0,
+       "h": 1,
+       "er": 0,
+       "pitches": 11
       }
      ],
-     "starts_counted": 21,
+     "starts_counted": 22,
      "sample_quality": "ok",
      "k_dist": {
-      "3": 0.952,
-      "4": 0.905,
-      "5": 0.571,
-      "6": 0.476,
-      "7": 0.238,
-      "8": 0.048,
-      "9": 0.048,
+      "3": 0.909,
+      "4": 0.864,
+      "5": 0.545,
+      "6": 0.455,
+      "7": 0.227,
+      "8": 0.045,
+      "9": 0.045,
       "10": 0.0
      },
      "outs_dist": {
-      "12": 0.81,
-      "15": 0.81,
-      "16": 0.714,
-      "17": 0.571,
-      "18": 0.524,
-      "19": 0.381,
-      "20": 0.286
+      "12": 0.773,
+      "15": 0.773,
+      "16": 0.682,
+      "17": 0.545,
+      "18": 0.5,
+      "19": 0.364,
+      "20": 0.273
      },
      "k_dist_last10": {
-      "3": 1.0,
-      "4": 1.0,
+      "3": 0.9,
+      "4": 0.9,
       "5": 0.5,
       "6": 0.5,
       "7": 0.3,
@@ -1188,14 +1208,14 @@
       "20": 0.2
      },
      "k_mean": {
-      "season": 5.24,
-      "last10": 5.3,
-      "last5": 5.4
+      "season": 5.05,
+      "last10": 5.0,
+      "last5": 4.8
      },
      "outs_mean": {
-      "season": 16.95,
-      "last10": 15.6,
-      "last5": 17.2
+      "season": 16.32,
+      "last10": 15.0,
+      "last5": 14.4
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
@@ -1279,14 +1299,18 @@
   {
    "game_pk": 849827,
    "start_et": "10:00 PM ET",
-   "status": "Scheduled",
+   "status": "Pre-Game",
    "game_type": "D",
    "series": "NL Division Series",
    "series_game": 4,
    "series_status": "NL Division Series",
    "venue": "Petco Park",
-   "weather": null,
-   "hp_umpire": null,
+   "weather": {
+    "condition": "Clear",
+    "temp": "78",
+    "wind": "6 mph, In From LF"
+   },
+   "hp_umpire": "Nic Lentz",
    "away": {
     "id": 158,
     "name": "Milwaukee Brewers",
@@ -1297,9 +1321,140 @@
      "ties": 0,
      "pct": ".667"
     },
-    "probable_status": "TBD: no probable announced",
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "probable_status": "announced (MLB probable; openers/bulk relievers are not flagged)",
+    "probable": {
+     "id": 688107,
+     "name": "Robert Gasser",
+     "throws": "L",
+     "season": {
+      "gs": 20,
+      "ip": "109.1",
+      "era": "3.87",
+      "whip": "1.19",
+      "k": 103,
+      "bb": 35,
+      "bf": 463,
+      "k_pct": 0.2225,
+      "bb_pct": 0.0756,
+      "k9": "8.48",
+      "hr9": "1.23"
+     },
+     "last5": [
+      {
+       "date": "2026-09-01",
+       "opp": "Chicago Cubs",
+       "outs": 13,
+       "k": 4,
+       "bb": 2,
+       "h": 3,
+       "er": 2,
+       "pitches": 76
+      },
+      {
+       "date": "2026-09-07",
+       "opp": "Chicago Cubs",
+       "outs": 14,
+       "k": 5,
+       "bb": 2,
+       "h": 3,
+       "er": 1,
+       "pitches": 83
+      },
+      {
+       "date": "2026-09-13",
+       "opp": "Cincinnati Reds",
+       "outs": 15,
+       "k": 5,
+       "bb": 2,
+       "h": 3,
+       "er": 1,
+       "pitches": 89
+      },
+      {
+       "date": "2026-09-19",
+       "opp": "Baltimore Orioles",
+       "outs": 21,
+       "k": 2,
+       "bb": 3,
+       "h": 3,
+       "er": 0,
+       "pitches": 107
+      },
+      {
+       "date": "2026-09-25",
+       "opp": "St. Louis Cardinals",
+       "outs": 18,
+       "k": 9,
+       "bb": 1,
+       "h": 1,
+       "er": 1,
+       "pitches": 87
+      }
+     ],
+     "starts_counted": 20,
+     "sample_quality": "ok",
+     "k_dist": {
+      "3": 0.95,
+      "4": 0.8,
+      "5": 0.55,
+      "6": 0.25,
+      "7": 0.2,
+      "8": 0.05,
+      "9": 0.05,
+      "10": 0.0
+     },
+     "outs_dist": {
+      "12": 0.9,
+      "15": 0.65,
+      "16": 0.4,
+      "17": 0.4,
+      "18": 0.3,
+      "19": 0.15,
+      "20": 0.1
+     },
+     "k_dist_last10": {
+      "3": 0.9,
+      "4": 0.8,
+      "5": 0.5,
+      "6": 0.3,
+      "7": 0.2,
+      "8": 0.1,
+      "9": 0.1,
+      "10": 0.0
+     },
+     "outs_dist_last10": {
+      "12": 0.9,
+      "15": 0.6,
+      "16": 0.4,
+      "17": 0.4,
+      "18": 0.4,
+      "19": 0.2,
+      "20": 0.1
+     },
+     "k_mean": {
+      "season": 4.85,
+      "last10": 4.9,
+      "last5": 5.0
+     },
+     "outs_mean": {
+      "season": 15.6,
+      "last10": 15.8,
+      "last5": 16.2
+     },
+     "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
+    },
+    "lineup": [
+     "Jackson Chourio",
+     "Christian Yelich",
+     "William Contreras",
+     "Brice Turang",
+     "Jake Bauers",
+     "Cooper Pratt",
+     "Sal Frelick",
+     "Garrett Mitchell",
+     "Joey Ortiz"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2114,
@@ -1507,8 +1662,18 @@
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "lineup": [
+     "Fernando Tatis Jr.",
+     "Jackson Merrill",
+     "Manny Machado",
+     "Ty France",
+     "Austin Hays",
+     "Xander Bogaerts",
+     "Luis Campusano",
+     "Jake Cronenworth",
+     "Samad Taylor"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2169,
@@ -1577,7 +1742,7 @@
      "unclassified_games": [],
      "classification_source": "MLB boxscore gamesStarted (not list order)"
     },
-    "k_pct_vs_opp_starter_hand": null
+    "k_pct_vs_opp_starter_hand": 0.2169
    }
   }
  ],

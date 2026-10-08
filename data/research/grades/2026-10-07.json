@@ -1,0 +1,49 @@
+{
+ "2026-10-07-MLB-CLE-CWS": {
+  "key": "2026-10-07-MLB-CLE-CWS",
+  "league": "MLB",
+  "result": {
+   "home_score": 3.0,
+   "away_score": 9.0,
+   "home_margin": -6.0,
+   "total": 12.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 1.0,
+    "grade": "D",
+    "brier": 0.2877,
+    "pregame_home_win_p": 0.5364,
+    "margin_error": -6.31,
+    "total_error": 4.26,
+    "market_brier": 0.2794,
+    "beat_market": false
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 1.0,
+   "grade": "D",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ }
+}
