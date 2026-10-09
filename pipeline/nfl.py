@@ -133,6 +133,13 @@ def run(day: dt.date) -> dict:
             "away_qb_name", "home_qb_name", "referee", "stadium"]
     games = [{k: (None if pd.isna(v) else (v.isoformat() if hasattr(v, "isoformat") else v))
               for k, v in row.items()} for row in upcoming[[c for c in cols if c in upcoming]].to_dict("records")]
+    # travel / rest / trap-game flags (TASK.md 00b); never let this break the schedule pull
+    from .schedule_spots import game_spots
+    for gd, (_, row) in zip(games, upcoming.iterrows()):
+        try:
+            gd["schedule"] = game_spots(g, row)
+        except Exception as e:  # noqa: BLE001
+            gd["schedule"] = {"error": str(e)}
     payload: dict = {"date": day.isoformat(), "season": season,
                      "note": "spread_line is home-team margin (positive = home favored), per nflverse. "
                              "Injury statuses are the latest weekly report (see injuries.report_week), "

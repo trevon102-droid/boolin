@@ -36,7 +36,8 @@ tier (Settings → Sizing mode = Research). The price check (our % vs FanDuel's 
   because no league's model is validated yet (data/research/validation/model_scorecard.json); a big gap to the
   market is a reason to re-check, not a stronger play.
 - **`pass: true` only for real reasons:** player out/questionable, lineup or goalie news that breaks the read,
-  FanDuel not offering the market, game started. Never for price or thin edge.
+  FanDuel not offering the market, game started, or a schedule hard pass (section 00b: back from an
+  international game with no bye). Never for price or thin edge.
 - **Sizes are suggestions, not tied to the tier.** Put a `units` number on every play: what you'd suggest
   given the research (a C-tier longshot can still be 1u if the read is that good). Kaire sizes himself; the board
   uses `units` when present, else the tier default (A 1u, B 0.5u, C 0.25u).
@@ -51,6 +52,36 @@ tier (Settings → Sizing mode = Research). The price check (our % vs FanDuel's 
   legs) meant for a small stake.
 - Sections 3–3c below still describe how to build `modelP` (useful for the price check). Their edge bars and
   floors are **price-mode only** and don't gate plays in research mode.
+
+## 00b. Schedule spots and trap games (check before rating any play)
+
+Kaire's rule: a team's schedule can override the research. Before tiering a play, look at **both teams' last
+game and next game**. For the NFL, `nfl.json` → `games[].schedule` computes this (`pipeline/schedule_spots.py`):
+each team has `rest`, `prev`, `next`, `flags`, `hard_pass`, `cap_tier` and `why`. For CFB, NHL, NBA, WNBA and MLB, check each
+team's schedule on ESPN and apply the same rules by hand.
+
+- **HARD PASS: international return (`INTL_RETURN`).** The team's previous game was outside the US (London,
+  Germany, Brazil, Mexico, Spain, Ireland, Australia, Canada for the NFL; Ireland/Australia/abroad for CFB) and it
+  had no bye since (under 13 days). Then:
+  - The game's sides and totals are `pass: true` with `"passReason": "Schedule: <team> back from <city>, no bye"`.
+  - That team's player props, TDs, SGP legs and parlay legs are `pass: true` with the same reason.
+  - **Use the other team's props instead.** They stay playable and are rated normally. Say so in `why`.
+  - This overrides research tier, hit rates and price. It's one of the allowed `pass` reasons (with injuries,
+    lineups, goalies, market pulled).
+- **TRAP GAME → cap tier C** for the flagged team's side and props (`TRAP`). The team is favored by 6.5+ AND one of:
+  - `LOOK_AHEAD`: its next game is a division game or primetime.
+  - `LETDOWN`: it's coming off an OT win, an upset win, or a division win.
+  - `SHORT_WEEK_AFTER_ROAD`: 4 or fewer days of rest after a road game. Example: Thu Oct 8, DAL -9.5 vs TB on
+    4 days' rest after playing at HOU. Under this rule the Lamb A-tier would have been capped at C.
+  Never put a TRAP team's side or props in a staked parlay. No A-tier, and suggested units at most 0.5u.
+- **Cap tier B** (no A plays on that team's side or props): `SHORT_WEEK_AFTER_ROAD`, `THIRD_STRAIGHT_ROAD`,
+  `WEST_TO_EAST_EARLY` (Pacific/Mountain team in a 1 PM ET road game in the East).
+- Other sports, same spirit: NBA/WNBA second night of a back-to-back after travel, or 4th game in 6 nights, caps at B.
+  NHL back-to-back with travel caps skater props at B. A CFB look-ahead (ranked team favored by 10+ with a ranked
+  rival next week) is a TRAP (cap C).
+- Put each flag in the play's `inputs` (e.g. `"Schedule: TRAP, 4 days rest after @HOU, PHI (div) next"`), add a
+  `scheduleFlags` array on the pick, list hard-passed games in `notes`, and add the schedule line to the featured
+  game's `injuries` list so it shows on the Top 10 card.
 
 ## 0. Football comes first
 
