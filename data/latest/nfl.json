@@ -1,5 +1,5 @@
 {
- "pulled_at_et": "2026-10-09T08:55-04:00",
+ "pulled_at_et": "2026-10-09T09:27-04:00",
  "date": "2026-10-09",
  "season": 2026,
  "note": "spread_line is home-team margin (positive = home favored), per nflverse. Injury statuses are the latest weekly report (see injuries.report_week), not game-day inactives: confirm inactives ~90 min before kickoff.",
@@ -30,7 +30,96 @@
    "away_qb_name": "Jalen Hurts",
    "home_qb_name": "Trevor Lawrence",
    "referee": null,
-   "stadium": "Tottenham Hotspur Stadium"
+   "stadium": "Tottenham Hotspur Stadium",
+   "schedule": {
+    "away": {
+     "team": "PHI",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "LA",
+      "site": "home",
+      "stadium": "Lincoln Financial Field",
+      "international": false,
+      "fav_by": -3.5,
+      "margin": -4.0,
+      "won": false,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "CAR",
+      "site": "home",
+      "stadium": "Lincoln Financial Field",
+      "international": false,
+      "fav_by": 2.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "home": {
+     "team": "JAX",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "CIN",
+      "site": "away",
+      "stadium": "Paycor Stadium",
+      "international": false,
+      "fav_by": -2.5,
+      "margin": 5.0,
+      "won": true,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "HOU",
+      "site": "neutral",
+      "stadium": "Wembley Stadium",
+      "international": true,
+      "fav_by": 3.0,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "09:30"
+     },
+     "flags": [
+      "LOOK_AHEAD",
+      "LETDOWN",
+      "TRAP"
+     ],
+     "hard_pass": false,
+     "cap_tier": "C",
+     "why": [
+      "Favored by 7.5 with a division game vs HOU next (2026-10-18)",
+      "Favored by 7.5 right after an emotional upset win vs CIN",
+      "TRAP: big favorite (-7.5) in a schedule spot"
+     ]
+    },
+    "hard_pass_teams": [],
+    "game_hard_pass": false,
+    "rule": null
+   }
   },
   {
    "game_id": "2026_05_CHI_GB",
@@ -58,7 +147,88 @@
    "away_qb_name": "Tyson Bagent",
    "home_qb_name": "Jordan Love",
    "referee": null,
-   "stadium": "Lambeau Field"
+   "stadium": "Lambeau Field",
+   "schedule": {
+    "away": {
+     "team": "CHI",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "NYJ",
+      "site": "home",
+      "stadium": "Soldier Field",
+      "international": false,
+      "fav_by": 3.5,
+      "margin": 11.0,
+      "won": true,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "ATL",
+      "site": "away",
+      "stadium": "Mercedes-Benz Stadium",
+      "international": false,
+      "fav_by": 1.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "home": {
+     "team": "GB",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "TB",
+      "site": "away",
+      "stadium": "Raymond James Stadium",
+      "international": false,
+      "fav_by": 3.0,
+      "margin": 3.0,
+      "won": true,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "DAL",
+      "site": "home",
+      "stadium": "Lambeau Field",
+      "international": false,
+      "fav_by": -1.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": true,
+      "weekday": "Sunday",
+      "gametime": "20:20"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "hard_pass_teams": [],
+    "game_hard_pass": false,
+    "rule": null
+   }
   },
   {
    "game_id": "2026_05_CIN_MIA",
@@ -86,7 +256,94 @@
    "away_qb_name": "Joe Burrow",
    "home_qb_name": "Malik Willis",
    "referee": null,
-   "stadium": "Hard Rock Stadium"
+   "stadium": "Hard Rock Stadium",
+   "schedule": {
+    "away": {
+     "team": "CIN",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "JAX",
+      "site": "home",
+      "stadium": "Paycor Stadium",
+      "international": false,
+      "fav_by": 2.5,
+      "margin": -5.0,
+      "won": false,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "next": {
+      "date": "2026-10-25",
+      "opponent": "BAL",
+      "site": "away",
+      "stadium": "M&T Bank Stadium",
+      "international": false,
+      "fav_by": null,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [
+      "LOOK_AHEAD",
+      "TRAP"
+     ],
+     "hard_pass": false,
+     "cap_tier": "C",
+     "why": [
+      "Favored by 6.5 with a division game vs BAL next (2026-10-25)",
+      "TRAP: big favorite (-6.5) in a schedule spot"
+     ]
+    },
+    "home": {
+     "team": "MIA",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "MIN",
+      "site": "away",
+      "stadium": "U.S. Bank Stadium",
+      "international": false,
+      "fav_by": -10.0,
+      "margin": -5.0,
+      "won": false,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:05"
+     },
+     "next": {
+      "date": "2026-10-25",
+      "opponent": "NYJ",
+      "site": "away",
+      "stadium": "MetLife Stadium",
+      "international": false,
+      "fav_by": null,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "hard_pass_teams": [],
+    "game_hard_pass": false,
+    "rule": null
+   }
   },
   {
    "game_id": "2026_05_LV_NE",
@@ -114,7 +371,92 @@
    "away_qb_name": "Kirk Cousins",
    "home_qb_name": "Drake Maye",
    "referee": null,
-   "stadium": "Gillette Stadium"
+   "stadium": "Gillette Stadium",
+   "schedule": {
+    "away": {
+     "team": "LV",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "KC",
+      "site": "home",
+      "stadium": "Allegiant Stadium",
+      "international": false,
+      "fav_by": -4.5,
+      "margin": -3.0,
+      "won": false,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:25"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "BUF",
+      "site": "home",
+      "stadium": "Allegiant Stadium",
+      "international": false,
+      "fav_by": -4.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:25"
+     },
+     "flags": [
+      "WEST_TO_EAST_EARLY"
+     ],
+     "hard_pass": false,
+     "cap_tier": "B",
+     "why": [
+      "West-coast team in a 1 PM ET road game"
+     ]
+    },
+    "home": {
+     "team": "NE",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "BUF",
+      "site": "away",
+      "stadium": "Highmark Stadium",
+      "international": false,
+      "fav_by": -7.0,
+      "margin": 3.0,
+      "won": true,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "NYJ",
+      "site": "home",
+      "stadium": "Gillette Stadium",
+      "international": false,
+      "fav_by": 7.0,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "hard_pass_teams": [],
+    "game_hard_pass": false,
+    "rule": null
+   }
   },
   {
    "game_id": "2026_05_MIN_NO",
@@ -142,7 +484,88 @@
    "away_qb_name": "Kyler Murray",
    "home_qb_name": "Tyler Shough",
    "referee": null,
-   "stadium": "Caesars Superdome"
+   "stadium": "Caesars Superdome",
+   "schedule": {
+    "away": {
+     "team": "MIN",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "MIA",
+      "site": "home",
+      "stadium": "U.S. Bank Stadium",
+      "international": false,
+      "fav_by": 10.0,
+      "margin": 5.0,
+      "won": true,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:05"
+     },
+     "next": {
+      "date": "2026-10-25",
+      "opponent": "IND",
+      "site": "home",
+      "stadium": "U.S. Bank Stadium",
+      "international": false,
+      "fav_by": null,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "home": {
+     "team": "NO",
+     "rest": 6,
+     "prev": {
+      "date": "2026-10-05",
+      "opponent": "ATL",
+      "site": "home",
+      "stadium": "Caesars Superdome",
+      "international": false,
+      "fav_by": 1.5,
+      "margin": -21.0,
+      "won": false,
+      "overtime": false,
+      "division": true,
+      "primetime": true,
+      "weekday": "Monday",
+      "gametime": "20:15"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "NYG",
+      "site": "away",
+      "stadium": "MetLife Stadium",
+      "international": false,
+      "fav_by": 1.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "hard_pass_teams": [],
+    "game_hard_pass": false,
+    "rule": null
+   }
   },
   {
    "game_id": "2026_05_CLE_NYJ",
@@ -170,7 +593,88 @@
    "away_qb_name": "Deshaun Watson",
    "home_qb_name": "Geno Smith",
    "referee": null,
-   "stadium": "MetLife Stadium"
+   "stadium": "MetLife Stadium",
+   "schedule": {
+    "away": {
+     "team": "CLE",
+     "rest": 10,
+     "prev": {
+      "date": "2026-10-01",
+      "opponent": "PIT",
+      "site": "home",
+      "stadium": "Huntington Bank Field",
+      "international": false,
+      "fav_by": -2.5,
+      "margin": 3.0,
+      "won": true,
+      "overtime": false,
+      "division": true,
+      "primetime": true,
+      "weekday": "Thursday",
+      "gametime": "20:15"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "BAL",
+      "site": "home",
+      "stadium": "Huntington Bank Field",
+      "international": false,
+      "fav_by": -3.0,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "home": {
+     "team": "NYJ",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "CHI",
+      "site": "away",
+      "stadium": "Soldier Field",
+      "international": false,
+      "fav_by": -3.5,
+      "margin": -11.0,
+      "won": false,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "NE",
+      "site": "away",
+      "stadium": "Gillette Stadium",
+      "international": false,
+      "fav_by": -7.0,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "hard_pass_teams": [],
+    "game_hard_pass": false,
+    "rule": null
+   }
   },
   {
    "game_id": "2026_05_IND_PIT",
@@ -198,7 +702,94 @@
    "away_qb_name": "Daniel Jones",
    "home_qb_name": "Aaron Rodgers",
    "referee": null,
-   "stadium": "Acrisure Stadium"
+   "stadium": "Acrisure Stadium",
+   "schedule": {
+    "away": {
+     "team": "IND",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "WAS",
+      "site": "neutral",
+      "stadium": "Tottenham Hotspur Stadium",
+      "international": true,
+      "fav_by": 4.5,
+      "margin": 17.0,
+      "won": true,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "09:30"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "TEN",
+      "site": "home",
+      "stadium": "Lucas Oil Stadium",
+      "international": false,
+      "fav_by": 6.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [
+      "INTL_RETURN"
+     ],
+     "hard_pass": true,
+     "cap_tier": null,
+     "why": [
+      "Back from an international game (Tottenham Hotspur Stadium, 2026-10-04) with no bye: 7 days rest"
+     ]
+    },
+    "home": {
+     "team": "PIT",
+     "rest": 10,
+     "prev": {
+      "date": "2026-10-01",
+      "opponent": "CLE",
+      "site": "away",
+      "stadium": "Huntington Bank Field",
+      "international": false,
+      "fav_by": 2.5,
+      "margin": -3.0,
+      "won": false,
+      "overtime": false,
+      "division": true,
+      "primetime": true,
+      "weekday": "Thursday",
+      "gametime": "20:15"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "TB",
+      "site": "away",
+      "stadium": "Raymond James Stadium",
+      "international": false,
+      "fav_by": 2.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "hard_pass_teams": [
+     "IND"
+    ],
+    "game_hard_pass": true,
+    "rule": "Hard pass sides/totals and the flagged team's props; the opponent's props stay playable."
+   }
   },
   {
    "game_id": "2026_05_HOU_TEN",
@@ -226,7 +817,94 @@
    "away_qb_name": "C.J. Stroud",
    "home_qb_name": "Cam Ward",
    "referee": null,
-   "stadium": "Nissan Stadium"
+   "stadium": "Nissan Stadium",
+   "schedule": {
+    "away": {
+     "team": "HOU",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "DAL",
+      "site": "home",
+      "stadium": "Reliant Stadium",
+      "international": false,
+      "fav_by": 3.0,
+      "margin": -4.0,
+      "won": false,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "JAX",
+      "site": "neutral",
+      "stadium": "Wembley Stadium",
+      "international": true,
+      "fav_by": -3.0,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "09:30"
+     },
+     "flags": [
+      "LOOK_AHEAD",
+      "TRAP"
+     ],
+     "hard_pass": false,
+     "cap_tier": "C",
+     "why": [
+      "Favored by 7.5 with a division game vs JAX next (2026-10-18)",
+      "TRAP: big favorite (-7.5) in a schedule spot"
+     ]
+    },
+    "home": {
+     "team": "TEN",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "BAL",
+      "site": "away",
+      "stadium": "M&T Bank Stadium",
+      "international": false,
+      "fav_by": -11.5,
+      "margin": -6.0,
+      "won": false,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "IND",
+      "site": "away",
+      "stadium": "Lucas Oil Stadium",
+      "international": false,
+      "fav_by": -6.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "hard_pass_teams": [],
+    "game_hard_pass": false,
+    "rule": null
+   }
   },
   {
    "game_id": "2026_05_NYG_WAS",
@@ -254,7 +932,94 @@
    "away_qb_name": "Jameis Winston",
    "home_qb_name": "Jayden Daniels",
    "referee": null,
-   "stadium": "Northwest Stadium"
+   "stadium": "Northwest Stadium",
+   "schedule": {
+    "away": {
+     "team": "NYG",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "ARI",
+      "site": "home",
+      "stadium": "MetLife Stadium",
+      "international": false,
+      "fav_by": -2.5,
+      "margin": 12.0,
+      "won": true,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "NO",
+      "site": "home",
+      "stadium": "MetLife Stadium",
+      "international": false,
+      "fav_by": -1.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "home": {
+     "team": "WAS",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "IND",
+      "site": "neutral",
+      "stadium": "Tottenham Hotspur Stadium",
+      "international": true,
+      "fav_by": -4.5,
+      "margin": -17.0,
+      "won": false,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "09:30"
+     },
+     "next": {
+      "date": "2026-10-19",
+      "opponent": "SF",
+      "site": "away",
+      "stadium": "Levi's Stadium",
+      "international": false,
+      "fav_by": -7.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": true,
+      "weekday": "Monday",
+      "gametime": "20:15"
+     },
+     "flags": [
+      "INTL_RETURN"
+     ],
+     "hard_pass": true,
+     "cap_tier": null,
+     "why": [
+      "Back from an international game (Tottenham Hotspur Stadium, 2026-10-04) with no bye: 7 days rest"
+     ]
+    },
+    "hard_pass_teams": [
+     "WAS"
+    ],
+    "game_hard_pass": true,
+    "rule": "Hard pass sides/totals and the flagged team's props; the opponent's props stay playable."
+   }
   },
   {
    "game_id": "2026_05_DEN_LAC",
@@ -282,7 +1047,88 @@
    "away_qb_name": "Bo Nix",
    "home_qb_name": "Justin Herbert",
    "referee": null,
-   "stadium": "SoFi Stadium"
+   "stadium": "SoFi Stadium",
+   "schedule": {
+    "away": {
+     "team": "DEN",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "SF",
+      "site": "away",
+      "stadium": "Levi's Stadium",
+      "international": false,
+      "fav_by": -3.0,
+      "margin": -10.0,
+      "won": false,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:25"
+     },
+     "next": {
+      "date": "2026-10-15",
+      "opponent": "SEA",
+      "site": "home",
+      "stadium": "Empower Field at Mile High",
+      "international": false,
+      "fav_by": -1.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": true,
+      "weekday": "Thursday",
+      "gametime": "20:15"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "home": {
+     "team": "LAC",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "SEA",
+      "site": "away",
+      "stadium": "Lumen Field",
+      "international": false,
+      "fav_by": -7.0,
+      "margin": -7.0,
+      "won": false,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:25"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "KC",
+      "site": "away",
+      "stadium": "GEHA Field at Arrowhead Stadium",
+      "international": false,
+      "fav_by": -7.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:25"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "hard_pass_teams": [],
+    "game_hard_pass": false,
+    "rule": null
+   }
   },
   {
    "game_id": "2026_05_DET_ARI",
@@ -310,7 +1156,88 @@
    "away_qb_name": "Jared Goff",
    "home_qb_name": "Jacoby Brissett",
    "referee": null,
-   "stadium": "State Farm Stadium"
+   "stadium": "State Farm Stadium",
+   "schedule": {
+    "away": {
+     "team": "DET",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "CAR",
+      "site": "away",
+      "stadium": "Bank of America Stadium",
+      "international": false,
+      "fav_by": 4.5,
+      "margin": -6.0,
+      "won": false,
+      "overtime": false,
+      "division": false,
+      "primetime": true,
+      "weekday": "Sunday",
+      "gametime": "20:20"
+     },
+     "next": {
+      "date": "2026-10-25",
+      "opponent": "GB",
+      "site": "home",
+      "stadium": "Ford Field",
+      "international": false,
+      "fav_by": null,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:25"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "home": {
+     "team": "ARI",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "NYG",
+      "site": "away",
+      "stadium": "MetLife Stadium",
+      "international": false,
+      "fav_by": 2.5,
+      "margin": -12.0,
+      "won": false,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "LA",
+      "site": "away",
+      "stadium": "SoFi Stadium",
+      "international": false,
+      "fav_by": -10.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:05"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "hard_pass_teams": [],
+    "game_hard_pass": false,
+    "rule": null
+   }
   },
   {
    "game_id": "2026_05_SF_SEA",
@@ -338,7 +1265,88 @@
    "away_qb_name": "Brock Purdy",
    "home_qb_name": "Drew Lock",
    "referee": null,
-   "stadium": "Lumen Field"
+   "stadium": "Lumen Field",
+   "schedule": {
+    "away": {
+     "team": "SF",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "DEN",
+      "site": "home",
+      "stadium": "Levi's Stadium",
+      "international": false,
+      "fav_by": 3.0,
+      "margin": 10.0,
+      "won": true,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:25"
+     },
+     "next": {
+      "date": "2026-10-19",
+      "opponent": "WAS",
+      "site": "home",
+      "stadium": "Levi's Stadium",
+      "international": false,
+      "fav_by": 7.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": true,
+      "weekday": "Monday",
+      "gametime": "20:15"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "home": {
+     "team": "SEA",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "LAC",
+      "site": "home",
+      "stadium": "Lumen Field",
+      "international": false,
+      "fav_by": 7.0,
+      "margin": 7.0,
+      "won": true,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:25"
+     },
+     "next": {
+      "date": "2026-10-15",
+      "opponent": "DEN",
+      "site": "away",
+      "stadium": "Empower Field at Mile High",
+      "international": false,
+      "fav_by": 1.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": true,
+      "weekday": "Thursday",
+      "gametime": "20:15"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "hard_pass_teams": [],
+    "game_hard_pass": false,
+    "rule": null
+   }
   },
   {
    "game_id": "2026_05_BAL_ATL",
@@ -366,7 +1374,88 @@
    "away_qb_name": "Lamar Jackson",
    "home_qb_name": "Michael Penix Jr.",
    "referee": null,
-   "stadium": "Mercedes-Benz Stadium"
+   "stadium": "Mercedes-Benz Stadium",
+   "schedule": {
+    "away": {
+     "team": "BAL",
+     "rest": 7,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "TEN",
+      "site": "home",
+      "stadium": "M&T Bank Stadium",
+      "international": false,
+      "fav_by": 11.5,
+      "margin": 6.0,
+      "won": true,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "CLE",
+      "site": "away",
+      "stadium": "Huntington Bank Field",
+      "international": false,
+      "fav_by": 3.0,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "home": {
+     "team": "ATL",
+     "rest": 6,
+     "prev": {
+      "date": "2026-10-05",
+      "opponent": "NO",
+      "site": "away",
+      "stadium": "Caesars Superdome",
+      "international": false,
+      "fav_by": -1.5,
+      "margin": 21.0,
+      "won": true,
+      "overtime": false,
+      "division": true,
+      "primetime": true,
+      "weekday": "Monday",
+      "gametime": "20:15"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "CHI",
+      "site": "home",
+      "stadium": "Mercedes-Benz Stadium",
+      "international": false,
+      "fav_by": -1.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "hard_pass_teams": [],
+    "game_hard_pass": false,
+    "rule": null
+   }
   },
   {
    "game_id": "2026_05_BUF_LA",
@@ -394,7 +1483,88 @@
    "away_qb_name": "Josh Allen",
    "home_qb_name": "Matthew Stafford",
    "referee": null,
-   "stadium": "SoFi Stadium"
+   "stadium": "SoFi Stadium",
+   "schedule": {
+    "away": {
+     "team": "BUF",
+     "rest": 8,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "NE",
+      "site": "home",
+      "stadium": "Highmark Stadium",
+      "international": false,
+      "fav_by": 7.0,
+      "margin": -3.0,
+      "won": false,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "LV",
+      "site": "away",
+      "stadium": "Allegiant Stadium",
+      "international": false,
+      "fav_by": 4.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:25"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "home": {
+     "team": "LA",
+     "rest": 8,
+     "prev": {
+      "date": "2026-10-04",
+      "opponent": "PHI",
+      "site": "away",
+      "stadium": "Lincoln Financial Field",
+      "international": false,
+      "fav_by": 3.5,
+      "margin": 4.0,
+      "won": true,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "13:00"
+     },
+     "next": {
+      "date": "2026-10-18",
+      "opponent": "ARI",
+      "site": "home",
+      "stadium": "SoFi Stadium",
+      "international": false,
+      "fav_by": 10.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:05"
+     },
+     "flags": [],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "hard_pass_teams": [],
+    "game_hard_pass": false,
+    "rule": null
+   }
   },
   {
    "game_id": "2026_06_SEA_DEN",
@@ -422,7 +1592,95 @@
    "away_qb_name": null,
    "home_qb_name": null,
    "referee": null,
-   "stadium": "Empower Field at Mile High"
+   "stadium": "Empower Field at Mile High",
+   "schedule": {
+    "away": {
+     "team": "SEA",
+     "rest": 4,
+     "prev": {
+      "date": "2026-10-11",
+      "opponent": "SF",
+      "site": "home",
+      "stadium": "Lumen Field",
+      "international": false,
+      "fav_by": 3.0,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:25"
+     },
+     "next": {
+      "date": "2026-10-25",
+      "opponent": "KC",
+      "site": "home",
+      "stadium": "Lumen Field",
+      "international": false,
+      "fav_by": null,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": true,
+      "weekday": "Sunday",
+      "gametime": "20:20"
+     },
+     "flags": [
+      "SHORT_WEEK"
+     ],
+     "hard_pass": false,
+     "cap_tier": null,
+     "why": []
+    },
+    "home": {
+     "team": "DEN",
+     "rest": 4,
+     "prev": {
+      "date": "2026-10-11",
+      "opponent": "LAC",
+      "site": "away",
+      "stadium": "SoFi Stadium",
+      "international": false,
+      "fav_by": 3.5,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": true,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:05"
+     },
+     "next": {
+      "date": "2026-10-25",
+      "opponent": "ARI",
+      "site": "away",
+      "stadium": "State Farm Stadium",
+      "international": false,
+      "fav_by": null,
+      "margin": null,
+      "won": null,
+      "overtime": false,
+      "division": false,
+      "primetime": false,
+      "weekday": "Sunday",
+      "gametime": "16:05"
+     },
+     "flags": [
+      "SHORT_WEEK",
+      "SHORT_WEEK_AFTER_ROAD"
+     ],
+     "hard_pass": false,
+     "cap_tier": "B",
+     "why": [
+      "4 days rest after a road game at LAC"
+     ]
+    },
+    "hard_pass_teams": [],
+    "game_hard_pass": false,
+    "rule": null
+   }
   }
  ],
  "team_epa": {

@@ -38,36 +38,36 @@
   ],
   "lean_allowed": false,
   "live_archive": {
-   "n": 1,
-   "holdout": 0,
+   "n": 2,
+   "holdout": 1,
    "older_version_rows": 15,
    "boolin": {
-    "brier": 0.3982,
-    "log_loss": 0.997,
+    "brier": 0.4621,
+    "log_loss": 1.1445,
     "accuracy": 0.0,
-    "calibration_error": 0.631,
-    "favorite_overconfidence": 0.631
+    "calibration_error": 0.6782,
+    "favorite_overconfidence": 0.6782
    },
    "market": {
-    "brier": 0.2769,
-    "log_loss": 0.747,
+    "brier": 0.448,
+    "log_loss": 1.1462,
     "accuracy": 0.0,
-    "calibration_error": 0.5262,
-    "favorite_overconfidence": 0.5262
+    "calibration_error": 0.6565,
+    "favorite_overconfidence": 0.6565
    },
    "brier_paired": {
-    "n": 1,
-    "mean_diff": 0.12127,
-    "se": null,
-    "t": null,
-    "verdict": "too few games to tell (n=1)",
+    "n": 2,
+    "mean_diff": 0.01414,
+    "se": 0.10713,
+    "t": 0.13,
+    "verdict": "too few games to tell (n=2)",
     "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
    }
   },
   "replay_fidelity": {
-   "n_overlap": 16,
-   "identical": 7,
-   "mean_abs_prob_diff": 0.0152,
+   "n_overlap": 17,
+   "identical": 8,
+   "mean_abs_prob_diff": 0.0143,
    "max_abs_prob_diff": 0.0541,
    "note": "Live card vs replay for the same game, same model version. Gaps mean the live pull saw different inputs than the replay (cause not confirmed per game)."
   }
@@ -75,52 +75,52 @@
  "NHL": {
   "model_version": "baseline-0.1",
   "validation_version": "validation-1.0",
-  "data_cutoff": "2026-10-07",
+  "data_cutoff": "2026-10-08",
   "primary_evidence": "live_archive holdout (games after 2026-10-05)",
-  "sample_size": 12,
+  "sample_size": 22,
   "development_size": 35,
-  "brier": 0.2675,
-  "market_brier": 0.2367,
-  "log_loss": 0.7313,
-  "market_log_loss": 0.6668,
-  "accuracy": 0.4167,
-  "calibration_error": 0.3488,
-  "favorite_overconfidence": 0.1548,
-  "market_comparison": "too few games to tell (n=12)",
-  "spread_mae": 2.053,
+  "brier": 0.2292,
+  "market_brier": 0.2222,
+  "log_loss": 0.6479,
+  "market_log_loss": 0.6356,
+  "accuracy": 0.5,
+  "calibration_error": 0.2765,
+  "favorite_overconfidence": 0.1089,
+  "market_comparison": "too few games to tell (n=22)",
+  "spread_mae": 2.139,
   "market_spread_mae": null,
   "confidence_validated": null,
   "calibration_status": "uncalibrated (insufficient sample)",
   "validation_status": "insufficient sample",
   "recommendation": "NOT READY",
   "reasons": [
-   "holdout sample 12 < 150: we don't know yet"
+   "holdout sample 22 < 150: we don't know yet"
   ],
   "lean_allowed": false,
   "live_archive": {
-   "n": 47,
-   "holdout": 12,
+   "n": 57,
+   "holdout": 22,
    "older_version_rows": 0,
    "boolin": {
-    "brier": 0.2344,
-    "log_loss": 0.6602,
-    "accuracy": 0.5745,
-    "calibration_error": 0.0579,
-    "favorite_overconfidence": 0.0133
+    "brier": 0.2255,
+    "log_loss": 0.6405,
+    "accuracy": 0.5789,
+    "calibration_error": 0.0819,
+    "favorite_overconfidence": 0.0204
    },
    "market": {
-    "brier": 0.2309,
-    "log_loss": 0.6533,
-    "accuracy": 0.5652,
-    "calibration_error": 0.1158,
-    "favorite_overconfidence": 0.0041
+    "brier": 0.2263,
+    "log_loss": 0.6436,
+    "accuracy": 0.5893,
+    "calibration_error": 0.1001,
+    "favorite_overconfidence": -0.0122
    },
    "brier_paired": {
-    "n": 47,
-    "mean_diff": 0.00358,
-    "se": 0.00963,
-    "t": 0.37,
-    "verdict": "no detectable difference in Brier (t=0.4)",
+    "n": 57,
+    "mean_diff": -0.00082,
+    "se": 0.00861,
+    "t": -0.1,
+    "verdict": "no detectable difference in Brier (t=-0.1)",
     "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
    }
   },
@@ -129,52 +129,52 @@
  "MLB": {
   "model_version": "baseline-0.1",
   "validation_version": "validation-1.0",
-  "data_cutoff": "2026-10-07",
+  "data_cutoff": "2026-10-08",
   "primary_evidence": "live_archive holdout (games after 2026-10-05)",
-  "sample_size": 6,
+  "sample_size": 7,
   "development_size": 9,
-  "brier": 0.256,
-  "market_brier": 0.2529,
-  "log_loss": 0.7053,
-  "market_log_loss": 0.6993,
-  "accuracy": 0.5,
-  "calibration_error": 0.0401,
-  "favorite_overconfidence": 0.0401,
-  "market_comparison": "too few games to tell (n=6)",
-  "spread_mae": 2.51,
+  "brier": 0.26,
+  "market_brier": 0.251,
+  "log_loss": 0.7132,
+  "market_log_loss": 0.6955,
+  "accuracy": 0.4286,
+  "calibration_error": 0.1104,
+  "favorite_overconfidence": 0.1105,
+  "market_comparison": "too few games to tell (n=7)",
+  "spread_mae": 2.761,
   "market_spread_mae": null,
   "confidence_validated": null,
   "calibration_status": "uncalibrated (insufficient sample)",
   "validation_status": "insufficient sample",
   "recommendation": "NOT READY",
   "reasons": [
-   "holdout sample 6 < 150: we don't know yet"
+   "holdout sample 7 < 150: we don't know yet"
   ],
   "lean_allowed": false,
   "live_archive": {
-   "n": 15,
-   "holdout": 6,
+   "n": 16,
+   "holdout": 7,
    "older_version_rows": 0,
    "boolin": {
-    "brier": 0.238,
-    "log_loss": 0.6687,
-    "accuracy": 0.6,
-    "calibration_error": 0.0377,
-    "favorite_overconfidence": -0.0377
+    "brier": 0.2408,
+    "log_loss": 0.6745,
+    "accuracy": 0.5625,
+    "calibration_error": 0.0233,
+    "favorite_overconfidence": -0.002
    },
    "market": {
-    "brier": 0.2455,
-    "log_loss": 0.6836,
-    "accuracy": 0.5333,
-    "calibration_error": 0.0774,
-    "favorite_overconfidence": 0.0321
+    "brier": 0.2452,
+    "log_loss": 0.6829,
+    "accuracy": 0.5625,
+    "calibration_error": 0.042,
+    "favorite_overconfidence": -0.0005
    },
    "brier_paired": {
-    "n": 15,
-    "mean_diff": -0.00758,
-    "se": 0.01165,
-    "t": -0.65,
-    "verdict": "too few games to tell (n=15)",
+    "n": 16,
+    "mean_diff": -0.00434,
+    "se": 0.01137,
+    "t": -0.38,
+    "verdict": "too few games to tell (n=16)",
     "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
    }
   },
