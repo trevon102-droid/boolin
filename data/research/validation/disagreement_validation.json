@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-10-07",
+ "data_cutoff": "2026-10-08",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -12210,7 +12210,7 @@
      {
       "hypothesis": "systematic model bias",
       "verdict": "supported",
-      "evidence": "Boolin's side is the market underdog in 87% of extremes and the home team in 56%; overall home calibration-in-the-large 0.0 (mean predicted minus actual home win)"
+      "evidence": "Boolin's side is the market underdog in 87% of extremes and the home team in 56%; overall home calibration-in-the-large 0.001 (mean predicted minus actual home win)"
      }
     ]
    },
