@@ -1,12 +1,12 @@
 {
- "pulled_at_et": "2026-10-08T16:01-04:00",
+ "pulled_at_et": "2026-10-08T20:32-04:00",
  "date": "2026-10-08",
  "season": 2026,
  "games": [
   {
    "game_pk": 849832,
    "start_et": "8:00 PM ET",
-   "status": "Pre-Game",
+   "status": "In Progress",
    "game_type": "D",
    "series": "AL Division Series",
    "series_game": 4,
@@ -14,8 +14,8 @@
    "venue": "Rate Field",
    "weather": {
     "condition": "Clear",
-    "temp": "69",
-    "wind": "11 mph, Varies"
+    "temp": "65",
+    "wind": "3 mph, In From CF"
    },
    "hp_umpire": "Jansen Visconti",
    "away": {
@@ -47,16 +47,6 @@
       "hr9": "0.82"
      },
      "last5": [
-      {
-       "date": "2026-09-11",
-       "opp": "Minnesota Twins",
-       "outs": 16,
-       "k": 5,
-       "bb": 2,
-       "h": 3,
-       "er": 1,
-       "pitches": 95
-      },
       {
        "date": "2026-09-16",
        "opp": "Chicago White Sox",
@@ -96,62 +86,82 @@
        "h": 4,
        "er": 2,
        "pitches": 87
+      },
+      {
+       "date": "2026-10-08",
+       "opp": "Chicago White Sox",
+       "outs": 1,
+       "k": 0,
+       "bb": 0,
+       "h": 0,
+       "er": 0,
+       "pitches": 1
       }
      ],
-     "starts_counted": 33,
+     "starts_counted": 34,
      "sample_quality": "ok",
      "k_dist": {
-      "3": 0.939,
-      "4": 0.909,
-      "5": 0.758,
-      "6": 0.576,
-      "7": 0.303,
-      "8": 0.242,
-      "9": 0.182,
-      "10": 0.091
+      "3": 0.912,
+      "4": 0.882,
+      "5": 0.735,
+      "6": 0.559,
+      "7": 0.294,
+      "8": 0.235,
+      "9": 0.176,
+      "10": 0.088
      },
      "outs_dist": {
-      "12": 0.97,
-      "15": 0.909,
-      "16": 0.697,
-      "17": 0.667,
-      "18": 0.455,
-      "19": 0.242,
-      "20": 0.242
+      "12": 0.941,
+      "15": 0.882,
+      "16": 0.676,
+      "17": 0.647,
+      "18": 0.441,
+      "19": 0.235,
+      "20": 0.235
      },
      "k_dist_last10": {
-      "3": 0.9,
-      "4": 0.9,
-      "5": 0.8,
-      "6": 0.5,
+      "3": 0.8,
+      "4": 0.8,
+      "5": 0.7,
+      "6": 0.4,
       "7": 0.3,
       "8": 0.3,
       "9": 0.2,
       "10": 0.2
      },
      "outs_dist_last10": {
-      "12": 0.9,
-      "15": 0.8,
-      "16": 0.7,
-      "17": 0.6,
+      "12": 0.8,
+      "15": 0.7,
+      "16": 0.6,
+      "17": 0.5,
       "18": 0.5,
       "19": 0.1,
       "20": 0.1
      },
      "k_mean": {
-      "season": 6.03,
-      "last10": 6.3,
-      "last5": 5.2
+      "season": 5.85,
+      "last10": 5.7,
+      "last5": 4.2
      },
      "outs_mean": {
-      "season": 17.33,
-      "last10": 16.2,
-      "last5": 14.2
+      "season": 16.85,
+      "last10": 14.6,
+      "last5": 11.2
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "lineup": [
+     "Steven Kwan",
+     "José Ramírez",
+     "Chase DeLauter",
+     "Jo Adell",
+     "Nathaniel Lowe",
+     "Angel Martínez",
+     "Travis Bazzana",
+     "Austin Hedges",
+     "Brayan Rocchio"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2125,
@@ -293,13 +303,23 @@
        "h": 0,
        "er": 0,
        "pitches": 51
+      },
+      {
+       "date": "2026-10-08",
+       "opp": "Cleveland Guardians",
+       "outs": 2,
+       "k": 0,
+       "bb": 3,
+       "h": 0,
+       "er": 0,
+       "pitches": 27
       }
      ],
-     "starts_counted": 3,
+     "starts_counted": 4,
      "sample_quality": "small",
      "k_dist": {
-      "3": 0.667,
-      "4": 0.333,
+      "3": 0.5,
+      "4": 0.25,
       "5": 0.0,
       "6": 0.0,
       "7": 0.0,
@@ -317,8 +337,8 @@
       "20": 0.0
      },
      "k_dist_last10": {
-      "3": 0.667,
-      "4": 0.333,
+      "3": 0.5,
+      "4": 0.25,
       "5": 0.0,
       "6": 0.0,
       "7": 0.0,
@@ -336,17 +356,17 @@
       "20": 0.0
      },
      "k_mean": {
-      "season": 2.67,
-      "last10": 2.67,
-      "last5": 2.67
+      "season": 2.0,
+      "last10": 2.0,
+      "last5": 2.0
      },
      "outs_mean": {
-      "season": 7.67,
-      "last10": 7.67,
-      "last5": 7.67
+      "season": 6.25,
+      "last10": 6.25,
+      "last5": 6.25
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season.",
-     "short_start_flag": "Averaged 7.67 outs over the last 3 starts: possible opener / bulk-relief usage. Verify the pitching plan."
+     "short_start_flag": "Averaged 6.25 outs over the last 4 starts: possible opener / bulk-relief usage. Verify the pitching plan."
     },
     "lineup": [
      "Chase Meidroth",
