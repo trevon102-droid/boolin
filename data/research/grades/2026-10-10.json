@@ -1,0 +1,137 @@
+{
+ "2026-10-10-NHL-PHI-BOS": {
+  "key": "2026-10-10-NHL-PHI-BOS",
+  "league": "NHL",
+  "result": {
+   "home_score": 5.0,
+   "away_score": 1.0,
+   "home_margin": 4.0,
+   "total": 6.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 3.3,
+    "grade": "B+",
+    "brier": 0.1583,
+    "pregame_home_win_p": 0.6021,
+    "margin_error": 3.38,
+    "total_error": 0.1
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 3.3,
+   "grade": "B+",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ },
+ "2026-10-10-NHL-VAN-NJD": {
+  "key": "2026-10-10-NHL-VAN-NJD",
+  "league": "NHL",
+  "result": {
+   "home_score": 4.0,
+   "away_score": 1.0,
+   "home_margin": 3.0,
+   "total": 5.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 4.0,
+    "grade": "A",
+    "brier": 0.0609,
+    "pregame_home_win_p": 0.7532,
+    "margin_error": 1.36,
+    "total_error": -2.43
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 4.0,
+   "grade": "A",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ },
+ "2026-10-10-NHL-EDM-SJS": {
+  "key": "2026-10-10-NHL-EDM-SJS",
+  "league": "NHL",
+  "result": {
+   "home_score": 1.0,
+   "away_score": 3.0,
+   "home_margin": -2.0,
+   "total": 4.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 3.3,
+    "grade": "B+",
+    "brier": 0.1156,
+    "pregame_home_win_p": 0.34,
+    "margin_error": -1.01,
+    "total_error": -3.19
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 3.3,
+   "grade": "B+",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ }
+}

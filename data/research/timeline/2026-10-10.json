@@ -1135,6 +1135,56 @@
    "new": "available",
    "source": "Boolin model",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-MLB-CWS-CLE",
+   "type": "lineup",
+   "field": "CWS lineup",
+   "old": "not posted",
+   "new": "posted",
+   "source": "MLB lineup card",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-MLB-CWS-CLE",
+   "type": "lineup",
+   "field": "CLE lineup",
+   "old": "not posted",
+   "new": "posted",
+   "source": "MLB lineup card",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-MLB-CWS-CLE",
+   "type": "weather",
+   "field": "wind (mph)",
+   "old": "unknown",
+   "new": 11,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-MLB-CWS-CLE",
+   "type": "weather",
+   "field": "temp (\u00b0F)",
+   "old": "unknown",
+   "new": 70.0,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-MLB-CWS-CLE",
+   "type": "weather",
+   "field": "condition",
+   "old": "unknown",
+   "new": "Partly Cloudy",
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
   }
  ],
  "2026-10-10-NHL-PHI-BOS": [
@@ -1192,6 +1242,84 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-PHI-BOS",
+   "type": "injury_report",
+   "field": "BOS injury list",
+   "old": "not covered",
+   "new": "1 player(s) listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-PHI-BOS",
+   "type": "starter",
+   "field": "PHI starter",
+   "old": "Joseph Woll (projected)",
+   "new": "Dan Vladar (projected)",
+   "source": "NHL API goalie usage",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-PHI-BOS",
+   "type": "model",
+   "field": "Boolin BOS win probability",
+   "old": 0.6021,
+   "new": 0.6359,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 60.2% to 63.6% (home margin +0.62 \u2192 +0.83). Model components that moved: 1. Shot quality against (5v5 xGA/gp, blended) +0.13 (home allows 2.11 vs away allows 2.07); 2. Shot quality for (5v5 xGF/gp, blended) +0.10 (home 2.03 vs away 1.74 (league ~1.95)). Data updates in the same pull: BOS injury list: not covered \u2192 1 player(s) listed; PHI starter: Joseph Woll (projected) \u2192 Dan Vladar (projected).",
+   "detail": {
+    "text": "Boolin moved from 60.2% to 63.6% (home margin +0.62 \u2192 +0.83). Model components that moved: 1. Shot quality against (5v5 xGA/gp, blended) +0.13 (home allows 2.11 vs away allows 2.07); 2. Shot quality for (5v5 xGF/gp, blended) +0.10 (home 2.03 vs away 1.74 (league ~1.95)). Data updates in the same pull: BOS injury list: not covered \u2192 1 player(s) listed; PHI starter: Joseph Woll (projected) \u2192 Dan Vladar (projected).",
+    "components": [
+     {
+      "component": "Shot quality against (5v5 xGA/gp, blended)",
+      "margin_change": 0.126,
+      "now": "home allows 2.11 vs away allows 2.07"
+     },
+     {
+      "component": "Shot quality for (5v5 xGF/gp, blended)",
+      "margin_change": 0.103,
+      "now": "home 2.03 vs away 1.74 (league ~1.95)"
+     }
+    ],
+    "same_pull_updates": [
+     "BOS injury list: not covered \u2192 1 player(s) listed",
+     "PHI starter: Joseph Woll (projected) \u2192 Dan Vladar (projected)"
+    ]
+   }
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-PHI-BOS",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "BOS -0.6",
+   "new": "BOS -0.8",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 60.2% to 63.6% (home margin +0.62 \u2192 +0.83). Model components that moved: 1. Shot quality against (5v5 xGA/gp, blended) +0.13 (home allows 2.11 vs away allows 2.07); 2. Shot quality for (5v5 xGF/gp, blended) +0.10 (home 2.03 vs away 1.74 (league ~1.95)). Data updates in the same pull: BOS injury list: not covered \u2192 1 player(s) listed; PHI starter: Joseph Woll (projected) \u2192 Dan Vladar (projected).",
+   "detail": {
+    "text": "Boolin moved from 60.2% to 63.6% (home margin +0.62 \u2192 +0.83). Model components that moved: 1. Shot quality against (5v5 xGA/gp, blended) +0.13 (home allows 2.11 vs away allows 2.07); 2. Shot quality for (5v5 xGF/gp, blended) +0.10 (home 2.03 vs away 1.74 (league ~1.95)). Data updates in the same pull: BOS injury list: not covered \u2192 1 player(s) listed; PHI starter: Joseph Woll (projected) \u2192 Dan Vladar (projected).",
+    "components": [
+     {
+      "component": "Shot quality against (5v5 xGA/gp, blended)",
+      "margin_change": 0.126,
+      "now": "home allows 2.11 vs away allows 2.07"
+     },
+     {
+      "component": "Shot quality for (5v5 xGF/gp, blended)",
+      "margin_change": 0.103,
+      "now": "home 2.03 vs away 1.74 (league ~1.95)"
+     }
+    ],
+    "same_pull_updates": [
+     "BOS injury list: not covered \u2192 1 player(s) listed",
+     "PHI starter: Joseph Woll (projected) \u2192 Dan Vladar (projected)"
+    ]
+   }
   }
  ],
  "2026-10-10-NHL-VAN-NJD": [
@@ -1236,6 +1364,61 @@
    "type": "injury_status",
    "field": "Adam Gaudette (SJS)",
    "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-EDM-SJS",
+   "type": "injury_status",
+   "field": "Kyle Keyser (SJS)",
+   "old": "not listed",
+   "new": "Injured Reserve",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-EDM-SJS",
+   "type": "injury_status",
+   "field": "Jake Walman (EDM)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-EDM-SJS",
+   "type": "injury_status",
+   "field": "Matt Savoie (EDM)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-EDM-SJS",
+   "type": "injury_status",
+   "field": "Kiefer Sherwood (SJS)",
+   "old": "Day-To-Day",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-EDM-SJS",
+   "type": "injury_status",
+   "field": "Macklin Celebrini (SJS)",
+   "old": "Day-To-Day",
    "new": "not listed",
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
@@ -1288,6 +1471,28 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-DET-MTL",
+   "type": "injury_status",
+   "field": "Oliver Kapanen (MTL)",
+   "old": "Day-To-Day",
+   "new": "Injured Reserve",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-DET-MTL",
+   "type": "injury_status",
+   "field": "Sam Montembeault (MTL)",
+   "old": "Out",
+   "new": "Injured Reserve",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
   }
  ],
  "2026-10-10-NHL-NSH-OTT": [
@@ -1323,6 +1528,39 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-NSH-OTT",
+   "type": "injury_status",
+   "field": "Jake Sanderson (OTT)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-NSH-OTT",
+   "type": "injury_status",
+   "field": "Cameron Crotty (OTT)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-NSH-OTT",
+   "type": "injury_status",
+   "field": "Mavrik Bourque (NSH)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
   }
  ],
  "2026-10-10-NHL-TOR-COL": [
@@ -1332,6 +1570,28 @@
    "type": "injury_status",
    "field": "Trent Miner (COL)",
    "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-TOR-COL",
+   "type": "injury_status",
+   "field": "Elvis Merzlikins (TOR)",
+   "old": "not listed",
+   "new": "Injured Reserve",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-TOR-COL",
+   "type": "injury_status",
+   "field": "Oliver Ekman-Larsson (TOR)",
+   "old": "Day-To-Day",
    "new": "not listed",
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
@@ -1383,6 +1643,80 @@
    "field": "Mats Zuccarello (LAK)",
    "old": "Out",
    "new": "Injured Reserve",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-10-10-NHL-MIN-FLA": [
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-MIN-FLA",
+   "type": "injury_status",
+   "field": "Olli Maatta (MIN)",
+   "old": "Day-To-Day",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-MIN-FLA",
+   "type": "injury_status",
+   "field": "Zach Bogosian (MIN)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-MIN-FLA",
+   "type": "injury_status",
+   "field": "Marcus Foligno (MIN)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-10-10-NHL-CBJ-STL": [
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-CBJ-STL",
+   "type": "injury_status",
+   "field": "Dillon Dube (STL)",
+   "old": "Out",
+   "new": "Injured Reserve",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-10-10-NHL-DAL-PIT": [
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-DAL-PIT",
+   "type": "injury_status",
+   "field": "Trevor van Riemsdyk (PIT)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-10-10-NHL-UTA-BUF": [
+  {
+   "t": "2026-10-10T19:43-04:00",
+   "game_key": "2026-10-10-NHL-UTA-BUF",
+   "type": "injury_status",
+   "field": "Michael Carcone (UTA)",
+   "old": "Day-To-Day",
+   "new": "Out",
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "downgrade"
