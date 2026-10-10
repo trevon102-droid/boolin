@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-10-08",
+ "data_cutoff": "2026-10-09",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -586,23 +586,23 @@
    },
    "holdout": {
     "boolin_margin": {
-     "n": 22,
-     "mae": 2.139,
-     "rmse": 2.47,
-     "mean_error": 0.04,
+     "n": 26,
+     "mae": 2.176,
+     "rmse": 2.52,
+     "mean_error": -0.178,
      "median_error": 0.131,
-     "directional_accuracy": 0.5
+     "directional_accuracy": 0.5385
     },
     "market": "not applicable: puck/run lines are fixed at +/-1.5, so the market's margin estimate isn't stored; Boolin's margin is checked against results only"
    },
    "all": {
     "boolin_margin": {
-     "n": 57,
-     "mae": 2.227,
-     "rmse": 2.661,
-     "mean_error": 0.357,
-     "median_error": 0.639,
-     "directional_accuracy": 0.5789
+     "n": 61,
+     "mae": 2.237,
+     "rmse": 2.669,
+     "mean_error": 0.244,
+     "median_error": 0.503,
+     "directional_accuracy": 0.5902
     },
     "market": "not applicable: puck/run lines are fixed at +/-1.5, so the market's margin estimate isn't stored; Boolin's margin is checked against results only"
    }

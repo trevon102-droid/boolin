@@ -9,8 +9,8 @@
   "baseline-0.1",
   "baseline-0.2"
  ],
- "built_at": "2026-10-10T08:56-04:00",
- "data_cutoff": "2026-10-08",
+ "built_at": "2026-10-10T14:44-04:00",
+ "data_cutoff": "2026-10-09",
  "filters": {
   "league": null,
   "since": null,
@@ -26,8 +26,8 @@
   "nfl_replay": "development = seasons < 2022; holdout = 2022+"
  },
  "warning": "rows span model versions ['baseline-0.1', 'baseline-0.2']: each table is per league and per source, and rows from an older version sit in their own '<source> @<version>' slice",
- "rows": 3743,
- "excluded": 332,
+ "rows": 3747,
+ "excluded": 343,
  "by_source": {
   "NFL nfl_replay": {
    "rows": 3653,
@@ -60,14 +60,14 @@
    "last": "2026-10-08"
   },
   "NHL live_archive": {
-   "rows": 57,
+   "rows": 61,
    "development": 35,
-   "holdout": 22,
+   "holdout": 26,
    "model_versions": [
     "baseline-0.1"
    ],
    "first": "2026-10-01",
-   "last": "2026-10-08"
+   "last": "2026-10-09"
   },
   "MLB live_archive": {
    "rows": 16,
@@ -83,11 +83,11 @@
  "excluded_by_reason": {
   "nfl_replay: no current-season plays before this week for a team (the live model has no projection either)": 241,
   "live_archive: no Boolin model for this league": 81,
-  "live_archive: no confirmed final score on file": 10
+  "live_archive: no confirmed final score on file": 21
  },
  "replay": {
   "version": "nfl-replay-1",
-  "built_at_et": "2026-10-10T08:56-04:00",
+  "built_at_et": "2026-10-10T14:44-04:00",
   "status": {
    "2012": "kept",
    "2013": "kept",
@@ -129,13 +129,13 @@
    "recommendation": "CALIBRATION NEEDED"
   },
   "NHL": {
-   "sample_size": 22,
-   "brier": 0.2292,
-   "market_brier": 0.2222,
-   "log_loss": 0.6479,
-   "calibration_error": 0.2765,
-   "market_comparison": "too few games to tell (n=22)",
-   "spread_mae": 2.139,
+   "sample_size": 26,
+   "brier": 0.2306,
+   "market_brier": 0.2271,
+   "log_loss": 0.6514,
+   "calibration_error": 0.259,
+   "market_comparison": "too few games to tell (n=26)",
+   "spread_mae": 2.176,
    "confidence_validated": null,
    "calibration_status": "uncalibrated (insufficient sample)",
    "validation_status": "insufficient sample",
