@@ -4111,6 +4111,28 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-11T19:49-04:00",
+   "game_key": "2026-10-11-NHL-CAR-PHI",
+   "type": "injury_status",
+   "field": "Cam York (PHI)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-11T19:49-04:00",
+   "game_key": "2026-10-11-NHL-CAR-PHI",
+   "type": "injury_status",
+   "field": "Jordan Staal (CAR)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
   }
  ],
  "2026-10-11-MLB-LAD-MIL": [
@@ -4135,6 +4157,80 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-11T19:49-04:00",
+   "game_key": "2026-10-11-MLB-LAD-MIL",
+   "type": "lineup",
+   "field": "LAD lineup",
+   "old": "not posted",
+   "new": "posted",
+   "source": "MLB lineup card",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-11T19:49-04:00",
+   "game_key": "2026-10-11-MLB-LAD-MIL",
+   "type": "lineup",
+   "field": "MIL lineup",
+   "old": "not posted",
+   "new": "posted",
+   "source": "MLB lineup card",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-11T19:49-04:00",
+   "game_key": "2026-10-11-MLB-LAD-MIL",
+   "type": "weather",
+   "field": "wind (mph)",
+   "old": "unknown",
+   "new": 1,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-11T19:49-04:00",
+   "game_key": "2026-10-11-MLB-LAD-MIL",
+   "type": "weather",
+   "field": "temp (\u00b0F)",
+   "old": "unknown",
+   "new": 68.0,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-11T19:49-04:00",
+   "game_key": "2026-10-11-MLB-LAD-MIL",
+   "type": "weather",
+   "field": "condition",
+   "old": "unknown",
+   "new": "Clear",
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  }
+ ],
+ "2026-10-11-NHL-SEA-WSH": [
+  {
+   "t": "2026-10-11T19:49-04:00",
+   "game_key": "2026-10-11-NHL-SEA-WSH",
+   "type": "injury_status",
+   "field": "Pierre-Luc Dubois (WSH)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-11T19:49-04:00",
+   "game_key": "2026-10-11-NHL-SEA-WSH",
+   "type": "injury_status",
+   "field": "Matt Roy (WSH)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
   }
  ]
 }
