@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-10-10",
+ "data_cutoff": "2026-10-11",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -76,14 +76,14 @@
      },
      {
       "confidence": "medium",
-      "n": 219,
-      "brier": 0.2458,
-      "log_loss": 0.6859,
-      "accuracy": 0.5596,
-      "calibration_error": 0.0862,
-      "favorite_overconfidence": 0.054,
-      "avg_margin_error": 10.015,
-      "market_brier_same_games": 0.2183,
+      "n": 220,
+      "brier": 0.2449,
+      "log_loss": 0.6838,
+      "accuracy": 0.5616,
+      "calibration_error": 0.0867,
+      "favorite_overconfidence": 0.0529,
+      "avg_margin_error": 10.011,
+      "market_brier_same_games": 0.2176,
       "vs_market": "market Brier better (t=3.7)",
       "interpretable": true
      },
@@ -102,7 +102,7 @@
      }
     ],
     "validated": false,
-    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2159 (market 0.2019), medium Brier 0.2458 (market 0.2183), low Brier 0.2536 (market 0.2404). Higher confidence is not reliably better.",
+    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2159 (market 0.2019), medium Brier 0.2449 (market 0.2176), low Brier 0.2536 (market 0.2404). Higher confidence is not reliably better.",
     "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
    },
    "all": {
@@ -122,14 +122,14 @@
      },
      {
       "confidence": "medium",
-      "n": 727,
-      "brier": 0.236,
-      "log_loss": 0.6663,
-      "accuracy": 0.5925,
-      "calibration_error": 0.0177,
-      "favorite_overconfidence": 0.0172,
-      "avg_margin_error": 10.427,
-      "market_brier_same_games": 0.2185,
+      "n": 728,
+      "brier": 0.2358,
+      "log_loss": 0.6657,
+      "accuracy": 0.5931,
+      "calibration_error": 0.0179,
+      "favorite_overconfidence": 0.0168,
+      "avg_margin_error": 10.425,
+      "market_brier_same_games": 0.2183,
       "vs_market": "market Brier better (t=4.5)",
       "interpretable": true
      },
@@ -148,7 +148,7 @@
      }
     ],
     "validated": false,
-    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2173 (market 0.2044), medium Brier 0.236 (market 0.2185), low Brier 0.2448 (market 0.2286). Higher confidence is not reliably better.",
+    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2173 (market 0.2044), medium Brier 0.2358 (market 0.2183), low Brier 0.2448 (market 0.2286). Higher confidence is not reliably better.",
     "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
    }
   },
@@ -452,16 +452,16 @@
      },
      {
       "confidence": "medium",
-      "n": 29,
-      "brier": 0.2182,
-      "log_loss": 0.6256,
-      "accuracy": 0.5862,
-      "calibration_error": 0.2427,
-      "favorite_overconfidence": 0.0262,
-      "avg_margin_error": 2.149,
-      "market_brier_same_games": 0.2271,
-      "vs_market": "too few games to tell (n=26)",
-      "interpretable": false
+      "n": 40,
+      "brier": 0.2219,
+      "log_loss": 0.6353,
+      "accuracy": 0.6,
+      "calibration_error": 0.1878,
+      "favorite_overconfidence": 0.0104,
+      "avg_margin_error": 2.044,
+      "market_brier_same_games": 0.2304,
+      "vs_market": "too few games to tell (n=27)",
+      "interpretable": true
      },
      {
       "confidence": "low",
@@ -498,15 +498,15 @@
      },
      {
       "confidence": "medium",
-      "n": 64,
-      "brier": 0.2209,
-      "log_loss": 0.6312,
-      "accuracy": 0.6094,
-      "calibration_error": 0.0909,
-      "favorite_overconfidence": -0.0074,
-      "avg_margin_error": 2.222,
-      "market_brier_same_games": 0.2281,
-      "vs_market": "no detectable difference in Brier (t=-0.2)",
+      "n": 75,
+      "brier": 0.2225,
+      "log_loss": 0.6355,
+      "accuracy": 0.6133,
+      "calibration_error": 0.087,
+      "favorite_overconfidence": -0.0109,
+      "avg_margin_error": 2.155,
+      "market_brier_same_games": 0.2295,
+      "vs_market": "no detectable difference in Brier (t=-0.3)",
       "interpretable": true
      },
      {
@@ -581,15 +581,15 @@
     "levels": [
      {
       "confidence": "high",
-      "n": 2,
-      "brier": 0.2335,
-      "log_loss": 0.66,
-      "accuracy": 0.5,
-      "calibration_error": 0.4817,
-      "favorite_overconfidence": 0.0387,
-      "avg_margin_error": 1.812,
-      "market_brier_same_games": 0.2513,
-      "vs_market": "too few games to tell (n=2)",
+      "n": 3,
+      "brier": 0.2302,
+      "log_loss": 0.6533,
+      "accuracy": 0.6667,
+      "calibration_error": 0.1635,
+      "favorite_overconfidence": -0.1318,
+      "avg_margin_error": 1.801,
+      "market_brier_same_games": 0.234,
+      "vs_market": "too few games to tell (n=3)",
       "interpretable": false
      },
      {
@@ -627,15 +627,15 @@
     "levels": [
      {
       "confidence": "high",
-      "n": 6,
-      "brier": 0.2344,
-      "log_loss": 0.6612,
-      "accuracy": 0.5,
-      "calibration_error": 0.1924,
-      "favorite_overconfidence": 0.0623,
-      "avg_margin_error": 1.492,
-      "market_brier_same_games": 0.242,
-      "vs_market": "too few games to tell (n=6)",
+      "n": 7,
+      "brier": 0.2328,
+      "log_loss": 0.6582,
+      "accuracy": 0.5714,
+      "calibration_error": 0.0974,
+      "favorite_overconfidence": -0.0141,
+      "avg_margin_error": 1.533,
+      "market_brier_same_games": 0.2359,
+      "vs_market": "too few games to tell (n=7)",
       "interpretable": false
      },
      {
