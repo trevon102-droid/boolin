@@ -1,0 +1,47 @@
+{
+ "2026-10-12-NHL-FLA-BUF": {
+  "key": "2026-10-12-NHL-FLA-BUF",
+  "league": "NHL",
+  "result": {
+   "home_score": 5.0,
+   "away_score": 3.0,
+   "home_margin": 2.0,
+   "total": 8.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 2.0,
+    "grade": "C",
+    "brier": 0.2286,
+    "pregame_home_win_p": 0.5219,
+    "margin_error": 1.87,
+    "total_error": 1.76
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 2.0,
+   "grade": "C",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ }
+}

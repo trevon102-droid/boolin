@@ -1,19 +1,23 @@
 {
- "pulled_at_et": "2026-10-12T08:56-04:00",
+ "pulled_at_et": "2026-10-12T18:11-04:00",
  "date": "2026-10-12",
  "season": 2026,
  "games": [
   {
    "game_pk": 849812,
    "start_et": "5:00 PM ET",
-   "status": "Scheduled",
+   "status": "In Progress",
    "game_type": "L",
    "series": "NL Championship Series",
    "series_game": 2,
    "series_status": "NL Championship Series",
    "venue": "American Family Field",
-   "weather": null,
-   "hp_umpire": null,
+   "weather": {
+    "condition": "Sunny",
+    "temp": "85",
+    "wind": "1 mph, Varies"
+   },
+   "hp_umpire": "Chris Segal",
    "away": {
     "id": 119,
     "name": "Los Angeles Dodgers",
@@ -43,16 +47,6 @@
       "hr9": "0.97"
      },
      "last5": [
-      {
-       "date": "2026-09-02",
-       "opp": "St. Louis Cardinals",
-       "outs": 21,
-       "k": 8,
-       "bb": 2,
-       "h": 5,
-       "er": 4,
-       "pitches": 93
-      },
       {
        "date": "2026-09-09",
        "opp": "Cincinnati Reds",
@@ -92,31 +86,41 @@
        "h": 4,
        "er": 1,
        "pitches": 98
+      },
+      {
+       "date": "2026-10-12",
+       "opp": "Milwaukee Brewers",
+       "outs": 8,
+       "k": 1,
+       "bb": 1,
+       "h": 3,
+       "er": 1,
+       "pitches": 61
       }
      ],
-     "starts_counted": 29,
+     "starts_counted": 30,
      "sample_quality": "ok",
      "k_dist": {
-      "3": 0.966,
-      "4": 0.897,
-      "5": 0.759,
-      "6": 0.724,
-      "7": 0.552,
-      "8": 0.379,
-      "9": 0.207,
-      "10": 0.138
+      "3": 0.933,
+      "4": 0.867,
+      "5": 0.733,
+      "6": 0.7,
+      "7": 0.533,
+      "8": 0.367,
+      "9": 0.2,
+      "10": 0.133
      },
      "outs_dist": {
-      "12": 1.0,
-      "15": 1.0,
-      "16": 0.966,
-      "17": 0.931,
-      "18": 0.897,
-      "19": 0.552,
-      "20": 0.448
+      "12": 0.967,
+      "15": 0.967,
+      "16": 0.933,
+      "17": 0.9,
+      "18": 0.867,
+      "19": 0.533,
+      "20": 0.433
      },
      "k_dist_last10": {
-      "3": 1.0,
+      "3": 0.9,
       "4": 0.9,
       "5": 0.8,
       "6": 0.8,
@@ -126,28 +130,38 @@
       "10": 0.2
      },
      "outs_dist_last10": {
-      "12": 1.0,
-      "15": 1.0,
-      "16": 1.0,
-      "17": 1.0,
-      "18": 0.9,
-      "19": 0.7,
-      "20": 0.5
+      "12": 0.9,
+      "15": 0.9,
+      "16": 0.9,
+      "17": 0.9,
+      "18": 0.8,
+      "19": 0.6,
+      "20": 0.4
      },
      "k_mean": {
-      "season": 6.62,
-      "last10": 7.4,
-      "last5": 7.8
+      "season": 6.43,
+      "last10": 7.2,
+      "last5": 6.4
      },
      "outs_mean": {
-      "season": 19.86,
-      "last10": 19.9,
-      "last5": 20.4
+      "season": 19.47,
+      "last10": 18.3,
+      "last5": 17.8
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "lineup": [
+     "Mookie Betts",
+     "Freddie Freeman",
+     "Teoscar Hernández",
+     "Shohei Ohtani",
+     "Will Smith",
+     "Max Muncy",
+     "Andy Pages",
+     "Kyle Tucker",
+     "Tommy Edman"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2003,
@@ -228,16 +242,6 @@
      },
      "last5": [
       {
-       "date": "2026-09-03",
-       "opp": "Chicago Cubs",
-       "outs": 21,
-       "k": 7,
-       "bb": 0,
-       "h": 3,
-       "er": 2,
-       "pitches": 102
-      },
-      {
        "date": "2026-09-09",
        "opp": "Chicago Cubs",
        "outs": 15,
@@ -276,62 +280,82 @@
        "h": 2,
        "er": 1,
        "pitches": 72
+      },
+      {
+       "date": "2026-10-12",
+       "opp": "Los Angeles Dodgers",
+       "outs": 9,
+       "k": 2,
+       "bb": 2,
+       "h": 2,
+       "er": 2,
+       "pitches": 51
       }
      ],
-     "starts_counted": 19,
+     "starts_counted": 20,
      "sample_quality": "ok",
      "k_dist": {
-      "3": 1.0,
-      "4": 0.895,
-      "5": 0.684,
-      "6": 0.632,
-      "7": 0.526,
-      "8": 0.211,
-      "9": 0.053,
+      "3": 0.95,
+      "4": 0.85,
+      "5": 0.65,
+      "6": 0.6,
+      "7": 0.5,
+      "8": 0.2,
+      "9": 0.05,
       "10": 0.0
      },
      "outs_dist": {
-      "12": 0.947,
-      "15": 0.947,
-      "16": 0.474,
-      "17": 0.421,
-      "18": 0.368,
-      "19": 0.211,
-      "20": 0.158
+      "12": 0.9,
+      "15": 0.9,
+      "16": 0.45,
+      "17": 0.4,
+      "18": 0.35,
+      "19": 0.2,
+      "20": 0.15
      },
      "k_dist_last10": {
-      "3": 1.0,
-      "4": 0.9,
-      "5": 0.7,
-      "6": 0.7,
-      "7": 0.5,
-      "8": 0.2,
+      "3": 0.9,
+      "4": 0.8,
+      "5": 0.6,
+      "6": 0.6,
+      "7": 0.4,
+      "8": 0.1,
       "9": 0.0,
       "10": 0.0
      },
      "outs_dist_last10": {
-      "12": 1.0,
-      "15": 1.0,
-      "16": 0.6,
-      "17": 0.6,
-      "18": 0.6,
+      "12": 0.9,
+      "15": 0.9,
+      "16": 0.5,
+      "17": 0.5,
+      "18": 0.5,
       "19": 0.4,
       "20": 0.3
      },
      "k_mean": {
-      "season": 6.0,
-      "last10": 6.0,
-      "last5": 5.6
+      "season": 5.8,
+      "last10": 5.4,
+      "last5": 4.6
      },
      "outs_mean": {
-      "season": 16.32,
-      "last10": 17.8,
-      "last5": 16.2
+      "season": 15.95,
+      "last10": 16.9,
+      "last5": 13.8
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "lineup": [
+     "Jackson Chourio",
+     "Brice Turang",
+     "William Contreras",
+     "Jake Bauers",
+     "Christian Yelich",
+     "Garrett Mitchell",
+     "Cooper Pratt",
+     "Sal Frelick",
+     "David Hamilton"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2114,
@@ -393,14 +417,18 @@
   {
    "game_pk": 849820,
    "start_et": "8:00 PM ET",
-   "status": "Scheduled",
+   "status": "Pre-Game",
    "game_type": "L",
    "series": "AL Championship Series",
    "series_game": 1,
    "series_status": "AL Championship Series",
    "venue": "Tropicana Field",
-   "weather": null,
-   "hp_umpire": null,
+   "weather": {
+    "condition": "Dome",
+    "temp": "72",
+    "wind": "0 mph, None"
+   },
+   "hp_umpire": "Nestor Ceja",
    "away": {
     "id": 114,
     "name": "Cleveland Guardians",
@@ -533,8 +561,18 @@
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "lineup": [
+     "Steven Kwan",
+     "José Ramírez",
+     "Chase DeLauter",
+     "Jo Adell",
+     "Nathaniel Lowe",
+     "Travis Bazzana",
+     "Patrick Bailey",
+     "Petey Halpin",
+     "Brayan Rocchio"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2125,
@@ -717,8 +755,18 @@
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "lineup": [
+     "Yandy Díaz",
+     "Jonathan Aranda",
+     "Junior Caminero",
+     "Ryan Vilade",
+     "Victor Mesa Jr.",
+     "Jonny DeLuca",
+     "Ben Williamson",
+     "Taylor Walls",
+     "Nick Fortes"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.1805,
