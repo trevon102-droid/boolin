@@ -1,25 +1,227 @@
 {
- "pulled_at_et": "2026-10-11T19:49-04:00",
- "date": "2026-10-11",
+ "pulled_at_et": "2026-10-12T08:56-04:00",
+ "date": "2026-10-12",
  "season_start_year": 2026,
  "games": [
   {
-   "id": 2026020084,
-   "start_et": "5:00 PM ET",
+   "id": 2026020087,
+   "start_et": "1:00 PM ET",
    "game_type": "regular",
-   "venue": "Capital One Arena",
+   "venue": "KeyBank Center",
    "away": {
-    "abbr": "SEA",
+    "abbr": "FLA",
     "back_to_back": false,
     "standings": {
-     "gp": 6,
+     "gp": 5,
+     "pts": 6,
+     "w": 2,
+     "l": 1,
+     "otl": 2,
+     "gf": 9,
+     "ga": 12,
+     "l10": "2-1-2",
+     "streak": "L1",
+     "sample_quality": "small"
+    },
+    "starting_goalie": {
+     "status": "unconfirmed",
+     "note": "No free API confirms starters. Check Daily Faceoff before betting."
+    },
+    "goalies_this_season": [
+     {
+      "name": "Jacob Markstrom",
+      "gp": 4,
+      "gs": 4,
+      "sv_pct": 0.915663,
+      "gaa": 1.704545
+     },
+     {
+      "name": "Akira Schmid",
+      "gp": 1,
+      "gs": 1,
+      "sv_pct": 0.875,
+      "gaa": 3.795467
+     }
+    ],
+    "goalies_last_season": [
+     {
+      "name": "Sergei Bobrovsky",
+      "gp": 52,
+      "gs": 51,
+      "sv_pct": 0.8768,
+      "gaa": 3.070124
+     },
+     {
+      "name": "Daniil Tarasov",
+      "gp": 33,
+      "gs": 31,
+      "sv_pct": 0.895135,
+      "gaa": 3.054049
+     }
+    ],
+    "xg_5v5_this_season": {
+     "gp": 5,
+     "xgf_pct": 0.6,
+     "cf_pct": 0.57,
+     "xgf": 8.1,
+     "xga": 5.3,
+     "sample_quality": "small"
+    },
+    "xg_5v5_last_season": {
+     "gp": 82,
+     "xgf_pct": 0.49,
+     "cf_pct": 0.52,
+     "xgf": 163.1,
+     "xga": 168.0,
+     "sample_quality": "ok"
+    },
+    "gsax_this_season": [
+     {
+      "name": "Jacob Markstrom",
+      "gp": 4,
+      "gsax": 3.0
+     },
+     {
+      "name": "Akira Schmid",
+      "gp": 1,
+      "gsax": -0.4
+     }
+    ],
+    "gsax_last_season": [
+     {
+      "name": "Sergei Bobrovsky",
+      "gp": 52,
+      "gsax": -12.2
+     },
+     {
+      "name": "Daniil Tarasov",
+      "gp": 33,
+      "gsax": -1.8
+     }
+    ]
+   },
+   "home": {
+    "abbr": "BUF",
+    "back_to_back": false,
+    "standings": {
+     "gp": 5,
+     "pts": 4,
+     "w": 2,
+     "l": 3,
+     "otl": 0,
+     "gf": 11,
+     "ga": 19,
+     "l10": "2-3-0",
+     "streak": "L2",
+     "sample_quality": "small"
+    },
+    "starting_goalie": {
+     "status": "unconfirmed",
+     "note": "No free API confirms starters. Check Daily Faceoff before betting."
+    },
+    "goalies_this_season": [
+     {
+      "name": "Ukko-Pekka Luukkonen",
+      "gp": 3,
+      "gs": 3,
+      "sv_pct": 0.781818,
+      "gaa": 4.021597
+     },
+     {
+      "name": "Colten Ellis",
+      "gp": 2,
+      "gs": 2,
+      "sv_pct": 0.88,
+      "gaa": 2.907133
+     }
+    ],
+    "goalies_last_season": [
+     {
+      "name": "Alex Lyon",
+      "gp": 36,
+      "gs": 34,
+      "sv_pct": 0.907048,
+      "gaa": 2.771061
+     },
+     {
+      "name": "Ukko-Pekka Luukkonen",
+      "gp": 35,
+      "gs": 34,
+      "sv_pct": 0.909677,
+      "gaa": 2.515082
+     },
+     {
+      "name": "Colten Ellis",
+      "gp": 16,
+      "gs": 14,
+      "sv_pct": 0.903297,
+      "gaa": 2.896854
+     }
+    ],
+    "xg_5v5_this_season": {
+     "gp": 5,
+     "xgf_pct": 0.54,
+     "cf_pct": 0.57,
+     "xgf": 11.5,
+     "xga": 9.8,
+     "sample_quality": "small"
+    },
+    "xg_5v5_last_season": {
+     "gp": 82,
+     "xgf_pct": 0.5,
+     "cf_pct": 0.49,
+     "xgf": 170.0,
+     "xga": 170.3,
+     "sample_quality": "ok"
+    },
+    "gsax_this_season": [
+     {
+      "name": "Ukko-Pekka Luukkonen",
+      "gp": 3,
+      "gsax": -5.1
+     },
+     {
+      "name": "Colten Ellis",
+      "gp": 2,
+      "gsax": 0.4
+     }
+    ],
+    "gsax_last_season": [
+     {
+      "name": "Alex Lyon",
+      "gp": 36,
+      "gsax": 12.6
+     },
+     {
+      "name": "Ukko-Pekka Luukkonen",
+      "gp": 35,
+      "gsax": 10.5
+     },
+     {
+      "name": "Colten Ellis",
+      "gp": 16,
+      "gsax": 1.9
+     }
+    ]
+   }
+  },
+  {
+   "id": 2026020088,
+   "start_et": "7:00 PM ET",
+   "game_type": "regular",
+   "venue": "Prudential Center",
+   "away": {
+    "abbr": "OTT",
+    "back_to_back": false,
+    "standings": {
+     "gp": 5,
      "pts": 8,
      "w": 4,
-     "l": 2,
+     "l": 1,
      "otl": 0,
-     "gf": 26,
-     "ga": 17,
-     "l10": "4-2-0",
+     "gf": 15,
+     "ga": 11,
+     "l10": "4-1-0",
      "streak": "W2",
      "sample_quality": "small"
     },
@@ -29,103 +231,103 @@
     },
     "goalies_this_season": [
      {
-      "name": "Joey Daccord",
-      "gp": 3,
-      "gs": 3,
-      "sv_pct": 0.911392,
-      "gaa": 2.635156
+      "name": "Linus Ullmark",
+      "gp": 4,
+      "gs": 4,
+      "sv_pct": 0.94186,
+      "gaa": 1.340982
      },
      {
-      "name": "Philipp Grubauer",
-      "gp": 3,
-      "gs": 2,
-      "sv_pct": 0.916667,
-      "gaa": 2.589618
+      "name": "Samuel Ersson",
+      "gp": 2,
+      "gs": 1,
+      "sv_pct": 0.886364,
+      "gaa": 3.849444
      }
     ],
     "goalies_last_season": [
      {
-      "name": "Joey Daccord",
-      "gp": 47,
-      "gs": 46,
-      "sv_pct": 0.897475,
-      "gaa": 3.029834
+      "name": "Linus Ullmark",
+      "gp": 49,
+      "gs": 49,
+      "sv_pct": 0.890651,
+      "gaa": 2.725886
      },
      {
-      "name": "Philipp Grubauer",
-      "gp": 32,
-      "gs": 28,
-      "sv_pct": 0.908776,
-      "gaa": 2.646418
+      "name": "Leevi Meriläinen",
+      "gp": 20,
+      "gs": 19,
+      "sv_pct": 0.859956,
+      "gaa": 3.508505
      },
      {
-      "name": "Matt Murray",
-      "gp": 5,
-      "gs": 4,
-      "sv_pct": 0.921569,
-      "gaa": 2.213171
+      "name": "James Reimer",
+      "gp": 14,
+      "gs": 13,
+      "sv_pct": 0.885813,
+      "gaa": 2.421179
      }
     ],
     "xg_5v5_this_season": {
      "gp": 5,
-     "xgf_pct": 0.46,
-     "cf_pct": 0.41,
-     "xgf": 11.1,
-     "xga": 12.9,
+     "xgf_pct": 0.5,
+     "cf_pct": 0.47,
+     "xgf": 8.8,
+     "xga": 9.0,
      "sample_quality": "small"
     },
     "xg_5v5_last_season": {
      "gp": 82,
-     "xgf_pct": 0.46,
-     "cf_pct": 0.45,
-     "xgf": 147.8,
-     "xga": 173.8,
+     "xgf_pct": 0.56,
+     "cf_pct": 0.53,
+     "xgf": 176.6,
+     "xga": 140.7,
      "sample_quality": "ok"
     },
     "gsax_this_season": [
      {
-      "name": "Joey Daccord",
-      "gp": 3,
-      "gsax": 0.7
+      "name": "Linus Ullmark",
+      "gp": 4,
+      "gsax": 5.0
      },
      {
-      "name": "Philipp Grubauer",
-      "gp": 3,
-      "gsax": 2.9
+      "name": "Samuel Ersson",
+      "gp": 2,
+      "gsax": -0.6
      }
     ],
     "gsax_last_season": [
      {
-      "name": "Joey Daccord",
-      "gp": 47,
-      "gsax": -6.2
+      "name": "Linus Ullmark",
+      "gp": 49,
+      "gsax": -12.8
      },
      {
-      "name": "Philipp Grubauer",
-      "gp": 32,
-      "gsax": 5.7
+      "name": "Leevi Merilinen",
+      "gp": 20,
+      "gsax": -17.3
      },
      {
-      "name": "Matt Murray",
-      "gp": 5,
-      "gsax": 2.8
+      "name": "James Reimer",
+      "gp": 14,
+      "gsax": -0.7
      }
     ]
    },
    "home": {
-    "abbr": "WSH",
+    "abbr": "NJD",
     "back_to_back": false,
     "standings": {
-     "gp": 5,
-     "pts": 6,
-     "w": 3,
+     "gp": 4,
+     "pts": 4,
+     "w": 2,
      "l": 2,
      "otl": 0,
-     "gf": 17,
+     "gf": 10,
      "ga": 14,
-     "l10": "3-2-0",
-     "streak": "L1",
-     "sample_quality": "small"
+     "l10": "2-2-0",
+     "streak": "W1",
+     "sample_quality": "tiny"
     },
     "starting_goalie": {
      "status": "unconfirmed",
@@ -133,321 +335,107 @@
     },
     "goalies_this_season": [
      {
-      "name": "Logan Thompson",
+      "name": "Jake Allen",
       "gp": 3,
       "gs": 3,
-      "sv_pct": 0.929412,
-      "gaa": 2.001297
+      "sv_pct": 0.896104,
+      "gaa": 2.653889
      },
      {
-      "name": "Charlie Lindgren",
+      "name": "Nico Daws",
       "gp": 1,
       "gs": 1,
-      "sv_pct": 0.931034,
-      "gaa": 2.083333
+      "sv_pct": 0.8125,
+      "gaa": 6.013363
      }
     ],
     "goalies_last_season": [
      {
-      "name": "Logan Thompson",
-      "gp": 58,
-      "gs": 58,
-      "sv_pct": 0.911783,
-      "gaa": 2.438281
+      "name": "Jacob Markstrom",
+      "gp": 44,
+      "gs": 43,
+      "sv_pct": 0.883199,
+      "gaa": 3.066018
      },
      {
-      "name": "Charlie Lindgren",
-      "gp": 21,
-      "gs": 20,
-      "sv_pct": 0.878738,
-      "gaa": 3.515155
+      "name": "Jake Allen",
+      "gp": 37,
+      "gs": 36,
+      "sv_pct": 0.903977,
+      "gaa": 2.744028
      },
      {
-      "name": "Clay Stevenson",
-      "gp": 4,
-      "gs": 4,
-      "sv_pct": 0.920792,
-      "gaa": 2.002225
+      "name": "Nico Daws",
+      "gp": 3,
+      "gs": 3,
+      "sv_pct": 0.908046,
+      "gaa": 2.619134
      }
     ],
     "xg_5v5_this_season": {
      "gp": 4,
-     "xgf_pct": 0.52,
-     "cf_pct": 0.48,
-     "xgf": 8.7,
-     "xga": 8.2,
+     "xgf_pct": 0.57,
+     "cf_pct": 0.61,
+     "xgf": 10.5,
+     "xga": 7.8,
      "sample_quality": "tiny"
     },
     "xg_5v5_last_season": {
      "gp": 82,
      "xgf_pct": 0.5,
-     "cf_pct": 0.49,
-     "xgf": 175.0,
-     "xga": 175.1,
+     "cf_pct": 0.51,
+     "xgf": 169.6,
+     "xga": 172.7,
      "sample_quality": "ok"
     },
     "gsax_this_season": [
      {
-      "name": "Logan Thompson",
+      "name": "Jake Allen",
       "gp": 3,
-      "gsax": 4.9
+      "gsax": 0.4
      },
      {
-      "name": "Charlie Lindgren",
+      "name": "Nico Daws",
       "gp": 1,
-      "gsax": 1.1
+      "gsax": -2.4
      }
     ],
     "gsax_last_season": [
      {
-      "name": "Logan Thompson",
-      "gp": 58,
-      "gsax": 29.3
+      "name": "Jacob Markstrom",
+      "gp": 44,
+      "gsax": -11.9
      },
      {
-      "name": "Charlie Lindgren",
-      "gp": 21,
-      "gsax": -5.3
+      "name": "Jake Allen",
+      "gp": 37,
+      "gsax": 6.3
      },
      {
-      "name": "Clay Stevenson",
-      "gp": 4,
-      "gsax": 3.2
+      "name": "Nico Daws",
+      "gp": 3,
+      "gsax": 0.4
      }
     ]
    }
   },
   {
-   "id": 2026020085,
-   "start_et": "6:00 PM ET",
+   "id": 2026020089,
+   "start_et": "8:00 PM ET",
    "game_type": "regular",
-   "venue": "Madison Square Garden",
+   "venue": "Grand Casino Arena",
    "away": {
-    "abbr": "VAN",
-    "back_to_back": true,
-    "standings": {
-     "gp": 6,
-     "pts": 4,
-     "w": 2,
-     "l": 4,
-     "otl": 0,
-     "gf": 22,
-     "ga": 29,
-     "l10": "2-4-0",
-     "streak": "L3",
-     "sample_quality": "small"
-    },
-    "starting_goalie": {
-     "status": "unconfirmed",
-     "note": "No free API confirms starters. Check Daily Faceoff before betting."
-    },
-    "goalies_this_season": [
-     {
-      "name": "Kevin Lankinen",
-      "gp": 5,
-      "gs": 4,
-      "sv_pct": 0.792453,
-      "gaa": 7.160152
-     },
-     {
-      "name": "Leevi Meriläinen",
-      "gp": 4,
-      "gs": 2,
-      "sv_pct": 0.928571,
-      "gaa": 2.178737
-     }
-    ],
-    "goalies_last_season": [
-     {
-      "name": "Kevin Lankinen",
-      "gp": 47,
-      "gs": 43,
-      "sv_pct": 0.875486,
-      "gaa": 3.703204
-     },
-     {
-      "name": "Thatcher Demko",
-      "gp": 20,
-      "gs": 20,
-      "sv_pct": 0.896887,
-      "gaa": 2.903573
-     },
-     {
-      "name": "Nikita Tolopilo",
-      "gp": 21,
-      "gs": 18,
-      "sv_pct": 0.881443,
-      "gaa": 3.613564
-     }
-    ],
-    "xg_5v5_this_season": {
-     "gp": 6,
-     "xgf_pct": 0.4,
-     "cf_pct": 0.42,
-     "xgf": 9.9,
-     "xga": 14.7,
-     "sample_quality": "small"
-    },
-    "xg_5v5_last_season": {
-     "gp": 82,
-     "xgf_pct": 0.44,
-     "cf_pct": 0.46,
-     "xgf": 151.7,
-     "xga": 191.8,
-     "sample_quality": "ok"
-    },
-    "gsax_this_season": [
-     {
-      "name": "Kevin Lankinen",
-      "gp": 5,
-      "gsax": -8.4
-     },
-     {
-      "name": "Leevi Merilinen",
-      "gp": 4,
-      "gsax": 1.8
-     }
-    ],
-    "gsax_last_season": [
-     {
-      "name": "Kevin Lankinen",
-      "gp": 47,
-      "gsax": -19.3
-     },
-     {
-      "name": "Nikita Tolopilo",
-      "gp": 21,
-      "gsax": -7.5
-     },
-     {
-      "name": "Thatcher Demko",
-      "gp": 20,
-      "gsax": 2.0
-     }
-    ]
-   },
-   "home": {
-    "abbr": "NYR",
+    "abbr": "VGK",
     "back_to_back": false,
     "standings": {
      "gp": 6,
-     "pts": 8,
-     "w": 4,
-     "l": 2,
-     "otl": 0,
-     "gf": 17,
-     "ga": 11,
-     "l10": "4-2-0",
-     "streak": "L1",
-     "sample_quality": "small"
-    },
-    "starting_goalie": {
-     "status": "unconfirmed",
-     "note": "No free API confirms starters. Check Daily Faceoff before betting."
-    },
-    "goalies_this_season": [
-     {
-      "name": "Igor Shesterkin",
-      "gp": 5,
-      "gs": 5,
-      "sv_pct": 0.926606,
-      "gaa": 1.793164
-     },
-     {
-      "name": "Dylan Garand",
-      "gp": 2,
-      "gs": 1,
-      "sv_pct": 0.970588,
-      "gaa": 0.668524
-     }
-    ],
-    "goalies_last_season": [
-     {
-      "name": "Igor Shesterkin",
-      "gp": 51,
-      "gs": 51,
-      "sv_pct": 0.911579,
-      "gaa": 2.499821
-     },
-     {
-      "name": "Jonathan Quick",
-      "gp": 25,
-      "gs": 24,
-      "sv_pct": 0.891207,
-      "gaa": 3.088858
-     },
-     {
-      "name": "Spencer Martin",
-      "gp": 6,
-      "gs": 4,
-      "sv_pct": 0.863946,
-      "gaa": 4.128677
-     }
-    ],
-    "xg_5v5_this_season": {
-     "gp": 6,
-     "xgf_pct": 0.48,
-     "cf_pct": 0.46,
-     "xgf": 11.1,
-     "xga": 11.9,
-     "sample_quality": "small"
-    },
-    "xg_5v5_last_season": {
-     "gp": 82,
-     "xgf_pct": 0.48,
-     "cf_pct": 0.49,
-     "xgf": 154.2,
-     "xga": 163.7,
-     "sample_quality": "ok"
-    },
-    "gsax_this_season": [
-     {
-      "name": "Igor Shesterkin",
-      "gp": 5,
-      "gsax": 4.9
-     },
-     {
-      "name": "Dylan Garand",
-      "gp": 2,
-      "gsax": 2.1
-     }
-    ],
-    "gsax_last_season": [
-     {
-      "name": "Igor Shesterkin",
-      "gp": 51,
-      "gsax": 21.2
-     },
-     {
-      "name": "Jonathan Quick",
-      "gp": 25,
-      "gsax": -6.4
-     },
-     {
-      "name": "Spencer Martin",
-      "gp": 6,
-      "gsax": -4.1
-     }
-    ]
-   }
-  },
-  {
-   "id": 2026020086,
-   "start_et": "7:00 PM ET",
-   "game_type": "regular",
-   "venue": "Xfinity Mobile Arena",
-   "away": {
-    "abbr": "CAR",
-    "back_to_back": true,
-    "standings": {
-     "gp": 6,
-     "pts": 9,
-     "w": 4,
+     "pts": 10,
+     "w": 5,
      "l": 1,
-     "otl": 1,
+     "otl": 0,
      "gf": 23,
-     "ga": 16,
-     "l10": "4-1-1",
+     "ga": 14,
+     "l10": "5-1-0",
      "streak": "W4",
      "sample_quality": "small"
     },
@@ -457,102 +445,102 @@
     },
     "goalies_this_season": [
      {
-      "name": "Brandon Bussi",
+      "name": "Carter Hart",
       "gp": 4,
       "gs": 4,
-      "sv_pct": 0.870968,
-      "gaa": 2.948403
+      "sv_pct": 0.91,
+      "gaa": 2.247347
      },
      {
-      "name": "Pyotr Kochetkov",
+      "name": "Adin Hill",
       "gp": 2,
       "gs": 2,
-      "sv_pct": 0.894737,
-      "gaa": 1.953602
+      "sv_pct": 0.886364,
+      "gaa": 2.406417
      }
     ],
     "goalies_last_season": [
      {
-      "name": "Brandon Bussi",
-      "gp": 39,
-      "gs": 39,
-      "sv_pct": 0.894737,
-      "gaa": 2.465249
+      "name": "Akira Schmid",
+      "gp": 34,
+      "gs": 29,
+      "sv_pct": 0.892541,
+      "gaa": 2.594386
      },
      {
-      "name": "Frederik Andersen",
-      "gp": 35,
-      "gs": 35,
-      "sv_pct": 0.873969,
-      "gaa": 3.054428
+      "name": "Adin Hill",
+      "gp": 27,
+      "gs": 27,
+      "sv_pct": 0.870528,
+      "gaa": 3.044431
      },
      {
-      "name": "Pyotr Kochetkov",
-      "gp": 9,
-      "gs": 8,
-      "sv_pct": 0.899471,
-      "gaa": 2.325819
+      "name": "Carter Hart",
+      "gp": 18,
+      "gs": 18,
+      "sv_pct": 0.890995,
+      "gaa": 2.706457
      }
     ],
     "xg_5v5_this_season": {
      "gp": 6,
-     "xgf_pct": 0.6,
-     "cf_pct": 0.61,
-     "xgf": 15.1,
-     "xga": 10.2,
+     "xgf_pct": 0.62,
+     "cf_pct": 0.57,
+     "xgf": 14.8,
+     "xga": 9.0,
      "sample_quality": "small"
     },
     "xg_5v5_last_season": {
      "gp": 82,
-     "xgf_pct": 0.56,
-     "cf_pct": 0.6,
-     "xgf": 202.3,
-     "xga": 157.0,
+     "xgf_pct": 0.54,
+     "cf_pct": 0.52,
+     "xgf": 175.0,
+     "xga": 146.8,
      "sample_quality": "ok"
     },
     "gsax_this_season": [
      {
-      "name": "Brandon Bussi",
+      "name": "Carter Hart",
       "gp": 4,
-      "gsax": -2.2
+      "gsax": 0.2
      },
      {
-      "name": "Pyotr Kochetkov",
+      "name": "Adin Hill",
       "gp": 2,
-      "gsax": 1.2
+      "gsax": -0.9
      }
     ],
     "gsax_last_season": [
      {
-      "name": "Brandon Bussi",
-      "gp": 39,
-      "gsax": 2.8
+      "name": "Akira Schmid",
+      "gp": 34,
+      "gsax": -1.0
      },
      {
-      "name": "Frederik Andersen",
-      "gp": 35,
-      "gsax": -3.3
+      "name": "Adin Hill",
+      "gp": 27,
+      "gsax": -14.2
      },
      {
-      "name": "Pyotr Kochetkov",
-      "gp": 9,
-      "gsax": -0.0
+      "name": "Carter Hart",
+      "gp": 18,
+      "gsax": -4.2
      }
     ]
    },
    "home": {
-    "abbr": "PHI",
-    "back_to_back": true,
+    "abbr": "MIN",
+    "back_to_back": false,
     "standings": {
-     "gp": 6,
-     "pts": 2,
-     "w": 0,
-     "l": 4,
-     "otl": 2,
-     "gf": 7,
-     "ga": 24,
-     "l10": "0-4-2",
-     "streak": "L3",
+     "gp": 5,
+     "pts": 7,
+     "w": 3,
+     "l": 1,
+     "otl": 1,
+     "gf": 15,
+     "ga": 9,
+     "l10": "3-1-1",
+     "streak": "W1",
      "sample_quality": "small"
     },
     "starting_goalie": {
@@ -561,86 +549,62 @@
     },
     "goalies_this_season": [
      {
-      "name": "Dan Vladar",
-      "gp": 3,
-      "gs": 3,
-      "sv_pct": 0.857143,
-      "gaa": 5.082353
-     },
-     {
-      "name": "Joseph Woll",
-      "gp": 3,
-      "gs": 3,
-      "sv_pct": 0.927273,
-      "gaa": 2.610587
+      "name": "Jesper Wallstedt",
+      "gp": 5,
+      "gs": 5,
+      "sv_pct": 0.935714,
+      "gaa": 1.784436
      }
     ],
     "goalies_last_season": [
      {
-      "name": "Dan Vladar",
-      "gp": 52,
-      "gs": 51,
-      "sv_pct": 0.90569,
-      "gaa": 2.423865
+      "name": "Filip Gustavsson",
+      "gp": 50,
+      "gs": 49,
+      "sv_pct": 0.904139,
+      "gaa": 2.688755
      },
      {
-      "name": "Samuel Ersson",
-      "gp": 33,
-      "gs": 29,
-      "sv_pct": 0.869624,
-      "gaa": 3.117996
-     },
-     {
-      "name": "Aleksei Kolosov",
-      "gp": 4,
-      "gs": 2,
-      "sv_pct": 0.829787,
-      "gaa": 3.999445
+      "name": "Jesper Wallstedt",
+      "gp": 35,
+      "gs": 33,
+      "sv_pct": 0.915686,
+      "gaa": 2.614379
      }
     ],
     "xg_5v5_this_season": {
-     "gp": 6,
-     "xgf_pct": 0.31,
-     "cf_pct": 0.37,
-     "xgf": 7.7,
-     "xga": 17.2,
+     "gp": 5,
+     "xgf_pct": 0.48,
+     "cf_pct": 0.49,
+     "xgf": 8.9,
+     "xga": 9.7,
      "sample_quality": "small"
     },
     "xg_5v5_last_season": {
      "gp": 82,
-     "xgf_pct": 0.51,
+     "xgf_pct": 0.52,
      "cf_pct": 0.48,
-     "xgf": 153.8,
-     "xga": 150.0,
+     "xgf": 174.7,
+     "xga": 164.6,
      "sample_quality": "ok"
     },
     "gsax_this_season": [
      {
-      "name": "Dan Vladar",
-      "gp": 3,
-      "gsax": -3.4
-     },
-     {
-      "name": "Joseph Woll",
-      "gp": 3,
-      "gsax": 3.5
+      "name": "Jesper Wallstedt",
+      "gp": 5,
+      "gsax": 6.2
      }
     ],
     "gsax_last_season": [
      {
-      "name": "Dan Vladar",
-      "gp": 52,
-      "gsax": 13.8
+      "name": "Filip Gustavsson",
+      "gp": 50,
+      "gsax": 1.4
      },
      {
-      "name": "Samuel Ersson",
-      "gp": 33,
-      "gsax": -16.5
-     },
-     {
-      "name": "Aleksei Kolosov",
-      "gp": 4,
-      "gsax": -4.0
+      "name": "Jesper Wallstedt",
+      "gp": 35,
+      "gsax": 6.2
      }
     ]
    }

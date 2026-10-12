@@ -6119,24 +6119,24 @@
     "groups": [
      {
       "group": "all extreme disagreements",
-      "n": 394,
-      "boolin_brier": 0.2532,
-      "market_brier": 0.214,
+      "n": 395,
+      "boolin_brier": 0.253,
+      "market_brier": 0.2144,
       "brier_paired": {
-       "n": 394,
-       "mean_diff": 0.0392,
+       "n": 395,
+       "mean_diff": 0.03862,
        "se": 0.00818,
-       "t": 4.79,
-       "verdict": "market Brier better (t=4.8)",
+       "t": 4.72,
+       "verdict": "market Brier better (t=4.7)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3528,
-      "boolin_side_market_implied": 0.3648,
-      "boolin_side_boolin_implied": 0.5315,
-      "boolin_side_z_vs_market": -0.52,
-      "boolin_beat_market_rate": 0.3528,
-      "boolin_pick_win_rate": 0.5127,
-      "market_favorite_win_rate": 0.6675,
+      "boolin_side_actual_rate": 0.3544,
+      "boolin_side_market_implied": 0.3649,
+      "boolin_side_boolin_implied": 0.5316,
+      "boolin_side_z_vs_market": -0.45,
+      "boolin_beat_market_rate": 0.3544,
+      "boolin_pick_win_rate": 0.5139,
+      "market_favorite_win_rate": 0.6658,
       "interpretable": true
      },
      {
@@ -6163,24 +6163,24 @@
      },
      {
       "group": "medium confidence",
-      "n": 101,
-      "boolin_brier": 0.2592,
-      "market_brier": 0.2046,
+      "n": 102,
+      "boolin_brier": 0.2584,
+      "market_brier": 0.2062,
       "brier_paired": {
-       "n": 101,
-       "mean_diff": 0.05461,
-       "se": 0.01512,
-       "t": 3.61,
-       "verdict": "market Brier better (t=3.6)",
+       "n": 102,
+       "mean_diff": 0.05222,
+       "se": 0.01516,
+       "t": 3.45,
+       "verdict": "market Brier better (t=3.4)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.302,
-      "boolin_side_market_implied": 0.3777,
-      "boolin_side_boolin_implied": 0.5404,
-      "boolin_side_z_vs_market": -1.62,
-      "boolin_beat_market_rate": 0.3069,
-      "boolin_pick_win_rate": 0.4802,
-      "market_favorite_win_rate": 0.7178,
+      "boolin_side_actual_rate": 0.3088,
+      "boolin_side_market_implied": 0.3778,
+      "boolin_side_boolin_implied": 0.5407,
+      "boolin_side_z_vs_market": -1.48,
+      "boolin_beat_market_rate": 0.3137,
+      "boolin_pick_win_rate": 0.4853,
+      "market_favorite_win_rate": 0.7108,
       "interpretable": true
      },
      {
@@ -6229,46 +6229,46 @@
      },
      {
       "group": "normal samples",
-      "n": 315,
-      "boolin_brier": 0.25,
-      "market_brier": 0.2085,
+      "n": 316,
+      "boolin_brier": 0.2498,
+      "market_brier": 0.2091,
       "brier_paired": {
-       "n": 315,
-       "mean_diff": 0.04148,
+       "n": 316,
+       "mean_diff": 0.04075,
        "se": 0.00864,
-       "t": 4.8,
-       "verdict": "market Brier better (t=4.8)",
+       "t": 4.72,
+       "verdict": "market Brier better (t=4.7)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3429,
-      "boolin_side_market_implied": 0.3723,
-      "boolin_side_boolin_implied": 0.5331,
-      "boolin_side_z_vs_market": -1.13,
-      "boolin_beat_market_rate": 0.3429,
-      "boolin_pick_win_rate": 0.5302,
-      "market_favorite_win_rate": 0.6762,
+      "boolin_side_actual_rate": 0.3449,
+      "boolin_side_market_implied": 0.3724,
+      "boolin_side_boolin_implied": 0.5332,
+      "boolin_side_z_vs_market": -1.06,
+      "boolin_beat_market_rate": 0.3449,
+      "boolin_pick_win_rate": 0.5316,
+      "market_favorite_win_rate": 0.6741,
       "interpretable": true
      },
      {
       "group": "injury / player uncertainty",
-      "n": 101,
-      "boolin_brier": 0.2617,
-      "market_brier": 0.1956,
+      "n": 102,
+      "boolin_brier": 0.2609,
+      "market_brier": 0.1973,
       "brier_paired": {
-       "n": 101,
-       "mean_diff": 0.06604,
-       "se": 0.01625,
-       "t": 4.06,
-       "verdict": "market Brier better (t=4.1)",
+       "n": 102,
+       "mean_diff": 0.06354,
+       "se": 0.01628,
+       "t": 3.9,
+       "verdict": "market Brier better (t=3.9)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.297,
-      "boolin_side_market_implied": 0.3605,
-      "boolin_side_boolin_implied": 0.54,
-      "boolin_side_z_vs_market": -1.39,
-      "boolin_beat_market_rate": 0.297,
-      "boolin_pick_win_rate": 0.5149,
-      "market_favorite_win_rate": 0.6733,
+      "boolin_side_actual_rate": 0.3039,
+      "boolin_side_market_implied": 0.3608,
+      "boolin_side_boolin_implied": 0.5403,
+      "boolin_side_z_vs_market": -1.25,
+      "boolin_beat_market_rate": 0.3039,
+      "boolin_pick_win_rate": 0.5196,
+      "market_favorite_win_rate": 0.6667,
       "interpretable": true
      },
      {
@@ -6317,47 +6317,28 @@
      },
      {
       "group": "later season",
-      "n": 273,
-      "boolin_brier": 0.2524,
-      "market_brier": 0.2133,
+      "n": 274,
+      "boolin_brier": 0.2522,
+      "market_brier": 0.2139,
       "brier_paired": {
-       "n": 273,
-       "mean_diff": 0.0391,
+       "n": 274,
+       "mean_diff": 0.03827,
        "se": 0.00936,
-       "t": 4.18,
-       "verdict": "market Brier better (t=4.2)",
+       "t": 4.09,
+       "verdict": "market Brier better (t=4.1)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3498,
+      "boolin_side_actual_rate": 0.3522,
       "boolin_side_market_implied": 0.3739,
-      "boolin_side_boolin_implied": 0.5344,
-      "boolin_side_z_vs_market": -0.87,
-      "boolin_beat_market_rate": 0.348,
-      "boolin_pick_win_rate": 0.5256,
-      "market_favorite_win_rate": 0.6685,
+      "boolin_side_boolin_implied": 0.5345,
+      "boolin_side_z_vs_market": -0.78,
+      "boolin_beat_market_rate": 0.3504,
+      "boolin_pick_win_rate": 0.5274,
+      "market_favorite_win_rate": 0.6661,
       "interpretable": true
      }
     ],
     "games": [
-     {
-      "key": "2023-09-24-NFL-BUF-WAS",
-      "date": "2023-09-24",
-      "reasons": [
-       "win probability +16.0 pp"
-      ],
-      "boolin_win_p": 0.4798,
-      "market_win_p": 0.3194,
-      "boolin_pick_won": true,
-      "market_favorite_won": true,
-      "boolin_beat_market": false,
-      "model_confidence": "low",
-      "sample": 2,
-      "unresolved_injuries": null,
-      "qb_change": false,
-      "starter_unconfirmed": null,
-      "data_health": "clean",
-      "model_version": "baseline-0.2"
-     },
      {
       "key": "2023-09-24-NFL-HOU-JAX",
       "date": "2023-09-24",
@@ -12182,18 +12163,38 @@
       "starter_unconfirmed": null,
       "data_health": "clean",
       "model_version": "baseline-0.2"
+     },
+     {
+      "key": "2026-10-11-NFL-BAL-ATL",
+      "date": "2026-10-11",
+      "reasons": [
+       "win probability -18.2 pp",
+       "spread +6.0 pts"
+      ],
+      "boolin_win_p": 0.4269,
+      "market_win_p": 0.6092,
+      "boolin_pick_won": true,
+      "market_favorite_won": false,
+      "boolin_beat_market": true,
+      "model_confidence": "medium",
+      "sample": 4,
+      "unresolved_injuries": null,
+      "qb_change": true,
+      "starter_unconfirmed": null,
+      "data_health": "clean",
+      "model_version": "baseline-0.2"
      }
     ],
     "hypotheses": [
      {
       "hypothesis": "useful contrarian signal",
       "verdict": "contradicted",
-      "evidence": "n=394; Boolin side won 0.3528 vs market-implied 0.3648 (Boolin said 0.5315); market Brier better (t=4.8)"
+      "evidence": "n=395; Boolin side won 0.3544 vs market-implied 0.3649 (Boolin said 0.5316); market Brier better (t=4.7)"
      },
      {
       "hypothesis": "early-season / small-sample instability",
       "verdict": "supported",
-      "evidence": "121 of 394 extremes (31%) vs 21% of all games; extreme rate 50% in this context vs 30% outside (x1.7)"
+      "evidence": "121 of 395 extremes (31%) vs 21% of all games; extreme rate 50% in this context vs 31% outside (x1.7)"
      },
      {
       "hypothesis": "stale or incomplete data",
@@ -12203,7 +12204,7 @@
      {
       "hypothesis": "missing player-level information",
       "verdict": "not supported",
-      "evidence": "101 of 394 extremes (26%) vs 21% of all games; extreme rate 42% in this context vs 33% outside (x1.3)"
+      "evidence": "102 of 395 extremes (26%) vs 21% of all games; extreme rate 42% in this context vs 33% outside (x1.3)"
      },
      {
       "hypothesis": "systematic model bias",
@@ -12224,24 +12225,24 @@
     "groups": [
      {
       "group": "all extreme disagreements",
-      "n": 1240,
+      "n": 1241,
       "boolin_brier": 0.2415,
-      "market_brier": 0.2064,
+      "market_brier": 0.2065,
       "brier_paired": {
-       "n": 1240,
-       "mean_diff": 0.03514,
+       "n": 1241,
+       "mean_diff": 0.03496,
        "se": 0.00438,
-       "t": 8.02,
+       "t": 7.98,
        "verdict": "market Brier better (t=8.0)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3302,
+      "boolin_side_actual_rate": 0.3308,
       "boolin_side_market_implied": 0.3396,
       "boolin_side_boolin_implied": 0.5012,
-      "boolin_side_z_vs_market": -0.72,
-      "boolin_beat_market_rate": 0.3306,
-      "boolin_pick_win_rate": 0.5754,
-      "market_favorite_win_rate": 0.6827,
+      "boolin_side_z_vs_market": -0.68,
+      "boolin_beat_market_rate": 0.3312,
+      "boolin_pick_win_rate": 0.5757,
+      "market_favorite_win_rate": 0.6821,
       "interpretable": true
      },
      {
@@ -12268,24 +12269,24 @@
      },
      {
       "group": "medium confidence",
-      "n": 294,
-      "boolin_brier": 0.2554,
-      "market_brier": 0.2151,
+      "n": 295,
+      "boolin_brier": 0.2551,
+      "market_brier": 0.2156,
       "brier_paired": {
-       "n": 294,
-       "mean_diff": 0.04031,
-       "se": 0.0088,
-       "t": 4.58,
-       "verdict": "market Brier better (t=4.6)",
+       "n": 295,
+       "mean_diff": 0.03954,
+       "se": 0.00881,
+       "t": 4.49,
+       "verdict": "market Brier better (t=4.5)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3146,
-      "boolin_side_market_implied": 0.3539,
-      "boolin_side_boolin_implied": 0.5118,
-      "boolin_side_z_vs_market": -1.46,
-      "boolin_beat_market_rate": 0.3163,
-      "boolin_pick_win_rate": 0.5561,
-      "market_favorite_win_rate": 0.6616,
+      "boolin_side_actual_rate": 0.3169,
+      "boolin_side_market_implied": 0.3541,
+      "boolin_side_boolin_implied": 0.512,
+      "boolin_side_z_vs_market": -1.38,
+      "boolin_beat_market_rate": 0.3186,
+      "boolin_pick_win_rate": 0.5576,
+      "market_favorite_win_rate": 0.6593,
       "interpretable": true
      },
      {
@@ -12334,46 +12335,46 @@
      },
      {
       "group": "normal samples",
-      "n": 997,
-      "boolin_brier": 0.2406,
-      "market_brier": 0.2039,
+      "n": 998,
+      "boolin_brier": 0.2405,
+      "market_brier": 0.204,
       "brier_paired": {
-       "n": 997,
-       "mean_diff": 0.03671,
+       "n": 998,
+       "mean_diff": 0.03648,
        "se": 0.00472,
-       "t": 7.78,
-       "verdict": "market Brier better (t=7.8)",
+       "t": 7.73,
+       "verdict": "market Brier better (t=7.7)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.318,
+      "boolin_side_actual_rate": 0.3186,
       "boolin_side_market_implied": 0.3429,
-      "boolin_side_boolin_implied": 0.5,
-      "boolin_side_z_vs_market": -1.73,
-      "boolin_beat_market_rate": 0.318,
-      "boolin_pick_win_rate": 0.5797,
-      "market_favorite_win_rate": 0.6921,
+      "boolin_side_boolin_implied": 0.5001,
+      "boolin_side_z_vs_market": -1.68,
+      "boolin_beat_market_rate": 0.3186,
+      "boolin_pick_win_rate": 0.5802,
+      "market_favorite_win_rate": 0.6914,
       "interpretable": true
      },
      {
       "group": "injury / player uncertainty",
-      "n": 276,
-      "boolin_brier": 0.2524,
-      "market_brier": 0.1929,
+      "n": 277,
+      "boolin_brier": 0.2521,
+      "market_brier": 0.1936,
       "brier_paired": {
-       "n": 276,
-       "mean_diff": 0.05945,
+       "n": 277,
+       "mean_diff": 0.05855,
        "se": 0.01014,
-       "t": 5.86,
-       "verdict": "market Brier better (t=5.9)",
+       "t": 5.77,
+       "verdict": "market Brier better (t=5.8)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.2862,
-      "boolin_side_market_implied": 0.3287,
-      "boolin_side_boolin_implied": 0.5087,
-      "boolin_side_z_vs_market": -1.57,
-      "boolin_beat_market_rate": 0.2862,
-      "boolin_pick_win_rate": 0.5507,
-      "market_favorite_win_rate": 0.7138,
+      "boolin_side_actual_rate": 0.2888,
+      "boolin_side_market_implied": 0.3289,
+      "boolin_side_boolin_implied": 0.5089,
+      "boolin_side_z_vs_market": -1.48,
+      "boolin_beat_market_rate": 0.2888,
+      "boolin_pick_win_rate": 0.5523,
+      "market_favorite_win_rate": 0.7112,
       "interpretable": true
      },
      {
@@ -12422,47 +12423,28 @@
      },
      {
       "group": "later season",
-      "n": 884,
+      "n": 885,
       "boolin_brier": 0.2393,
-      "market_brier": 0.2038,
+      "market_brier": 0.204,
       "brier_paired": {
-       "n": 884,
-       "mean_diff": 0.03548,
+       "n": 885,
+       "mean_diff": 0.03523,
        "se": 0.00499,
-       "t": 7.11,
+       "t": 7.06,
        "verdict": "market Brier better (t=7.1)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3196,
-      "boolin_side_market_implied": 0.3425,
-      "boolin_side_boolin_implied": 0.4987,
-      "boolin_side_z_vs_market": -1.5,
-      "boolin_beat_market_rate": 0.319,
-      "boolin_pick_win_rate": 0.5786,
-      "market_favorite_win_rate": 0.6963,
+      "boolin_side_actual_rate": 0.3203,
+      "boolin_side_market_implied": 0.3426,
+      "boolin_side_boolin_implied": 0.4988,
+      "boolin_side_z_vs_market": -1.45,
+      "boolin_beat_market_rate": 0.3198,
+      "boolin_pick_win_rate": 0.5791,
+      "market_favorite_win_rate": 0.6955,
       "interpretable": true
      }
     ],
     "games": [
-     {
-      "key": "2023-09-24-NFL-BUF-WAS",
-      "date": "2023-09-24",
-      "reasons": [
-       "win probability +16.0 pp"
-      ],
-      "boolin_win_p": 0.4798,
-      "market_win_p": 0.3194,
-      "boolin_pick_won": true,
-      "market_favorite_won": true,
-      "boolin_beat_market": false,
-      "model_confidence": "low",
-      "sample": 2,
-      "unresolved_injuries": null,
-      "qb_change": false,
-      "starter_unconfirmed": null,
-      "data_health": "clean",
-      "model_version": "baseline-0.2"
-     },
      {
       "key": "2023-09-24-NFL-HOU-JAX",
       "date": "2023-09-24",
@@ -18287,18 +18269,38 @@
       "starter_unconfirmed": null,
       "data_health": "clean",
       "model_version": "baseline-0.2"
+     },
+     {
+      "key": "2026-10-11-NFL-BAL-ATL",
+      "date": "2026-10-11",
+      "reasons": [
+       "win probability -18.2 pp",
+       "spread +6.0 pts"
+      ],
+      "boolin_win_p": 0.4269,
+      "market_win_p": 0.6092,
+      "boolin_pick_won": true,
+      "market_favorite_won": false,
+      "boolin_beat_market": true,
+      "model_confidence": "medium",
+      "sample": 4,
+      "unresolved_injuries": null,
+      "qb_change": true,
+      "starter_unconfirmed": null,
+      "data_health": "clean",
+      "model_version": "baseline-0.2"
      }
     ],
     "hypotheses": [
      {
       "hypothesis": "useful contrarian signal",
       "verdict": "contradicted",
-      "evidence": "n=1240; Boolin side won 0.3302 vs market-implied 0.3396 (Boolin said 0.5012); market Brier better (t=8.0)"
+      "evidence": "n=1241; Boolin side won 0.3308 vs market-implied 0.3396 (Boolin said 0.5012); market Brier better (t=8.0)"
      },
      {
       "hypothesis": "early-season / small-sample instability",
       "verdict": "supported",
-      "evidence": "356 of 1240 extremes (29%) vs 20% of all games; extreme rate 49% in this context vs 30% outside (x1.6)"
+      "evidence": "356 of 1241 extremes (29%) vs 20% of all games; extreme rate 49% in this context vs 30% outside (x1.6)"
      },
      {
       "hypothesis": "stale or incomplete data",
@@ -18308,7 +18310,7 @@
      {
       "hypothesis": "missing player-level information",
       "verdict": "not supported",
-      "evidence": "276 of 1240 extremes (22%) vs 18% of all games; extreme rate 41% in this context vs 32% outside (x1.3)"
+      "evidence": "277 of 1241 extremes (22%) vs 18% of all games; extreme rate 41% in this context vs 32% outside (x1.3)"
      },
      {
       "hypothesis": "systematic model bias",
@@ -19197,7 +19199,25 @@
     "groups": [
      {
       "group": "all extreme disagreements",
-      "n": 0
+      "n": 4,
+      "boolin_brier": 0.3161,
+      "market_brier": 0.1497,
+      "brier_paired": {
+       "n": 4,
+       "mean_diff": 0.16642,
+       "se": 0.02772,
+       "t": 6.0,
+       "verdict": "too few games to tell (n=4)",
+       "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
+      },
+      "boolin_side_actual_rate": 0.0,
+      "boolin_side_market_implied": 0.3736,
+      "boolin_side_boolin_implied": 0.5583,
+      "boolin_side_z_vs_market": -1.58,
+      "boolin_beat_market_rate": 0.0,
+      "boolin_pick_win_rate": 0.25,
+      "market_favorite_win_rate": 0.75,
+      "interpretable": false
      },
      {
       "group": "high confidence",
@@ -19205,7 +19225,25 @@
      },
      {
       "group": "medium confidence",
-      "n": 0
+      "n": 4,
+      "boolin_brier": 0.3161,
+      "market_brier": 0.1497,
+      "brier_paired": {
+       "n": 4,
+       "mean_diff": 0.16642,
+       "se": 0.02772,
+       "t": 6.0,
+       "verdict": "too few games to tell (n=4)",
+       "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
+      },
+      "boolin_side_actual_rate": 0.0,
+      "boolin_side_market_implied": 0.3736,
+      "boolin_side_boolin_implied": 0.5583,
+      "boolin_side_z_vs_market": -1.58,
+      "boolin_beat_market_rate": 0.0,
+      "boolin_pick_win_rate": 0.25,
+      "market_favorite_win_rate": 0.75,
+      "interpretable": false
      },
      {
       "group": "low confidence",
@@ -19217,43 +19255,158 @@
      },
      {
       "group": "normal samples",
-      "n": 0
+      "n": 4,
+      "boolin_brier": 0.3161,
+      "market_brier": 0.1497,
+      "brier_paired": {
+       "n": 4,
+       "mean_diff": 0.16642,
+       "se": 0.02772,
+       "t": 6.0,
+       "verdict": "too few games to tell (n=4)",
+       "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
+      },
+      "boolin_side_actual_rate": 0.0,
+      "boolin_side_market_implied": 0.3736,
+      "boolin_side_boolin_implied": 0.5583,
+      "boolin_side_z_vs_market": -1.58,
+      "boolin_beat_market_rate": 0.0,
+      "boolin_pick_win_rate": 0.25,
+      "market_favorite_win_rate": 0.75,
+      "interpretable": false
      },
      {
       "group": "injury / player uncertainty",
-      "n": 0
+      "n": 2,
+      "boolin_brier": 0.3372,
+      "market_brier": 0.2063,
+      "brier_paired": {
+       "n": 2,
+       "mean_diff": 0.13096,
+       "se": 0.0392,
+       "t": 3.34,
+       "verdict": "too few games to tell (n=2)",
+       "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
+      },
+      "boolin_side_actual_rate": 0.0,
+      "boolin_side_market_implied": 0.4482,
+      "boolin_side_boolin_implied": 0.5735,
+      "boolin_side_z_vs_market": -1.29,
+      "boolin_beat_market_rate": 0.0,
+      "boolin_pick_win_rate": 0.5,
+      "market_favorite_win_rate": 0.5,
+      "interpretable": false
      },
      {
       "group": "clean data",
       "n": 0
      }
     ],
-    "games": [],
+    "games": [
+     {
+      "key": "2026-10-11-NFL-CHI-GB",
+      "date": "2026-10-11",
+      "reasons": [
+       "win probability -14.3 pp"
+      ],
+      "boolin_win_p": 0.335,
+      "market_win_p": 0.4784,
+      "boolin_pick_won": false,
+      "market_favorite_won": false,
+      "boolin_beat_market": false,
+      "model_confidence": "medium",
+      "sample": 4,
+      "unresolved_injuries": true,
+      "qb_change": null,
+      "starter_unconfirmed": true,
+      "data_health": "degraded",
+      "model_version": "baseline-0.2"
+     },
+     {
+      "key": "2026-10-11-NFL-HOU-TEN",
+      "date": "2026-10-11",
+      "reasons": [
+       "win probability +29.3 pp",
+       "spread -8.6 pts"
+      ],
+      "boolin_win_p": 0.531,
+      "market_win_p": 0.2376,
+      "boolin_pick_won": false,
+      "market_favorite_won": true,
+      "boolin_beat_market": false,
+      "model_confidence": "medium",
+      "sample": 4,
+      "unresolved_injuries": false,
+      "qb_change": null,
+      "starter_unconfirmed": true,
+      "data_health": "degraded",
+      "model_version": "baseline-0.2"
+     },
+     {
+      "key": "2026-10-11-NFL-LV-NE",
+      "date": "2026-10-11",
+      "reasons": [
+       "win probability -19.5 pp",
+       "spread +5.9 pts"
+      ],
+      "boolin_win_p": 0.4449,
+      "market_win_p": 0.6396,
+      "boolin_pick_won": false,
+      "market_favorite_won": true,
+      "boolin_beat_market": false,
+      "model_confidence": "medium",
+      "sample": 4,
+      "unresolved_injuries": false,
+      "qb_change": null,
+      "starter_unconfirmed": true,
+      "data_health": "degraded",
+      "model_version": "baseline-0.2"
+     },
+     {
+      "key": "2026-10-11-NFL-DEN-LAC",
+      "date": "2026-10-11",
+      "reasons": [
+       "win probability +10.7 pp"
+      ],
+      "boolin_win_p": 0.4819,
+      "market_win_p": 0.3748,
+      "boolin_pick_won": true,
+      "market_favorite_won": true,
+      "boolin_beat_market": false,
+      "model_confidence": "medium",
+      "sample": 4,
+      "unresolved_injuries": true,
+      "qb_change": null,
+      "starter_unconfirmed": true,
+      "data_health": "degraded",
+      "model_version": "baseline-0.2"
+     }
+    ],
     "hypotheses": [
      {
       "hypothesis": "useful contrarian signal",
       "verdict": "inconclusive",
-      "evidence": "n=0; Boolin side won None vs market-implied None (Boolin said None); None"
+      "evidence": "n=4; Boolin side won 0.0 vs market-implied 0.3736 (Boolin said 0.5583); too few games to tell (n=4)"
      },
      {
       "hypothesis": "early-season / small-sample instability",
       "verdict": "inconclusive",
-      "evidence": "0 of 0 extremes; not enough games to compare"
+      "evidence": "0 of 4 extremes; not enough games to compare"
      },
      {
       "hypothesis": "stale or incomplete data",
       "verdict": "inconclusive",
-      "evidence": "0 of 0 extremes; not enough games to compare"
+      "evidence": "4 of 4 extremes; not enough games to compare"
      },
      {
       "hypothesis": "missing player-level information",
       "verdict": "inconclusive",
-      "evidence": "0 of 0 extremes; not enough games to compare"
+      "evidence": "2 of 4 extremes (50%) vs 18% of all games; extreme rate 100% in this context vs 22% outside (x4.5)"
      },
      {
       "hypothesis": "systematic model bias",
       "verdict": "inconclusive",
-      "evidence": "n=0 extremes"
+      "evidence": "n=4 extremes"
      }
     ]
    },
@@ -19269,24 +19422,24 @@
     "groups": [
      {
       "group": "all extreme disagreements",
-      "n": 1,
-      "boolin_brier": 0.3982,
-      "market_brier": 0.2769,
+      "n": 5,
+      "boolin_brier": 0.3325,
+      "market_brier": 0.1752,
       "brier_paired": {
-       "n": 1,
-       "mean_diff": 0.12127,
-       "se": null,
-       "t": null,
-       "verdict": "too few games to tell (n=1)",
+       "n": 5,
+       "mean_diff": 0.15739,
+       "se": 0.02329,
+       "t": 6.76,
+       "verdict": "too few games to tell (n=5)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
       "boolin_side_actual_rate": 0.0,
-      "boolin_side_market_implied": 0.5262,
-      "boolin_side_boolin_implied": 0.631,
-      "boolin_side_z_vs_market": -1.05,
+      "boolin_side_market_implied": 0.4041,
+      "boolin_side_boolin_implied": 0.5728,
+      "boolin_side_z_vs_market": -1.89,
       "boolin_beat_market_rate": 0.0,
-      "boolin_pick_win_rate": 0.0,
-      "market_favorite_win_rate": 0.0,
+      "boolin_pick_win_rate": 0.2,
+      "market_favorite_win_rate": 0.6,
       "interpretable": false
      },
      {
@@ -19295,24 +19448,24 @@
      },
      {
       "group": "medium confidence",
-      "n": 1,
-      "boolin_brier": 0.3982,
-      "market_brier": 0.2769,
+      "n": 5,
+      "boolin_brier": 0.3325,
+      "market_brier": 0.1752,
       "brier_paired": {
-       "n": 1,
-       "mean_diff": 0.12127,
-       "se": null,
-       "t": null,
-       "verdict": "too few games to tell (n=1)",
+       "n": 5,
+       "mean_diff": 0.15739,
+       "se": 0.02329,
+       "t": 6.76,
+       "verdict": "too few games to tell (n=5)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
       "boolin_side_actual_rate": 0.0,
-      "boolin_side_market_implied": 0.5262,
-      "boolin_side_boolin_implied": 0.631,
-      "boolin_side_z_vs_market": -1.05,
+      "boolin_side_market_implied": 0.4041,
+      "boolin_side_boolin_implied": 0.5728,
+      "boolin_side_z_vs_market": -1.89,
       "boolin_beat_market_rate": 0.0,
-      "boolin_pick_win_rate": 0.0,
-      "market_favorite_win_rate": 0.0,
+      "boolin_pick_win_rate": 0.2,
+      "market_favorite_win_rate": 0.6,
       "interpretable": false
      },
      {
@@ -19325,29 +19478,47 @@
      },
      {
       "group": "normal samples",
-      "n": 1,
-      "boolin_brier": 0.3982,
-      "market_brier": 0.2769,
+      "n": 5,
+      "boolin_brier": 0.3325,
+      "market_brier": 0.1752,
       "brier_paired": {
-       "n": 1,
-       "mean_diff": 0.12127,
-       "se": null,
-       "t": null,
-       "verdict": "too few games to tell (n=1)",
+       "n": 5,
+       "mean_diff": 0.15739,
+       "se": 0.02329,
+       "t": 6.76,
+       "verdict": "too few games to tell (n=5)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
       "boolin_side_actual_rate": 0.0,
-      "boolin_side_market_implied": 0.5262,
-      "boolin_side_boolin_implied": 0.631,
-      "boolin_side_z_vs_market": -1.05,
+      "boolin_side_market_implied": 0.4041,
+      "boolin_side_boolin_implied": 0.5728,
+      "boolin_side_z_vs_market": -1.89,
       "boolin_beat_market_rate": 0.0,
-      "boolin_pick_win_rate": 0.0,
-      "market_favorite_win_rate": 0.0,
+      "boolin_pick_win_rate": 0.2,
+      "market_favorite_win_rate": 0.6,
       "interpretable": false
      },
      {
       "group": "injury / player uncertainty",
-      "n": 0
+      "n": 2,
+      "boolin_brier": 0.3372,
+      "market_brier": 0.2063,
+      "brier_paired": {
+       "n": 2,
+       "mean_diff": 0.13096,
+       "se": 0.0392,
+       "t": 3.34,
+       "verdict": "too few games to tell (n=2)",
+       "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
+      },
+      "boolin_side_actual_rate": 0.0,
+      "boolin_side_market_implied": 0.4482,
+      "boolin_side_boolin_implied": 0.5735,
+      "boolin_side_z_vs_market": -1.29,
+      "boolin_beat_market_rate": 0.0,
+      "boolin_pick_win_rate": 0.5,
+      "market_favorite_win_rate": 0.5,
+      "interpretable": false
      },
      {
       "group": "clean data",
@@ -19373,33 +19544,111 @@
       "starter_unconfirmed": true,
       "data_health": "degraded",
       "model_version": "baseline-0.2"
+     },
+     {
+      "key": "2026-10-11-NFL-CHI-GB",
+      "date": "2026-10-11",
+      "reasons": [
+       "win probability -14.3 pp"
+      ],
+      "boolin_win_p": 0.335,
+      "market_win_p": 0.4784,
+      "boolin_pick_won": false,
+      "market_favorite_won": false,
+      "boolin_beat_market": false,
+      "model_confidence": "medium",
+      "sample": 4,
+      "unresolved_injuries": true,
+      "qb_change": null,
+      "starter_unconfirmed": true,
+      "data_health": "degraded",
+      "model_version": "baseline-0.2"
+     },
+     {
+      "key": "2026-10-11-NFL-HOU-TEN",
+      "date": "2026-10-11",
+      "reasons": [
+       "win probability +29.3 pp",
+       "spread -8.6 pts"
+      ],
+      "boolin_win_p": 0.531,
+      "market_win_p": 0.2376,
+      "boolin_pick_won": false,
+      "market_favorite_won": true,
+      "boolin_beat_market": false,
+      "model_confidence": "medium",
+      "sample": 4,
+      "unresolved_injuries": false,
+      "qb_change": null,
+      "starter_unconfirmed": true,
+      "data_health": "degraded",
+      "model_version": "baseline-0.2"
+     },
+     {
+      "key": "2026-10-11-NFL-LV-NE",
+      "date": "2026-10-11",
+      "reasons": [
+       "win probability -19.5 pp",
+       "spread +5.9 pts"
+      ],
+      "boolin_win_p": 0.4449,
+      "market_win_p": 0.6396,
+      "boolin_pick_won": false,
+      "market_favorite_won": true,
+      "boolin_beat_market": false,
+      "model_confidence": "medium",
+      "sample": 4,
+      "unresolved_injuries": false,
+      "qb_change": null,
+      "starter_unconfirmed": true,
+      "data_health": "degraded",
+      "model_version": "baseline-0.2"
+     },
+     {
+      "key": "2026-10-11-NFL-DEN-LAC",
+      "date": "2026-10-11",
+      "reasons": [
+       "win probability +10.7 pp"
+      ],
+      "boolin_win_p": 0.4819,
+      "market_win_p": 0.3748,
+      "boolin_pick_won": true,
+      "market_favorite_won": true,
+      "boolin_beat_market": false,
+      "model_confidence": "medium",
+      "sample": 4,
+      "unresolved_injuries": true,
+      "qb_change": null,
+      "starter_unconfirmed": true,
+      "data_health": "degraded",
+      "model_version": "baseline-0.2"
      }
     ],
     "hypotheses": [
      {
       "hypothesis": "useful contrarian signal",
       "verdict": "inconclusive",
-      "evidence": "n=1; Boolin side won 0.0 vs market-implied 0.5262 (Boolin said 0.631); too few games to tell (n=1)"
+      "evidence": "n=5; Boolin side won 0.0 vs market-implied 0.4041 (Boolin said 0.5728); too few games to tell (n=5)"
      },
      {
       "hypothesis": "early-season / small-sample instability",
       "verdict": "inconclusive",
-      "evidence": "0 of 1 extremes; not enough games to compare"
+      "evidence": "0 of 5 extremes; not enough games to compare"
      },
      {
       "hypothesis": "stale or incomplete data",
       "verdict": "inconclusive",
-      "evidence": "1 of 1 extremes; not enough games to compare"
+      "evidence": "5 of 5 extremes; not enough games to compare"
      },
      {
       "hypothesis": "missing player-level information",
       "verdict": "inconclusive",
-      "evidence": "0 of 1 extremes; not enough games to compare"
+      "evidence": "2 of 5 extremes (40%) vs 17% of all games; extreme rate 100% in this context vs 30% outside (x3.3)"
      },
      {
       "hypothesis": "systematic model bias",
       "verdict": "inconclusive",
-      "evidence": "n=1 extremes"
+      "evidence": "n=5 extremes"
      }
     ]
    }
