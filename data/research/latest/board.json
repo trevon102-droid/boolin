@@ -1,144 +1,348 @@
 {
- "slate_date": "2026-10-12",
- "built_at": "2026-10-12T22:11-04:00",
- "games": 6,
+ "slate_date": "2026-10-13",
+ "built_at": "2026-10-13T08:57-04:00",
+ "games": 17,
  "attention": [
   {
-   "key": "2026-10-12-NHL-OTT-NJD",
-   "league": "NHL",
-   "matchup": "OTT @ NJD",
-   "start": "Mon Oct 12, 7:00 PM ET",
-   "start_et": "2026-10-12T19:00-04:00",
-   "status": "started",
-   "importance": 16.0,
-   "reasons": [
-    "3 change(s) since the last pull, latest: Nikolas Matinpalo (OTT) not listed → Out",
-    "odds source error: The odds pull reported 'error'.",
-    "OTT starting goalie not confirmed: Linus Ullmark is projected (most starts this season; not confirmed), not officially confirmed.",
-    "NJD starting goalie not confirmed: Jake Allen is projected (most starts this season; not confirmed), not officially confirmed."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": "NOT READY",
-   "disagreement": null,
-   "alerts": 1,
-   "changes": 6,
-   "changes_since_last_pull": 3,
-   "oldest_input_min": 795.1
-  },
-  {
-   "key": "2026-10-12-NHL-VGK-MIN",
-   "league": "NHL",
-   "matchup": "VGK @ MIN",
-   "start": "Mon Oct 12, 8:00 PM ET",
-   "start_et": "2026-10-12T20:00-04:00",
-   "status": "started",
-   "importance": 15.5,
-   "reasons": [
-    "3 change(s) since the last pull, latest: Marcus Foligno (MIN) Out → Injured Reserve",
-    "odds source error: The odds pull reported 'error'.",
-    "VGK starting goalie not confirmed: Carter Hart is projected (most starts this season; not confirmed), not officially confirmed.",
-    "MIN starting goalie not confirmed: Jesper Wallstedt is projected (most starts this season; not confirmed), not officially confirmed."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": "NOT READY",
-   "disagreement": null,
-   "alerts": 1,
-   "changes": 5,
-   "changes_since_last_pull": 3,
-   "oldest_input_min": 795.1
-  },
-  {
-   "key": "2026-10-12-MLB-LAD-MIL",
-   "league": "MLB",
-   "matchup": "LAD @ MIL",
-   "start": "Mon Oct 12, 5:00 PM ET",
-   "start_et": "2026-10-12T17:00-04:00",
-   "status": "final",
-   "importance": 12.5,
-   "reasons": [
-    "5 change(s) in the last 24 h, latest: condition unknown → Sunny",
-    "odds source error: The odds pull reported 'error'.",
-    "LAD starting pitcher not confirmed: Yoshinobu Yamamoto is projected (announced probable, not a confirmed lineup card), not officially confirmed.",
-    "MIL starting pitcher not confirmed: Logan Henderson is projected (announced probable, not a confirmed lineup card), not officially confirmed."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": "NOT READY",
-   "disagreement": null,
-   "alerts": 1,
-   "changes": 5,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
-  },
-  {
-   "key": "2026-10-12-MLB-CLE-TB",
+   "key": "2026-10-13-MLB-CLE-TB",
    "league": "MLB",
    "matchup": "CLE @ TB",
-   "start": "Mon Oct 12, 8:00 PM ET",
-   "start_et": "2026-10-12T20:00-04:00",
-   "status": "started",
-   "importance": 12.5,
+   "start": "Tue Oct 13, 8:00 PM ET",
+   "start_et": "2026-10-13T20:00-04:00",
+   "status": "scheduled",
+   "importance": 6.25,
    "reasons": [
-    "5 change(s) in the last 24 h, latest: condition unknown → Dome",
     "odds source error: The odds pull reported 'error'.",
-    "CLE starting pitcher not confirmed: Foster Griffin is projected (announced probable, not a confirmed lineup card), not officially confirmed.",
-    "TB starting pitcher not confirmed: Drew Rasmussen is projected (announced probable, not a confirmed lineup card), not officially confirmed."
+    "CLE bullpen heavily used: Relievers threw 120 pitches over the last 3 days; likely limited: Hunter Gaddis."
    ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": "NOT READY",
    "disagreement": null,
    "alerts": 1,
-   "changes": 5,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
-  },
-  {
-   "key": "2026-10-12-NHL-FLA-BUF",
-   "league": "NHL",
-   "matchup": "FLA @ BUF",
-   "start": "Mon Oct 12, 1:00 PM ET",
-   "start_et": "2026-10-12T13:00-04:00",
-   "status": "started",
-   "importance": 10.5,
-   "reasons": [
-    "3 change(s) in the last 24 h, latest: Rasmus Dahlin (BUF) not listed → Out",
-    "odds source error: The odds pull reported 'error'.",
-    "FLA starting goalie not confirmed: Jacob Markstrom is projected (most starts this season; not confirmed), not officially confirmed.",
-    "BUF starting goalie not confirmed: Ukko-Pekka Luukkonen is projected (most starts this season; not confirmed), not officially confirmed."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": "NOT READY",
-   "disagreement": null,
-   "alerts": 1,
-   "changes": 3,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
-  },
-  {
-   "key": "2026-10-12-NFL-BUF-LA",
-   "league": "NFL",
-   "matchup": "BUF @ LA",
-   "start": "Mon Oct 12, 8:15 PM ET",
-   "start_et": "2026-10-12T20:15-04:00",
-   "status": "started",
-   "importance": 10.5,
-   "reasons": [
-    "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
-    "Boolin extreme disagreement with market: Win probability (home): market 0.6149 vs Boolin 0.4974; Spread (LA): market -3.0 vs Boolin 0.1; Total: market 54.5 vs Boolin 47.9. Model confidence: medium.",
-    "odds source error: The odds pull reported 'error'."
-   ],
-   "research_status": "review required",
-   "review_required": true,
-   "validation": "CALIBRATION NEEDED",
-   "disagreement": "extreme disagreement",
-   "alerts": 2,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-NJD-DET",
+   "league": "NHL",
+   "matchup": "NJD @ DET",
+   "start": "Tue Oct 13, 6:00 PM ET",
+   "start_et": "2026-10-13T18:00-04:00",
+   "status": "scheduled",
+   "importance": 5.5,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-BUF-MTL",
+   "league": "NHL",
+   "matchup": "BUF @ MTL",
+   "start": "Tue Oct 13, 6:30 PM ET",
+   "start_et": "2026-10-13T18:30-04:00",
+   "status": "scheduled",
+   "importance": 5.5,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-WSH-CAR",
+   "league": "NHL",
+   "matchup": "WSH @ CAR",
+   "start": "Tue Oct 13, 6:45 PM ET",
+   "start_et": "2026-10-13T18:45-04:00",
+   "status": "scheduled",
+   "importance": 5.5,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-SEA-PHI",
+   "league": "NHL",
+   "matchup": "SEA @ PHI",
+   "start": "Tue Oct 13, 7:00 PM ET",
+   "start_et": "2026-10-13T19:00-04:00",
+   "status": "scheduled",
+   "importance": 5.5,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-PIT-CHI",
+   "league": "NHL",
+   "matchup": "PIT @ CHI",
+   "start": "Tue Oct 13, 8:00 PM ET",
+   "start_et": "2026-10-13T20:00-04:00",
+   "status": "scheduled",
+   "importance": 5.5,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-COL-DAL",
+   "league": "NHL",
+   "matchup": "COL @ DAL",
+   "start": "Tue Oct 13, 8:30 PM ET",
+   "start_et": "2026-10-13T20:30-04:00",
+   "status": "scheduled",
+   "importance": 5.5,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-CGY-ANA",
+   "league": "NHL",
+   "matchup": "CGY @ ANA",
+   "start": "Tue Oct 13, 9:45 PM ET",
+   "start_et": "2026-10-13T21:45-04:00",
+   "status": "scheduled",
+   "importance": 5.5,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-EDM-LAK",
+   "league": "NHL",
+   "matchup": "EDM @ LAK",
+   "start": "Tue Oct 13, 10:30 PM ET",
+   "start_et": "2026-10-13T22:30-04:00",
+   "status": "scheduled",
+   "importance": 5.5,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-FLA-CBJ",
+   "league": "NHL",
+   "matchup": "FLA @ CBJ",
+   "start": "Tue Oct 13, 6:15 PM ET",
+   "start_et": "2026-10-13T18:15-04:00",
+   "status": "scheduled",
+   "importance": 5.25,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-TBL-NYR",
+   "league": "NHL",
+   "matchup": "TBL @ NYR",
+   "start": "Tue Oct 13, 7:15 PM ET",
+   "start_et": "2026-10-13T19:15-04:00",
+   "status": "scheduled",
+   "importance": 5.25,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-STL-OTT",
+   "league": "NHL",
+   "matchup": "STL @ OTT",
+   "start": "Tue Oct 13, 7:30 PM ET",
+   "start_et": "2026-10-13T19:30-04:00",
+   "status": "scheduled",
+   "importance": 5.25,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-VAN-NYI",
+   "league": "NHL",
+   "matchup": "VAN @ NYI",
+   "start": "Tue Oct 13, 7:45 PM ET",
+   "start_et": "2026-10-13T19:45-04:00",
+   "status": "scheduled",
+   "importance": 5.25,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-MIN-WPG",
+   "league": "NHL",
+   "matchup": "MIN @ WPG",
+   "start": "Tue Oct 13, 8:15 PM ET",
+   "start_et": "2026-10-13T20:15-04:00",
+   "status": "scheduled",
+   "importance": 5.25,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-VGK-NSH",
+   "league": "NHL",
+   "matchup": "VGK @ NSH",
+   "start": "Tue Oct 13, 8:45 PM ET",
+   "start_et": "2026-10-13T20:45-04:00",
+   "status": "scheduled",
+   "importance": 5.25,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-TOR-UTA",
+   "league": "NHL",
+   "matchup": "TOR @ UTA",
+   "start": "Tue Oct 13, 9:00 PM ET",
+   "start_et": "2026-10-13T21:00-04:00",
+   "status": "scheduled",
+   "importance": 5.25,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
+  },
+  {
+   "key": "2026-10-13-NHL-BOS-SJS",
+   "league": "NHL",
+   "matchup": "BOS @ SJS",
+   "start": "Tue Oct 13, 11:00 PM ET",
+   "start_et": "2026-10-13T23:00-04:00",
+   "status": "scheduled",
+   "importance": 5.25,
+   "reasons": [
+    "odds source error: The odds pull reported 'error'."
+   ],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": "NOT READY",
+   "disagreement": null,
+   "alerts": 1,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.3
   }
  ],
  "stable": [],
@@ -150,21 +354,19 @@
    "start": "Thu Oct 15, 8:15 PM ET",
    "start_et": "2026-10-15T20:15-04:00",
    "status": "scheduled",
-   "importance": 9.5,
+   "importance": 7.25,
    "reasons": [
-    "3 change(s) in the last 24 h, latest: Boolin projected total 44.9 → 42.2",
     "odds source error: The odds pull reported 'error'.",
-    "Boolin significant disagreement with market: Win probability (home): market 0.4503 vs Boolin 0.5301; Spread (DEN): market 1.5 vs Boolin -1.0. Model confidence: medium.",
-    "Stale odds: Odds are 13 h old; prices may have moved since."
+    "Boolin significant disagreement with market: Win probability (home): market 0.4503 vs Boolin 0.5301; Spread (DEN): market 1.5 vs Boolin -1.0. Model confidence: medium."
    ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": "CALIBRATION NEEDED",
    "disagreement": "significant disagreement",
    "alerts": 1,
-   "changes": 3,
+   "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "oldest_input_min": 1.3
   },
   {
    "key": "2026-10-18-NFL-HOU-JAX",
@@ -173,10 +375,9 @@
    "start": "Sun Oct 18, 9:30 AM ET",
    "start_et": "2026-10-18T09:30-04:00",
    "status": "scheduled",
-   "importance": 5.5,
+   "importance": 4.0,
    "reasons": [
-    "odds source error: The odds pull reported 'error'.",
-    "Stale odds: Odds are 13 h old; prices may have moved since."
+    "odds source error: The odds pull reported 'error'."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -185,7 +386,7 @@
    "alerts": 1,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "oldest_input_min": 1.3
   },
   {
    "key": "2026-10-18-NFL-BAL-CLE",
@@ -194,20 +395,18 @@
    "start": "Sun Oct 18, 1:00 PM ET",
    "start_et": "2026-10-18T13:00-04:00",
    "status": "scheduled",
-   "importance": 6.25,
+   "importance": 4.0,
    "reasons": [
-    "3 change(s) in the last 24 h, latest: Boolin projected total 46.3 → 46.1",
-    "odds source error: The odds pull reported 'error'.",
-    "Stale odds: Odds are 13 h old; prices may have moved since."
+    "odds source error: The odds pull reported 'error'."
    ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": "CALIBRATION NEEDED",
    "disagreement": null,
    "alerts": 1,
-   "changes": 3,
+   "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "oldest_input_min": 1.3
   },
   {
    "key": "2026-10-18-NFL-CAR-PHI",
@@ -216,10 +415,9 @@
    "start": "Sun Oct 18, 1:00 PM ET",
    "start_et": "2026-10-18T13:00-04:00",
    "status": "scheduled",
-   "importance": 5.75,
+   "importance": 4.25,
    "reasons": [
-    "odds source error: The odds pull reported 'error'.",
-    "Stale odds: Odds are 13 h old; prices may have moved since."
+    "odds source error: The odds pull reported 'error'."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -228,7 +426,7 @@
    "alerts": 1,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "oldest_input_min": 1.3
   },
   {
    "key": "2026-10-18-NFL-CHI-ATL",
@@ -237,11 +435,9 @@
    "start": "Sun Oct 18, 1:00 PM ET",
    "start_et": "2026-10-18T13:00-04:00",
    "status": "scheduled",
-   "importance": 7.5,
+   "importance": 5.5,
    "reasons": [
-    "2 change(s) in the last 24 h, latest: Boolin projected spread ATL -0.9 → ATL -0.6",
     "odds source error: The odds pull reported 'error'.",
-    "Stale odds: Odds are 13 h old; prices may have moved since.",
     "Caleb Williams (CHI) status unresolved: Listed Questionable (NFL injury report week 5); final status not confirmed."
    ],
    "research_status": "insufficient information",
@@ -249,9 +445,9 @@
    "validation": "CALIBRATION NEEDED",
    "disagreement": null,
    "alerts": 1,
-   "changes": 2,
+   "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "oldest_input_min": 1.3
   },
   {
    "key": "2026-10-18-NFL-NO-NYG",
@@ -260,10 +456,9 @@
    "start": "Sun Oct 18, 1:00 PM ET",
    "start_et": "2026-10-18T13:00-04:00",
    "status": "scheduled",
-   "importance": 5.5,
+   "importance": 4.0,
    "reasons": [
-    "odds source error: The odds pull reported 'error'.",
-    "Stale odds: Odds are 13 h old; prices may have moved since."
+    "odds source error: The odds pull reported 'error'."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -272,7 +467,7 @@
    "alerts": 1,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "oldest_input_min": 1.3
   },
   {
    "key": "2026-10-18-NFL-NYJ-NE",
@@ -281,10 +476,9 @@
    "start": "Sun Oct 18, 1:00 PM ET",
    "start_et": "2026-10-18T13:00-04:00",
    "status": "scheduled",
-   "importance": 5.5,
+   "importance": 4.0,
    "reasons": [
-    "odds source error: The odds pull reported 'error'.",
-    "Stale odds: Odds are 13 h old; prices may have moved since."
+    "odds source error: The odds pull reported 'error'."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -293,7 +487,7 @@
    "alerts": 1,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "oldest_input_min": 1.3
   },
   {
    "key": "2026-10-18-NFL-PIT-TB",
@@ -302,10 +496,9 @@
    "start": "Sun Oct 18, 1:00 PM ET",
    "start_et": "2026-10-18T13:00-04:00",
    "status": "scheduled",
-   "importance": 5.75,
+   "importance": 4.25,
    "reasons": [
-    "odds source error: The odds pull reported 'error'.",
-    "Stale odds: Odds are 13 h old; prices may have moved since."
+    "odds source error: The odds pull reported 'error'."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -314,7 +507,7 @@
    "alerts": 1,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "oldest_input_min": 1.3
   },
   {
    "key": "2026-10-18-NFL-TEN-IND",
@@ -323,10 +516,9 @@
    "start": "Sun Oct 18, 1:00 PM ET",
    "start_et": "2026-10-18T13:00-04:00",
    "status": "scheduled",
-   "importance": 5.25,
+   "importance": 3.75,
    "reasons": [
-    "odds source error: The odds pull reported 'error'.",
-    "Stale odds: Odds are 13 h old; prices may have moved since."
+    "odds source error: The odds pull reported 'error'."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -335,7 +527,7 @@
    "alerts": 1,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "oldest_input_min": 1.3
   },
   {
    "key": "2026-10-18-NFL-ARI-LA",
@@ -344,11 +536,10 @@
    "start": "Sun Oct 18, 4:05 PM ET",
    "start_et": "2026-10-18T16:05-04:00",
    "status": "scheduled",
-   "importance": 6.0,
+   "importance": 7.5,
    "reasons": [
-    "3 change(s) in the last 24 h, latest: Boolin projected total 45.2 → 46.0",
-    "odds source error: The odds pull reported 'error'.",
-    "Stale odds: Odds are 13 h old; prices may have moved since."
+    "3 change(s) since the last pull, latest: Boolin projected total 46.0 → 47.5",
+    "odds source error: The odds pull reported 'error'."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -356,8 +547,8 @@
    "disagreement": null,
    "alerts": 1,
    "changes": 3,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "changes_since_last_pull": 3,
+   "oldest_input_min": 1.3
   },
   {
    "key": "2026-10-18-NFL-BUF-LV",
@@ -366,19 +557,19 @@
    "start": "Sun Oct 18, 4:25 PM ET",
    "start_et": "2026-10-18T16:25-04:00",
    "status": "scheduled",
-   "importance": 5.5,
+   "importance": 7.75,
    "reasons": [
-    "odds source error: The odds pull reported 'error'.",
-    "Stale odds: Odds are 13 h old; prices may have moved since."
+    "3 change(s) since the last pull, latest: Boolin projected total 49.0 → 50.0",
+    "odds source error: The odds pull reported 'error'."
    ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": "CALIBRATION NEEDED",
    "disagreement": null,
    "alerts": 1,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "changes": 3,
+   "changes_since_last_pull": 3,
+   "oldest_input_min": 1.3
   },
   {
    "key": "2026-10-18-NFL-LAC-KC",
@@ -387,11 +578,9 @@
    "start": "Sun Oct 18, 4:25 PM ET",
    "start_et": "2026-10-18T16:25-04:00",
    "status": "scheduled",
-   "importance": 7.75,
+   "importance": 5.5,
    "reasons": [
-    "3 change(s) in the last 24 h, latest: Boolin projected total 45.1 → 43.9",
     "odds source error: The odds pull reported 'error'.",
-    "Stale odds: Odds are 13 h old; prices may have moved since.",
     "Trey Lance (LAC) status unresolved: Listed Doubtful (NFL injury report week 5); final status not confirmed."
    ],
    "research_status": "insufficient information",
@@ -399,9 +588,9 @@
    "validation": "CALIBRATION NEEDED",
    "disagreement": null,
    "alerts": 1,
-   "changes": 3,
+   "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "oldest_input_min": 1.3
   },
   {
    "key": "2026-10-18-NFL-DAL-GB",
@@ -410,10 +599,9 @@
    "start": "Sun Oct 18, 8:20 PM ET",
    "start_et": "2026-10-18T20:20-04:00",
    "status": "scheduled",
-   "importance": 5.75,
+   "importance": 4.25,
    "reasons": [
-    "odds source error: The odds pull reported 'error'.",
-    "Stale odds: Odds are 13 h old; prices may have moved since."
+    "odds source error: The odds pull reported 'error'."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -422,7 +610,7 @@
    "alerts": 1,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "oldest_input_min": 1.3
   },
   {
    "key": "2026-10-19-NFL-WAS-SF",
@@ -431,10 +619,9 @@
    "start": "Mon Oct 19, 8:15 PM ET",
    "start_et": "2026-10-19T20:15-04:00",
    "status": "scheduled",
-   "importance": 5.5,
+   "importance": 4.0,
    "reasons": [
-    "odds source error: The odds pull reported 'error'.",
-    "Stale odds: Odds are 13 h old; prices may have moved since."
+    "odds source error: The odds pull reported 'error'."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -443,25 +630,23 @@
    "alerts": 1,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 795.1
+   "oldest_input_min": 1.3
   }
  ],
- "review_required": [
-  "2026-10-12-NFL-BUF-LA"
- ],
+ "review_required": [],
  "ranking_note": "Ranked by research importance (flags, changes, model/market split), not by bet confidence. REVIEW REQUIRED = a strong model/market split the validation evidence doesn't back yet.",
  "validation": {
   "NFL": {
    "model_version": "baseline-0.2",
    "validation_version": "validation-1.0",
-   "data_cutoff": "2026-10-11",
+   "data_cutoff": "2026-10-12",
    "calibration_status": "needs_calibration",
    "validation_status": "validated: calibration off",
    "recommendation": "CALIBRATION NEEDED",
    "lean_allowed": false,
-   "sample_size": 1137,
+   "sample_size": 1138,
    "primary_evidence": "nfl_replay holdout (2022+), closing-line benchmark",
-   "market_comparison": "market Brier better (t=5.4)"
+   "market_comparison": "market Brier better (t=5.3)"
   },
   "NHL": {
    "model_version": "baseline-0.1",
@@ -478,12 +663,12 @@
   "MLB": {
    "model_version": "baseline-0.1",
    "validation_version": "validation-1.0",
-   "data_cutoff": "2026-10-11",
+   "data_cutoff": "2026-10-12",
    "calibration_status": "uncalibrated (insufficient sample)",
    "validation_status": "insufficient sample",
    "recommendation": "NOT READY",
    "lean_allowed": false,
-   "sample_size": 9,
+   "sample_size": 10,
    "primary_evidence": "live_archive holdout (games after 2026-10-05)",
    "market_comparison": "too few games to tell (n=8)"
   }
