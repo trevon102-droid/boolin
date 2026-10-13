@@ -9,7 +9,7 @@
   "baseline-0.1",
   "baseline-0.2"
  ],
- "built_at": "2026-10-13T08:57-04:00",
+ "built_at": "2026-10-13T16:18-04:00",
  "data_cutoff": "2026-10-12",
  "filters": {
   "league": null,
@@ -26,8 +26,8 @@
   "nfl_replay": "development = seasons < 2022; holdout = 2022+"
  },
  "warning": "rows span model versions ['baseline-0.1', 'baseline-0.2']: each table is per league and per source, and rows from an older version sit in their own '<source> @<version>' slice",
- "rows": 3795,
- "excluded": 332,
+ "rows": 3799,
+ "excluded": 345,
  "by_source": {
   "NFL nfl_replay": {
    "rows": 3667,
@@ -50,19 +50,19 @@
    "last": "2026-10-04"
   },
   "NFL live_archive": {
-   "rows": 15,
+   "rows": 16,
    "development": 1,
-   "holdout": 14,
+   "holdout": 15,
    "model_versions": [
     "baseline-0.2"
    ],
    "first": "2026-10-05",
-   "last": "2026-10-11"
+   "last": "2026-10-12"
   },
   "NHL live_archive": {
-   "rows": 79,
+   "rows": 81,
    "development": 35,
-   "holdout": 44,
+   "holdout": 46,
    "model_versions": [
     "baseline-0.1"
    ],
@@ -70,9 +70,9 @@
    "last": "2026-10-12"
   },
   "MLB live_archive": {
-   "rows": 19,
+   "rows": 20,
    "development": 9,
-   "holdout": 10,
+   "holdout": 11,
    "model_versions": [
     "baseline-0.1"
    ],
@@ -83,11 +83,11 @@
  "excluded_by_reason": {
   "nfl_replay: no current-season plays before this week for a team (the live model has no projection either)": 241,
   "live_archive: no Boolin model for this league": 81,
-  "live_archive: no confirmed final score on file": 10
+  "live_archive: no confirmed final score on file": 23
  },
  "replay": {
   "version": "nfl-replay-1",
-  "built_at_et": "2026-10-13T08:57-04:00",
+  "built_at_et": "2026-10-13T16:18-04:00",
   "status": {
    "2012": "kept",
    "2013": "kept",
@@ -108,9 +108,9 @@
   "present": true
  },
  "replay_fidelity": {
-  "n_overlap": 30,
-  "identical": 21,
-  "mean_abs_prob_diff": 0.0081,
+  "n_overlap": 31,
+  "identical": 22,
+  "mean_abs_prob_diff": 0.0079,
   "max_abs_prob_diff": 0.0541,
   "note": "Live card vs replay for the same game, same model version. Gaps mean the live pull saw different inputs than the replay (cause not confirmed per game)."
  },
@@ -129,26 +129,26 @@
    "recommendation": "CALIBRATION NEEDED"
   },
   "NHL": {
-   "sample_size": 44,
-   "brier": 0.2212,
+   "sample_size": 46,
+   "brier": 0.2232,
    "market_brier": 0.2304,
-   "log_loss": 0.6335,
-   "calibration_error": 0.1767,
+   "log_loss": 0.6374,
+   "calibration_error": 0.1705,
    "market_comparison": "too few games to tell (n=27)",
-   "spread_mae": 2.066,
+   "spread_mae": 2.089,
    "confidence_validated": null,
    "calibration_status": "uncalibrated (insufficient sample)",
    "validation_status": "insufficient sample",
    "recommendation": "NOT READY"
   },
   "MLB": {
-   "sample_size": 10,
-   "brier": 0.2538,
+   "sample_size": 11,
+   "brier": 0.2571,
    "market_brier": 0.2446,
-   "log_loss": 0.7008,
-   "calibration_error": 0.031,
+   "log_loss": 0.7075,
+   "calibration_error": 0.0772,
    "market_comparison": "too few games to tell (n=8)",
-   "spread_mae": 2.507,
+   "spread_mae": 2.67,
    "confidence_validated": null,
    "calibration_status": "uncalibrated (insufficient sample)",
    "validation_status": "insufficient sample",
