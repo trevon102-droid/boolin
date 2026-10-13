@@ -1,12 +1,12 @@
 {
- "pulled_at_et": "2026-10-12T18:11-04:00",
+ "pulled_at_et": "2026-10-12T22:11-04:00",
  "date": "2026-10-12",
  "season": 2026,
  "games": [
   {
    "game_pk": 849812,
    "start_et": "5:00 PM ET",
-   "status": "In Progress",
+   "status": "Final",
    "game_type": "L",
    "series": "NL Championship Series",
    "series_game": 2,
@@ -24,7 +24,7 @@
     "abbr": "LAD",
     "record": {
      "wins": 0,
-     "losses": 1,
+     "losses": 2,
      "ties": 0,
      "pct": ".000"
     },
@@ -92,10 +92,10 @@
        "opp": "Milwaukee Brewers",
        "outs": 8,
        "k": 1,
-       "bb": 1,
-       "h": 3,
-       "er": 1,
-       "pitches": 61
+       "bb": 2,
+       "h": 4,
+       "er": 3,
+       "pitches": 75
       }
      ],
      "starts_counted": 30,
@@ -217,7 +217,7 @@
     "name": "Milwaukee Brewers",
     "abbr": "MIL",
     "record": {
-     "wins": 1,
+     "wins": 2,
      "losses": 0,
      "ties": 0,
      "pct": "1.000"
@@ -284,12 +284,12 @@
       {
        "date": "2026-10-12",
        "opp": "Los Angeles Dodgers",
-       "outs": 9,
+       "outs": 12,
        "k": 2,
        "bb": 2,
-       "h": 2,
+       "h": 3,
        "er": 2,
-       "pitches": 51
+       "pitches": 64
       }
      ],
      "starts_counted": 20,
@@ -305,7 +305,7 @@
       "10": 0.0
      },
      "outs_dist": {
-      "12": 0.9,
+      "12": 0.95,
       "15": 0.9,
       "16": 0.45,
       "17": 0.4,
@@ -324,7 +324,7 @@
       "10": 0.0
      },
      "outs_dist_last10": {
-      "12": 0.9,
+      "12": 1.0,
       "15": 0.9,
       "16": 0.5,
       "17": 0.5,
@@ -338,9 +338,9 @@
       "last5": 4.6
      },
      "outs_mean": {
-      "season": 15.95,
-      "last10": 16.9,
-      "last5": 13.8
+      "season": 16.1,
+      "last10": 17.2,
+      "last5": 14.4
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
@@ -417,7 +417,7 @@
   {
    "game_pk": 849820,
    "start_et": "8:00 PM ET",
-   "status": "Pre-Game",
+   "status": "In Progress",
    "game_type": "L",
    "series": "AL Championship Series",
    "series_game": 1,
@@ -459,16 +459,6 @@
      },
      "last5": [
       {
-       "date": "2026-08-29",
-       "opp": "Kansas City Royals",
-       "outs": 15,
-       "k": 4,
-       "bb": 1,
-       "h": 4,
-       "er": 2,
-       "pitches": 82
-      },
-      {
        "date": "2026-09-04",
        "opp": "Detroit Tigers",
        "outs": 18,
@@ -507,28 +497,38 @@
        "h": 10,
        "er": 1,
        "pitches": 83
+      },
+      {
+       "date": "2026-10-12",
+       "opp": "Tampa Bay Rays",
+       "outs": 12,
+       "k": 3,
+       "bb": 0,
+       "h": 5,
+       "er": 2,
+       "pitches": 63
       }
      ],
-     "starts_counted": 31,
+     "starts_counted": 32,
      "sample_quality": "ok",
      "k_dist": {
-      "3": 0.871,
-      "4": 0.71,
-      "5": 0.581,
-      "6": 0.419,
-      "7": 0.258,
-      "8": 0.161,
-      "9": 0.129,
+      "3": 0.875,
+      "4": 0.688,
+      "5": 0.562,
+      "6": 0.406,
+      "7": 0.25,
+      "8": 0.156,
+      "9": 0.125,
       "10": 0.0
      },
      "outs_dist": {
-      "12": 0.968,
-      "15": 0.871,
-      "16": 0.581,
-      "17": 0.484,
-      "18": 0.484,
-      "19": 0.226,
-      "20": 0.226
+      "12": 0.969,
+      "15": 0.844,
+      "16": 0.562,
+      "17": 0.469,
+      "18": 0.469,
+      "19": 0.219,
+      "20": 0.219
      },
      "k_dist_last10": {
       "3": 1.0,
@@ -542,22 +542,22 @@
      },
      "outs_dist_last10": {
       "12": 0.9,
-      "15": 0.7,
-      "16": 0.4,
+      "15": 0.6,
+      "16": 0.3,
       "17": 0.3,
       "18": 0.3,
       "19": 0.0,
       "20": 0.0
      },
      "k_mean": {
-      "season": 5.1,
+      "season": 5.03,
       "last10": 4.5,
-      "last5": 4.6
+      "last5": 4.4
      },
      "outs_mean": {
-      "season": 16.71,
-      "last10": 14.6,
-      "last5": 14.0
+      "season": 16.56,
+      "last10": 14.2,
+      "last5": 13.4
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
@@ -653,16 +653,6 @@
      },
      "last5": [
       {
-       "date": "2026-09-05",
-       "opp": "Texas Rangers",
-       "outs": 21,
-       "k": 7,
-       "bb": 0,
-       "h": 3,
-       "er": 1,
-       "pitches": 97
-      },
-      {
        "date": "2026-09-11",
        "opp": "Houston Astros",
        "outs": 21,
@@ -701,28 +691,38 @@
        "h": 1,
        "er": 0,
        "pitches": 101
+      },
+      {
+       "date": "2026-10-12",
+       "opp": "Cleveland Guardians",
+       "outs": 18,
+       "k": 7,
+       "bb": 0,
+       "h": 8,
+       "er": 2,
+       "pitches": 91
       }
      ],
-     "starts_counted": 31,
+     "starts_counted": 32,
      "sample_quality": "ok",
      "k_dist": {
-      "3": 0.871,
-      "4": 0.774,
-      "5": 0.71,
-      "6": 0.516,
-      "7": 0.355,
-      "8": 0.258,
-      "9": 0.194,
-      "10": 0.129
+      "3": 0.875,
+      "4": 0.781,
+      "5": 0.719,
+      "6": 0.531,
+      "7": 0.375,
+      "8": 0.25,
+      "9": 0.188,
+      "10": 0.125
      },
      "outs_dist": {
-      "12": 0.935,
-      "15": 0.903,
-      "16": 0.645,
-      "17": 0.613,
-      "18": 0.613,
-      "19": 0.323,
-      "20": 0.323
+      "12": 0.938,
+      "15": 0.906,
+      "16": 0.656,
+      "17": 0.625,
+      "18": 0.625,
+      "19": 0.312,
+      "20": 0.312
      },
      "k_dist_last10": {
       "3": 1.0,
@@ -730,7 +730,7 @@
       "5": 0.7,
       "6": 0.5,
       "7": 0.4,
-      "8": 0.3,
+      "8": 0.2,
       "9": 0.2,
       "10": 0.2
      },
@@ -740,18 +740,18 @@
       "16": 0.7,
       "17": 0.7,
       "18": 0.7,
-      "19": 0.5,
-      "20": 0.5
+      "19": 0.4,
+      "20": 0.4
      },
      "k_mean": {
-      "season": 5.94,
-      "last10": 6.2,
+      "season": 5.97,
+      "last10": 6.1,
       "last5": 7.0
      },
      "outs_mean": {
-      "season": 17.42,
-      "last10": 18.8,
-      "last5": 20.2
+      "season": 17.44,
+      "last10": 18.5,
+      "last5": 19.6
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },

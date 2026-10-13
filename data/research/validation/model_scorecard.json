@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-10-11",
+ "data_cutoff": "2026-10-12",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -75,31 +75,31 @@
  "NHL": {
   "model_version": "baseline-0.1",
   "validation_version": "validation-1.0",
-  "data_cutoff": "2026-10-11",
+  "data_cutoff": "2026-10-12",
   "primary_evidence": "live_archive holdout (games after 2026-10-05)",
-  "sample_size": 43,
+  "sample_size": 44,
   "development_size": 35,
-  "brier": 0.2211,
+  "brier": 0.2212,
   "market_brier": 0.2304,
-  "log_loss": 0.6331,
+  "log_loss": 0.6335,
   "market_log_loss": 0.6525,
-  "accuracy": 0.6047,
-  "calibration_error": 0.1919,
-  "favorite_overconfidence": 0.0129,
+  "accuracy": 0.6136,
+  "calibration_error": 0.1767,
+  "favorite_overconfidence": 0.0018,
   "market_comparison": "too few games to tell (n=27)",
-  "spread_mae": 2.071,
+  "spread_mae": 2.066,
   "market_spread_mae": null,
   "confidence_validated": null,
   "calibration_status": "uncalibrated (insufficient sample)",
   "validation_status": "insufficient sample",
   "recommendation": "NOT READY",
   "reasons": [
-   "holdout sample 43 < 150: we don't know yet"
+   "holdout sample 44 < 150: we don't know yet"
   ],
   "lean_allowed": false,
   "live_archive": {
    "n": 62,
-   "holdout": 43,
+   "holdout": 44,
    "older_version_rows": 0,
    "boolin": {
     "brier": 0.2269,
