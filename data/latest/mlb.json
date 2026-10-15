@@ -1,19 +1,23 @@
 {
- "pulled_at_et": "2026-10-15T08:55-04:00",
+ "pulled_at_et": "2026-10-15T14:25-04:00",
  "date": "2026-10-15",
  "season": 2026,
  "games": [
   {
    "game_pk": 849818,
    "start_et": "1:00 PM ET",
-   "status": "Scheduled",
+   "status": "In Progress",
    "game_type": "L",
    "series": "AL Championship Series",
    "series_game": 3,
    "series_status": "AL Championship Series",
    "venue": "Progressive Field",
-   "weather": null,
-   "hp_umpire": null,
+   "weather": {
+    "condition": "Sunny",
+    "temp": "62",
+    "wind": "7 mph, Out To CF"
+   },
+   "hp_umpire": "Bill Miller",
    "away": {
     "id": 139,
     "name": "Tampa Bay Rays",
@@ -43,16 +47,6 @@
       "hr9": "1.20"
      },
      "last5": [
-      {
-       "date": "2026-09-02",
-       "opp": "New York Mets",
-       "outs": 8,
-       "k": 1,
-       "bb": 2,
-       "h": 7,
-       "er": 6,
-       "pitches": 63
-      },
       {
        "date": "2026-09-09",
        "opp": "Atlanta Braves",
@@ -92,31 +86,41 @@
        "h": 2,
        "er": 0,
        "pitches": 52
+      },
+      {
+       "date": "2026-10-15",
+       "opp": "Cleveland Guardians",
+       "outs": 12,
+       "k": 2,
+       "bb": 2,
+       "h": 2,
+       "er": 1,
+       "pitches": 54
       }
      ],
-     "starts_counted": 23,
+     "starts_counted": 24,
      "sample_quality": "ok",
      "k_dist": {
-      "3": 0.739,
-      "4": 0.609,
-      "5": 0.565,
-      "6": 0.304,
-      "7": 0.217,
-      "8": 0.13,
-      "9": 0.087,
-      "10": 0.087
+      "3": 0.708,
+      "4": 0.583,
+      "5": 0.542,
+      "6": 0.292,
+      "7": 0.208,
+      "8": 0.125,
+      "9": 0.083,
+      "10": 0.083
      },
      "outs_dist": {
-      "12": 0.783,
-      "15": 0.696,
-      "16": 0.13,
-      "17": 0.13,
-      "18": 0.087,
+      "12": 0.792,
+      "15": 0.667,
+      "16": 0.125,
+      "17": 0.125,
+      "18": 0.083,
       "19": 0.0,
       "20": 0.0
      },
      "k_dist_last10": {
-      "3": 0.7,
+      "3": 0.6,
       "4": 0.6,
       "5": 0.6,
       "6": 0.4,
@@ -127,7 +131,7 @@
      },
      "outs_dist_last10": {
       "12": 0.8,
-      "15": 0.8,
+      "15": 0.7,
       "16": 0.2,
       "17": 0.2,
       "18": 0.1,
@@ -135,19 +139,29 @@
       "20": 0.0
      },
      "k_mean": {
-      "season": 4.61,
-      "last10": 4.8,
-      "last5": 3.2
+      "season": 4.5,
+      "last10": 4.7,
+      "last5": 3.4
      },
      "outs_mean": {
-      "season": 13.48,
-      "last10": 14.2,
-      "last5": 12.4
+      "season": 13.42,
+      "last10": 13.9,
+      "last5": 13.2
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "lineup": [
+     "Yandy Díaz",
+     "Jonathan Aranda",
+     "Junior Caminero",
+     "Victor Mesa Jr.",
+     "Chandler Simpson",
+     "Liam Hicks",
+     "Jonny DeLuca",
+     "Richie Palacios",
+     "Taylor Walls"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.1805,
@@ -251,16 +265,6 @@
      },
      "last5": [
       {
-       "date": "2026-09-14",
-       "opp": "Chicago White Sox",
-       "outs": 15,
-       "k": 7,
-       "bb": 3,
-       "h": 4,
-       "er": 2,
-       "pitches": 113
-      },
-      {
        "date": "2026-09-20",
        "opp": "Athletics",
        "outs": 21,
@@ -299,42 +303,52 @@
        "h": 1,
        "er": 0,
        "pitches": 94
+      },
+      {
+       "date": "2026-10-15",
+       "opp": "Tampa Bay Rays",
+       "outs": 15,
+       "k": 9,
+       "bb": 1,
+       "h": 2,
+       "er": 2,
+       "pitches": 70
       }
      ],
-     "starts_counted": 34,
+     "starts_counted": 35,
      "sample_quality": "ok",
      "k_dist": {
       "3": 1.0,
       "4": 0.971,
-      "5": 0.824,
-      "6": 0.765,
-      "7": 0.647,
-      "8": 0.5,
-      "9": 0.441,
-      "10": 0.382
+      "5": 0.829,
+      "6": 0.771,
+      "7": 0.657,
+      "8": 0.514,
+      "9": 0.457,
+      "10": 0.371
      },
      "outs_dist": {
-      "12": 0.941,
-      "15": 0.882,
-      "16": 0.647,
-      "17": 0.618,
-      "18": 0.471,
-      "19": 0.294,
-      "20": 0.294
+      "12": 0.943,
+      "15": 0.886,
+      "16": 0.629,
+      "17": 0.6,
+      "18": 0.457,
+      "19": 0.286,
+      "20": 0.286
      },
      "k_dist_last10": {
       "3": 1.0,
       "4": 0.9,
       "5": 0.8,
-      "6": 0.7,
-      "7": 0.7,
-      "8": 0.6,
-      "9": 0.6,
+      "6": 0.8,
+      "7": 0.8,
+      "8": 0.7,
+      "9": 0.7,
       "10": 0.5
      },
      "outs_dist_last10": {
       "12": 0.8,
-      "15": 0.7,
+      "15": 0.8,
       "16": 0.5,
       "17": 0.5,
       "18": 0.3,
@@ -342,19 +356,29 @@
       "20": 0.2
      },
      "k_mean": {
-      "season": 7.97,
-      "last10": 8.6,
-      "last5": 8.6
+      "season": 8.0,
+      "last10": 9.0,
+      "last5": 9.0
      },
      "outs_mean": {
-      "season": 17.21,
-      "last10": 15.1,
+      "season": 17.14,
+      "last10": 15.3,
       "last5": 15.6
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "lineup": [
+     "Steven Kwan",
+     "José Ramírez",
+     "Chase DeLauter",
+     "Jo Adell",
+     "Nathaniel Lowe",
+     "Travis Bazzana",
+     "Patrick Bailey",
+     "Petey Halpin",
+     "Brayan Rocchio"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2125,
@@ -462,7 +486,128 @@
      "ties": 0,
      "pct": "1.000"
     },
-    "probable_status": "TBD: no probable announced",
+    "probable_status": "announced (MLB probable; openers/bulk relievers are not flagged)",
+    "probable": {
+     "id": 675660,
+     "name": "Shane Drohan",
+     "throws": "L",
+     "season": {
+      "gs": 19,
+      "ip": "124.2",
+      "era": "4.19",
+      "whip": "1.32",
+      "k": 125,
+      "bb": 44,
+      "bf": 528,
+      "k_pct": 0.2367,
+      "bb_pct": 0.0833,
+      "k9": "9.02",
+      "hr9": "1.01"
+     },
+     "last5": [
+      {
+       "date": "2026-08-23",
+       "opp": "Atlanta Braves",
+       "outs": 15,
+       "k": 5,
+       "bb": 3,
+       "h": 8,
+       "er": 2,
+       "pitches": 83
+      },
+      {
+       "date": "2026-08-29",
+       "opp": "Texas Rangers",
+       "outs": 15,
+       "k": 6,
+       "bb": 1,
+       "h": 6,
+       "er": 1,
+       "pitches": 99
+      },
+      {
+       "date": "2026-09-04",
+       "opp": "Cincinnati Reds",
+       "outs": 12,
+       "k": 5,
+       "bb": 2,
+       "h": 5,
+       "er": 6,
+       "pitches": 78
+      },
+      {
+       "date": "2026-09-12",
+       "opp": "Cincinnati Reds",
+       "outs": 11,
+       "k": 4,
+       "bb": 2,
+       "h": 5,
+       "er": 5,
+       "pitches": 60
+      },
+      {
+       "date": "2026-09-24",
+       "opp": "Philadelphia Phillies",
+       "outs": 8,
+       "k": 2,
+       "bb": 2,
+       "h": 3,
+       "er": 1,
+       "pitches": 47
+      }
+     ],
+     "starts_counted": 19,
+     "sample_quality": "ok",
+     "k_dist": {
+      "3": 0.842,
+      "4": 0.789,
+      "5": 0.632,
+      "6": 0.368,
+      "7": 0.211,
+      "8": 0.053,
+      "9": 0.053,
+      "10": 0.0
+     },
+     "outs_dist": {
+      "12": 0.842,
+      "15": 0.684,
+      "16": 0.421,
+      "17": 0.368,
+      "18": 0.316,
+      "19": 0.105,
+      "20": 0.0
+     },
+     "k_dist_last10": {
+      "3": 0.9,
+      "4": 0.9,
+      "5": 0.7,
+      "6": 0.4,
+      "7": 0.2,
+      "8": 0.1,
+      "9": 0.1,
+      "10": 0.0
+     },
+     "outs_dist_last10": {
+      "12": 0.8,
+      "15": 0.7,
+      "16": 0.4,
+      "17": 0.3,
+      "18": 0.3,
+      "19": 0.0,
+      "20": 0.0
+     },
+     "k_mean": {
+      "season": 4.95,
+      "last10": 5.3,
+      "last5": 4.4
+     },
+     "outs_mean": {
+      "season": 14.84,
+      "last10": 14.6,
+      "last5": 12.2
+     },
+     "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
+    },
     "lineup": null,
     "lineup_status": "not posted yet",
     "bats": {
@@ -758,7 +903,7 @@
      "unclassified_games": [],
      "classification_source": "MLB boxscore gamesStarted (not list order)"
     },
-    "k_pct_vs_opp_starter_hand": null
+    "k_pct_vs_opp_starter_hand": 0.2003
    }
   }
  ],
