@@ -1,167 +1,470 @@
 {
- "pulled_at_et": "2026-10-14T19:21-04:00",
- "date": "2026-10-14",
+ "pulled_at_et": "2026-10-15T08:55-04:00",
+ "date": "2026-10-15",
  "season": 2026,
  "games": [
   {
-   "game_pk": 849811,
+   "game_pk": 849818,
+   "start_et": "1:00 PM ET",
+   "status": "Scheduled",
+   "game_type": "L",
+   "series": "AL Championship Series",
+   "series_game": 3,
+   "series_status": "AL Championship Series",
+   "venue": "Progressive Field",
+   "weather": null,
+   "hp_umpire": null,
+   "away": {
+    "id": 139,
+    "name": "Tampa Bay Rays",
+    "abbr": "TB",
+    "record": {
+     "wins": 1,
+     "losses": 1,
+     "ties": 0,
+     "pct": ".500"
+    },
+    "probable_status": "announced (MLB probable; openers/bulk relievers are not flagged)",
+    "probable": {
+     "id": 643377,
+     "name": "Griffin Jax",
+     "throws": "R",
+     "season": {
+      "gs": 23,
+      "ip": "112.1",
+      "era": "3.53",
+      "whip": "1.18",
+      "k": 116,
+      "bb": 35,
+      "bf": 459,
+      "k_pct": 0.2527,
+      "bb_pct": 0.0763,
+      "k9": "9.29",
+      "hr9": "1.20"
+     },
+     "last5": [
+      {
+       "date": "2026-09-02",
+       "opp": "New York Mets",
+       "outs": 8,
+       "k": 1,
+       "bb": 2,
+       "h": 7,
+       "er": 6,
+       "pitches": 63
+      },
+      {
+       "date": "2026-09-09",
+       "opp": "Atlanta Braves",
+       "outs": 15,
+       "k": 2,
+       "bb": 1,
+       "h": 2,
+       "er": 1,
+       "pitches": 66
+      },
+      {
+       "date": "2026-09-15",
+       "opp": "Athletics",
+       "outs": 15,
+       "k": 7,
+       "bb": 0,
+       "h": 2,
+       "er": 0,
+       "pitches": 67
+      },
+      {
+       "date": "2026-09-20",
+       "opp": "Boston Red Sox",
+       "outs": 15,
+       "k": 5,
+       "bb": 2,
+       "h": 3,
+       "er": 0,
+       "pitches": 74
+      },
+      {
+       "date": "2026-09-26",
+       "opp": "Philadelphia Phillies",
+       "outs": 9,
+       "k": 1,
+       "bb": 0,
+       "h": 2,
+       "er": 0,
+       "pitches": 52
+      }
+     ],
+     "starts_counted": 23,
+     "sample_quality": "ok",
+     "k_dist": {
+      "3": 0.739,
+      "4": 0.609,
+      "5": 0.565,
+      "6": 0.304,
+      "7": 0.217,
+      "8": 0.13,
+      "9": 0.087,
+      "10": 0.087
+     },
+     "outs_dist": {
+      "12": 0.783,
+      "15": 0.696,
+      "16": 0.13,
+      "17": 0.13,
+      "18": 0.087,
+      "19": 0.0,
+      "20": 0.0
+     },
+     "k_dist_last10": {
+      "3": 0.7,
+      "4": 0.6,
+      "5": 0.6,
+      "6": 0.4,
+      "7": 0.3,
+      "8": 0.2,
+      "9": 0.1,
+      "10": 0.1
+     },
+     "outs_dist_last10": {
+      "12": 0.8,
+      "15": 0.8,
+      "16": 0.2,
+      "17": 0.2,
+      "18": 0.1,
+      "19": 0.0,
+      "20": 0.0
+     },
+     "k_mean": {
+      "season": 4.61,
+      "last10": 4.8,
+      "last5": 3.2
+     },
+     "outs_mean": {
+      "season": 13.48,
+      "last10": 14.2,
+      "last5": 12.4
+     },
+     "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
+    },
+    "lineup": null,
+    "lineup_status": "not posted yet",
+    "bats": {
+     "vs_LHP": {
+      "k_pct": 0.1805,
+      "bb_pct": 0.0791,
+      "ops": ".679",
+      "avg": ".248",
+      "pa": 1972
+     },
+     "vs_RHP": {
+      "k_pct": 0.1909,
+      "bb_pct": 0.0866,
+      "ops": ".752",
+      "avg": ".263",
+      "pa": 4134
+     }
+    },
+    "bullpen": {
+     "reliever_pitches_last3": 95,
+     "likely_limited": [],
+     "detail": {
+      "Cam Booser": {
+       "days": [
+        "2026-10-12"
+       ],
+       "pitches": 8,
+       "back_to_back": false
+      },
+      "Tyler Wells": {
+       "days": [
+        "2026-10-12"
+       ],
+       "pitches": 6,
+       "back_to_back": false
+      },
+      "Ian Seymour": {
+       "days": [
+        "2026-10-12",
+        "2026-10-13"
+       ],
+       "pitches": 24,
+       "back_to_back": false
+      },
+      "Cole Sulser": {
+       "days": [
+        "2026-10-12"
+       ],
+       "pitches": 27,
+       "back_to_back": false
+      },
+      "Kevin Kelly": {
+       "days": [
+        "2026-10-12",
+        "2026-10-13"
+       ],
+       "pitches": 22,
+       "back_to_back": false
+      },
+      "Bryan Baker": {
+       "days": [
+        "2026-10-13"
+       ],
+       "pitches": 8,
+       "back_to_back": false
+      }
+     },
+     "classification": "confirmed",
+     "games_considered": 2,
+     "games_classified": 2,
+     "unclassified_games": [],
+     "classification_source": "MLB boxscore gamesStarted (not list order)"
+    },
+    "k_pct_vs_opp_starter_hand": 0.1909
+   },
+   "home": {
+    "id": 114,
+    "name": "Cleveland Guardians",
+    "abbr": "CLE",
+    "record": {
+     "wins": 1,
+     "losses": 1,
+     "ties": 0,
+     "pct": ".500"
+    },
+    "probable_status": "announced (MLB probable; openers/bulk relievers are not flagged)",
+    "probable": {
+     "id": 668909,
+     "name": "Gavin Williams",
+     "throws": "R",
+     "season": {
+      "gs": 32,
+      "ip": "184.1",
+      "era": "3.76",
+      "whip": "1.11",
+      "k": 248,
+      "bb": 61,
+      "bf": 746,
+      "k_pct": 0.3324,
+      "bb_pct": 0.0818,
+      "k9": "12.11",
+      "hr9": "1.37"
+     },
+     "last5": [
+      {
+       "date": "2026-09-14",
+       "opp": "Chicago White Sox",
+       "outs": 15,
+       "k": 7,
+       "bb": 3,
+       "h": 4,
+       "er": 2,
+       "pitches": 113
+      },
+      {
+       "date": "2026-09-20",
+       "opp": "Athletics",
+       "outs": 21,
+       "k": 9,
+       "bb": 1,
+       "h": 3,
+       "er": 0,
+       "pitches": 89
+      },
+      {
+       "date": "2026-09-25",
+       "opp": "Kansas City Royals",
+       "outs": 10,
+       "k": 4,
+       "bb": 4,
+       "h": 5,
+       "er": 4,
+       "pitches": 74
+      },
+      {
+       "date": "2026-10-05",
+       "opp": "Chicago White Sox",
+       "outs": 15,
+       "k": 11,
+       "bb": 3,
+       "h": 4,
+       "er": 2,
+       "pitches": 98
+      },
+      {
+       "date": "2026-10-10",
+       "opp": "Chicago White Sox",
+       "outs": 17,
+       "k": 12,
+       "bb": 2,
+       "h": 1,
+       "er": 0,
+       "pitches": 94
+      }
+     ],
+     "starts_counted": 34,
+     "sample_quality": "ok",
+     "k_dist": {
+      "3": 1.0,
+      "4": 0.971,
+      "5": 0.824,
+      "6": 0.765,
+      "7": 0.647,
+      "8": 0.5,
+      "9": 0.441,
+      "10": 0.382
+     },
+     "outs_dist": {
+      "12": 0.941,
+      "15": 0.882,
+      "16": 0.647,
+      "17": 0.618,
+      "18": 0.471,
+      "19": 0.294,
+      "20": 0.294
+     },
+     "k_dist_last10": {
+      "3": 1.0,
+      "4": 0.9,
+      "5": 0.8,
+      "6": 0.7,
+      "7": 0.7,
+      "8": 0.6,
+      "9": 0.6,
+      "10": 0.5
+     },
+     "outs_dist_last10": {
+      "12": 0.8,
+      "15": 0.7,
+      "16": 0.5,
+      "17": 0.5,
+      "18": 0.3,
+      "19": 0.2,
+      "20": 0.2
+     },
+     "k_mean": {
+      "season": 7.97,
+      "last10": 8.6,
+      "last5": 8.6
+     },
+     "outs_mean": {
+      "season": 17.21,
+      "last10": 15.1,
+      "last5": 15.6
+     },
+     "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
+    },
+    "lineup": null,
+    "lineup_status": "not posted yet",
+    "bats": {
+     "vs_LHP": {
+      "k_pct": 0.2125,
+      "bb_pct": 0.0991,
+      "ops": ".675",
+      "avg": ".230",
+      "pa": 1948
+     },
+     "vs_RHP": {
+      "k_pct": 0.2056,
+      "bb_pct": 0.0914,
+      "ops": ".706",
+      "avg": ".242",
+      "pa": 4169
+     }
+    },
+    "bullpen": {
+     "reliever_pitches_last3": 106,
+     "likely_limited": [],
+     "detail": {
+      "Daniel Espino": {
+       "days": [
+        "2026-10-12"
+       ],
+       "pitches": 14,
+       "back_to_back": false
+      },
+      "Joey Cantillo": {
+       "days": [
+        "2026-10-12"
+       ],
+       "pitches": 17,
+       "back_to_back": false
+      },
+      "Hunter Gaddis": {
+       "days": [
+        "2026-10-12"
+       ],
+       "pitches": 13,
+       "back_to_back": false
+      },
+      "Erik Sabrowski": {
+       "days": [
+        "2026-10-12"
+       ],
+       "pitches": 14,
+       "back_to_back": false
+      },
+      "Cade Smith": {
+       "days": [
+        "2026-10-12"
+       ],
+       "pitches": 6,
+       "back_to_back": false
+      },
+      "Shawn Armstrong": {
+       "days": [
+        "2026-10-13"
+       ],
+       "pitches": 20,
+       "back_to_back": false
+      },
+      "Tim Herrin": {
+       "days": [
+        "2026-10-13"
+       ],
+       "pitches": 6,
+       "back_to_back": false
+      },
+      "Slade Cecconi": {
+       "days": [
+        "2026-10-13"
+       ],
+       "pitches": 16,
+       "back_to_back": false
+      }
+     },
+     "classification": "confirmed",
+     "games_considered": 2,
+     "games_classified": 2,
+     "unclassified_games": [],
+     "classification_source": "MLB boxscore gamesStarted (not list order)"
+    },
+    "k_pct_vs_opp_starter_hand": 0.2056
+   }
+  },
+  {
+   "game_pk": 849810,
    "start_et": "8:00 PM ET",
-   "status": "Pre-Game",
+   "status": "Scheduled",
    "game_type": "L",
    "series": "NL Championship Series",
-   "series_game": 3,
+   "series_game": 4,
    "series_status": "NL Championship Series",
    "venue": "UNIQLO Field at Dodger Stadium",
-   "weather": {
-    "condition": "Clear",
-    "temp": "84",
-    "wind": "1 mph, Varies"
-   },
-   "hp_umpire": "Mark Wegner",
+   "weather": null,
+   "hp_umpire": null,
    "away": {
     "id": 158,
     "name": "Milwaukee Brewers",
     "abbr": "MIL",
     "record": {
-     "wins": 2,
+     "wins": 3,
      "losses": 0,
      "ties": 0,
      "pct": "1.000"
     },
-    "probable_status": "announced (MLB probable; openers/bulk relievers are not flagged)",
-    "probable": {
-     "id": 688107,
-     "name": "Robert Gasser",
-     "throws": "L",
-     "season": {
-      "gs": 20,
-      "ip": "109.1",
-      "era": "3.87",
-      "whip": "1.19",
-      "k": 103,
-      "bb": 35,
-      "bf": 463,
-      "k_pct": 0.2225,
-      "bb_pct": 0.0756,
-      "k9": "8.48",
-      "hr9": "1.23"
-     },
-     "last5": [
-      {
-       "date": "2026-09-07",
-       "opp": "Chicago Cubs",
-       "outs": 14,
-       "k": 5,
-       "bb": 2,
-       "h": 3,
-       "er": 1,
-       "pitches": 83
-      },
-      {
-       "date": "2026-09-13",
-       "opp": "Cincinnati Reds",
-       "outs": 15,
-       "k": 5,
-       "bb": 2,
-       "h": 3,
-       "er": 1,
-       "pitches": 89
-      },
-      {
-       "date": "2026-09-19",
-       "opp": "Baltimore Orioles",
-       "outs": 21,
-       "k": 2,
-       "bb": 3,
-       "h": 3,
-       "er": 0,
-       "pitches": 107
-      },
-      {
-       "date": "2026-09-25",
-       "opp": "St. Louis Cardinals",
-       "outs": 18,
-       "k": 9,
-       "bb": 1,
-       "h": 1,
-       "er": 1,
-       "pitches": 87
-      },
-      {
-       "date": "2026-10-07",
-       "opp": "San Diego Padres",
-       "outs": 12,
-       "k": 3,
-       "bb": 1,
-       "h": 3,
-       "er": 1,
-       "pitches": 56
-      }
-     ],
-     "starts_counted": 21,
-     "sample_quality": "ok",
-     "k_dist": {
-      "3": 0.952,
-      "4": 0.762,
-      "5": 0.524,
-      "6": 0.238,
-      "7": 0.19,
-      "8": 0.048,
-      "9": 0.048,
-      "10": 0.0
-     },
-     "outs_dist": {
-      "12": 0.905,
-      "15": 0.619,
-      "16": 0.381,
-      "17": 0.381,
-      "18": 0.286,
-      "19": 0.143,
-      "20": 0.095
-     },
-     "k_dist_last10": {
-      "3": 0.9,
-      "4": 0.7,
-      "5": 0.5,
-      "6": 0.3,
-      "7": 0.2,
-      "8": 0.1,
-      "9": 0.1,
-      "10": 0.0
-     },
-     "outs_dist_last10": {
-      "12": 0.9,
-      "15": 0.5,
-      "16": 0.3,
-      "17": 0.3,
-      "18": 0.3,
-      "19": 0.2,
-      "20": 0.1
-     },
-     "k_mean": {
-      "season": 4.76,
-      "last10": 4.8,
-      "last5": 4.8
-     },
-     "outs_mean": {
-      "season": 15.43,
-      "last10": 15.2,
-      "last5": 16.0
-     },
-     "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
-    },
-    "lineup": [
-     "Jackson Chourio",
-     "Brice Turang",
-     "William Contreras",
-     "Andrew Vaughn",
-     "Jake Bauers",
-     "Garrett Mitchell",
-     "Cooper Pratt",
-     "Luis Lara",
-     "Joey Ortiz"
-    ],
-    "lineup_status": "confirmed",
+    "probable_status": "TBD: no probable announced",
+    "lineup": null,
+    "lineup_status": "not posted yet",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2114,
@@ -179,41 +482,9 @@
      }
     },
     "bullpen": {
-     "reliever_pitches_last3": 125,
-     "likely_limited": [
-      "Aaron Ashby"
-     ],
+     "reliever_pitches_last3": 127,
+     "likely_limited": [],
      "detail": {
-      "DL Hall": {
-       "days": [
-        "2026-10-11"
-       ],
-       "pitches": 4,
-       "back_to_back": false
-      },
-      "Abner Uribe": {
-       "days": [
-        "2026-10-11",
-        "2026-10-12"
-       ],
-       "pitches": 28,
-       "back_to_back": false
-      },
-      "Aaron Ashby": {
-       "days": [
-        "2026-10-11",
-        "2026-10-12"
-       ],
-       "pitches": 47,
-       "back_to_back": false
-      },
-      "Trevor Megill": {
-       "days": [
-        "2026-10-11"
-       ],
-       "pitches": 19,
-       "back_to_back": false
-      },
       "Dustin May": {
        "days": [
         "2026-10-12"
@@ -227,6 +498,35 @@
        ],
        "pitches": 13,
        "back_to_back": false
+      },
+      "Abner Uribe": {
+       "days": [
+        "2026-10-12",
+        "2026-10-14"
+       ],
+       "pitches": 33,
+       "back_to_back": false
+      },
+      "Aaron Ashby": {
+       "days": [
+        "2026-10-12"
+       ],
+       "pitches": 21,
+       "back_to_back": false
+      },
+      "DL Hall": {
+       "days": [
+        "2026-10-14"
+       ],
+       "pitches": 28,
+       "back_to_back": false
+      },
+      "Trevor Megill": {
+       "days": [
+        "2026-10-14"
+       ],
+       "pitches": 18,
+       "back_to_back": false
       }
      },
      "classification": "confirmed",
@@ -235,7 +535,7 @@
      "unclassified_games": [],
      "classification_source": "MLB boxscore gamesStarted (not list order)"
     },
-    "k_pct_vs_opp_starter_hand": 0.2114
+    "k_pct_vs_opp_starter_hand": 0.2231
    },
    "home": {
     "id": 119,
@@ -243,144 +543,134 @@
     "abbr": "LAD",
     "record": {
      "wins": 0,
-     "losses": 2,
+     "losses": 3,
      "ties": 0,
      "pct": ".000"
     },
     "probable_status": "announced (MLB probable; openers/bulk relievers are not flagged)",
     "probable": {
-     "id": 605483,
-     "name": "Blake Snell",
-     "throws": "L",
+     "id": 607192,
+     "name": "Tyler Glasnow",
+     "throws": "R",
      "season": {
-      "gs": 9,
-      "ip": "42.2",
-      "era": "1.90",
-      "whip": "1.10",
-      "k": 55,
-      "bb": 16,
-      "bf": 173,
-      "k_pct": 0.3179,
-      "bb_pct": 0.0925,
-      "k9": "11.60",
-      "hr9": "0.00"
+      "gs": 13,
+      "ip": "74.0",
+      "era": "3.53",
+      "whip": "0.95",
+      "k": 98,
+      "bb": 25,
+      "bf": 288,
+      "k_pct": 0.3403,
+      "bb_pct": 0.0868,
+      "k9": "11.92",
+      "hr9": "0.85"
      },
      "last5": [
       {
-       "date": "2026-09-04",
+       "date": "2026-09-05",
        "opp": "Washington Nationals",
        "outs": 18,
-       "k": 7,
-       "bb": 2,
-       "h": 5,
-       "er": 0,
-       "pitches": 100
-      },
-      {
-       "date": "2026-09-11",
-       "opp": "Miami Marlins",
-       "outs": 17,
        "k": 8,
-       "bb": 2,
-       "h": 4,
-       "er": 1,
-       "pitches": 101
+       "bb": 3,
+       "h": 6,
+       "er": 4,
+       "pitches": 96
       },
       {
-       "date": "2026-09-16",
-       "opp": "Cincinnati Reds",
-       "outs": 3,
-       "k": 1,
-       "bb": 0,
-       "h": 1,
-       "er": 0,
-       "pitches": 19
-      },
-      {
-       "date": "2026-09-26",
-       "opp": "San Francisco Giants",
+       "date": "2026-09-12",
+       "opp": "Miami Marlins",
        "outs": 12,
-       "k": 3,
-       "bb": 0,
+       "k": 7,
+       "bb": 4,
        "h": 5,
-       "er": 1,
-       "pitches": 77
+       "er": 4,
+       "pitches": 91
       },
       {
-       "date": "2026-10-04",
+       "date": "2026-09-18",
+       "opp": "San Francisco Giants",
+       "outs": 18,
+       "k": 10,
+       "bb": 2,
+       "h": 3,
+       "er": 2,
+       "pitches": 98
+      },
+      {
+       "date": "2026-09-24",
+       "opp": "San Diego Padres",
+       "outs": 19,
+       "k": 11,
+       "bb": 2,
+       "h": 3,
+       "er": 3,
+       "pitches": 91
+      },
+      {
+       "date": "2026-10-07",
        "opp": "Atlanta Braves",
-       "outs": 11,
+       "outs": 14,
        "k": 5,
        "bb": 5,
-       "h": 3,
+       "h": 1,
        "er": 1,
-       "pitches": 90
+       "pitches": 78
       }
      ],
-     "starts_counted": 10,
+     "starts_counted": 14,
      "sample_quality": "ok",
      "k_dist": {
-      "3": 0.9,
-      "4": 0.8,
-      "5": 0.8,
-      "6": 0.5,
-      "7": 0.4,
-      "8": 0.3,
-      "9": 0.2,
-      "10": 0.2
+      "3": 0.929,
+      "4": 0.929,
+      "5": 0.929,
+      "6": 0.857,
+      "7": 0.714,
+      "8": 0.429,
+      "9": 0.357,
+      "10": 0.143
      },
      "outs_dist": {
-      "12": 0.7,
-      "15": 0.6,
-      "16": 0.5,
-      "17": 0.5,
-      "18": 0.4,
-      "19": 0.0,
-      "20": 0.0
+      "12": 0.929,
+      "15": 0.786,
+      "16": 0.714,
+      "17": 0.714,
+      "18": 0.643,
+      "19": 0.286,
+      "20": 0.214
      },
      "k_dist_last10": {
       "3": 0.9,
-      "4": 0.8,
-      "5": 0.8,
-      "6": 0.5,
-      "7": 0.4,
-      "8": 0.3,
-      "9": 0.2,
+      "4": 0.9,
+      "5": 0.9,
+      "6": 0.8,
+      "7": 0.7,
+      "8": 0.5,
+      "9": 0.4,
       "10": 0.2
      },
      "outs_dist_last10": {
-      "12": 0.7,
-      "15": 0.6,
-      "16": 0.5,
-      "17": 0.5,
-      "18": 0.4,
-      "19": 0.0,
-      "20": 0.0
+      "12": 0.9,
+      "15": 0.7,
+      "16": 0.6,
+      "17": 0.6,
+      "18": 0.5,
+      "19": 0.3,
+      "20": 0.2
      },
      "k_mean": {
-      "season": 6.0,
-      "last10": 6.0,
-      "last5": 4.8
+      "season": 7.36,
+      "last10": 7.4,
+      "last5": 8.2
      },
      "outs_mean": {
-      "season": 13.9,
-      "last10": 13.9,
-      "last5": 12.2
+      "season": 16.86,
+      "last10": 16.1,
+      "last5": 16.2
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": [
-     "Mookie Betts",
-     "Freddie Freeman",
-     "Teoscar Hernández",
-     "Kyle Tucker",
-     "Andy Pages",
-     "Shohei Ohtani",
-     "Will Smith",
-     "Miguel Rojas",
-     "Tommy Edman"
-    ],
-    "lineup_status": "confirmed",
+    "lineup": null,
+    "lineup_status": "not posted yet",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2003,
@@ -398,37 +688,24 @@
      }
     },
     "bullpen": {
-     "reliever_pitches_last3": 139,
-     "likely_limited": [],
+     "reliever_pitches_last3": 153,
+     "likely_limited": [
+      "Justin Wrobleski"
+     ],
      "detail": {
       "Alex Vesia": {
        "days": [
-        "2026-10-11",
         "2026-10-12"
        ],
-       "pitches": 20,
-       "back_to_back": false
-      },
-      "Evan Phillips": {
-       "days": [
-        "2026-10-11"
-       ],
-       "pitches": 17,
-       "back_to_back": false
-      },
-      "Tanner Scott": {
-       "days": [
-        "2026-10-11",
-        "2026-10-12"
-       ],
-       "pitches": 22,
+       "pitches": 4,
        "back_to_back": false
       },
       "Roki Sasaki": {
        "days": [
-        "2026-10-12"
+        "2026-10-12",
+        "2026-10-14"
        ],
-       "pitches": 14,
+       "pitches": 28,
        "back_to_back": false
       },
       "Kris Bubic": {
@@ -445,6 +722,13 @@
        "pitches": 12,
        "back_to_back": false
       },
+      "Tanner Scott": {
+       "days": [
+        "2026-10-12"
+       ],
+       "pitches": 13,
+       "back_to_back": false
+      },
       "Edgardo Henriquez": {
        "days": [
         "2026-10-12"
@@ -454,9 +738,17 @@
       },
       "Justin Wrobleski": {
        "days": [
-        "2026-10-12"
+        "2026-10-12",
+        "2026-10-14"
        ],
-       "pitches": 11,
+       "pitches": 43,
+       "back_to_back": false
+      },
+      "Evan Phillips": {
+       "days": [
+        "2026-10-14"
+       ],
+       "pitches": 10,
        "back_to_back": false
       }
      },
@@ -466,7 +758,7 @@
      "unclassified_games": [],
      "classification_source": "MLB boxscore gamesStarted (not list order)"
     },
-    "k_pct_vs_opp_starter_hand": 0.2003
+    "k_pct_vs_opp_starter_hand": null
    }
   }
  ],
