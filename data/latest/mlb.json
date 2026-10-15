@@ -1,12 +1,12 @@
 {
- "pulled_at_et": "2026-10-15T14:25-04:00",
+ "pulled_at_et": "2026-10-15T19:10-04:00",
  "date": "2026-10-15",
  "season": 2026,
  "games": [
   {
    "game_pk": 849818,
    "start_et": "1:00 PM ET",
-   "status": "In Progress",
+   "status": "Final",
    "game_type": "L",
    "series": "AL Championship Series",
    "series_game": 3,
@@ -24,9 +24,9 @@
     "abbr": "TB",
     "record": {
      "wins": 1,
-     "losses": 1,
+     "losses": 2,
      "ties": 0,
-     "pct": ".500"
+     "pct": ".333"
     },
     "probable_status": "announced (MLB probable; openers/bulk relievers are not flagged)",
     "probable": {
@@ -93,9 +93,9 @@
        "outs": 12,
        "k": 2,
        "bb": 2,
-       "h": 2,
-       "er": 1,
-       "pitches": 54
+       "h": 5,
+       "er": 3,
+       "pitches": 67
       }
      ],
      "starts_counted": 24,
@@ -240,10 +240,10 @@
     "name": "Cleveland Guardians",
     "abbr": "CLE",
     "record": {
-     "wins": 1,
+     "wins": 2,
      "losses": 1,
      "ties": 0,
-     "pct": ".500"
+     "pct": ".667"
     },
     "probable_status": "announced (MLB probable; openers/bulk relievers are not flagged)",
     "probable": {
@@ -468,14 +468,18 @@
   {
    "game_pk": 849810,
    "start_et": "8:00 PM ET",
-   "status": "Scheduled",
+   "status": "Pre-Game",
    "game_type": "L",
    "series": "NL Championship Series",
    "series_game": 4,
    "series_status": "NL Championship Series",
    "venue": "UNIQLO Field at Dodger Stadium",
-   "weather": null,
-   "hp_umpire": null,
+   "weather": {
+    "condition": "Clear",
+    "temp": "89",
+    "wind": "4 mph, Out To RF"
+   },
+   "hp_umpire": "Ryan Additon",
    "away": {
     "id": 158,
     "name": "Milwaukee Brewers",
@@ -608,8 +612,18 @@
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "lineup": [
+     "Jackson Chourio",
+     "Brice Turang",
+     "William Contreras",
+     "Jake Bauers",
+     "Christian Yelich",
+     "Garrett Mitchell",
+     "Cooper Pratt",
+     "Sal Frelick",
+     "David Hamilton"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2114,
@@ -814,8 +828,18 @@
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "lineup": [
+     "Shohei Ohtani",
+     "Mookie Betts",
+     "Freddie Freeman",
+     "Will Smith",
+     "Kyle Tucker",
+     "Teoscar Hernández",
+     "Miguel Rojas",
+     "Andy Pages",
+     "Enrique Hernández"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2003,
