@@ -222,6 +222,24 @@ table.mu td.adv{font-weight:600;color:var(--good)}
 .sgp dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:4px 12px;font-size:.84rem}
 .sgp dt{color:var(--muted)} .sgp dd{margin:0;text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
 .sgp .betat{border-top:1px dashed var(--line);padding-top:8px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+/* game sim */
+.sim{border:1px solid var(--line);border-left:4px solid var(--derived);border-radius:6px;background:var(--surface-2);padding:14px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.sim-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:8px 16px}
+.sim-score{font:700 2rem/1 var(--f-display);letter-spacing:.02em}
+.sim-score .num{font:600 1.5rem/1 var(--f-mono)}
+.runs{display:inline-flex;flex-direction:column;align-items:flex-end;gap:2px;text-align:right}
+.runs b{font:600 .7rem/1.2 var(--f-body);text-transform:uppercase;letter-spacing:.08em;padding:4px 7px;border-radius:3px;background:var(--derived-soft);color:var(--derived)}
+.runs b.unconv{background:var(--warn-soft);color:var(--warn)}
+.sim-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.sim-kpis > div{background:var(--surface);padding:8px 10px;display:flex;flex-direction:column;gap:2px}
+.sim-kpis .v{font:600 1rem/1.1 var(--f-mono);font-variant-numeric:tabular-nums}
+.sim table{font-size:.84rem}
+.sim th,.sim td{padding:7px 9px}
+.sim .line{font-family:var(--f-mono);font-size:.78rem;color:var(--ink)}
+.runs .badges{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end}
+.runs b.bad{background:var(--bad-soft);color:var(--bad)}
+.simdist summary{cursor:pointer;font:600 .7rem/1.2 var(--f-body);text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-top:4px}
+.simprop{display:inline-block;margin:3px 4px 0 0;font:500 .72rem/1.3 var(--f-mono);padding:2px 6px;border-radius:3px;background:var(--surface);border:1px solid var(--line);color:var(--ink)}
 /* parlays */
 .legs{display:flex;flex-direction:column;gap:6px}
 .leg{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:9px 12px;cursor:pointer}
@@ -1117,6 +1135,113 @@ function sgpCard(f, sg, j, st){
       ${e.units>0&&ex.bet_status==='BET'?`<button class="logbtn" data-sgplog="${esc(f.game)}" data-sj="${j}">Log bet</button>`:''}</div>
   </div>`;
 }
+/*SIM_JS_BEGIN*/
+/* game sim (pipeline/sim.py, GameSim v1.2): a market-anchored simulation. Its percentages are simulation
+   frequencies, not calibrated or validated probabilities; it never creates or upgrades a BET, never changes a
+   tier/stake/exposure and never feeds modelP. Older v1 sims (no anchor_audit / uncertainty / data_quality /
+   market_diagnostic / players) still render from score/team/inputs/box. Tested in node by tests/test_sim.py. */
+const SIM_STAT_LABELS={pass_att:'Pass att',comp:'Completions',pass_yds:'Pass yds',pass_td:'Pass TD',int:'INT',carries:'Carries',rush_yds:'Rush yds',rush_td:'Rush TD',
+  targets:'Targets',rec:'Receptions',rec_yds:'Rec yds',rec_td:'Rec TD',td:'Any TD',pa:'PA',h:'Hits',tb:'Total bases',hr:'HR',r:'Runs',rbi:'RBI',bb:'Walks',k:'Strikeouts',
+  bf:'Batters faced',outs:'Outs',er:'Earned runs',sog:'Shots on goal',g:'Goals',a:'Assists',pts:'Points',saves:'Saves'};
+function simTable(t, cap){
+  if(!t||!Array.isArray(t.rows)||!t.rows.length) return '';
+  const c=t.cols||['Away','Home'];
+  return `<div class="scroll"><table class="mu"><thead><tr><th>${esc(cap)}</th><th>${esc(c[0])}</th><th>${esc(c[1])}</th></tr></thead><tbody>${t.rows.map(r=>`<tr><td class="small muted">${esc(r.label)}</td><td class="num">${esc(r.a===null||r.a===undefined?'—':r.a)}</td><td class="num">${esc(r.b===null||r.b===undefined?'—':r.b)}</td></tr>`).join('')}</tbody></table></div>`;
+}
+function simProp(p){ const st=SIM_STAT_LABELS[p.stat]||String(p.stat||'').replace(/_/g,' '); const ln=p.line;
+  return `<span class="simprop">${esc(st)} ${esc(ln)}: over ${pct(p.over,0)} · under ${pct(p.under,0)}${p.push?' · push '+pct(p.push,0):''} (sim freq)${p.odds!==undefined&&p.odds!==null?' · FD '+esc(am(p.odds)):''}</span>`; }
+/* collapsed per-player distribution: P10/P25/P50/P75/P90 and every supplied line, from one simulated distribution */
+function simDist(pl){
+  if(!pl||!pl.stats) return '';
+  const st=Object.entries(pl.stats); if(!st.length) return '';
+  const f=x=>x===null||x===undefined?'—':esc(Number.isInteger(x)?x:Number(x).toFixed(1));
+  const lines=st.flatMap(([k,d])=>(d.lines||[]).map(l=>({k,...l})));
+  return `<details class="simdist"><summary>Distribution</summary>
+    <div class="scroll" style="margin-top:6px"><table class="mu"><thead><tr><th>Stat</th><th>Mean</th><th>P10</th><th>P25</th><th>P50</th><th>P75</th><th>P90</th></tr></thead><tbody>
+    ${st.map(([k,d])=>`<tr><td class="small muted">${esc(SIM_STAT_LABELS[k]||k)}</td><td class="num">${f(d.mean)}</td><td class="num">${f(d.p10)}</td><td class="num">${f(d.p25)}</td><td class="num">${f(d.p50)}</td><td class="num">${f(d.p75)}</td><td class="num">${f(d.p90)}</td></tr>`).join('')}
+    </tbody></table></div>
+    ${lines.length?`<div class="scroll" style="margin-top:6px"><table class="mu"><thead><tr><th>Prop distribution · line</th><th>Over</th><th>Under</th><th>Push</th></tr></thead><tbody>
+      ${lines.map(l=>`<tr><td class="small muted">${esc(SIM_STAT_LABELS[l.k]||l.k)} ${esc(l.line)}${l.odds!==undefined&&l.odds!==null?' · FD '+esc(am(l.odds)):''}</td><td class="num">${pct(l.over,1)}</td><td class="num">${pct(l.under,1)}</td><td class="num">${pct(l.push,1)}</td></tr>`).join('')}
+      </tbody></table></div>`:''}
+    <p class="small muted" style="margin-top:4px">Simulation frequencies from the simulated games, not validated betting probabilities.${pl.start_freq!==undefined?' Starts in '+pct(pl.start_freq,0)+' of simulated games (saves only from starts).':''}</p></details>`;
+}
+function simBox(side, title, players){
+  if(!side||!Array.isArray(side.rows)||!side.rows.length) return '';
+  const cols=side.cols||['Player','Projected line'];
+  const li=cols.indexOf('Projected line');
+  const rows=side.rows.map(r=>Array.isArray(r.cells)?r.cells:[r.name,r.line]);
+  const byName={}; (Array.isArray(players)?players:[]).forEach(p=>{ if(p&&p.name) byName[p.name]=p; });
+  // drop columns that are empty for every player (e.g. snap % when no source has it)
+  const keep=cols.map((c,i)=>i===0||i===li?false:rows.some(x=>x[i]!==null&&x[i]!==undefined&&x[i]!==''&&x[i]!=='—'));
+  return `<div><span class="label">${esc(title)} · top ${side.rows.length}</span><div class="scroll" style="margin-top:6px"><table><thead><tr><th>Player · mean · median · P10–P90</th>${cols.map((c,i)=>keep[i]?`<th>${esc(c)}</th>`:'').join('')}</tr></thead><tbody>
+    ${side.rows.map((r,ri)=>{ const x=rows[ri]; return `<tr><td><strong>${esc(x[0])}</strong>${li>=0?`<span class="sub line">${esc(x[li])}</span>`:''}${r.range?`<span class="sub">${esc(r.range)}</span>`:''}${Array.isArray(r.props)&&r.props.length?`<span class="sub">${r.props.map(simProp).join(' ')}</span>`:''}${simDist(byName[r.name])}</td>${x.map((v,i)=>keep[i]?`<td class="small">${esc(v===null||v===undefined?'—':v)}</td>`:'').join('')}</tr>`; }).join('')}</tbody></table></div></div>`;
+}
+function simBadges(s){
+  const ru=s.runs||{}; const st=Array.isArray(s.status)&&s.status.length?s.status:[ru.converged?'STABLE':'NOT STABLE'];
+  const cls=b=>b==='STABLE'?'':b==='NOT STABLE'?'unconv':b==='DEGRADED INPUTS'?'bad':'unconv';
+  return st.map(b=>`<b class="${cls(b)}" title="${b==='STABLE'||b==='NOT STABLE'?'Monte Carlo convergence only, not accuracy':'Input quality'}">${esc(b)}</b>`).join('');
+}
+function simAudit(s, cols, d){
+  const au=s.anchor_audit; const sc=s.score||{}; const fx=(x)=>x===null||x===undefined?'—':Number(x).toFixed(d);
+  const blab = (au&&au.market_implied&&au.market_implied.label) || (au&&au.baseline_label) || ((s.sport==='NFL'||s.sport==='CFB')?'Market-implied baseline':'Market-derived scoring baseline');
+  const rows = au ? [
+      ['Raw simulation', au.raw], [blab, au.market_implied], ['Anchored simulation', au.anchored] ]
+    : [ ['Raw simulation', sc.raw?{away:sc.raw.away, home:sc.raw.home, total:(sc.raw.away||0)+(sc.raw.home||0)}:null],
+        [blab, sc.anchor&&sc.anchor.market_implied?{away:sc.anchor.market_implied[0], home:sc.anchor.market_implied[1], total:sc.anchor.market_implied[0]+sc.anchor.market_implied[1]}:null],
+        ['Anchored simulation', {away:sc.away, home:sc.home, total:sc.total}] ];
+  const w = au ? au.weight : (sc.anchor||{}).weight;
+  return `<div><span class="label">Market comparison · raw → ${esc(blab.toLowerCase())} → anchored</span><div class="scroll" style="margin-top:6px"><table class="mu"><thead><tr><th></th><th>${esc(cols[0])}</th><th>${esc(cols[1])}</th><th>Total</th></tr></thead><tbody>
+    ${rows.map(([lab,v])=>`<tr><td class="small muted">${esc(lab)}</td>${v?`<td class="num">${fx(v.away)}</td><td class="num">${fx(v.home)}</td><td class="num">${fx(v.total)}</td>`:'<td colspan="3" class="small muted">no market total supplied</td>'}</tr>`).join('')}
+    ${au&&au.shift?`<tr><td class="small muted">Shift from the anchor</td><td class="num">${au.shift.away>0?'+':''}${fx(au.shift.away)}</td><td class="num">${au.shift.home>0?'+':''}${fx(au.shift.home)}</td><td class="num">${au.shift.total>0?'+':''}${fx(au.shift.total)}</td></tr>`:''}
+    </tbody></table></div><p class="small muted" style="margin-top:6px">Anchor weight ${w!==undefined&&w!==null?Math.round(w*100)+'%':'—'}${au&&au.market_implied?' · '+esc(au.market_implied.kind||'')+' · '+esc(au.market_implied.basis):''}${au&&au.method?' · '+esc(au.method):''}</p></div>`;
+}
+function simDiag(s){
+  const dg=s.market_diagnostic; if(!dg||!Array.isArray(dg.rows)||!dg.rows.length) return '';
+  const v=(x,u)=>x===null||x===undefined?'—':(String(u).includes('freq')?pct(x,1):(typeof x==='number'?x.toFixed(2):esc(x)));
+  const dv=(x,u)=>x===null||x===undefined?'—':(String(u).includes('freq')?(x>0?'+':'')+(x*100).toFixed(1)+' pts':(x>0?'+':'')+Number(x).toFixed(2));
+  return `<div><span class="label">${esc(dg.label||'Simulation / market difference')} <span class="pill p-pass">Not validated edge</span></span><div class="scroll" style="margin-top:6px"><table class="mu"><thead><tr><th></th><th>Simulation</th><th>Market</th><th>Difference</th></tr></thead><tbody>
+    ${dg.rows.map(r=>`<tr><td class="small muted">${esc(r.label)}${r.unit?`<span class="sub">${esc(r.unit)}</span>`:''}${r.note?`<span class="sub">${esc(r.note)}</span>`:''}</td><td class="num">${v(r.sim,r.unit)}</td><td class="num">${v(r.market,r.unit)}</td><td class="num">${dv(r.diff,r.unit)}</td></tr>`).join('')}
+    </tbody></table></div><p class="small muted" style="margin-top:6px">${esc(dg.note||'')} Never changes a tier, BET/WAIT, modelP, stake or exposure.</p></div>`;
+}
+function simUnc(s){
+  const u=s.uncertainty; if(!u) return '';
+  const su=u.simulation||{}, md=u.model_data||{};
+  const ci=(o,isP)=>o&&o.ci95?(isP?pct(o.ci95[0],1)+'–'+pct(o.ci95[1],1):o.ci95[0].toFixed(2)+' to '+o.ci95[1].toFixed(2)):'—';
+  const rows=[['Total (mean)',su.total,false],['Home margin (mean)',su.margin,false],['Home win frequency',su.home_win,true],['Over frequency',su.over,true],['Cover frequency',su.home_cover,true]].filter(r=>r[1]);
+  return `<div class="two"><div><span class="label">Simulation uncertainty</span><div class="scroll" style="margin-top:6px"><table class="mu"><thead><tr><th></th><th>SE</th><th>${esc(su.interval_label||'95% Monte Carlo simulation interval')}</th></tr></thead><tbody>
+      ${rows.map(([l,o,isP])=>`<tr><td class="small muted">${esc(l)}</td><td class="num">${isP?pct(o.se,1):Number(o.se).toFixed(2)}</td><td class="num">${ci(o,isP)}</td></tr>`).join('')}</tbody></table></div>
+      <p class="small muted" style="margin-top:6px">${esc(su.note||'')}</p></div>
+    <div><span class="label">Model / data uncertainty · inputs ${esc(md.status||'unknown')}</span>
+      ${Array.isArray(md.items)&&md.items.length?`<ul class="injl">${md.items.map(x=>'<li>'+esc(x)+'</li>').join('')}</ul>`:'<p class="small muted" style="margin-top:6px">No missing or estimated inputs flagged.</p>'}
+      <p class="small muted" style="margin-top:6px">${esc(md.note||'')}</p></div></div>`;
+}
+function simCard(f){
+  const s=f.sim; if(!s||!s.score) return '';
+  const sc=s.score, ru=s.runs||{}, cols=(s.team&&s.team.cols)||((f.matchup||{}).cols)||['Away','Home'];
+  const isFb=s.sport==='NFL'||s.sport==='CFB'; const d=isFb?1:2;
+  const fx=(x,k)=>x===null||x===undefined?'—':Number(x).toFixed(k);
+  const otl = s.sport==='NHL' ? ' · 3v3 OT / shootout approximation: OT '+pct(sc.ot_rate||0,0)+(sc.shootout_rate?', SO '+pct(sc.shootout_rate,0):'') : (sc.ot_rate?(isFb?' · OT ':' · extra innings ')+pct(sc.ot_rate,0):'');
+  const kp=[
+    ['Projected total', fx(sc.total,d), sc.total_p10_p90?'median '+sc.total_median+' · 80% range '+sc.total_p10_p90[0]+'–'+sc.total_p10_p90[1]:''],
+    [cols[1]+' win', pct(sc.home_win,0), 'simulation frequency'+(sc.tie_rate?' · tie '+pct(sc.tie_rate,1):'')+otl],
+    sc.over!==undefined?['Over the total', pct(sc.over,0), 'simulation frequency'+(sc.push?' · push '+pct(sc.push,0):'')]:null,
+    sc.home_cover!==undefined?[cols[1]+' covers', pct(sc.home_cover,0), 'simulation frequency'+(sc.cover_push?' · push '+pct(sc.cover_push,0):'')]:null,
+  ].filter(Boolean);
+  const dq=s.data_quality; const pls=s.players||{};
+  return `<div class="sim" aria-label="Market-anchored simulation">
+    <div class="sim-head"><div><span class="label">${esc(s.label||'Market-anchored simulation')} · projected box score</span>
+      <p class="sim-score">${esc(cols[0])} <span class="num">${fx(sc.away,d)}</span> · ${esc(cols[1])} <span class="num">${fx(sc.home,d)}</span></p></div>
+      <span class="runs"><span class="badges">${simBadges(s)}</span><span class="small muted num">${ru.converged?'Stable after':'Not stable after'} ${esc(ru.batches)} of ${esc(ru.max_batches||100)} runs · ${esc(ru.sims)} simulated games (${esc(ru.batch_size||100)} per run)</span></span></div>
+    <div class="sim-kpis">${kp.map(k=>`<div><span class="label">${esc(k[0])}</span><span class="v">${esc(k[1])}</span>${k[2]?`<span class="small muted">${esc(k[2])}</span>`:''}</div>`).join('')}</div>
+    <p class="small muted">${esc(sc.frequency_note||'Percentages are simulation frequencies, not validated probabilities.')}${s.model_note?' '+esc(s.model_note):''}</p>
+    <div class="two">${simAudit(s, cols, d)}${simDiag(s)}</div>
+    ${simUnc(s)}
+    <div class="two">${simTable(s.team,'Sim output')}${simTable(s.inputs,isFb?'Inputs: pace, usage, pressure, blitz, coverage':'Inputs')}</div>
+    <div class="two">${simBox((s.box||{}).away, cols[0], pls.away)}${simBox((s.box||{}).home, cols[1], pls.home)}</div>
+    ${dq&&Array.isArray(dq.flags)&&dq.flags.length?`<details class="notes"><summary>Data quality: <b>${esc(dq.status)}</b> · ${dq.flags.filter(x=>x.level!=='info').length} gap(s), ${dq.flags.filter(x=>x.level==='info').length} note(s) <b>Show</b></summary><ul class="injl">${dq.flags.map(x=>`<li><span class="pill ${x.level==='degraded'?'p-bad':x.level==='partial'?'p-small':'p-pass'}">${esc(x.level)}</span> ${esc(x.field)}: ${esc(x.note)}</li>`).join('')}</ul></details>`:''}
+    <p class="note">${esc(s.caveat||'')} ${esc(ru.rule||'')}</p></div>`;
+}
+/*SIM_JS_END*/
 function renderTop(){
   const v = document.getElementById('v-top');
   if(S.dbState==='loading' || (S.dbState==='on' && !S.slatesLoaded)){ v.innerHTML='<p class="muted">Loading…</p>'; return; }
@@ -1144,6 +1269,7 @@ function renderTop(){
             ${mu.rows.map(r=>`<tr><td class="small muted">${esc(r.label)}</td><td class="num ${r.edge==='a'?'adv':''}">${esc(r.a)}</td><td class="num ${r.edge==='b'?'adv':''}">${esc(r.b)}</td></tr>`).join('')}
           </tbody></table></div>`:''}
         </div>
+        ${simCard(f)}
         ${Array.isArray(f.props)&&f.props.length?`<div><span class="label">Props</span><div class="scroll" style="margin-top:8px"><table class="board-t" style="min-width:860px"><thead><tr><th>Prop</th><th class="n">FanDuel now</th><th class="n">Research %</th><th class="n">Fair</th><th class="n">${research(st)?'Price check':'Edge'}</th><th>Research</th><th>Execution</th><th>Why</th></tr></thead><tbody>${propRows(f,st)}</tbody></table></div></div>`:''}
         ${Array.isArray(f.sgps)&&f.sgps.length?`<div><span class="label">SGP setups</span><div class="sgps" style="margin-top:8px">${f.sgps.map((sg,j)=>sgpCard(f,sg,j,st)).join('')}</div></div>`:''}
       </div></article>`;

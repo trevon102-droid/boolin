@@ -93,6 +93,32 @@ market, point in time, with a chronological holdout, and gates research conclusi
   until a league's validation scorecard allows otherwise; in price mode a research % more than 10 points from the
   market gets no stake (review).
 
+## Game sims (GameSim v1.2, `pipeline/sim.py`)
+
+A **market-anchored simulation** of each Top 10 game (NFL, CFB, MLB, NHL): the range of plausible game scripts and
+player outcomes. It is a research/scenario tool, not a predictive betting model, and is separate from the betting
+probability layer:
+
+- The raw simulation is blended 50% toward a market baseline by scaling scoring efficiency only; volume, usage and
+  player shares never change and props are never back-solved. Football total + spread is a *market-implied
+  baseline*; MLB/NHL use a *market-derived scoring baseline* (Pythagorean split of the no-vig moneyline, or a
+  single-side implied price when only one side is posted, or total-only with the raw split retained). The card
+  shows raw → baseline → anchored.
+- Win/over/cover and prop over/under/push percentages are **simulation frequencies**, not calibrated or validated
+  probabilities. They never create or upgrade a BET, never change a tier, stake or exposure, and are never copied
+  into `modelP`.
+- Runs of 100 games repeat until the simulated outputs converge (averages, total and margin SE, and the win /
+  over / cover frequencies that exist for the market; cap 100 runs). **Stable means Monte Carlo convergence only**:
+  the 95% Monte Carlo simulation interval is shown apart from model/data uncertainty.
+- Player distributions (mean, median, P10–P90, over/under/push per line) come from the same simulated games, so every
+  line and ladder rung for a stat comes from one distribution; the board keeps them in a collapsed *Distribution* view.
+- CFB is a simplified college-football scenario model on the shared drive engine; MLB extras use the automatic runner
+  only in the regular season; NHL OT is a 3v3 OT / shootout approximation.
+- Missing inputs are listed in `data_quality` (`clean` / `partial` / `degraded` / `unknown`) and badged on the card.
+- The simulation/market difference is labelled *Not validated edge*. Boolin's research layer stays the authority.
+
+Specs, steps and simplifications: TASK.md, "Game sims". Tests: `tests/test_sim.py`.
+
 ## Tests
 
 ```
