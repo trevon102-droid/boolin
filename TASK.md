@@ -313,6 +313,35 @@ or a manual run did. Otherwise find prop prices on the web and name the book.
 - `longshots`: `[{"id","type":"Anytime TD"|"2+ TDs"|"First TD"|"Home run"|"Anytime goal","sport","game","start","pick","odds","book","conviction","modelP","prior","priorLabel","factors","inputs","why","category"}]`. On NFL days list the best anytime and 2+ TD candidates by usage (red-zone/goal-line share, snaps, TD history, team implied total), each tiered. Leave out `odds` when FanDuel's price isn't found; the board then shows the price to bet at. Stakes are capped by the `longMax` setting.
 - `ladders`: `[{"id","sport","game","start","pick","base","why","category","rungs":[{"label":"80+","odds":120,"modelP":0.42}]}]`. Climb from a main Over that has a real read; rungs without a FanDuel price show the price to bet at.
 
+### Game sims (`featured[].sim`, every Top 10 game)
+
+Every Top 10 game gets a simulated box score from `pipeline/sim.py`. It plays the game out in runs of 100
+simulated games, up to 100 runs (10,000 games), and stops once the box score stops moving (every average moves
+<1% for 3 straight runs and the total's standard error is <1% of the mean). The card shows how many runs it took.
+More runs make the averages stable, not more accurate: the sim is only as good as its inputs.
+
+1. Write one spec per game to `/tmp/simspec/<sport>-<away>-<home>.json` (schemas below; reuse what the research
+   already gathered). Use `null` for anything you can't source and say so in `notes`. Never invent a number.
+2. `cd /home/claude/boolin && python -m pipeline.sim /tmp/simspec/*.json --out /tmp/sims.json`
+3. Put each result on its featured game: `featured[i].sim = sims[spec.game]` (the spec's `game` must match the
+   featured `game` string exactly).
+
+Spec schemas (all season stats unless noted; `market` uses FanDuel's lines and anchors the score, 50% blend):
+- **NFL / CFB**: `{"sport","game","start","market":{"spread_home","total"},"env":{"wind_mph","gust_mph","temp_f","precip","neutral"},"away":T,"home":T}`
+  with `T = {"abbr","games","plays_pg","pass_rate","ypc","ypa","comp_pct","int_rate","sack_rate","ppg","def":{"ypc_allowed","ypa_allowed","comp_pct_allowed","sack_rate","int_rate","plays_pg_allowed","pressure_pct","blitz_pct","man_pct","zone_pct"},"players":[{"name","pos","gp","att","comp","pass_yds","pass_td","int","carries","rush_yds","rush_td","targets","rec","rec_yds","rec_td","snap_pct"}]}`.
+  NFL: take `plays_pg`, `early_down_pass_rate_neutral`, `blitz_pct`, `pressure_pct`, `man_pct`/`zone_pct` and each
+  player's `snap_pct`, `targets`, `carries` from the newest `prep` `nfl-…` doc. QB + top 2 RBs + top 4–5 WR/TE.
+  If the starting QB is out, use the backup's rates (blend toward team rates on a tiny sample, and say so).
+- **MLB**: `{"sport":"MLB","game","start","market":{"total","home_ml","away_ml"},"env":{"temp_f","wind_mph","wind_dir":"in|out|cross","park_factor","park_hr_factor"},"away":M,"home":M}`
+  with `M = {"abbr","starter":{"name","throws","bf_per_start","k_pct","bb_pct","hbp_pct","hr_per_bf","h_per_bf"},"bullpen":{same rates},"lineup":[9 × {"name","pos","bats","pa","ab","h","doubles","triples","hr","k_pct","bb_pct","hbp"}]}`.
+  `bf_per_start` = tonight's expected leash (opener/bulk: the bulk arm with its expected BF).
+- **NHL**: `{"sport":"NHL","game","start","market":{"total","home_ml","away_ml"},"away":H,"home":H}` with
+  `H = {"abbr","shots_pg","shots_against_pg","goalie":{"name","sv_pct","shots_against","sv_pct_last_season"},"skaters":[12 × {"name","pos","gp","toi_pg","sog","goals","assists","pp1","last_season":{"gp","sog","goals","assists"}}]}`. Use the projected/confirmed goalie.
+- No engine yet for NBA/WNBA: leave `sim` off those games.
+
+The sim's win/cover/over % is context like the research baseline: it can prompt a re-check, but it is not a
+validated probability and never by itself makes or breaks a play. Don't copy sim numbers into `modelP`.
+
 ### Cross-game parlays (`parlays`)
 
 Also write 2–3 cross-game parlays for the Parlays tab. Rules:
@@ -367,4 +396,4 @@ After writing the slate, also save it as a workbook and send it:
 
 Finish with a short message: number of plays by tier, the A-tier plays with FanDuel price, `betTo` and execution
 status (BET / WAIT / NOT BETTABLE AT CURRENT PRICE) and why in one line, the Top 10 games picked, total units
-(including SGP stakes), anything that needs a check before start (goalies, lineups), and any data source that failed.
+(including SGP stakes), anything that needs a check before start (goalies, lineups), each Top 10 sim (projected score and how many runs it took to stabilize), and any data source that failed.

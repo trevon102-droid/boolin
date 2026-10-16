@@ -222,6 +222,20 @@ table.mu td.adv{font-weight:600;color:var(--good)}
 .sgp dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:4px 12px;font-size:.84rem}
 .sgp dt{color:var(--muted)} .sgp dd{margin:0;text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
 .sgp .betat{border-top:1px dashed var(--line);padding-top:8px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+/* game sim */
+.sim{border:1px solid var(--line);border-left:4px solid var(--derived);border-radius:6px;background:var(--surface-2);padding:14px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.sim-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:8px 16px}
+.sim-score{font:700 2rem/1 var(--f-display);letter-spacing:.02em}
+.sim-score .num{font:600 1.5rem/1 var(--f-mono)}
+.runs{display:inline-flex;flex-direction:column;align-items:flex-end;gap:2px;text-align:right}
+.runs b{font:600 .7rem/1.2 var(--f-body);text-transform:uppercase;letter-spacing:.08em;padding:4px 7px;border-radius:3px;background:var(--derived-soft);color:var(--derived)}
+.runs b.unconv{background:var(--warn-soft);color:var(--warn)}
+.sim-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.sim-kpis > div{background:var(--surface);padding:8px 10px;display:flex;flex-direction:column;gap:2px}
+.sim-kpis .v{font:600 1rem/1.1 var(--f-mono);font-variant-numeric:tabular-nums}
+.sim table{font-size:.84rem}
+.sim th,.sim td{padding:7px 9px}
+.sim .line{font-family:var(--f-mono);font-size:.78rem;color:var(--ink)}
 /* parlays */
 .legs{display:flex;flex-direction:column;gap:6px}
 .leg{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:9px 12px;cursor:pointer}
@@ -1117,6 +1131,44 @@ function sgpCard(f, sg, j, st){
       ${e.units>0&&ex.bet_status==='BET'?`<button class="logbtn" data-sgplog="${esc(f.game)}" data-sj="${j}">Log bet</button>`:''}</div>
   </div>`;
 }
+/* game sim (pipeline/sim.py): averages over N simulated games, stopped once the box score stops moving */
+function simTable(t, cap){
+  if(!t||!Array.isArray(t.rows)||!t.rows.length) return '';
+  const c=t.cols||['Away','Home'];
+  return `<div class="scroll"><table class="mu"><thead><tr><th>${esc(cap)}</th><th>${esc(c[0])}</th><th>${esc(c[1])}</th></tr></thead><tbody>${t.rows.map(r=>`<tr><td class="small muted">${esc(r.label)}</td><td class="num">${esc(r.a===null||r.a===undefined?'—':r.a)}</td><td class="num">${esc(r.b===null||r.b===undefined?'—':r.b)}</td></tr>`).join('')}</tbody></table></div>`;
+}
+function simBox(side, title){
+  if(!side||!Array.isArray(side.rows)||!side.rows.length) return '';
+  const cols=side.cols||['Player','Projected line'];
+  const li=cols.indexOf('Projected line');
+  const rows=side.rows.map(r=>Array.isArray(r.cells)?r.cells:[r.name,r.line]);
+  // drop columns that are empty for every player (e.g. snap % when no source has it)
+  const keep=cols.map((c,i)=>i===0||i===li?false:rows.some(x=>x[i]!==null&&x[i]!==undefined&&x[i]!==''&&x[i]!=='—'));
+  return `<div><span class="label">${esc(title)} · top ${side.rows.length}</span><div class="scroll" style="margin-top:6px"><table><thead><tr><th>Player · projected line</th>${cols.map((c,i)=>keep[i]?`<th>${esc(c)}</th>`:'').join('')}</tr></thead><tbody>
+    ${rows.map(x=>`<tr><td><strong>${esc(x[0])}</strong>${li>=0?`<span class="sub line">${esc(x[li])}</span>`:''}</td>${x.map((v,i)=>keep[i]?`<td class="small">${esc(v===null||v===undefined?'—':v)}</td>`:'').join('')}</tr>`).join('')}</tbody></table></div></div>`;
+}
+function simCard(f){
+  const s=f.sim; if(!s||!s.score) return '';
+  const sc=s.score, ru=s.runs||{}, cols=(s.team&&s.team.cols)||((f.matchup||{}).cols)||['Away','Home'];
+  const isFb=s.sport==='NFL'||s.sport==='CFB'; const d=isFb?1:2;
+  const fx=(x,k)=>x===null||x===undefined?'—':Number(x).toFixed(k);
+  const anc=sc.anchor||{}; const mi=anc.market_implied;
+  const kp=[
+    ['Total', fx(sc.total,d), sc.total_p10_p90?'median '+sc.total_median+' · 80% range '+sc.total_p10_p90[0]+'–'+sc.total_p10_p90[1]:''],
+    [cols[1]+' win', pct(sc.home_win,0), sc.ot_rate?(isFb?'OT ':'extra/OT ')+pct(sc.ot_rate,0):''],
+    sc.over!==undefined?['Over the line', pct(sc.over,0), sc.push?'push '+pct(sc.push,0):'']:null,
+    sc.home_cover!==undefined?[cols[1]+' covers', pct(sc.home_cover,0), '']:null,
+    ['Raw model', cols[0]+' '+fx(sc.raw&&sc.raw.away,d)+' · '+cols[1]+' '+fx(sc.raw&&sc.raw.home,d), mi?'market '+cols[0]+' '+fx(mi[0],d)+' · '+cols[1]+' '+fx(mi[1],d)+' · '+Math.round((anc.weight||0)*100)+'% blended in':'no market anchor'],
+  ].filter(Boolean);
+  return `<div class="sim" aria-label="Game simulation">
+    <div class="sim-head"><div><span class="label">Game sim · projected box score</span>
+      <p class="sim-score">${esc(cols[0])} <span class="num">${fx(sc.away,d)}</span> · ${esc(cols[1])} <span class="num">${fx(sc.home,d)}</span></p></div>
+      <span class="runs"><b class="${ru.converged?'':'unconv'}">${ru.converged?'Stable after':'Not stable after'} ${esc(ru.batches)} of ${esc(ru.max_batches||100)} runs</b><span class="small muted num">${esc(ru.sims)} simulated games (${esc(ru.batch_size||100)} per run)${ru.total_se!==undefined?' · total ±'+esc(ru.total_se):''}</span></span></div>
+    <div class="sim-kpis">${kp.map(k=>`<div><span class="label">${esc(k[0])}</span><span class="v">${esc(k[1])}</span>${k[2]?`<span class="small muted">${esc(k[2])}</span>`:''}</div>`).join('')}</div>
+    <div class="two">${simTable(s.team,'Sim output')}${simTable(s.inputs,isFb?'Inputs: pace, usage, blitz, coverage':'Inputs')}</div>
+    <div class="two">${simBox((s.box||{}).away, cols[0])}${simBox((s.box||{}).home, cols[1])}</div>
+    <p class="note">${esc(s.caveat||'')} ${esc(ru.rule||'')}</p></div>`;
+}
 function renderTop(){
   const v = document.getElementById('v-top');
   if(S.dbState==='loading' || (S.dbState==='on' && !S.slatesLoaded)){ v.innerHTML='<p class="muted">Loading…</p>'; return; }
@@ -1144,6 +1196,7 @@ function renderTop(){
             ${mu.rows.map(r=>`<tr><td class="small muted">${esc(r.label)}</td><td class="num ${r.edge==='a'?'adv':''}">${esc(r.a)}</td><td class="num ${r.edge==='b'?'adv':''}">${esc(r.b)}</td></tr>`).join('')}
           </tbody></table></div>`:''}
         </div>
+        ${simCard(f)}
         ${Array.isArray(f.props)&&f.props.length?`<div><span class="label">Props</span><div class="scroll" style="margin-top:8px"><table class="board-t" style="min-width:860px"><thead><tr><th>Prop</th><th class="n">FanDuel now</th><th class="n">Research %</th><th class="n">Fair</th><th class="n">${research(st)?'Price check':'Edge'}</th><th>Research</th><th>Execution</th><th>Why</th></tr></thead><tbody>${propRows(f,st)}</tbody></table></div></div>`:''}
         ${Array.isArray(f.sgps)&&f.sgps.length?`<div><span class="label">SGP setups</span><div class="sgps" style="margin-top:8px">${f.sgps.map((sg,j)=>sgpCard(f,sg,j,st)).join('')}</div></div>`:''}
       </div></article>`;
