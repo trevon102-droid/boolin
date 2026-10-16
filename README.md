@@ -93,6 +93,24 @@ market, point in time, with a chronological holdout, and gates research conclusi
   until a league's validation scorecard allows otherwise; in price mode a research % more than 10 points from the
   market gets no stake (review).
 
+## Game sims (GameSim v1.1, `pipeline/sim.py`)
+
+A **market-anchored simulation** of each Top 10 game (NFL, CFB, MLB, NHL) that shows the range of plausible game
+scripts and player outcomes. It is a research/scenario tool, separate from the betting probability layer:
+
+- The raw simulation is blended 50% toward the market-implied score by scaling scoring efficiency only; volume,
+  usage and player shares never change and props are never back-solved. The card shows raw → market → anchored.
+- Win/over/cover and prop over/under percentages are **simulation frequencies**, not calibrated or validated
+  probabilities. They never create a BET and are never copied into `modelP`.
+- Runs of 100 games repeat until the box score stops moving (cap 100 runs). **Convergence is not accuracy**:
+  simulation uncertainty (SE, 95% simulation interval) is shown apart from model/data uncertainty.
+- Player distributions (mean, median, P10–P90, P(over/under/push) per line) come from the same simulated games, so
+  every line and ladder rung for a stat is priced from one distribution.
+- Missing inputs are listed in `data_quality` (`clean` / `partial` / `degraded` / `unknown`) and badged on the card.
+- The simulation/market difference is labelled *Not validated edge*. Boolin's research layer stays the authority.
+
+Specs, steps and simplifications: TASK.md, "Game sims". Tests: `tests/test_sim.py`.
+
 ## Tests
 
 ```

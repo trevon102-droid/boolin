@@ -236,6 +236,9 @@ table.mu td.adv{font-weight:600;color:var(--good)}
 .sim table{font-size:.84rem}
 .sim th,.sim td{padding:7px 9px}
 .sim .line{font-family:var(--f-mono);font-size:.78rem;color:var(--ink)}
+.runs .badges{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end}
+.runs b.bad{background:var(--bad-soft);color:var(--bad)}
+.simprop{display:inline-block;margin:3px 4px 0 0;font:500 .72rem/1.3 var(--f-mono);padding:2px 6px;border-radius:3px;background:var(--surface);border:1px solid var(--line);color:var(--ink)}
 /* parlays */
 .legs{display:flex;flex-direction:column;gap:6px}
 .leg{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:9px 12px;cursor:pointer}
@@ -1131,12 +1134,16 @@ function sgpCard(f, sg, j, st){
       ${e.units>0&&ex.bet_status==='BET'?`<button class="logbtn" data-sgplog="${esc(f.game)}" data-sj="${j}">Log bet</button>`:''}</div>
   </div>`;
 }
-/* game sim (pipeline/sim.py): averages over N simulated games, stopped once the box score stops moving */
+/* game sim (pipeline/sim.py, GameSim v1.1): a market-anchored simulation. Its percentages are simulation
+   frequencies, not validated probabilities; it never creates a BET and never feeds modelP. Older v1 sims
+   (no anchor_audit / uncertainty / data_quality) still render from score/team/inputs/box. */
 function simTable(t, cap){
   if(!t||!Array.isArray(t.rows)||!t.rows.length) return '';
   const c=t.cols||['Away','Home'];
   return `<div class="scroll"><table class="mu"><thead><tr><th>${esc(cap)}</th><th>${esc(c[0])}</th><th>${esc(c[1])}</th></tr></thead><tbody>${t.rows.map(r=>`<tr><td class="small muted">${esc(r.label)}</td><td class="num">${esc(r.a===null||r.a===undefined?'—':r.a)}</td><td class="num">${esc(r.b===null||r.b===undefined?'—':r.b)}</td></tr>`).join('')}</tbody></table></div>`;
 }
+function simProp(p){ const st=String(p.stat||'').replace(/_/g,' '); const ln=p.line;
+  return `<span class="simprop">O ${esc(ln)} ${esc(st)} ${pct(p.over,0)} · U ${pct(p.under,0)}${p.push?' · push '+pct(p.push,0):''}${p.odds!==undefined&&p.odds!==null?' · FD '+esc(am(p.odds)):''}</span>`; }
 function simBox(side, title){
   if(!side||!Array.isArray(side.rows)||!side.rows.length) return '';
   const cols=side.cols||['Player','Projected line'];
@@ -1144,29 +1151,71 @@ function simBox(side, title){
   const rows=side.rows.map(r=>Array.isArray(r.cells)?r.cells:[r.name,r.line]);
   // drop columns that are empty for every player (e.g. snap % when no source has it)
   const keep=cols.map((c,i)=>i===0||i===li?false:rows.some(x=>x[i]!==null&&x[i]!==undefined&&x[i]!==''&&x[i]!=='—'));
-  return `<div><span class="label">${esc(title)} · top ${side.rows.length}</span><div class="scroll" style="margin-top:6px"><table><thead><tr><th>Player · projected line</th>${cols.map((c,i)=>keep[i]?`<th>${esc(c)}</th>`:'').join('')}</tr></thead><tbody>
-    ${rows.map(x=>`<tr><td><strong>${esc(x[0])}</strong>${li>=0?`<span class="sub line">${esc(x[li])}</span>`:''}</td>${x.map((v,i)=>keep[i]?`<td class="small">${esc(v===null||v===undefined?'—':v)}</td>`:'').join('')}</tr>`).join('')}</tbody></table></div></div>`;
+  return `<div><span class="label">${esc(title)} · top ${side.rows.length}</span><div class="scroll" style="margin-top:6px"><table><thead><tr><th>Player · projected mean · range</th>${cols.map((c,i)=>keep[i]?`<th>${esc(c)}</th>`:'').join('')}</tr></thead><tbody>
+    ${side.rows.map((r,ri)=>{ const x=rows[ri]; return `<tr><td><strong>${esc(x[0])}</strong>${li>=0?`<span class="sub line">${esc(x[li])}</span>`:''}${r.range?`<span class="sub">${esc(r.range)}</span>`:''}${Array.isArray(r.props)&&r.props.length?`<span class="sub">${r.props.map(simProp).join(' ')}</span>`:''}</td>${x.map((v,i)=>keep[i]?`<td class="small">${esc(v===null||v===undefined?'—':v)}</td>`:'').join('')}</tr>`; }).join('')}</tbody></table></div></div>`;
+}
+function simBadges(s){
+  const ru=s.runs||{}; const st=Array.isArray(s.status)&&s.status.length?s.status:[ru.converged?'STABLE':'NOT STABLE'];
+  const cls=b=>b==='STABLE'?'':b==='NOT STABLE'?'unconv':b==='DEGRADED INPUTS'?'bad':'unconv';
+  return st.map(b=>`<b class="${cls(b)}">${esc(b)}</b>`).join('');
+}
+function simAudit(s, cols, d){
+  const au=s.anchor_audit; const sc=s.score||{}; const fx=(x)=>x===null||x===undefined?'—':Number(x).toFixed(d);
+  const rows = au ? [
+      ['Raw simulation', au.raw], ['Market-implied baseline', au.market_implied], ['Anchored simulation', au.anchored] ]
+    : [ ['Raw simulation', sc.raw?{away:sc.raw.away, home:sc.raw.home, total:(sc.raw.away||0)+(sc.raw.home||0)}:null],
+        ['Market-implied baseline', sc.anchor&&sc.anchor.market_implied?{away:sc.anchor.market_implied[0], home:sc.anchor.market_implied[1], total:sc.anchor.market_implied[0]+sc.anchor.market_implied[1]}:null],
+        ['Anchored simulation', {away:sc.away, home:sc.home, total:sc.total}] ];
+  const w = au ? au.weight : (sc.anchor||{}).weight;
+  return `<div><span class="label">Market comparison · raw → market-implied → anchored</span><div class="scroll" style="margin-top:6px"><table class="mu"><thead><tr><th></th><th>${esc(cols[0])}</th><th>${esc(cols[1])}</th><th>Total</th></tr></thead><tbody>
+    ${rows.map(([lab,v])=>`<tr><td class="small muted">${esc(lab)}</td>${v?`<td class="num">${fx(v.away)}</td><td class="num">${fx(v.home)}</td><td class="num">${fx(v.total)}</td>`:'<td colspan="3" class="small muted">no market total supplied</td>'}</tr>`).join('')}
+    ${au&&au.shift?`<tr><td class="small muted">Shift from the anchor</td><td class="num">${au.shift.away>0?'+':''}${fx(au.shift.away)}</td><td class="num">${au.shift.home>0?'+':''}${fx(au.shift.home)}</td><td class="num">${au.shift.total>0?'+':''}${fx(au.shift.total)}</td></tr>`:''}
+    </tbody></table></div><p class="small muted" style="margin-top:6px">Anchor weight ${w!==undefined&&w!==null?Math.round(w*100)+'%':'—'}${au&&au.market_implied?' · '+esc(au.market_implied.basis):''}${au&&au.method?' · '+esc(au.method):''}</p></div>`;
+}
+function simDiag(s){
+  const dg=s.market_diagnostic; if(!dg||!Array.isArray(dg.rows)||!dg.rows.length) return '';
+  const v=(x,u)=>x===null||x===undefined?'—':(String(u).includes('freq')?pct(x,1):(typeof x==='number'?x.toFixed(2):esc(x)));
+  const dv=(x,u)=>x===null||x===undefined?'—':(String(u).includes('freq')?(x>0?'+':'')+(x*100).toFixed(1)+' pts':(x>0?'+':'')+Number(x).toFixed(2));
+  return `<div><span class="label">${esc(dg.label||'Simulation / market difference')} <span class="pill p-pass">Not validated edge</span></span><div class="scroll" style="margin-top:6px"><table class="mu"><thead><tr><th></th><th>Simulation</th><th>Market</th><th>Difference</th></tr></thead><tbody>
+    ${dg.rows.map(r=>`<tr><td class="small muted">${esc(r.label)}${r.note?`<span class="sub">${esc(r.note)}</span>`:''}</td><td class="num">${v(r.sim,r.unit)}</td><td class="num">${v(r.market,r.unit)}</td><td class="num">${dv(r.diff,r.unit)}</td></tr>`).join('')}
+    </tbody></table></div><p class="small muted" style="margin-top:6px">${esc(dg.note||'')}</p></div>`;
+}
+function simUnc(s){
+  const u=s.uncertainty; if(!u) return '';
+  const su=u.simulation||{}, md=u.model_data||{};
+  const ci=(o,isP)=>o&&o.ci95?(isP?pct(o.ci95[0],1)+'–'+pct(o.ci95[1],1):o.ci95[0].toFixed(2)+' to '+o.ci95[1].toFixed(2)):'—';
+  const rows=[['Total (mean)',su.total,false],['Home margin (mean)',su.margin,false],['Home win freq',su.home_win,true],['Over freq',su.over,true],['Cover freq',su.home_cover,true]].filter(r=>r[1]);
+  return `<div class="two"><div><span class="label">Simulation uncertainty</span><div class="scroll" style="margin-top:6px"><table class="mu"><thead><tr><th></th><th>SE</th><th>95% simulation interval</th></tr></thead><tbody>
+      ${rows.map(([l,o,isP])=>`<tr><td class="small muted">${esc(l)}</td><td class="num">${isP?pct(o.se,1):Number(o.se).toFixed(2)}</td><td class="num">${ci(o,isP)}</td></tr>`).join('')}</tbody></table></div>
+      <p class="small muted" style="margin-top:6px">${esc(su.note||'')}</p></div>
+    <div><span class="label">Model / data uncertainty · inputs ${esc(md.status||'unknown')}</span>
+      ${Array.isArray(md.items)&&md.items.length?`<ul class="injl">${md.items.map(x=>'<li>'+esc(x)+'</li>').join('')}</ul>`:'<p class="small muted" style="margin-top:6px">No missing or estimated inputs flagged.</p>'}
+      <p class="small muted" style="margin-top:6px">${esc(md.note||'')}</p></div></div>`;
 }
 function simCard(f){
   const s=f.sim; if(!s||!s.score) return '';
   const sc=s.score, ru=s.runs||{}, cols=(s.team&&s.team.cols)||((f.matchup||{}).cols)||['Away','Home'];
   const isFb=s.sport==='NFL'||s.sport==='CFB'; const d=isFb?1:2;
   const fx=(x,k)=>x===null||x===undefined?'—':Number(x).toFixed(k);
-  const anc=sc.anchor||{}; const mi=anc.market_implied;
+  const fq=' · sim frequency';
   const kp=[
-    ['Total', fx(sc.total,d), sc.total_p10_p90?'median '+sc.total_median+' · 80% range '+sc.total_p10_p90[0]+'–'+sc.total_p10_p90[1]:''],
-    [cols[1]+' win', pct(sc.home_win,0), sc.ot_rate?(isFb?'OT ':'extra/OT ')+pct(sc.ot_rate,0):''],
-    sc.over!==undefined?['Over the line', pct(sc.over,0), sc.push?'push '+pct(sc.push,0):'']:null,
-    sc.home_cover!==undefined?[cols[1]+' covers', pct(sc.home_cover,0), '']:null,
-    ['Raw model', cols[0]+' '+fx(sc.raw&&sc.raw.away,d)+' · '+cols[1]+' '+fx(sc.raw&&sc.raw.home,d), mi?'market '+cols[0]+' '+fx(mi[0],d)+' · '+cols[1]+' '+fx(mi[1],d)+' · '+Math.round((anc.weight||0)*100)+'% blended in':'no market anchor'],
+    ['Projected total', fx(sc.total,d), sc.total_p10_p90?'median '+sc.total_median+' · 80% range '+sc.total_p10_p90[0]+'–'+sc.total_p10_p90[1]:''],
+    [cols[1]+' win', pct(sc.home_win,0), 'sim frequency'+(sc.tie_rate?' · tie '+pct(sc.tie_rate,1):'')+(sc.ot_rate?(isFb?' · OT ':' · extra/OT ')+pct(sc.ot_rate,0):'')+(sc.shootout_rate?' · SO '+pct(sc.shootout_rate,0):'')],
+    sc.over!==undefined?['Over the total', pct(sc.over,0), 'sim frequency'+(sc.push?' · push '+pct(sc.push,0):'')]:null,
+    sc.home_cover!==undefined?[cols[1]+' covers', pct(sc.home_cover,0), 'sim frequency'+(sc.cover_push?' · push '+pct(sc.cover_push,0):'')]:null,
   ].filter(Boolean);
-  return `<div class="sim" aria-label="Game simulation">
-    <div class="sim-head"><div><span class="label">Game sim · projected box score</span>
+  const dq=s.data_quality;
+  return `<div class="sim" aria-label="Market-anchored simulation">
+    <div class="sim-head"><div><span class="label">${esc(s.label||'Market-anchored simulation')} · projected box score</span>
       <p class="sim-score">${esc(cols[0])} <span class="num">${fx(sc.away,d)}</span> · ${esc(cols[1])} <span class="num">${fx(sc.home,d)}</span></p></div>
-      <span class="runs"><b class="${ru.converged?'':'unconv'}">${ru.converged?'Stable after':'Not stable after'} ${esc(ru.batches)} of ${esc(ru.max_batches||100)} runs</b><span class="small muted num">${esc(ru.sims)} simulated games (${esc(ru.batch_size||100)} per run)${ru.total_se!==undefined?' · total ±'+esc(ru.total_se):''}</span></span></div>
+      <span class="runs"><span class="badges">${simBadges(s)}</span><span class="small muted num">${ru.converged?'Stable after':'Not stable after'} ${esc(ru.batches)} of ${esc(ru.max_batches||100)} runs · ${esc(ru.sims)} simulated games (${esc(ru.batch_size||100)} per run)</span></span></div>
     <div class="sim-kpis">${kp.map(k=>`<div><span class="label">${esc(k[0])}</span><span class="v">${esc(k[1])}</span>${k[2]?`<span class="small muted">${esc(k[2])}</span>`:''}</div>`).join('')}</div>
-    <div class="two">${simTable(s.team,'Sim output')}${simTable(s.inputs,isFb?'Inputs: pace, usage, blitz, coverage':'Inputs')}</div>
+    <p class="small muted">${esc(sc.frequency_note||'Percentages are simulation frequencies, not validated probabilities.')}</p>
+    <div class="two">${simAudit(s, cols, d)}${simDiag(s)}</div>
+    ${simUnc(s)}
+    <div class="two">${simTable(s.team,'Sim output')}${simTable(s.inputs,isFb?'Inputs: pace, usage, pressure, blitz, coverage':'Inputs')}</div>
     <div class="two">${simBox((s.box||{}).away, cols[0])}${simBox((s.box||{}).home, cols[1])}</div>
+    ${dq&&Array.isArray(dq.flags)&&dq.flags.length?`<details class="notes"><summary>Data quality: <b>${esc(dq.status)}</b> · ${dq.flags.filter(x=>x.level!=='info').length} gap(s), ${dq.flags.filter(x=>x.level==='info').length} note(s) <b>Show</b></summary><ul class="injl">${dq.flags.map(x=>`<li><span class="pill ${x.level==='degraded'?'p-bad':x.level==='partial'?'p-small':'p-pass'}">${esc(x.level)}</span> ${esc(x.field)}: ${esc(x.note)}</li>`).join('')}</ul></details>`:''}
     <p class="note">${esc(s.caveat||'')} ${esc(ru.rule||'')}</p></div>`;
 }
 function renderTop(){

@@ -11,3 +11,6 @@ Execution (bet permission, line-aware CLV, SGP method labels, market anchor) is 
 `/*EXEC_JS_BEGIN*/` and `/*EXEC_JS_END*/`, tested in node by `tests/test_board_exec.py`. Research tier and bet
 status are separate columns: a play can be A-tier research and `NOT BETTABLE AT CURRENT PRICE` at the same time.
 Bet records are additive (schema 2 adds the line fields); older records keep working.
+Game sims render on the Top 10 cards via `simCard()` (market comparison raw → market → anchored, simulation/market
+difference marked "Not validated edge", simulation vs model/data uncertainty, top-5 player ranges and prop
+frequencies, data-quality badges). v1 sim records without the v1.1 fields still render.

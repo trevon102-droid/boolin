@@ -313,36 +313,71 @@ or a manual run did. Otherwise find prop prices on the web and name the book.
 - `longshots`: `[{"id","type":"Anytime TD"|"2+ TDs"|"First TD"|"Home run"|"Anytime goal","sport","game","start","pick","odds","book","conviction","modelP","prior","priorLabel","factors","inputs","why","category"}]`. On NFL days list the best anytime and 2+ TD candidates by usage (red-zone/goal-line share, snaps, TD history, team implied total), each tiered. Leave out `odds` when FanDuel's price isn't found; the board then shows the price to bet at. Stakes are capped by the `longMax` setting.
 - `ladders`: `[{"id","sport","game","start","pick","base","why","category","rungs":[{"label":"80+","odds":120,"modelP":0.42}]}]`. Climb from a main Over that has a real read; rungs without a FanDuel price show the price to bet at.
 
-### Game sims (`featured[].sim`, every Top 10 game)
+### Game sims (`featured[].sim`, every Top 10 game) — GameSim v1.1, a market-anchored simulation
 
-Every Top 10 game gets a simulated box score from `pipeline/sim.py`. It plays the game out in runs of 100
-simulated games, up to 100 runs (10,000 games), and stops once the box score stops moving (every average moves
-<1% for 3 straight runs and the total's standard error is <1% of the mean). The card shows how many runs it took.
-More runs make the averages stable, not more accurate: the sim is only as good as its inputs.
+Every Top 10 game gets a **market-anchored simulation** from `pipeline/sim.py`: the range of plausible game
+scripts and player outcomes given the inputs and the current FanDuel market. It is a research/scenario tool.
+It never finds an edge, never creates a BET, and is never copied into `modelP`; Boolin's research/model layer
+stays the authority for research conclusions.
 
+What the numbers mean:
+1. **Market-anchored.** The raw simulation's team scoring is pulled 50% of the way to the market-implied
+   baseline (total + spread for football; total + no-vig moneyline for MLB/NHL; total only keeps the raw side
+   split) by scaling scoring *efficiency* only. Volume and usage (plays, pass rate, target/carry/shot shares,
+   lineup, TOI, PP1) never change, and player stats are never back-solved to a prop line. The card shows
+   RAW → MARKET-IMPLIED → ANCHORED (`anchor_audit`).
+2. **Simulation frequency is not calibration.** `home_win`, `over`, `home_cover` and every prop over/under are
+   the share of simulated games where it happened. They are not validated probabilities.
+3. **Convergence is not accuracy.** The engine runs 100-game batches (up to 100) until the box score stops
+   moving and says how many it took. `uncertainty.simulation` (SE, 95% simulation interval) is Monte Carlo error
+   only; model/data uncertainty is not measured by the simulation (`uncertainty.model_data`).
+4. **Player distributions come from the simulation** (`players`: mean, median, P10/P25/P50/P75/P90 per stat;
+   P(over/under/push) for every supplied line). One distribution per player and stat feeds every line and ladder
+   rung, so ladders built from it are internally consistent.
+5. **Missing inputs reduce confidence.** `data_quality.status` is `clean` / `partial` / `degraded` / `unknown`
+   with every fallback listed; the card badge says `PARTIAL INPUTS` or `DEGRADED INPUTS`.
+6. **Simulation / market difference** (`market_diagnostic`) is labeled *Not validated edge*: a big gap is a
+   reason to research the game, never a bet by itself and never a reason to change a tier.
+
+Steps:
 1. Write one spec per game to `/tmp/simspec/<sport>-<away>-<home>.json` (schemas below; reuse what the research
    already gathered). Use `null` for anything you can't source and say so in `notes`. Never invent a number.
 2. `cd /home/claude/boolin && python -m pipeline.sim /tmp/simspec/*.json --out /tmp/sims.json`
 3. Put each result on its featured game: `featured[i].sim = sims[spec.game]` (the spec's `game` must match the
    featured `game` string exactly).
 
-Spec schemas (all season stats unless noted; `market` uses FanDuel's lines and anchors the score, 50% blend):
-- **NFL / CFB**: `{"sport","game","start","market":{"spread_home","total"},"env":{"wind_mph","gust_mph","temp_f","precip","neutral"},"away":T,"home":T}`
-  with `T = {"abbr","games","plays_pg","pass_rate","ypc","ypa","comp_pct","int_rate","sack_rate","ppg","def":{"ypc_allowed","ypa_allowed","comp_pct_allowed","sack_rate","int_rate","plays_pg_allowed","pressure_pct","blitz_pct","man_pct","zone_pct"},"players":[{"name","pos","gp","att","comp","pass_yds","pass_td","int","carries","rush_yds","rush_td","targets","rec","rec_yds","rec_td","snap_pct"}]}`.
+Spec schemas (season stats unless noted). `market` = FanDuel: `total`, `spread_home` (football), `home_ml` /
+`away_ml`, and optionally `over_price` / `under_price` / `home_spread_price` / `away_spread_price` for the
+diagnostic. Prop lines go in `props: [{"player","stat","line" | "lines":[…],"odds"}]` or a player's
+`lines: {stat: line | [lines]}`; stats are `pass_att, comp, pass_yds, pass_td, int, carries, rush_yds, rush_td,
+targets, rec, rec_yds, rec_td, td` (football), `pa, h, tb, hr, r, rbi, bb, k` (batters), `bf, outs, k, h, bb, r,
+er` (starting pitcher), `sog, g, a, pts` (skaters), `saves` (goalie). Lines are read, never used to move a projection.
+- **NFL / CFB**: `{"sport","game","start","postseason","market":{…},"env":{"wind_mph","gust_mph","temp_f","precip","neutral"},"away":T,"home":T}`
+  with `T = {"abbr","games","plays_pg","pass_rate","ypc","ypa","comp_pct","int_rate","sack_rate","ppg","rz_td_pct","def":{"ypc_allowed","ypa_allowed","comp_pct_allowed","sack_rate","int_rate","plays_pg_allowed","pressure_pct","blitz_pct","man_pct","zone_pct"},"players":[{"name","pos","gp","att","comp","pass_yds","pass_td","int","carries","rush_yds","rush_td","targets","rec","rec_yds","rec_td","snap_pct"}]}`.
   NFL: take `plays_pg`, `early_down_pass_rate_neutral`, `blitz_pct`, `pressure_pct`, `man_pct`/`zone_pct` and each
   player's `snap_pct`, `targets`, `carries` from the newest `prep` `nfl-…` doc. QB + top 2 RBs + top 4–5 WR/TE.
-  If the starting QB is out, use the backup's rates (blend toward team rates on a tiny sample, and say so).
-- **MLB**: `{"sport":"MLB","game","start","market":{"total","home_ml","away_ml"},"env":{"temp_f","wind_mph","wind_dir":"in|out|cross","park_factor","park_hr_factor"},"away":M,"home":M}`
-  with `M = {"abbr","starter":{"name","throws","bf_per_start","k_pct","bb_pct","hbp_pct","hr_per_bf","h_per_bf"},"bullpen":{same rates},"lineup":[9 × {"name","pos","bats","pa","ab","h","doubles","triples","hr","k_pct","bb_pct","hbp"}]}`.
-  `bf_per_start` = tonight's expected leash (opener/bulk: the bulk arm with its expected BF).
-- **NHL**: `{"sport":"NHL","game","start","market":{"total","home_ml","away_ml"},"away":H,"home":H}` with
-  `H = {"abbr","shots_pg","shots_against_pg","goalie":{"name","sv_pct","shots_against","sv_pct_last_season"},"skaters":[12 × {"name","pos","gp","toi_pg","sog","goals","assists","pp1","last_season":{"gp","sog","goals","assists"}}]}`. Use the projected/confirmed goalie.
+  List tonight's starting QB with his own `att/comp/pass_yds/int`: the engine blends his rates with team rates by
+  sample (att/(att+150)), so don't pre-blend by hand.
+- **MLB**: `{"sport":"MLB","game","start","postseason","market":{…},"env":{"temp_f","wind_mph","wind_dir":"in|out|cross","park_factor","park_hr_factor"},"away":M,"home":M}`
+  with `M = {"abbr","lineup_status":"confirmed|projected","starter":{"name","throws","role":"opener"?,"bf_per_start","k_pct","bb_pct","hbp_pct","hr_per_bf","h_per_bf"},"bulk":{same, "bf_per_start"}?,"bullpen":{rates, "reliever_pitches_last3", "arms":[{"name","throws",rates,"bf_cap","avail":"full|limited|out"}]?},"lineup":[9 × {"name","pos","bats","pa","ab","h","doubles","triples","hr","k_pct","bb_pct","hbp"}]}`.
+  `bf_per_start` = tonight's expected leash. `reliever_pitches_last3` comes from `mlb.json` bullpen usage (120+ = taxed).
+  `postseason: true` (or an ALCS/NLCS/… game name) turns off the automatic extra-inning runner.
+- **NHL**: `{"sport":"NHL","game","start","market":{…},"away":H,"home":H}` with
+  `H = {"abbr","gp","shots_pg","shots_against_pg","pp_pct","pk_pct","pp_opps_pg","times_shorthanded_pg","goalie":{"name","status":"confirmed|projected|unconfirmed","start_prob"?,"sv_pct","shots_against","sv_pct_last_season","alt":{"name","sv_pct","shots_against","sv_pct_last_season"}},"skaters":[12 × {"name","pos","gp","toi_pg","sog","goals","assists","pp1","last_season":{"gp","sog","goals","assists"}}]}`.
+  A projected goalie starts 80% of simulated games (unconfirmed 65%, or `start_prob`); the `alt` takes the rest.
 - No engine yet for NBA/WNBA: leave `sim` off those games.
 
-The sim's win/cover/over % is context like the research baseline: it can prompt a re-check, but it is not a
-validated probability and never by itself makes or breaks a play. Don't copy sim numbers into `modelP`.
+Simplifications (also in the module docstring; say so if a read depends on one):
+- Football: drive-level clock from pace (no timeouts or 2-minute warning); late-game hurry-up/kneel-downs and a
+  2-point chart are simple rules; ~35% of 3rd/4th-and-3+ completions are sticks routes; a small league finishing
+  factor (NFL 1.07, CFB 1.12) makes league-average inputs score like the league and lifts realised yards per
+  play ~3–7% above the inputs; NFL regular-season ties occur ~1% (real ~0.3%).
+- MLB: platoon factors are league-average (not the hitter's own split); base running is probabilistic; unearned
+  runs only come from reached-on-error runners and the automatic runner.
+- NHL: special teams are per-opportunity events (no 5-on-3s or shorthanded goals); empty-net goals, 3v3 OT and
+  the shootout are approximations.
 
-### Cross-game parlays (`parlays`)
+### Cross-game parlays (`parlays`)### Cross-game parlays (`parlays`)
 
 Also write 2–3 cross-game parlays for the Parlays tab. Rules:
 - **Build from tiered research plays** (A or B, or C longshots in a clearly labeled lottery build). Never add a
@@ -396,4 +431,4 @@ After writing the slate, also save it as a workbook and send it:
 
 Finish with a short message: number of plays by tier, the A-tier plays with FanDuel price, `betTo` and execution
 status (BET / WAIT / NOT BETTABLE AT CURRENT PRICE) and why in one line, the Top 10 games picked, total units
-(including SGP stakes), anything that needs a check before start (goalies, lineups), each Top 10 sim (projected score and how many runs it took to stabilize), and any data source that failed.
+(including SGP stakes), anything that needs a check before start (goalies, lineups), each Top 10 sim (anchored score, runs to stabilize, input status; any big simulation/market difference as a research note, never as an edge), and any data source that failed.
