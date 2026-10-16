@@ -102,7 +102,7 @@ def test_convergence_reporting():
     ru = r["runs"]
     assert ru["batch_size"] == 100 and ru["sims"] == ru["batches"] * 100 and 5 <= ru["batches"] <= 100
     assert ru["converged"] is True and "STABLE" in r["status"]
-    assert "not accurate" in ru["rule"]
+    assert "not model accuracy" in ru["rule"] and ru["checks"]["home_win"] and ru["checks"]["over_hit"]
 
 
 def test_non_converged_is_reported():
@@ -500,7 +500,8 @@ def test_market_diagnostic_rows_and_uncertainty():
 def test_total_only_anchor_keeps_raw_split():
     r = sim.simulate(_nhl_spec(market={"total": 7.5}), **FAST)
     au = r["anchor_audit"]
-    assert au["market_implied"]["away"] is None and "split kept from the raw simulation" in au["market_implied"]["basis"]
+    assert au["market_implied"]["away"] is None and "kept from the raw simulation" in au["market_implied"]["basis"]
+    assert au["market_implied"]["kind"] == "total-only (raw split retained)"
     assert abs(r["score"]["total"] - (au["raw"]["total"] + 7.5) / 2) < 0.35
 
 
@@ -542,3 +543,194 @@ def test_goalie_sv_without_shots_against_is_not_thrown_away():
     spec["home"]["goalie"].pop("shots_against")
     q, _ = sim.assess_quality(spec)
     assert any(f["field"] == "H.goalie.shots_against" for f in q.flags)
+
+
+# --------------------------------------------------------------------------- v1.2 touchups
+import json as _json
+import re as _re
+import shutil as _shutil
+import subprocess as _subprocess
+from pathlib import Path as _Path
+
+
+def test_football_baseline_is_market_implied_and_mlb_nhl_are_market_derived():
+    fb = sim.market_baseline("NFL", {"total": 47.5, "spread_home": -3.5})
+    assert fb["label"] == "Market-implied baseline" and fb["kind"] == "total + spread"
+    for sport in ("MLB", "NHL"):
+        b = sim.market_baseline(sport, {"total": 7.5, "home_ml": -140, "away_ml": 120})
+        assert b["label"] == "Market-derived scoring baseline" and b["kind"] == "no-vig moneyline-derived"
+        assert "not a posted score" in b["basis"]
+    # football with a moneyline but no spread is also derived, not implied
+    assert sim.market_baseline("NFL", {"total": 44.5, "home_ml": -150, "away_ml": 130})["label"] == "Market-derived scoring baseline"
+
+
+def test_single_sided_moneyline_is_never_called_no_vig():
+    p, kind = sim.ml_home_prob({"home_ml": -150})
+    assert kind == "single-side implied" and abs(p - 0.6) < 1e-9
+    p2, kind2 = sim.ml_home_prob({"home_ml": -150, "away_ml": 130})
+    assert kind2 == "no-vig" and p2 < 0.6
+    b = sim.market_baseline("MLB", {"total": 8.5, "home_ml": -150})
+    assert b["kind"] == "single-side implied moneyline-derived" and "no-vig" not in b["basis"]
+    r = sim.simulate(_mlb_spec(market={"total": 8.5, "home_ml": -150}, postseason=False), **FAST)
+    row = r["market_diagnostic"]["rows"][0]
+    assert row["market_kind"] == "single-side implied" and "no-vig" not in row["unit"] and "not no-vig" in row["note"]
+    assert r["anchor_audit"]["market_implied"]["label"] == "Market-derived scoring baseline"
+
+
+def test_convergence_checks_frequency_outputs_not_just_the_total():
+    # total is nearly constant (its SE condition passes at once); the win frequency is a coin flip
+    def one(rng):
+        w = 1.0 if rng.random() < 0.5 else 0.0
+        return {"total": 40.0 + rng.random() * 0.01, "margin": 3.0 + rng.random() * 0.01, "home_win": w, "away_pts": 18.5, "home_pts": 21.5}
+    t, runs = sim.run_until_stable(one, random.Random(1), key_freqs=("home_win",))
+    assert runs["converged"] and runs["batches"] >= 25  # SE(0.5) < 1 pt needs ~2,500 games
+    assert "home_win" in runs["checked_outputs"] and runs["freq_se"]["home_win"] <= sim.FREQ_SE
+    t2, runs2 = sim.run_until_stable(one, random.Random(1), key_freqs=())
+    assert runs2["batches"] < runs["batches"]  # without the frequency check it would stop much earlier
+    # an over/cover check only exists when that market exists
+    r = sim.simulate(_nhl_spec(market={"total": 6.5}), **FAST)
+    assert "over_hit" in r["runs"]["checked_outputs"] and "home_cover_hit" not in r["runs"]["checked_outputs"]
+
+
+def test_cfb_overtime_order_is_set_once_and_alternates():
+    def run(seed, scorer):
+        pts = [21, 21]
+        seen = []
+
+        def possession(s, yard, ctx):
+            seen.append((ctx["ot_n"], s))
+            scorer(pts, s, ctx)
+            return "fg", None
+
+        info = {"ot": 1, "ot_periods": 0, "tie": 0, "safety": 0}
+        sim.cfb_overtime(random.Random(seed), pts, possession, info, (1.0, 1.0), sim.LEAGUE["CFB"])
+        return pts, seen, info
+
+    # both teams always kick a FG: OT1 and OT2 tie, OT3+ is decided by alternating 2-point plays
+    pts, seen, info = run(3, lambda p, s, c: p.__setitem__(s, p[s] + 3))
+    toss = info["toss_winner"]
+    assert [s for n, s in seen if n == 1] == [1 - toss, toss]   # toss winner defends first in OT1
+    assert [s for n, s in seen if n == 2] == [toss, 1 - toss]   # the order flips in OT2 (never re-drawn)
+    assert info["order"][0] == (1 - toss, toss) and info["order"][1] == (toss, 1 - toss)
+    assert all(info["order"][i][0] != info["order"][i + 1][0] for i in range(len(info["order"]) - 1))
+    assert pts[0] != pts[1] and info["ot_periods"] >= 3 and info["safety"] == 0
+    assert (max(pts) - 27) % 2 == 0                              # only 2-point plays score from OT3
+    # same seed -> same order and result
+    assert run(3, lambda p, s, c: p.__setitem__(s, p[s] + 3)) == (pts, seen, info)
+    # OT1 decided: first possessor scores a TD+PAT, the second only a FG -> the game ends after OT1
+    def td_then_fg(p, s, c):
+        p[s] += 3 if c["need_td"] else 7  # first possessor scores a TD; the second (needing a TD) only kicks a FG
+    pts1, seen1, info1 = run(5, td_then_fg)
+    assert info1["ot_periods"] == 1 and pts1[0] != pts1[1] and len(seen1) == 2
+
+
+def test_mlb_postseason_detection_formats():
+    post = ["WC", "WILD_CARD", "WILDCARD", "Wild Card", "ALWC", "NLWC", "ALDS", "NLDS", "ALCS", "NLCS", "World Series"]
+    for tag in post:
+        assert sim.is_postseason({"game": f"TB @ CLE ({tag} G1)"}), tag
+        assert sim.is_postseason({"series": tag}), tag
+    for gt in ("F", "D", "L", "W"):
+        assert sim.is_postseason({"game_type": gt})
+    for reg in ({"game": "TB @ CLE"}, {"game": "NYM @ ATL", "game_type": "R"}, {"game": "SWCH @ BOS"}):
+        assert not sim.is_postseason(reg), reg
+    assert sim.is_postseason({"postseason": False, "game": "ALWC G1"}) is False  # explicit wins
+    assert sim.postseason_status({"game": "TB @ CLE"})[1].startswith("not supplied")
+    # a Wild Card game gets no automatic runner: longer extras than the same game in the regular season
+    wc = _games(sim.mlb_factory(_mlb_spec(game="TB @ CLE (Wild Card G2)")), 2500, seed=8)
+    reg = _games(sim.mlb_factory(_mlb_spec(postseason=False)), 2500, seed=8)
+    avg_x = lambda rows: sum(r["innings"] for r in rows if r["ot"]) / max(1, sum(1 for r in rows if r["ot"]))
+    assert avg_x(wc) > avg_x(reg)
+    flags = {f["field"] for f in sim.assess_quality(_mlb_spec())[0].flags}
+    assert "postseason" in flags  # not supplied -> visible
+
+
+def test_nhl_empty_net_goals_never_touch_goalie_stats():
+    f, meta = sim.nhl_factory(_nhl_spec())
+    rows = _games(f, 3000, seed=31)
+    eng = 0
+    for r in rows:
+        for k in [k for k in r if "|G:" in k and k.endswith("|sa")]:
+            assert r[k] == r.get(k[:-2] + "sv", 0) + r.get(k[:-2] + "ga", 0), (k, r)
+        ga = sum(v for k, v in r.items() if "|G:" in k and k.endswith("|ga"))
+        en = r.get("0|team_eng", 0) + r.get("1|team_eng", 0)
+        eng += en
+        assert r["total"] == ga + en + r["shootout"]
+    assert eng > 100  # empty-net goals do happen, through the clean path
+
+
+def _sim_js():
+    m = _re.search(r"/\*SIM_JS_BEGIN\*/(.*?)/\*SIM_JS_END\*/", (_Path(__file__).resolve().parent.parent / "board" / "rackz-sharp-board.html").read_text(), _re.S)
+    assert m, "SIM_JS markers missing from the board page"
+    return m.group(1)
+
+
+_JS_STUBS = """
+const esc=s=>String(s===undefined||s===null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pct=(x,d=1)=>x===null||x===undefined||!Number.isFinite(x)?'—':(x*100).toFixed(d)+'%';
+const am=o=>o===null||o===undefined?'—':(o>0?'+'+o:String(o));
+"""
+
+
+def _render(sim_obj):
+    node = _shutil.which("node")
+    assert node, "node is required for the board render tests"
+    prog = _JS_STUBS + _sim_js() + f"\nprocess.stdout.write(simCard({{game:'A @ H', sim:{_json.dumps(sim_obj)}}}));"
+    out = _subprocess.run([node, "-e", prog], capture_output=True, text=True, timeout=30)
+    assert out.returncode == 0, out.stderr
+    return out.stdout
+
+
+def test_board_renders_distributions_collapsed_and_labels_frequencies():
+    spec = _nhl_spec(market={"total": 6.5, "home_ml": -130, "away_ml": 110})
+    spec["props"] = [{"player": "H0", "stat": "sog", "lines": [2.5, 3.5]}]
+    html = _render(sim.simulate(spec, **FAST))
+    assert "<details class=\"simdist\"><summary>Distribution</summary>" in html and " open" not in html.split("simdist")[1][:20]
+    assert "P25" in html and "P75" in html and "Prop distribution" in html
+    assert "Not validated edge" in html and "simulation frequenc" in html.lower()
+    assert "Market-derived scoring baseline" in html and "3v3 OT / shootout approximation" in html
+    assert "95% Monte Carlo simulation interval" in html
+    for bad in ("BEST BET", "LOCK", "CONFIDENT", "calibrated probabilit", "model probabilit"):
+        assert bad.lower() not in html.lower().replace("not calibrated or validated probabilities", ""), bad
+
+
+def test_old_v1_sim_records_still_render():
+    v1 = {"engine": "boolin-sim v1", "sport": "NFL", "game": "A @ H",
+          "runs": {"batches": 20, "batch_size": 100, "sims": 2000, "max_batches": 100, "converged": True, "rule": "old rule"},
+          "score": {"away": 20.1, "home": 23.4, "total": 43.5, "total_median": 43, "total_p10_p90": [28, 60], "home_win": 0.6, "ot_rate": 0.05,
+                    "raw": {"away": 21.0, "home": 22.0}, "anchor": {"weight": 0.5, "market_implied": [19.0, 24.0], "efficiency": [1.0, 1.0]},
+                    "over": 0.48, "push": 0.0, "home_cover": 0.51},
+          "team": {"cols": ["A", "H"], "rows": [{"label": "Predicted plays", "a": 63, "b": 64}]},
+          "inputs": {"cols": ["A", "H"], "rows": [{"label": "Pace", "a": 63, "b": 64}]},
+          "box": {"away": {"cols": ["Player", "Pos", "Snap %", "Usage (sim)", "Projected line"], "rows": [{"name": "A QB", "line": "20/32 250 yds", "cells": ["A QB", "QB", "—", "—", "20/32 250 yds"]}]},
+                  "home": {"cols": ["Player", "Pos", "Snap %", "Usage (sim)", "Projected line"], "rows": [{"name": "H QB", "line": "22/34 270 yds", "cells": ["H QB", "QB", "—", "—", "22/34 270 yds"]}]}},
+          "caveat": "old caveat"}
+    html = _render(v1)
+    assert "A QB" in html and "Market comparison" in html and "Market-implied baseline" in html and "STABLE" in html
+    assert "simdist" not in html  # no players block in v1 -> no distribution section, no crash
+
+
+def _walk(o):
+    if isinstance(o, dict):
+        for k, v in o.items():
+            yield k
+            yield from _walk(v)
+    elif isinstance(o, list):
+        for v in o:
+            yield from _walk(v)
+
+
+def test_simulation_output_never_carries_modelP_or_bet_fields():
+    for spec in (_fb_spec(market={"spread_home": -3, "total": 44.5, "home_ml": -160, "away_ml": 135}), _nhl_spec(market={"total": 6.5})):
+        keys = set(_walk(sim.simulate(spec, **FAST)))
+        assert not keys & {"modelP", "betTo", "betToPrice", "units", "conviction", "bet_status", "stake"}, keys
+
+
+def test_simulation_market_difference_cannot_create_a_bet():
+    from tests.test_board_exec import run as exec_run, FRESH
+    pick = {"pick": "Under 44.5", "odds": -130, "priceAt": FRESH, "betTo": "44.5 to -120"}
+    huge = dict(pick, sim={"score": {"home_win": 0.99, "over": 0.01}, "market_diagnostic": {"rows": [{"label": "Over 44.5", "diff": -0.49}]}})
+    a = exec_run(f"EXEC.betStatus({_json.dumps(pick)}, {{now, staleMin:1440}})")
+    b = exec_run(f"EXEC.betStatus({_json.dumps(huge)}, {{now, staleMin:1440}})")
+    assert a["bet_status"] == b["bet_status"] == "NOT BETTABLE AT CURRENT PRICE"
+    wait = {"pick": "Under 44.5", "betTo": "44.5 to -120", "sim": {"score": {"over": 0.0}}}
+    assert exec_run(f"EXEC.betStatus({_json.dumps(wait)}, {{now, staleMin:1440}})")["bet_status"] == "WAIT / RECHECK"

@@ -1,51 +1,58 @@
-"""Market-anchored game-script and player-projection simulator for the Top 10 cards (GameSim v1.1).
+"""Market-anchored game-script and player-projection simulator for the Top 10 cards (GameSim v1.2).
 
     python -m pipeline.sim SPEC.json [SPEC2.json ...] --out sims.json [--seed 7] [--anchor 0.5]
 
 Each SPEC is one game (schemas in TASK.md, "Game sims"). The engine plays the game out in runs of 100
-simulated games, up to 100 runs (10,000 games), and stops once every tracked average has moved by less
-than 1% (or 0.05 absolute) for 3 runs in a row AND the game total's Monte Carlo standard error is under
-1% of its mean. The output says how many runs it took.
+simulated games, up to 100 runs (10,000 games), and stops once the simulated outputs converge: every tracked
+average moves by less than 1% (or 0.05 absolute) for 3 runs in a row, the total's and margin's Monte Carlo
+SE are under 1% of the mean total, and the home-win frequency (plus the over frequency when a total is
+supplied and the cover frequency when a spread is supplied) has an SE under 1 percentage point.
 
 What the output is, and is not
 ------------------------------
-* It is a **market-anchored simulation**. The raw simulation's team scoring is pulled `anchor` of the way
-  (default 50%) toward the market-implied baseline by scaling each team's scoring *efficiency* (yards per
-  play, hit/HR rates, shooting %). Volume and usage (plays, pass rate, target/carry/shot shares, lineup
-  order, TOI, PP1) are never touched, and player props are never back-solved to a sportsbook line. The raw
-  simulation, the market-implied baseline and the anchored result are all in `anchor_audit`.
-* `home_win`, `home_cover`, `over` etc. are **simulation frequencies**: the share of simulated games where
-  it happened. They are not calibrated or validated probabilities, they are never copied into `modelP`,
-  and a simulation/market difference is never an edge or a bet by itself.
-* **Convergence is not accuracy.** `uncertainty.simulation` is Monte Carlo error only. Model and input
-  uncertainty (tiny samples, projected lineups/goalies, missing fields, the simplifications below) is not
-  measured by the simulation; `data_quality` lists what was missing or estimated.
-* Player distributions (`players`) come straight from the simulated games. One distribution per player
-  per stat feeds every line and ladder rung for that stat.
+* A **market-anchored simulation**, a research/scenario tool, not a validated predictive model. The raw
+  simulation's team scoring is pulled `anchor` of the way (default 50%) toward a market baseline by scaling
+  each team's scoring *efficiency* (yards per play, hit/HR rates, shooting %). Volume and usage (plays, pass
+  rate, target/carry/shot shares, lineup, TOI, PP1) are never touched and player props are never
+  back-solved to a sportsbook line. The baseline is a **market-implied baseline** for football total +
+  spread, and a **market-derived scoring baseline** otherwise (a Pythagorean split of the no-vig or
+  single-side implied moneyline, or total-only with the raw side split retained). `anchor_audit` shows
+  raw -> baseline -> anchored.
+* `home_win`, `away_win`, `over`, `under`, `home_cover` and prop over/under/push are **simulation
+  frequencies**: the share of simulated games where it happened. They are not calibrated, validated or
+  model probabilities and not an edge. They are never copied into `modelP`, never create or upgrade a BET
+  and never change a tier, stake or exposure. Boolin's research/model layer owns `modelP`.
+* **Stable means Monte Carlo convergence only, never accuracy.** `uncertainty.simulation` (SE and a 95%
+  Monte Carlo simulation interval) is rerun noise only; data quality, samples, projected players/goalies,
+  lineups and the simplifications below are model/data uncertainty that the simulation does not measure.
+  `data_quality` lists every missing or estimated input.
+* Player distributions (`players`) come straight from the simulated games: one distribution per player and
+  stat feeds every line and ladder rung for that stat.
 
 Sports (simplifications are listed in TASK.md):
-  NFL / CFB  drive sim with halves and a game clock driven by pace; neutral pass rate plus score/time
-             state; pressure -> sacks and completion %; blitz -> sacks + quick targets to RB/TE; man
-             coverage -> small WR1 tilt (capped); wind/rain; QB rates blended with team rates by sample;
-             red-zone compression; 4th-down, end-of-half FG, kneel-down and 2-point chart logic;
-             NFL overtime (both teams possess, 10-min period, ties possible in the regular season) and
-             college overtime (from the 25, 2-point try required from the 2nd OT, alternating 2-point
-             plays from the 3rd OT; never ends tied).
-  MLB        plate-appearance sim: log5 batter vs pitcher for K/BB/HR/hits, conservative league-average
-             platoon factors from bats/throws, times-through-the-order, starter leash (opener/bulk aware),
-             reliever list with availability or a generic bullpen (taxed by recent workload), simple base
-             running, runs vs earned runs, automatic runner in regular-season extras (none in the
-             postseason), never ends tied.
+  NFL        drive-level scenario model with halves and a pace-driven clock; neutral pass rate plus
+             score/time state; pressure -> sacks and completion %; blitz -> sacks + quick targets to RB/TE;
+             man coverage -> small WR1 tilt (capped); wind/rain; QB rates blended with team rates by sample;
+             red-zone compression; 4th-down, end-of-half FG, kneel-down and 2-point chart logic; overtime
+             (2025 rules: both teams possess, 10-min period, ties possible in the regular season).
+  CFB        a simplified college-football scenario model on the same drive engine (college pace,
+             finishing and overtime: coin toss once, alternating order, from the 25, 2-point try required
+             from OT2, alternating 2-point plays from OT3; never ends tied). Not NFL-level fidelity.
+  MLB        plate-appearance scenario model: log5 batter vs pitcher, league-average platoon factors,
+             times-through-the-order, opener/bulk-aware starter leash, reliever availability or a generic
+             (workload-taxed) bullpen, probabilistic base running, runs vs earned runs, walk-off scoring,
+             automatic runner in regular-season extras only (postseason explicit or inferred), no ties.
   NHL        even-strength shots and goals from shot shares (TOI as a small modifier), power plays from
-             regressed PP%/PK% with PP1 players taking most PP shots, goals and points, goalie SV%
-             regressed to last season and league, projected-goalie start probability, empty-net goals,
-             3v3 OT and shootout (approximations; the shootout winner gets +1 goal, as books grade).
+             regressed PP%/PK% with PP1 players taking most PP shots and points, goalie SV% regressed,
+             projected-goalie start probability, clean empty-net bookkeeping (no goalie stats), and a
+             3v3 OT / shootout approximation (the shootout winner gets +1 goal, as books grade).
 """
 from __future__ import annotations
 
 import argparse
 import json
 import math
+import re
 import random
 import statistics
 import sys
@@ -60,11 +67,18 @@ ABS_TOL = 0.05
 STREAK = 3
 ANCHOR_W = 0.5
 PILOT = 800
-ENGINE = "boolin-sim v1.1"
+ENGINE = "boolin-sim v1.2"
 LABEL = "Market-anchored simulation"
 FREQ_NOTE = "Simulation frequencies (share of simulated games), not calibrated or validated probabilities."
 DIFF_NOTE = "Not validated edge. A large difference is a reason to research the game, never a bet by itself."
 SUPPORTED = ("NFL", "CFB", "MLB", "NHL")
+MODEL_NOTES = {
+    "NFL": "Drive-level NFL scenario model (pace clock, no timeouts or 2-minute warning).",
+    "CFB": "Simplified college-football scenario model: the shared drive engine with college overtime, pace and finishing; "
+           "not NFL-level fidelity (thin, mixed-opponent samples; no tempo or garbage-time modeling).",
+    "MLB": "Plate-appearance scenario model (log5 matchups, league-average platoon factors, probabilistic base running).",
+    "NHL": "Shot-and-special-teams scenario model; empty-net goals and the 3v3 OT / shootout are approximations.",
+}
 QUANTS = (("p10", 0.10), ("p25", 0.25), ("p50", 0.50), ("p75", 0.75), ("p90", 0.90))
 
 
@@ -147,8 +161,8 @@ def dist_summary(vals):
     return out
 
 
-def line_probs(vals, line):
-    """P(over/under/push) of one line from the simulated distribution (frequencies, not validated)."""
+def line_freqs(vals, line):
+    """Over/under/push simulation frequencies of one line from the simulated distribution (not probabilities)."""
     n = len(vals)
     if not n:
         return None
@@ -163,8 +177,28 @@ def prop_se(p, n):
 
 
 # --------------------------------------------------------------------------- market
+def ml_home_prob(market):
+    """Home win share from the moneyline: (p, kind). kind is 'no-vig' only when both sides are priced;
+    a single price is 'single-side implied' (it still contains the book's margin)."""
+    market = market or {}
+    p = no_vig(market.get("home_ml"), market.get("away_ml"))
+    if p is not None:
+        return p, "no-vig"
+    ph, pa = imp_prob(market.get("home_ml")), imp_prob(market.get("away_ml"))
+    if ph is not None:
+        return ph, "single-side implied"
+    if pa is not None:
+        return 1 - pa, "single-side implied"
+    return None, None
+
+
 def market_baseline(sport, market):
-    """Market-implied (away, home) scoring and how it was derived, or None when no total is posted."""
+    """Scoring baseline from the market, or None when no total is posted.
+
+    Football total + spread -> 'Market-implied baseline' (the split follows directly from the two numbers).
+    Everything else (MLB/NHL, or football with a moneyline but no spread) -> 'Market-derived scoring baseline':
+    the total split by a Pythagorean share of the no-vig (or single-side implied) moneyline. Total only ->
+    the raw simulation's side split is retained."""
     market = market or {}
     total = num(market.get("total"))
     if total is None:
@@ -172,21 +206,22 @@ def market_baseline(sport, market):
     sh = num(market.get("spread_home"))
     if sh is not None and sport in ("NFL", "CFB"):
         return {"away": (total + sh) / 2.0, "home": (total - sh) / 2.0, "total": total,
+                "label": "Market-implied baseline", "kind": "total + spread",
                 "basis": f"total {total} and home spread {sh:+g}"}
-    ph = no_vig(market.get("home_ml"), market.get("away_ml"))
-    if ph is None and imp_prob(market.get("home_ml")) is not None:
-        ph = imp_prob(market.get("home_ml"))
+    ph, kind = ml_home_prob(market)
     if ph is not None:
         ex = {"MLB": 1.83, "NHL": 2.0, "NFL": 2.37, "CFB": 2.5}[sport]
         r = (ph / (1 - ph)) ** (1 / ex)  # Pythagorean share: ph = h^ex / (h^ex + a^ex), h + a = total
         h = total * r / (1 + r)
-        return {"away": total - h, "home": h, "total": total,
-                "basis": f"total {total} split by no-vig moneyline (home {ph:.1%}, Pythagorean exponent {ex})"}
-    return {"away": None, "home": None, "total": total, "basis": f"total {total} only (split kept from the raw simulation)"}
+        return {"away": total - h, "home": h, "total": total, "label": "Market-derived scoring baseline",
+                "kind": f"{kind} moneyline-derived",
+                "basis": f"total {total} split by the {kind} moneyline (home {ph:.1%}) with a Pythagorean exponent of {ex}; a derived split, not a posted score"}
+    return {"away": None, "home": None, "total": total, "label": "Market-derived scoring baseline", "kind": "total-only (raw split retained)",
+            "basis": f"total {total} only; the side split is kept from the raw simulation"}
 
 
 def market_home_win(market):
-    return no_vig((market or {}).get("home_ml"), (market or {}).get("away_ml"))
+    return ml_home_prob(market)[0]
 
 
 # --------------------------------------------------------------------------- convergence
@@ -226,10 +261,22 @@ class Tracker:
         return math.sqrt(var / self.n)
 
 
-def run_until_stable(sim_one, rng, dist_keys=(), batch=BATCH, max_batches=MAX_BATCHES, min_batches=MIN_BATCHES):
+FREQ_SE = 0.01  # a frequency output is stable once its Monte Carlo SE is under 1 percentage point
+
+
+def run_until_stable(sim_one, rng, dist_keys=(), batch=BATCH, max_batches=MAX_BATCHES, min_batches=MIN_BATCHES, key_freqs=("home_win",)):
+    """Run batches until the simulated outputs stop moving (Monte Carlo convergence only, never accuracy).
+
+    Checks, all for STREAK straight batches after `min_batches`:
+      * every tracked average moves < TOL relative (or < ABS_TOL absolute) between batches;
+      * total: SE < TOL x mean total; margin: SE < TOL x mean total (same scoring scale);
+      * each frequency in `key_freqs` that exists for this market (home_win; over when a total is
+        supplied; home_cover when a spread is supplied): SE < FREQ_SE.
+    """
     t = Tracker(dist_keys)
     prev, streak, batches, converged = None, 0, 0, False
     max_move = None
+    checks = {}
     for b in range(1, max_batches + 1):
         for _ in range(batch):
             t.add(sim_one(rng))
@@ -243,23 +290,33 @@ def run_until_stable(sim_one, rng, dist_keys=(), batch=BATCH, max_batches=MAX_BA
             max_move = max(moves) if moves else 0.0
             streak = streak + 1 if max_move < TOL else 0
         prev = cur
-        se_ok = t.se("total") <= TOL * max(abs(cur.get("total", 0)), 1e-9)
-        if b >= min_batches and streak >= STREAK and se_ok:
+        scale = max(abs(cur.get("total", 0)), 1e-9)
+        checks = {"averages": streak >= STREAK,
+                  "total": t.se("total") <= TOL * scale,
+                  "margin": t.se("margin") <= TOL * scale}
+        for k in key_freqs:
+            checks[k] = t.se(k) <= FREQ_SE
+        if b >= min_batches and all(checks.values()):
             converged = True
             break
+    fr = ", ".join(key_freqs)
     runs = {
         "batches": batches, "batch_size": batch, "sims": batches * batch, "max_batches": max_batches,
         "converged": converged, "last_batch_max_move": round(max_move, 4) if max_move is not None else None,
-        "total_se": round(t.se("total"), 3),
-        "rule": f"Runs of {batch} games until every average moves <{int(TOL*100)}% (or <{ABS_TOL}) for {STREAK} straight runs "
-                f"and the total's SE <{int(TOL*100)}% of the mean; cap {max_batches} runs. Stable means converged, not accurate.",
+        "total_se": round(t.se("total"), 3), "margin_se": round(t.se("margin"), 3),
+        "freq_se": {k: round(t.se(k), 4) for k in key_freqs},
+        "checks": checks, "checked_outputs": ["total", "margin", *key_freqs],
+        "rule": f"Runs of {batch} games until the simulated outputs converge: every average moves <{int(TOL*100)}% (or <{ABS_TOL}) for "
+                f"{STREAK} straight runs, total and margin SE <{int(TOL*100)}% of the mean total, and the {fr} frequenc"
+                f"{'y' if len(key_freqs) == 1 else 'ies'} SE <{FREQ_SE*100:g} pt; cap {max_batches} runs. "
+                "Stable means Monte Carlo convergence only, not model accuracy.",
     }
     return t, runs
 
 
-def calibrate(sim_factory, sport, market, rng, base_eff=(1.0, 1.0), w=ANCHOR_W, pilot=PILOT):
+def fit_anchor(sim_factory, sport, market, rng, base_eff=(1.0, 1.0), w=ANCHOR_W, pilot=PILOT):
     """Per-team efficiency multipliers so each team's mean score lands `w` of the way from the raw
-    simulation to the market-implied baseline. Returns (eff, raw (away, home), target or None, baseline).
+    simulation to the market baseline (market-implied or market-derived). Returns (eff, raw (away, home), target or None, baseline).
     Every pilot run reuses one seed (common random numbers) so the search is not chasing noise."""
     base = market_baseline(sport, market)
     eff = list(base_eff)
@@ -363,6 +420,12 @@ def assess_quality(spec):
             if ps and all(p.get("snap_pct") in (None, []) for p in ps):
                 q.add("info", f"{ab}.snap_pct", "No snap %: shown as n/a; usage comes from targets/carries.")
         elif sport == "MLB":
+            if side == "away":
+                post, src = postseason_status(spec)
+                if src.startswith("not supplied"):
+                    q.add("partial", "postseason", "Postseason status not supplied: treated as regular season (automatic runner in extras). Set postseason true/false.")
+                elif src != "explicit":
+                    q.add("info", "postseason", f"Postseason {src}: {'no automatic runner' if post else 'automatic runner'} in extras.")
             st = t.get("starter") or {}
             if not st:
                 q.add("degraded", f"{ab}.starter", "No starter: generic bullpen rates for every batter.")
@@ -384,8 +447,13 @@ def assess_quality(spec):
                 q.add("degraded", f"{ab}.lineup", f"Lineup has {len(lu)} hitters: missing spots use league-average hitters.")
             if (t.get("lineup_status") or "projected") != "confirmed":
                 q.add("partial", f"{ab}.lineup_status", "Lineup projected, not confirmed.")
-            if lu and all(not b.get("bats") for b in lu):
-                q.add("info", f"{ab}.bats", "No batting hands: no platoon adjustment.")
+            nb = sum(1 for b in lu if not b.get("bats"))
+            if lu and nb == len(lu):
+                q.add("partial", f"{ab}.bats", "No batting hands: no platoon adjustment for this lineup.")
+            elif nb:
+                q.add("info", f"{ab}.bats", f"{nb} hitter(s) without a batting hand: no platoon adjustment for them.")
+            if bp and _miss(bp, ("k_pct", "bb_pct", "hr_per_bf", "h_per_bf")):
+                q.add("partial", f"{ab}.bullpen.rates", f"Bullpen missing {', '.join(_miss(bp, ('k_pct', 'bb_pct', 'hr_per_bf', 'h_per_bf')))}: league rates used.")
         elif sport == "NHL":
             g = t.get("goalie") or {}
             if not g or num(g.get("sv_pct")) is None:
@@ -400,6 +468,12 @@ def assess_quality(spec):
                 q.add("partial", f"{ab}.goalie.shots_against", f"No shots against for {g.get('name')}: a {DEFAULT_GOALIE_SA}-shot sample assumed for the SV% regression.")
             if not t.get("skaters"):
                 q.add("degraded", f"{ab}.skaters", "No skaters: no player distributions.")
+            elif len(t["skaters"]) < 9:
+                q.add("partial", f"{ab}.skaters", f"Only {len(t['skaters'])} skaters listed: the rest of the shots and points go to unlisted players.")
+            elif sum(1 for x in t["skaters"] if not x.get("last_season")) >= 4:
+                q.add("info", f"{ab}.skaters.last_season", "Several skaters have no last-season line: their rates lean on tiny current samples (regressed to league).")
+            if g and num(g.get("sv_pct_last_season")) is None:
+                q.add("info", f"{ab}.goalie.last_season", f"No last-season SV% for {g.get('name') or 'the goalie'}: regressed to league .900 instead.")
             for k in ("shots_pg", "shots_against_pg", "pp_pct", "pk_pct"):
                 if num(t.get(k)) is None:
                     q.add("partial", f"{ab}.{k}", f"Missing {k}: league average used.")
@@ -794,9 +868,17 @@ def football_factory(spec):
 
 
 def cfb_overtime(rng, pts, possession, ot_info, effs, lg, max_periods=12):
-    """College OT (2021+ rules): OT1-2 each team gets a possession from the opponent's 25 (2-point try
-    required after a TD from OT2); from OT3 the teams alternate single 2-point plays. Never ends tied:
-    after `max_periods` (practically unreachable) a coin decides and `safety` is flagged."""
+    """College OT (2021+ rules), simplified.
+
+    The coin toss happens once. The team choosing in a period takes defense first (the usual choice), and the
+    choice alternates: the toss winner chooses in odd periods, the other team in even periods. So the toss
+    winner possesses second in OT1, first in OT2, second in OT3 ... and the order is never re-drawn.
+    OT1-OT2: one possession each from the opponent's 25 (a 2-point try is required after a TD from OT2).
+    OT3+: alternating single 2-point plays. Never ends tied; after `max_periods` (unreachable in practice)
+    a coin decides and `safety` is flagged. Each period's possession order is logged in ot_info['order']."""
+    toss = 0 if rng.random() < 0.5 else 1
+    ot_info["toss_winner"] = toss
+    ot_info.setdefault("order", [])
     n = 0
     while pts[0] == pts[1]:
         n += 1
@@ -805,7 +887,9 @@ def cfb_overtime(rng, pts, possession, ot_info, effs, lg, max_periods=12):
             pts[0 if rng.random() < 0.5 else 1] += 2
             ot_info["safety"] = 1
             break
-        first = 0 if rng.random() < 0.5 else 1
+        chooser = toss if n % 2 == 1 else 1 - toss
+        first = 1 - chooser  # chooser defends first
+        ot_info["order"].append((first, 1 - first))
         if n <= 2:
             for i, s in enumerate((first, 1 - first)):
                 need_td = i == 1 and pts[1 - s] - pts[s] > 3
@@ -875,7 +959,7 @@ def football_tables(spec, t, sims_n):
         return pct(g(f"{s}|team_rz_td") / tr) if tr > 0.05 else "—"
 
     team_rows = [
-        {"label": "Predicted plays", "a": round(g("0|team_plays"), 1), "b": round(g("1|team_plays"), 1)},
+        {"label": "Projected plays (sim mean)", "a": round(g("0|team_plays"), 1), "b": round(g("1|team_plays"), 1)},
         {"label": "Pass rate (dropbacks/plays)", "a": pct(g("0|team_dropbacks") / max(g("0|team_plays"), 1)), "b": pct(g("1|team_dropbacks") / max(g("1|team_plays"), 1))},
         {"label": "Total yards", "a": round(g("0|team_yds")), "b": round(g("1|team_yds"))},
         {"label": "Sacks taken", "a": round(g("0|team_sacks"), 1), "b": round(g("1|team_sacks"), 1)},
@@ -973,11 +1057,27 @@ def platoon(bats, throws):
     return tuple(f[i] / (w * vs_r[i] + (1 - w) * vs_l[i]) for i in range(4))
 
 
-def is_postseason(spec):
+POSTSEASON_GAME_TYPES = {"F", "D", "L", "W", "P"}  # MLB StatsAPI: wild card, division, LCS, World Series, playoffs
+POSTSEASON_RE = re.compile(r"(?<![A-Z])(WC|WILD[ _-]?CARD|ALWC|NLWC|ALDS|NLDS|ALCS|NLCS|WORLD[ _-]?SERIES|POSTSEASON|PLAYOFFS?)(?![A-Z])")
+
+
+def postseason_status(spec):
+    """(is_postseason, source). Explicit `postseason` wins; otherwise inferred from game_type or the
+    game/series text (WC, WILD_CARD, WILDCARD, Wild Card, ALWC, NLWC, ALDS, NLDS, ALCS, NLCS, World Series)."""
     if spec.get("postseason") is not None:
-        return bool(spec.get("postseason"))
-    gt = str(spec.get("game_type") or "")
-    return gt in ("F", "D", "L", "W") or any(x in str(spec.get("game") or "") for x in ("ALCS", "NLCS", "ALDS", "NLDS", "World Series", "Wild Card"))
+        return bool(spec.get("postseason")), "explicit"
+    gt = str(spec.get("game_type") or "").strip().upper()
+    if gt in POSTSEASON_GAME_TYPES:
+        return True, f"inferred from game_type {gt}"
+    for key in ("series", "series_status", "round", "game", "description"):
+        m = POSTSEASON_RE.search(str(spec.get(key) or "").upper())
+        if m:
+            return True, f"inferred from {key} ('{m.group(1)}')"
+    return False, "not supplied: treated as regular season"
+
+
+def is_postseason(spec):
+    return postseason_status(spec)[0]
 
 
 def mlb_staff(team):
@@ -1225,7 +1325,8 @@ def mlb_tables(spec, t):
         {"label": "Expected starter BF", "a": sp(A, "bf_per_start"), "b": sp(H, "bf_per_start")},
         {"label": "Bullpen K% / pitches last 3 days", "a": f"{(A.get('bullpen') or {}).get('k_pct')} / {wa if wa is not None else 'n/a'}{' (taxed)' if ta else ''}",
          "b": f"{(H.get('bullpen') or {}).get('k_pct')} / {wh if wh is not None else 'n/a'}{' (taxed)' if th else ''}"},
-        {"label": "Extra innings", "a": "postseason: no automatic runner" if is_postseason(spec) else "automatic runner from the 10th", "b": ""},
+        {"label": "Extra innings", "a": ("postseason: no automatic runner" if is_postseason(spec) else "regular season: automatic runner from the 10th")
+         + f" ({postseason_status(spec)[1]})", "b": ""},
     ]
     return trows, inputs
 
@@ -1357,9 +1458,12 @@ def nhl_factory(spec):
                 share = 0.9 if pp_now else min(tot / max(shots[s], 1), 0.92)
                 return pick(rng, [(i, w / tot * share) for i, w in ws]) if tot else None
 
-            def goal(s, i, pp_goal):
+            def goal(s, i, pp_goal, opp_goalie=None):
+                """A goal. `opp_goalie` = the goalie in net (gets a goal against); None = empty net."""
                 goals[s] += 1
-                box[f"{s}|team_{'pp' if pp_goal else 'es'}g"] += 1
+                box[f"{s}|team_{'pp' if pp_goal else 'es' if opp_goalie else 'en'}g"] += 1
+                if opp_goalie:
+                    box[f"{1-s}|G:{opp_goalie}|ga"] += 1
                 if i is not None:
                     box[f"{s}|{sk[s][i]['name']}|g"] += 1
                 credit_assists(s, i, pp_goal)
@@ -1384,7 +1488,7 @@ def nhl_factory(spec):
                     for k, i in enumerate(shooters):
                         shot(s, i, gname)
                         if scored and k == len(shooters) - 1:
-                            goal(s, i, True)
+                            goal(s, i, True, gname)
                         else:
                             box[f"{1-s}|G:{gname}|sv"] += 1
                 # even strength
@@ -1394,7 +1498,7 @@ def nhl_factory(spec):
                     shp = (sk[s][i]["sh"] if i is not None else 0.075) * NHL_LG["es_scale"] * gfac[s] * eff[s]
                     shot(s, i, gname)
                     if rng.random() < shp:
-                        goal(s, i, False)
+                        goal(s, i, False, gname)
                     else:
                         box[f"{1-s}|G:{gname}|sv"] += 1
             # empty-net / late extra-attacker approximation
@@ -1403,27 +1507,26 @@ def nhl_factory(spec):
                 lead = 1 if d > 0 else 0
                 r = rng.random()
                 p_lead, p_trail = (EN_LEAD1, EN_TRAIL1) if abs(d) == 1 else (EN_LEAD2, EN_TRAIL2)
-                if r < p_lead:  # empty net: a shot and a goal, no goalie in net
+                if r < p_lead:  # empty-net goal by the leader: a shot and a goal, no goalie in net, no goalie stats
                     i = shooter(lead, False)
                     box[f"{lead}|team_sog"] += 1
                     if i is not None:
                         box[f"{lead}|{sk[lead][i]['name']}|sog"] += 1
-                    goal(lead, i, False)
-                    box[f"{lead}|team_eng"] += 1
-                elif r < p_lead + p_trail:
+                    goal(lead, i, False, None)
+                elif r < p_lead + p_trail:  # extra-attacker goal by the trailing team: the leader's goalie IS in net
                     i = shooter(1 - lead, False)
                     shot(1 - lead, i, sv_now[1 - lead][1])
-                    goal(1 - lead, i, False)
+                    goal(1 - lead, i, False, sv_now[1 - lead][1])
             ot = so = 0
             if goals[0] == goals[1]:
                 ot = 1
                 rate = [shots[s] * NHL_LG["sh"] * gfac[s] * eff[s] for s in (0, 1)]
-                if rng.random() < NHL_LG["ot_goal"]:  # 3v3 OT goal (approximation)
+                if rng.random() < NHL_LG["ot_goal"]:  # 3v3 OT / shootout approximation: a single OT goal ...
                     w = 1 if rng.random() < rate[1] / (rate[0] + rate[1]) else 0
                     i = shooter(w, False)
                     shot(w, i, sv_now[w][1])
-                    goal(w, i, False)
-                else:  # shootout (approximation): winner gets +1 goal in the final, as books grade; no player credit
+                    goal(w, i, False, sv_now[w][1])
+                else:  # ... or a shootout: winner gets +1 goal in the final, as books grade; no player or goalie credit
                     so = 1
                     ph = clamp(0.5 + (sv_now[0][0] - sv_now[1][0]) * 3, 0.4, 0.6)
                     goals[1 if rng.random() < ph else 0] += 1
@@ -1459,6 +1562,7 @@ def nhl_tables(spec, t, meta):
         {"label": "PP chances / PP goals (sim)", "a": f"{g('0|team_ppo'):.2f} / {g('0|team_ppg'):.2f}", "b": f"{g('1|team_ppo'):.2f} / {g('1|team_ppg'):.2f}"},
         {"label": "Even-strength goals (sim)", "a": round(g("0|team_esg"), 2), "b": round(g("1|team_esg"), 2)},
         {"label": "Goalie in net (sim)", "a": gline(0), "b": gline(1)},
+        {"label": "3v3 OT / shootout approximation", "a": f"OT {t.mean('ot'):.0%} of games", "b": f"shootout {t.mean('shootout'):.0%} of games"},
     ]
     inputs = [
         {"label": "Shot volume input", "a": round(meta["shots"][0], 1), "b": round(meta["shots"][1], 1)},
@@ -1548,7 +1652,7 @@ def player_distributions(spec, t):
             if d["mean"] is not None and (d["mean"] >= 0.02 or (name, pub) in lines):
                 dists[pub] = d
                 for ln in lines.get((name, pub), []):
-                    lp = line_probs(vals, ln["line"])
+                    lp = line_freqs(vals, ln["line"])
                     lp.update({k: v for k, v in ln.items() if k not in ("line",) and v is not None})
                     dists[pub].setdefault("lines", []).append(lp)
         if dists:
@@ -1593,7 +1697,7 @@ def box_rows(spec, players, t):
                     line = f"{m('comp'):.1f}/{m('pass_att'):.1f}, {m('pass_yds'):.0f} yds, {m('pass_td'):.1f} TD, {m('int'):.1f} INT"
                     if m("carries") >= 1:
                         line += f"; {m('carries'):.1f} car {m('rush_yds'):.0f} yds"
-                    rank, rg = 1e6, f"Pass yds 80%: {rng80('pass_yds')} · median {_fmt(st.get('pass_yds', {}).get('median'))}"
+                    rank, rg = 1e6, f"Pass yds mean {m('pass_yds'):.0f} · median {_fmt(st.get('pass_yds', {}).get('median'))} · P10–P90 {rng80('pass_yds')}"
                 else:
                     parts = []
                     if m("carries") >= 0.5:
@@ -1605,7 +1709,7 @@ def box_rows(spec, players, t):
                     rank = m("rush_yds") + m("rec_yds")
                     main = "rush_yds" if m("rush_yds") > m("rec_yds") else "rec_yds"
                     any_td = next((ln["over"] for ln in st.get("td", {}).get("lines", []) if ln["line"] == 0.5), None)
-                    rg = f"{'Rush' if main == 'rush_yds' else 'Rec'} yds 80%: {rng80(main)} · median {_fmt(st.get(main, {}).get('median'))}"
+                    rg = f"{'Rush' if main == 'rush_yds' else 'Rec'} yds mean {m(main):.0f} · median {_fmt(st.get(main, {}).get('median'))} · P10–P90 {rng80(main)}"
                     if any_td is None and "td" in st:
                         any_td = sum(1 for v in zip(*(t.dist[k] for k in (f'{s}|{n}|rutd', f'{s}|{n}|rtd'))) if sum(v) >= 1) / t.n
                     if any_td is not None:
@@ -1621,7 +1725,7 @@ def box_rows(spec, players, t):
                 row = {"name": n, "pos": p["pos"], "pa": round(m("pa"), 2), "h": round(m("h"), 2), "tb": round(m("tb"), 2), "hr": round(m("hr"), 3),
                        "r": round(m("r"), 2), "rbi": round(m("rbi"), 2),
                        "line": f"{m('h'):.2f} H, {m('tb'):.2f} TB, {m('r'):.2f} R, {m('rbi'):.2f} RBI, {m('hr'):.2f} HR",
-                       "range": f"1+ H {h1:.0%} · TB 80%: {rng80('tb')} · HR {sum(1 for v in t.dist[f'{s}|{n}|hr'] if v >= 1)/t.n:.0%} (sim freq)",
+                       "range": f"TB mean {m('tb'):.2f} · median {_fmt(st.get('tb', {}).get('median'))} · P10–P90 {rng80('tb')} · 1+ H {h1:.0%} · HR {sum(1 for v in t.dist[f'{s}|{n}|hr'] if v >= 1)/t.n:.0%} (sim freq)",
                        "props": props, "_rank": m("h") + m("r") + m("rbi")}
                 cols = ["Player", "Pos", "PA", "Projected line"]
             else:
@@ -1633,7 +1737,7 @@ def box_rows(spec, players, t):
                 row = {"name": n, "pos": p["pos"], "toi": src.get("toi_pg"), "pp1": bool(src.get("pp1")),
                        "sog": round(m("sog"), 2), "g": round(m("g"), 3), "a": round(m("a"), 3), "pts": round(m("pts"), 3),
                        "line": f"{m('sog'):.2f} SOG, {m('g'):.2f} G, {m('a'):.2f} A, {m('pts'):.2f} PTS",
-                       "range": f"SOG 80%: {rng80('sog')} · 1+ pt {p1:.0%} · goal {g1:.0%} (sim freq)", "props": props,
+                       "range": f"SOG mean {m('sog'):.2f} · median {_fmt(st.get('sog', {}).get('median'))} · P10–P90 {rng80('sog')} · 1+ pt {p1:.0%} · goal {g1:.0%} (sim freq)", "props": props,
                        "_rank": m("pts") + m("sog") * 0.05}
                 cols = ["Player", "Pos", "TOI", "PP1", "Projected line"]
             rows.append(row)
@@ -1664,8 +1768,11 @@ def validate_spec(spec):
                 raise ValueError(f"malformed spec: {side}.lineup must be a list")
 
 
-def _ci(mean, se):
-    return [round(mean - 1.96 * se, 3), round(mean + 1.96 * se, 3)]
+def _ci(mean, se, freq=False):
+    lo, hi = mean - 1.96 * se, mean + 1.96 * se
+    if freq:
+        lo, hi = max(lo, 0.0), min(hi, 1.0)
+    return [round(lo, 3), round(hi, 3)]
 
 
 def simulate(spec, seed=7, w=ANCHOR_W, batch=BATCH, max_batches=MAX_BATCHES, min_batches=MIN_BATCHES, pilot=PILOT):
@@ -1686,9 +1793,21 @@ def simulate(spec, seed=7, w=ANCHOR_W, batch=BATCH, max_batches=MAX_BATCHES, min
         factory, meta = nhl_factory(spec)
     market = spec.get("market") or {}
     base_eff = (MLB_FINISH,) * 2 if sport == "MLB" else (1.0, 1.0)  # football's finishing factor is applied inside the drive sim
-    eff, raw, target, baseline = calibrate(factory, sport, market, rng, base_eff=base_eff, w=w, pilot=pilot)
+    eff, raw, target, baseline = fit_anchor(factory, sport, market, rng, base_eff=base_eff, w=w, pilot=pilot)
     plist = player_keys(spec)
-    t, runs = run_until_stable(factory(eff), rng, dist_keys=dist_keys_for(plist), batch=batch, max_batches=max_batches, min_batches=min_batches)
+    mt0, sh0 = num(market.get("total")), num(market.get("spread_home"))
+    base_one = factory(eff)
+
+    def one(r_):  # add the per-game market outcomes so convergence checks the frequencies users read
+        g = base_one(r_)
+        if mt0 is not None:
+            g["over_hit"] = 1.0 if g["total"] > mt0 else 0.0
+        if sh0 is not None:
+            g["home_cover_hit"] = 1.0 if g["margin"] + sh0 > 0 else 0.0
+        return g
+
+    key_freqs = ("home_win",) + (("over_hit",) if mt0 is not None else ()) + (("home_cover_hit",) if sh0 is not None else ())
+    t, runs = run_until_stable(one, rng, dist_keys=dist_keys_for(plist), batch=batch, max_batches=max_batches, min_batches=min_batches, key_freqs=key_freqs)
     n = t.n
     tot = sorted(t.samples["total"])
     mar = list(t.samples["margin"])
@@ -1705,35 +1824,38 @@ def simulate(spec, seed=7, w=ANCHOR_W, batch=BATCH, max_batches=MAX_BATCHES, min
     }
     if sport == "NHL":
         score["shootout_rate"] = round(t.mean("shootout"), 3)
-    sim_unc = {"label": "Simulation uncertainty",
-               "note": "Monte Carlo error from a finite number of simulated games. It shrinks with more runs and says nothing about whether the inputs or the model are right.",
+    sim_unc = {"label": "Simulation uncertainty", "interval_label": "95% Monte Carlo simulation interval",
+               "note": ("Monte Carlo error from a finite number of simulated games only. The 95% Monte Carlo simulation interval is where the "
+                        "simulated mean/frequency would land on a rerun; it is not the uncertainty of the real game and says nothing about whether "
+                        "the inputs or the model are right."),
                "n": n,
                "total": {"mean": round(mean_t, 3), "se": round(t.se("total"), 3), "ci95": _ci(mean_t, t.se("total"))},
                "margin": {"mean": round(mean_m, 3), "se": round(t.se("margin"), 3), "ci95": _ci(mean_m, t.se("margin"))},
-               "home_win": {"freq": round(hw, 4), "se": round(prop_se(hw, n), 4), "ci95": _ci(hw, prop_se(hw, n))}}
+               "home_win": {"freq": round(hw, 4), "se": round(prop_se(hw, n), 4), "ci95": _ci(hw, prop_se(hw, n), True)}}
     mt = num(market.get("total"))
     if mt is not None:
-        lp = line_probs(tot, mt)
+        lp = line_freqs(tot, mt)
         score.update(over=lp["over"], under=lp["under"], push=lp["push"])
-        sim_unc["over"] = {"freq": lp["over"], "se": round(prop_se(lp["over"], n), 4), "ci95": _ci(lp["over"], prop_se(lp["over"], n))}
+        sim_unc["over"] = {"freq": lp["over"], "se": round(prop_se(lp["over"], n), 4), "ci95": _ci(lp["over"], prop_se(lp["over"], n), True)}
     sh = num(market.get("spread_home"))
     if sh is not None:
         cov = sum(1 for x in mar if x + sh > 0) / n
         push = sum(1 for x in mar if x + sh == 0) / n
         score.update(home_cover=round(cov, 3), cover_push=round(push, 3))
-        sim_unc["home_cover"] = {"freq": round(cov, 4), "se": round(prop_se(cov, n), 4), "ci95": _ci(cov, prop_se(cov, n))}
+        sim_unc["home_cover"] = {"freq": round(cov, 4), "se": round(prop_se(cov, n), 4), "ci95": _ci(cov, prop_se(cov, n), True)}
     q = quality.out(unknown)
     model_unc = {"label": "Model / data uncertainty", "status": q["status"],
-                 "note": "Not measured by the simulation: small samples, projected lineups/goalies, missing inputs and the engine's simplifications. "
-                         "Boolin's research/model layer stays the authority for research conclusions.",
+                 "note": ("Not captured by the Monte Carlo SE: data quality, sample sizes, projected players, projected goalies, lineup "
+                          "uncertainty and the engine's simplifications. Boolin's research/model layer stays the authority for research conclusions."),
                  "items": [f"{f['field']}: {f['note']}" for f in q["flags"] if f["level"] != "info"][:8]}
-    # RAW -> MARKET IMPLIED -> ANCHORED
+    # RAW -> MARKET-IMPLIED / MARKET-DERIVED BASELINE -> ANCHORED
     mk_a = baseline["away"] if baseline and baseline["away"] is not None else None
     mk_h = baseline["home"] if baseline and baseline["home"] is not None else None
     audit = {"label": LABEL, "weight": w,
              "raw": {"away": round(raw[0], 2), "home": round(raw[1], 2), "total": round(raw[0] + raw[1], 2), "label": "Raw simulation"},
              "market_implied": ({"away": None if mk_a is None else round(mk_a, 2), "home": None if mk_h is None else round(mk_h, 2),
-                                 "total": baseline["total"], "basis": baseline["basis"], "label": "Market-implied baseline"} if baseline else None),
+                                 "total": baseline["total"], "basis": baseline["basis"], "kind": baseline["kind"], "label": baseline["label"]} if baseline else None),
+             "baseline_label": baseline["label"] if baseline else None,
              "target": {"away": round(target[0], 2), "home": round(target[1], 2)} if target else None,
              "anchored": {"away": round(mean_a, 2), "home": round(mean_h, 2), "total": round(mean_t, 2), "label": "Anchored simulation (final mean)"},
              "shift": {"away": round(mean_a - raw[0], 2), "home": round(mean_h - raw[1], 2), "total": round(mean_t - raw[0] - raw[1], 2)},
@@ -1744,24 +1866,27 @@ def simulate(spec, seed=7, w=ANCHOR_W, batch=BATCH, max_batches=MAX_BATCHES, min
              if baseline and w > 0 else ("No market total supplied: raw simulation only, no anchor." if not baseline else "Anchor weight 0: raw simulation only.")}
     # SIMULATION / MARKET DIFFERENCE
     drow = []
-    mhw = market_home_win(market)
+    mhw, mkind = ml_home_prob(market)
     cols = [spec["away"].get("abbr") or "Away", spec["home"].get("abbr") or "Home"]
     drow.append({"label": f"{cols[1]} win", "sim": round(hw, 3), "market": None if mhw is None else round(mhw, 3),
-                 "diff": None if mhw is None else round(hw - mhw, 3), "unit": "freq vs no-vig",
-                 "note": None if mhw is not None else "no moneyline supplied"})
+                 "diff": None if mhw is None else round(hw - mhw, 3), "unit": f"sim freq vs {mkind}" if mkind else "sim freq",
+                 "market_kind": mkind,
+                 "note": None if mhw is not None else "no moneyline supplied" if mkind is None else None})
+    if mkind == "single-side implied":
+        drow[-1]["note"] = "only one side priced: single-side implied (includes the book's margin), not no-vig"
     if mt is not None:
         po = no_vig(market.get("over_price"), market.get("under_price"))
         drow.append({"label": "Projected total", "sim": round(mean_t, 2), "market": mt, "diff": round(mean_t - mt, 2), "unit": "points"})
         drow.append({"label": f"Over {mt:g}", "sim": score["over"], "market": None if po is None else round(po, 3),
-                     "diff": None if po is None else round(score["over"] - po, 3), "unit": "freq vs no-vig",
+                     "diff": None if po is None else round(score["over"] - po, 3), "unit": "sim freq vs no-vig" if po is not None else "sim freq",
                      "note": None if po is not None else "no over/under prices supplied"})
     if sh is not None:
         drow.append({"label": f"{cols[1]} margin", "sim": round(mean_m, 2), "market": -sh, "diff": round(mean_m + sh, 2), "unit": "points"})
-        drow.append({"label": f"{cols[1]} {sh:+g} covers", "sim": score["home_cover"], "market": None, "diff": None, "unit": "freq",
+        drow.append({"label": f"{cols[1]} {sh:+g} covers", "sim": score["home_cover"], "market": None, "diff": None, "unit": "sim freq",
                      "note": "market cover price not supplied" if no_vig(market.get("home_spread_price"), market.get("away_spread_price")) is None else None})
         pc = no_vig(market.get("home_spread_price"), market.get("away_spread_price"))
         if pc is not None:
-            drow[-1].update(market=round(pc, 3), diff=round(score["home_cover"] - pc, 3), note=None)
+            drow[-1].update(market=round(pc, 3), diff=round(score["home_cover"] - pc, 3), note=None, unit="sim freq vs no-vig")
     diag = {"label": "Simulation / market difference", "note": DIFF_NOTE, "cols": cols, "rows": drow}
     if sport in ("NFL", "CFB"):
         team_rows, inputs = football_tables(spec, t, n)
@@ -1786,8 +1911,10 @@ def simulate(spec, seed=7, w=ANCHOR_W, batch=BATCH, max_batches=MAX_BATCHES, min
         "inputs": {"cols": cols, "rows": inputs},
         "box": box, "players": players,
         "notes": (notes or [])[:6] if isinstance(notes, list) else ([str(notes)] if notes else []),
-        "caveat": ("Market-anchored simulation: averages and frequencies over the simulated games, not a prediction of one game and not a validated "
-                   "probability. Stable means the numbers stopped moving, not that they are accurate. Never a bet by itself; never copied into modelP."),
+        "caveat": ("Market-anchored simulation: averages and simulation frequencies over the simulated games, a research scenario rather than a forecast "
+                   "of one game. Stable means Monte Carlo convergence only, not accuracy. It never creates or upgrades a BET, never changes a tier, "
+                   "stake or exposure, and is never copied into modelP."),
+        "model_note": MODEL_NOTES.get(sport),
     }
 
 
@@ -1811,3 +1938,7 @@ def main(argv=None):
 
 if __name__ == "__main__":
     main()
+
+
+line_probs = line_freqs  # backward-compatible alias (returns simulation frequencies)
+calibrate = fit_anchor  # backward-compatible alias (this anchors to the market; it does not calibrate probabilities)

@@ -228,7 +228,7 @@ on each card, model confidence, sample quality, calibration status and validatio
 
 ## Game sims are not research leans
 
-`pipeline/sim.py` (GameSim v1.1) produces a market-anchored simulation for each Top 10 card. It does not feed the
+`pipeline/sim.py` (GameSim v1.2) produces a market-anchored simulation for each Top 10 card. It does not feed the
 research cards, the Boolin baseline, the validation gate or `modelP`. Its percentages are simulation frequencies,
 not calibrated probabilities, and its simulation/market difference is labelled "Not validated edge". A large
 difference is a prompt to research the game, the same way `review required` is; it never upgrades a play.

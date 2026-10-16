@@ -313,31 +313,40 @@ or a manual run did. Otherwise find prop prices on the web and name the book.
 - `longshots`: `[{"id","type":"Anytime TD"|"2+ TDs"|"First TD"|"Home run"|"Anytime goal","sport","game","start","pick","odds","book","conviction","modelP","prior","priorLabel","factors","inputs","why","category"}]`. On NFL days list the best anytime and 2+ TD candidates by usage (red-zone/goal-line share, snaps, TD history, team implied total), each tiered. Leave out `odds` when FanDuel's price isn't found; the board then shows the price to bet at. Stakes are capped by the `longMax` setting.
 - `ladders`: `[{"id","sport","game","start","pick","base","why","category","rungs":[{"label":"80+","odds":120,"modelP":0.42}]}]`. Climb from a main Over that has a real read; rungs without a FanDuel price show the price to bet at.
 
-### Game sims (`featured[].sim`, every Top 10 game) — GameSim v1.1, a market-anchored simulation
+### Game sims (`featured[].sim`, every Top 10 game) — GameSim v1.2, a market-anchored simulation
 
 Every Top 10 game gets a **market-anchored simulation** from `pipeline/sim.py`: the range of plausible game
-scripts and player outcomes given the inputs and the current FanDuel market. It is a research/scenario tool.
-It never finds an edge, never creates a BET, and is never copied into `modelP`; Boolin's research/model layer
-stays the authority for research conclusions.
+scripts and player outcomes given the inputs and the current FanDuel market. It is a research/scenario tool,
+not a validated predictive model. It never finds an edge, never creates or upgrades a BET, never changes a
+tier, stake or exposure, and is never copied into `modelP`; Boolin's research/model layer owns `modelP` and
+stays the authority for research conclusions. The market is an anchor and context, not proof the sim is right.
 
 What the numbers mean:
-1. **Market-anchored.** The raw simulation's team scoring is pulled 50% of the way to the market-implied
-   baseline (total + spread for football; total + no-vig moneyline for MLB/NHL; total only keeps the raw side
-   split) by scaling scoring *efficiency* only. Volume and usage (plays, pass rate, target/carry/shot shares,
-   lineup, TOI, PP1) never change, and player stats are never back-solved to a prop line. The card shows
-   RAW → MARKET-IMPLIED → ANCHORED (`anchor_audit`).
-2. **Simulation frequency is not calibration.** `home_win`, `over`, `home_cover` and every prop over/under are
-   the share of simulated games where it happened. They are not validated probabilities.
-3. **Convergence is not accuracy.** The engine runs 100-game batches (up to 100) until the box score stops
-   moving and says how many it took. `uncertainty.simulation` (SE, 95% simulation interval) is Monte Carlo error
-   only; model/data uncertainty is not measured by the simulation (`uncertainty.model_data`).
+1. **Market-anchored.** The raw simulation's team scoring is pulled 50% of the way to a market baseline by
+   scaling scoring *efficiency* only. Football total + spread gives a **market-implied baseline** (the split
+   follows directly from the two numbers). MLB/NHL (or football with a moneyline but no spread) give a
+   **market-derived scoring baseline**: the total split by a Pythagorean share of the **no-vig** moneyline (both
+   sides priced) or a **single-side implied** price (one side only; it keeps the book's margin and is never
+   called no-vig); with a total only, the raw side split is retained. Volume and usage (plays, pass rate,
+   target/carry/shot shares, lineup, TOI, PP1) never change, and player stats are never back-solved to a prop
+   line. The card shows RAW → BASELINE → ANCHORED with the baseline's kind (`anchor_audit`).
+2. **Simulation frequency is not calibration.** `home_win`, `away_win`, `over`, `under`, `home_cover` and every
+   prop over/under/push are the share of simulated games where it happened: simulation frequencies, not
+   calibrated, validated or model probabilities, and not an edge.
+3. **Stable means Monte Carlo convergence only.** Batches of 100 games (cap 100) run until every average stops
+   moving, total and margin SE are under 1% of the mean total, and the home-win frequency (plus over when a total
+   is supplied and cover when a spread is supplied) has SE under 1 point. `runs.checks` shows each test.
+   `uncertainty.simulation` (SE and a **95% Monte Carlo simulation interval**) is rerun noise only, not the
+   uncertainty of the real game. `uncertainty.model_data` lists what the SE does not capture: data quality,
+   samples, projected players/goalies, lineups and simplifications.
 4. **Player distributions come from the simulation** (`players`: mean, median, P10/P25/P50/P75/P90 per stat;
-   P(over/under/push) for every supplied line). One distribution per player and stat feeds every line and ladder
-   rung, so ladders built from it are internally consistent.
+   over/under/push frequencies for every supplied line). One distribution per player and stat feeds every line and
+   ladder rung. The card shows mean, median and P10–P90 by default; the full distribution and prop lines sit in a
+   collapsed *Distribution* section. Goalie saves count only games he starts (`start_freq`).
 5. **Missing inputs reduce confidence.** `data_quality.status` is `clean` / `partial` / `degraded` / `unknown`
    with every fallback listed; the card badge says `PARTIAL INPUTS` or `DEGRADED INPUTS`.
 6. **Simulation / market difference** (`market_diagnostic`) is labeled *Not validated edge*: a big gap is a
-   reason to research the game, never a bet by itself and never a reason to change a tier.
+   reason to research the game, never a bet and never a reason to change a tier, BET/WAIT, `modelP`, stake or exposure.
 
 Steps:
 1. Write one spec per game to `/tmp/simspec/<sport>-<away>-<home>.json` (schemas below; reuse what the research
@@ -361,23 +370,34 @@ er` (starting pitcher), `sog, g, a, pts` (skaters), `saves` (goalie). Lines are 
 - **MLB**: `{"sport":"MLB","game","start","postseason","market":{…},"env":{"temp_f","wind_mph","wind_dir":"in|out|cross","park_factor","park_hr_factor"},"away":M,"home":M}`
   with `M = {"abbr","lineup_status":"confirmed|projected","starter":{"name","throws","role":"opener"?,"bf_per_start","k_pct","bb_pct","hbp_pct","hr_per_bf","h_per_bf"},"bulk":{same, "bf_per_start"}?,"bullpen":{rates, "reliever_pitches_last3", "arms":[{"name","throws",rates,"bf_cap","avail":"full|limited|out"}]?},"lineup":[9 × {"name","pos","bats","pa","ab","h","doubles","triples","hr","k_pct","bb_pct","hbp"}]}`.
   `bf_per_start` = tonight's expected leash. `reliever_pitches_last3` comes from `mlb.json` bullpen usage (120+ = taxed).
-  `postseason: true` (or an ALCS/NLCS/… game name) turns off the automatic extra-inning runner.
+  Set `postseason: true|false` explicitly. Regular season = automatic runner in extras; postseason = none. Without
+  it the engine infers postseason from `game_type` (F/D/L/W/P) or the game/series text (WC, WILD_CARD, WILDCARD,
+  Wild Card, ALWC, NLWC, ALDS, NLDS, ALCS, NLCS, World Series) and flags the inference; with neither it assumes the
+  regular season and flags that as `partial`.
 - **NHL**: `{"sport":"NHL","game","start","market":{…},"away":H,"home":H}` with
   `H = {"abbr","gp","shots_pg","shots_against_pg","pp_pct","pk_pct","pp_opps_pg","times_shorthanded_pg","goalie":{"name","status":"confirmed|projected|unconfirmed","start_prob"?,"sv_pct","shots_against","sv_pct_last_season","alt":{"name","sv_pct","shots_against","sv_pct_last_season"}},"skaters":[12 × {"name","pos","gp","toi_pg","sog","goals","assists","pp1","last_season":{"gp","sog","goals","assists"}}]}`.
   A projected goalie starts 80% of simulated games (unconfirmed 65%, or `start_prob`); the `alt` takes the rest.
 - No engine yet for NBA/WNBA: leave `sim` off those games.
 
 Simplifications (also in the module docstring; say so if a read depends on one):
+- CFB is a **simplified college-football scenario model** on the shared drive engine (college pace, finishing
+  factor and overtime). It is not NFL-level fidelity: samples are thin and mix FCS/FBS opponents, and tempo,
+  garbage time and roster depth are not modeled. College OT: the coin toss happens once, the chooser defends
+  first and the choice alternates each period, so the possession order flips OT1 → OT2 → OT3 and is never
+  re-drawn; OT1–OT2 start at the opponent's 25 (2-point try required after a TD from OT2), OT3+ are alternating
+  2-point plays; no ties.
 - Football: drive-level clock from pace (no timeouts or 2-minute warning); late-game hurry-up/kneel-downs and a
   2-point chart are simple rules; ~35% of 3rd/4th-and-3+ completions are sticks routes; a small league finishing
   factor (NFL 1.07, CFB 1.12) makes league-average inputs score like the league and lifts realised yards per
   play ~3–7% above the inputs; NFL regular-season ties occur ~1% (real ~0.3%).
 - MLB: platoon factors are league-average (not the hitter's own split); base running is probabilistic; unearned
   runs only come from reached-on-error runners and the automatic runner.
-- NHL: special teams are per-opportunity events (no 5-on-3s or shorthanded goals); empty-net goals, 3v3 OT and
-  the shootout are approximations.
+- NHL: special teams are per-opportunity events (no 5-on-3s or shorthanded goals). Empty-net goals by the leader
+  record no goalie shot or save; an extra-attacker goal by the trailing team counts against the goalie in net.
+  OT is a **3v3 OT / shootout approximation**: one OT goal (62% of tied games) by relative scoring rate, else a
+  shootout near 50/50 whose winner gets +1 goal in the final score, as books grade (no player or goalie credit).
 
-### Cross-game parlays (`parlays`)### Cross-game parlays (`parlays`)
+### Cross-game parlays (`parlays`)
 
 Also write 2–3 cross-game parlays for the Parlays tab. Rules:
 - **Build from tiered research plays** (A or B, or C longshots in a clearly labeled lottery build). Never add a
