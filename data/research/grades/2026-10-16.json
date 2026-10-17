@@ -1,0 +1,92 @@
+{
+ "2026-10-16-NHL-PIT-COL": {
+  "key": "2026-10-16-NHL-PIT-COL",
+  "league": "NHL",
+  "result": {
+   "home_score": 5.0,
+   "away_score": 2.0,
+   "home_margin": 3.0,
+   "total": 7.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 4.0,
+    "grade": "A",
+    "brier": 0.0996,
+    "pregame_home_win_p": 0.6844,
+    "margin_error": 1.85,
+    "total_error": -0.67
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 4.0,
+   "grade": "A",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ },
+ "2026-10-16-NHL-BOS-ANA": {
+  "key": "2026-10-16-NHL-BOS-ANA",
+  "league": "NHL",
+  "result": {
+   "home_score": 2.0,
+   "away_score": 4.0,
+   "home_margin": -2.0,
+   "total": 6.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 2.0,
+    "grade": "C",
+    "brier": 0.2562,
+    "pregame_home_win_p": 0.5062,
+    "margin_error": -2.04,
+    "total_error": -0.88
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 2.0,
+   "grade": "C",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ }
+}

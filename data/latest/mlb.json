@@ -1,23 +1,19 @@
 {
- "pulled_at_et": "2026-10-16T18:57-04:00",
- "date": "2026-10-16",
+ "pulled_at_et": "2026-10-17T08:55-04:00",
+ "date": "2026-10-17",
  "season": 2026,
  "games": [
   {
-   "game_pk": 849817,
-   "start_et": "8:00 PM ET",
-   "status": "Pre-Game",
+   "game_pk": 849816,
+   "start_et": "8:08 PM ET",
+   "status": "Scheduled",
    "game_type": "L",
    "series": "AL Championship Series",
    "series_game": 4,
    "series_status": "AL Championship Series",
    "venue": "Progressive Field",
-   "weather": {
-    "condition": "Cloudy",
-    "temp": "59",
-    "wind": "9 mph, Varies"
-   },
-   "hp_umpire": "Mark Ripperger",
+   "weather": null,
+   "hp_umpire": null,
    "away": {
     "id": 139,
     "name": "Tampa Bay Rays",
@@ -150,18 +146,8 @@
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": [
-     "Yandy Díaz",
-     "Jonathan Aranda",
-     "Chandler Simpson",
-     "Junior Caminero",
-     "Liam Hicks",
-     "Victor Mesa Jr.",
-     "Jonny DeLuca",
-     "Richie Palacios",
-     "Taylor Walls"
-    ],
-    "lineup_status": "confirmed",
+    "lineup": null,
+    "lineup_status": "not posted yet",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.1805,
@@ -179,30 +165,9 @@
      }
     },
     "bullpen": {
-     "reliever_pitches_last3": 91,
+     "reliever_pitches_last3": 51,
      "likely_limited": [],
      "detail": {
-      "Kevin Kelly": {
-       "days": [
-        "2026-10-13"
-       ],
-       "pitches": 17,
-       "back_to_back": false
-      },
-      "Ian Seymour": {
-       "days": [
-        "2026-10-13"
-       ],
-       "pitches": 15,
-       "back_to_back": false
-      },
-      "Bryan Baker": {
-       "days": [
-        "2026-10-13"
-       ],
-       "pitches": 8,
-       "back_to_back": false
-      },
       "Tyler Wells": {
        "days": [
         "2026-10-15"
@@ -218,10 +183,16 @@
        "back_to_back": false
       }
      },
-     "classification": "confirmed",
+     "classification": "partial",
      "games_considered": 2,
-     "games_classified": 2,
-     "unclassified_games": [],
+     "games_classified": 1,
+     "unclassified_games": [
+      {
+       "game_pk": 849817,
+       "date": "2026-10-16",
+       "reason": "no pitcher credited with the start"
+      }
+     ],
      "classification_source": "MLB boxscore gamesStarted (not list order)"
     },
     "k_pct_vs_opp_starter_hand": 0.1909
@@ -258,18 +229,8 @@
      "starts_counted": 0,
      "sample_quality": "none"
     },
-    "lineup": [
-     "Steven Kwan",
-     "José Ramírez",
-     "Chase DeLauter",
-     "Jo Adell",
-     "Nathaniel Lowe",
-     "Travis Bazzana",
-     "Patrick Bailey",
-     "Petey Halpin",
-     "Brayan Rocchio"
-    ],
-    "lineup_status": "confirmed",
+    "lineup": null,
+    "lineup_status": "not posted yet",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2125,
@@ -287,30 +248,9 @@
      }
     },
     "bullpen": {
-     "reliever_pitches_last3": 91,
+     "reliever_pitches_last3": 49,
      "likely_limited": [],
      "detail": {
-      "Shawn Armstrong": {
-       "days": [
-        "2026-10-13"
-       ],
-       "pitches": 20,
-       "back_to_back": false
-      },
-      "Tim Herrin": {
-       "days": [
-        "2026-10-13"
-       ],
-       "pitches": 6,
-       "back_to_back": false
-      },
-      "Slade Cecconi": {
-       "days": [
-        "2026-10-13"
-       ],
-       "pitches": 16,
-       "back_to_back": false
-      },
       "Daniel Espino": {
        "days": [
         "2026-10-15"
@@ -340,10 +280,16 @@
        "back_to_back": false
       }
      },
-     "classification": "confirmed",
+     "classification": "partial",
      "games_considered": 2,
-     "games_classified": 2,
-     "unclassified_games": [],
+     "games_classified": 1,
+     "unclassified_games": [
+      {
+       "game_pk": 849817,
+       "date": "2026-10-16",
+       "reason": "no pitcher credited with the start"
+      }
+     ],
      "classification_source": "MLB boxscore gamesStarted (not list order)"
     },
     "k_pct_vs_opp_starter_hand": 0.2056
