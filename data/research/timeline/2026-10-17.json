@@ -34,6 +34,17 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-17T18:30-04:00",
+   "game_key": "2026-10-17-NHL-SEA-FLA",
+   "type": "injury_status",
+   "field": "Brandon Montour (SEA)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
   }
  ],
  "2026-10-17-NHL-BUF-MTL": [
@@ -113,6 +124,17 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-17T18:30-04:00",
+   "game_key": "2026-10-17-NHL-BUF-MTL",
+   "type": "injury_status",
+   "field": "Mike Matheson (MTL)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
   }
  ],
  "2026-10-17-NHL-DAL-CHI": [
@@ -158,6 +180,17 @@
    "field": "John Tavares (TOR)",
    "old": "Day-To-Day",
    "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-17T18:30-04:00",
+   "game_key": "2026-10-17-NHL-NYI-TOR",
+   "type": "injury_status",
+   "field": "John Tavares (TOR)",
+   "old": "Out",
+   "new": "Injured Reserve",
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "downgrade"
@@ -255,6 +288,93 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-17T18:30-04:00",
+   "game_key": "2026-10-17-NHL-EDM-UTA",
+   "type": "injury_status",
+   "field": "Frederik Andersen (EDM)",
+   "old": "not listed",
+   "new": "Injured Reserve",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-17T18:30-04:00",
+   "game_key": "2026-10-17-NHL-EDM-UTA",
+   "type": "injury_status",
+   "field": "Colton Dach (EDM)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  }
+ ],
+ "2026-10-17-NHL-VAN-TBL": [
+  {
+   "t": "2026-10-17T18:30-04:00",
+   "game_key": "2026-10-17-NHL-VAN-TBL",
+   "type": "injury_status",
+   "field": "Marco Rossi (VAN)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-10-17-MLB-TB-CLE": [
+  {
+   "t": "2026-10-17T18:30-04:00",
+   "game_key": "2026-10-17-MLB-TB-CLE",
+   "type": "lineup",
+   "field": "TB lineup",
+   "old": "not posted",
+   "new": "posted",
+   "source": "MLB lineup card",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-17T18:30-04:00",
+   "game_key": "2026-10-17-MLB-TB-CLE",
+   "type": "lineup",
+   "field": "CLE lineup",
+   "old": "not posted",
+   "new": "posted",
+   "source": "MLB lineup card",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-17T18:30-04:00",
+   "game_key": "2026-10-17-MLB-TB-CLE",
+   "type": "weather",
+   "field": "wind (mph)",
+   "old": "unknown",
+   "new": 9,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-17T18:30-04:00",
+   "game_key": "2026-10-17-MLB-TB-CLE",
+   "type": "weather",
+   "field": "temp (\u00b0F)",
+   "old": "unknown",
+   "new": 51.0,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-17T18:30-04:00",
+   "game_key": "2026-10-17-MLB-TB-CLE",
+   "type": "weather",
+   "field": "condition",
+   "old": "unknown",
+   "new": "Partly Cloudy",
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
   }
  ]
 }
