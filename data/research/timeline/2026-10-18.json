@@ -1711,6 +1711,68 @@
    "new": "Clear",
    "source": "MLB Stats API weather",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-18T18:31-04:00",
+   "game_key": "2026-10-18-MLB-TB-CLE",
+   "type": "lineup",
+   "field": "TB lineup",
+   "old": "not posted",
+   "new": "posted",
+   "source": "MLB lineup card",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-18T18:31-04:00",
+   "game_key": "2026-10-18-MLB-TB-CLE",
+   "type": "weather",
+   "field": "wind (mph)",
+   "old": 5,
+   "new": 8,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-18T18:31-04:00",
+   "game_key": "2026-10-18-MLB-TB-CLE",
+   "type": "weather",
+   "field": "temp (\u00b0F)",
+   "old": 62.0,
+   "new": 63.0,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-18T18:31-04:00",
+   "game_key": "2026-10-18-MLB-TB-CLE",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 6.64,
+   "new": 6.82,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 54.0% to 53.9% (home margin +0.29 \u2192 +0.29). Projection changed after these updates, but the stored data does not identify a single confirmed cause.",
+   "detail": {
+    "text": "Boolin moved from 54.0% to 53.9% (home margin +0.29 \u2192 +0.29). Projection changed after these updates, but the stored data does not identify a single confirmed cause.",
+    "components": [],
+    "same_pull_updates": [
+     "TB lineup: not posted \u2192 posted",
+     "wind (mph): 5 \u2192 8",
+     "temp (\u00b0F): 62.0 \u2192 63.0"
+    ]
+   }
+  }
+ ],
+ "2026-10-18-NHL-CBJ-MIN": [
+  {
+   "t": "2026-10-18T18:31-04:00",
+   "game_key": "2026-10-18-NHL-CBJ-MIN",
+   "type": "injury_status",
+   "field": "Jared Spurgeon (MIN)",
+   "old": "Out",
+   "new": "Injured Reserve",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
   }
  ]
 }
