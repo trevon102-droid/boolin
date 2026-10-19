@@ -16,30 +16,30 @@
   "validation_version": "validation-1.0",
   "data_cutoff": "2026-10-18",
   "primary_evidence": "nfl_replay holdout (2022+), closing-line benchmark",
-  "sample_size": 1147,
+  "sample_size": 1151,
   "development_size": 2529,
-  "brier": 0.2273,
-  "market_brier": 0.2107,
-  "log_loss": 0.6463,
-  "market_log_loss": 0.61,
-  "accuracy": 0.608,
-  "calibration_error": 0.0291,
-  "favorite_overconfidence": 0.0192,
-  "market_comparison": "market Brier better (t=5.4)",
-  "spread_mae": 10.13,
-  "market_spread_mae": 9.541,
+  "brier": 0.2274,
+  "market_brier": 0.2109,
+  "log_loss": 0.6464,
+  "market_log_loss": 0.6106,
+  "accuracy": 0.6077,
+  "calibration_error": 0.0286,
+  "favorite_overconfidence": 0.0197,
+  "market_comparison": "market Brier better (t=5.3)",
+  "spread_mae": 10.116,
+  "market_spread_mae": 9.54,
   "confidence_validated": false,
   "calibration_status": "needs_calibration",
   "validation_status": "validated: calibration off",
   "recommendation": "CALIBRATION NEEDED",
   "reasons": [
-   "holdout calibration error 0.0291, favourite overconfidence 0.0192 (needs <= 0.025 / +-0.02 with n >= 300)",
-   "worse than the market in the holdout (market Brier better (t=5.4))"
+   "holdout calibration error 0.0286, favourite overconfidence 0.0197 (needs <= 0.025 / +-0.02 with n >= 300)",
+   "worse than the market in the holdout (market Brier better (t=5.3))"
   ],
   "lean_allowed": false,
   "live_archive": {
    "n": 17,
-   "holdout": 17,
+   "holdout": 24,
    "older_version_rows": 15,
    "boolin": {
     "brier": 0.234,
@@ -65,9 +65,9 @@
    }
   },
   "replay_fidelity": {
-   "n_overlap": 33,
-   "identical": 24,
-   "mean_abs_prob_diff": 0.0074,
+   "n_overlap": 40,
+   "identical": 31,
+   "mean_abs_prob_diff": 0.0061,
    "max_abs_prob_diff": 0.0541,
    "note": "Live card vs replay for the same game, same model version. Gaps mean the live pull saw different inputs than the replay (cause not confirmed per game)."
   }
