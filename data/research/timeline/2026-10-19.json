@@ -41,6 +41,75 @@
    "new": "posted",
    "source": "MLB lineup card",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-19T19:51-04:00",
+   "game_key": "2026-10-19-MLB-CLE-TB",
+   "type": "weather",
+   "field": "temp (\u00b0F)",
+   "old": 71.0,
+   "new": 72.0,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  }
+ ],
+ "2026-10-19-NHL-COL-PHI": [
+  {
+   "t": "2026-10-19T19:51-04:00",
+   "game_key": "2026-10-19-NHL-COL-PHI",
+   "type": "injury_status",
+   "field": "Tyson Foerster (PHI)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-19T19:51-04:00",
+   "game_key": "2026-10-19-NHL-COL-PHI",
+   "type": "injury_status",
+   "field": "Sean Couturier (PHI)",
+   "old": "Day-To-Day",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-19T19:51-04:00",
+   "game_key": "2026-10-19-NHL-COL-PHI",
+   "type": "injury_status",
+   "field": "Travis Konecny (PHI)",
+   "old": "not listed",
+   "new": "Injured Reserve",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-10-19-NHL-SJS-TOR": [
+  {
+   "t": "2026-10-19T19:51-04:00",
+   "game_key": "2026-10-19-NHL-SJS-TOR",
+   "type": "injury_status",
+   "field": "Max Domi (TOR)",
+   "old": "not listed",
+   "new": "Injured Reserve",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-19T19:51-04:00",
+   "game_key": "2026-10-19-NHL-SJS-TOR",
+   "type": "injury_status",
+   "field": "William Nylander (TOR)",
+   "old": "Day-To-Day",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
   }
  ]
 }
