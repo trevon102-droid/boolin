@@ -1,6 +1,6 @@
 {
- "pulled_at_et": "2026-10-19T16:23-04:00",
- "slate_date": "2026-10-19",
+ "pulled_at_et": "2026-10-20T10:47-04:00",
+ "slate_date": "2026-10-20",
  "books": "pinnacle,fanduel,draftkings,betmgm,williamhill_us,espnbet,fanatics,betrivers,betonlineag,lowvig",
  "actionable_book": "fanduel",
  "field_guide": "Bet only at `fanduel` prices. fair_prob/fair_odds = no-vig market (Pinnacle, else consensus): the estimate, not a price. best_price/best_book = context only. Events are tagged date_et / on_slate_day: weekly sports list later games too, so filter on on_slate_day for today's card. `flags` mark missing or suspicious prices.",
@@ -16,8 +16,9 @@
    "events": []
   },
   "NBA": {
-   "status": "off",
-   "reason": "held until 2026-10-20"
+   "status": "error",
+   "error": "RuntimeError: GET failed after 3 tries: https://api.the-odds-api.com/v4/sports/basketball_nba/odds (401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/basketball_nba/odds?apiKey=e105940bd17abc118b147b6acce8a273&bookmakers=pinnacle%2Cfanduel%2Cdraftkings%2Cbetmgm%2Cwilliam",
+   "events": []
   },
   "NHL": {
    "status": "error",
@@ -39,6 +40,7 @@
  "components": {
   "MLB": "error",
   "WNBA": "error",
+  "NBA": "error",
   "NHL": "error",
   "NFL": "error",
   "CFB": "error"
