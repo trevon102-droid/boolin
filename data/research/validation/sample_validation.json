@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-10-21",
+ "data_cutoff": "2026-10-22",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -167,15 +167,15 @@
      },
      {
       "group": "6-8 games",
-      "n": 196,
-      "brier": 0.225,
-      "log_loss": 0.6421,
-      "favorite_overconfidence": -0.0165,
-      "market_brier_same_games": 0.2127,
-      "boolin_minus_market_brier": 0.01232,
+      "n": 197,
+      "brier": 0.2249,
+      "log_loss": 0.6418,
+      "favorite_overconfidence": -0.0186,
+      "market_brier_same_games": 0.2125,
+      "boolin_minus_market_brier": 0.01237,
       "vs_market": "no detectable difference in Brier (t=1.9)",
-      "margin_mae": 10.38,
-      "share_extreme": 0.2959,
+      "margin_mae": 10.348,
+      "share_extreme": 0.2944,
       "interpretable": true
      },
      {
@@ -264,15 +264,15 @@
      },
      {
       "group": "6-8 games",
-      "n": 670,
+      "n": 671,
       "brier": 0.2188,
       "log_loss": 0.6298,
-      "favorite_overconfidence": 0.0,
-      "market_brier_same_games": 0.2116,
-      "boolin_minus_market_brier": 0.00728,
+      "favorite_overconfidence": -0.0006,
+      "market_brier_same_games": 0.2115,
+      "boolin_minus_market_brier": 0.0073,
       "vs_market": "market Brier better (t=2.1)",
-      "margin_mae": 10.547,
-      "share_extreme": 0.2925,
+      "margin_mae": 10.537,
+      "share_extreme": 0.2921,
       "interpretable": true
      },
      {

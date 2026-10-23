@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-10-21",
+ "data_cutoff": "2026-10-22",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -84,35 +84,35 @@
    },
    "holdout": {
     "boolin_margin": {
-     "n": 1152,
-     "mae": 10.111,
-     "rmse": 12.983,
-     "mean_error": 0.222,
-     "median_error": -0.515,
-     "directional_accuracy": 0.608
+     "n": 1153,
+     "mae": 10.106,
+     "rmse": 12.978,
+     "mean_error": 0.225,
+     "median_error": -0.51,
+     "directional_accuracy": 0.6084
     },
     "same_games": {
-     "n": 1152,
+     "n": 1153,
      "boolin": {
-      "n": 1152,
-      "mae": 10.111,
-      "rmse": 12.983,
-      "mean_error": 0.222,
-      "median_error": -0.515
+      "n": 1153,
+      "mae": 10.106,
+      "rmse": 12.978,
+      "mean_error": 0.225,
+      "median_error": -0.51
      },
      "market_implied": {
-      "n": 1152,
-      "mae": 9.533,
-      "rmse": 12.391,
-      "mean_error": 0.602,
+      "n": 1153,
+      "mae": 9.527,
+      "rmse": 12.386,
+      "mean_error": 0.605,
       "median_error": 0.0,
-      "directional_accuracy": 0.6693
+      "directional_accuracy": 0.6696
      },
      "abs_error_paired": {
-      "n": 1152,
-      "mean_diff": 0.57814,
-      "se": 0.10308,
-      "t": 5.61,
+      "n": 1153,
+      "mean_diff": 0.57853,
+      "se": 0.10299,
+      "t": 5.62,
       "verdict": "market margin abs error better (t=5.6)",
       "note": "mean of Boolin minus market per-game margin abs error; negative favours Boolin"
      }
@@ -121,9 +121,9 @@
      "rows": [
       {
        "gap": "1-2.5 pts",
-       "n": 344,
+       "n": 345,
        "pushes": 11,
-       "boolin_side_cover_rate": 0.4835,
+       "boolin_side_cover_rate": 0.482,
        "interpretable": true
       },
       {
@@ -142,9 +142,9 @@
       },
       {
        "gap": "1+ pts",
-       "n": 902,
+       "n": 903,
        "pushes": 24,
-       "boolin_side_cover_rate": 0.5011,
+       "boolin_side_cover_rate": 0.5006,
        "interpretable": true
       }
      ],
@@ -153,35 +153,35 @@
    },
    "all": {
     "boolin_margin": {
-     "n": 3681,
-     "mae": 10.443,
-     "rmse": 13.429,
-     "mean_error": 0.069,
+     "n": 3682,
+     "mae": 10.441,
+     "rmse": 13.427,
+     "mean_error": 0.071,
      "median_error": -0.3,
-     "directional_accuracy": 0.6214
+     "directional_accuracy": 0.6215
     },
     "same_games": {
-     "n": 3681,
+     "n": 3682,
      "boolin": {
-      "n": 3681,
-      "mae": 10.443,
-      "rmse": 13.429,
-      "mean_error": 0.069,
+      "n": 3682,
+      "mae": 10.441,
+      "rmse": 13.427,
+      "mean_error": 0.071,
       "median_error": -0.3
      },
      "market_implied": {
-      "n": 3681,
-      "mae": 9.962,
-      "rmse": 12.891,
-      "mean_error": 0.117,
+      "n": 3682,
+      "mae": 9.96,
+      "rmse": 12.889,
+      "mean_error": 0.118,
       "median_error": 0.0,
-      "directional_accuracy": 0.6647
+      "directional_accuracy": 0.6648
      },
      "abs_error_paired": {
-      "n": 3681,
-      "mean_diff": 0.48147,
-      "se": 0.05539,
-      "t": 8.69,
+      "n": 3682,
+      "mean_diff": 0.48162,
+      "se": 0.05538,
+      "t": 8.7,
       "verdict": "market margin abs error better (t=8.7)",
       "note": "mean of Boolin minus market per-game margin abs error; negative favours Boolin"
      }
@@ -190,9 +190,9 @@
      "rows": [
       {
        "gap": "1-2.5 pts",
-       "n": 1128,
+       "n": 1129,
        "pushes": 32,
-       "boolin_side_cover_rate": 0.5064,
+       "boolin_side_cover_rate": 0.5059,
        "interpretable": true
       },
       {
@@ -211,9 +211,9 @@
       },
       {
        "gap": "1+ pts",
-       "n": 2797,
+       "n": 2798,
        "pushes": 73,
-       "boolin_side_cover_rate": 0.4985,
+       "boolin_side_cover_rate": 0.4983,
        "interpretable": true
       }
      ],
