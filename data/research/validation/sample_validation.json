@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-10-22",
+ "data_cutoff": "2026-10-23",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -973,14 +973,14 @@
      },
      {
       "group": "4-10 GP",
-      "n": 95,
-      "brier": 0.2349,
-      "log_loss": 0.6607,
-      "favorite_overconfidence": 0.0042,
+      "n": 97,
+      "brier": 0.2336,
+      "log_loss": 0.6582,
+      "favorite_overconfidence": -0.0044,
       "market_brier_same_games": 0.2077,
       "boolin_minus_market_brier": -0.04348,
       "vs_market": "too few games to tell (n=4)",
-      "margin_mae": 2.124,
+      "margin_mae": 2.131,
       "share_extreme": 0.25,
       "interpretable": true
      },
@@ -1057,14 +1057,14 @@
      },
      {
       "group": "4-10 GP",
-      "n": 95,
-      "brier": 0.2349,
-      "log_loss": 0.6607,
-      "favorite_overconfidence": 0.0042,
+      "n": 97,
+      "brier": 0.2336,
+      "log_loss": 0.6582,
+      "favorite_overconfidence": -0.0044,
       "market_brier_same_games": 0.2077,
       "boolin_minus_market_brier": -0.04348,
       "vs_market": "too few games to tell (n=4)",
-      "margin_mae": 2.124,
+      "margin_mae": 2.131,
       "share_extreme": 0.25,
       "interpretable": true
      },
@@ -1216,14 +1216,14 @@
      },
      {
       "group": "starter 600+ BF",
-      "n": 6,
-      "brier": 0.2721,
-      "log_loss": 0.7374,
-      "favorite_overconfidence": 0.199,
+      "n": 7,
+      "brier": 0.2533,
+      "log_loss": 0.6993,
+      "favorite_overconfidence": 0.117,
       "market_brier_same_games": 0.22,
       "boolin_minus_market_brier": 0.02715,
       "vs_market": "too few games to tell (n=2)",
-      "margin_mae": 2.324,
+      "margin_mae": 1.997,
       "share_extreme": 0.0,
       "interpretable": false
      }
@@ -1274,14 +1274,14 @@
      },
      {
       "group": "starter 600+ BF",
-      "n": 9,
-      "brier": 0.2662,
-      "log_loss": 0.7254,
-      "favorite_overconfidence": 0.2122,
+      "n": 10,
+      "brier": 0.2537,
+      "log_loss": 0.6999,
+      "favorite_overconfidence": 0.1534,
       "market_brier_same_games": 0.2378,
       "boolin_minus_market_brier": 0.01382,
       "vs_market": "too few games to tell (n=5)",
-      "margin_mae": 2.105,
+      "margin_mae": 1.898,
       "share_extreme": 0.0,
       "interpretable": false
      }
