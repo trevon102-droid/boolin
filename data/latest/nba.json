@@ -1,21 +1,21 @@
 {
- "pulled_at_et": "2026-10-24T13:30-04:00",
+ "pulled_at_et": "2026-10-24T18:38-04:00",
  "date": "2026-10-24",
  "games": [
   {
    "espn_id": "401909853",
    "name": "MIA @ CHA",
    "start_et": "6:00 PM ET",
-   "status": "Scheduled",
+   "status": "In Progress",
    "completed": false,
-   "away_score": 0.0,
-   "home_score": 0.0,
+   "away_score": 27.0,
+   "home_score": 27.0,
    "note": null,
    "away": {
     "id": "14",
     "abbr": "MIA",
     "name": "Miami Heat",
-    "score": "0",
+    "score": "27",
     "record": "0-2",
     "rank": null,
     "conference_id": null,
@@ -32,7 +32,7 @@
     "id": "30",
     "abbr": "CHA",
     "name": "Charlotte Hornets",
-    "score": "0",
+    "score": "27",
     "record": "1-1",
     "rank": null,
     "conference_id": null,
@@ -50,11 +50,7 @@
    "venue": "Spectrum Center",
    "indoor": true,
    "tv": "NBA League Pass",
-   "espn_line": {
-    "details": "MIA -3.5",
-    "total": 229.5,
-    "provider": "DraftKings"
-   },
+   "espn_line": null,
    "injuries": {
     "CHA": [
      {
@@ -64,16 +60,16 @@
       "detail": "Hamstring"
      },
      {
+      "player": "Coby White",
+      "pos": "G",
+      "status": "Out",
+      "detail": "Calf Strain"
+     },
+     {
       "player": "Kon Knueppel",
       "pos": "G",
       "status": "Out",
       "detail": "Hamstring"
-     },
-     {
-      "player": "Coby White",
-      "pos": "G",
-      "status": "Day-To-Day",
-      "detail": "Calf Strain"
      },
      {
       "player": "Kylan Boswell",
@@ -82,19 +78,9 @@
       "detail": "Knee Surgery"
      }
     ],
-    "MIA": [
-     {
-      "player": "Pelle Larsson",
-      "pos": "G",
-      "status": "Day-To-Day",
-      "detail": "Finger Sprain"
-     }
-    ]
+    "MIA": []
    },
-   "espn_projection": {
-    "home_win_pct": "44",
-    "away_win_pct": "56"
-   },
+   "espn_projection": null,
    "player_logs": {
     "Naz Reid": {
      "team": "CHA",
@@ -274,78 +260,92 @@
       }
      ]
     },
-    "Giannis Antetokounmpo": {
+    "Klay Thompson": {
      "team": "MIA",
      "last10": [
       {
        "date": "2026-10-03",
        "opp": "TOR",
        "season_type": "2026-27 Preseason",
-       "minutes": "14",
-       "fieldGoalsMade-fieldGoalsAttempted": "3-3",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
-       "totalRebounds": "4",
-       "assists": "7",
+       "minutes": "13",
+       "fieldGoalsMade-fieldGoalsAttempted": "0-2",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+       "totalRebounds": "2",
+       "assists": "0",
        "blocks": "0",
        "steals": "0",
-       "turnovers": "2",
-       "points": "9"
+       "turnovers": "1",
+       "points": "0"
       },
       {
        "date": "2026-10-08",
        "opp": "NO",
        "season_type": "2026-27 Preseason",
-       "minutes": "18",
-       "fieldGoalsMade-fieldGoalsAttempted": "8-13",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
-       "totalRebounds": "4",
-       "assists": "4",
-       "blocks": "0",
+       "minutes": "14",
+       "fieldGoalsMade-fieldGoalsAttempted": "2-7",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-6",
+       "totalRebounds": "1",
+       "assists": "3",
+       "blocks": "3",
        "steals": "1",
-       "turnovers": "2",
-       "points": "18"
+       "turnovers": "0",
+       "points": "5"
       },
       {
        "date": "2026-10-14",
        "opp": "BKN",
        "season_type": "2026-27 Preseason",
-       "minutes": "24",
-       "fieldGoalsMade-fieldGoalsAttempted": "8-10",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-2",
-       "totalRebounds": "15",
-       "assists": "9",
-       "blocks": "3",
-       "steals": "1",
-       "turnovers": "4",
-       "points": "20"
+       "minutes": "23",
+       "fieldGoalsMade-fieldGoalsAttempted": "5-10",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-7",
+       "totalRebounds": "1",
+       "assists": "0",
+       "blocks": "1",
+       "steals": "0",
+       "turnovers": "2",
+       "points": "12"
+      },
+      {
+       "date": "2026-10-16",
+       "opp": "ORL",
+       "season_type": "2026-27 Preseason",
+       "minutes": "15",
+       "fieldGoalsMade-fieldGoalsAttempted": "0-7",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-6",
+       "totalRebounds": "1",
+       "assists": "3",
+       "blocks": "0",
+       "steals": "0",
+       "turnovers": "0",
+       "points": "0"
       },
       {
        "date": "2026-10-21",
        "opp": "MIN",
        "season_type": "2026-27 Regular Season",
-       "minutes": "30",
-       "fieldGoalsMade-fieldGoalsAttempted": "13-19",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-2",
-       "totalRebounds": "6",
-       "assists": "1",
+       "minutes": "16",
+       "fieldGoalsMade-fieldGoalsAttempted": "3-6",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-6",
+       "totalRebounds": "1",
+       "assists": "0",
        "blocks": "0",
-       "steals": "1",
-       "turnovers": "3",
-       "points": "35"
+       "steals": "0",
+       "turnovers": "2",
+       "points": "10"
       },
       {
        "date": "2026-10-24",
        "opp": "DET",
        "season_type": "2026-27 Regular Season",
-       "minutes": "33",
-       "fieldGoalsMade-fieldGoalsAttempted": "15-26",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-3",
-       "totalRebounds": "12",
-       "assists": "5",
-       "blocks": "1",
-       "steals": "2",
-       "turnovers": "3",
-       "points": "36"
+       "minutes": "24",
+       "fieldGoalsMade-fieldGoalsAttempted": "2-11",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-11",
+       "totalRebounds": "2",
+       "assists": "2",
+       "blocks": "0",
+       "steals": "0",
+       "turnovers": "0",
+       "points": "6"
       }
      ]
     },
@@ -437,6 +437,95 @@
        "points": "18"
       }
      ]
+    },
+    "Bobby Portis": {
+     "team": "MIA",
+     "last10": [
+      {
+       "date": "2026-10-03",
+       "opp": "TOR",
+       "season_type": "2026-27 Preseason",
+       "minutes": "11",
+       "fieldGoalsMade-fieldGoalsAttempted": "1-4",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-3",
+       "totalRebounds": "3",
+       "assists": "2",
+       "blocks": "0",
+       "steals": "0",
+       "turnovers": "1",
+       "points": "4"
+      },
+      {
+       "date": "2026-10-08",
+       "opp": "NO",
+       "season_type": "2026-27 Preseason",
+       "minutes": "20",
+       "fieldGoalsMade-fieldGoalsAttempted": "4-13",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-4",
+       "totalRebounds": "6",
+       "assists": "2",
+       "blocks": "1",
+       "steals": "2",
+       "turnovers": "2",
+       "points": "11"
+      },
+      {
+       "date": "2026-10-14",
+       "opp": "BKN",
+       "season_type": "2026-27 Preseason",
+       "minutes": "24",
+       "fieldGoalsMade-fieldGoalsAttempted": "5-8",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-3",
+       "totalRebounds": "2",
+       "assists": "3",
+       "blocks": "0",
+       "steals": "0",
+       "turnovers": "0",
+       "points": "12"
+      },
+      {
+       "date": "2026-10-16",
+       "opp": "ORL",
+       "season_type": "2026-27 Preseason",
+       "minutes": "15",
+       "fieldGoalsMade-fieldGoalsAttempted": "5-9",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-5",
+       "totalRebounds": "5",
+       "assists": "1",
+       "blocks": "2",
+       "steals": "0",
+       "turnovers": "0",
+       "points": "12"
+      },
+      {
+       "date": "2026-10-21",
+       "opp": "MIN",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "25",
+       "fieldGoalsMade-fieldGoalsAttempted": "3-5",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-2",
+       "totalRebounds": "4",
+       "assists": "1",
+       "blocks": "1",
+       "steals": "1",
+       "turnovers": "2",
+       "points": "7"
+      },
+      {
+       "date": "2026-10-24",
+       "opp": "DET",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "21",
+       "fieldGoalsMade-fieldGoalsAttempted": "4-10",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-6",
+       "totalRebounds": "8",
+       "assists": "2",
+       "blocks": "0",
+       "steals": "1",
+       "turnovers": "0",
+       "points": "11"
+      }
+     ]
     }
    }
   },
@@ -491,7 +580,7 @@
    "espn_line": {
     "details": "CLE -11.5",
     "total": 228.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "injuries": {
     "CLE": [],
@@ -743,9 +832,9 @@
    "indoor": true,
    "tv": "NBA TV, MyMi",
    "espn_line": {
-    "details": "PHI -12.5",
-    "total": 235.5,
-    "provider": "DraftKings"
+    "details": "PHI -13.5",
+    "total": 234.5,
+    "provider": "Draft Kings"
    },
    "injuries": {
     "PHI": [
@@ -783,8 +872,8 @@
     "MIL": []
    },
    "espn_projection": {
-    "home_win_pct": "87.4",
-    "away_win_pct": "12.6"
+    "home_win_pct": "86.9",
+    "away_win_pct": "13.1"
    },
    "player_logs": {
     "Tyrese Maxey": {
@@ -1152,17 +1241,23 @@
    "indoor": true,
    "tv": "MNMT",
    "espn_line": {
-    "details": "CHI -2.5",
-    "total": 243.5,
-    "provider": "DraftKings"
+    "details": "CHI -1.5",
+    "total": 244.5,
+    "provider": "Draft Kings"
    },
    "injuries": {
     "CHI": [
      {
+      "player": "Patrick Williams",
+      "pos": "F",
+      "status": "Out",
+      "detail": "Groin Soreness"
+     },
+     {
       "player": "Noa Essengue",
       "pos": "F",
-      "status": "Day-To-Day",
-      "detail": "Head"
+      "status": "Out",
+      "detail": "Head Bruise"
      },
      {
       "player": "Nic Claxton",
@@ -1175,7 +1270,7 @@
      {
       "player": "AJ Dybantsa",
       "pos": "F",
-      "status": "Day-To-Day",
+      "status": "Out",
       "detail": "Ankle Sprain"
      },
      {
@@ -1193,8 +1288,8 @@
     ]
    },
    "espn_projection": {
-    "home_win_pct": "47.3",
-    "away_win_pct": "52.7"
+    "home_win_pct": "46.4",
+    "away_win_pct": "53.6"
    },
    "player_logs": {
     "Norman Powell": {
@@ -1693,48 +1788,48 @@
    "indoor": true,
    "tv": "NBA League Pass, KFAA-TV",
    "espn_line": {
-    "details": "SA -12.5",
-    "total": 231.5,
-    "provider": "DraftKings"
+    "details": "SA -14.5",
+    "total": 229.5,
+    "provider": "Draft Kings"
    },
    "injuries": {
     "DAL": [
      {
       "player": "Kyrie Irving",
       "pos": "G",
+      "status": "Out",
+      "detail": "Knee"
+     },
+     {
+      "player": "Zaccharie Risacher",
+      "pos": "F",
       "status": "Day-To-Day",
-      "detail": "Rest"
+      "detail": "Hip Soreness"
      },
      {
       "player": "Caleb Martin",
       "pos": "F",
-      "status": "Day-To-Day",
+      "status": "Out",
       "detail": "Thumb Sprain"
      },
      {
       "player": "Jett Howard",
       "pos": "G",
-      "status": "Day-To-Day",
+      "status": "Out",
       "detail": "Calf Soreness"
      },
      {
-      "player": "Tarik Biberovic",
-      "pos": "F",
+      "player": "Max Christie",
+      "pos": "G",
       "status": "Day-To-Day",
-      "detail": "Heel Inflammation"
-     },
-     {
-      "player": "Santi Aldama",
-      "pos": "F",
-      "status": "Day-To-Day",
-      "detail": "Knee Surgery"
+      "detail": "Leg"
      }
     ],
     "SA": [
      {
       "player": "Tobias Harris",
       "pos": "F",
-      "status": "Day-To-Day",
+      "status": "Out",
       "detail": "Calf Strain"
      },
      {
@@ -1746,8 +1841,8 @@
     ]
    },
    "espn_projection": {
-    "home_win_pct": "23.4",
-    "away_win_pct": "76.6"
+    "home_win_pct": "19.7",
+    "away_win_pct": "80.3"
    },
    "player_logs": {
     "Cooper Flagg": {
@@ -2279,9 +2374,9 @@
    "indoor": true,
    "tv": "NBA League Pass",
    "espn_line": {
-    "details": "ATL -1.5",
+    "details": "HOU -1.5",
     "total": 227.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "injuries": {
     "ATL": [
@@ -2299,6 +2394,12 @@
      }
     ],
     "HOU": [
+     {
+      "player": "Marcus Smart",
+      "pos": "G",
+      "status": "Day-To-Day",
+      "detail": "Forearm Strain"
+     },
      {
       "player": "Steven Adams",
       "pos": "C",
@@ -2320,8 +2421,8 @@
     ]
    },
    "espn_projection": {
-    "home_win_pct": "55.5",
-    "away_win_pct": "44.5"
+    "home_win_pct": "57.3",
+    "away_win_pct": "42.7"
    },
    "player_logs": {
     "Nickeil Alexander-Walker": {
@@ -2738,7 +2839,7 @@
    "espn_line": {
     "details": "DEN -11.5",
     "total": 239.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "injuries": {
     "DEN": [
@@ -2771,8 +2872,8 @@
      {
       "player": "Yves Missi",
       "pos": "C",
-      "status": "Day-To-Day",
-      "detail": "Knee"
+      "status": "Out",
+      "detail": "Knee Bruise"
      }
     ]
    },
@@ -3311,8 +3412,8 @@
    "tv": "NBA TV, Suns Live",
    "espn_line": {
     "details": "PHX -9.5",
-    "total": 222.5,
-    "provider": "DraftKings"
+    "total": 221.5,
+    "provider": "Draft Kings"
    },
    "injuries": {
     "PHX": [
@@ -3325,7 +3426,7 @@
      {
       "player": "Oso Ighodaro",
       "pos": "F",
-      "status": "Day-To-Day",
+      "status": "Out",
       "detail": "Oblique Strain"
      },
      {
@@ -3337,34 +3438,34 @@
     ],
     "GS": [
      {
-      "player": "Brandin Podziemski",
-      "pos": "G",
-      "status": "Out",
-      "detail": "Back"
-     },
-     {
-      "player": "Stephen Curry",
-      "pos": "G",
-      "status": "Day-To-Day",
-      "detail": "Rest"
-     },
-     {
       "player": "Charles Bassey",
       "pos": "C",
       "status": "Day-To-Day",
       "detail": "Knee"
      },
      {
-      "player": "Kristaps Porzingis",
+      "player": "Al Horford",
       "pos": "C",
       "status": "Out",
-      "detail": "Illness"
+      "detail": "Back"
      },
      {
-      "player": "Moses Moody",
+      "player": "Draymond Green",
+      "pos": "F",
+      "status": "Day-To-Day",
+      "detail": "Back"
+     },
+     {
+      "player": "Stephen Curry",
       "pos": "G",
       "status": "Out",
-      "detail": "Knee Surgery"
+      "detail": "Rest"
+     },
+     {
+      "player": "Brandin Podziemski",
+      "pos": "G",
+      "status": "Out",
+      "detail": "Back"
      }
     ]
    },

@@ -43,6 +43,39 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-NHL-ANA-PHI",
+   "type": "starter",
+   "field": "PHI starter",
+   "old": "Dan Vladar (projected)",
+   "new": "Joseph Woll (projected)",
+   "source": "NHL API goalie usage",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-NHL-ANA-PHI",
+   "type": "model",
+   "field": "Boolin PHI win probability",
+   "old": 0.4678,
+   "new": 0.4592,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 46.8% to 45.9% (home margin -0.19 \u2192 -0.25). Model components that moved: 1. Goaltending (GSAx/gp, regressed) -0.06 (Joseph Woll vs Lukas Dostal (projected starters)). Data updates in the same pull: PHI starter: Dan Vladar (projected) \u2192 Joseph Woll (projected).",
+   "detail": {
+    "text": "Boolin moved from 46.8% to 45.9% (home margin -0.19 \u2192 -0.25). Model components that moved: 1. Goaltending (GSAx/gp, regressed) -0.06 (Joseph Woll vs Lukas Dostal (projected starters)). Data updates in the same pull: PHI starter: Dan Vladar (projected) \u2192 Joseph Woll (projected).",
+    "components": [
+     {
+      "component": "Goaltending (GSAx/gp, regressed)",
+      "margin_change": -0.058,
+      "now": "Joseph Woll vs Lukas Dostal (projected starters)"
+     }
+    ],
+    "same_pull_updates": [
+     "PHI starter: Dan Vladar (projected) \u2192 Joseph Woll (projected)"
+    ]
+   }
   }
  ],
  "2026-10-24-NHL-LAK-NJD": [
@@ -51,6 +84,17 @@
    "game_key": "2026-10-24-NHL-LAK-NJD",
    "type": "injury_status",
    "field": "Connor Hellebuyck (NJD)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-NHL-LAK-NJD",
+   "type": "injury_status",
+   "field": "Quinton Byfield (LAK)",
    "old": "Day-To-Day",
    "new": "Out",
    "source": "ESPN injury list",
@@ -77,6 +121,17 @@
    "field": "Logan Thompson (WSH)",
    "old": "Day-To-Day",
    "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-NHL-BUF-WSH",
+   "type": "injury_status",
+   "field": "Logan Thompson (WSH)",
+   "old": "Out",
+   "new": "Injured Reserve",
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "downgrade"
@@ -128,6 +183,17 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-NHL-NYR-OTT",
+   "type": "injury_status",
+   "field": "Kurtis MacDermid (OTT)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
   }
  ],
  "2026-10-24-NHL-VGK-CBJ": [
@@ -138,6 +204,121 @@
    "field": "Mitch Marner (VGK)",
    "old": "Day-To-Day",
    "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-10-24-NHL-CAR-STL": [
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-NHL-CAR-STL",
+   "type": "injury_status",
+   "field": "Mark Jankowski (CAR)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-10-24-MLB-TB-MIL": [
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-MLB-TB-MIL",
+   "type": "lineup",
+   "field": "TB lineup",
+   "old": "not posted",
+   "new": "posted",
+   "source": "MLB lineup card",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-MLB-TB-MIL",
+   "type": "lineup",
+   "field": "MIL lineup",
+   "old": "not posted",
+   "new": "posted",
+   "source": "MLB lineup card",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-MLB-TB-MIL",
+   "type": "weather",
+   "field": "wind (mph)",
+   "old": "unknown",
+   "new": 1,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-MLB-TB-MIL",
+   "type": "weather",
+   "field": "temp (\u00b0F)",
+   "old": "unknown",
+   "new": 70.0,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-MLB-TB-MIL",
+   "type": "weather",
+   "field": "condition",
+   "old": "unknown",
+   "new": "Roof Closed",
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  }
+ ],
+ "2026-10-24-NHL-TBL-UTA": [
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-NHL-TBL-UTA",
+   "type": "injury_status",
+   "field": "John Marino (UTA)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-10-24-NHL-DET-CGY": [
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-NHL-DET-CGY",
+   "type": "injury_status",
+   "field": "Mikael Backlund (CGY)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-NHL-DET-CGY",
+   "type": "injury_status",
+   "field": "John Gibson (DET)",
+   "old": "Day-To-Day",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  }
+ ],
+ "2026-10-24-NHL-MIN-SEA": [
+  {
+   "t": "2026-10-24T18:38-04:00",
+   "game_key": "2026-10-24-NHL-MIN-SEA",
+   "type": "injury_status",
+   "field": "Jared McCann (SEA)",
+   "old": "not listed",
+   "new": "Injured Reserve",
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "downgrade"
