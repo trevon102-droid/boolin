@@ -1,7 +1,7 @@
 {
- "pulled_at_et": "2026-10-24T18:38-04:00",
- "slate_date": "2026-10-24",
- "run_at_et": "2026-10-24T18:38-04:00",
+ "pulled_at_et": "2026-10-25T11:20-04:00",
+ "slate_date": "2026-10-25",
+ "run_at_et": "2026-10-25T11:19-04:00",
  "sources": {
   "nfl": {
    "status": "ok",
@@ -14,38 +14,37 @@
    "component_detail": {
     "schedule": {
      "status": "ok",
-     "fetched_at": "2026-10-24T18:38:08-04:00",
+     "fetched_at": "2026-10-25T11:19:13-04:00",
      "source": "nflverse games.csv",
      "error": null
     },
     "history": {
      "status": "ok",
-     "fetched_at": "2026-10-24T18:38:08-04:00",
+     "fetched_at": "2026-10-25T11:19:13-04:00",
      "source": "nflverse games.csv",
      "error": null
     },
     "team_epa": {
      "status": "ok",
-     "fetched_at": "2026-10-24T18:38:08-04:00",
+     "fetched_at": "2026-10-25T11:19:14-04:00",
      "source": "nflverse play-by-play",
      "error": null
     },
     "injuries": {
      "status": "ok",
-     "fetched_at": "2026-10-24T18:38:08-04:00",
+     "fetched_at": "2026-10-25T11:19:14-04:00",
      "source": "nflverse injury reports",
      "error": null
     }
    },
-   "games": 14,
-   "seconds": 1.1,
-   "pulled_at_et": "2026-10-24T18:38-04:00"
+   "games": 26,
+   "seconds": 1.0,
+   "pulled_at_et": "2026-10-25T11:19-04:00"
   },
   "cfb": {
    "status": "ok",
    "components": {
     "scoreboard": "ok",
-    "summaries": "ok",
     "next_3_days": "ok",
     "ap_poll": "ok",
     "cfbd": "skipped"
@@ -53,50 +52,41 @@
    "component_detail": {
     "scoreboard": {
      "status": "ok",
-     "fetched_at": "2026-10-24T18:38:08-04:00",
-     "source": "ESPN",
-     "error": null
-    },
-    "summaries": {
-     "status": "ok",
-     "fetched_at": "2026-10-24T18:38:08-04:00",
+     "fetched_at": "2026-10-25T11:19:14-04:00",
      "source": "ESPN",
      "error": null
     },
     "next_3_days": {
      "status": "ok",
-     "fetched_at": "2026-10-24T18:38:10-04:00",
+     "fetched_at": "2026-10-25T11:19:14-04:00",
      "source": "ESPN",
      "error": null
     },
     "ap_poll": {
      "status": "ok",
-     "fetched_at": "2026-10-24T18:38:10-04:00",
+     "fetched_at": "2026-10-25T11:19:14-04:00",
      "source": "ESPN",
      "error": null
     },
     "cfbd": {
      "status": "skipped",
-     "fetched_at": "2026-10-24T18:38:10-04:00",
+     "fetched_at": "2026-10-25T11:19:14-04:00",
      "source": "CollegeFootballData",
      "error": null
     }
    },
-   "games": 44,
-   "ranked_games": 17,
-   "upcoming_3d": 2,
+   "games": 0,
+   "ranked_games": 0,
+   "upcoming_3d": 4,
    "cfbd": "skipped",
-   "seconds": 1.7,
-   "pulled_at_et": "2026-10-24T18:38-04:00"
+   "seconds": 0.4,
+   "pulled_at_et": "2026-10-25T11:19-04:00"
   },
   "mlb": {
    "status": "ok",
-   "games": 1,
-   "components": {
-    "schedule": "ok"
-   },
-   "seconds": 1.1,
-   "pulled_at_et": "2026-10-24T18:38-04:00"
+   "games": 0,
+   "seconds": 0.2,
+   "pulled_at_et": "2026-10-25T11:19-04:00"
   },
   "nhl": {
    "status": "ok",
@@ -111,62 +101,62 @@
    "component_detail": {
     "schedule": {
      "status": "ok",
-     "fetched_at": "2026-10-24T18:38:11-04:00",
+     "fetched_at": "2026-10-25T11:19:14-04:00",
      "source": "NHL API",
      "error": null
     },
     "back_to_back": {
      "status": "ok",
-     "fetched_at": "2026-10-24T18:38:11-04:00",
+     "fetched_at": "2026-10-25T11:19:14-04:00",
      "source": "NHL API",
      "error": null
     },
     "standings": {
      "status": "ok",
-     "fetched_at": "2026-10-24T18:38:11-04:00",
+     "fetched_at": "2026-10-25T11:19:14-04:00",
      "source": "NHL API",
      "error": null
     },
     "moneypuck_this_season": {
      "status": "ok",
-     "fetched_at": "2026-10-24T18:38:12-04:00",
+     "fetched_at": "2026-10-25T11:19:17-04:00",
      "source": "MoneyPuck",
      "error": null
     },
     "moneypuck_last_season": {
      "status": "ok",
-     "fetched_at": "2026-10-24T18:38:12-04:00",
+     "fetched_at": "2026-10-25T11:19:17-04:00",
      "source": "MoneyPuck",
      "error": null
     },
     "club_goalies": {
      "status": "ok",
-     "fetched_at": "2026-10-24T18:38:12-04:00",
+     "fetched_at": "2026-10-25T11:19:17-04:00",
      "source": "NHL API club stats",
      "error": null
     }
    },
-   "games": 12,
-   "seconds": 9.1,
-   "pulled_at_et": "2026-10-24T18:38-04:00"
+   "games": 5,
+   "seconds": 5.3,
+   "pulled_at_et": "2026-10-25T11:19-04:00"
   },
   "wnba": {
    "status": "ok",
-   "games": 1,
-   "seconds": 0.5,
-   "pulled_at_et": "2026-10-24T18:38-04:00"
+   "games": 0,
+   "seconds": 0.0,
+   "pulled_at_et": "2026-10-25T11:19-04:00"
   },
   "nba": {
    "status": "ok",
-   "games": 8,
-   "seconds": 2.2,
-   "pulled_at_et": "2026-10-24T18:38-04:00"
+   "games": 7,
+   "seconds": 2.5,
+   "pulled_at_et": "2026-10-25T11:19-04:00"
   },
   "injuries": {
    "status": "ok",
-   "games": 13,
-   "seconds": 0.6,
-   "pulled_at_et": "2026-10-24T18:38-04:00"
+   "games": 5,
+   "seconds": 0.3,
+   "pulled_at_et": "2026-10-25T11:19-04:00"
   },
   "odds": {
    "status": "error",
@@ -181,37 +171,37 @@
    "component_detail": {
     "MLB": {
      "status": "error",
-     "fetched_at": "2026-10-24T11:36:58-04:00",
+     "fetched_at": "2026-10-25T11:19:32-04:00",
      "source": "The Odds API",
      "error": "RuntimeError: GET failed after 3 tries: https://api.the-odds-api.com/v4/sports/baseball_mlb/odds (401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/baseball_mlb/odds?apiKey=e105940bd17abc118b147b6acce8a273&bookmakers=pinnacle%2Cfanduel%2Cdraftkings%2Cbetmgm%2Cwilliamhill"
     },
     "WNBA": {
      "status": "error",
-     "fetched_at": "2026-10-24T11:37:07-04:00",
+     "fetched_at": "2026-10-25T11:19:41-04:00",
      "source": "The Odds API",
      "error": "RuntimeError: GET failed after 3 tries: https://api.the-odds-api.com/v4/sports/basketball_wnba/odds (401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/basketball_wnba/odds?apiKey=e105940bd17abc118b147b6acce8a273&bookmakers=pinnacle%2Cfanduel%2Cdraftkings%2Cbetmgm%2Cwilli"
     },
     "NBA": {
      "status": "error",
-     "fetched_at": "2026-10-24T11:37:16-04:00",
+     "fetched_at": "2026-10-25T11:19:50-04:00",
      "source": "The Odds API",
      "error": "RuntimeError: GET failed after 3 tries: https://api.the-odds-api.com/v4/sports/basketball_nba/odds (401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/basketball_nba/odds?apiKey=e105940bd17abc118b147b6acce8a273&bookmakers=pinnacle%2Cfanduel%2Cdraftkings%2Cbetmgm%2Cwilliam"
     },
     "NHL": {
      "status": "error",
-     "fetched_at": "2026-10-24T11:37:26-04:00",
+     "fetched_at": "2026-10-25T11:19:59-04:00",
      "source": "The Odds API",
      "error": "RuntimeError: GET failed after 3 tries: https://api.the-odds-api.com/v4/sports/icehockey_nhl/odds (401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/icehockey_nhl/odds?apiKey=e105940bd17abc118b147b6acce8a273&bookmakers=pinnacle%2Cfanduel%2Cdraftkings%2Cbetmgm%2Cwilliamhi"
     },
     "NFL": {
      "status": "error",
-     "fetched_at": "2026-10-24T11:37:35-04:00",
+     "fetched_at": "2026-10-25T11:20:08-04:00",
      "source": "The Odds API",
      "error": "RuntimeError: GET failed after 3 tries: https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds (401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds?apiKey=e105940bd17abc118b147b6acce8a273&bookmakers=pinnacle%2Cfanduel%2Cdraftkings%2Cbetm"
     },
     "CFB": {
      "status": "error",
-     "fetched_at": "2026-10-24T11:37:45-04:00",
+     "fetched_at": "2026-10-25T11:20:18-04:00",
      "source": "The Odds API",
      "error": "RuntimeError: GET failed after 3 tries: https://api.the-odds-api.com/v4/sports/americanfootball_ncaaf/odds (401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/americanfootball_ncaaf/odds?apiKey=e105940bd17abc118b147b6acce8a273&bookmakers=pinnacle%2Cfanduel%2Cdraftkings%2C"
     }
@@ -227,9 +217,8 @@
     "NFL": "RuntimeError: GET failed after 3 tries: https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds (401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds?apiKey=e105940bd17abc118b147b6acce8a273&bookmakers=pinnacle%2Cfanduel%2Cdraftkings%2Cbetm",
     "CFB": "RuntimeError: GET failed after 3 tries: https://api.the-odds-api.com/v4/sports/americanfootball_ncaaf/odds (401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/americanfootball_ncaaf/odds?apiKey=e105940bd17abc118b147b6acce8a273&bookmakers=pinnacle%2Cfanduel%2Cdraftkings%2C"
    },
-   "seconds": 57.2,
-   "latest_file_is_stale": true,
-   "from_earlier_run": "2026-10-24T13:30-04:00"
+   "seconds": 55.4,
+   "latest_file_is_stale": true
   }
  },
  "health": "partial",
