@@ -97,6 +97,48 @@
     ],
     "same_pull_updates": []
    }
+  },
+  {
+   "t": "2026-10-26T11:02-04:00",
+   "game_key": "2026-10-29-NFL-CAR-GB",
+   "type": "model",
+   "field": "Boolin GB win probability",
+   "old": 0.5397,
+   "new": 0.5459,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 54.0% to 54.6% (home margin +1.36 \u2192 +1.57). Model components that moved: 1. Offense (EPA/play, regressed) +0.18 (home +0.001 vs away +0.025 EPA/play x 58.15). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 54.0% to 54.6% (home margin +1.36 \u2192 +1.57). Model components that moved: 1. Offense (EPA/play, regressed) +0.18 (home +0.001 vs away +0.025 EPA/play x 58.15). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 0.18,
+      "now": "home +0.001 vs away +0.025 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": []
+   }
+  },
+  {
+   "t": "2026-10-26T11:02-04:00",
+   "game_key": "2026-10-29-NFL-CAR-GB",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "GB -1.4",
+   "new": "GB -1.6",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 54.0% to 54.6% (home margin +1.36 \u2192 +1.57). Model components that moved: 1. Offense (EPA/play, regressed) +0.18 (home +0.001 vs away +0.025 EPA/play x 58.15). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 54.0% to 54.6% (home margin +1.36 \u2192 +1.57). Model components that moved: 1. Offense (EPA/play, regressed) +0.18 (home +0.001 vs away +0.025 EPA/play x 58.15). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 0.18,
+      "now": "home +0.001 vs away +0.025 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": []
+   }
   }
  ]
 }
