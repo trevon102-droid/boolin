@@ -9,7 +9,7 @@
   "baseline-0.1",
   "baseline-0.2"
  ],
- "built_at": "2026-10-26T11:02-04:00",
+ "built_at": "2026-10-26T16:01-04:00",
  "data_cutoff": "2026-10-25",
  "filters": {
   "league": null,
@@ -26,8 +26,8 @@
   "nfl_replay": "development = seasons < 2022; holdout = 2022+"
  },
  "warning": "rows span model versions ['baseline-0.1', 'baseline-0.2']: each table is per league and per source, and rows from an older version sit in their own '<source> @<version>' slice",
- "rows": 3949,
- "excluded": 337,
+ "rows": 3957,
+ "excluded": 334,
  "by_source": {
   "NFL nfl_replay": {
    "rows": 3694,
@@ -50,9 +50,9 @@
    "last": "2026-10-04"
   },
   "NFL live_archive": {
-   "rows": 39,
+   "rows": 43,
    "development": 1,
-   "holdout": 38,
+   "holdout": 42,
    "model_versions": [
     "baseline-0.2"
    ],
@@ -60,9 +60,9 @@
    "last": "2026-10-25"
   },
   "NHL live_archive": {
-   "rows": 172,
+   "rows": 176,
    "development": 35,
-   "holdout": 137,
+   "holdout": 141,
    "model_versions": [
     "baseline-0.1"
    ],
@@ -83,11 +83,11 @@
  "excluded_by_reason": {
   "nfl_replay: no current-season plays before this week for a team (the live model has no projection either)": 241,
   "live_archive: no Boolin model for this league": 81,
-  "live_archive: no confirmed final score on file": 15
+  "live_archive: no confirmed final score on file": 12
  },
  "replay": {
   "version": "nfl-replay-1",
-  "built_at_et": "2026-10-26T11:02-04:00",
+  "built_at_et": "2026-10-26T16:01-04:00",
   "status": {
    "2012": "kept",
    "2013": "kept",
@@ -108,9 +108,9 @@
   "present": true
  },
  "replay_fidelity": {
-  "n_overlap": 54,
-  "identical": 45,
-  "mean_abs_prob_diff": 0.0045,
+  "n_overlap": 58,
+  "identical": 49,
+  "mean_abs_prob_diff": 0.0042,
   "max_abs_prob_diff": 0.0541,
   "note": "Live card vs replay for the same game, same model version. Gaps mean the live pull saw different inputs than the replay (cause not confirmed per game)."
  },
@@ -129,13 +129,13 @@
    "recommendation": "CALIBRATION NEEDED"
   },
   "NHL": {
-   "sample_size": 137,
-   "brier": 0.2314,
+   "sample_size": 141,
+   "brier": 0.2318,
    "market_brier": 0.2304,
-   "log_loss": 0.6539,
-   "calibration_error": 0.0475,
+   "log_loss": 0.6547,
+   "calibration_error": 0.0448,
    "market_comparison": "too few games to tell (n=27)",
-   "spread_mae": 2.075,
+   "spread_mae": 2.08,
    "confidence_validated": null,
    "calibration_status": "uncalibrated (insufficient sample)",
    "validation_status": "insufficient sample",

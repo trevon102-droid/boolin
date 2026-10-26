@@ -30,5 +30,71 @@
    "source": "NFL injury report week 7",
    "cause": "Change detected; cause not confirmed."
   }
+ ],
+ "2026-10-26-NHL-LAK-NYR": [
+  {
+   "t": "2026-10-26T16:01-04:00",
+   "game_key": "2026-10-26-NHL-LAK-NYR",
+   "type": "injury_status",
+   "field": "Mats Zuccarello (LAK)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-26T16:01-04:00",
+   "game_key": "2026-10-26-NHL-LAK-NYR",
+   "type": "injury_status",
+   "field": "Kevin Fiala (LAK)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  }
+ ],
+ "2026-10-26-MLB-MIL-TB": [
+  {
+   "t": "2026-10-26T16:01-04:00",
+   "game_key": "2026-10-26-MLB-MIL-TB",
+   "type": "lineup",
+   "field": "TB lineup",
+   "old": "not posted",
+   "new": "posted",
+   "source": "MLB lineup card",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-26T16:01-04:00",
+   "game_key": "2026-10-26-MLB-MIL-TB",
+   "type": "weather",
+   "field": "wind (mph)",
+   "old": "unknown",
+   "new": 0,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-26T16:01-04:00",
+   "game_key": "2026-10-26-MLB-MIL-TB",
+   "type": "weather",
+   "field": "temp (\u00b0F)",
+   "old": "unknown",
+   "new": 70.0,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-26T16:01-04:00",
+   "game_key": "2026-10-26-MLB-MIL-TB",
+   "type": "weather",
+   "field": "condition",
+   "old": "unknown",
+   "new": "Dome",
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  }
  ]
 }

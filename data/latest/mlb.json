@@ -1,19 +1,23 @@
 {
- "pulled_at_et": "2026-10-26T11:01-04:00",
+ "pulled_at_et": "2026-10-26T16:01-04:00",
  "date": "2026-10-26",
  "season": 2026,
  "games": [
   {
    "game_pk": 849804,
    "start_et": "8:00 PM ET",
-   "status": "Scheduled",
+   "status": "Pre-Game",
    "game_type": "W",
    "series": "World Series",
    "series_game": 3,
    "series_status": "World Series",
    "venue": "Tropicana Field",
-   "weather": null,
-   "hp_umpire": null,
+   "weather": {
+    "condition": "Dome",
+    "temp": "70",
+    "wind": "0 mph, None"
+   },
+   "hp_umpire": "Nic Lentz",
    "away": {
     "id": 158,
     "name": "Milwaukee Brewers",
@@ -356,8 +360,18 @@
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "lineup": [
+     "Yandy Díaz",
+     "Ryan Vilade",
+     "Chandler Simpson",
+     "Junior Caminero",
+     "Ben Williamson",
+     "Jonny DeLuca",
+     "Victor Mesa Jr.",
+     "Nick Fortes",
+     "Taylor Walls"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.1805,

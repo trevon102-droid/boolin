@@ -39,7 +39,7 @@
   "lean_allowed": false,
   "live_archive": {
    "n": 17,
-   "holdout": 38,
+   "holdout": 42,
    "older_version_rows": 15,
    "boolin": {
     "brier": 0.234,
@@ -65,9 +65,9 @@
    }
   },
   "replay_fidelity": {
-   "n_overlap": 54,
-   "identical": 45,
-   "mean_abs_prob_diff": 0.0045,
+   "n_overlap": 58,
+   "identical": 49,
+   "mean_abs_prob_diff": 0.0042,
    "max_abs_prob_diff": 0.0541,
    "note": "Live card vs replay for the same game, same model version. Gaps mean the live pull saw different inputs than the replay (cause not confirmed per game)."
   }
@@ -77,29 +77,29 @@
   "validation_version": "validation-1.0",
   "data_cutoff": "2026-10-25",
   "primary_evidence": "live_archive holdout (games after 2026-10-05)",
-  "sample_size": 137,
+  "sample_size": 141,
   "development_size": 35,
-  "brier": 0.2314,
+  "brier": 0.2318,
   "market_brier": 0.2304,
-  "log_loss": 0.6539,
+  "log_loss": 0.6547,
   "market_log_loss": 0.6525,
-  "accuracy": 0.6131,
-  "calibration_error": 0.0475,
-  "favorite_overconfidence": -0.0044,
+  "accuracy": 0.617,
+  "calibration_error": 0.0448,
+  "favorite_overconfidence": -0.0074,
   "market_comparison": "too few games to tell (n=27)",
-  "spread_mae": 2.075,
+  "spread_mae": 2.08,
   "market_spread_mae": null,
   "confidence_validated": null,
   "calibration_status": "uncalibrated (insufficient sample)",
   "validation_status": "insufficient sample",
   "recommendation": "NOT READY",
   "reasons": [
-   "holdout sample 137 < 150: we don't know yet"
+   "holdout sample 141 < 150: we don't know yet"
   ],
   "lean_allowed": false,
   "live_archive": {
    "n": 62,
-   "holdout": 137,
+   "holdout": 141,
    "older_version_rows": 0,
    "boolin": {
     "brier": 0.2269,
