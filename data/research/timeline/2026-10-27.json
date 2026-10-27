@@ -34,6 +34,17 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-27T19:54-04:00",
+   "game_key": "2026-10-27-NHL-BOS-CAR",
+   "type": "injury_status",
+   "field": "Taylor Hall (CAR)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
   }
  ],
  "2026-10-27-NHL-LAK-CHI": [
@@ -119,6 +130,78 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "downgrade"
+  }
+ ],
+ "2026-10-27-MLB-MIL-TB": [
+  {
+   "t": "2026-10-27T19:54-04:00",
+   "game_key": "2026-10-27-MLB-MIL-TB",
+   "type": "starter",
+   "field": "MIL starter",
+   "old": "unknown (unknown)",
+   "new": "Dustin May (projected)",
+   "source": "MLB probable pitcher",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-27T19:54-04:00",
+   "game_key": "2026-10-27-MLB-MIL-TB",
+   "type": "lineup",
+   "field": "MIL lineup",
+   "old": "not posted",
+   "new": "posted",
+   "source": "MLB lineup card",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-27T19:54-04:00",
+   "game_key": "2026-10-27-MLB-MIL-TB",
+   "type": "lineup",
+   "field": "TB lineup",
+   "old": "not posted",
+   "new": "posted",
+   "source": "MLB lineup card",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-27T19:54-04:00",
+   "game_key": "2026-10-27-MLB-MIL-TB",
+   "type": "weather",
+   "field": "wind (mph)",
+   "old": "unknown",
+   "new": 0,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-27T19:54-04:00",
+   "game_key": "2026-10-27-MLB-MIL-TB",
+   "type": "weather",
+   "field": "temp (\u00b0F)",
+   "old": "unknown",
+   "new": 70.0,
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-27T19:54-04:00",
+   "game_key": "2026-10-27-MLB-MIL-TB",
+   "type": "weather",
+   "field": "condition",
+   "old": "unknown",
+   "new": "Roof Closed",
+   "source": "MLB Stats API weather",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-27T19:54-04:00",
+   "game_key": "2026-10-27-MLB-MIL-TB",
+   "type": "model",
+   "field": "Boolin model availability",
+   "old": "unavailable",
+   "new": "available",
+   "source": "Boolin model",
+   "cause": "Change detected; cause not confirmed."
   }
  ]
 }

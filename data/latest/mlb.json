@@ -1,19 +1,23 @@
 {
- "pulled_at_et": "2026-10-27T15:30-04:00",
+ "pulled_at_et": "2026-10-27T19:54-04:00",
  "date": "2026-10-27",
  "season": 2026,
  "games": [
   {
    "game_pk": 849803,
    "start_et": "8:00 PM ET",
-   "status": "Scheduled",
+   "status": "Warmup",
    "game_type": "W",
    "series": "World Series",
    "series_game": 4,
    "series_status": "World Series",
    "venue": "Tropicana Field",
-   "weather": null,
-   "hp_umpire": null,
+   "weather": {
+    "condition": "Roof Closed",
+    "temp": "70",
+    "wind": "0 mph, None"
+   },
+   "hp_umpire": "James Hoye",
    "away": {
     "id": 158,
     "name": "Milwaukee Brewers",
@@ -24,9 +28,141 @@
      "ties": 0,
      "pct": "1.000"
     },
-    "probable_status": "TBD: no probable announced",
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "probable_status": "announced (MLB probable; openers/bulk relievers are not flagged)",
+    "probable": {
+     "id": 669160,
+     "name": "Dustin May",
+     "throws": "R",
+     "season": {
+      "gs": 31,
+      "ip": "145.2",
+      "era": "4.70",
+      "whip": "1.32",
+      "k": 144,
+      "bb": 50,
+      "bf": 621,
+      "k_pct": 0.2319,
+      "bb_pct": 0.0805,
+      "k9": "8.90",
+      "hr9": "0.86"
+     },
+     "last5": [
+      {
+       "date": "2026-09-11",
+       "opp": "Cincinnati Reds",
+       "outs": 18,
+       "k": 6,
+       "bb": 1,
+       "h": 2,
+       "er": 0,
+       "pitches": 84
+      },
+      {
+       "date": "2026-09-18",
+       "opp": "Baltimore Orioles",
+       "outs": 7,
+       "k": 4,
+       "bb": 1,
+       "h": 6,
+       "er": 3,
+       "pitches": 70
+      },
+      {
+       "date": "2026-09-22",
+       "opp": "Philadelphia Phillies",
+       "outs": 6,
+       "k": 2,
+       "bb": 2,
+       "h": 1,
+       "er": 2,
+       "pitches": 36
+      },
+      {
+       "date": "2026-09-26",
+       "opp": "St. Louis Cardinals",
+       "outs": 9,
+       "k": 5,
+       "bb": 1,
+       "h": 3,
+       "er": 2,
+       "pitches": 58
+      },
+      {
+       "date": "2026-10-06",
+       "opp": "San Diego Padres",
+       "outs": 9,
+       "k": 3,
+       "bb": 2,
+       "h": 3,
+       "er": 2,
+       "pitches": 52
+      }
+     ],
+     "starts_counted": 32,
+     "sample_quality": "ok",
+     "k_dist": {
+      "3": 0.812,
+      "4": 0.656,
+      "5": 0.469,
+      "6": 0.344,
+      "7": 0.219,
+      "8": 0.125,
+      "9": 0.094,
+      "10": 0.0
+     },
+     "outs_dist": {
+      "12": 0.688,
+      "15": 0.562,
+      "16": 0.5,
+      "17": 0.438,
+      "18": 0.406,
+      "19": 0.094,
+      "20": 0.094
+     },
+     "k_dist_last10": {
+      "3": 0.7,
+      "4": 0.6,
+      "5": 0.4,
+      "6": 0.2,
+      "7": 0.0,
+      "8": 0.0,
+      "9": 0.0,
+      "10": 0.0
+     },
+     "outs_dist_last10": {
+      "12": 0.3,
+      "15": 0.2,
+      "16": 0.2,
+      "17": 0.2,
+      "18": 0.2,
+      "19": 0.1,
+      "20": 0.1
+     },
+     "k_mean": {
+      "season": 4.59,
+      "last10": 3.6,
+      "last5": 4.0
+     },
+     "outs_mean": {
+      "season": 13.94,
+      "last10": 10.1,
+      "last5": 9.8
+     },
+     "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season.",
+     "short_start_flag": "Averaged 9.8 outs over the last 5 starts: possible opener / bulk-relief usage. Verify the pitching plan."
+    },
+    "lineup": [
+     "Jackson Chourio",
+     "Jake Bauers",
+     "Christian Yelich",
+     "William Contreras",
+     "Brice Turang",
+     "Sal Frelick",
+     "Cooper Pratt",
+     "Garrett Mitchell",
+     "David Hamilton"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.2114,
@@ -237,8 +373,18 @@
      },
      "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
     },
-    "lineup": null,
-    "lineup_status": "not posted yet",
+    "lineup": [
+     "Yandy Díaz",
+     "Jonathan Aranda",
+     "Junior Caminero",
+     "Liam Hicks",
+     "Jonny DeLuca",
+     "Chandler Simpson",
+     "Ryan Vilade",
+     "Richie Palacios",
+     "Taylor Walls"
+    ],
+    "lineup_status": "confirmed",
     "bats": {
      "vs_LHP": {
       "k_pct": 0.1805,
@@ -318,7 +464,7 @@
      "unclassified_games": [],
      "classification_source": "MLB boxscore gamesStarted (not list order)"
     },
-    "k_pct_vs_opp_starter_hand": null
+    "k_pct_vs_opp_starter_hand": 0.1909
    }
   }
  ],
