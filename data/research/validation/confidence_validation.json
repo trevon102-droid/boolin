@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-10-25",
+ "data_cutoff": "2026-10-26",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -63,14 +63,14 @@
     "levels": [
      {
       "confidence": "high",
-      "n": 752,
-      "brier": 0.2166,
-      "log_loss": 0.6231,
-      "accuracy": 0.6427,
-      "calibration_error": 0.0363,
-      "favorite_overconfidence": -0.0046,
-      "avg_margin_error": 9.975,
-      "market_brier_same_games": 0.2024,
+      "n": 753,
+      "brier": 0.2165,
+      "log_loss": 0.6229,
+      "accuracy": 0.6431,
+      "calibration_error": 0.0368,
+      "favorite_overconfidence": -0.0052,
+      "avg_margin_error": 9.979,
+      "market_brier_same_games": 0.2023,
       "vs_market": "market Brier better (t=4.2)",
       "interpretable": true
      },
@@ -102,20 +102,20 @@
      }
     ],
     "validated": false,
-    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2166 (market 0.2024), medium Brier 0.2464 (market 0.2185), low Brier 0.2536 (market 0.2404). Higher confidence is not reliably better.",
+    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2165 (market 0.2023), medium Brier 0.2464 (market 0.2185), low Brier 0.2536 (market 0.2404). Higher confidence is not reliably better.",
     "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
    },
    "all": {
     "levels": [
      {
       "confidence": "high",
-      "n": 2453,
+      "n": 2454,
       "brier": 0.2175,
-      "log_loss": 0.6257,
-      "accuracy": 0.6424,
-      "calibration_error": 0.028,
-      "favorite_overconfidence": -0.0083,
-      "avg_margin_error": 10.372,
+      "log_loss": 0.6256,
+      "accuracy": 0.6426,
+      "calibration_error": 0.0281,
+      "favorite_overconfidence": -0.0084,
+      "avg_margin_error": 10.373,
       "market_brier_same_games": 0.2045,
       "vs_market": "market Brier better (t=7.1)",
       "interpretable": true

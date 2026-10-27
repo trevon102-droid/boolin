@@ -9,8 +9,8 @@
   "baseline-0.1",
   "baseline-0.2"
  ],
- "built_at": "2026-10-26T19:59-04:00",
- "data_cutoff": "2026-10-25",
+ "built_at": "2026-10-27T09:16-04:00",
+ "data_cutoff": "2026-10-26",
  "filters": {
   "league": null,
   "since": null,
@@ -26,18 +26,18 @@
   "nfl_replay": "development = seasons < 2022; holdout = 2022+"
  },
  "warning": "rows span model versions ['baseline-0.1', 'baseline-0.2']: each table is per league and per source, and rows from an older version sit in their own '<source> @<version>' slice",
- "rows": 3957,
+ "rows": 3958,
  "excluded": 334,
  "by_source": {
   "NFL nfl_replay": {
-   "rows": 3694,
+   "rows": 3695,
    "development": 2529,
-   "holdout": 1165,
+   "holdout": 1166,
    "model_versions": [
     "baseline-0.2"
    ],
    "first": "2012-09-13",
-   "last": "2026-10-25"
+   "last": "2026-10-26"
   },
   "NFL live_archive @baseline-0.1": {
    "rows": 15,
@@ -87,7 +87,7 @@
  },
  "replay": {
   "version": "nfl-replay-1",
-  "built_at_et": "2026-10-26T19:59-04:00",
+  "built_at_et": "2026-10-27T09:16-04:00",
   "status": {
    "2012": "kept",
    "2013": "kept",
@@ -103,7 +103,7 @@
    "2023": "kept",
    "2024": "kept",
    "2025": "kept",
-   "2026": "built 106 games"
+   "2026": "built 107 games"
   },
   "present": true
  },
@@ -116,13 +116,13 @@
  },
  "headline": {
   "NFL": {
-   "sample_size": 1165,
+   "sample_size": 1166,
    "brier": 0.2281,
-   "market_brier": 0.2111,
-   "log_loss": 0.648,
+   "market_brier": 0.211,
+   "log_loss": 0.6479,
    "calibration_error": 0.0281,
    "market_comparison": "market Brier better (t=5.5)",
-   "spread_mae": 10.138,
+   "spread_mae": 10.141,
    "confidence_validated": false,
    "calibration_status": "needs_calibration",
    "validation_status": "validated: calibration off",
