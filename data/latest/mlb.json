@@ -1,5 +1,5 @@
 {
- "pulled_at_et": "2026-10-28T11:10-04:00",
+ "pulled_at_et": "2026-10-28T15:41-04:00",
  "date": "2026-10-28",
  "season": 2026,
  "games": [
@@ -234,7 +234,7 @@
      "unclassified_games": [],
      "classification_source": "MLB boxscore gamesStarted (not list order)"
     },
-    "k_pct_vs_opp_starter_hand": null
+    "k_pct_vs_opp_starter_hand": 0.2231
    },
    "home": {
     "id": 139,
@@ -246,7 +246,128 @@
      "ties": 0,
      "pct": ".250"
     },
-    "probable_status": "TBD: no probable announced",
+    "probable_status": "announced (MLB probable; openers/bulk relievers are not flagged)",
+    "probable": {
+     "id": 656876,
+     "name": "Drew Rasmussen",
+     "throws": "R",
+     "season": {
+      "gs": 30,
+      "ip": "172.0",
+      "era": "2.67",
+      "whip": "0.91",
+      "k": 174,
+      "bb": 32,
+      "bf": 669,
+      "k_pct": 0.2601,
+      "bb_pct": 0.0478,
+      "k9": "9.10",
+      "hr9": "0.73"
+     },
+     "last5": [
+      {
+       "date": "2026-09-22",
+       "opp": "New York Yankees",
+       "outs": 20,
+       "k": 11,
+       "bb": 3,
+       "h": 1,
+       "er": 1,
+       "pitches": 114
+      },
+      {
+       "date": "2026-10-03",
+       "opp": "New York Yankees",
+       "outs": 24,
+       "k": 10,
+       "bb": 2,
+       "h": 1,
+       "er": 0,
+       "pitches": 101
+      },
+      {
+       "date": "2026-10-12",
+       "opp": "Cleveland Guardians",
+       "outs": 18,
+       "k": 7,
+       "bb": 0,
+       "h": 8,
+       "er": 2,
+       "pitches": 91
+      },
+      {
+       "date": "2026-10-18",
+       "opp": "Cleveland Guardians",
+       "outs": 21,
+       "k": 6,
+       "bb": 1,
+       "h": 4,
+       "er": 1,
+       "pitches": 95
+      },
+      {
+       "date": "2026-10-24",
+       "opp": "Milwaukee Brewers",
+       "outs": 11,
+       "k": 4,
+       "bb": 2,
+       "h": 6,
+       "er": 3,
+       "pitches": 89
+      }
+     ],
+     "starts_counted": 34,
+     "sample_quality": "ok",
+     "k_dist": {
+      "3": 0.882,
+      "4": 0.794,
+      "5": 0.706,
+      "6": 0.529,
+      "7": 0.353,
+      "8": 0.235,
+      "9": 0.176,
+      "10": 0.118
+     },
+     "outs_dist": {
+      "12": 0.912,
+      "15": 0.882,
+      "16": 0.647,
+      "17": 0.618,
+      "18": 0.618,
+      "19": 0.324,
+      "20": 0.324
+     },
+     "k_dist_last10": {
+      "3": 1.0,
+      "4": 0.9,
+      "5": 0.7,
+      "6": 0.6,
+      "7": 0.4,
+      "8": 0.2,
+      "9": 0.2,
+      "10": 0.2
+     },
+     "outs_dist_last10": {
+      "12": 0.9,
+      "15": 0.9,
+      "16": 0.8,
+      "17": 0.8,
+      "18": 0.8,
+      "19": 0.5,
+      "20": 0.5
+     },
+     "k_mean": {
+      "season": 5.91,
+      "last10": 6.3,
+      "last5": 7.6
+     },
+     "outs_mean": {
+      "season": 17.35,
+      "last10": 18.7,
+      "last5": 18.8
+     },
+     "dist_note": "Hit rates are empirical shares of starts, not a projection. Regress last10/last5 toward season."
+    },
     "lineup": null,
     "lineup_status": "not posted yet",
     "bats": {
