@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-10-28",
+ "data_cutoff": "2026-10-29",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -84,35 +84,35 @@
    },
    "holdout": {
     "boolin_margin": {
-     "n": 1166,
-     "mae": 10.141,
-     "rmse": 13.025,
-     "mean_error": 0.139,
-     "median_error": -0.58,
-     "directional_accuracy": 0.6059
+     "n": 1167,
+     "mae": 10.137,
+     "rmse": 13.021,
+     "mean_error": 0.144,
+     "median_error": -0.57,
+     "directional_accuracy": 0.6062
     },
     "same_games": {
-     "n": 1166,
+     "n": 1167,
      "boolin": {
-      "n": 1166,
-      "mae": 10.141,
-      "rmse": 13.025,
-      "mean_error": 0.139,
-      "median_error": -0.58
+      "n": 1167,
+      "mae": 10.137,
+      "rmse": 13.021,
+      "mean_error": 0.144,
+      "median_error": -0.57
      },
      "market_implied": {
-      "n": 1166,
-      "mae": 9.539,
-      "rmse": 12.401,
-      "mean_error": 0.523,
+      "n": 1167,
+      "mae": 9.535,
+      "rmse": 12.397,
+      "mean_error": 0.527,
       "median_error": 0.0,
-      "directional_accuracy": 0.6698
+      "directional_accuracy": 0.6701
      },
      "abs_error_paired": {
-      "n": 1166,
-      "mean_diff": 0.60108,
-      "se": 0.10255,
-      "t": 5.86,
+      "n": 1167,
+      "mean_diff": 0.60222,
+      "se": 0.10247,
+      "t": 5.88,
       "verdict": "market margin abs error better (t=5.9)",
       "note": "mean of Boolin minus market per-game margin abs error; negative favours Boolin"
      }
@@ -121,9 +121,9 @@
      "rows": [
       {
        "gap": "1-2.5 pts",
-       "n": 346,
+       "n": 347,
        "pushes": 11,
-       "boolin_side_cover_rate": 0.4806,
+       "boolin_side_cover_rate": 0.4792,
        "interpretable": true
       },
       {
@@ -142,9 +142,9 @@
       },
       {
        "gap": "1+ pts",
-       "n": 913,
+       "n": 914,
        "pushes": 24,
-       "boolin_side_cover_rate": 0.4961,
+       "boolin_side_cover_rate": 0.4955,
        "interpretable": true
       }
      ],
@@ -153,36 +153,36 @@
    },
    "all": {
     "boolin_margin": {
-     "n": 3695,
-     "mae": 10.451,
-     "rmse": 13.44,
-     "mean_error": 0.044,
+     "n": 3696,
+     "mae": 10.45,
+     "rmse": 13.438,
+     "mean_error": 0.046,
      "median_error": -0.35,
-     "directional_accuracy": 0.6207
+     "directional_accuracy": 0.6208
     },
     "same_games": {
-     "n": 3695,
+     "n": 3696,
      "boolin": {
-      "n": 3695,
-      "mae": 10.451,
-      "rmse": 13.44,
-      "mean_error": 0.044,
+      "n": 3696,
+      "mae": 10.45,
+      "rmse": 13.438,
+      "mean_error": 0.046,
       "median_error": -0.35
      },
      "market_implied": {
-      "n": 3695,
-      "mae": 9.962,
-      "rmse": 12.892,
-      "mean_error": 0.094,
+      "n": 3696,
+      "mae": 9.961,
+      "rmse": 12.891,
+      "mean_error": 0.095,
       "median_error": 0.0,
       "directional_accuracy": 0.6649
      },
      "abs_error_paired": {
-      "n": 3695,
-      "mean_diff": 0.48907,
-      "se": 0.05532,
-      "t": 8.84,
-      "verdict": "market margin abs error better (t=8.8)",
+      "n": 3696,
+      "mean_diff": 0.48946,
+      "se": 0.0553,
+      "t": 8.85,
+      "verdict": "market margin abs error better (t=8.9)",
       "note": "mean of Boolin minus market per-game margin abs error; negative favours Boolin"
      }
     },
@@ -190,9 +190,9 @@
      "rows": [
       {
        "gap": "1-2.5 pts",
-       "n": 1130,
+       "n": 1131,
        "pushes": 32,
-       "boolin_side_cover_rate": 0.5055,
+       "boolin_side_cover_rate": 0.505,
        "interpretable": true
       },
       {
@@ -211,9 +211,9 @@
       },
       {
        "gap": "1+ pts",
-       "n": 2808,
+       "n": 2809,
        "pushes": 73,
-       "boolin_side_cover_rate": 0.4969,
+       "boolin_side_cover_rate": 0.4967,
        "interpretable": true
       }
      ],
