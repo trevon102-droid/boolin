@@ -1,5 +1,5 @@
 {
- "built_at": "2026-10-30T08:49-04:00",
+ "built_at": "2026-10-30T15:32-04:00",
  "slate_date": "2026-10-30",
  "cards": [
   {
@@ -10,7 +10,7 @@
    "date_et": "2026-10-30",
    "start_et": "2026-10-30T18:00-04:00",
    "start_label": "Fri Oct 30, 6:00 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "NJD",
@@ -79,7 +79,7 @@
       },
       "kind": "reported",
       "source": "NHL API standings",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "xg_5v5_this_season": {
       "gp": 13,
@@ -103,7 +103,7 @@
       "value": false,
       "kind": "derived",
       "source": "NHL schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "goalie": {
       "name": "Jake Allen",
@@ -146,7 +146,7 @@
       },
       "kind": "reported",
       "source": "NHL API standings",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "xg_5v5_this_season": {
       "gp": 14,
@@ -170,7 +170,7 @@
       "value": false,
       "kind": "derived",
       "source": "NHL schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "goalie": {
       "name": "Carter Hart",
@@ -187,14 +187,14 @@
       "value": "Jake Allen",
       "kind": "projected",
       "source": "NHL API goalie usage",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "most starts this season; not confirmed"
      },
      "home": {
       "value": "Carter Hart",
       "kind": "projected",
       "source": "NHL API goalie usage",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "most starts this season; not confirmed"
      }
     },
@@ -210,7 +210,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      },
      {
@@ -223,7 +223,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": true
      },
      {
@@ -236,7 +236,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      }
     ],
@@ -310,39 +310,39 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "NHL API + MoneyPuck",
      "kind": "derived"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "NHL API goalie usage (projection)",
      "kind": "projected"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
+     "label": "just now",
      "status": "ok",
      "source": "ESPN injury list",
      "kind": "reported"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.1 (uncalibrated)",
@@ -359,6 +359,27 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
+    },
+    {
+     "id": "availability.unconfirmed_starter_away",
+     "category": "injury",
+     "severity": "watch",
+     "title": "NJD starting goalie not confirmed",
+     "why": "Jake Allen is projected (most starts this season; not confirmed), not officially confirmed."
+    },
+    {
+     "id": "availability.unconfirmed_starter_home",
+     "category": "injury",
+     "severity": "watch",
+     "title": "VGK starting goalie not confirmed",
+     "why": "Carter Hart is projected (most starts this season; not confirmed), not officially confirmed."
     },
     {
      "id": "injury.unresolved.Carter Hart",
@@ -389,20 +410,6 @@
      "why": "No total observation in the odds feed for this game."
     },
     {
-     "id": "availability.unconfirmed_starter_away",
-     "category": "injury",
-     "severity": "info",
-     "title": "NJD starting goalie not confirmed",
-     "why": "Jake Allen is projected (most starts this season; not confirmed), not officially confirmed."
-    },
-    {
-     "id": "availability.unconfirmed_starter_home",
-     "category": "injury",
-     "severity": "info",
-     "title": "VGK starting goalie not confirmed",
-     "why": "Carter Hart is projected (most starts this season; not confirmed), not officially confirmed."
-    },
-    {
      "id": "performance.small_sample",
      "category": "performance",
      "severity": "info",
@@ -413,12 +420,12 @@
    "validation": {
     "model_version": "baseline-0.1",
     "validation_version": "validation-1.0",
-    "data_cutoff": "2026-10-28",
+    "data_cutoff": "2026-10-29",
     "calibration_status": "needs_calibration",
     "validation_status": "validated: calibration off",
     "recommendation": "PROMISING BUT UNCALIBRATED",
     "lean_allowed": false,
-    "sample_size": 159,
+    "sample_size": 170,
     "primary_evidence": "live_archive holdout (games after 2026-10-05)",
     "market_comparison": "too few games to tell (n=27)"
    },
@@ -428,6 +435,8 @@
     "thesis_team": null,
     "thesis_basis": "no thesis (model and market aligned or unavailable)",
     "why_it_matters": [
+     "NJD starting goalie not confirmed: Jake Allen is projected (most starts this season; not confirmed), not officially confirmed.",
+     "VGK starting goalie not confirmed: Carter Hart is projected (most starts this season; not confirmed), not officially confirmed.",
      "Carter Hart (VGK) status unresolved: Listed Day-To-Day (ESPN injury list); final status not confirmed."
     ],
     "supporting": [],
@@ -565,7 +574,7 @@
     "label": "HISTORICAL CONTEXT",
     "available": false,
     "source": "Boolin graded research archive",
-    "archive_games": 194,
+    "archive_games": 205,
     "situations": [],
     "reason": "No tracked situation applies to this game."
    },
@@ -582,7 +591,7 @@
    "date_et": "2026-10-30",
    "start_et": "2026-10-30T19:00-04:00",
    "start_label": "Fri Oct 30, 7:00 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "WPG",
@@ -656,7 +665,7 @@
       },
       "kind": "reported",
       "source": "NHL API standings",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "xg_5v5_this_season": {
       "gp": 13,
@@ -680,7 +689,7 @@
       "value": true,
       "kind": "derived",
       "source": "NHL schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "goalie": {
       "name": "Stuart Skinner",
@@ -733,7 +742,7 @@
       },
       "kind": "reported",
       "source": "NHL API standings",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "xg_5v5_this_season": {
       "gp": 13,
@@ -757,7 +766,7 @@
       "value": false,
       "kind": "derived",
       "source": "NHL schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "goalie": {
       "name": "Jacob Markstrom",
@@ -774,14 +783,14 @@
       "value": "Stuart Skinner",
       "kind": "projected",
       "source": "NHL API goalie usage",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "most starts this season; not confirmed"
      },
      "home": {
       "value": "Jacob Markstrom",
       "kind": "projected",
       "source": "NHL API goalie usage",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "most starts this season; not confirmed"
      }
     },
@@ -797,7 +806,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      },
      {
@@ -810,7 +819,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      },
      {
@@ -823,7 +832,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      },
      {
@@ -836,7 +845,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      },
      {
@@ -849,7 +858,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      },
      {
@@ -862,7 +871,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      },
      {
@@ -875,7 +884,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": true
      },
      {
@@ -888,7 +897,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      }
     ],
@@ -962,39 +971,39 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "NHL API + MoneyPuck",
      "kind": "derived"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "NHL API goalie usage (projection)",
      "kind": "projected"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
+     "label": "just now",
      "status": "ok",
      "source": "ESPN injury list",
      "kind": "reported"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.1 (uncalibrated)",
@@ -1011,6 +1020,13 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -1058,12 +1074,12 @@
    "validation": {
     "model_version": "baseline-0.1",
     "validation_version": "validation-1.0",
-    "data_cutoff": "2026-10-28",
+    "data_cutoff": "2026-10-29",
     "calibration_status": "needs_calibration",
     "validation_status": "validated: calibration off",
     "recommendation": "PROMISING BUT UNCALIBRATED",
     "lean_allowed": false,
-    "sample_size": 159,
+    "sample_size": 170,
     "primary_evidence": "live_archive holdout (games after 2026-10-05)",
     "market_comparison": "too few games to tell (n=27)"
    },
@@ -1247,12 +1263,12 @@
     "label": "HISTORICAL CONTEXT",
     "available": true,
     "source": "Boolin graded research archive",
-    "archive_games": 194,
+    "archive_games": 205,
     "situations": [
      {
       "situation": "away team on a back-to-back",
-      "n": 38,
-      "home_win_pct": 0.632
+      "n": 39,
+      "home_win_pct": 0.615
      }
     ],
     "reason": null
@@ -1270,7 +1286,7 @@
    "date_et": "2026-10-30",
    "start_et": "2026-10-30T20:00-04:00",
    "start_label": "Fri Oct 30, 8:00 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "SEA",
@@ -1329,7 +1345,7 @@
       },
       "kind": "reported",
       "source": "NHL API standings",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "xg_5v5_this_season": {
       "gp": 13,
@@ -1353,7 +1369,7 @@
       "value": false,
       "kind": "derived",
       "source": "NHL schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "goalie": {
       "name": "Philipp Grubauer",
@@ -1391,7 +1407,7 @@
       },
       "kind": "reported",
       "source": "NHL API standings",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "xg_5v5_this_season": {
       "gp": 12,
@@ -1415,7 +1431,7 @@
       "value": false,
       "kind": "derived",
       "source": "NHL schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "goalie": {
       "name": "Devin Cooley",
@@ -1432,14 +1448,14 @@
       "value": "Philipp Grubauer",
       "kind": "projected",
       "source": "NHL API goalie usage",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "most starts this season; not confirmed"
      },
      "home": {
       "value": "Devin Cooley",
       "kind": "projected",
       "source": "NHL API goalie usage",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "most starts this season; not confirmed"
      }
     },
@@ -1455,7 +1471,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      },
      {
@@ -1468,7 +1484,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      },
      {
@@ -1481,7 +1497,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      },
      {
@@ -1494,33 +1510,46 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
+      "key_player": false
+     },
+     {
+      "team": "CGY",
+      "player": "Connor Zary",
+      "pos": "C",
+      "status": "Out",
+      "status_norm": "out",
+      "detail": "Knee Surgery",
+      "practice": null,
+      "kind": "reported",
+      "source": "ESPN injury list",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      },
      {
       "team": "CGY",
       "player": "Brennan Othmann",
       "pos": "LW",
-      "status": "Day-To-Day",
-      "status_norm": "day-to-day",
+      "status": "Out",
+      "status_norm": "out",
       "detail": "Upper Body",
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      },
      {
       "team": "CGY",
       "player": "Devin Cooley",
       "pos": "G",
-      "status": "Day-To-Day",
-      "status_norm": "day-to-day",
+      "status": "Injured Reserve",
+      "status_norm": "injured reserve",
       "detail": "Lower Body",
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": true
      },
      {
@@ -1533,7 +1562,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      },
      {
@@ -1546,7 +1575,7 @@
       "practice": null,
       "kind": "reported",
       "source": "ESPN injury list",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:32-04:00",
       "key_player": false
      }
     ],
@@ -1620,48 +1649,116 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "NHL API + MoneyPuck",
      "kind": "derived"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "NHL API goalie usage (projection)",
      "kind": "projected"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
+     "label": "just now",
      "status": "ok",
      "source": "ESPN injury list",
      "kind": "reported"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.1 (uncalibrated)",
      "kind": "derived"
     }
    },
-   "recent_changes": [],
-   "changes_since_last_pull": [],
-   "change_count_total": 0,
+   "recent_changes": [
+    {
+     "t": "2026-10-30T15:32-04:00",
+     "game_key": "2026-10-30-NHL-SEA-CGY",
+     "type": "injury_status",
+     "field": "Devin Cooley (CGY)",
+     "old": "Day-To-Day",
+     "new": "Injured Reserve",
+     "source": "ESPN injury list",
+     "cause": "Change detected; cause not confirmed.",
+     "direction": "downgrade"
+    },
+    {
+     "t": "2026-10-30T15:32-04:00",
+     "game_key": "2026-10-30-NHL-SEA-CGY",
+     "type": "injury_status",
+     "field": "Connor Zary (CGY)",
+     "old": "not listed",
+     "new": "Out",
+     "source": "ESPN injury list",
+     "cause": "Change detected; cause not confirmed.",
+     "direction": "downgrade"
+    },
+    {
+     "t": "2026-10-30T15:32-04:00",
+     "game_key": "2026-10-30-NHL-SEA-CGY",
+     "type": "injury_status",
+     "field": "Brennan Othmann (CGY)",
+     "old": "Day-To-Day",
+     "new": "Out",
+     "source": "ESPN injury list",
+     "cause": "Change detected; cause not confirmed.",
+     "direction": "downgrade"
+    }
+   ],
+   "changes_since_last_pull": [
+    {
+     "t": "2026-10-30T15:32-04:00",
+     "game_key": "2026-10-30-NHL-SEA-CGY",
+     "type": "injury_status",
+     "field": "Devin Cooley (CGY)",
+     "old": "Day-To-Day",
+     "new": "Injured Reserve",
+     "source": "ESPN injury list",
+     "cause": "Change detected; cause not confirmed.",
+     "direction": "downgrade"
+    },
+    {
+     "t": "2026-10-30T15:32-04:00",
+     "game_key": "2026-10-30-NHL-SEA-CGY",
+     "type": "injury_status",
+     "field": "Connor Zary (CGY)",
+     "old": "not listed",
+     "new": "Out",
+     "source": "ESPN injury list",
+     "cause": "Change detected; cause not confirmed.",
+     "direction": "downgrade"
+    },
+    {
+     "t": "2026-10-30T15:32-04:00",
+     "game_key": "2026-10-30-NHL-SEA-CGY",
+     "type": "injury_status",
+     "field": "Brennan Othmann (CGY)",
+     "old": "Day-To-Day",
+     "new": "Out",
+     "source": "ESPN injury list",
+     "cause": "Change detected; cause not confirmed.",
+     "direction": "downgrade"
+    }
+   ],
+   "change_count_total": 3,
    "flags": [
     {
      "id": "data.source_odds",
@@ -1671,11 +1768,31 @@
      "why": "The odds pull reported 'error'."
     },
     {
-     "id": "injury.unresolved.Devin Cooley",
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
+    },
+    {
+     "id": "injury.downgrade.Brennan Othmann (CGY)",
      "category": "injury",
      "severity": "watch",
-     "title": "Devin Cooley (CGY) status unresolved",
-     "why": "Listed Day-To-Day (ESPN injury list); final status not confirmed."
+     "title": "Brennan Othmann (CGY) downgrade",
+     "why": "Brennan Othmann (CGY): Day-To-Day → Out (ESPN injury list).",
+     "data": {
+      "player": "Brennan Othmann (CGY)"
+     }
+    },
+    {
+     "id": "injury.downgrade.Connor Zary (CGY)",
+     "category": "injury",
+     "severity": "watch",
+     "title": "Connor Zary (CGY) added to injury report",
+     "why": "Connor Zary (CGY): not listed → Out (ESPN injury list).",
+     "data": {
+      "player": "Connor Zary (CGY)"
+     }
     },
     {
      "id": "data.missing_moneyline",
@@ -1713,6 +1830,16 @@
      "why": "Devin Cooley is projected (most starts this season; not confirmed), not officially confirmed."
     },
     {
+     "id": "injury.downgrade.Devin Cooley (CGY)",
+     "category": "injury",
+     "severity": "info",
+     "title": "Devin Cooley (CGY) downgrade",
+     "why": "Devin Cooley (CGY): Day-To-Day → Injured Reserve (ESPN injury list). Key position.",
+     "data": {
+      "player": "Devin Cooley (CGY)"
+     }
+    },
+    {
      "id": "performance.small_sample",
      "category": "performance",
      "severity": "info",
@@ -1723,12 +1850,12 @@
    "validation": {
     "model_version": "baseline-0.1",
     "validation_version": "validation-1.0",
-    "data_cutoff": "2026-10-28",
+    "data_cutoff": "2026-10-29",
     "calibration_status": "needs_calibration",
     "validation_status": "validated: calibration off",
     "recommendation": "PROMISING BUT UNCALIBRATED",
     "lean_allowed": false,
-    "sample_size": 159,
+    "sample_size": 170,
     "primary_evidence": "live_archive holdout (games after 2026-10-05)",
     "market_comparison": "too few games to tell (n=27)"
    },
@@ -1738,15 +1865,14 @@
     "thesis_team": null,
     "thesis_basis": "no thesis (model and market aligned or unavailable)",
     "why_it_matters": [
-     "Devin Cooley (CGY) status unresolved: Listed Day-To-Day (ESPN injury list); final status not confirmed."
+     "Brennan Othmann (CGY) downgrade: Brennan Othmann (CGY): Day-To-Day → Out (ESPN injury list).",
+     "Connor Zary (CGY) added to injury report: Connor Zary (CGY): not listed → Out (ESPN injury list)."
     ],
     "supporting": [],
     "contradicting": [],
     "unknowns": [
      "SEA starter: Philipp Grubauer (projected).",
      "CGY starter: Devin Cooley (projected).",
-     "Brennan Othmann (CGY, LW) Day-To-Day.",
-     "Devin Cooley (CGY, G) Day-To-Day.",
      "Goalie inputs use the projected starter (most starts); starters are not confirmed."
     ],
     "conclusion": {
@@ -1768,7 +1894,6 @@
      "would_change_if": [
       "SEA starter confirmed as someone other than Philipp Grubauer.",
       "CGY starter confirmed as someone other than Devin Cooley.",
-      "A listed questionable/doubtful player is ruled out or cleared.",
       "A market move that closes or widens the gap to Boolin's number."
      ]
     }
@@ -1837,7 +1962,7 @@
     "label": "HISTORICAL CONTEXT",
     "available": false,
     "source": "Boolin graded research archive",
-    "archive_games": 194,
+    "archive_games": 205,
     "situations": [],
     "reason": "No tracked situation applies to this game."
    },
@@ -1854,7 +1979,7 @@
    "date_et": "2026-11-01",
    "start_et": "2026-11-01T13:00-05:00",
    "start_label": "Sun Nov 1, 1:00 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "ARI",
@@ -1910,7 +2035,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -1919,7 +2044,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     },
     "home": {
@@ -1945,7 +2070,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -1954,7 +2079,7 @@
       "value": 6,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     }
    },
@@ -1964,14 +2089,14 @@
       "value": "Jacoby Brissett",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      },
      "home": {
       "value": "Dak Prescott",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      }
     },
@@ -2059,39 +2184,39 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse play-by-play",
      "kind": "derived"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse injury report (weekly)",
      "kind": "reported"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse schedule",
      "kind": "projected"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.2 (NFL fit 2012-2021)",
@@ -2108,6 +2233,13 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -2225,7 +2357,7 @@
    "date_et": "2026-11-01",
    "start_et": "2026-11-01T13:00-05:00",
    "start_label": "Sun Nov 1, 1:00 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "ATL",
@@ -2281,7 +2413,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -2290,7 +2422,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     },
     "home": {
@@ -2316,7 +2448,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -2325,7 +2457,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     }
    },
@@ -2335,14 +2467,14 @@
       "value": "Michael Penix Jr.",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      },
      "home": {
       "value": "Baker Mayfield",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      }
     },
@@ -2358,7 +2490,7 @@
      "value": "outdoors",
      "kind": "reported",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "outdoors": true,
     "wind_mph": {
@@ -2366,7 +2498,7 @@
      "kind": "unknown",
      "reason": "no wind in data (nflverse fills wind after games)",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "temp_f": {
      "value": null,
@@ -2434,39 +2566,39 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse play-by-play",
      "kind": "derived"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse injury report (weekly)",
      "kind": "reported"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse schedule",
      "kind": "projected"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.2 (NFL fit 2012-2021)",
@@ -2483,6 +2615,13 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -2682,7 +2821,7 @@
    "date_et": "2026-11-01",
    "start_et": "2026-11-01T13:00-05:00",
    "start_label": "Sun Nov 1, 1:00 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "BAL",
@@ -2738,7 +2877,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -2747,7 +2886,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "form_divergence": "Offense EPA/play last 3 weeks -0.087 vs season +0.071."
     },
@@ -2774,7 +2913,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "6 game(s), sample ok"
      },
      "games_sampled": 6,
@@ -2783,24 +2922,24 @@
       "value": 14,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     }
    },
    "availability": {
     "starters": {
      "away": {
-      "value": "Tyler Huntley",
+      "value": "Lamar Jackson",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      },
      "home": {
       "value": "Josh Allen",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      }
     },
@@ -2816,7 +2955,7 @@
      "value": "outdoors",
      "kind": "reported",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "outdoors": true,
     "wind_mph": {
@@ -2824,7 +2963,7 @@
      "kind": "unknown",
      "reason": "no wind in data (nflverse fills wind after games)",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "temp_f": {
      "value": null,
@@ -2892,48 +3031,70 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse play-by-play",
      "kind": "derived"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse injury report (weekly)",
      "kind": "reported"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse schedule",
      "kind": "projected"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.2 (NFL fit 2012-2021)",
      "kind": "derived"
     }
    },
-   "recent_changes": [],
-   "changes_since_last_pull": [],
-   "change_count_total": 4,
+   "recent_changes": [
+    {
+     "t": "2026-10-30T15:32-04:00",
+     "game_key": "2026-11-01-NFL-BAL-BUF",
+     "type": "starter",
+     "field": "BAL starter",
+     "old": "Tyler Huntley (projected)",
+     "new": "Lamar Jackson (projected)",
+     "source": "nflverse schedule (expected starter)",
+     "cause": "Change detected; cause not confirmed."
+    }
+   ],
+   "changes_since_last_pull": [
+    {
+     "t": "2026-10-30T15:32-04:00",
+     "game_key": "2026-11-01-NFL-BAL-BUF",
+     "type": "starter",
+     "field": "BAL starter",
+     "old": "Tyler Huntley (projected)",
+     "new": "Lamar Jackson (projected)",
+     "source": "nflverse schedule (expected starter)",
+     "cause": "Change detected; cause not confirmed."
+    }
+   ],
+   "change_count_total": 5,
    "flags": [
     {
      "id": "data.source_odds",
@@ -2941,6 +3102,13 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -3001,7 +3169,7 @@
     "supporting": [],
     "contradicting": [],
     "unknowns": [
-     "BAL starter: Tyler Huntley (projected).",
+     "BAL starter: Lamar Jackson (projected).",
      "BUF starter: Josh Allen (projected).",
      "Weather/wind not in the data."
     ],
@@ -3022,7 +3190,7 @@
      },
      "trigger": null,
      "would_change_if": [
-      "BAL starter confirmed as someone other than Tyler Huntley.",
+      "BAL starter confirmed as someone other than Lamar Jackson.",
       "BUF starter confirmed as someone other than Josh Allen.",
       "Wind forecast crossing 15 mph.",
       "A market move that closes or widens the gap to Boolin's number."
@@ -3147,7 +3315,7 @@
    "date_et": "2026-11-01",
    "start_et": "2026-11-01T13:00-05:00",
    "start_label": "Sun Nov 1, 1:00 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "CLE",
@@ -3203,7 +3371,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -3212,7 +3380,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     },
     "home": {
@@ -3238,7 +3406,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -3247,7 +3415,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     }
    },
@@ -3257,14 +3425,14 @@
       "value": "Deshaun Watson",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      },
      "home": {
       "value": "Aaron Rodgers",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      }
     },
@@ -3280,7 +3448,7 @@
      "value": "outdoors",
      "kind": "reported",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "outdoors": true,
     "wind_mph": {
@@ -3288,7 +3456,7 @@
      "kind": "unknown",
      "reason": "no wind in data (nflverse fills wind after games)",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "temp_f": {
      "value": null,
@@ -3356,39 +3524,39 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse play-by-play",
      "kind": "derived"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse injury report (weekly)",
      "kind": "reported"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse schedule",
      "kind": "projected"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.2 (NFL fit 2012-2021)",
@@ -3405,6 +3573,13 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -3604,7 +3779,7 @@
    "date_et": "2026-11-01",
    "start_et": "2026-11-01T13:00-05:00",
    "start_label": "Sun Nov 1, 1:00 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "IND",
@@ -3660,7 +3835,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -3669,7 +3844,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     },
     "home": {
@@ -3695,7 +3870,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "6 game(s), sample ok"
      },
      "games_sampled": 6,
@@ -3704,7 +3879,7 @@
       "value": 14,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     }
    },
@@ -3714,14 +3889,14 @@
       "value": "Daniel Jones",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      },
      "home": {
       "value": "Trevor Lawrence",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      }
     },
@@ -3737,7 +3912,7 @@
      "value": "outdoors",
      "kind": "reported",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "outdoors": true,
     "wind_mph": {
@@ -3745,7 +3920,7 @@
      "kind": "unknown",
      "reason": "no wind in data (nflverse fills wind after games)",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "temp_f": {
      "value": null,
@@ -3813,39 +3988,39 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse play-by-play",
      "kind": "derived"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse injury report (weekly)",
      "kind": "reported"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse schedule",
      "kind": "projected"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.2 (NFL fit 2012-2021)",
@@ -3862,6 +4037,13 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -4167,7 +4349,7 @@
    "date_et": "2026-11-01",
    "start_et": "2026-11-01T13:00-05:00",
    "start_label": "Sun Nov 1, 1:00 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "LV",
@@ -4223,7 +4405,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -4232,7 +4414,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     },
     "home": {
@@ -4258,7 +4440,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -4267,7 +4449,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     }
    },
@@ -4277,14 +4459,14 @@
       "value": "Kirk Cousins",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      },
      "home": {
       "value": "Geno Smith",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      }
     },
@@ -4300,7 +4482,7 @@
      "value": "outdoors",
      "kind": "reported",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "outdoors": true,
     "wind_mph": {
@@ -4308,7 +4490,7 @@
      "kind": "unknown",
      "reason": "no wind in data (nflverse fills wind after games)",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "temp_f": {
      "value": null,
@@ -4376,39 +4558,39 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse play-by-play",
      "kind": "derived"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse injury report (weekly)",
      "kind": "reported"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse schedule",
      "kind": "projected"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.2 (NFL fit 2012-2021)",
@@ -4425,6 +4607,13 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -4570,7 +4759,7 @@
    "date_et": "2026-11-01",
    "start_et": "2026-11-01T13:00-05:00",
    "start_label": "Sun Nov 1, 1:00 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "MIN",
@@ -4626,7 +4815,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "6 game(s), sample ok"
      },
      "games_sampled": 6,
@@ -4635,7 +4824,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     },
     "home": {
@@ -4661,7 +4850,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "6 game(s), sample ok"
      },
      "games_sampled": 6,
@@ -4670,7 +4859,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "form_divergence": "Offense EPA/play last 3 weeks -0.021 vs season +0.144."
     }
@@ -4681,14 +4870,14 @@
       "value": "Kyler Murray",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      },
      "home": {
       "value": "Jared Goff",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      }
     },
@@ -4704,7 +4893,7 @@
      "value": "dome",
      "kind": "reported",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "outdoors": false,
     "wind_mph": {
@@ -4777,39 +4966,39 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse play-by-play",
      "kind": "derived"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse injury report (weekly)",
      "kind": "reported"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse schedule",
      "kind": "projected"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.2 (NFL fit 2012-2021)",
@@ -4826,6 +5015,13 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -5004,7 +5200,7 @@
    "date_et": "2026-11-01",
    "start_et": "2026-11-01T13:00-05:00",
    "start_label": "Sun Nov 1, 1:00 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "TEN",
@@ -5060,7 +5256,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -5069,7 +5265,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     },
     "home": {
@@ -5095,7 +5291,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "6 game(s), sample ok"
      },
      "games_sampled": 6,
@@ -5104,7 +5300,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "form_divergence": "Offense EPA/play last 3 weeks +0.349 vs season +0.108."
     }
@@ -5115,14 +5311,14 @@
       "value": "Cam Ward",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      },
      "home": {
       "value": "Joe Burrow",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      }
     },
@@ -5138,7 +5334,7 @@
      "value": "outdoors",
      "kind": "reported",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "outdoors": true,
     "wind_mph": {
@@ -5146,7 +5342,7 @@
      "kind": "unknown",
      "reason": "no wind in data (nflverse fills wind after games)",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "temp_f": {
      "value": null,
@@ -5214,39 +5410,39 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse play-by-play",
      "kind": "derived"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse injury report (weekly)",
      "kind": "reported"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse schedule",
      "kind": "projected"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.2 (NFL fit 2012-2021)",
@@ -5263,6 +5459,13 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -5415,7 +5618,7 @@
    "date_et": "2026-11-01",
    "start_et": "2026-11-01T16:05-05:00",
    "start_label": "Sun Nov 1, 4:05 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "LAC",
@@ -5471,7 +5674,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "6 game(s), sample ok"
      },
      "games_sampled": 6,
@@ -5480,7 +5683,7 @@
       "value": 14,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     },
     "home": {
@@ -5506,7 +5709,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -5515,7 +5718,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     }
    },
@@ -5525,14 +5728,14 @@
       "value": "Justin Herbert",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      },
      "home": {
       "value": "Matthew Stafford",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      }
     },
@@ -5548,7 +5751,7 @@
      "value": "dome",
      "kind": "reported",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "outdoors": false,
     "wind_mph": {
@@ -5621,39 +5824,39 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse play-by-play",
      "kind": "derived"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse injury report (weekly)",
      "kind": "reported"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse schedule",
      "kind": "projected"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.2 (NFL fit 2012-2021)",
@@ -5670,6 +5873,13 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -5841,7 +6051,7 @@
    "date_et": "2026-11-01",
    "start_et": "2026-11-01T16:25-05:00",
    "start_label": "Sun Nov 1, 4:25 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "KC",
@@ -5897,7 +6107,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "6 game(s), sample ok"
      },
      "games_sampled": 6,
@@ -5906,7 +6116,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "form_divergence": "Offense EPA/play last 3 weeks -0.027 vs season +0.101."
     },
@@ -5933,7 +6143,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -5942,7 +6152,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     }
    },
@@ -5952,14 +6162,14 @@
       "value": "Patrick Mahomes",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      },
      "home": {
       "value": "Bo Nix",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      }
     },
@@ -5975,7 +6185,7 @@
      "value": "outdoors",
      "kind": "reported",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "outdoors": true,
     "wind_mph": {
@@ -5983,7 +6193,7 @@
      "kind": "unknown",
      "reason": "no wind in data (nflverse fills wind after games)",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "temp_f": {
      "value": null,
@@ -6051,39 +6261,39 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse play-by-play",
      "kind": "derived"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse injury report (weekly)",
      "kind": "reported"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse schedule",
      "kind": "projected"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.2 (NFL fit 2012-2021)",
@@ -6100,6 +6310,13 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -6306,7 +6523,7 @@
    "date_et": "2026-11-01",
    "start_et": "2026-11-01T16:25-05:00",
    "start_label": "Sun Nov 1, 4:25 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "NE",
@@ -6362,7 +6579,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -6371,7 +6588,7 @@
       "value": 10,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     },
     "home": {
@@ -6397,7 +6614,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "6 game(s), sample ok"
      },
      "games_sampled": 6,
@@ -6406,7 +6623,7 @@
       "value": 7,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "form_divergence": "Offense EPA/play last 3 weeks +0.285 vs season -0.046."
     }
@@ -6417,14 +6634,14 @@
       "value": "Drake Maye",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      },
      "home": {
       "value": "Malik Willis",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      }
     },
@@ -6440,7 +6657,7 @@
      "value": "outdoors",
      "kind": "reported",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "outdoors": true,
     "wind_mph": {
@@ -6448,7 +6665,7 @@
      "kind": "unknown",
      "reason": "no wind in data (nflverse fills wind after games)",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "temp_f": {
      "value": null,
@@ -6516,39 +6733,39 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse play-by-play",
      "kind": "derived"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse injury report (weekly)",
      "kind": "reported"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse schedule",
      "kind": "projected"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.2 (NFL fit 2012-2021)",
@@ -6565,6 +6782,13 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -6877,7 +7101,7 @@
    "date_et": "2026-11-01",
    "start_et": "2026-11-01T20:20-05:00",
    "start_label": "Sun Nov 1, 8:20 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "PHI",
@@ -6933,7 +7157,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -6942,7 +7166,7 @@
       "value": 6,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     },
     "home": {
@@ -6968,7 +7192,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "6 game(s), sample ok"
      },
      "games_sampled": 6,
@@ -6977,7 +7201,7 @@
       "value": 13,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     }
    },
@@ -6987,14 +7211,14 @@
       "value": "Jalen Hurts",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      },
      "home": {
       "value": "Jayden Daniels",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      }
     },
@@ -7010,7 +7234,7 @@
      "value": "outdoors",
      "kind": "reported",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "outdoors": true,
     "wind_mph": {
@@ -7018,7 +7242,7 @@
      "kind": "unknown",
      "reason": "no wind in data (nflverse fills wind after games)",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "temp_f": {
      "value": null,
@@ -7086,39 +7310,39 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse play-by-play",
      "kind": "derived"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse injury report (weekly)",
      "kind": "reported"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse schedule",
      "kind": "projected"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.2 (NFL fit 2012-2021)",
@@ -7135,6 +7359,13 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -7440,7 +7671,7 @@
    "date_et": "2026-11-02",
    "start_et": "2026-11-02T20:15-05:00",
    "start_label": "Mon Nov 2, 8:15 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "CHI",
@@ -7496,7 +7727,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -7505,7 +7736,7 @@
       "value": 11,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     },
     "home": {
@@ -7531,7 +7762,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -7540,7 +7771,7 @@
       "value": 8,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     }
    },
@@ -7550,14 +7781,14 @@
       "value": "Caleb Williams",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      },
      "home": {
       "value": "Sam Darnold",
       "kind": "projected",
       "source": "nflverse schedule (expected starter)",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "QB listed by nflverse; confirm at inactives"
      }
     },
@@ -7573,7 +7804,7 @@
      "value": "outdoors",
      "kind": "reported",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "outdoors": true,
     "wind_mph": {
@@ -7581,7 +7812,7 @@
      "kind": "unknown",
      "reason": "no wind in data (nflverse fills wind after games)",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "temp_f": {
      "value": null,
@@ -7649,39 +7880,39 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse play-by-play",
      "kind": "derived"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse injury report (weekly)",
      "kind": "reported"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse schedule",
      "kind": "projected"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.2 (NFL fit 2012-2021)",
@@ -7698,6 +7929,13 @@
      "severity": "alert",
      "title": "odds source error",
      "why": "The odds pull reported 'error'."
+    },
+    {
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -7897,7 +8135,7 @@
    "date_et": "2026-11-05",
    "start_et": "2026-11-05T20:15-05:00",
    "start_label": "Thu Nov 5, 8:15 PM ET",
-   "built_at": "2026-10-30T08:49-04:00",
+   "built_at": "2026-10-30T15:32-04:00",
    "game": {
     "away": {
      "abbr": "JAX",
@@ -7953,7 +8191,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "6 game(s), sample ok"
      },
      "games_sampled": 6,
@@ -7962,7 +8200,7 @@
       "value": 4,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      }
     },
     "home": {
@@ -7988,7 +8226,7 @@
       },
       "kind": "derived",
       "source": "nflverse play-by-play",
-      "as_of": "2026-10-30T08:48-04:00",
+      "as_of": "2026-10-30T15:31-04:00",
       "note": "7 game(s), sample ok"
      },
      "games_sampled": 7,
@@ -7997,7 +8235,7 @@
       "value": 4,
       "kind": "reported",
       "source": "nflverse schedule",
-      "as_of": "2026-10-30T08:48-04:00"
+      "as_of": "2026-10-30T15:31-04:00"
      },
      "form_divergence": "Offense EPA/play last 3 weeks -0.087 vs season +0.071."
     }
@@ -8005,16 +8243,18 @@
    "availability": {
     "starters": {
      "away": {
-      "value": null,
-      "kind": "unknown",
-      "reason": "no QB listed",
-      "source": "nflverse"
+      "value": "Trevor Lawrence",
+      "kind": "projected",
+      "source": "nflverse schedule (expected starter)",
+      "as_of": "2026-10-30T15:31-04:00",
+      "note": "QB listed by nflverse; confirm at inactives"
      },
      "home": {
-      "value": null,
-      "kind": "unknown",
-      "reason": "no QB listed",
-      "source": "nflverse"
+      "value": "Lamar Jackson",
+      "kind": "projected",
+      "source": "nflverse schedule (expected starter)",
+      "as_of": "2026-10-30T15:31-04:00",
+      "note": "QB listed by nflverse; confirm at inactives"
      }
     },
     "lineups": {},
@@ -8029,7 +8269,7 @@
      "value": "outdoors",
      "kind": "reported",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "outdoors": true,
     "wind_mph": {
@@ -8037,7 +8277,7 @@
      "kind": "unknown",
      "reason": "no wind in data (nflverse fills wind after games)",
      "source": "nflverse",
-     "as_of": "2026-10-30T08:48-04:00"
+     "as_of": "2026-10-30T15:31-04:00"
     },
     "temp_f": {
      "value": null,
@@ -8105,48 +8345,90 @@
    "freshness": {
     "odds": {
      "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
-     "label": "1 min old",
+     "age_min": 404.1,
+     "label": "6.7 h old",
      "status": "error",
      "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
      "kind": "reported"
     },
     "team_stats": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse play-by-play",
      "kind": "derived"
     },
     "injuries": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse injury report (weekly)",
      "kind": "reported"
     },
     "starters": {
-     "as_of": "2026-10-30T08:48-04:00",
-     "age_min": 1.3,
+     "as_of": "2026-10-30T15:31-04:00",
+     "age_min": 1.1,
      "label": "1 min old",
      "status": "ok",
      "source": "nflverse schedule",
      "kind": "projected"
     },
     "model": {
-     "as_of": "2026-10-30T08:49-04:00",
-     "age_min": 0.3,
+     "as_of": "2026-10-30T15:32-04:00",
+     "age_min": 0.1,
      "label": "just now",
      "status": "ok",
      "source": "Boolin baseline-0.2 (NFL fit 2012-2021)",
      "kind": "derived"
     }
    },
-   "recent_changes": [],
-   "changes_since_last_pull": [],
-   "change_count_total": 0,
+   "recent_changes": [
+    {
+     "t": "2026-10-30T15:32-04:00",
+     "game_key": "2026-11-05-NFL-JAX-BAL",
+     "type": "starter",
+     "field": "JAX starter",
+     "old": "unknown (unknown)",
+     "new": "Trevor Lawrence (projected)",
+     "source": "nflverse schedule (expected starter)",
+     "cause": "Change detected; cause not confirmed."
+    },
+    {
+     "t": "2026-10-30T15:32-04:00",
+     "game_key": "2026-11-05-NFL-JAX-BAL",
+     "type": "starter",
+     "field": "BAL starter",
+     "old": "unknown (unknown)",
+     "new": "Lamar Jackson (projected)",
+     "source": "nflverse schedule (expected starter)",
+     "cause": "Change detected; cause not confirmed."
+    }
+   ],
+   "changes_since_last_pull": [
+    {
+     "t": "2026-10-30T15:32-04:00",
+     "game_key": "2026-11-05-NFL-JAX-BAL",
+     "type": "starter",
+     "field": "JAX starter",
+     "old": "unknown (unknown)",
+     "new": "Trevor Lawrence (projected)",
+     "source": "nflverse schedule (expected starter)",
+     "cause": "Change detected; cause not confirmed."
+    },
+    {
+     "t": "2026-10-30T15:32-04:00",
+     "game_key": "2026-11-05-NFL-JAX-BAL",
+     "type": "starter",
+     "field": "BAL starter",
+     "old": "unknown (unknown)",
+     "new": "Lamar Jackson (projected)",
+     "source": "nflverse schedule (expected starter)",
+     "cause": "Change detected; cause not confirmed."
+    }
+   ],
+   "change_count_total": 2,
    "flags": [
     {
      "id": "data.source_odds",
@@ -8156,18 +8438,11 @@
      "why": "The odds pull reported 'error'."
     },
     {
-     "id": "availability.no_starter_away",
-     "category": "injury",
-     "severity": "alert",
-     "title": "JAX starting QB unknown",
-     "why": "No starting QB in the data for JAX."
-    },
-    {
-     "id": "availability.no_starter_home",
-     "category": "injury",
-     "severity": "alert",
-     "title": "BAL starting QB unknown",
-     "why": "No starting QB in the data for BAL."
+     "id": "data.stale_odds",
+     "category": "data",
+     "severity": "watch",
+     "title": "Stale odds",
+     "why": "Odds are 6.7 h old; prices may have moved since."
     },
     {
      "id": "data.missing_moneyline",
@@ -8223,19 +8498,18 @@
     "thesis_team": null,
     "thesis_basis": "no thesis (model and market aligned or unavailable)",
     "why_it_matters": [
-     "JAX starting QB unknown: No starting QB in the data for JAX.",
-     "BAL starting QB unknown: No starting QB in the data for BAL."
+     "No market move, availability news or model disagreement stands out yet."
     ],
     "supporting": [],
     "contradicting": [],
     "unknowns": [
-     "JAX starter: unknown (unknown).",
-     "BAL starter: unknown (unknown).",
+     "JAX starter: Trevor Lawrence (projected).",
+     "BAL starter: Lamar Jackson (projected).",
      "Weather/wind not in the data."
     ],
     "conclusion": {
      "status": "insufficient information",
-     "detail": "Unresolved: odds source error; JAX starting QB unknown; BAL starting QB unknown.",
+     "detail": "Unresolved: odds source error.",
      "gate": {
       "applied": false,
       "reasons": [],
@@ -8250,8 +8524,8 @@
      },
      "trigger": null,
      "would_change_if": [
-      "JAX starter confirmed as someone other than the projection.",
-      "BAL starter confirmed as someone other than the projection.",
+      "JAX starter confirmed as someone other than Trevor Lawrence.",
+      "BAL starter confirmed as someone other than Lamar Jackson.",
       "Wind forecast crossing 15 mph.",
       "A market move that closes or widens the gap to Boolin's number."
      ]

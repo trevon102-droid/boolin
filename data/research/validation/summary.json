@@ -9,7 +9,7 @@
   "baseline-0.1",
   "baseline-0.2"
  ],
- "built_at": "2026-10-30T08:49-04:00",
+ "built_at": "2026-10-30T15:32-04:00",
  "data_cutoff": "2026-10-29",
  "filters": {
   "league": null,
@@ -26,8 +26,8 @@
   "nfl_replay": "development = seasons < 2022; holdout = 2022+"
  },
  "warning": "rows span model versions ['baseline-0.1', 'baseline-0.2']: each table is per league and per source, and rows from an older version sit in their own '<source> @<version>' slice",
- "rows": 3981,
- "excluded": 341,
+ "rows": 3993,
+ "excluded": 332,
  "by_source": {
   "NFL nfl_replay": {
    "rows": 3696,
@@ -50,24 +50,24 @@
    "last": "2026-10-04"
   },
   "NFL live_archive": {
-   "rows": 44,
+   "rows": 45,
    "development": 1,
-   "holdout": 43,
+   "holdout": 44,
    "model_versions": [
     "baseline-0.2"
    ],
    "first": "2026-10-05",
-   "last": "2026-10-26"
+   "last": "2026-10-29"
   },
   "NHL live_archive": {
-   "rows": 194,
+   "rows": 205,
    "development": 35,
-   "holdout": 159,
+   "holdout": 170,
    "model_versions": [
     "baseline-0.1"
    ],
    "first": "2026-10-01",
-   "last": "2026-10-28"
+   "last": "2026-10-29"
   },
   "MLB live_archive": {
    "rows": 32,
@@ -83,11 +83,11 @@
  "excluded_by_reason": {
   "nfl_replay: no current-season plays before this week for a team (the live model has no projection either)": 241,
   "live_archive: no Boolin model for this league": 81,
-  "live_archive: no confirmed final score on file": 19
+  "live_archive: no confirmed final score on file": 10
  },
  "replay": {
   "version": "nfl-replay-1",
-  "built_at_et": "2026-10-30T08:49-04:00",
+  "built_at_et": "2026-10-30T15:32-04:00",
   "status": {
    "2012": "kept",
    "2013": "kept",
@@ -108,8 +108,8 @@
   "present": true
  },
  "replay_fidelity": {
-  "n_overlap": 59,
-  "identical": 50,
+  "n_overlap": 60,
+  "identical": 51,
   "mean_abs_prob_diff": 0.0041,
   "max_abs_prob_diff": 0.0541,
   "note": "Live card vs replay for the same game, same model version. Gaps mean the live pull saw different inputs than the replay (cause not confirmed per game)."
@@ -129,13 +129,13 @@
    "recommendation": "CALIBRATION NEEDED"
   },
   "NHL": {
-   "sample_size": 159,
-   "brier": 0.2321,
+   "sample_size": 170,
+   "brier": 0.2301,
    "market_brier": 0.2304,
-   "log_loss": 0.6559,
-   "calibration_error": 0.0414,
+   "log_loss": 0.6518,
+   "calibration_error": 0.0457,
    "market_comparison": "too few games to tell (n=27)",
-   "spread_mae": 2.079,
+   "spread_mae": 2.028,
    "confidence_validated": null,
    "calibration_status": "needs_calibration",
    "validation_status": "validated: calibration off",
