@@ -23,6 +23,27 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-31T19:32-04:00",
+   "game_key": "2026-10-31-NHL-STL-DET",
+   "type": "model",
+   "field": "Boolin DET win probability",
+   "old": 0.5529,
+   "new": 0.537,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 55.3% to 53.7% (home margin +0.32 \u2192 +0.22). Model components that moved: 1. Shot quality against (5v5 xGA/gp, blended) -0.05 (home allows 1.96 vs away allows 2.05). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 55.3% to 53.7% (home margin +0.32 \u2192 +0.22). Model components that moved: 1. Shot quality against (5v5 xGA/gp, blended) -0.05 (home allows 1.96 vs away allows 2.05). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Shot quality against (5v5 xGA/gp, blended)",
+      "margin_change": -0.052,
+      "now": "home allows 1.96 vs away allows 2.05"
+     }
+    ],
+    "same_pull_updates": []
+   }
   }
  ],
  "2026-10-31-NHL-EDM-NYI": [
@@ -36,6 +57,63 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-31T19:32-04:00",
+   "game_key": "2026-10-31-NHL-EDM-NYI",
+   "type": "injury_status",
+   "field": "Frederik Andersen (EDM)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  },
+  {
+   "t": "2026-10-31T19:32-04:00",
+   "game_key": "2026-10-31-NHL-EDM-NYI",
+   "type": "injury_status",
+   "field": "Isaac Howard (EDM)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-31T19:32-04:00",
+   "game_key": "2026-10-31-NHL-EDM-NYI",
+   "type": "starter",
+   "field": "EDM starter",
+   "old": "Devon Levi (projected)",
+   "new": "Tristan Jarry (projected)",
+   "source": "NHL API goalie usage",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-10-31T19:32-04:00",
+   "game_key": "2026-10-31-NHL-EDM-NYI",
+   "type": "model",
+   "field": "Boolin NYI win probability",
+   "old": 0.5407,
+   "new": 0.5535,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 54.1% to 55.4% (home margin +0.24 \u2192 +0.32). Model components that moved: 1. Goaltending (GSAx/gp, regressed) +0.08 (Ilya Sorokin vs Tristan Jarry (projected starters)). Data updates in the same pull: Frederik Andersen (EDM): Injured Reserve \u2192 not listed; Isaac Howard (EDM): not listed \u2192 Out; EDM starter: Devon Levi (projected) \u2192 Tristan Jarry (projected).",
+   "detail": {
+    "text": "Boolin moved from 54.1% to 55.4% (home margin +0.24 \u2192 +0.32). Model components that moved: 1. Goaltending (GSAx/gp, regressed) +0.08 (Ilya Sorokin vs Tristan Jarry (projected starters)). Data updates in the same pull: Frederik Andersen (EDM): Injured Reserve \u2192 not listed; Isaac Howard (EDM): not listed \u2192 Out; EDM starter: Devon Levi (projected) \u2192 Tristan Jarry (projected).",
+    "components": [
+     {
+      "component": "Goaltending (GSAx/gp, regressed)",
+      "margin_change": 0.078,
+      "now": "Ilya Sorokin vs Tristan Jarry (projected starters)"
+     }
+    ],
+    "same_pull_updates": [
+     "Frederik Andersen (EDM): Injured Reserve \u2192 not listed",
+     "Isaac Howard (EDM): not listed \u2192 Out",
+     "EDM starter: Devon Levi (projected) \u2192 Tristan Jarry (projected)"
+    ]
+   }
   }
  ],
  "2026-10-31-NHL-TBL-NSH": [
@@ -97,6 +175,28 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-31T19:32-04:00",
+   "game_key": "2026-10-31-NHL-PIT-MTL",
+   "type": "injury_status",
+   "field": "Kirby Dach (MTL)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-31T19:32-04:00",
+   "game_key": "2026-10-31-NHL-PIT-MTL",
+   "type": "injury_status",
+   "field": "Bryce Pickford (MTL)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
   }
  ],
  "2026-10-31-NHL-TOR-VAN": [
@@ -166,6 +266,30 @@
    "field": "Logan O'Connor (COL)",
    "old": "Day-To-Day",
    "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-10-31T19:32-04:00",
+   "game_key": "2026-10-31-NHL-CGY-COL",
+   "type": "injury_status",
+   "field": "Brennan Othmann (CGY)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-10-31-NHL-OTT-SJS": [
+  {
+   "t": "2026-10-31T19:32-04:00",
+   "game_key": "2026-10-31-NHL-OTT-SJS",
+   "type": "injury_status",
+   "field": "Andre Burakovsky (OTT)",
+   "old": "Day-To-Day",
+   "new": "Injured Reserve",
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "downgrade"
