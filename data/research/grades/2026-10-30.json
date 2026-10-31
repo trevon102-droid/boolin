@@ -1,0 +1,137 @@
+{
+ "2026-10-30-NHL-NJD-VGK": {
+  "key": "2026-10-30-NHL-NJD-VGK",
+  "league": "NHL",
+  "result": {
+   "home_score": 2.0,
+   "away_score": 5.0,
+   "home_margin": -3.0,
+   "total": 7.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 1.0,
+    "grade": "D",
+    "brier": 0.297,
+    "pregame_home_win_p": 0.545,
+    "margin_error": -3.27,
+    "total_error": 0.04
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 1.0,
+   "grade": "D",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ },
+ "2026-10-30-NHL-WPG-FLA": {
+  "key": "2026-10-30-NHL-WPG-FLA",
+  "league": "NHL",
+  "result": {
+   "home_score": 5.0,
+   "away_score": 2.0,
+   "home_margin": 3.0,
+   "total": 7.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 3.3,
+    "grade": "B+",
+    "brier": 0.1594,
+    "pregame_home_win_p": 0.6008,
+    "margin_error": 2.39,
+    "total_error": 0.94
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 3.3,
+   "grade": "B+",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ },
+ "2026-10-30-NHL-SEA-CGY": {
+  "key": "2026-10-30-NHL-SEA-CGY",
+  "league": "NHL",
+  "result": {
+   "home_score": 6.0,
+   "away_score": 2.0,
+   "home_margin": 4.0,
+   "total": 8.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 2.7,
+    "grade": "B-",
+    "brier": 0.1614,
+    "pregame_home_win_p": 0.5982,
+    "margin_error": 3.4,
+    "total_error": 1.62
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 2.7,
+   "grade": "B-",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ }
+}
