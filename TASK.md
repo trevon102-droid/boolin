@@ -137,7 +137,7 @@ Files in `data/latest/`:
 | `wnba.json` | ESPN line + win projection, injuries, last-10 logs for each team's leaders, team stats |
 | `nba.json` | Same shape as `wnba.json` for today's NBA games (starts Oct 20, 2026; skipped before then) |
 | `nfl.json` | This week's games (rest, roof, wind, QBs, nflverse lines), team EPA/success splits + ranks, injury report |
-| `ncaab.json` | Every Division I men's college basketball game today (ranked first): AP rank, record, neutral site, conference game, ESPN line, and for the top 60 (ranked, then lined) ESPN win projection, injuries and team stats. Starts Nov 2, 2026; skipped before then. Main lines only |
+| `ncaab.json` | Every Division I men's college basketball game today (ranked first): AP rank, record, neutral site, conference game, ESPN line, and for the top 60 (ranked, then lined) ESPN win projection, injuries and team stats. Starts Nov 1, 2026; skipped before then. Main lines only |
 | `cfb.json` | Every FBS game today (AP rank, neutral site, conference game, FPI projection, weather, injuries), AP Top 25, next 3 days' schedule, and team EPA + SP+ if the optional CFBD key is set |
 | `injuries.json` | ESPN injury lists for today's NHL and MLB games |
 
@@ -218,7 +218,7 @@ transfer-portal roster turnover (early season leans on last season's ratings plu
 (about 3 points; bigger at high-altitude or small hostile gyms), neutral-site and holiday-tournament games, travel and
 schedule spots (third game in five days in an event), and line moves. The slate can have 150+ games, so pick the
 Top 10 by ranked teams, TV games and the biggest model-vs-market gaps; skip low-major games with no FanDuel line.
-**NCAAB is off until opening night (Nov 2, 2026):** the pipeline skips its data and odds before then.
+**NCAAB is off until opening day (Nov 1, 2026):** the pipeline skips its data and odds before then.
 
 Price every game the user cares about: **NFL and CFB first on football days**, then MLB, NHL,
 NBA, NCAAB and WNBA daily. Every play gets a `conviction` tier (A/B/C), a WHY and stats (section 00). Don't fill the

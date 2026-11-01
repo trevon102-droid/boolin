@@ -46,7 +46,7 @@ which fits the 500-credit free tier with little room. Upgrade before adding more
 Player props cost markets × games (about 25 credits a day across today's games). The slate task's manual run
 pulls them while more than 100 credits are left (odds + props was 37 credits on Oct 2, 2026).
 A push whose commit message contains `[props]` also pulls them once.
-NCAAB (from Nov 2, 2026) adds ~3 credits per odds run and never pulls props (college player props aren't offered).
+NCAAB (from Nov 1, 2026) adds ~3 credits per odds run and never pulls props (college player props aren't offered).
 
 ## Output
 

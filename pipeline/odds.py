@@ -38,9 +38,9 @@ PROP_MARKETS = {
     "americanfootball_ncaaf": "player_pass_yds,player_rush_yds,player_reception_yds,player_anytime_td",
 }
 # Leagues held off until a start date (no odds credits spent before it). NBA: regular season tips Oct 20, 2026;
-# NCAAB: Division I opening night Nov 2, 2026. NCAAB has no PROP_MARKETS entry: college player props are not
+# NCAAB: Division I opening day Nov 1, 2026 (Notre Dame-Villanova in Rome). NCAAB has no PROP_MARKETS entry: college player props are not
 # offered to Kaire, so props are never pulled for it (main lines only).
-START_DATES = {"NBA": dt.date(2026, 10, 20), "NCAAB": dt.date(2026, 11, 2)}
+START_DATES = {"NBA": dt.date(2026, 10, 20), "NCAAB": dt.date(2026, 11, 1)}
 # How far ahead to look: today's slate for daily sports, the whole week for NFL.
 WINDOW_HOURS = {"americanfootball_nfl": 24 * 7, "americanfootball_ncaaf": 24 * 3}
 

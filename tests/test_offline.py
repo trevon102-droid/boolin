@@ -97,7 +97,7 @@ def test_ncaab_wired():
 def test_ncaab_held_until_regular_season():
     import datetime as dt
     from pipeline import ncaab
-    assert ncaab.run(dt.date(2026, 11, 1))["status"] == "skipped"
+    assert ncaab.run(dt.date(2026, 10, 31))["status"] == "skipped"
 
 
 def test_ncaab_run_offline():
