@@ -9,7 +9,7 @@
   "baseline-0.1",
   "baseline-0.2"
  ],
- "built_at": "2026-11-01T10:27-05:00",
+ "built_at": "2026-11-01T14:51-05:00",
  "data_cutoff": "2026-10-31",
  "filters": {
   "league": null,
@@ -26,8 +26,8 @@
   "nfl_replay": "development = seasons < 2022; holdout = 2022+"
  },
  "warning": "rows span model versions ['baseline-0.1', 'baseline-0.2']: each table is per league and per source, and rows from an older version sit in their own '<source> @<version>' slice",
- "rows": 4002,
- "excluded": 333,
+ "rows": 4006,
+ "excluded": 350,
  "by_source": {
   "NFL nfl_replay": {
    "rows": 3696,
@@ -60,9 +60,9 @@
    "last": "2026-10-29"
   },
   "NHL live_archive": {
-   "rows": 214,
+   "rows": 218,
    "development": 35,
-   "holdout": 179,
+   "holdout": 183,
    "model_versions": [
     "baseline-0.1"
    ],
@@ -82,12 +82,12 @@
  },
  "excluded_by_reason": {
   "nfl_replay: no current-season plays before this week for a team (the live model has no projection either)": 241,
-  "live_archive: no Boolin model for this league": 81,
-  "live_archive: no confirmed final score on file": 11
+  "live_archive: no Boolin model for this league": 85,
+  "live_archive: no confirmed final score on file": 24
  },
  "replay": {
   "version": "nfl-replay-1",
-  "built_at_et": "2026-11-01T10:27-05:00",
+  "built_at_et": "2026-11-01T14:51-05:00",
   "status": {
    "2012": "kept",
    "2013": "kept",
@@ -129,13 +129,13 @@
    "recommendation": "CALIBRATION NEEDED"
   },
   "NHL": {
-   "sample_size": 179,
-   "brier": 0.2302,
+   "sample_size": 183,
+   "brier": 0.2289,
    "market_brier": 0.2304,
-   "log_loss": 0.6519,
-   "calibration_error": 0.0491,
+   "log_loss": 0.6492,
+   "calibration_error": 0.0519,
    "market_comparison": "too few games to tell (n=27)",
-   "spread_mae": 2.044,
+   "spread_mae": 2.031,
    "confidence_validated": null,
    "calibration_status": "needs_calibration",
    "validation_status": "validated: calibration off",
