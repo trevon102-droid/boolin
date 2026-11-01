@@ -27,6 +27,7 @@ SPORTS = {
     "NHL": "icehockey_nhl",
     "NFL": "americanfootball_nfl",
     "CFB": "americanfootball_ncaaf",
+    "NCAAB": "basketball_ncaab",
 }
 PROP_MARKETS = {
     "baseball_mlb": "pitcher_strikeouts,pitcher_outs",
@@ -36,8 +37,10 @@ PROP_MARKETS = {
     "americanfootball_nfl": "player_pass_yds,player_rush_yds,player_reception_yds,player_anytime_td",
     "americanfootball_ncaaf": "player_pass_yds,player_rush_yds,player_reception_yds,player_anytime_td",
 }
-# Leagues held off until a start date (no odds credits spent before it). NBA: regular season tips Oct 20, 2026.
-START_DATES = {"NBA": dt.date(2026, 10, 20)}
+# Leagues held off until a start date (no odds credits spent before it). NBA: regular season tips Oct 20, 2026;
+# NCAAB: Division I opening night Nov 2, 2026. NCAAB has no PROP_MARKETS entry: college player props are not
+# offered to Kaire, so props are never pulled for it (main lines only).
+START_DATES = {"NBA": dt.date(2026, 10, 20), "NCAAB": dt.date(2026, 11, 2)}
 # How far ahead to look: today's slate for daily sports, the whole week for NFL.
 WINDOW_HOURS = {"americanfootball_nfl": 24 * 7, "americanfootball_ncaaf": 24 * 3}
 
@@ -226,7 +229,7 @@ def _pull_sport(key: str, sk: str, day: dt.date, remaining):
     events.sort(key=lambda e: (not e["on_slate_day"], e["commence_time"]))
     entry: dict = {"status": "ok", "slate_day_events": sum(e["on_slate_day"] for e in events),
                    "later_events": sum(not e["on_slate_day"] for e in events), "events": events}
-    if os.environ.get("PROPS") == "1" and events:
+    if os.environ.get("PROPS") == "1" and events and sk in PROP_MARKETS:
         # Only games on the slate day that haven't started: each event costs markets x credits.
         cap = int(os.environ.get("PROPS_MAX_EVENTS", "6"))
         now_utc = dt.datetime.now(dt.timezone.utc)

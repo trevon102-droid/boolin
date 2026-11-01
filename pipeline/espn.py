@@ -1,5 +1,5 @@
 """ESPN public site API helpers (no key): scoreboard, per-game summary (injuries, predictor,
-ESPN's posted line), and player game logs. Used for WNBA/NBA and for injuries in every sport."""
+ESPN's posted line), and player game logs. Used for WNBA/NBA/NCAAB and for injuries in every sport."""
 from __future__ import annotations
 
 import datetime as dt
@@ -16,9 +16,11 @@ LEAGUES = {
     "NFL": ("football", "nfl"),
     "MLB": ("baseball", "mlb"),
     "CFB": ("football", "college-football"),
+    "NCAAB": ("basketball", "mens-college-basketball"),
 }
 # Extra scoreboard params: CFB needs groups=80 (all FBS) or ESPN only returns featured games.
-EXTRA = {"CFB": {"groups": "80", "limit": "300"}}
+# NCAAB needs groups=50 (all Division I).
+EXTRA = {"CFB": {"groups": "80", "limit": "300"}, "NCAAB": {"groups": "50", "limit": "400"}}
 
 
 def scoreboard(league: str, day: dt.date) -> list[dict]:
