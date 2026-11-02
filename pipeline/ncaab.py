@@ -21,7 +21,16 @@ MAX_DETAIL = int(os.environ.get("NCAAB_MAX_DETAIL", "60"))
 def _priority(g: dict) -> tuple:
     ranked = bool((g.get("away") or {}).get("rank") or (g.get("home") or {}).get("rank"))
     has_line = bool((g.get("espn_line") or {}).get("details"))
-    return (not ranked, not has_line, g.get("start_et") or "")
+    return (not ranked, not has_line, _minutes(g.get("start_et")))
+
+
+def _minutes(label: str | None) -> int:
+    """'7:30 PM ET' -> minutes after midnight, so games sort by tip time (unknown times last)."""
+    import re
+    m = re.match(r"\s*(\d{1,2}):(\d{2})\s*(AM|PM)", label or "", re.I)
+    if not m:
+        return 24 * 60
+    return (int(m.group(1)) % 12 + (12 if m.group(3).upper() == "PM" else 0)) * 60 + int(m.group(2))
 
 
 def run(day: dt.date) -> dict:
