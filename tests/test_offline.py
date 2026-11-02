@@ -83,3 +83,47 @@ def test_nba_held_until_regular_season():
     from pipeline import nba
     assert nba.run(dt.date(2026, 10, 3))["status"] == "skipped"
     assert odds.START_DATES["NBA"] == dt.date(2026, 10, 20)
+
+
+def test_ncaab_wired():
+    from pipeline import build_all, espn, odds
+    assert odds.SPORTS["NCAAB"] == "basketball_ncaab"
+    assert "basketball_ncaab" not in odds.PROP_MARKETS  # main lines only: no college player props
+    assert espn.LEAGUES["NCAAB"] == ("basketball", "mens-college-basketball")
+    assert espn.EXTRA["NCAAB"]["groups"] == "50"
+    assert "ncaab" in build_all.SOURCES
+
+
+def test_ncaab_held_until_regular_season():
+    import datetime as dt
+    from pipeline import ncaab
+    assert ncaab.run(dt.date(2026, 10, 31))["status"] == "skipped"
+
+
+def test_ncaab_run_offline():
+    import datetime as dt
+    from pipeline import common as C
+    from pipeline import espn, ncaab
+
+    def fake_board(league, day):
+        mk = lambda i, a, h, ar=None, line=None: {  # noqa: E731
+            "espn_id": str(i), "name": f"{a} @ {h}", "start_et": "7:00 PM ET",
+            "away": {"id": f"a{i}", "abbr": a, "rank": ar}, "home": {"id": f"h{i}", "abbr": h, "rank": None},
+            "espn_line": {"details": line} if line else None}
+        return [mk(1, "AAA", "BBB"), mk(2, "DUKE", "CCC", ar=3, line="DUKE -20.5"), mk(3, "DDD", "EEE", line="EEE -2")]
+
+    written = {}
+    saved = (espn.scoreboard, espn.summary, ncaab._team_stats, C.write, ncaab.MAX_DETAIL)
+    try:
+        espn.scoreboard = fake_board
+        espn.summary = lambda lg, eid: {"injuries": {}, "predictor": {"home_win_pct": 40}}
+        ncaab._team_stats = lambda lg, tid: {"avgPoints": 70.0}
+        C.write = lambda name, payload, day: written.setdefault(name, payload)
+        ncaab.MAX_DETAIL = 2
+        res = ncaab.run(dt.date(2026, 11, 2))
+    finally:
+        espn.scoreboard, espn.summary, ncaab._team_stats, C.write, ncaab.MAX_DETAIL = saved
+    assert res["status"] == "ok" and res["games"] == 3 and res["detailed"] == 2 and res["ranked"] == 1
+    games = written["ncaab"]["games"]
+    assert games[0]["away"]["abbr"] == "DUKE"                      # ranked first
+    assert "injuries" in games[1] and "injuries" not in games[2]   # lined game detailed, unlined skipped

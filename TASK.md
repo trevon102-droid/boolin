@@ -137,6 +137,7 @@ Files in `data/latest/`:
 | `wnba.json` | ESPN line + win projection, injuries, last-10 logs for each team's leaders, team stats |
 | `nba.json` | Same shape as `wnba.json` for today's NBA games (starts Oct 20, 2026; skipped before then) |
 | `nfl.json` | This week's games (rest, roof, wind, QBs, nflverse lines), team EPA/success splits + ranks, injury report |
+| `ncaab.json` | Every Division I men's college basketball game today (ranked first): AP rank, record, neutral site, conference game, ESPN line, and for the top 60 (ranked, then lined) ESPN win projection, injuries and team stats. Starts Nov 1, 2026; skipped before then. Main lines only |
 | `cfb.json` | Every FBS game today (AP rank, neutral site, conference game, FPI projection, weather, injuries), AP Top 25, next 3 days' schedule, and team EPA + SP+ if the optional CFBD key is set |
 | `injuries.json` | ESPN injury lists for today's NHL and MLB games |
 
@@ -209,8 +210,18 @@ the afternoon), starting lineups (~30 min before tip), pace and offensive/defens
 for props. **NBA is off until the regular season (Oct 20, 2026):** the pipeline skips NBA data and odds before then
 (`nba` shows `skipped` in the manifest). Don't add preseason NBA games to the slate.
 
+**NCAAB notes.** Men's college basketball, Division I. Use `"sport": "NCAAB"`, the `NCAAB sides` / `NCAAB totals`
+categories, and put the AP rank in `game` (`"#3 Duke @ Kentucky"`). **Main lines only** (spreads, totals,
+moneylines): college player props aren't offered, so the odds pull never asks for NCAAB props. Key inputs: KenPom /
+Barttorvik / ESPN BPI efficiency and tempo (adjusted offense/defense, possessions per game), injuries and
+transfer-portal roster turnover (early season leans on last season's ratings plus returning minutes), home court
+(about 3 points; bigger at high-altitude or small hostile gyms), neutral-site and holiday-tournament games, travel and
+schedule spots (third game in five days in an event), and line moves. The slate can have 150+ games, so pick the
+Top 10 by ranked teams, TV games and the biggest model-vs-market gaps; skip low-major games with no FanDuel line.
+**NCAAB is off until opening day (Nov 1, 2026):** the pipeline skips its data and odds before then.
+
 Price every game the user cares about: **NFL and CFB first on football days**, then MLB, NHL,
-NBA and WNBA daily. Every play gets a `conviction` tier (A/B/C), a WHY and stats (section 00). Don't fill the
+NBA, NCAAB and WNBA daily. Every play gets a `conviction` tier (A/B/C), a WHY and stats (section 00). Don't fill the
 board with price passes; list a play only if the research likes it, and use `pass: true` only for news.
 
 - Use **FanDuel's price** from `odds.json` (the `fanduel` field on each outcome). `best_price`/`best_book` are context only.
@@ -246,7 +257,7 @@ Category names are what performance is grouped by, so keep them stable:
 `MLB sides`, `MLB K props`, `MLB pitcher props`, `MLB first inning`, `MLB batter props`,
 `NHL sides`, `NHL player props`, `NBA sides`, `NBA totals`, `NBA player props`, `WNBA sides`, `WNBA totals`, `WNBA player props`,
 `NFL sides`, `NFL totals`, `NFL player props`, `NFL TD scorers`,
-`CFB sides`, `CFB totals`, `CFB player props`.
+`CFB sides`, `CFB totals`, `CFB player props`, `NCAAB sides`, `NCAAB totals`.
 
 Use `"sport": "CFB"` for college football and put the rank in `game` when there is one,
 like `"#8 Oregon @ Penn State"`.

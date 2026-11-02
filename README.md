@@ -1,6 +1,6 @@
 # boolin
 
-Automated data pulls for the **Rackz Sharp Board** betting desk. Football first (NFL + college football), plus MLB, NHL, NBA and WNBA.
+Automated data pulls for the **Rackz Sharp Board** betting desk. Football first (NFL + college football), plus MLB, NHL, NBA, men's college basketball (NCAAB) and WNBA.
 
 GitHub Actions pulls free data sources on a schedule and commits clean JSON to `data/`.
 A daily Claude scheduled task reads it, adds news from the web, prices every play, and writes the
@@ -16,6 +16,7 @@ slate to the board. See [`TASK.md`](TASK.md) for that playbook.
 | WNBA | ESPN public API: schedule, injuries, projections, player game logs | none |
 | NBA | ESPN public API (same as WNBA): schedule, injuries, projections, team stats, player game logs | none |
 | NFL | nflverse: schedule/lines, play-by-play EPA, injury reports | none |
+| NCAAB | ESPN (every Division I game, AP rank, line, win projection, injuries, team stats; main lines only) | none |
 | CFB | ESPN (every FBS game, AP rank, FPI, weather, injuries) + optional CollegeFootballData (team EPA, SP+) | `CFBD_API_KEY` (optional, free) |
 | Injuries | ESPN game summaries (NHL, MLB) | none |
 
@@ -45,12 +46,13 @@ which fits the 500-credit free tier with little room. Upgrade before adding more
 Player props cost markets × games (about 25 credits a day across today's games). The slate task's manual run
 pulls them while more than 100 credits are left (odds + props was 37 credits on Oct 2, 2026).
 A push whose commit message contains `[props]` also pulls them once.
+NCAAB (from Nov 1, 2026) adds ~3 credits per odds run and never pulls props (college player props aren't offered).
 
 ## Output
 
 ```
 data/latest/manifest.json   # health + status per source (ok / partial / error / skipped), components, errors, credits left
-data/latest/{odds,nfl,cfb,mlb,nhl,wnba,injuries}.json   # plain JSON, each with pulled_at_et
+data/latest/{odds,nfl,cfb,mlb,nhl,wnba,nba,ncaab,injuries}.json   # plain JSON, each with pulled_at_et
 data/days/YYYY-MM-DD/*.json.gz   # gzipped daily snapshots, kept 45 days
 ```
 
