@@ -1,31 +1,8 @@
 {
  "slate_date": "2026-11-02",
- "built_at": "2026-11-02T09:25-05:00",
+ "built_at": "2026-11-02T09:27-05:00",
  "games": 20,
  "attention": [
-  {
-   "key": "2026-11-02-NFL-CHI-SEA",
-   "league": "NFL",
-   "matchup": "CHI @ SEA",
-   "start": "Mon Nov 2, 8:20 PM ET",
-   "start_et": "2026-11-02T20:20-05:00",
-   "status": "scheduled",
-   "importance": 10.75,
-   "reasons": [
-    "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED); unresolved key player: Drew Lock (SEA, QB) Questionable. Interesting disagreement, not a validated edge.",
-    "3 change(s) since the last pull, latest: SEA ML (FanDuel) -174 → -178",
-    "Boolin significant disagreement with market: Win probability (home): market 0.6071 vs Boolin 0.5155; Spread (SEA): market -3.5 vs Boolin -0.5. Model confidence: high.",
-    "Drew Lock (SEA) status unresolved: Listed Questionable (NFL injury report week 8); final status not confirmed."
-   ],
-   "research_status": "review required",
-   "review_required": true,
-   "validation": "CALIBRATION NEEDED",
-   "disagreement": "significant disagreement",
-   "alerts": 0,
-   "changes": 6,
-   "changes_since_last_pull": 3,
-   "oldest_input_min": 0.6
-  },
   {
    "key": "2026-11-02-NHL-DET-FLA",
    "league": "NHL",
@@ -45,7 +22,30 @@
    "alerts": 1,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6
+   "oldest_input_min": 1.0
+  },
+  {
+   "key": "2026-11-02-NFL-CHI-SEA",
+   "league": "NFL",
+   "matchup": "CHI @ SEA",
+   "start": "Mon Nov 2, 8:20 PM ET",
+   "start_et": "2026-11-02T20:20-05:00",
+   "status": "scheduled",
+   "importance": 7.75,
+   "reasons": [
+    "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED); unresolved key player: Drew Lock (SEA, QB) Questionable. Interesting disagreement, not a validated edge.",
+    "5 change(s) in the last 24 h, latest: SEA ML (FanDuel) -174 → -178",
+    "Boolin significant disagreement with market: Win probability (home): market 0.6071 vs Boolin 0.5155; Spread (SEA): market -3.5 vs Boolin -0.5. Model confidence: high.",
+    "Drew Lock (SEA) status unresolved: Listed Questionable (NFL injury report week 8); final status not confirmed."
+   ],
+   "research_status": "review required",
+   "review_required": true,
+   "validation": "CALIBRATION NEEDED",
+   "disagreement": "significant disagreement",
+   "alerts": 0,
+   "changes": 6,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-02-NHL-CGY-SJS",
@@ -66,7 +66,7 @@
    "alerts": 1,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-02-NHL-COL-CHI",
@@ -86,7 +86,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6
+   "oldest_input_min": 1.0
   }
  ],
  "stable": [
@@ -106,7 +106,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -125,7 +125,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -144,7 +144,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -163,7 +163,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -182,7 +182,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -201,7 +201,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -220,7 +220,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -239,7 +239,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -258,7 +258,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -277,7 +277,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -296,7 +296,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -315,7 +315,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -334,7 +334,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -353,7 +353,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -372,7 +372,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -391,7 +391,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6,
+   "oldest_input_min": 1.0,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   }
  ],
@@ -403,9 +403,9 @@
    "start": "Tue Nov 3, 7:00 PM ET",
    "start_et": "2026-11-03T19:00-05:00",
    "status": "scheduled",
-   "importance": 7.0,
+   "importance": 3.0,
    "reasons": [
-    "4 change(s) since the last pull, latest: Akron Zips ML (FanDuel) 390 → 450",
+    "4 change(s) in the last 24 h, latest: Akron Zips ML (FanDuel) 390 → 450",
     "Major total movement: Total moved 48.5 to 51."
    ],
    "research_status": "insufficient information",
@@ -414,8 +414,8 @@
    "disagreement": null,
    "alerts": 0,
    "changes": 4,
-   "changes_since_last_pull": 4,
-   "oldest_input_min": 0.6
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-03-CFB-BuffaloBulls-MiamiOHRedHawks",
@@ -424,9 +424,9 @@
    "start": "Tue Nov 3, 8:00 PM ET",
    "start_et": "2026-11-03T20:00-05:00",
    "status": "scheduled",
-   "importance": 4.0,
+   "importance": 1.0,
    "reasons": [
-    "3 change(s) since the last pull, latest: Miami (OH) RedHawks ML (FanDuel) -220 → -250"
+    "3 change(s) in the last 24 h, latest: Miami (OH) RedHawks ML (FanDuel) -220 → -250"
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -434,8 +434,8 @@
    "disagreement": null,
    "alerts": 0,
    "changes": 3,
-   "changes_since_last_pull": 3,
-   "oldest_input_min": 0.6
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-04-CFB-BallStateCardinals-UMassMinutemen",
@@ -453,7 +453,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-04-CFB-ToledoRockets-SacramentoStateHornets",
@@ -471,7 +471,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-04-CFB-CentralMichiganChippewas-EasternMichiganEagles",
@@ -489,7 +489,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-05-NFL-JAX-BAL",
@@ -498,10 +498,10 @@
    "start": "Thu Nov 5, 8:15 PM ET",
    "start_et": "2026-11-05T20:15-05:00",
    "status": "scheduled",
-   "importance": 17.5,
+   "importance": 13.5,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
-    "5 change(s) since the last pull, latest: BAL no-vig win prob 0.5809 → 0.2184",
+    "9 change(s) in the last 24 h, latest: BAL no-vig win prob 0.5809 → 0.2184",
     "Boolin extreme disagreement with market: Win probability (home): market 0.2184 vs Boolin 0.3837; Spread (BAL): market 8.5 vs Boolin 4.0; Total: market 43.5 vs Boolin 46.6. Model confidence: high.",
     "Major spread movement: BAL spread moved -3 to +8.5 since Boolin first saw it (2 observations)."
    ],
@@ -511,8 +511,8 @@
    "disagreement": "extreme disagreement",
    "alerts": 1,
    "changes": 10,
-   "changes_since_last_pull": 5,
-   "oldest_input_min": 0.6
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-08-NFL-CIN-ATL",
@@ -521,9 +521,9 @@
    "start": "Sun Nov 8, 9:30 AM ET",
    "start_et": "2026-11-08T09:30-05:00",
    "status": "scheduled",
-   "importance": 7.5,
+   "importance": 4.5,
    "reasons": [
-    "3 change(s) since the last pull, latest: ATL ML (FanDuel) 142 → 150",
+    "6 change(s) in the last 24 h, latest: ATL ML (FanDuel) 142 → 150",
     "Major total movement: Total moved 49.5 to 51."
    ],
    "research_status": "watch",
@@ -532,8 +532,8 @@
    "disagreement": "mild disagreement",
    "alerts": 0,
    "changes": 6,
-   "changes_since_last_pull": 3,
-   "oldest_input_min": 0.6
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-08-NFL-CLE-NO",
@@ -553,7 +553,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-08-NFL-DAL-IND",
@@ -573,7 +573,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-08-NFL-DEN-CAR",
@@ -582,10 +582,10 @@
    "start": "Sun Nov 8, 1:00 PM ET",
    "start_et": "2026-11-08T13:00-05:00",
    "status": "scheduled",
-   "importance": 11.5,
+   "importance": 8.5,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
-    "3 change(s) since the last pull, latest: Boolin projected total 45.0 → 45.7",
+    "3 change(s) in the last 24 h, latest: Boolin projected total 45.0 → 45.7",
     "Boolin extreme disagreement with market: Win probability (home): market 0.427 vs Boolin 0.5514; Spread (CAR): market 3.0 vs Boolin -1.8. Model confidence: high."
    ],
    "research_status": "review required",
@@ -594,8 +594,8 @@
    "disagreement": "extreme disagreement",
    "alerts": 1,
    "changes": 3,
-   "changes_since_last_pull": 3,
-   "oldest_input_min": 0.6
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-08-NFL-DET-MIA",
@@ -604,10 +604,10 @@
    "start": "Sun Nov 8, 1:00 PM ET",
    "start_et": "2026-11-08T13:00-05:00",
    "status": "scheduled",
-   "importance": 10.0,
+   "importance": 9.0,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
-    "1 change(s) since the last pull, latest: Boolin projected spread MIA +4.0 → MIA +4.1",
+    "4 change(s) in the last 24 h, latest: Boolin projected spread MIA +4.0 → MIA +4.1",
     "Boolin extreme disagreement with market: Win probability (home): market 0.2674 vs Boolin 0.3809; Spread (MIA): market 7.5 vs Boolin 4.1. Model confidence: high."
    ],
    "research_status": "review required",
@@ -616,8 +616,8 @@
    "disagreement": "extreme disagreement",
    "alerts": 1,
    "changes": 4,
-   "changes_since_last_pull": 1,
-   "oldest_input_min": 0.6
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-08-NFL-LA-WAS",
@@ -626,10 +626,10 @@
    "start": "Sun Nov 8, 1:00 PM ET",
    "start_et": "2026-11-08T13:00-05:00",
    "status": "scheduled",
-   "importance": 11.0,
+   "importance": 8.0,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
-    "3 change(s) since the last pull, latest: Boolin projected total 46.5 → 45.4",
+    "3 change(s) in the last 24 h, latest: Boolin projected total 46.5 → 45.4",
     "Boolin extreme disagreement with market: Win probability (home): market 0.3188 vs Boolin 0.435; Spread (WAS): market 5.5 vs Boolin 2.2. Model confidence: high."
    ],
    "research_status": "review required",
@@ -638,8 +638,8 @@
    "disagreement": "extreme disagreement",
    "alerts": 1,
    "changes": 3,
-   "changes_since_last_pull": 3,
-   "oldest_input_min": 0.6
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-08-NFL-NYG-PHI",
@@ -648,9 +648,9 @@
    "start": "Sun Nov 8, 1:00 PM ET",
    "start_et": "2026-11-08T13:00-05:00",
    "status": "scheduled",
-   "importance": 9.0,
+   "importance": 5.0,
    "reasons": [
-    "4 change(s) since the last pull, latest: Boolin projected total 46.4 → 46.1",
+    "4 change(s) in the last 24 h, latest: Boolin projected total 46.4 → 46.1",
     "Boolin significant disagreement with market: Win probability (home): market 0.413 vs Boolin 0.3569; Total: market 40.5 vs Boolin 46.1. Model confidence: high."
    ],
    "research_status": "watch",
@@ -659,8 +659,8 @@
    "disagreement": "significant disagreement",
    "alerts": 0,
    "changes": 4,
-   "changes_since_last_pull": 4,
-   "oldest_input_min": 0.6
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-08-NFL-NYJ-KC",
@@ -669,10 +669,10 @@
    "start": "Sun Nov 8, 1:00 PM ET",
    "start_et": "2026-11-08T13:00-05:00",
    "status": "scheduled",
-   "importance": 11.25,
+   "importance": 9.25,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
-    "2 change(s) since the last pull, latest: Boolin projected total 47.6 → 48.1",
+    "5 change(s) in the last 24 h, latest: Boolin projected total 47.6 → 48.1",
     "Boolin extreme disagreement with market: Win probability (home): market 0.7871 vs Boolin 0.6616; Spread (KC): market -10.0 vs Boolin -5.7. Model confidence: high."
    ],
    "research_status": "review required",
@@ -681,8 +681,8 @@
    "disagreement": "extreme disagreement",
    "alerts": 1,
    "changes": 5,
-   "changes_since_last_pull": 2,
-   "oldest_input_min": 0.6
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-08-NFL-HOU-LAC",
@@ -691,9 +691,9 @@
    "start": "Sun Nov 8, 4:05 PM ET",
    "start_et": "2026-11-08T16:05-05:00",
    "status": "scheduled",
-   "importance": 4.5,
+   "importance": 1.5,
    "reasons": [
-    "3 change(s) since the last pull, latest: Boolin projected total 43.5 → 42.9"
+    "3 change(s) in the last 24 h, latest: Boolin projected total 43.5 → 42.9"
    ],
    "research_status": "watch",
    "review_required": false,
@@ -701,8 +701,8 @@
    "disagreement": "mild disagreement",
    "alerts": 0,
    "changes": 3,
-   "changes_since_last_pull": 3,
-   "oldest_input_min": 0.6
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-08-NFL-LV-SF",
@@ -722,7 +722,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-08-NFL-ARI-SEA",
@@ -745,7 +745,7 @@
    "alerts": 1,
    "changes": 2,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-08-NFL-GB-NE",
@@ -754,9 +754,9 @@
    "start": "Sun Nov 8, 4:25 PM ET",
    "start_et": "2026-11-08T16:25-05:00",
    "status": "scheduled",
-   "importance": 2.75,
+   "importance": 0.75,
    "reasons": [
-    "2 change(s) since the last pull, latest: Boolin projected spread NE -2.0 → NE -2.5"
+    "2 change(s) in the last 24 h, latest: Boolin projected spread NE -2.0 → NE -2.5"
    ],
    "research_status": "pass",
    "review_required": false,
@@ -764,8 +764,8 @@
    "disagreement": "aligned",
    "alerts": 0,
    "changes": 2,
-   "changes_since_last_pull": 2,
-   "oldest_input_min": 0.6
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-08-NFL-TB-CHI",
@@ -786,7 +786,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6
+   "oldest_input_min": 1.0
   },
   {
    "key": "2026-11-09-NFL-BUF-MIN",
@@ -804,12 +804,12 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 0.6
+   "oldest_input_min": 1.0
   }
  ],
  "review_required": [
-  "2026-11-02-NFL-CHI-SEA",
   "2026-11-02-NHL-DET-FLA",
+  "2026-11-02-NFL-CHI-SEA",
   "2026-11-02-NHL-CGY-SJS"
  ],
  "ranking_note": "Ranked by research importance (flags, changes, model/market split), not by bet confidence. REVIEW REQUIRED = a strong model/market split the validation evidence doesn't back yet.",
@@ -834,9 +834,9 @@
    "validation_status": "validated: calibration off",
    "recommendation": "PROMISING BUT UNCALIBRATED",
    "lean_allowed": false,
-   "sample_size": 186,
+   "sample_size": 188,
    "primary_evidence": "live_archive holdout (games after 2026-10-05)",
-   "market_comparison": "no detectable difference in Brier (t=0.3)"
+   "market_comparison": "no detectable difference in Brier (t=0.4)"
   },
   "MLB": {
    "model_version": "baseline-0.1",

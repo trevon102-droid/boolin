@@ -433,36 +433,36 @@
    },
    "holdout": {
     "boolin_margin": {
-     "n": 55,
-     "mae": 10.211,
-     "rmse": 13.356,
-     "mean_error": -1.576,
-     "median_error": -2.27,
-     "directional_accuracy": 0.5741
+     "n": 56,
+     "mae": 10.222,
+     "rmse": 13.315,
+     "mean_error": -1.355,
+     "median_error": -2.07,
+     "directional_accuracy": 0.5818
     },
     "same_games": {
-     "n": 27,
+     "n": 28,
      "boolin": {
-      "n": 27,
-      "mae": 10.634,
-      "rmse": 14.118,
-      "mean_error": 1.673,
-      "median_error": -0.91
+      "n": 28,
+      "mae": 10.641,
+      "rmse": 14.014,
+      "mean_error": 2.001,
+      "median_error": -0.1
      },
      "market_implied": {
-      "n": 27,
-      "mae": 10.222,
-      "rmse": 12.688,
-      "mean_error": 1.593,
-      "median_error": -0.5,
-      "directional_accuracy": 0.6538
+      "n": 28,
+      "mae": 10.25,
+      "rmse": 12.631,
+      "mean_error": 1.929,
+      "median_error": 0.0,
+      "directional_accuracy": 0.6667
      },
      "abs_error_paired": {
-      "n": 27,
-      "mean_diff": 0.41185,
-      "se": 0.6447,
-      "t": 0.64,
-      "verdict": "too few games to tell (n=27)",
+      "n": 28,
+      "mean_diff": 0.39143,
+      "se": 0.62159,
+      "t": 0.63,
+      "verdict": "too few games to tell (n=28)",
       "note": "mean of Boolin minus market per-game margin abs error; negative favours Boolin"
      }
     },
@@ -502,36 +502,36 @@
    },
    "all": {
     "boolin_margin": {
-     "n": 56,
-     "mae": 10.485,
-     "rmse": 13.67,
-     "mean_error": -2.005,
-     "median_error": -2.59,
-     "directional_accuracy": 0.5636
+     "n": 57,
+     "mae": 10.491,
+     "rmse": 13.625,
+     "mean_error": -1.779,
+     "median_error": -2.27,
+     "directional_accuracy": 0.5714
     },
     "same_games": {
-     "n": 28,
+     "n": 29,
      "boolin": {
-      "n": 28,
-      "mae": 11.167,
-      "rmse": 14.681,
-      "mean_error": 0.701,
-      "median_error": -1.22
+      "n": 29,
+      "mae": 11.156,
+      "rmse": 14.565,
+      "mean_error": 1.05,
+      "median_error": -0.91
      },
      "market_implied": {
-      "n": 28,
-      "mae": 10.661,
-      "rmse": 13.165,
-      "mean_error": 0.732,
-      "median_error": -1.5,
-      "directional_accuracy": 0.6296
+      "n": 29,
+      "mae": 10.672,
+      "rmse": 13.096,
+      "mean_error": 1.086,
+      "median_error": -0.5,
+      "directional_accuracy": 0.6429
      },
      "abs_error_paired": {
-      "n": 28,
-      "mean_diff": 0.50643,
-      "se": 0.62841,
-      "t": 0.81,
-      "verdict": "too few games to tell (n=28)",
+      "n": 29,
+      "mean_diff": 0.48345,
+      "se": 0.60679,
+      "t": 0.8,
+      "verdict": "too few games to tell (n=29)",
       "note": "mean of Boolin minus market per-game margin abs error; negative favours Boolin"
      }
     },
@@ -586,23 +586,23 @@
    },
    "holdout": {
     "boolin_margin": {
-     "n": 186,
-     "mae": 2.069,
-     "rmse": 2.488,
+     "n": 188,
+     "mae": 2.082,
+     "rmse": 2.498,
      "mean_error": 0.037,
      "median_error": 0.294,
-     "directional_accuracy": 0.629
+     "directional_accuracy": 0.6223
     },
     "market": "not applicable: puck/run lines are fixed at +/-1.5, so the market's margin estimate isn't stored; Boolin's margin is checked against results only"
    },
    "all": {
     "boolin_margin": {
-     "n": 221,
-     "mae": 2.103,
-     "rmse": 2.535,
-     "mean_error": 0.12,
+     "n": 223,
+     "mae": 2.114,
+     "rmse": 2.543,
+     "mean_error": 0.119,
      "median_error": 0.398,
-     "directional_accuracy": 0.629
+     "directional_accuracy": 0.6233
     },
     "market": "not applicable: puck/run lines are fixed at +/-1.5, so the market's margin estimate isn't stored; Boolin's margin is checked against results only"
    }
