@@ -19510,7 +19510,7 @@
      {
       "hypothesis": "missing player-level information",
       "verdict": "inconclusive",
-      "evidence": "2 of 9 extremes (22%) vs 7% of all games; extreme rate 100% in this context vs 27% outside (x3.7)"
+      "evidence": "2 of 9 extremes (22%) vs 10% of all games; extreme rate 67% in this context vs 27% outside (x2.5)"
      },
      {
       "hypothesis": "systematic model bias",
@@ -19867,7 +19867,7 @@
      {
       "hypothesis": "missing player-level information",
       "verdict": "inconclusive",
-      "evidence": "2 of 10 extremes (20%) vs 7% of all games; extreme rate 100% in this context vs 30% outside (x3.4)"
+      "evidence": "2 of 10 extremes (20%) vs 10% of all games; extreme rate 67% in this context vs 30% outside (x2.2)"
      },
      {
       "hypothesis": "systematic model bias",
@@ -20114,24 +20114,24 @@
     "groups": [
      {
       "group": "all extreme disagreements",
-      "n": 3,
-      "boolin_brier": 0.1654,
-      "market_brier": 0.187,
+      "n": 5,
+      "boolin_brier": 0.1858,
+      "market_brier": 0.2441,
       "brier_paired": {
-       "n": 3,
-       "mean_diff": -0.02158,
-       "se": 0.06357,
-       "t": -0.34,
-       "verdict": "too few games to tell (n=3)",
+       "n": 5,
+       "mean_diff": -0.05832,
+       "se": 0.04146,
+       "t": -1.41,
+       "verdict": "too few games to tell (n=5)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.6667,
-      "boolin_side_market_implied": 0.5125,
-      "boolin_side_boolin_implied": 0.6248,
-      "boolin_side_z_vs_market": 0.54,
-      "boolin_beat_market_rate": 0.6667,
-      "boolin_pick_win_rate": 0.6667,
-      "market_favorite_win_rate": 1.0,
+      "boolin_side_actual_rate": 0.8,
+      "boolin_side_market_implied": 0.4784,
+      "boolin_side_boolin_implied": 0.5899,
+      "boolin_side_z_vs_market": 1.46,
+      "boolin_beat_market_rate": 0.8,
+      "boolin_pick_win_rate": 0.6,
+      "market_favorite_win_rate": 0.6,
       "interpretable": false
      },
      {
@@ -20140,24 +20140,24 @@
      },
      {
       "group": "medium confidence",
-      "n": 3,
-      "boolin_brier": 0.1654,
-      "market_brier": 0.187,
+      "n": 5,
+      "boolin_brier": 0.1858,
+      "market_brier": 0.2441,
       "brier_paired": {
-       "n": 3,
-       "mean_diff": -0.02158,
-       "se": 0.06357,
-       "t": -0.34,
-       "verdict": "too few games to tell (n=3)",
+       "n": 5,
+       "mean_diff": -0.05832,
+       "se": 0.04146,
+       "t": -1.41,
+       "verdict": "too few games to tell (n=5)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.6667,
-      "boolin_side_market_implied": 0.5125,
-      "boolin_side_boolin_implied": 0.6248,
-      "boolin_side_z_vs_market": 0.54,
-      "boolin_beat_market_rate": 0.6667,
-      "boolin_pick_win_rate": 0.6667,
-      "market_favorite_win_rate": 1.0,
+      "boolin_side_actual_rate": 0.8,
+      "boolin_side_market_implied": 0.4784,
+      "boolin_side_boolin_implied": 0.5899,
+      "boolin_side_z_vs_market": 1.46,
+      "boolin_beat_market_rate": 0.8,
+      "boolin_pick_win_rate": 0.6,
+      "market_favorite_win_rate": 0.6,
       "interpretable": false
      },
      {
@@ -20188,7 +20188,25 @@
      },
      {
       "group": "normal samples",
-      "n": 0
+      "n": 2,
+      "boolin_brier": 0.2164,
+      "market_brier": 0.3298,
+      "brier_paired": {
+       "n": 2,
+       "mean_diff": -0.11345,
+       "se": 0.00149,
+       "t": -76.24,
+       "verdict": "too few games to tell (n=2)",
+       "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
+      },
+      "boolin_side_actual_rate": 1.0,
+      "boolin_side_market_implied": 0.4273,
+      "boolin_side_boolin_implied": 0.5376,
+      "boolin_side_z_vs_market": 1.64,
+      "boolin_beat_market_rate": 1.0,
+      "boolin_pick_win_rate": 0.5,
+      "market_favorite_win_rate": 0.0,
+      "interpretable": false
      },
      {
       "group": "injury / player uncertainty",
@@ -20256,33 +20274,71 @@
       "starter_unconfirmed": true,
       "data_health": "degraded",
       "model_version": "baseline-0.1"
+     },
+     {
+      "key": "2026-11-02-NHL-DET-FLA",
+      "date": "2026-11-02",
+      "reasons": [
+       "win probability -10.2 pp"
+      ],
+      "boolin_win_p": 0.513,
+      "market_win_p": 0.6149,
+      "boolin_pick_won": false,
+      "market_favorite_won": false,
+      "boolin_beat_market": true,
+      "model_confidence": "medium",
+      "sample": 14,
+      "unresolved_injuries": false,
+      "qb_change": null,
+      "starter_unconfirmed": true,
+      "data_health": "degraded",
+      "model_version": "baseline-0.1"
+     },
+     {
+      "key": "2026-11-02-NHL-CGY-SJS",
+      "date": "2026-11-02",
+      "reasons": [
+       "win probability -11.9 pp"
+      ],
+      "boolin_win_p": 0.4118,
+      "market_win_p": 0.5306,
+      "boolin_pick_won": true,
+      "market_favorite_won": false,
+      "boolin_beat_market": true,
+      "model_confidence": "medium",
+      "sample": 14,
+      "unresolved_injuries": false,
+      "qb_change": null,
+      "starter_unconfirmed": true,
+      "data_health": "degraded",
+      "model_version": "baseline-0.1"
      }
     ],
     "hypotheses": [
      {
       "hypothesis": "useful contrarian signal",
       "verdict": "inconclusive",
-      "evidence": "n=3; Boolin side won 0.6667 vs market-implied 0.5125 (Boolin said 0.6248); too few games to tell (n=3)"
+      "evidence": "n=5; Boolin side won 0.8 vs market-implied 0.4784 (Boolin said 0.5899); too few games to tell (n=5)"
      },
      {
       "hypothesis": "early-season / small-sample instability",
       "verdict": "inconclusive",
-      "evidence": "3 of 3 extremes; not enough games to compare"
+      "evidence": "3 of 5 extremes (60%) vs 75% of all games; extreme rate 11% in this context vs 22% outside (x0.5)"
      },
      {
       "hypothesis": "stale or incomplete data",
       "verdict": "inconclusive",
-      "evidence": "3 of 3 extremes; not enough games to compare"
+      "evidence": "5 of 5 extremes; not enough games to compare"
      },
      {
       "hypothesis": "missing player-level information",
       "verdict": "inconclusive",
-      "evidence": "0 of 3 extremes; not enough games to compare"
+      "evidence": "0 of 5 extremes; not enough games to compare"
      },
      {
       "hypothesis": "systematic model bias",
       "verdict": "inconclusive",
-      "evidence": "n=3 extremes"
+      "evidence": "n=5 extremes"
      }
     ]
    },
@@ -20298,24 +20354,24 @@
     "groups": [
      {
       "group": "all extreme disagreements",
-      "n": 8,
-      "boolin_brier": 0.1985,
-      "market_brier": 0.2254,
+      "n": 10,
+      "boolin_brier": 0.202,
+      "market_brier": 0.2463,
       "brier_paired": {
-       "n": 8,
-       "mean_diff": -0.02691,
-       "se": 0.03997,
-       "t": -0.67,
-       "verdict": "too few games to tell (n=8)",
+       "n": 10,
+       "mean_diff": -0.04422,
+       "se": 0.03357,
+       "t": -1.32,
+       "verdict": "too few games to tell (n=10)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.625,
-      "boolin_side_market_implied": 0.4724,
-      "boolin_side_boolin_implied": 0.5915,
-      "boolin_side_z_vs_market": 0.87,
-      "boolin_beat_market_rate": 0.625,
-      "boolin_pick_win_rate": 0.75,
-      "market_favorite_win_rate": 0.625,
+      "boolin_side_actual_rate": 0.7,
+      "boolin_side_market_implied": 0.4634,
+      "boolin_side_boolin_implied": 0.5807,
+      "boolin_side_z_vs_market": 1.51,
+      "boolin_beat_market_rate": 0.7,
+      "boolin_pick_win_rate": 0.7,
+      "market_favorite_win_rate": 0.5,
       "interpretable": false
      },
      {
@@ -20324,24 +20380,24 @@
      },
      {
       "group": "medium confidence",
-      "n": 8,
-      "boolin_brier": 0.1985,
-      "market_brier": 0.2254,
+      "n": 10,
+      "boolin_brier": 0.202,
+      "market_brier": 0.2463,
       "brier_paired": {
-       "n": 8,
-       "mean_diff": -0.02691,
-       "se": 0.03997,
-       "t": -0.67,
-       "verdict": "too few games to tell (n=8)",
+       "n": 10,
+       "mean_diff": -0.04422,
+       "se": 0.03357,
+       "t": -1.32,
+       "verdict": "too few games to tell (n=10)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.625,
-      "boolin_side_market_implied": 0.4724,
-      "boolin_side_boolin_implied": 0.5915,
-      "boolin_side_z_vs_market": 0.87,
-      "boolin_beat_market_rate": 0.625,
-      "boolin_pick_win_rate": 0.75,
-      "market_favorite_win_rate": 0.625,
+      "boolin_side_actual_rate": 0.7,
+      "boolin_side_market_implied": 0.4634,
+      "boolin_side_boolin_implied": 0.5807,
+      "boolin_side_z_vs_market": 1.51,
+      "boolin_beat_market_rate": 0.7,
+      "boolin_pick_win_rate": 0.7,
+      "market_favorite_win_rate": 0.5,
       "interpretable": false
      },
      {
@@ -20372,7 +20428,25 @@
      },
      {
       "group": "normal samples",
-      "n": 0
+      "n": 2,
+      "boolin_brier": 0.2164,
+      "market_brier": 0.3298,
+      "brier_paired": {
+       "n": 2,
+       "mean_diff": -0.11345,
+       "se": 0.00149,
+       "t": -76.24,
+       "verdict": "too few games to tell (n=2)",
+       "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
+      },
+      "boolin_side_actual_rate": 1.0,
+      "boolin_side_market_implied": 0.4273,
+      "boolin_side_boolin_implied": 0.5376,
+      "boolin_side_z_vs_market": 1.64,
+      "boolin_beat_market_rate": 1.0,
+      "boolin_pick_win_rate": 0.5,
+      "market_favorite_win_rate": 0.0,
+      "interpretable": false
      },
      {
       "group": "injury / player uncertainty",
@@ -20535,33 +20609,71 @@
       "starter_unconfirmed": true,
       "data_health": "degraded",
       "model_version": "baseline-0.1"
+     },
+     {
+      "key": "2026-11-02-NHL-DET-FLA",
+      "date": "2026-11-02",
+      "reasons": [
+       "win probability -10.2 pp"
+      ],
+      "boolin_win_p": 0.513,
+      "market_win_p": 0.6149,
+      "boolin_pick_won": false,
+      "market_favorite_won": false,
+      "boolin_beat_market": true,
+      "model_confidence": "medium",
+      "sample": 14,
+      "unresolved_injuries": false,
+      "qb_change": null,
+      "starter_unconfirmed": true,
+      "data_health": "degraded",
+      "model_version": "baseline-0.1"
+     },
+     {
+      "key": "2026-11-02-NHL-CGY-SJS",
+      "date": "2026-11-02",
+      "reasons": [
+       "win probability -11.9 pp"
+      ],
+      "boolin_win_p": 0.4118,
+      "market_win_p": 0.5306,
+      "boolin_pick_won": true,
+      "market_favorite_won": false,
+      "boolin_beat_market": true,
+      "model_confidence": "medium",
+      "sample": 14,
+      "unresolved_injuries": false,
+      "qb_change": null,
+      "starter_unconfirmed": true,
+      "data_health": "degraded",
+      "model_version": "baseline-0.1"
      }
     ],
     "hypotheses": [
      {
       "hypothesis": "useful contrarian signal",
       "verdict": "inconclusive",
-      "evidence": "n=8; Boolin side won 0.625 vs market-implied 0.4724 (Boolin said 0.5915); too few games to tell (n=8)"
+      "evidence": "n=10; Boolin side won 0.7 vs market-implied 0.4634 (Boolin said 0.5807); too few games to tell (n=10)"
      },
      {
       "hypothesis": "early-season / small-sample instability",
       "verdict": "inconclusive",
-      "evidence": "8 of 8 extremes; not enough games to compare"
+      "evidence": "8 of 10 extremes (80%) vs 87% of all games; extreme rate 13% in this context vs 22% outside (x0.6)"
      },
      {
       "hypothesis": "stale or incomplete data",
       "verdict": "inconclusive",
-      "evidence": "3 of 8 extremes (38%) vs 52% of all games; extreme rate 9% in this context vs 16% outside (x0.5)"
+      "evidence": "5 of 10 extremes (50%) vs 55% of all games; extreme rate 13% in this context vs 16% outside (x0.8)"
      },
      {
       "hypothesis": "missing player-level information",
       "verdict": "inconclusive",
-      "evidence": "0 of 8 extremes; not enough games to compare"
+      "evidence": "0 of 10 extremes; not enough games to compare"
      },
      {
       "hypothesis": "systematic model bias",
       "verdict": "inconclusive",
-      "evidence": "n=8 extremes"
+      "evidence": "n=10 extremes"
      }
     ]
    }
