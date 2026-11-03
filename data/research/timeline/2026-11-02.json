@@ -93,6 +93,33 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "downgrade"
+  },
+  {
+   "t": "2026-11-02T22:00-05:00",
+   "game_key": "2026-11-02-NHL-DET-FLA",
+   "type": "starter",
+   "field": "FLA starter",
+   "old": "Akira Schmid (projected)",
+   "new": "Jacob Markstrom (projected)",
+   "source": "NHL API goalie usage",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-02T22:00-05:00",
+   "game_key": "2026-11-02-NHL-DET-FLA",
+   "type": "model",
+   "field": "Boolin FLA win probability",
+   "old": 0.513,
+   "new": 0.5203,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 51.3% to 52.0% (home margin +0.08 \u2192 +0.12). Projection changed after these updates, but the stored data does not identify a single confirmed cause.",
+   "detail": {
+    "text": "Boolin moved from 51.3% to 52.0% (home margin +0.08 \u2192 +0.12). Projection changed after these updates, but the stored data does not identify a single confirmed cause.",
+    "components": [],
+    "same_pull_updates": [
+     "FLA starter: Akira Schmid (projected) \u2192 Jacob Markstrom (projected)"
+    ]
+   }
   }
  ],
  "2026-11-02-NHL-COL-CHI": [
@@ -117,6 +144,19 @@
    "source": "ESPN injury list",
    "cause": "Change detected; cause not confirmed.",
    "direction": "upgrade"
+  }
+ ],
+ "2026-11-02-NHL-CGY-SJS": [
+  {
+   "t": "2026-11-02T22:00-05:00",
+   "game_key": "2026-11-02-NHL-CGY-SJS",
+   "type": "injury_status",
+   "field": "Brennan Othmann (CGY)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
   }
  ]
 }

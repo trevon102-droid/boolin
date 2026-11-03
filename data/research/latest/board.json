@@ -1,66 +1,20 @@
 {
  "slate_date": "2026-11-02",
- "built_at": "2026-11-02T18:11-05:00",
+ "built_at": "2026-11-02T22:00-05:00",
  "games": 20,
  "attention": [
-  {
-   "key": "2026-11-02-NHL-DET-FLA",
-   "league": "NHL",
-   "matchup": "DET @ FLA",
-   "start": "Mon Nov 2, 7:10 PM ET",
-   "start_et": "2026-11-02T19:10-05:00",
-   "status": "scheduled",
-   "importance": 16.25,
-   "reasons": [
-    "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (PROMISING BUT UNCALIBRATED). Interesting disagreement, not a validated edge.",
-    "2 change(s) since the last pull, latest: Albert Johansson (DET) Day-To-Day → Out",
-    "Boolin extreme disagreement with market: Win probability (home): market 0.6149 vs Boolin 0.513. Model confidence: medium.",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
-   ],
-   "research_status": "review required",
-   "review_required": true,
-   "validation": "PROMISING BUT UNCALIBRATED",
-   "disagreement": "extreme disagreement",
-   "alerts": 1,
-   "changes": 2,
-   "changes_since_last_pull": 2,
-   "oldest_input_min": 525.8
-  },
-  {
-   "key": "2026-11-02-NHL-COL-CHI",
-   "league": "NHL",
-   "matchup": "COL @ CHI",
-   "start": "Mon Nov 2, 8:10 PM ET",
-   "start_et": "2026-11-02T20:10-05:00",
-   "status": "scheduled",
-   "importance": 12.75,
-   "reasons": [
-    "2 change(s) since the last pull, latest: Logan O'Connor (COL) Day-To-Day → not listed",
-    "Boolin significant disagreement with market: Win probability (home): market 0.3194 vs Boolin 0.2205; Total: market 6.0 vs Boolin 7.31. Model confidence: medium.",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since.",
-    "COL starting goalie not confirmed: Mackenzie Blackwood is projected (most starts this season; not confirmed), not officially confirmed."
-   ],
-   "research_status": "watch",
-   "review_required": false,
-   "validation": "PROMISING BUT UNCALIBRATED",
-   "disagreement": "significant disagreement",
-   "alerts": 0,
-   "changes": 2,
-   "changes_since_last_pull": 2,
-   "oldest_input_min": 525.8
-  },
   {
    "key": "2026-11-02-NHL-CGY-SJS",
    "league": "NHL",
    "matchup": "CGY @ SJS",
    "start": "Mon Nov 2, 9:10 PM ET",
    "start_et": "2026-11-02T21:10-05:00",
-   "status": "scheduled",
-   "importance": 11.75,
+   "status": "started",
+   "importance": 13.0,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (PROMISING BUT UNCALIBRATED). Interesting disagreement, not a validated edge.",
+    "1 change(s) since the last pull, latest: Brennan Othmann (CGY) Day-To-Day → Out",
     "Boolin extreme disagreement with market: Win probability (home): market 0.5306 vs Boolin 0.4118. Model confidence: medium.",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since.",
     "CGY starting goalie not confirmed: Devin Cooley is projected (most starts this season; not confirmed), not officially confirmed."
    ],
    "research_status": "review required",
@@ -68,9 +22,55 @@
    "validation": "PROMISING BUT UNCALIBRATED",
    "disagreement": "extreme disagreement",
    "alerts": 1,
-   "changes": 0,
+   "changes": 1,
+   "changes_since_last_pull": 1,
+   "oldest_input_min": 754.4
+  },
+  {
+   "key": "2026-11-02-NHL-DET-FLA",
+   "league": "NHL",
+   "matchup": "DET @ FLA",
+   "start": "Mon Nov 2, 7:10 PM ET",
+   "start_et": "2026-11-02T19:10-05:00",
+   "status": "started",
+   "importance": 11.75,
+   "reasons": [
+    "2 change(s) since the last pull, latest: Boolin FLA win probability 0.513 → 0.5203",
+    "Boolin significant disagreement with market: Win probability (home): market 0.6149 vs Boolin 0.5203. Model confidence: medium.",
+    "DET starting goalie not confirmed: John Gibson is projected (most starts this season; not confirmed), not officially confirmed.",
+    "FLA starting goalie not confirmed: Jacob Markstrom is projected (most starts this season; not confirmed), not officially confirmed."
+   ],
+   "research_status": "watch",
+   "review_required": false,
+   "validation": "PROMISING BUT UNCALIBRATED",
+   "disagreement": "significant disagreement",
+   "alerts": 0,
+   "changes": 4,
+   "changes_since_last_pull": 2,
+   "oldest_input_min": 754.4
+  },
+  {
+   "key": "2026-11-02-NHL-COL-CHI",
+   "league": "NHL",
+   "matchup": "COL @ CHI",
+   "start": "Mon Nov 2, 8:10 PM ET",
+   "start_et": "2026-11-02T20:10-05:00",
+   "status": "started",
+   "importance": 9.25,
+   "reasons": [
+    "2 change(s) in the last 24 h, latest: Logan O'Connor (COL) Day-To-Day → not listed",
+    "Boolin significant disagreement with market: Win probability (home): market 0.3194 vs Boolin 0.2205; Total: market 6.0 vs Boolin 7.31. Model confidence: medium.",
+    "COL starting goalie not confirmed: Mackenzie Blackwood is projected (most starts this season; not confirmed), not officially confirmed.",
+    "CHI starting goalie not confirmed: Spencer Knight is projected (most starts this season; not confirmed), not officially confirmed."
+   ],
+   "research_status": "watch",
+   "review_required": false,
+   "validation": "PROMISING BUT UNCALIBRATED",
+   "disagreement": "significant disagreement",
+   "alerts": 0,
+   "changes": 2,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-02-NFL-CHI-SEA",
@@ -78,13 +78,13 @@
    "matchup": "CHI @ SEA",
    "start": "Mon Nov 2, 8:20 PM ET",
    "start_et": "2026-11-02T20:20-05:00",
-   "status": "scheduled",
-   "importance": 8.75,
+   "status": "started",
+   "importance": 7.25,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED); unresolved key player: Drew Lock (SEA, QB) Questionable. Interesting disagreement, not a validated edge.",
     "3 change(s) in the last 24 h, latest: SEA ML (FanDuel) -174 → -178",
     "Boolin significant disagreement with market: Win probability (home): market 0.6071 vs Boolin 0.5155; Spread (SEA): market -3.5 vs Boolin -0.5. Model confidence: high.",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Drew Lock (SEA) status unresolved: Listed Questionable (NFL injury report week 8); final status not confirmed."
    ],
    "research_status": "review required",
    "review_required": true,
@@ -93,7 +93,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-02-NHL-VGK-BOS",
@@ -101,10 +101,9 @@
    "matchup": "VGK @ BOS",
    "start": "Mon Nov 2, 7:10 PM ET",
    "start_et": "2026-11-02T19:10-05:00",
-   "status": "scheduled",
-   "importance": 5.0,
+   "status": "started",
+   "importance": 3.5,
    "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since.",
     "VGK starting goalie not confirmed: Carter Hart is projected (most starts this season; not confirmed), not officially confirmed.",
     "BOS starting goalie not confirmed: Jeremy Swayman is projected (most starts this season; not confirmed), not officially confirmed."
    ],
@@ -115,157 +114,10 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   }
  ],
  "stable": [
-  {
-   "key": "2026-11-02-NBA-OklahomaCityThunder-ClevelandCavaliers",
-   "league": "NBA",
-   "matchup": "Oklahoma City Thunder @ Cleveland Cavaliers",
-   "start": "Mon Nov 2, 7:10 PM ET",
-   "start_et": "2026-11-02T19:10-05:00",
-   "status": "scheduled",
-   "importance": 2.0,
-   "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
-  },
-  {
-   "key": "2026-11-02-NBA-AtlantaHawks-IndianaPacers",
-   "league": "NBA",
-   "matchup": "Atlanta Hawks @ Indiana Pacers",
-   "start": "Mon Nov 2, 7:40 PM ET",
-   "start_et": "2026-11-02T19:40-05:00",
-   "status": "scheduled",
-   "importance": 2.0,
-   "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
-  },
-  {
-   "key": "2026-11-02-NBA-BrooklynNets-NewYorkKnicks",
-   "league": "NBA",
-   "matchup": "Brooklyn Nets @ New York Knicks",
-   "start": "Mon Nov 2, 7:40 PM ET",
-   "start_et": "2026-11-02T19:40-05:00",
-   "status": "scheduled",
-   "importance": 2.0,
-   "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
-  },
-  {
-   "key": "2026-11-02-NBA-ChicagoBulls-Philadelphia76ers",
-   "league": "NBA",
-   "matchup": "Chicago Bulls @ Philadelphia 76ers",
-   "start": "Mon Nov 2, 7:40 PM ET",
-   "start_et": "2026-11-02T19:40-05:00",
-   "status": "scheduled",
-   "importance": 2.0,
-   "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
-  },
-  {
-   "key": "2026-11-02-NBA-DetroitPistons-CharlotteHornets",
-   "league": "NBA",
-   "matchup": "Detroit Pistons @ Charlotte Hornets",
-   "start": "Mon Nov 2, 7:40 PM ET",
-   "start_et": "2026-11-02T19:40-05:00",
-   "status": "scheduled",
-   "importance": 2.0,
-   "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
-  },
-  {
-   "key": "2026-11-02-NBA-NewOrleansPelicans-MemphisGrizzlies",
-   "league": "NBA",
-   "matchup": "New Orleans Pelicans @ Memphis Grizzlies",
-   "start": "Mon Nov 2, 8:10 PM ET",
-   "start_et": "2026-11-02T20:10-05:00",
-   "status": "scheduled",
-   "importance": 2.0,
-   "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
-  },
-  {
-   "key": "2026-11-02-NBA-SacramentoKings-DallasMavericks",
-   "league": "NBA",
-   "matchup": "Sacramento Kings @ Dallas Mavericks",
-   "start": "Mon Nov 2, 8:10 PM ET",
-   "start_et": "2026-11-02T20:10-05:00",
-   "status": "scheduled",
-   "importance": 2.0,
-   "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
-  },
   {
    "key": "2026-11-02-NBA-PhoenixSuns-GoldenStateWarriors",
    "league": "NBA",
@@ -275,7 +127,7 @@
    "status": "scheduled",
    "importance": 2.0,
    "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -284,7 +136,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
+   "oldest_input_min": 754.4,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -296,7 +148,7 @@
    "status": "scheduled",
    "importance": 2.0,
    "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -305,70 +157,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
-  },
-  {
-   "key": "2026-11-02-NBA-BostonCeltics-HoustonRockets",
-   "league": "NBA",
-   "matchup": "Boston Celtics @ Houston Rockets",
-   "start": "Mon Nov 2, 8:40 PM ET",
-   "start_et": "2026-11-02T20:40-05:00",
-   "status": "scheduled",
-   "importance": 1.75,
-   "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
-  },
-  {
-   "key": "2026-11-02-NBA-UtahJazz-SanAntonioSpurs",
-   "league": "NBA",
-   "matchup": "Utah Jazz @ San Antonio Spurs",
-   "start": "Mon Nov 2, 8:40 PM ET",
-   "start_et": "2026-11-02T20:40-05:00",
-   "status": "scheduled",
-   "importance": 1.75,
-   "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
-   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
-  },
-  {
-   "key": "2026-11-02-NBA-PortlandTrailBlazers-DenverNuggets",
-   "league": "NBA",
-   "matchup": "Portland Trail Blazers @ Denver Nuggets",
-   "start": "Mon Nov 2, 9:10 PM ET",
-   "start_et": "2026-11-02T21:10-05:00",
-   "status": "scheduled",
-   "importance": 1.75,
-   "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
-   ],
-   "research_status": "insufficient information",
-   "review_required": false,
-   "validation": null,
-   "disagreement": null,
-   "alerts": 0,
-   "changes": 0,
-   "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
+   "oldest_input_min": 754.4,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -380,7 +169,7 @@
    "status": "scheduled",
    "importance": 1.75,
    "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -389,7 +178,197 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
+   "oldest_input_min": 754.4,
+   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
+  },
+  {
+   "key": "2026-11-02-NBA-OklahomaCityThunder-ClevelandCavaliers",
+   "league": "NBA",
+   "matchup": "Oklahoma City Thunder @ Cleveland Cavaliers",
+   "start": "Mon Nov 2, 7:10 PM ET",
+   "start_et": "2026-11-02T19:10-05:00",
+   "status": "started",
+   "importance": 0.5,
+   "reasons": [],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 754.4,
+   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
+  },
+  {
+   "key": "2026-11-02-NBA-AtlantaHawks-IndianaPacers",
+   "league": "NBA",
+   "matchup": "Atlanta Hawks @ Indiana Pacers",
+   "start": "Mon Nov 2, 7:40 PM ET",
+   "start_et": "2026-11-02T19:40-05:00",
+   "status": "started",
+   "importance": 0.5,
+   "reasons": [],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 754.4,
+   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
+  },
+  {
+   "key": "2026-11-02-NBA-BrooklynNets-NewYorkKnicks",
+   "league": "NBA",
+   "matchup": "Brooklyn Nets @ New York Knicks",
+   "start": "Mon Nov 2, 7:40 PM ET",
+   "start_et": "2026-11-02T19:40-05:00",
+   "status": "started",
+   "importance": 0.5,
+   "reasons": [],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 754.4,
+   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
+  },
+  {
+   "key": "2026-11-02-NBA-ChicagoBulls-Philadelphia76ers",
+   "league": "NBA",
+   "matchup": "Chicago Bulls @ Philadelphia 76ers",
+   "start": "Mon Nov 2, 7:40 PM ET",
+   "start_et": "2026-11-02T19:40-05:00",
+   "status": "started",
+   "importance": 0.5,
+   "reasons": [],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 754.4,
+   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
+  },
+  {
+   "key": "2026-11-02-NBA-DetroitPistons-CharlotteHornets",
+   "league": "NBA",
+   "matchup": "Detroit Pistons @ Charlotte Hornets",
+   "start": "Mon Nov 2, 7:40 PM ET",
+   "start_et": "2026-11-02T19:40-05:00",
+   "status": "started",
+   "importance": 0.5,
+   "reasons": [],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 754.4,
+   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
+  },
+  {
+   "key": "2026-11-02-NBA-NewOrleansPelicans-MemphisGrizzlies",
+   "league": "NBA",
+   "matchup": "New Orleans Pelicans @ Memphis Grizzlies",
+   "start": "Mon Nov 2, 8:10 PM ET",
+   "start_et": "2026-11-02T20:10-05:00",
+   "status": "started",
+   "importance": 0.5,
+   "reasons": [],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 754.4,
+   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
+  },
+  {
+   "key": "2026-11-02-NBA-SacramentoKings-DallasMavericks",
+   "league": "NBA",
+   "matchup": "Sacramento Kings @ Dallas Mavericks",
+   "start": "Mon Nov 2, 8:10 PM ET",
+   "start_et": "2026-11-02T20:10-05:00",
+   "status": "started",
+   "importance": 0.5,
+   "reasons": [],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 754.4,
+   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
+  },
+  {
+   "key": "2026-11-02-NBA-BostonCeltics-HoustonRockets",
+   "league": "NBA",
+   "matchup": "Boston Celtics @ Houston Rockets",
+   "start": "Mon Nov 2, 8:40 PM ET",
+   "start_et": "2026-11-02T20:40-05:00",
+   "status": "started",
+   "importance": 0.25,
+   "reasons": [],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 754.4,
+   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
+  },
+  {
+   "key": "2026-11-02-NBA-UtahJazz-SanAntonioSpurs",
+   "league": "NBA",
+   "matchup": "Utah Jazz @ San Antonio Spurs",
+   "start": "Mon Nov 2, 8:40 PM ET",
+   "start_et": "2026-11-02T20:40-05:00",
+   "status": "started",
+   "importance": 0.25,
+   "reasons": [],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 754.4,
+   "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
+  },
+  {
+   "key": "2026-11-02-NBA-PortlandTrailBlazers-DenverNuggets",
+   "league": "NBA",
+   "matchup": "Portland Trail Blazers @ Denver Nuggets",
+   "start": "Mon Nov 2, 9:10 PM ET",
+   "start_et": "2026-11-02T21:10-05:00",
+   "status": "started",
+   "importance": 0.25,
+   "reasons": [],
+   "research_status": "insufficient information",
+   "review_required": false,
+   "validation": null,
+   "disagreement": null,
+   "alerts": 0,
+   "changes": 0,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 754.4,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -398,11 +377,9 @@
    "matchup": "Washington Wizards @ Orlando Magic",
    "start": "Mon Nov 2, 7:40 PM ET",
    "start_et": "2026-11-02T19:40-05:00",
-   "status": "scheduled",
-   "importance": 1.5,
-   "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
-   ],
+   "status": "started",
+   "importance": 0.0,
+   "reasons": [],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -410,7 +387,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
+   "oldest_input_min": 754.4,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   },
   {
@@ -419,11 +396,9 @@
    "matchup": "Milwaukee Bucks @ Minnesota Timberwolves",
    "start": "Mon Nov 2, 8:10 PM ET",
    "start_et": "2026-11-02T20:10-05:00",
-   "status": "scheduled",
-   "importance": 1.5,
-   "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
-   ],
+   "status": "started",
+   "importance": 0.0,
+   "reasons": [],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": null,
@@ -431,7 +406,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8,
+   "oldest_input_min": 754.4,
    "why_stable": "No meaningful market or availability change, no strong model/market split, inputs fresh."
   }
  ],
@@ -447,7 +422,7 @@
    "reasons": [
     "4 change(s) in the last 24 h, latest: Akron Zips ML (FanDuel) 390 → 450",
     "Major total movement: Total moved 48.5 to 51.",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -456,7 +431,7 @@
    "alerts": 0,
    "changes": 4,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-03-CFB-BuffaloBulls-MiamiOHRedHawks",
@@ -468,7 +443,7 @@
    "importance": 2.5,
    "reasons": [
     "3 change(s) in the last 24 h, latest: Miami (OH) RedHawks ML (FanDuel) -220 → -250",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -477,7 +452,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-04-CFB-BallStateCardinals-UMassMinutemen",
@@ -488,7 +463,7 @@
    "status": "scheduled",
    "importance": 1.75,
    "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -497,7 +472,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-04-CFB-ToledoRockets-SacramentoStateHornets",
@@ -508,7 +483,7 @@
    "status": "scheduled",
    "importance": 2.0,
    "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -517,7 +492,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-04-CFB-CentralMichiganChippewas-EasternMichiganEagles",
@@ -528,7 +503,7 @@
    "status": "scheduled",
    "importance": 1.75,
    "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -537,7 +512,7 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-05-NFL-JAX-BAL",
@@ -546,10 +521,10 @@
    "start": "Thu Nov 5, 8:15 PM ET",
    "start_et": "2026-11-05T20:15-05:00",
    "status": "scheduled",
-   "importance": 15.0,
+   "importance": 14.75,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
-    "9 change(s) in the last 24 h, latest: BAL no-vig win prob 0.5809 → 0.2184",
+    "5 change(s) in the last 24 h, latest: BAL no-vig win prob 0.5809 → 0.2184",
     "Boolin extreme disagreement with market: Win probability (home): market 0.2184 vs Boolin 0.3837; Spread (BAL): market 8.5 vs Boolin 4.0; Total: market 43.5 vs Boolin 46.6. Model confidence: high.",
     "Major spread movement: BAL spread moved -3 to +8.5 since Boolin first saw it (2 observations)."
    ],
@@ -558,9 +533,9 @@
    "validation": "CALIBRATION NEEDED",
    "disagreement": "extreme disagreement",
    "alerts": 1,
-   "changes": 9,
+   "changes": 5,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-08-NFL-CIN-ATL",
@@ -569,20 +544,20 @@
    "start": "Sun Nov 8, 9:30 AM ET",
    "start_et": "2026-11-08T09:30-05:00",
    "status": "scheduled",
-   "importance": 6.0,
+   "importance": 5.25,
    "reasons": [
-    "6 change(s) in the last 24 h, latest: ATL ML (FanDuel) 142 → 150",
+    "3 change(s) in the last 24 h, latest: ATL ML (FanDuel) 142 → 150",
     "Major total movement: Total moved 49.5 to 51.",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
    "validation": "CALIBRATION NEEDED",
    "disagreement": "mild disagreement",
    "alerts": 0,
-   "changes": 6,
+   "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-08-NFL-CLE-NO",
@@ -591,19 +566,18 @@
    "start": "Sun Nov 8, 1:00 PM ET",
    "start_et": "2026-11-08T13:00-05:00",
    "status": "scheduled",
-   "importance": 3.0,
+   "importance": 2.25,
    "reasons": [
-    "3 change(s) in the last 24 h, latest: Boolin projected total 45.1 → 44.9",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
    "validation": "CALIBRATION NEEDED",
    "disagreement": "mild disagreement",
    "alerts": 0,
-   "changes": 3,
+   "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-08-NFL-DAL-IND",
@@ -612,19 +586,18 @@
    "start": "Sun Nov 8, 1:00 PM ET",
    "start_et": "2026-11-08T13:00-05:00",
    "status": "scheduled",
-   "importance": 3.25,
+   "importance": 2.5,
    "reasons": [
-    "3 change(s) in the last 24 h, latest: Boolin projected total 49.0 → 48.3",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
    "validation": "CALIBRATION NEEDED",
    "disagreement": null,
    "alerts": 0,
-   "changes": 3,
+   "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-08-NFL-DEN-CAR",
@@ -638,7 +611,7 @@
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
     "3 change(s) in the last 24 h, latest: Boolin projected total 45.0 → 45.7",
     "Boolin extreme disagreement with market: Win probability (home): market 0.427 vs Boolin 0.5514; Spread (CAR): market 3.0 vs Boolin -1.8. Model confidence: high.",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
@@ -647,7 +620,7 @@
    "alerts": 1,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-08-NFL-DET-MIA",
@@ -656,21 +629,21 @@
    "start": "Sun Nov 8, 1:00 PM ET",
    "start_et": "2026-11-08T13:00-05:00",
    "status": "scheduled",
-   "importance": 10.5,
+   "importance": 9.75,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
-    "4 change(s) in the last 24 h, latest: Boolin projected spread MIA +4.0 → MIA +4.1",
+    "1 change(s) in the last 24 h, latest: Boolin projected spread MIA +4.0 → MIA +4.1",
     "Boolin extreme disagreement with market: Win probability (home): market 0.2674 vs Boolin 0.3809; Spread (MIA): market 7.5 vs Boolin 4.1. Model confidence: high.",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
    "validation": "CALIBRATION NEEDED",
    "disagreement": "extreme disagreement",
    "alerts": 1,
-   "changes": 4,
+   "changes": 1,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-08-NFL-LA-WAS",
@@ -684,7 +657,7 @@
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
     "3 change(s) in the last 24 h, latest: Boolin projected total 46.5 → 45.4",
     "Boolin extreme disagreement with market: Win probability (home): market 0.3188 vs Boolin 0.435; Spread (WAS): market 5.5 vs Boolin 2.2. Model confidence: high.",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
@@ -693,7 +666,7 @@
    "alerts": 1,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-08-NFL-NYG-PHI",
@@ -706,7 +679,7 @@
    "reasons": [
     "4 change(s) in the last 24 h, latest: Boolin projected total 46.4 → 46.1",
     "Boolin significant disagreement with market: Win probability (home): market 0.413 vs Boolin 0.3569; Total: market 40.5 vs Boolin 46.1. Model confidence: high.",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
@@ -715,7 +688,7 @@
    "alerts": 0,
    "changes": 4,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-08-NFL-NYJ-KC",
@@ -724,21 +697,21 @@
    "start": "Sun Nov 8, 1:00 PM ET",
    "start_et": "2026-11-08T13:00-05:00",
    "status": "scheduled",
-   "importance": 10.75,
+   "importance": 10.0,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED). Interesting disagreement, not a validated edge.",
-    "5 change(s) in the last 24 h, latest: Boolin projected total 47.6 → 48.1",
+    "2 change(s) in the last 24 h, latest: Boolin projected total 47.6 → 48.1",
     "Boolin extreme disagreement with market: Win probability (home): market 0.7871 vs Boolin 0.6616; Spread (KC): market -10.0 vs Boolin -5.7. Model confidence: high.",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
    "validation": "CALIBRATION NEEDED",
    "disagreement": "extreme disagreement",
    "alerts": 1,
-   "changes": 5,
+   "changes": 2,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-08-NFL-HOU-LAC",
@@ -750,7 +723,7 @@
    "importance": 3.0,
    "reasons": [
     "3 change(s) in the last 24 h, latest: Boolin projected total 43.5 → 42.9",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
@@ -759,7 +732,7 @@
    "alerts": 0,
    "changes": 3,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-08-NFL-LV-SF",
@@ -768,19 +741,18 @@
    "start": "Sun Nov 8, 4:05 PM ET",
    "start_et": "2026-11-08T16:05-05:00",
    "status": "scheduled",
-   "importance": 3.25,
+   "importance": 2.5,
    "reasons": [
-    "3 change(s) in the last 24 h, latest: Boolin projected total 47.9 → 48.7",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
    "validation": "CALIBRATION NEEDED",
    "disagreement": "mild disagreement",
    "alerts": 0,
-   "changes": 3,
+   "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-08-NFL-ARI-SEA",
@@ -789,21 +761,21 @@
    "start": "Sun Nov 8, 4:25 PM ET",
    "start_et": "2026-11-08T16:25-05:00",
    "status": "scheduled",
-   "importance": 12.25,
+   "importance": 10.75,
    "reasons": [
     "REVIEW REQUIRED: model needs_calibration; validation: validated: calibration off (CALIBRATION NEEDED); unresolved key player: Drew Lock (SEA, QB) Questionable. Interesting disagreement, not a validated edge.",
-    "1 change(s) since the last pull, latest: ARI starter Jacoby Brissett (projected) → Gardner Minshew (projected)",
+    "1 change(s) in the last 24 h, latest: ARI starter Jacoby Brissett (projected) → Gardner Minshew (projected)",
     "Boolin extreme disagreement with market: Win probability (home): market 0.8429 vs Boolin 0.6396; Spread (SEA): market -11.5 vs Boolin -4.9. Model confidence: high.",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "review required",
    "review_required": true,
    "validation": "CALIBRATION NEEDED",
    "disagreement": "extreme disagreement",
    "alerts": 1,
-   "changes": 3,
-   "changes_since_last_pull": 1,
-   "oldest_input_min": 525.8
+   "changes": 1,
+   "changes_since_last_pull": 0,
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-08-NFL-GB-NE",
@@ -815,7 +787,7 @@
    "importance": 2.25,
    "reasons": [
     "2 change(s) in the last 24 h, latest: Boolin projected spread NE -2.0 → NE -2.5",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "pass",
    "review_required": false,
@@ -824,7 +796,7 @@
    "alerts": 0,
    "changes": 2,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-08-NFL-TB-CHI",
@@ -833,20 +805,19 @@
    "start": "Sun Nov 8, 8:20 PM ET",
    "start_et": "2026-11-08T20:20-05:00",
    "status": "scheduled",
-   "importance": 6.25,
+   "importance": 5.5,
    "reasons": [
-    "3 change(s) in the last 24 h, latest: Boolin projected total 43.5 → 42.6",
     "Boolin significant disagreement with market: Win probability (home): market 0.6978 vs Boolin 0.6221; Total: market 47.0 vs Boolin 42.6. Model confidence: high.",
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "watch",
    "review_required": false,
    "validation": "CALIBRATION NEEDED",
    "disagreement": "significant disagreement",
    "alerts": 0,
-   "changes": 3,
+   "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   },
   {
    "key": "2026-11-09-NFL-BUF-MIN",
@@ -857,7 +828,7 @@
    "status": "scheduled",
    "importance": 2.25,
    "reasons": [
-    "Stale odds: Odds are 8.8 h old; prices may have moved since."
+    "Stale odds: Odds are 13 h old; prices may have moved since."
    ],
    "research_status": "insufficient information",
    "review_required": false,
@@ -866,11 +837,10 @@
    "alerts": 0,
    "changes": 0,
    "changes_since_last_pull": 0,
-   "oldest_input_min": 525.8
+   "oldest_input_min": 754.4
   }
  ],
  "review_required": [
-  "2026-11-02-NHL-DET-FLA",
   "2026-11-02-NHL-CGY-SJS",
   "2026-11-02-NFL-CHI-SEA"
  ],
