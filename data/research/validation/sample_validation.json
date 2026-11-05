@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-11-03",
+ "data_cutoff": "2026-11-04",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -986,15 +986,15 @@
      },
      {
       "group": "11-20 GP",
-      "n": 61,
-      "brier": 0.2225,
-      "log_loss": 0.6364,
-      "favorite_overconfidence": -0.0226,
-      "market_brier_same_games": 0.2412,
-      "boolin_minus_market_brier": -0.00089,
-      "vs_market": "too few games to tell (n=20)",
-      "margin_mae": 1.961,
-      "share_extreme": 0.15,
+      "n": 65,
+      "brier": 0.2192,
+      "log_loss": 0.6295,
+      "favorite_overconfidence": -0.046,
+      "market_brier_same_games": 0.2322,
+      "boolin_minus_market_brier": -0.00392,
+      "vs_market": "too few games to tell (n=24)",
+      "margin_mae": 1.942,
+      "share_extreme": 0.125,
       "interpretable": true
      },
      {
@@ -1024,7 +1024,7 @@
       "interpretable": false
      }
     ],
-    "verdict": "No material small-sample penalty relative to the market (4-10 GP -0.0435 vs 11-20 GP -0.0009)."
+    "verdict": "No material small-sample penalty relative to the market (4-10 GP -0.0435 vs 11-20 GP -0.0039)."
    },
    "all": {
     "metric": "fewer team GP this season (5v5 xG)",
@@ -1070,15 +1070,15 @@
      },
      {
       "group": "11-20 GP",
-      "n": 61,
-      "brier": 0.2225,
-      "log_loss": 0.6364,
-      "favorite_overconfidence": -0.0226,
-      "market_brier_same_games": 0.2412,
-      "boolin_minus_market_brier": -0.00089,
-      "vs_market": "too few games to tell (n=20)",
-      "margin_mae": 1.961,
-      "share_extreme": 0.15,
+      "n": 65,
+      "brier": 0.2192,
+      "log_loss": 0.6295,
+      "favorite_overconfidence": -0.046,
+      "market_brier_same_games": 0.2322,
+      "boolin_minus_market_brier": -0.00392,
+      "vs_market": "too few games to tell (n=24)",
+      "margin_mae": 1.942,
+      "share_extreme": 0.125,
       "interpretable": true
      },
      {
@@ -1108,7 +1108,7 @@
       "interpretable": false
      }
     ],
-    "verdict": "No material small-sample penalty relative to the market (1-3 GP +0.0063 vs 11-20 GP -0.0009)."
+    "verdict": "Model is materially worse relative to the market with small samples (1-3 GP: +0.0063 Brier vs market; 11-20 GP: -0.0039)."
    }
   }
  },

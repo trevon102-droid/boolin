@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-11-03",
+ "data_cutoff": "2026-11-04",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -75,53 +75,53 @@
  "NHL": {
   "model_version": "baseline-0.1",
   "validation_version": "validation-1.0",
-  "data_cutoff": "2026-11-03",
+  "data_cutoff": "2026-11-04",
   "primary_evidence": "live_archive holdout (games after 2026-10-05)",
-  "sample_size": 203,
+  "sample_size": 207,
   "development_size": 35,
-  "brier": 0.23,
-  "market_brier": 0.235,
-  "log_loss": 0.6515,
-  "market_log_loss": 0.6614,
-  "accuracy": 0.6158,
-  "calibration_error": 0.0488,
-  "favorite_overconfidence": -0.0104,
-  "market_comparison": "no detectable difference in Brier (t=0.0)",
-  "spread_mae": 2.045,
+  "brier": 0.2288,
+  "market_brier": 0.2313,
+  "log_loss": 0.649,
+  "market_log_loss": 0.6537,
+  "accuracy": 0.6232,
+  "calibration_error": 0.0436,
+  "favorite_overconfidence": -0.018,
+  "market_comparison": "no detectable difference in Brier (t=-0.1)",
+  "spread_mae": 2.037,
   "market_spread_mae": null,
   "confidence_validated": null,
   "calibration_status": "needs_calibration",
   "validation_status": "validated: calibration off",
   "recommendation": "PROMISING BUT UNCALIBRATED",
   "reasons": [
-   "holdout calibration error 0.0488, favourite overconfidence -0.0104 (needs <= 0.025 / +-0.02 with n >= 300)",
-   "holdout vs market: no detectable difference in Brier (t=0.0)"
+   "holdout calibration error 0.0436, favourite overconfidence -0.018 (needs <= 0.025 / +-0.02 with n >= 300)",
+   "holdout vs market: no detectable difference in Brier (t=-0.1)"
   ],
   "lean_allowed": false,
   "live_archive": {
-   "n": 82,
-   "holdout": 203,
+   "n": 86,
+   "holdout": 207,
    "older_version_rows": 0,
    "boolin": {
-    "brier": 0.2302,
-    "log_loss": 0.6508,
-    "accuracy": 0.561,
-    "calibration_error": 0.072,
-    "favorite_overconfidence": 0.0388
+    "brier": 0.2273,
+    "log_loss": 0.6449,
+    "accuracy": 0.5814,
+    "calibration_error": 0.0655,
+    "favorite_overconfidence": 0.0182
    },
    "market": {
-    "brier": 0.2324,
-    "log_loss": 0.656,
-    "accuracy": 0.5375,
-    "calibration_error": 0.1447,
-    "favorite_overconfidence": 0.045
+    "brier": 0.2303,
+    "log_loss": 0.6517,
+    "accuracy": 0.5476,
+    "calibration_error": 0.1488,
+    "favorite_overconfidence": 0.0357
    },
    "brier_paired": {
-    "n": 82,
-    "mean_diff": -0.00218,
-    "se": 0.00705,
-    "t": -0.31,
-    "verdict": "no detectable difference in Brier (t=-0.3)",
+    "n": 86,
+    "mean_diff": -0.00296,
+    "se": 0.00679,
+    "t": -0.44,
+    "verdict": "no detectable difference in Brier (t=-0.4)",
     "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
    }
   },

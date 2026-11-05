@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-11-03",
+ "data_cutoff": "2026-11-04",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -383,80 +383,80 @@
    },
    "holdout": {
     "boolin_total": {
-     "n": 203,
-     "mae": 1.772,
-     "rmse": 2.159,
-     "mean_error": -0.22,
+     "n": 207,
+     "mae": 1.792,
+     "rmse": 2.175,
+     "mean_error": -0.23,
      "median_error": -0.2
     },
     "same_games": {
-     "n": 47,
+     "n": 51,
      "boolin": {
-      "n": 47,
-      "mae": 1.667,
-      "rmse": 1.972,
-      "mean_error": -0.113,
+      "n": 51,
+      "mae": 1.755,
+      "rmse": 2.06,
+      "mean_error": -0.162,
       "median_error": -0.31
      },
      "market_line": {
-      "n": 47,
-      "mae": 1.777,
-      "rmse": 2.085,
-      "mean_error": 0.457,
+      "n": 51,
+      "mae": 1.863,
+      "rmse": 2.163,
+      "mean_error": 0.392,
       "median_error": 0.5
      },
      "abs_error_paired": {
-      "n": 47,
-      "mean_diff": -0.10979,
-      "se": 0.08953,
-      "t": -1.23,
-      "verdict": "no detectable difference in total abs error (t=-1.2)",
+      "n": 51,
+      "mean_diff": -0.10765,
+      "se": 0.08534,
+      "t": -1.26,
+      "verdict": "no detectable difference in total abs error (t=-1.3)",
       "note": "mean of Boolin minus market per-game total abs error; negative favours Boolin"
      }
     },
     "directional_accuracy_vs_line": {
-     "n": 28,
-     "rate": 0.6786,
+     "n": 30,
+     "rate": 0.6667,
      "note": "games where Boolin's total was >= 0.5 off the line, pushes left out"
     },
     "status": "Totals are not validated as an edge; they stay out of the overall model-vs-market label."
    },
    "all": {
     "boolin_total": {
-     "n": 238,
-     "mae": 1.763,
-     "rmse": 2.184,
-     "mean_error": -0.277,
+     "n": 242,
+     "mae": 1.78,
+     "rmse": 2.198,
+     "mean_error": -0.285,
      "median_error": -0.38
     },
     "same_games": {
-     "n": 82,
+     "n": 86,
      "boolin": {
-      "n": 82,
-      "mae": 1.684,
-      "rmse": 2.13,
-      "mean_error": -0.324,
+      "n": 86,
+      "mae": 1.735,
+      "rmse": 2.172,
+      "mean_error": -0.343,
       "median_error": -0.675
      },
      "market_line": {
-      "n": 82,
-      "mae": 1.707,
-      "rmse": 2.203,
-      "mean_error": 0.244,
+      "n": 86,
+      "mae": 1.762,
+      "rmse": 2.242,
+      "mean_error": 0.215,
       "median_error": 0.0
      },
      "abs_error_paired": {
-      "n": 82,
-      "mean_diff": -0.02366,
-      "se": 0.07175,
-      "t": -0.33,
-      "verdict": "no detectable difference in total abs error (t=-0.3)",
+      "n": 86,
+      "mean_diff": -0.0264,
+      "se": 0.06963,
+      "t": -0.38,
+      "verdict": "no detectable difference in total abs error (t=-0.4)",
       "note": "mean of Boolin minus market per-game total abs error; negative favours Boolin"
      }
     },
     "directional_accuracy_vs_line": {
-     "n": 46,
-     "rate": 0.6087,
+     "n": 48,
+     "rate": 0.6042,
      "note": "games where Boolin's total was >= 0.5 off the line, pushes left out"
     },
     "status": "Totals are not validated as an edge; they stay out of the overall model-vs-market label."
