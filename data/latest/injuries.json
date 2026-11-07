@@ -1,76 +1,418 @@
 {
- "pulled_at_et": "2026-11-06T20:02-05:00",
- "date": "2026-11-06",
+ "pulled_at_et": "2026-11-07T14:33-05:00",
+ "date": "2026-11-07",
  "leagues": {
   "NHL": [
    {
-    "game": "CBJ @ BUF",
-    "start_et": "7:00 PM ET",
+    "game": "FLA @ WSH",
+    "start_et": "12:30 PM ET",
     "injuries": {
-     "BUF": [
+     "WSH": [
       {
-       "player": "Konsta Helenius",
+       "player": "Vincent Desharnais",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Abdomen Surgery"
+      },
+      {
+       "player": "Rasmus Sandin",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Knee Surgery"
+      },
+      {
+       "player": "Patrick Thomas",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Upper Body"
+      }
+     ],
+     "FLA": [
+      {
+       "player": "Sandis Vilmanis",
+       "pos": "LW",
+       "status": "Out",
+       "detail": "Undisclosed"
+      },
+      {
+       "player": "Anton Lundell",
        "pos": "C",
        "status": "Out",
+       "detail": "Undisclosed"
+      },
+      {
+       "player": "Brad Marchand",
+       "pos": "LW",
+       "status": "Injured Reserve",
+       "detail": "Knee"
+      },
+      {
+       "player": "Aleksander Barkov",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Knee"
+      },
+      {
+       "player": "Jonah Gadjovich",
+       "pos": "LW",
+       "status": "Injured Reserve",
+       "detail": "Upper Body Surgery"
+      }
+     ]
+    },
+    "espn_projection": null
+   },
+   {
+    "game": "STL @ NSH",
+    "start_et": "1:00 PM ET",
+    "injuries": {
+     "NSH": [],
+     "STL": [
+      {
+       "player": "Logan Mailloux",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Hand Surgery"
+      },
+      {
+       "player": "Torey Krug",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Ankle"
+      },
+      {
+       "player": "Dillon Dube",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Neck Not Specified"
+      },
+      {
+       "player": "Tyler Tucker",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Knee Surgery"
+      }
+     ]
+    },
+    "espn_projection": null
+   },
+   {
+    "game": "NYR @ SEA",
+    "start_et": "5:00 PM ET",
+    "injuries": {
+     "SEA": [
+      {
+       "player": "Curtis Douglas",
+       "pos": "C",
+       "status": "Injured Reserve",
        "detail": "Upper Body"
       },
       {
-       "player": "Justin Danforth",
+       "player": "Jared McCann",
+       "pos": "LW",
+       "status": "Injured Reserve",
+       "detail": "Lower Body"
+      },
+      {
+       "player": "Jacob Melanson",
+       "pos": "RW",
+       "status": "Injured Reserve",
+       "detail": "Chest"
+      },
+      {
+       "player": "Ryan Lindgren",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Upper Body"
+      },
+      {
+       "player": "Jake O'Brien",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Lower Body"
+      }
+     ],
+     "NYR": [
+      {
+       "player": "Sean Durzi",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Undisclosed"
+      },
+      {
+       "player": "Igor Shesterkin",
+       "pos": "G",
+       "status": "Injured Reserve",
+       "detail": "Knee Surgery"
+      },
+      {
+       "player": "Joe Veleno",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Lower Body"
+      },
+      {
+       "player": "Aidan Thompson",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Undisclosed Not Specified"
+      },
+      {
+       "player": "Adam Sykora",
+       "pos": "LW",
+       "status": "Injured Reserve",
+       "detail": "Lower Body"
+      }
+     ]
+    },
+    "espn_projection": null
+   },
+   {
+    "game": "MTL @ TOR",
+    "start_et": "7:00 PM ET",
+    "injuries": {
+     "TOR": [
+      {
+       "player": "Kirill Marchenko",
+       "pos": "RW",
+       "status": "Injured Reserve",
+       "detail": "Lower Body"
+      },
+      {
+       "player": "Miles Wood",
+       "pos": "LW",
+       "status": "Injured Reserve",
+       "detail": "Undisclosed"
+      },
+      {
+       "player": "Nick Blankenburg",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Upper Body"
+      },
+      {
+       "player": "Marshall Rifai",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Lower Body"
+      },
+      {
+       "player": "Max Domi",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Back Surgery"
+      }
+     ],
+     "MTL": [
+      {
+       "player": "Josh Anderson",
+       "pos": "RW",
+       "status": "Out",
+       "detail": "Personal"
+      },
+      {
+       "player": "Ivan Demidov",
+       "pos": "RW",
+       "status": "Injured Reserve",
+       "detail": "Ankle Fracture"
+      },
+      {
+       "player": "Mike Matheson",
+       "pos": "D",
+       "status": "Out",
+       "detail": "Lower Body"
+      },
+      {
+       "player": "Sam Montembeault",
+       "pos": "G",
+       "status": "Injured Reserve",
+       "detail": "Lower Body"
+      },
+      {
+       "player": "Bryce Pickford",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Undisclosed"
+      }
+     ]
+    },
+    "espn_projection": null
+   },
+   {
+    "game": "UTA @ OTT",
+    "start_et": "7:00 PM ET",
+    "injuries": {
+     "OTT": [
+      {
+       "player": "Ridly Greig",
+       "pos": "C",
+       "status": "Out",
+       "detail": "Lower Body"
+      },
+      {
+       "player": "Linus Ullmark",
+       "pos": "G",
+       "status": "Injured Reserve",
+       "detail": "Lower Body Strain"
+      },
+      {
+       "player": "Andre Burakovsky",
+       "pos": "LW",
+       "status": "Injured Reserve",
+       "detail": "Lower Body"
+      },
+      {
+       "player": "Warren Foegele",
+       "pos": "LW",
+       "status": "Injured Reserve",
+       "detail": "Knee"
+      },
+      {
+       "player": "William Eklund",
+       "pos": "LW",
+       "status": "Injured Reserve",
+       "detail": "Ankle"
+      }
+     ],
+     "UTA": [
+      {
+       "player": "Kailer Yamamoto",
        "pos": "RW",
        "status": "Injured Reserve",
        "detail": "Upper Body"
       },
       {
-       "player": "Alex Lyon",
-       "pos": "G",
+       "player": "Nate Schmidt",
+       "pos": "D",
+       "status": "Day-To-Day",
+       "detail": "Upper Body"
+      },
+      {
+       "player": "John Marino",
+       "pos": "D",
        "status": "Injured Reserve",
        "detail": "Upper Body"
       },
       {
-       "player": "Matt Grzelcyk",
+       "player": "Maveric Lamoureux",
        "pos": "D",
        "status": "Injured Reserve",
-       "detail": "Lower Body"
+       "detail": "Shoulder"
       }
-     ],
-     "CBJ": []
+     ]
     },
     "espn_projection": null
    },
    {
-    "game": "SJ @ MIN",
+    "game": "NJ @ NYI",
+    "start_et": "7:00 PM ET",
+    "injuries": {
+     "NYI": [
+      {
+       "player": "Mathew Barzal",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Knee"
+      },
+      {
+       "player": "Ryan Pulock",
+       "pos": "D",
+       "status": "Out",
+       "detail": "Upper Body"
+      },
+      {
+       "player": "Matias Maccelli",
+       "pos": "LW",
+       "status": "Injured Reserve",
+       "detail": "Lower Body"
+      },
+      {
+       "player": "Calum Ritchie",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Lower Body"
+      },
+      {
+       "player": "Alexander Romanov",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Knee Surgery"
+      }
+     ],
+     "NJ": [
+      {
+       "player": "Seamus Casey",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Knee"
+      }
+     ]
+    },
+    "espn_projection": null
+   },
+   {
+    "game": "CHI @ CAR",
     "start_et": "8:00 PM ET",
     "injuries": {
-     "MIN": [
+     "CAR": [
       {
-       "player": "Nick Foligno",
-       "pos": "LW",
+       "player": "Jordan Staal",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Calf"
+      }
+     ],
+     "CHI": [
+      {
+       "player": "Bowen Byram",
+       "pos": "D",
        "status": "Injured Reserve",
        "detail": "Upper Body"
       },
       {
-       "player": "Marcus Foligno",
-       "pos": "LW",
-       "status": "Injured Reserve",
-       "detail": "Lower Body"
+       "player": "Patrick Kane",
+       "pos": "RW",
+       "status": "Out",
+       "detail": "Upper Body"
+      }
+     ]
+    },
+    "espn_projection": null
+   },
+   {
+    "game": "SJ @ DAL",
+    "start_et": "8:00 PM ET",
+    "injuries": {
+     "DAL": [
+      {
+       "player": "Miro Heiskanen",
+       "pos": "D",
+       "status": "Out",
+       "detail": "Upper Body"
       },
       {
-       "player": "Filip Gustavsson",
-       "pos": "G",
-       "status": "Injured Reserve",
-       "detail": "Hip Surgery"
-      },
-      {
-       "player": "Jared Spurgeon",
+       "player": "Kyle Capobianco",
        "pos": "D",
        "status": "Injured Reserve",
-       "detail": "Lower Body"
+       "detail": "Leg"
       },
       {
-       "player": "Brock Faber",
+       "player": "Oskar Back",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Finger Fracture"
+      },
+      {
+       "player": "Matt Duchene",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Abdomen"
+      },
+      {
+       "player": "Luke Krys",
        "pos": "D",
        "status": "Injured Reserve",
-       "detail": "Skull Surgery"
+       "detail": "Undisclosed"
       }
      ],
      "SJ": [
@@ -103,65 +445,224 @@
     "espn_projection": null
    },
    {
-    "game": "ANA @ CGY",
+    "game": "TB @ MIN",
     "start_et": "8:00 PM ET",
     "injuries": {
-     "CGY": [
+     "MIN": [
       {
-       "player": "Kevin Bahl",
-       "pos": "D",
-       "status": "Out",
-       "detail": "Lower Body"
+       "player": "Michael McCarron",
+       "pos": "C",
+       "status": "Day-To-Day",
+       "detail": "Undisclosed"
       },
       {
-       "player": "Jonathan Huberdeau",
-       "pos": "LW",
+       "player": "Filip Gustavsson",
+       "pos": "G",
        "status": "Injured Reserve",
        "detail": "Hip Surgery"
       },
       {
-       "player": "Brennan Othmann",
-       "pos": "LW",
-       "status": "Out",
-       "detail": "Upper Body"
-      },
-      {
-       "player": "Connor Zary",
-       "pos": "C",
-       "status": "Out",
-       "detail": "Knee Surgery"
-      },
-      {
-       "player": "Samuel Honzek",
-       "pos": "LW",
+       "player": "Jared Spurgeon",
+       "pos": "D",
        "status": "Injured Reserve",
        "detail": "Lower Body"
+      },
+      {
+       "player": "Brock Faber",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Skull Surgery"
       }
      ],
-     "ANA": [
+     "TB": [
       {
-       "player": "A.J. Greer",
+       "player": "Yanni Gourde",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Hip Surgery"
+      }
+     ]
+    },
+    "espn_projection": null
+   },
+   {
+    "game": "DET @ COL",
+    "start_et": "9:00 PM ET",
+    "injuries": {
+     "COL": [
+      {
+       "player": "Josh Manson",
+       "pos": "D",
+       "status": "Out",
+       "detail": "Ankle"
+      },
+      {
+       "player": "Zachary L'Heureux",
+       "pos": "LW",
+       "status": "Injured Reserve",
+       "detail": "Upper Body"
+      }
+     ],
+     "DET": [
+      {
+       "player": "Albert Johansson",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Undisclosed Not Specified"
+      },
+      {
+       "player": "John Gibson",
+       "pos": "G",
+       "status": "Day-To-Day",
+       "detail": "Lower Body"
+      },
+      {
+       "player": "Marco Kasper",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Upper Body"
+      },
+      {
+       "player": "Mason Appleton",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Undisclosed Not Specified"
+      },
+      {
+       "player": "Dylan Larkin",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Suspension"
+      }
+     ]
+    },
+    "espn_projection": null
+   },
+   {
+    "game": "PIT @ LA",
+    "start_et": "9:00 PM ET",
+    "injuries": {
+     "LA": [
+      {
+       "player": "Mats Zuccarello",
+       "pos": "RW",
+       "status": "Injured Reserve",
+       "detail": "Upper Body"
+      },
+      {
+       "player": "Kevin Fiala",
+       "pos": "LW",
+       "status": "Injured Reserve",
+       "detail": "Lower Leg Surgery"
+      },
+      {
+       "player": "Jakub Dvorak",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Upper Body"
+      },
+      {
+       "player": "Jan Jenik",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Undisclosed"
+      }
+     ],
+     "PIT": [
+      {
+       "player": "Elmer Soderblom",
        "pos": "LW",
        "status": "Injured Reserve",
        "detail": "Upper Body"
       },
       {
-       "player": "Troy Terry",
+       "player": "Bryan Rust",
        "pos": "RW",
        "status": "Injured Reserve",
-       "detail": "Hip Surgery"
+       "detail": "Lower Body"
       },
       {
-       "player": "Ian Moore",
+       "player": "Trevor van Riemsdyk",
        "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Lower Body"
+      },
+      {
+       "player": "Ryan Graves",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Knee"
+      }
+     ]
+    },
+    "espn_projection": null
+   },
+   {
+    "game": "VAN @ EDM",
+    "start_et": "10:00 PM ET",
+    "injuries": {
+     "EDM": [
+      {
+       "player": "Isaac Howard",
+       "pos": "LW",
+       "status": "Injured Reserve",
+       "detail": "Knee"
+      },
+      {
+       "player": "Alec Regula",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "detail": "Undisclosed"
+      },
+      {
+       "player": "Matt Savoie",
+       "pos": "C",
        "status": "Injured Reserve",
        "detail": "Lower Body Not Specified"
       },
       {
-       "player": "Ryan Poehling",
+       "player": "Frederik Andersen",
+       "pos": "G",
+       "status": "Injured Reserve",
+       "detail": "Knee"
+      },
+      {
+       "player": "Mattias Janmark",
        "pos": "C",
        "status": "Injured Reserve",
+       "detail": "Undisclosed Surgery"
+      }
+     ],
+     "VAN": [
+      {
+       "player": "Tom Willander",
+       "pos": "D",
+       "status": "Day-To-Day",
        "detail": "Lower Body"
+      },
+      {
+       "player": "Filip Chytil",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Upper Body Not Specified"
+      },
+      {
+       "player": "Akil Thomas",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "detail": "Undisclosed"
+      },
+      {
+       "player": "Mackenzie MacEachern",
+       "pos": "LW",
+       "status": "Injured Reserve",
+       "detail": "Undisclosed"
+      },
+      {
+       "player": "Thatcher Demko",
+       "pos": "G",
+       "status": "Injured Reserve",
+       "detail": "Hip Surgery"
       }
      ]
     },
