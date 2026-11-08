@@ -1,0 +1,49 @@
+{
+ "2026-11-08-NFL-CIN-ATL": {
+  "key": "2026-11-08-NFL-CIN-ATL",
+  "league": "NFL",
+  "result": {
+   "home_score": 17.0,
+   "away_score": 34.0,
+   "home_margin": -17.0,
+   "total": 51.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 3.3,
+    "grade": "B+",
+    "brier": 0.1339,
+    "pregame_home_win_p": 0.3659,
+    "margin_error": -12.33,
+    "total_error": 5.6,
+    "market_brier": 0.1532,
+    "beat_market": true
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 3.3,
+   "grade": "B+",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ }
+}
