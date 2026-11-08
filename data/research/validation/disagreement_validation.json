@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-11-05",
+ "data_cutoff": "2026-11-06",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -20400,12 +20400,12 @@
      {
       "hypothesis": "early-season / small-sample instability",
       "verdict": "inconclusive",
-      "evidence": "3 of 6 extremes (50%) vs 44% of all games; extreme rate 11% in this context vs 9% outside (x1.3)"
+      "evidence": "3 of 6 extremes (50%) vs 42% of all games; extreme rate 11% in this context vs 8% outside (x1.4)"
      },
      {
       "hypothesis": "stale or incomplete data",
       "verdict": "inconclusive",
-      "evidence": "5 of 6 extremes (83%) vs 82% of all games; extreme rate 10% in this context vs 9% outside (x1.1)"
+      "evidence": "5 of 6 extremes (83%) vs 83% of all games; extreme rate 9% in this context vs 9% outside (x1.0)"
      },
      {
       "hypothesis": "missing player-level information",
@@ -20772,12 +20772,12 @@
      {
       "hypothesis": "early-season / small-sample instability",
       "verdict": "inconclusive",
-      "evidence": "8 of 11 extremes (73%) vs 64% of all games; extreme rate 13% in this context vs 9% outside (x1.5)"
+      "evidence": "8 of 11 extremes (73%) vs 62% of all games; extreme rate 13% in this context vs 8% outside (x1.6)"
      },
      {
       "hypothesis": "stale or incomplete data",
       "verdict": "inconclusive",
-      "evidence": "5 of 11 extremes (45%) vs 57% of all games; extreme rate 9% in this context vs 14% outside (x0.6)"
+      "evidence": "5 of 11 extremes (45%) vs 58% of all games; extreme rate 9% in this context vs 14% outside (x0.6)"
      },
      {
       "hypothesis": "missing player-level information",

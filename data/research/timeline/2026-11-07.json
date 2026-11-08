@@ -1790,5 +1790,131 @@
    "source": "The Odds API (FanDuel, DraftKings, Pinnacle + others)",
    "cause": "Change detected; cause not confirmed."
   }
+ ],
+ "2026-11-07-NHL-FLA-WSH": [
+  {
+   "t": "2026-11-07T19:51-05:00",
+   "game_key": "2026-11-07-NHL-FLA-WSH",
+   "type": "model",
+   "field": "Boolin WSH win probability",
+   "old": 0.5853,
+   "new": 0.6085,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 58.5% to 60.9% (home margin +0.52 \u2192 +0.66). Model components that moved: 1. Shot quality against (5v5 xGA/gp, blended) +0.09 (home allows 2.12 vs away allows 1.85); 2. Shot quality for (5v5 xGF/gp, blended) +0.05 (home 2.27 vs away 1.88 (league ~1.95)). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 58.5% to 60.9% (home margin +0.52 \u2192 +0.66). Model components that moved: 1. Shot quality against (5v5 xGA/gp, blended) +0.09 (home allows 2.12 vs away allows 1.85); 2. Shot quality for (5v5 xGF/gp, blended) +0.05 (home 2.27 vs away 1.88 (league ~1.95)). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Shot quality against (5v5 xGA/gp, blended)",
+      "margin_change": 0.09,
+      "now": "home allows 2.12 vs away allows 1.85"
+     },
+     {
+      "component": "Shot quality for (5v5 xGF/gp, blended)",
+      "margin_change": 0.051,
+      "now": "home 2.27 vs away 1.88 (league ~1.95)"
+     }
+    ],
+    "same_pull_updates": []
+   }
+  },
+  {
+   "t": "2026-11-07T19:51-05:00",
+   "game_key": "2026-11-07-NHL-FLA-WSH",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "WSH -0.5",
+   "new": "WSH -0.7",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 58.5% to 60.9% (home margin +0.52 \u2192 +0.66). Model components that moved: 1. Shot quality against (5v5 xGA/gp, blended) +0.09 (home allows 2.12 vs away allows 1.85); 2. Shot quality for (5v5 xGF/gp, blended) +0.05 (home 2.27 vs away 1.88 (league ~1.95)). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 58.5% to 60.9% (home margin +0.52 \u2192 +0.66). Model components that moved: 1. Shot quality against (5v5 xGA/gp, blended) +0.09 (home allows 2.12 vs away allows 1.85); 2. Shot quality for (5v5 xGF/gp, blended) +0.05 (home 2.27 vs away 1.88 (league ~1.95)). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Shot quality against (5v5 xGA/gp, blended)",
+      "margin_change": 0.09,
+      "now": "home allows 2.12 vs away allows 1.85"
+     },
+     {
+      "component": "Shot quality for (5v5 xGF/gp, blended)",
+      "margin_change": 0.051,
+      "now": "home 2.27 vs away 1.88 (league ~1.95)"
+     }
+    ],
+    "same_pull_updates": []
+   }
+  }
+ ],
+ "2026-11-07-NHL-NYR-SEA": [
+  {
+   "t": "2026-11-07T19:51-05:00",
+   "game_key": "2026-11-07-NHL-NYR-SEA",
+   "type": "injury_status",
+   "field": "Alberts Smits (NYR)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-11-07T19:51-05:00",
+   "game_key": "2026-11-07-NHL-NYR-SEA",
+   "type": "injury_status",
+   "field": "Adam Sykora (NYR)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  },
+  {
+   "t": "2026-11-07T19:51-05:00",
+   "game_key": "2026-11-07-NHL-NYR-SEA",
+   "type": "injury_status",
+   "field": "Nikke Kokko (SEA)",
+   "old": "not listed",
+   "new": "Injured Reserve",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-11-07T19:51-05:00",
+   "game_key": "2026-11-07-NHL-NYR-SEA",
+   "type": "injury_status",
+   "field": "Jake O'Brien (SEA)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  }
+ ],
+ "2026-11-07-NHL-UTA-OTT": [
+  {
+   "t": "2026-11-07T19:51-05:00",
+   "game_key": "2026-11-07-NHL-UTA-OTT",
+   "type": "injury_status",
+   "field": "Nate Schmidt (UTA)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-11-07-NHL-TBL-MIN": [
+  {
+   "t": "2026-11-07T19:51-05:00",
+   "game_key": "2026-11-07-NHL-TBL-MIN",
+   "type": "injury_status",
+   "field": "Michael McCarron (MIN)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
  ]
 }

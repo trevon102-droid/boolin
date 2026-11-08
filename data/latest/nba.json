@@ -1,22 +1,22 @@
 {
- "pulled_at_et": "2026-11-07T14:32-05:00",
+ "pulled_at_et": "2026-11-07T19:50-05:00",
  "date": "2026-11-07",
  "games": [
   {
    "espn_id": "401909938",
    "name": "DEN VS IND",
    "start_et": "5:00 PM ET",
-   "status": "Scheduled",
-   "completed": false,
-   "away_score": 0.0,
-   "home_score": 0.0,
+   "status": "Final",
+   "completed": true,
+   "away_score": 114.0,
+   "home_score": 102.0,
    "note": "NBA Mexico City Game",
    "away": {
     "id": "7",
     "abbr": "DEN",
     "name": "Denver Nuggets",
-    "score": "0",
-    "record": "4-3",
+    "score": "114",
+    "record": "5-3",
     "rank": null,
     "conference_id": null,
     "team_stats": {
@@ -32,8 +32,8 @@
     "id": "11",
     "abbr": "IND",
     "name": "Indiana Pacers",
-    "score": "0",
-    "record": "3-6",
+    "score": "102",
+    "record": "3-7",
     "rank": null,
     "conference_id": null,
     "team_stats": {
@@ -50,24 +50,14 @@
    "venue": "Arena CDMX",
    "indoor": true,
    "tv": "NBA TV, DAZN IND",
-   "espn_line": {
-    "details": "DEN -8.5",
-    "total": 229.5,
-    "provider": "Draft Kings"
-   },
+   "espn_line": null,
    "injuries": {
     "IND": [
      {
-      "player": "T.J. McConnell",
+      "player": "Tyrese Haliburton",
       "pos": "G",
       "status": "Out",
       "detail": "Hamstring Strain"
-     },
-     {
-      "player": "Kelly Oubre Jr.",
-      "pos": "G",
-      "status": "Day-To-Day",
-      "detail": "Calf Bruise"
      },
      {
       "player": "Johnny Furphy",
@@ -80,21 +70,9 @@
       "pos": "G",
       "status": "Out",
       "detail": "Knee"
-     },
-     {
-      "player": "Tyrese Haliburton",
-      "pos": "G",
-      "status": "Out",
-      "detail": "Hamstring Strain"
      }
     ],
     "DEN": [
-     {
-      "player": "DeMar DeRozan",
-      "pos": "G",
-      "status": "Day-To-Day",
-      "detail": "Back Spasms"
-     },
      {
       "player": "Julian Strawther",
       "pos": "G",
@@ -103,28 +81,11 @@
      }
     ]
    },
-   "espn_projection": {
-    "home_win_pct": "22.9",
-    "away_win_pct": "77.1"
-   },
+   "espn_projection": null,
    "player_logs": {
     "Pascal Siakam": {
      "team": "IND",
      "last10": [
-      {
-       "date": "2026-10-14",
-       "opp": "OKC",
-       "season_type": "2026-27 Preseason",
-       "minutes": "21",
-       "fieldGoalsMade-fieldGoalsAttempted": "2-11",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-4",
-       "totalRebounds": "1",
-       "assists": "4",
-       "blocks": "0",
-       "steals": "0",
-       "turnovers": "2",
-       "points": "6"
-      },
       {
        "date": "2026-10-16",
        "opp": "MIL",
@@ -250,26 +211,26 @@
        "steals": "2",
        "turnovers": "0",
        "points": "20"
+      },
+      {
+       "date": "2026-11-07",
+       "opp": "DEN",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "32",
+       "fieldGoalsMade-fieldGoalsAttempted": "10-18",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-7",
+       "totalRebounds": "2",
+       "assists": "5",
+       "blocks": "0",
+       "steals": "0",
+       "turnovers": "0",
+       "points": "23"
       }
      ]
     },
     "Andrew Nembhard": {
      "team": "IND",
      "last10": [
-      {
-       "date": "2026-10-07",
-       "opp": "MIN",
-       "season_type": "2026-27 Preseason",
-       "minutes": "16",
-       "fieldGoalsMade-fieldGoalsAttempted": "2-5",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
-       "totalRebounds": "1",
-       "assists": "2",
-       "blocks": "0",
-       "steals": "1",
-       "turnovers": "1",
-       "points": "4"
-      },
       {
        "date": "2026-10-10",
        "opp": "ATL",
@@ -395,171 +356,157 @@
        "steals": "1",
        "turnovers": "2",
        "points": "22"
+      },
+      {
+       "date": "2026-11-07",
+       "opp": "DEN",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "31",
+       "fieldGoalsMade-fieldGoalsAttempted": "3-9",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-6",
+       "totalRebounds": "1",
+       "assists": "8",
+       "blocks": "0",
+       "steals": "0",
+       "turnovers": "1",
+       "points": "9"
       }
      ]
     },
-    "Jamal Murray": {
-     "team": "DEN",
+    "Ivica Zubac": {
+     "team": "IND",
      "last10": [
       {
-       "date": "2026-10-12",
-       "opp": "CHI",
+       "date": "2026-10-07",
+       "opp": "MIN",
        "season_type": "2026-27 Preseason",
-       "minutes": "26",
-       "fieldGoalsMade-fieldGoalsAttempted": "4-11",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-5",
+       "minutes": "18",
+       "fieldGoalsMade-fieldGoalsAttempted": "3-7",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
        "totalRebounds": "3",
-       "assists": "5",
-       "blocks": "0",
-       "steals": "0",
-       "turnovers": "2",
-       "points": "13"
-      },
-      {
-       "date": "2026-10-15",
-       "opp": "LAC",
-       "season_type": "2026-27 Preseason",
-       "minutes": "17",
-       "fieldGoalsMade-fieldGoalsAttempted": "6-8",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-3",
-       "totalRebounds": "4",
-       "assists": "1",
-       "blocks": "0",
-       "steals": "0",
-       "turnovers": "0",
-       "points": "14"
-      },
-      {
-       "date": "2026-10-17",
-       "opp": "LAL",
-       "season_type": "2026-27 Preseason",
-       "minutes": "31",
-       "fieldGoalsMade-fieldGoalsAttempted": "8-15",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-3",
-       "totalRebounds": "3",
-       "assists": "6",
+       "assists": "2",
        "blocks": "0",
        "steals": "1",
-       "turnovers": "1",
-       "points": "21"
-      },
-      {
-       "date": "2026-10-23",
-       "opp": "OKC",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "37",
-       "fieldGoalsMade-fieldGoalsAttempted": "2-11",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
-       "totalRebounds": "10",
-       "assists": "3",
-       "blocks": "0",
-       "steals": "1",
-       "turnovers": "6",
+       "turnovers": "3",
        "points": "6"
       },
       {
-       "date": "2026-10-25",
-       "opp": "NO",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "43",
-       "fieldGoalsMade-fieldGoalsAttempted": "12-25",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "8-16",
-       "totalRebounds": "3",
-       "assists": "6",
+       "date": "2026-10-10",
+       "opp": "ATL",
+       "season_type": "2026-27 Preseason",
+       "minutes": "21",
+       "fieldGoalsMade-fieldGoalsAttempted": "4-6",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+       "totalRebounds": "5",
+       "assists": "2",
        "blocks": "1",
        "steals": "1",
-       "turnovers": "0",
-       "points": "42"
+       "turnovers": "1",
+       "points": "11"
       },
       {
-       "date": "2026-10-27",
-       "opp": "GS",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "36",
-       "fieldGoalsMade-fieldGoalsAttempted": "8-13",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-6",
-       "totalRebounds": "6",
-       "assists": "8",
+       "date": "2026-10-14",
+       "opp": "OKC",
+       "season_type": "2026-27 Preseason",
+       "minutes": "18",
+       "fieldGoalsMade-fieldGoalsAttempted": "6-7",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+       "totalRebounds": "13",
+       "assists": "5",
        "blocks": "0",
        "steals": "3",
-       "turnovers": "3",
-       "points": "19"
+       "turnovers": "0",
+       "points": "13"
       },
       {
-       "date": "2026-10-29",
+       "date": "2026-10-16",
+       "opp": "MIL",
+       "season_type": "2026-27 Preseason",
+       "minutes": "20",
+       "fieldGoalsMade-fieldGoalsAttempted": "5-8",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+       "totalRebounds": "11",
+       "assists": "2",
+       "blocks": "1",
+       "steals": "1",
+       "turnovers": "1",
+       "points": "11"
+      },
+      {
+       "date": "2026-10-22",
        "opp": "NO",
        "season_type": "2026-27 Regular Season",
-       "minutes": "38",
-       "fieldGoalsMade-fieldGoalsAttempted": "9-19",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "5-11",
-       "totalRebounds": "1",
-       "assists": "6",
+       "minutes": "34",
+       "fieldGoalsMade-fieldGoalsAttempted": "7-12",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+       "totalRebounds": "15",
+       "assists": "0",
        "blocks": "2",
        "steals": "0",
        "turnovers": "1",
-       "points": "23"
+       "points": "16"
       },
       {
-       "date": "2026-10-31",
-       "opp": "PHX",
+       "date": "2026-10-23",
+       "opp": "DAL",
        "season_type": "2026-27 Regular Season",
-       "minutes": "37",
-       "fieldGoalsMade-fieldGoalsAttempted": "10-18",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "7-9",
-       "totalRebounds": "8",
-       "assists": "5",
+       "minutes": "24",
+       "fieldGoalsMade-fieldGoalsAttempted": "4-7",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+       "totalRebounds": "11",
+       "assists": "2",
        "blocks": "1",
-       "steals": "1",
-       "turnovers": "5",
-       "points": "39"
+       "steals": "0",
+       "turnovers": "3",
+       "points": "9"
       },
       {
-       "date": "2026-11-03",
-       "opp": "POR",
+       "date": "2026-10-25",
+       "opp": "BKN",
        "season_type": "2026-27 Regular Season",
-       "minutes": "39",
-       "fieldGoalsMade-fieldGoalsAttempted": "10-19",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "4-9",
-       "totalRebounds": "5",
-       "assists": "6",
-       "blocks": "1",
-       "steals": "1",
-       "turnovers": "2",
-       "points": "35"
+       "minutes": "7",
+       "fieldGoalsMade-fieldGoalsAttempted": "1-1",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+       "totalRebounds": "1",
+       "assists": "2",
+       "blocks": "0",
+       "steals": "0",
+       "turnovers": "1",
+       "points": "2"
       },
       {
        "date": "2026-11-05",
-       "opp": "TOR",
+       "opp": "MEM",
        "season_type": "2026-27 Regular Season",
-       "minutes": "28",
-       "fieldGoalsMade-fieldGoalsAttempted": "4-11",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-5",
-       "totalRebounds": "5",
-       "assists": "7",
+       "minutes": "19",
+       "fieldGoalsMade-fieldGoalsAttempted": "0-5",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+       "totalRebounds": "4",
+       "assists": "2",
        "blocks": "0",
-       "steals": "1",
-       "turnovers": "3",
-       "points": "14"
+       "steals": "0",
+       "turnovers": "2",
+       "points": "1"
+      },
+      {
+       "date": "2026-11-07",
+       "opp": "DEN",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "19",
+       "fieldGoalsMade-fieldGoalsAttempted": "4-5",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+       "totalRebounds": "12",
+       "assists": "5",
+       "blocks": "0",
+       "steals": "0",
+       "turnovers": "2",
+       "points": "10"
       }
      ]
     },
     "Nikola Jokic": {
      "team": "DEN",
      "last10": [
-      {
-       "date": "2026-10-12",
-       "opp": "CHI",
-       "season_type": "2026-27 Preseason",
-       "minutes": "26",
-       "fieldGoalsMade-fieldGoalsAttempted": "8-12",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-2",
-       "totalRebounds": "11",
-       "assists": "10",
-       "blocks": "1",
-       "steals": "0",
-       "turnovers": "4",
-       "points": "22"
-      },
       {
        "date": "2026-10-15",
        "opp": "LAC",
@@ -685,6 +632,20 @@
        "steals": "3",
        "turnovers": "2",
        "points": "32"
+      },
+      {
+       "date": "2026-11-07",
+       "opp": "IND",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "36",
+       "fieldGoalsMade-fieldGoalsAttempted": "7-20",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-3",
+       "totalRebounds": "13",
+       "assists": "8",
+       "blocks": "1",
+       "steals": "1",
+       "turnovers": "1",
+       "points": "19"
       }
      ]
     }
@@ -694,16 +655,16 @@
    "espn_id": "401909939",
    "name": "BKN @ ATL",
    "start_et": "7:30 PM ET",
-   "status": "Scheduled",
+   "status": "In Progress",
    "completed": false,
-   "away_score": 0.0,
-   "home_score": 0.0,
+   "away_score": 14.0,
+   "home_score": 4.0,
    "note": null,
    "away": {
     "id": "17",
     "abbr": "BKN",
     "name": "Brooklyn Nets",
-    "score": "0",
+    "score": "14",
     "record": "2-6",
     "rank": null,
     "conference_id": null,
@@ -720,7 +681,7 @@
     "id": "1",
     "abbr": "ATL",
     "name": "Atlanta Hawks",
-    "score": "0",
+    "score": "4",
     "record": "6-4",
     "rank": null,
     "conference_id": null,
@@ -738,11 +699,7 @@
    "venue": "State Farm Arena",
    "indoor": true,
    "tv": "DAZN (YES)",
-   "espn_line": {
-    "details": "ATL -7.5",
-    "total": 226.5,
-    "provider": "Draft Kings"
-   },
+   "espn_line": null,
    "injuries": {
     "ATL": [
      {
@@ -764,25 +721,19 @@
       "detail": "Hip"
      },
      {
-      "player": "Jalen Johnson",
-      "pos": "F",
-      "status": "Out",
-      "detail": "Ankle"
-     },
-     {
       "player": "Mouhamed Gueye",
       "pos": "F",
       "status": "Out",
       "detail": "Foot Fracture"
+     },
+     {
+      "player": "Henri Veesaar",
+      "pos": "C",
+      "status": "Out",
+      "detail": "Knee"
      }
     ],
     "BKN": [
-     {
-      "player": "Noah Clowney",
-      "pos": "F",
-      "status": "Day-To-Day",
-      "detail": "Illness"
-     },
      {
       "player": "Day'Ron Sharpe",
       "pos": "C",
@@ -797,156 +748,8 @@
      }
     ]
    },
-   "espn_projection": {
-    "home_win_pct": "76.3",
-    "away_win_pct": "23.7"
-   },
+   "espn_projection": null,
    "player_logs": {
-    "Nickeil Alexander-Walker": {
-     "team": "ATL",
-     "last10": [
-      {
-       "date": "2026-10-21",
-       "opp": "ORL",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "30",
-       "fieldGoalsMade-fieldGoalsAttempted": "8-15",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "5-8",
-       "totalRebounds": "4",
-       "assists": "3",
-       "blocks": "1",
-       "steals": "1",
-       "turnovers": "2",
-       "points": "31"
-      },
-      {
-       "date": "2026-10-23",
-       "opp": "CHA",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "27",
-       "fieldGoalsMade-fieldGoalsAttempted": "5-12",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-7",
-       "totalRebounds": "3",
-       "assists": "5",
-       "blocks": "0",
-       "steals": "2",
-       "turnovers": "2",
-       "points": "14"
-      },
-      {
-       "date": "2026-10-25",
-       "opp": "HOU",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "32",
-       "fieldGoalsMade-fieldGoalsAttempted": "7-16",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "4-12",
-       "totalRebounds": "5",
-       "assists": "4",
-       "blocks": "0",
-       "steals": "3",
-       "turnovers": "1",
-       "points": "18"
-      },
-      {
-       "date": "2026-10-27",
-       "opp": "HOU",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "29",
-       "fieldGoalsMade-fieldGoalsAttempted": "5-13",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-7",
-       "totalRebounds": "2",
-       "assists": "3",
-       "blocks": "0",
-       "steals": "1",
-       "turnovers": "3",
-       "points": "12"
-      },
-      {
-       "date": "2026-10-28",
-       "opp": "MIA",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "32",
-       "fieldGoalsMade-fieldGoalsAttempted": "8-18",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "5-9",
-       "totalRebounds": "3",
-       "assists": "1",
-       "blocks": "0",
-       "steals": "1",
-       "turnovers": "2",
-       "points": "23"
-      },
-      {
-       "date": "2026-10-30",
-       "opp": "CLE",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "31",
-       "fieldGoalsMade-fieldGoalsAttempted": "8-17",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "4-12",
-       "totalRebounds": "3",
-       "assists": "1",
-       "blocks": "1",
-       "steals": "0",
-       "turnovers": "0",
-       "points": "25"
-      },
-      {
-       "date": "2026-10-31",
-       "opp": "NO",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "29",
-       "fieldGoalsMade-fieldGoalsAttempted": "3-12",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-7",
-       "totalRebounds": "2",
-       "assists": "1",
-       "blocks": "0",
-       "steals": "1",
-       "turnovers": "3",
-       "points": "12"
-      },
-      {
-       "date": "2026-11-03",
-       "opp": "IND",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "31",
-       "fieldGoalsMade-fieldGoalsAttempted": "12-25",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "9-15",
-       "totalRebounds": "4",
-       "assists": "4",
-       "blocks": "0",
-       "steals": "4",
-       "turnovers": "4",
-       "points": "34"
-      },
-      {
-       "date": "2026-11-05",
-       "opp": "WSH",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "32",
-       "fieldGoalsMade-fieldGoalsAttempted": "9-20",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "6-14",
-       "totalRebounds": "4",
-       "assists": "2",
-       "blocks": "0",
-       "steals": "0",
-       "turnovers": "3",
-       "points": "26"
-      },
-      {
-       "date": "2026-11-07",
-       "opp": "WSH",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "33",
-       "fieldGoalsMade-fieldGoalsAttempted": "7-20",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "4-12",
-       "totalRebounds": "2",
-       "assists": "2",
-       "blocks": "0",
-       "steals": "2",
-       "turnovers": "3",
-       "points": "28"
-      }
-     ]
-    },
     "Jalen Johnson": {
      "team": "ATL",
      "last10": [
@@ -1089,6 +892,441 @@
        "steals": "0",
        "turnovers": "4",
        "points": "13"
+      }
+     ]
+    },
+    "Dyson Daniels": {
+     "team": "ATL",
+     "last10": [
+      {
+       "date": "2026-10-21",
+       "opp": "ORL",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "35",
+       "fieldGoalsMade-fieldGoalsAttempted": "8-13",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-2",
+       "totalRebounds": "4",
+       "assists": "3",
+       "blocks": "0",
+       "steals": "5",
+       "turnovers": "2",
+       "points": "20"
+      },
+      {
+       "date": "2026-10-23",
+       "opp": "CHA",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "23",
+       "fieldGoalsMade-fieldGoalsAttempted": "5-10",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+       "totalRebounds": "9",
+       "assists": "5",
+       "blocks": "1",
+       "steals": "7",
+       "turnovers": "0",
+       "points": "11"
+      },
+      {
+       "date": "2026-10-25",
+       "opp": "HOU",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "29",
+       "fieldGoalsMade-fieldGoalsAttempted": "8-11",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-1",
+       "totalRebounds": "8",
+       "assists": "3",
+       "blocks": "0",
+       "steals": "1",
+       "turnovers": "1",
+       "points": "18"
+      },
+      {
+       "date": "2026-10-27",
+       "opp": "HOU",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "28",
+       "fieldGoalsMade-fieldGoalsAttempted": "2-8",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+       "totalRebounds": "0",
+       "assists": "4",
+       "blocks": "0",
+       "steals": "1",
+       "turnovers": "0",
+       "points": "4"
+      },
+      {
+       "date": "2026-10-28",
+       "opp": "MIA",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "28",
+       "fieldGoalsMade-fieldGoalsAttempted": "3-7",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+       "totalRebounds": "4",
+       "assists": "7",
+       "blocks": "1",
+       "steals": "3",
+       "turnovers": "1",
+       "points": "7"
+      },
+      {
+       "date": "2026-10-30",
+       "opp": "CLE",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "32",
+       "fieldGoalsMade-fieldGoalsAttempted": "2-8",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+       "totalRebounds": "6",
+       "assists": "5",
+       "blocks": "0",
+       "steals": "1",
+       "turnovers": "0",
+       "points": "4"
+      },
+      {
+       "date": "2026-10-31",
+       "opp": "NO",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "27",
+       "fieldGoalsMade-fieldGoalsAttempted": "3-6",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-2",
+       "totalRebounds": "4",
+       "assists": "3",
+       "blocks": "0",
+       "steals": "3",
+       "turnovers": "2",
+       "points": "8"
+      },
+      {
+       "date": "2026-11-03",
+       "opp": "IND",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "31",
+       "fieldGoalsMade-fieldGoalsAttempted": "3-10",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+       "totalRebounds": "9",
+       "assists": "4",
+       "blocks": "1",
+       "steals": "3",
+       "turnovers": "2",
+       "points": "6"
+      },
+      {
+       "date": "2026-11-05",
+       "opp": "WSH",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "34",
+       "fieldGoalsMade-fieldGoalsAttempted": "4-13",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-4",
+       "totalRebounds": "16",
+       "assists": "8",
+       "blocks": "0",
+       "steals": "0",
+       "turnovers": "2",
+       "points": "8"
+      },
+      {
+       "date": "2026-11-07",
+       "opp": "WSH",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "35",
+       "fieldGoalsMade-fieldGoalsAttempted": "6-9",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+       "totalRebounds": "9",
+       "assists": "12",
+       "blocks": "0",
+       "steals": "2",
+       "turnovers": "2",
+       "points": "13"
+      }
+     ]
+    },
+    "Nolan Traore": {
+     "team": "BKN",
+     "last10": [
+      {
+       "date": "2026-10-12",
+       "opp": "WSH",
+       "season_type": "2026-27 Preseason",
+       "minutes": "20",
+       "fieldGoalsMade-fieldGoalsAttempted": "6-8",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-4",
+       "totalRebounds": "1",
+       "assists": "2",
+       "blocks": "0",
+       "steals": "0",
+       "turnovers": "3",
+       "points": "17"
+      },
+      {
+       "date": "2026-10-14",
+       "opp": "MIA",
+       "season_type": "2026-27 Preseason",
+       "minutes": "22",
+       "fieldGoalsMade-fieldGoalsAttempted": "5-11",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-4",
+       "totalRebounds": "2",
+       "assists": "5",
+       "blocks": "0",
+       "steals": "1",
+       "turnovers": "2",
+       "points": "12"
+      },
+      {
+       "date": "2026-10-21",
+       "opp": "CHA",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "16",
+       "fieldGoalsMade-fieldGoalsAttempted": "0-4",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+       "totalRebounds": "2",
+       "assists": "0",
+       "blocks": "0",
+       "steals": "0",
+       "turnovers": "2",
+       "points": "3"
+      },
+      {
+       "date": "2026-10-24",
+       "opp": "CLE",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "5",
+       "fieldGoalsMade-fieldGoalsAttempted": "1-2",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+       "totalRebounds": "2",
+       "assists": "0",
+       "blocks": "0",
+       "steals": "0",
+       "turnovers": "1",
+       "points": "3"
+      },
+      {
+       "date": "2026-10-25",
+       "opp": "IND",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "25",
+       "fieldGoalsMade-fieldGoalsAttempted": "6-11",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-3",
+       "totalRebounds": "2",
+       "assists": "5",
+       "blocks": "2",
+       "steals": "1",
+       "turnovers": "2",
+       "points": "17"
+      },
+      {
+       "date": "2026-10-27",
+       "opp": "BOS",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "24",
+       "fieldGoalsMade-fieldGoalsAttempted": "6-9",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-2",
+       "totalRebounds": "1",
+       "assists": "3",
+       "blocks": "0",
+       "steals": "2",
+       "turnovers": "2",
+       "points": "15"
+      },
+      {
+       "date": "2026-10-30",
+       "opp": "DET",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "26",
+       "fieldGoalsMade-fieldGoalsAttempted": "3-11",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-5",
+       "totalRebounds": "2",
+       "assists": "2",
+       "blocks": "2",
+       "steals": "1",
+       "turnovers": "3",
+       "points": "9"
+      },
+      {
+       "date": "2026-11-01",
+       "opp": "IND",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "30",
+       "fieldGoalsMade-fieldGoalsAttempted": "6-14",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "4-8",
+       "totalRebounds": "2",
+       "assists": "6",
+       "blocks": "0",
+       "steals": "1",
+       "turnovers": "1",
+       "points": "16"
+      },
+      {
+       "date": "2026-11-03",
+       "opp": "NY",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "24",
+       "fieldGoalsMade-fieldGoalsAttempted": "6-8",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "5-6",
+       "totalRebounds": "3",
+       "assists": "4",
+       "blocks": "1",
+       "steals": "1",
+       "turnovers": "2",
+       "points": "17"
+      },
+      {
+       "date": "2026-11-05",
+       "opp": "CHA",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "27",
+       "fieldGoalsMade-fieldGoalsAttempted": "7-11",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-5",
+       "totalRebounds": "4",
+       "assists": "2",
+       "blocks": "0",
+       "steals": "3",
+       "turnovers": "1",
+       "points": "16"
+      }
+     ]
+    },
+    "Day'Ron Sharpe": {
+     "team": "BKN",
+     "last10": [
+      {
+       "date": "2026-10-12",
+       "opp": "WSH",
+       "season_type": "2026-27 Preseason",
+       "minutes": "21",
+       "fieldGoalsMade-fieldGoalsAttempted": "1-1",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-1",
+       "totalRebounds": "2",
+       "assists": "3",
+       "blocks": "1",
+       "steals": "3",
+       "turnovers": "1",
+       "points": "4"
+      },
+      {
+       "date": "2026-10-14",
+       "opp": "MIA",
+       "season_type": "2026-27 Preseason",
+       "minutes": "17",
+       "fieldGoalsMade-fieldGoalsAttempted": "5-8",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-3",
+       "totalRebounds": "6",
+       "assists": "4",
+       "blocks": "1",
+       "steals": "2",
+       "turnovers": "1",
+       "points": "11"
+      },
+      {
+       "date": "2026-10-21",
+       "opp": "CHA",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "30",
+       "fieldGoalsMade-fieldGoalsAttempted": "4-5",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+       "totalRebounds": "8",
+       "assists": "3",
+       "blocks": "3",
+       "steals": "1",
+       "turnovers": "2",
+       "points": "8"
+      },
+      {
+       "date": "2026-10-24",
+       "opp": "CLE",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "23",
+       "fieldGoalsMade-fieldGoalsAttempted": "3-10",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-2",
+       "totalRebounds": "8",
+       "assists": "1",
+       "blocks": "0",
+       "steals": "1",
+       "turnovers": "3",
+       "points": "7"
+      },
+      {
+       "date": "2026-10-25",
+       "opp": "IND",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "16",
+       "fieldGoalsMade-fieldGoalsAttempted": "3-4",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-1",
+       "totalRebounds": "4",
+       "assists": "1",
+       "blocks": "0",
+       "steals": "0",
+       "turnovers": "2",
+       "points": "11"
+      },
+      {
+       "date": "2026-10-27",
+       "opp": "BOS",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "17",
+       "fieldGoalsMade-fieldGoalsAttempted": "2-4",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+       "totalRebounds": "6",
+       "assists": "0",
+       "blocks": "1",
+       "steals": "1",
+       "turnovers": "1",
+       "points": "4"
+      },
+      {
+       "date": "2026-10-30",
+       "opp": "DET",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "24",
+       "fieldGoalsMade-fieldGoalsAttempted": "1-4",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-2",
+       "totalRebounds": "7",
+       "assists": "1",
+       "blocks": "2",
+       "steals": "1",
+       "turnovers": "2",
+       "points": "3"
+      },
+      {
+       "date": "2026-11-01",
+       "opp": "IND",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "26",
+       "fieldGoalsMade-fieldGoalsAttempted": "5-7",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-1",
+       "totalRebounds": "13",
+       "assists": "4",
+       "blocks": "0",
+       "steals": "0",
+       "turnovers": "2",
+       "points": "15"
+      },
+      {
+       "date": "2026-11-03",
+       "opp": "NY",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "22",
+       "fieldGoalsMade-fieldGoalsAttempted": "1-5",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+       "totalRebounds": "6",
+       "assists": "3",
+       "blocks": "1",
+       "steals": "0",
+       "turnovers": "3",
+       "points": "4"
+      },
+      {
+       "date": "2026-11-05",
+       "opp": "CHA",
+       "season_type": "2026-27 Regular Season",
+       "minutes": "27",
+       "fieldGoalsMade-fieldGoalsAttempted": "2-3",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+       "totalRebounds": "5",
+       "assists": "8",
+       "blocks": "2",
+       "steals": "1",
+       "turnovers": "1",
+       "points": "5"
       }
      ]
     },
@@ -1236,151 +1474,6 @@
        "points": "26"
       }
      ]
-    },
-    "Julius Randle": {
-     "team": "BKN",
-     "last10": [
-      {
-       "date": "2026-10-12",
-       "opp": "WSH",
-       "season_type": "2026-27 Preseason",
-       "minutes": "23",
-       "fieldGoalsMade-fieldGoalsAttempted": "5-8",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-4",
-       "totalRebounds": "4",
-       "assists": "9",
-       "blocks": "0",
-       "steals": "1",
-       "turnovers": "3",
-       "points": "14"
-      },
-      {
-       "date": "2026-10-14",
-       "opp": "MIA",
-       "season_type": "2026-27 Preseason",
-       "minutes": "28",
-       "fieldGoalsMade-fieldGoalsAttempted": "4-13",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-4",
-       "totalRebounds": "5",
-       "assists": "5",
-       "blocks": "0",
-       "steals": "1",
-       "turnovers": "3",
-       "points": "15"
-      },
-      {
-       "date": "2026-10-21",
-       "opp": "CHA",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "38",
-       "fieldGoalsMade-fieldGoalsAttempted": "11-18",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-5",
-       "totalRebounds": "8",
-       "assists": "7",
-       "blocks": "1",
-       "steals": "0",
-       "turnovers": "4",
-       "points": "33"
-      },
-      {
-       "date": "2026-10-24",
-       "opp": "CLE",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "35",
-       "fieldGoalsMade-fieldGoalsAttempted": "7-13",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-4",
-       "totalRebounds": "6",
-       "assists": "5",
-       "blocks": "0",
-       "steals": "0",
-       "turnovers": "4",
-       "points": "23"
-      },
-      {
-       "date": "2026-10-25",
-       "opp": "IND",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "24",
-       "fieldGoalsMade-fieldGoalsAttempted": "2-8",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-2",
-       "totalRebounds": "7",
-       "assists": "7",
-       "blocks": "0",
-       "steals": "1",
-       "turnovers": "3",
-       "points": "10"
-      },
-      {
-       "date": "2026-10-27",
-       "opp": "BOS",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "44",
-       "fieldGoalsMade-fieldGoalsAttempted": "10-23",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-7",
-       "totalRebounds": "9",
-       "assists": "4",
-       "blocks": "0",
-       "steals": "2",
-       "turnovers": "5",
-       "points": "24"
-      },
-      {
-       "date": "2026-10-30",
-       "opp": "DET",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "25",
-       "fieldGoalsMade-fieldGoalsAttempted": "4-13",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-6",
-       "totalRebounds": "8",
-       "assists": "3",
-       "blocks": "0",
-       "steals": "0",
-       "turnovers": "5",
-       "points": "15"
-      },
-      {
-       "date": "2026-11-01",
-       "opp": "IND",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "37",
-       "fieldGoalsMade-fieldGoalsAttempted": "5-15",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "4-9",
-       "totalRebounds": "5",
-       "assists": "6",
-       "blocks": "0",
-       "steals": "2",
-       "turnovers": "4",
-       "points": "20"
-      },
-      {
-       "date": "2026-11-03",
-       "opp": "NY",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "36",
-       "fieldGoalsMade-fieldGoalsAttempted": "5-16",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-4",
-       "totalRebounds": "11",
-       "assists": "2",
-       "blocks": "0",
-       "steals": "1",
-       "turnovers": "4",
-       "points": "21"
-      },
-      {
-       "date": "2026-11-05",
-       "opp": "CHA",
-       "season_type": "2026-27 Regular Season",
-       "minutes": "31",
-       "fieldGoalsMade-fieldGoalsAttempted": "7-13",
-       "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-4",
-       "totalRebounds": "3",
-       "assists": "4",
-       "blocks": "0",
-       "steals": "1",
-       "turnovers": "2",
-       "points": "22"
-      }
-     ]
     }
    }
   },
@@ -1433,9 +1526,9 @@
    "indoor": true,
    "tv": "NBA TV, DAZN CLE",
    "espn_line": {
-    "details": "NY -5.5",
-    "total": 224.5,
-    "provider": "Draft Kings"
+    "details": "NY -4.5",
+    "total": 222.5,
+    "provider": "DraftKings"
    },
    "injuries": {
     "CLE": [
@@ -1468,8 +1561,8 @@
     ]
    },
    "espn_projection": {
-    "home_win_pct": "46.3",
-    "away_win_pct": "53.7"
+    "home_win_pct": "45.6",
+    "away_win_pct": "54.4"
    },
    "player_logs": {
     "Donovan Mitchell": {
@@ -2394,8 +2487,8 @@
    "tv": "MNMT, KSBI",
    "espn_line": {
     "details": "OKC -12.5",
-    "total": 222.5,
-    "provider": "Draft Kings"
+    "total": 224.5,
+    "provider": "DraftKings"
    },
    "injuries": {
     "OKC": [
@@ -2434,7 +2527,7 @@
      {
       "player": "Anthony Davis",
       "pos": "F",
-      "status": "Day-To-Day",
+      "status": "Out",
       "detail": "Ankle Sprain"
      },
      {
@@ -2464,8 +2557,8 @@
     ]
    },
    "espn_projection": {
-    "home_win_pct": "84.4",
-    "away_win_pct": "15.6"
+    "home_win_pct": "84.1",
+    "away_win_pct": "15.9"
    },
    "player_logs": {
     "Shai Gilgeous-Alexander": {
@@ -3099,24 +3192,12 @@
    "indoor": true,
    "tv": null,
    "espn_line": {
-    "details": "GS -6.5",
+    "details": "GS -7.5",
     "total": 220.5,
-    "provider": "Draft Kings"
+    "provider": "DraftKings"
    },
    "injuries": {
     "GS": [
-     {
-      "player": "Draymond Green",
-      "pos": "F",
-      "status": "Day-To-Day",
-      "detail": "Elbow Inflammation"
-     },
-     {
-      "player": "Gary Payton II",
-      "pos": "G",
-      "status": "Day-To-Day",
-      "detail": "Calf"
-     },
      {
       "player": "Kristaps Porzingis",
       "pos": "C",
@@ -3124,19 +3205,25 @@
       "detail": "Illness"
      },
      {
-      "player": "Gui Santos",
-      "pos": "F",
-      "status": "Day-To-Day",
-      "detail": "Knee"
-     },
-     {
       "player": "Moses Moody",
       "pos": "G",
+      "status": "Out",
+      "detail": "Knee Surgery"
+     },
+     {
+      "player": "Jimmy Butler III",
+      "pos": "F",
       "status": "Out",
       "detail": "Knee Surgery"
      }
     ],
     "ORL": [
+     {
+      "player": "Desmond Bane",
+      "pos": "G",
+      "status": "Out",
+      "detail": "Illness"
+     },
      {
       "player": "Jonathan Isaac",
       "pos": "F",
@@ -3160,18 +3247,12 @@
       "pos": "F",
       "status": "Out",
       "detail": "Hamstring Strain"
-     },
-     {
-      "player": "Izaiyah Nelson",
-      "pos": "F",
-      "status": "Out",
-      "detail": "Ankle Surgery"
      }
     ]
    },
    "espn_projection": {
-    "home_win_pct": "62",
-    "away_win_pct": "38"
+    "home_win_pct": "65.6",
+    "away_win_pct": "34.4"
    },
    "player_logs": {
     "Stephen Curry": {
@@ -3952,7 +4033,7 @@
    "espn_line": {
     "details": "HOU -6.5",
     "total": 223.5,
-    "provider": "Draft Kings"
+    "provider": "DraftKings"
    },
    "injuries": {
     "PHX": [
@@ -4467,12 +4548,18 @@
    "indoor": true,
    "tv": "KUNP 16, DAZN SAS",
    "espn_line": {
-    "details": "SA -4.5",
+    "details": "SA -5.5",
     "total": 229.5,
-    "provider": "Draft Kings"
+    "provider": "DraftKings"
    },
    "injuries": {
     "POR": [
+     {
+      "player": "Robert Williams III",
+      "pos": "C",
+      "status": "Out",
+      "detail": "Rest"
+     },
      {
       "player": "Vit Krejci",
       "pos": "G",
