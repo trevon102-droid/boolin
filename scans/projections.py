@@ -214,7 +214,7 @@ def project(rows, games, inj, outs_override=None, use_lift=False):
                     conf = min(1.0, len(gg) / 20) * (1 - min(cv_min, 0.5)) * (1 - min(sd / mean, 1.0) * 0.5)
                     plays.append({"player": g[-1]["player"], "team": team, "opp": opponent, "home": is_home,
                                   "stat": label, "proj": proj, "proj0": proj0, "lift": lift, "who": ",".join(who),
-                                  "season": mean, "role_n": len(base), "z": z, "conf": conf,
+                                  "season": mean, "med": st.median(base), "role_n": len(base), "z": z, "conf": conf,
                                   "n": len(g), "proj_min": proj_min, "opp_f": of,
                                   "dtd": inj.get(pid) == "Day-To-Day"})
     return plays
