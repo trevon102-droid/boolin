@@ -12,6 +12,7 @@ import statistics
 from collections import defaultdict
 
 from . import common as C
+from .oddsmath import fair_from_books
 
 API = "https://api.the-odds-api.com/v4"
 # <=10 books counts as one "region" for credits. Pinnacle is the sharp reference.
@@ -52,16 +53,8 @@ def _dec(american: float) -> float:
 
 def _summarize(book_prices: dict[str, dict[str, float]], names: list[str]) -> dict:
     """book_prices: {book: {outcome_name: american}} for ONE line. Returns fair + best per outcome."""
-    full = {b: p for b, p in book_prices.items() if all(n in p for n in names)}
-    ref, fair = None, None
-    if "pinnacle" in full:
-        ref, fair = "pinnacle", C.devig([full["pinnacle"][n] for n in names])
-    elif full:
-        per_book = [C.devig([p[n] for n in names]) for p in full.values()]
-        per_book = [x for x in per_book if x]
-        if per_book:
-            ref = f"consensus ({len(per_book)} books)"
-            fair = [statistics.fmean(x[i] for x in per_book) for i in range(len(names))]
+    res = fair_from_books(book_prices, names)
+    ref, fair = res["ref"], res["fair"]
     outcomes = []
     for i, n in enumerate(names):
         offers = [(b, p[n]) for b, p in book_prices.items() if n in p]
@@ -81,10 +74,7 @@ def _summarize(book_prices: dict[str, dict[str, float]], names: list[str]) -> di
                                 if fp and n in book_prices.get(MY_BOOK, {}) else None),
             "books": {b: p[n] for b, p in book_prices.items() if n in p},
         })
-    hold = None
-    if ref == "pinnacle":
-        ps = [C.implied(full["pinnacle"][n]) for n in names]
-        hold = round(sum(ps) - 1, 4)
+    hold = round(res["hold"], 4) if ref == "pinnacle" and res["hold"] is not None else None
     return {"ref": ref, "pinnacle_hold": hold, "outcomes": outcomes}
 
 

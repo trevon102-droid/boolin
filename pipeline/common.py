@@ -191,32 +191,15 @@ def sample_quality(n: int | None, tiny: int = 5, small: int = 10) -> str:
 
 # ---------- odds math (same formulas the Sharp Board uses) ----------
 
-def implied(american: float | None) -> float | None:
-    if american is None:
-        return None
-    a = float(american)
-    if -100 < a < 100:
-        return None
-    return -a / (-a + 100) if a < 0 else 100 / (a + 100)
-
-
-def to_american(p: float | None) -> int | None:
-    if p is None or not 0 < p < 1:
-        return None
-    return -round(100 * p / (1 - p)) if p >= 0.5 else round(100 * (1 - p) / p)
+# Canonical implementations live in pipeline/oddsmath.py (re-exported here so existing callers keep working).
+from .oddsmath import implied, to_american  # noqa: E402,F401
 
 
 def decimal_to_american(d: float) -> int:
     return round((d - 1) * 100) if d >= 2 else round(-100 / (d - 1))
 
 
-def devig(prices: list[float]) -> list[float] | None:
-    """Multiplicative devig of a full set of American prices (2- or 3-way)."""
-    ps = [implied(p) for p in prices]
-    if any(p is None for p in ps):
-        return None
-    total = sum(ps)  # type: ignore[arg-type]
-    return [p / total for p in ps]  # type: ignore[operator]
+from .oddsmath import devig  # noqa: E402,F401
 
 
 def season_year(day: dt.date, starts_month: int) -> int:

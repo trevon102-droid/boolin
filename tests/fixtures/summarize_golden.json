@@ -1,0 +1,654 @@
+{
+ "cases": {
+  "book_missing_side": {
+   "book_prices": {
+    "draftkings": {
+     "A": -190,
+     "B": 160
+    },
+    "fanduel": {
+     "A": -200
+    }
+   },
+   "names": [
+    "A",
+    "B"
+   ]
+  },
+  "consensus_3books": {
+   "book_prices": {
+    "betmgm": {
+     "Over": -120,
+     "Under": 100
+    },
+    "draftkings": {
+     "Over": -110,
+     "Under": -110
+    },
+    "fanduel": {
+     "Over": -115,
+     "Under": -105
+    }
+   },
+   "names": [
+    "Over",
+    "Under"
+   ]
+  },
+  "consensus_invalid_book": {
+   "book_prices": {
+    "draftkings": {
+     "A": -110,
+     "B": -110
+    },
+    "fanduel": {
+     "A": -50,
+     "B": 130
+    }
+   },
+   "names": [
+    "A",
+    "B"
+   ]
+  },
+  "disagree": {
+   "book_prices": {
+    "betmgm": {
+     "A": -110,
+     "B": -110
+    },
+    "draftkings": {
+     "A": 150,
+     "B": -170
+    },
+    "fanduel": {
+     "A": -300,
+     "B": 250
+    }
+   },
+   "names": [
+    "A",
+    "B"
+   ]
+  },
+  "empty": {
+   "book_prices": {},
+   "names": [
+    "A",
+    "B"
+   ]
+  },
+  "no_my_book": {
+   "book_prices": {
+    "pinnacle": {
+     "A": -110,
+     "B": -110
+    }
+   },
+   "names": [
+    "A",
+    "B"
+   ]
+  },
+  "one_book_only": {
+   "book_prices": {
+    "fanduel": {
+     "A": -200,
+     "B": 170
+    }
+   },
+   "names": [
+    "A",
+    "B"
+   ]
+  },
+  "pinnacle_2way": {
+   "book_prices": {
+    "fanduel": {
+     "A": -105,
+     "B": -115
+    },
+    "pinnacle": {
+     "A": -110,
+     "B": -110
+    }
+   },
+   "names": [
+    "A",
+    "B"
+   ]
+  },
+  "pinnacle_invalid_price": {
+   "book_prices": {
+    "fanduel": {
+     "A": -190,
+     "B": 160
+    },
+    "pinnacle": {
+     "A": -50,
+     "B": 130
+    }
+   },
+   "names": [
+    "A",
+    "B"
+   ]
+  },
+  "pinnacle_missing_side": {
+   "book_prices": {
+    "draftkings": {
+     "A": -185,
+     "B": 155
+    },
+    "fanduel": {
+     "A": -190,
+     "B": 160
+    },
+    "pinnacle": {
+     "A": -200
+    }
+   },
+   "names": [
+    "A",
+    "B"
+   ]
+  },
+  "pinnacle_skewed": {
+   "book_prices": {
+    "draftkings": {
+     "A": -155,
+     "B": 135
+    },
+    "fanduel": {
+     "A": -140,
+     "B": 120
+    },
+    "pinnacle": {
+     "A": -150,
+     "B": 130
+    }
+   },
+   "names": [
+    "A",
+    "B"
+   ]
+  },
+  "plus_money_both": {
+   "book_prices": {
+    "pinnacle": {
+     "A": 105,
+     "B": 105
+    }
+   },
+   "names": [
+    "A",
+    "B"
+   ]
+  },
+  "three_way": {
+   "book_prices": {
+    "fanduel": {
+     "A": 210,
+     "D": 240,
+     "H": 145
+    },
+    "pinnacle": {
+     "A": 200,
+     "D": 250,
+     "H": 150
+    }
+   },
+   "names": [
+    "H",
+    "D",
+    "A"
+   ]
+  }
+ },
+ "expected": {
+  "book_missing_side": {
+   "outcomes": [
+    {
+     "best_book": "draftkings",
+     "best_price": -190,
+     "books": {
+      "draftkings": -190,
+      "fanduel": -200
+     },
+     "edge_at_best_vs_fair": -0.0383,
+     "edge_at_my_book": -0.0548,
+     "fair_odds": -170,
+     "fair_prob": 0.6301,
+     "fanduel": -200,
+     "name": "A",
+     "pinnacle": null
+    },
+    {
+     "best_book": "draftkings",
+     "best_price": 160,
+     "books": {
+      "draftkings": 160
+     },
+     "edge_at_best_vs_fair": -0.0383,
+     "edge_at_my_book": null,
+     "fair_odds": 170,
+     "fair_prob": 0.3699,
+     "fanduel": null,
+     "name": "B",
+     "pinnacle": null
+    }
+   ],
+   "pinnacle_hold": null,
+   "ref": "consensus (1 books)"
+  },
+  "consensus_3books": {
+   "outcomes": [
+    {
+     "best_book": "draftkings",
+     "best_price": -110,
+     "books": {
+      "betmgm": -120,
+      "draftkings": -110,
+      "fanduel": -115
+     },
+     "edge_at_best_vs_fair": -0.0247,
+     "edge_at_my_book": -0.0449,
+     "fair_odds": -104,
+     "fair_prob": 0.5109,
+     "fanduel": -115,
+     "name": "Over",
+     "pinnacle": null
+    },
+    {
+     "best_book": "betmgm",
+     "best_price": 100,
+     "books": {
+      "betmgm": 100,
+      "draftkings": -110,
+      "fanduel": -105
+     },
+     "edge_at_best_vs_fair": -0.0217,
+     "edge_at_my_book": -0.045,
+     "fair_odds": 104,
+     "fair_prob": 0.4891,
+     "fanduel": -105,
+     "name": "Under",
+     "pinnacle": null
+    }
+   ],
+   "pinnacle_hold": null,
+   "ref": "consensus (3 books)"
+  },
+  "consensus_invalid_book": {
+   "outcomes": [
+    {
+     "best_book": "fanduel",
+     "best_price": -50,
+     "books": {
+      "draftkings": -110,
+      "fanduel": -50
+     },
+     "edge_at_best_vs_fair": 0.5,
+     "edge_at_my_book": 0.5,
+     "fair_odds": -100,
+     "fair_prob": 0.5,
+     "fanduel": -50,
+     "name": "A",
+     "pinnacle": null
+    },
+    {
+     "best_book": "fanduel",
+     "best_price": 130,
+     "books": {
+      "draftkings": -110,
+      "fanduel": 130
+     },
+     "edge_at_best_vs_fair": 0.15,
+     "edge_at_my_book": 0.15,
+     "fair_odds": -100,
+     "fair_prob": 0.5,
+     "fanduel": 130,
+     "name": "B",
+     "pinnacle": null
+    }
+   ],
+   "pinnacle_hold": null,
+   "ref": "consensus (1 books)"
+  },
+  "disagree": {
+   "outcomes": [
+    {
+     "best_book": "draftkings",
+     "best_price": 150,
+     "books": {
+      "betmgm": -110,
+      "draftkings": 150,
+      "fanduel": -300
+     },
+     "edge_at_best_vs_fair": 0.3439,
+     "edge_at_my_book": -0.2833,
+     "fair_odds": -116,
+     "fair_prob": 0.5375,
+     "fanduel": -300,
+     "name": "A",
+     "pinnacle": null
+    },
+    {
+     "best_book": "fanduel",
+     "best_price": 250,
+     "books": {
+      "betmgm": -110,
+      "draftkings": -170,
+      "fanduel": 250
+     },
+     "edge_at_best_vs_fair": 0.6186,
+     "edge_at_my_book": 0.6186,
+     "fair_odds": 116,
+     "fair_prob": 0.4625,
+     "fanduel": 250,
+     "name": "B",
+     "pinnacle": null
+    }
+   ],
+   "pinnacle_hold": null,
+   "ref": "consensus (3 books)"
+  },
+  "empty": {
+   "outcomes": [
+    {
+     "best_book": null,
+     "best_price": null,
+     "books": {},
+     "edge_at_best_vs_fair": null,
+     "edge_at_my_book": null,
+     "fair_odds": null,
+     "fair_prob": null,
+     "fanduel": null,
+     "name": "A",
+     "pinnacle": null
+    },
+    {
+     "best_book": null,
+     "best_price": null,
+     "books": {},
+     "edge_at_best_vs_fair": null,
+     "edge_at_my_book": null,
+     "fair_odds": null,
+     "fair_prob": null,
+     "fanduel": null,
+     "name": "B",
+     "pinnacle": null
+    }
+   ],
+   "pinnacle_hold": null,
+   "ref": null
+  },
+  "no_my_book": {
+   "outcomes": [
+    {
+     "best_book": "pinnacle",
+     "best_price": -110,
+     "books": {
+      "pinnacle": -110
+     },
+     "edge_at_best_vs_fair": -0.0455,
+     "edge_at_my_book": null,
+     "fair_odds": -100,
+     "fair_prob": 0.5,
+     "fanduel": null,
+     "name": "A",
+     "pinnacle": -110
+    },
+    {
+     "best_book": "pinnacle",
+     "best_price": -110,
+     "books": {
+      "pinnacle": -110
+     },
+     "edge_at_best_vs_fair": -0.0455,
+     "edge_at_my_book": null,
+     "fair_odds": -100,
+     "fair_prob": 0.5,
+     "fanduel": null,
+     "name": "B",
+     "pinnacle": -110
+    }
+   ],
+   "pinnacle_hold": 0.0476,
+   "ref": "pinnacle"
+  },
+  "one_book_only": {
+   "outcomes": [
+    {
+     "best_book": "fanduel",
+     "best_price": -200,
+     "books": {
+      "fanduel": -200
+     },
+     "edge_at_best_vs_fair": -0.0357,
+     "edge_at_my_book": -0.0357,
+     "fair_odds": -180,
+     "fair_prob": 0.6429,
+     "fanduel": -200,
+     "name": "A",
+     "pinnacle": null
+    },
+    {
+     "best_book": "fanduel",
+     "best_price": 170,
+     "books": {
+      "fanduel": 170
+     },
+     "edge_at_best_vs_fair": -0.0357,
+     "edge_at_my_book": -0.0357,
+     "fair_odds": 180,
+     "fair_prob": 0.3571,
+     "fanduel": 170,
+     "name": "B",
+     "pinnacle": null
+    }
+   ],
+   "pinnacle_hold": null,
+   "ref": "consensus (1 books)"
+  },
+  "pinnacle_2way": {
+   "outcomes": [
+    {
+     "best_book": "fanduel",
+     "best_price": -105,
+     "books": {
+      "fanduel": -105,
+      "pinnacle": -110
+     },
+     "edge_at_best_vs_fair": -0.0238,
+     "edge_at_my_book": -0.0238,
+     "fair_odds": -100,
+     "fair_prob": 0.5,
+     "fanduel": -105,
+     "name": "A",
+     "pinnacle": -110
+    },
+    {
+     "best_book": "pinnacle",
+     "best_price": -110,
+     "books": {
+      "fanduel": -115,
+      "pinnacle": -110
+     },
+     "edge_at_best_vs_fair": -0.0455,
+     "edge_at_my_book": -0.0652,
+     "fair_odds": -100,
+     "fair_prob": 0.5,
+     "fanduel": -115,
+     "name": "B",
+     "pinnacle": -110
+    }
+   ],
+   "pinnacle_hold": 0.0476,
+   "ref": "pinnacle"
+  },
+  "pinnacle_invalid_price": {
+   "old_code_crashed": "TypeError"
+  },
+  "pinnacle_missing_side": {
+   "outcomes": [
+    {
+     "best_book": "draftkings",
+     "best_price": -185,
+     "books": {
+      "draftkings": -185,
+      "fanduel": -190,
+      "pinnacle": -200
+     },
+     "edge_at_best_vs_fair": -0.0345,
+     "edge_at_my_book": -0.0434,
+     "fair_odds": -168,
+     "fair_prob": 0.6267,
+     "fanduel": -190,
+     "name": "A",
+     "pinnacle": -200
+    },
+    {
+     "best_book": "fanduel",
+     "best_price": 160,
+     "books": {
+      "draftkings": 155,
+      "fanduel": 160
+     },
+     "edge_at_best_vs_fair": -0.0295,
+     "edge_at_my_book": -0.0295,
+     "fair_odds": 168,
+     "fair_prob": 0.3733,
+     "fanduel": 160,
+     "name": "B",
+     "pinnacle": null
+    }
+   ],
+   "pinnacle_hold": null,
+   "ref": "consensus (2 books)"
+  },
+  "pinnacle_skewed": {
+   "outcomes": [
+    {
+     "best_book": "fanduel",
+     "best_price": -140,
+     "books": {
+      "draftkings": -155,
+      "fanduel": -140,
+      "pinnacle": -150
+     },
+     "edge_at_best_vs_fair": -0.006,
+     "edge_at_my_book": -0.006,
+     "fair_odds": -138,
+     "fair_prob": 0.5798,
+     "fanduel": -140,
+     "name": "A",
+     "pinnacle": -150
+    },
+    {
+     "best_book": "draftkings",
+     "best_price": 135,
+     "books": {
+      "draftkings": 135,
+      "fanduel": 120,
+      "pinnacle": 130
+     },
+     "edge_at_best_vs_fair": -0.0126,
+     "edge_at_my_book": -0.0756,
+     "fair_odds": 138,
+     "fair_prob": 0.4202,
+     "fanduel": 120,
+     "name": "B",
+     "pinnacle": 130
+    }
+   ],
+   "pinnacle_hold": 0.0348,
+   "ref": "pinnacle"
+  },
+  "plus_money_both": {
+   "outcomes": [
+    {
+     "best_book": "pinnacle",
+     "best_price": 105,
+     "books": {
+      "pinnacle": 105
+     },
+     "edge_at_best_vs_fair": 0.025,
+     "edge_at_my_book": null,
+     "fair_odds": -100,
+     "fair_prob": 0.5,
+     "fanduel": null,
+     "name": "A",
+     "pinnacle": 105
+    },
+    {
+     "best_book": "pinnacle",
+     "best_price": 105,
+     "books": {
+      "pinnacle": 105
+     },
+     "edge_at_best_vs_fair": 0.025,
+     "edge_at_my_book": null,
+     "fair_odds": -100,
+     "fair_prob": 0.5,
+     "fanduel": null,
+     "name": "B",
+     "pinnacle": 105
+    }
+   ],
+   "pinnacle_hold": -0.0244,
+   "ref": "pinnacle"
+  },
+  "three_way": {
+   "outcomes": [
+    {
+     "best_book": "pinnacle",
+     "best_price": 150,
+     "books": {
+      "fanduel": 145,
+      "pinnacle": 150
+     },
+     "edge_at_best_vs_fair": -0.0187,
+     "edge_at_my_book": -0.0383,
+     "fair_odds": 155,
+     "fair_prob": 0.3925,
+     "fanduel": 145,
+     "name": "H",
+     "pinnacle": 150
+    },
+    {
+     "best_book": "pinnacle",
+     "best_price": 250,
+     "books": {
+      "fanduel": 240,
+      "pinnacle": 250
+     },
+     "edge_at_best_vs_fair": -0.0187,
+     "edge_at_my_book": -0.0467,
+     "fair_odds": 257,
+     "fair_prob": 0.2804,
+     "fanduel": 240,
+     "name": "D",
+     "pinnacle": 250
+    },
+    {
+     "best_book": "fanduel",
+     "best_price": 210,
+     "books": {
+      "fanduel": 210,
+      "pinnacle": 200
+     },
+     "edge_at_best_vs_fair": 0.014,
+     "edge_at_my_book": 0.014,
+     "fair_odds": 206,
+     "fair_prob": 0.3271,
+     "fanduel": 210,
+     "name": "A",
+     "pinnacle": 200
+    }
+   ],
+   "pinnacle_hold": 0.019,
+   "ref": "pinnacle"
+  }
+ }
+}

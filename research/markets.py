@@ -28,38 +28,9 @@ BOOKS = ("fanduel", "draftkings", "pinnacle")
 ACTIONABLE_BOOK = "fanduel"
 
 
-# ---------------- odds math (same formulas as pipeline/common.py) ----------------
+# ---------------- odds math: canonical implementation is pipeline/oddsmath.py ----------------
 
-def implied(american) -> float | None:
-    if american is None:
-        return None
-    a = float(american)
-    if -100 < a < 100:
-        return None
-    return -a / (-a + 100) if a < 0 else 100 / (a + 100)
-
-
-def decimal(american) -> float | None:
-    if american is None:
-        return None
-    a = float(american)
-    if -100 < a < 100:
-        return None
-    return 1 + (a / 100 if a > 0 else 100 / -a)
-
-
-def to_american(p: float | None) -> int | None:
-    if p is None or not 0 < p < 1:
-        return None
-    return -round(100 * p / (1 - p)) if p >= 0.5 else round(100 * (1 - p) / p)
-
-
-def devig(prices: list) -> list[float] | None:
-    ps = [implied(p) for p in prices]
-    if not ps or any(p is None for p in ps):
-        return None
-    s = sum(ps)
-    return [p / s for p in ps]
+from pipeline.oddsmath import decimal, devig, implied, to_american  # noqa: E402,F401
 
 
 # ---------------- observations ----------------
