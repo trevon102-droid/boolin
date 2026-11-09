@@ -66,7 +66,8 @@ def parse_box(game_id, season):
         for grp in tp["statistics"]:
             keys = grp["keys"]
             for a in grp["athletes"]:
-                if a.get("didNotPlay") or not a.get("stats"):
+                # ESPN sometimes lists a placeholder athlete with no id and "--" stats; skip it.
+                if a.get("didNotPlay") or not a.get("stats") or not a["athlete"].get("id"):
                     continue
                 st = dict(zip(keys, a["stats"]))
                 fgm, fga = split(st["fieldGoalsMade-fieldGoalsAttempted"])
