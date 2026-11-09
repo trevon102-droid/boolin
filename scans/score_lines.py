@@ -42,7 +42,7 @@ def main(path):
     by_name = {}
     for r in rows:
         by_name.setdefault(r["player"], []).append(r)
-    print(f"{'player':25}{'stat':5}{'line':>6}{'odds':>6}{'book%':>7}{'proj':>6}{'norm':>6}{'L5db':>6}{'L5app':>6}{'model%':>8}{'edge':>7}{'EV/$':>7}")
+    print(f"{'player':25}{'stat':5}{'line':>6}{'odds':>6}{'book%':>7}{'proj':>6}{'norm':>6}{'L5db':>6}{'L5app':>6}{'raw%':>6}{'cal%':>6}{'edge':>7}{'EV/$':>7}")
     for ln in lines:
         name, stat, line = ln["player"], ln["stat"], float(ln["line"])
         g = by_name.get(name)
@@ -51,20 +51,19 @@ def main(path):
             print(f"{name:25}{stat:5}{line:6} -- no projection (not on slate / filtered / Out)")
             continue
         k = {v: kk for kk, v in P.STATS.items()}[stat]
-        role = [x[k] or 0 for x in g if x["min"] >= P.ROLE_FRAC * pl["proj_min"]][-25:]
-        scale = pl["proj"] / (st.mean(role) or 1)
-        p_over_model = sum(v * scale > line for v in role) / len(role)
+        p_raw = P.p_over(pl, line)
+        p_over_model = P.p_over_cal(pl, line)
         l5 = st.mean([x[k] or 0 for x in g[-5:]])
         over, under = float(ln["over_odds"]), ln["under_odds"]
         book = imp(over) / (imp(over) + imp(under)) if under else imp(over)
         edge = p_over_model - book
         ev = p_over_model * payout(over) - (1 - p_over_model)
         print(f"{name[:24]:25}{stat:5}{line:6.1f}{int(over):6d}{book * 100:6.1f}%{pl['proj']:6.1f}{pl['season']:6.1f}"
-              f"{l5:6.1f}{ln.get('app_last5') or '':>6}{p_over_model * 100:7.1f}%{edge * 100:+6.1f}%{ev:+7.2f}"
+              f"{l5:6.1f}{ln.get('app_last5') or '':>6}{p_raw * 100:5.0f}%{p_over_model * 100:5.0f}%{edge * 100:+6.1f}%{ev:+7.2f}"
               + ("  DTD" if pl["dtd"] else ""))
         if under:
             pu = 1 - p_over_model
-            print(f"{'':25}{'':5}{'':>6}{int(float(under)):6d}{(1 - book) * 100:6.1f}%{'':18}{pu * 100:7.1f}%{(pu - (1 - book)) * 100:+6.1f}%"
+            print(f"{'':25}{'':5}{'':>6}{int(float(under)):6d}{(1 - book) * 100:6.1f}%{'':18}{(1 - p_raw) * 100:5.0f}%{pu * 100:5.0f}%{(pu - (1 - book)) * 100:+6.1f}%"
                   f"{pu * payout(under) - (1 - pu):+7.2f}   <- UNDER side")
 
 

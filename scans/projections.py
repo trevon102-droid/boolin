@@ -26,6 +26,7 @@ SITE = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba"
 STATS = {"pts": "PTS", "reb": "REB", "ast": "AST", "fg3m": "3PM"}
 MIN_GAMES, MIN_MPG = 6, 15.0
 ROLE_FRAC, MIN_ROLE_GAMES = 0.7, 5
+DIST_N = 25  # recent role games kept as the player's outcome distribution (for P(over) estimates)
 DECAY = 0.8  # weight multiplier per game back
 OPP_K = 8    # shrink opponent factor toward 1: n/(n+K)
 
@@ -214,7 +215,7 @@ def project(rows, games, inj, outs_override=None, use_lift=False):
                     conf = min(1.0, len(gg) / 20) * (1 - min(cv_min, 0.5)) * (1 - min(sd / mean, 1.0) * 0.5)
                     plays.append({"player": g[-1]["player"], "team": team, "opp": opponent, "home": is_home,
                                   "stat": label, "proj": proj, "proj0": proj0, "lift": lift, "who": ",".join(who),
-                                  "season": mean, "med": st.median(base), "role_n": len(base), "z": z, "conf": conf,
+                                  "season": mean, "med": st.median(base), "dist": base[-DIST_N:], "role_n": len(base), "z": z, "conf": conf,
                                   "n": len(g), "proj_min": proj_min, "opp_f": of,
                                   "dtd": inj.get(pid) == "Day-To-Day"})
     return plays
@@ -246,6 +247,45 @@ def main():
             tag = " DTD" if p["dtd"] else ""
             print(f"{p['player'][:21]:22}{p['team']:4}{p['opp']:5}{p['stat']:5}{p['proj']:6.1f}{p['season']:6.1f}"
                   f"{p['z']:6.2f}{p['conf']:6.2f}{p['proj_min']:5.0f}{p['opp_f']:6.2f}{p['n']:4}{p['lift']:6.1f}  {p['who']}{tag}")
+
+
+CAL_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "calibration_map.json")
+
+
+def _cal_map():
+    import json
+    try:
+        return json.load(open(CAL_PATH))
+    except OSError:
+        return None
+
+
+def calibrate(p, cmap):
+    """Piecewise-linear map from raw model P to realized hit rate (fit by scans/calibration.py --write)."""
+    xs, ys = cmap["x"], cmap["y"]
+    if p <= xs[0]:
+        return ys[0]
+    if p >= xs[-1]:
+        return ys[-1]
+    for i in range(1, len(xs)):
+        if p <= xs[i]:
+            t = (p - xs[i - 1]) / (xs[i] - xs[i - 1])
+            return ys[i - 1] + t * (ys[i] - ys[i - 1])
+
+
+def p_over_cal(play, line):
+    """Calibrated P(over). Falls back to the raw estimate if no map has been fit."""
+    p = p_over(play, line)
+    cm = _cal_map()
+    return calibrate(p, cm) if cm else p
+
+
+def p_over(play, line):
+    """Model P(stat > line): player's recent role-game outcomes, scaled so their mean equals the projection."""
+    d = play["dist"]
+    m = st.mean(d)
+    scale = play["proj"] / m if m > 0 else 1.0
+    return sum(v * scale > line for v in d) / len(d)
 
 
 if __name__ == "__main__":
