@@ -19,15 +19,18 @@ from ingest import common as C  # noqa: E402
 from scans import projections as P  # noqa: E402
 
 
-def run(rows, start):
-    dates = sorted({r["date"] for r in rows if r["date"] >= start})
+def run(rows, start, end="9999", use_lift=False):
+    dates = sorted({r["date"] for r in rows if r["date"] >= start and r["date"] <= end})
     actual = {(r["date"], r["pid"]): r for r in rows}
     out = []
     for d in dates:
         past = [r for r in rows if r["date"] < d]
         day = [r for r in rows if r["date"] == d]
         games = sorted({(r["opp"], r["team"]) for r in day if _home(day, r)})
-        for p in P.project(past, games, {}):
+        # actual absences that day = perfect injury info (upper bound; real reports lag/late scratches)
+        played_today = {r["pid"] for r in day}
+        outs = {t: {k for k in pl if k not in played_today} for t, pl in P.rotation(past).items()}
+        for p in P.project(past, games, {}, outs_override=outs, use_lift=use_lift):
             pid = next((r["pid"] for r in day if r["player"] == p["player"] and r["team"] == p["team"]), None)
             if pid is None:
                 continue  # didn't play
@@ -38,6 +41,33 @@ def run(rows, start):
             p.update(date=d, actual=a[key] or 0, naive_season=st.mean(hist), naive_last5=st.mean(hist[-5:]))
             out.append(p)
     return out
+
+
+def lift_report(plays, zmin):
+    aff = [p for p in plays if p["lift"] != 0]
+    print(f"\n== Teammate-out lift: {len(aff)} projections had a lift ({len(aff) / len(plays) * 100:.1f}% of all) ==")
+    if not aff:
+        return
+    print("MAE on affected plays (lower is better):")
+    for stat in P.STATS.values():
+        s = [p for p in aff if p["stat"] == stat]
+        if s:
+            m = lambda f: st.mean(abs(f(p) - p["actual"]) for p in s)
+            print(f"  {stat:4} n={len(s):5}  with lift {m(lambda p: p['proj']):.2f} | no lift {m(lambda p: p['proj0']):.2f}"
+                  f" | season-avg {m(lambda p: p['naive_season']):.2f}")
+    up = [p for p in aff if p["lift"] > 0]
+    dn = [p for p in aff if p["lift"] < 0]
+    for lab, s, sign in (("lift UP  ", up, 1), ("lift DOWN", dn, -1)):
+        if s:
+            beat = sum(1 for p in s if abs(p["proj"] - p["actual"]) < abs(p["proj0"] - p["actual"]))
+            side = sum(1 for p in s if (p["actual"] - p["proj0"]) * sign > 0)
+            print(f"  {lab} n={len(s):5}  lift moved us closer to actual {beat / len(s) * 100:.1f}% of the time; "
+                  f"actual landed on lift's side of no-lift proj {side / len(s) * 100:.1f}%")
+    for label, f in (("ABOVE", lambda p: p["z"] >= zmin), ("BELOW", lambda p: p["z"] <= -zmin)):
+        s = [p for p in aff if f(p) and p["actual"] != p["season"]]
+        if s:
+            sign = 1 if label == "ABOVE" else -1
+            print(f"  affected, projects {label} norm: n={len(s)} hit {sum((p['actual'] - p['season']) * sign > 0 for p in s) / len(s) * 100:.1f}%")
 
 
 def _home(day, r):
@@ -74,12 +104,15 @@ def p_above(label):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--season", default="2026-27")
+    ap.add_argument("--season", default="2025-26")
     ap.add_argument("--start", default="2026-10-28")
     ap.add_argument("--zmin", type=float, default=0.4)
+    ap.add_argument("--lift", action="store_true", help="enable experimental teammate-out lift")
     a = ap.parse_args()
     rows = P.load(C.connect(), a.season)
-    report(run(rows, a.start), a.zmin)
+    plays = run(rows, a.start, use_lift=a.lift)
+    report(plays, a.zmin)
+    lift_report(plays, a.zmin)
 
 
 if __name__ == "__main__":
