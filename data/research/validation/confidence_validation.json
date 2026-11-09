@@ -63,14 +63,14 @@
     "levels": [
      {
       "confidence": "high",
-      "n": 780,
-      "brier": 0.2152,
-      "log_loss": 0.6202,
-      "accuracy": 0.6478,
-      "calibration_error": 0.0399,
-      "favorite_overconfidence": -0.0101,
-      "avg_margin_error": 9.99,
-      "market_brier_same_games": 0.2005,
+      "n": 781,
+      "brier": 0.2151,
+      "log_loss": 0.6199,
+      "accuracy": 0.6483,
+      "calibration_error": 0.0403,
+      "favorite_overconfidence": -0.0105,
+      "avg_margin_error": 9.98,
+      "market_brier_same_games": 0.2004,
       "vs_market": "market Brier better (t=4.5)",
       "interpretable": true
      },
@@ -102,20 +102,20 @@
      }
     ],
     "validated": false,
-    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2152 (market 0.2005), medium Brier 0.2464 (market 0.2185), low Brier 0.2536 (market 0.2404). Higher confidence is not reliably better.",
+    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2151 (market 0.2004), medium Brier 0.2464 (market 0.2185), low Brier 0.2536 (market 0.2404). Higher confidence is not reliably better.",
     "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
    },
    "all": {
     "levels": [
      {
       "confidence": "high",
-      "n": 2481,
-      "brier": 0.2171,
-      "log_loss": 0.6247,
-      "accuracy": 0.644,
-      "calibration_error": 0.0291,
-      "favorite_overconfidence": -0.0099,
-      "avg_margin_error": 10.372,
+      "n": 2482,
+      "brier": 0.217,
+      "log_loss": 0.6246,
+      "accuracy": 0.6442,
+      "calibration_error": 0.0292,
+      "favorite_overconfidence": -0.0101,
+      "avg_margin_error": 10.369,
       "market_brier_same_games": 0.2039,
       "vs_market": "market Brier better (t=7.3)",
       "interpretable": true
@@ -148,7 +148,7 @@
      }
     ],
     "validated": false,
-    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2171 (market 0.2039), medium Brier 0.2366 (market 0.2186), low Brier 0.2448 (market 0.2286). Higher confidence is not reliably better.",
+    "verdict": "Labels do NOT line up with realized performance: high Brier 0.217 (market 0.2039), medium Brier 0.2366 (market 0.2186), low Brier 0.2448 (market 0.2286). Higher confidence is not reliably better.",
     "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
    }
   },
@@ -297,16 +297,16 @@
     "levels": [
      {
       "confidence": "high",
-      "n": 24,
-      "brier": 0.2167,
-      "log_loss": 0.6223,
-      "accuracy": 0.6667,
-      "calibration_error": 0.1552,
-      "favorite_overconfidence": -0.0533,
-      "avg_margin_error": 10.87,
-      "market_brier_same_games": 0.1709,
-      "vs_market": "too few games to tell (n=15)",
-      "interpretable": false
+      "n": 35,
+      "brier": 0.2015,
+      "log_loss": 0.5912,
+      "accuracy": 0.7143,
+      "calibration_error": 0.132,
+      "favorite_overconfidence": -0.0981,
+      "avg_margin_error": 10.255,
+      "market_brier_same_games": 0.152,
+      "vs_market": "too few games to tell (n=26)",
+      "interpretable": true
      },
      {
       "confidence": "medium",
@@ -335,24 +335,24 @@
       "interpretable": false
      }
     ],
-    "validated": null,
-    "verdict": "Not enough games in at least two confidence levels to test the labels.",
+    "validated": false,
+    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2015 (market 0.152), medium Brier 0.2576 (market 0.2165). Higher confidence is not reliably better.",
     "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
    },
    "all": {
     "levels": [
      {
       "confidence": "high",
-      "n": 24,
-      "brier": 0.2167,
-      "log_loss": 0.6223,
-      "accuracy": 0.6667,
-      "calibration_error": 0.1552,
-      "favorite_overconfidence": -0.0533,
-      "avg_margin_error": 10.87,
-      "market_brier_same_games": 0.1709,
-      "vs_market": "too few games to tell (n=15)",
-      "interpretable": false
+      "n": 35,
+      "brier": 0.2015,
+      "log_loss": 0.5912,
+      "accuracy": 0.7143,
+      "calibration_error": 0.132,
+      "favorite_overconfidence": -0.0981,
+      "avg_margin_error": 10.255,
+      "market_brier_same_games": 0.152,
+      "vs_market": "too few games to tell (n=26)",
+      "interpretable": true
      },
      {
       "confidence": "medium",
@@ -381,8 +381,8 @@
       "interpretable": false
      }
     ],
-    "validated": null,
-    "verdict": "Not enough games in at least two confidence levels to test the labels.",
+    "validated": false,
+    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2015 (market 0.152), medium Brier 0.2615 (market 0.2201). Higher confidence is not reliably better.",
     "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
    }
   }
@@ -452,13 +452,13 @@
      },
      {
       "confidence": "medium",
-      "n": 231,
+      "n": 232,
       "brier": 0.2248,
-      "log_loss": 0.6404,
-      "accuracy": 0.6407,
-      "calibration_error": 0.0404,
-      "favorite_overconfidence": -0.0351,
-      "avg_margin_error": 1.998,
+      "log_loss": 0.6403,
+      "accuracy": 0.6422,
+      "calibration_error": 0.0422,
+      "favorite_overconfidence": -0.0369,
+      "avg_margin_error": 2.002,
       "market_brier_same_games": 0.2274,
       "vs_market": "no detectable difference in Brier (t=-0.2)",
       "interpretable": true
@@ -498,13 +498,13 @@
      },
      {
       "confidence": "medium",
-      "n": 266,
+      "n": 267,
       "brier": 0.2246,
-      "log_loss": 0.6398,
-      "accuracy": 0.6391,
-      "calibration_error": 0.0351,
-      "favorite_overconfidence": -0.0351,
-      "avg_margin_error": 2.036,
+      "log_loss": 0.6397,
+      "accuracy": 0.6404,
+      "calibration_error": 0.0367,
+      "favorite_overconfidence": -0.0367,
+      "avg_margin_error": 2.039,
       "market_brier_same_games": 0.2279,
       "vs_market": "no detectable difference in Brier (t=-0.5)",
       "interpretable": true

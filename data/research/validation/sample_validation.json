@@ -167,15 +167,15 @@
      },
      {
       "group": "6-8 games",
-      "n": 231,
-      "brier": 0.2215,
-      "log_loss": 0.6344,
-      "favorite_overconfidence": -0.0288,
-      "market_brier_same_games": 0.2066,
-      "boolin_minus_market_brier": 0.01489,
-      "vs_market": "market Brier better (t=2.5)",
-      "margin_mae": 10.361,
-      "share_extreme": 0.2987,
+      "n": 232,
+      "brier": 0.2211,
+      "log_loss": 0.6335,
+      "favorite_overconfidence": -0.0302,
+      "market_brier_same_games": 0.206,
+      "boolin_minus_market_brier": 0.01501,
+      "vs_market": "market Brier better (t=2.6)",
+      "margin_mae": 10.326,
+      "share_extreme": 0.2974,
       "interpretable": true
      },
      {
@@ -264,15 +264,15 @@
      },
      {
       "group": "6-8 games",
-      "n": 705,
-      "brier": 0.218,
-      "log_loss": 0.6279,
-      "favorite_overconfidence": -0.0049,
-      "market_brier_same_games": 0.2096,
-      "boolin_minus_market_brier": 0.00838,
+      "n": 706,
+      "brier": 0.2178,
+      "log_loss": 0.6276,
+      "favorite_overconfidence": -0.0053,
+      "market_brier_same_games": 0.2094,
+      "boolin_minus_market_brier": 0.00842,
       "vs_market": "market Brier better (t=2.5)",
-      "margin_mae": 10.533,
-      "share_extreme": 0.2936,
+      "margin_mae": 10.521,
+      "share_extreme": 0.2932,
       "interpretable": true
      },
      {
@@ -656,16 +656,16 @@
      },
      {
       "group": "6-8 games",
-      "n": 24,
-      "brier": 0.2167,
-      "log_loss": 0.6223,
-      "favorite_overconfidence": -0.0533,
-      "market_brier_same_games": 0.1709,
-      "boolin_minus_market_brier": 0.01421,
-      "vs_market": "too few games to tell (n=15)",
-      "margin_mae": 10.87,
-      "share_extreme": 0.1333,
-      "interpretable": false
+      "n": 35,
+      "brier": 0.2015,
+      "log_loss": 0.5912,
+      "favorite_overconfidence": -0.0981,
+      "market_brier_same_games": 0.152,
+      "boolin_minus_market_brier": 0.02592,
+      "vs_market": "too few games to tell (n=26)",
+      "margin_mae": 10.255,
+      "share_extreme": 0.2308,
+      "interpretable": true
      },
      {
       "group": "9-12 games",
@@ -694,7 +694,7 @@
       "interpretable": false
      }
     ],
-    "verdict": "Not enough games per sample group to tell."
+    "verdict": "No material small-sample penalty relative to the market (4-5 games +0.0072 vs 6-8 games +0.0259)."
    },
    "all": {
     "metric": "fewer team games this season (home/away)",
@@ -753,16 +753,16 @@
      },
      {
       "group": "6-8 games",
-      "n": 24,
-      "brier": 0.2167,
-      "log_loss": 0.6223,
-      "favorite_overconfidence": -0.0533,
-      "market_brier_same_games": 0.1709,
-      "boolin_minus_market_brier": 0.01421,
-      "vs_market": "too few games to tell (n=15)",
-      "margin_mae": 10.87,
-      "share_extreme": 0.1333,
-      "interpretable": false
+      "n": 35,
+      "brier": 0.2015,
+      "log_loss": 0.5912,
+      "favorite_overconfidence": -0.0981,
+      "market_brier_same_games": 0.152,
+      "boolin_minus_market_brier": 0.02592,
+      "vs_market": "too few games to tell (n=26)",
+      "margin_mae": 10.255,
+      "share_extreme": 0.2308,
+      "interpretable": true
      },
      {
       "group": "9-12 games",
@@ -791,7 +791,7 @@
       "interpretable": false
      }
     ],
-    "verdict": "Not enough games per sample group to tell."
+    "verdict": "No material small-sample penalty relative to the market (4-5 games +0.0072 vs 6-8 games +0.0259)."
    }
   },
   "k_games_diagnostic": {
@@ -986,14 +986,14 @@
      },
      {
       "group": "11-20 GP",
-      "n": 89,
+      "n": 90,
       "brier": 0.2114,
       "log_loss": 0.6124,
-      "favorite_overconfidence": -0.0828,
+      "favorite_overconfidence": -0.087,
       "market_brier_same_games": 0.2253,
       "boolin_minus_market_brier": -0.00313,
       "vs_market": "no detectable difference in Brier (t=-0.3)",
-      "margin_mae": 1.867,
+      "margin_mae": 1.876,
       "share_extreme": 0.0789,
       "interpretable": true
      },
@@ -1070,14 +1070,14 @@
      },
      {
       "group": "11-20 GP",
-      "n": 89,
+      "n": 90,
       "brier": 0.2114,
       "log_loss": 0.6124,
-      "favorite_overconfidence": -0.0828,
+      "favorite_overconfidence": -0.087,
       "market_brier_same_games": 0.2253,
       "boolin_minus_market_brier": -0.00313,
       "vs_market": "no detectable difference in Brier (t=-0.3)",
-      "margin_mae": 1.867,
+      "margin_mae": 1.876,
       "share_extreme": 0.0789,
       "interpretable": true
      },
