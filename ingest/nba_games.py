@@ -12,6 +12,7 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from ingest import common as C  # noqa: E402
 
+EXCLUDE_COMP_TYPES = {"ALLSTAR", "CC"}
 SITE = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba"
 
 SCHEMA = """
@@ -48,8 +49,11 @@ def num(s):
 def final_games(day):
     d = C.get_json(f"{SITE}/scoreboard", {"dates": day.strftime("%Y%m%d")})
     # season.type: 1 preseason, 2 regular season, 3 playoffs (verified on live scoreboard). Regular season only.
+    # competition type: ESPN files the All-Star games (ALLSTAR) and NBA Cup final (CC) as regular season;
+    # neither counts toward regular-season stats, so they are excluded.
     return [e["id"] for e in d.get("events", [])
-            if e["status"]["type"].get("completed") and e["season"]["type"] == 2]
+            if e["status"]["type"].get("completed") and e["season"]["type"] == 2
+            and e["competitions"][0].get("type", {}).get("abbreviation") not in EXCLUDE_COMP_TYPES]
 
 
 def parse_box(game_id, season):
