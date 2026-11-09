@@ -5,7 +5,7 @@ Signals (all from our own box scores):
   2. minutes trend : recency-weighted last-5 minutes
   3. opponent      : team-level "stat allowed per game" vs league avg, shrunk toward 1 (k=8 games)
                      NOTE: team-level, NOT positional (db has no positions)
-Ranking: z = (projection - player season mean) / player season std. Big |z| = projects far from norm.
+Ranking: z = (projection - role-adjusted norm) / norm std. Big |z| = projects far from norm.
 Confidence: from games played, minutes stability and spread of the stat.
 Players ESPN lists as Out are dropped; Day-To-Day are kept and tagged.
 
@@ -25,6 +25,7 @@ from ingest import common as C  # noqa: E402
 SITE = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba"
 STATS = {"pts": "PTS", "reb": "REB", "ast": "AST", "fg3m": "3PM"}
 MIN_GAMES, MIN_MPG = 6, 15.0
+ROLE_FRAC, MIN_ROLE_GAMES = 0.7, 5
 DECAY = 0.8  # weight multiplier per game back
 OPP_K = 8    # shrink opponent factor toward 1: n/(n+K)
 
@@ -119,14 +120,18 @@ def project(rows, games, inj):
                     rate = 0.5 * season_rate + 0.5 * recent_rate
                     of, on = opp.get((opponent, s), (1.0, 0))
                     proj = rate * proj_min * of
-                    mean, sd = st.mean(vals), (st.pstdev(vals) or 1e-9)
+                    # role-adjusted baseline: only games at >=70% of current projected minutes,
+                    # so early-season ramp-up / garbage-time games don't define "norm".
+                    role = [x[s] or 0 for x in g if x["min"] >= ROLE_FRAC * proj_min]
+                    base = role if len(role) >= MIN_ROLE_GAMES else vals
+                    mean, sd = st.mean(base), (st.pstdev(base) or 1e-9)
                     if mean < 1.0:  # skip near-zero stats (e.g. 3PM for bigs)
                         continue
                     z = (proj - mean) / sd
                     cv_min = st.pstdev(mins) / st.mean(mins)
                     conf = min(1.0, len(g) / 20) * (1 - min(cv_min, 0.5)) * (1 - min(sd / mean, 1.0) * 0.5)
                     plays.append({"player": g[-1]["player"], "team": team, "opp": opponent, "home": is_home,
-                                  "stat": label, "proj": proj, "season": mean, "z": z, "conf": conf,
+                                  "stat": label, "proj": proj, "season": mean, "role_n": len(base), "z": z, "conf": conf,
                                   "n": len(g), "proj_min": proj_min, "opp_f": of,
                                   "dtd": inj.get(pid) == "Day-To-Day"})
     return plays
@@ -150,7 +155,7 @@ def main():
     print(f"Slate {a.date}: " + ", ".join(f"{x}@{y}" for x, y in games))
     for title, key in (("PROJECTS ABOVE NORM", lambda p: -p["z"]), ("PROJECTS BELOW NORM", lambda p: p["z"])):
         print(f"\n== {title} (ranked by z x confidence) ==")
-        print(f"{'player':22}{'tm':4}{'opp':5}{'stat':5}{'proj':>6}{'szn':>6}{'z':>6}{'conf':>6}{'min':>5}{'oppF':>6}{'n':>4}")
+        print(f"{'player':22}{'tm':4}{'opp':5}{'stat':5}{'proj':>6}{'norm':>6}{'z':>6}{'conf':>6}{'min':>5}{'oppF':>6}{'n':>4}")
         ranked = sorted(plays, key=lambda p: key(p) * (0.5 + p["conf"]))
         for p in ranked[:a.top]:
             tag = " DTD" if p["dtd"] else ""
