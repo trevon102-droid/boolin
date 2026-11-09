@@ -95,6 +95,36 @@ market, point in time, with a chronological holdout, and gates research conclusi
   until a league's validation scorecard allows otherwise; in price mode a research % more than 10 points from the
   market gets no stake (review).
 
+## NBA data-only model (`ingest/` + `scans/`)
+
+A separate, odds-free NBA layer. It reads box scores only, projects tonight's players, and (optionally) scores
+the projections against sportsbook lines you log by hand. Everything lives in a local SQLite file
+(`data/rackz_edge.db`, gitignored).
+
+```
+./run_nightly.sh                  # ingest -> bounce-back scan -> projections -> score logged lines (today)
+./run_nightly.sh 2026-11-10       # a specific slate date; output also saved to logs/nightly-DATE.txt
+
+# the pieces
+python ingest/nba_games.py 2026-27           # ESPN box scores -> SQLite (incremental; regular season only)
+python scans/bounce_back.py                  # last game FGA >= avg+3 and FG% 15 pts off: bounce-back / regression
+python scans/projections.py --date DATE      # ranked player-stat projections vs role-adjusted norm
+python scans/score_lines.py data/lines/DATE.csv   # model vs real lines (calibrated P(over), edge, EV)
+python scans/backtest.py                     # walk-forward accuracy / direction test (2025-26)
+python scans/calibration.py [--write]        # is P(over) calibrated? --write refits data/calibration_map.json
+python scans/line_proxy.py                   # Over/Under hit rates vs average/median proxy lines
+python -m pytest tests/test_bounce_back.py tests/test_calibration.py
+```
+
+**Logging lines:** copy `data/lines/2026-11-09.csv` as a template: `date,player,stat,line,over_odds,under_odds,app_last5`
+(stat = PTS, REB, AST or 3PM). For X+ ladders (e.g. "3+ threes") use line = X minus 0.5 and leave `under_odds` blank
+(ladder book probabilities include the vig). Name files `data/lines/YYYY-MM-DD.csv` and `run_nightly.sh` picks them up.
+
+**What it is and isn't (from the backtests):** it ranks players sensibly and its P(over) is calibrated to within a
+few points in the 40-60% range, but it is only ~1% more accurate than a season average, longshot probabilities run
+a few points high, and it has not been shown to beat real lines. The teammate-out lift (`--lift`) had no predictive
+value and is off by default. Preseason, All-Star and NBA Cup final games are excluded from the data.
+
 ## Tests
 
 ```
