@@ -47,7 +47,9 @@ def num(s):
 
 def final_games(day):
     d = C.get_json(f"{SITE}/scoreboard", {"dates": day.strftime("%Y%m%d")})
-    return [e["id"] for e in d.get("events", []) if e["status"]["type"].get("completed")]
+    # season.type: 1 preseason, 2 regular season, 3 playoffs (verified on live scoreboard). Regular season only.
+    return [e["id"] for e in d.get("events", [])
+            if e["status"]["type"].get("completed") and e["season"]["type"] == 2]
 
 
 def parse_box(game_id, season):
