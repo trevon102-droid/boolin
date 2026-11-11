@@ -259,33 +259,33 @@
    },
    "holdout": {
     "boolin_total": {
-     "n": 71,
-     "mae": 10.899,
-     "rmse": 13.235,
-     "mean_error": 0.011,
+     "n": 72,
+     "mae": 10.971,
+     "rmse": 13.279,
+     "mean_error": -0.212,
      "median_error": 0.9
     },
     "same_games": {
-     "n": 43,
+     "n": 44,
      "boolin": {
-      "n": 43,
-      "mae": 11.744,
-      "rmse": 14.165,
-      "mean_error": 0.623,
-      "median_error": 0.1
+      "n": 44,
+      "mae": 11.843,
+      "rmse": 14.211,
+      "mean_error": 0.243,
+      "median_error": -0.5
      },
      "market_line": {
-      "n": 43,
-      "mae": 10.64,
-      "rmse": 13.271,
-      "mean_error": 1.314,
-      "median_error": 1.5
+      "n": 44,
+      "mae": 10.761,
+      "rmse": 13.339,
+      "mean_error": 0.92,
+      "median_error": 0.0
      },
      "abs_error_paired": {
-      "n": 43,
-      "mean_diff": 1.10465,
-      "se": 0.49895,
-      "t": 2.21,
+      "n": 44,
+      "mean_diff": 1.08182,
+      "se": 0.48801,
+      "t": 2.22,
       "verdict": "market total abs error better (t=2.2)",
       "note": "mean of Boolin minus market per-game total abs error; negative favours Boolin"
      }
@@ -299,32 +299,32 @@
    },
    "all": {
     "boolin_total": {
-     "n": 72,
-     "mae": 11.09,
-     "rmse": 13.462,
-     "mean_error": 0.354,
-     "median_error": 1.0
+     "n": 73,
+     "mae": 11.159,
+     "rmse": 13.501,
+     "mean_error": 0.129,
+     "median_error": 0.9
     },
     "same_games": {
-     "n": 44,
+     "n": 45,
      "boolin": {
-      "n": 44,
-      "mae": 12.039,
-      "rmse": 14.489,
-      "mean_error": 1.17,
-      "median_error": 0.7
+      "n": 45,
+      "mae": 12.129,
+      "rmse": 14.527,
+      "mean_error": 0.787,
+      "median_error": 0.1
      },
      "market_line": {
-      "n": 44,
-      "mae": 10.864,
-      "rmse": 13.478,
-      "mean_error": 1.75,
-      "median_error": 2.0
+      "n": 45,
+      "mae": 10.978,
+      "rmse": 13.539,
+      "mean_error": 1.356,
+      "median_error": 1.5
      },
      "abs_error_paired": {
-      "n": 44,
-      "mean_diff": 1.175,
-      "se": 0.49252,
+      "n": 45,
+      "mean_diff": 1.15111,
+      "se": 0.48205,
       "t": 2.39,
       "verdict": "market total abs error better (t=2.4)",
       "note": "mean of Boolin minus market per-game total abs error; negative favours Boolin"
@@ -383,34 +383,34 @@
    },
    "holdout": {
     "boolin_total": {
-     "n": 236,
-     "mae": 1.756,
-     "rmse": 2.137,
-     "mean_error": -0.218,
-     "median_error": -0.2
+     "n": 239,
+     "mae": 1.762,
+     "rmse": 2.138,
+     "mean_error": -0.243,
+     "median_error": -0.24
     },
     "same_games": {
-     "n": 65,
+     "n": 68,
      "boolin": {
-      "n": 65,
-      "mae": 1.753,
-      "rmse": 2.045,
-      "mean_error": -0.172,
-      "median_error": 0.0
+      "n": 68,
+      "mae": 1.774,
+      "rmse": 2.054,
+      "mean_error": -0.262,
+      "median_error": -0.34
      },
      "market_line": {
-      "n": 65,
-      "mae": 1.854,
-      "rmse": 2.119,
-      "mean_error": 0.362,
+      "n": 68,
+      "mae": 1.86,
+      "rmse": 2.115,
+      "mean_error": 0.257,
       "median_error": 0.5
      },
      "abs_error_paired": {
-      "n": 65,
-      "mean_diff": -0.10092,
-      "se": 0.07412,
-      "t": -1.36,
-      "verdict": "no detectable difference in total abs error (t=-1.4)",
+      "n": 68,
+      "mean_diff": -0.08647,
+      "se": 0.07144,
+      "t": -1.21,
+      "verdict": "no detectable difference in total abs error (t=-1.2)",
       "note": "mean of Boolin minus market per-game total abs error; negative favours Boolin"
      }
     },
@@ -423,34 +423,34 @@
    },
    "all": {
     "boolin_total": {
-     "n": 271,
-     "mae": 1.75,
-     "rmse": 2.162,
-     "mean_error": -0.268,
-     "median_error": -0.3
+     "n": 274,
+     "mae": 1.755,
+     "rmse": 2.163,
+     "mean_error": -0.29,
+     "median_error": -0.335
     },
     "same_games": {
-     "n": 100,
+     "n": 103,
      "boolin": {
-      "n": 100,
-      "mae": 1.737,
-      "rmse": 2.147,
-      "mean_error": -0.324,
-      "median_error": -0.59
+      "n": 103,
+      "mae": 1.751,
+      "rmse": 2.15,
+      "mean_error": -0.38,
+      "median_error": -0.71
      },
      "market_line": {
-      "n": 100,
-      "mae": 1.77,
-      "rmse": 2.203,
-      "mean_error": 0.22,
+      "n": 103,
+      "mae": 1.777,
+      "rmse": 2.199,
+      "mean_error": 0.155,
       "median_error": 0.0
      },
      "abs_error_paired": {
-      "n": 100,
-      "mean_diff": -0.0334,
-      "se": 0.06336,
-      "t": -0.53,
-      "verdict": "no detectable difference in total abs error (t=-0.5)",
+      "n": 103,
+      "mean_diff": -0.02583,
+      "se": 0.06173,
+      "t": -0.42,
+      "verdict": "no detectable difference in total abs error (t=-0.4)",
       "note": "mean of Boolin minus market per-game total abs error; negative favours Boolin"
      }
     },

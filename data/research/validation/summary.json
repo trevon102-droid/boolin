@@ -9,7 +9,7 @@
   "baseline-0.1",
   "baseline-0.2"
  ],
- "built_at": "2026-11-10T16:23-05:00",
+ "built_at": "2026-11-10T20:22-05:00",
  "data_cutoff": "2026-11-09",
  "filters": {
   "league": null,
@@ -26,8 +26,8 @@
   "nfl_replay": "development = seasons < 2022; holdout = 2022+"
  },
  "warning": "rows span model versions ['baseline-0.1', 'baseline-0.2']: each table is per league and per source, and rows from an older version sit in their own '<source> @<version>' slice",
- "rows": 4114,
- "excluded": 448,
+ "rows": 4118,
+ "excluded": 455,
  "by_source": {
   "NFL nfl_replay": {
    "rows": 3724,
@@ -50,24 +50,24 @@
    "last": "2026-10-04"
   },
   "NFL live_archive": {
-   "rows": 72,
+   "rows": 73,
    "development": 1,
-   "holdout": 71,
+   "holdout": 72,
    "model_versions": [
     "baseline-0.2"
    ],
    "first": "2026-10-05",
-   "last": "2026-11-08"
+   "last": "2026-11-09"
   },
   "NHL live_archive": {
-   "rows": 271,
+   "rows": 274,
    "development": 35,
-   "holdout": 236,
+   "holdout": 239,
    "model_versions": [
     "baseline-0.1"
    ],
    "first": "2026-10-01",
-   "last": "2026-11-08"
+   "last": "2026-11-09"
   },
   "MLB live_archive": {
    "rows": 32,
@@ -82,12 +82,12 @@
  },
  "excluded_by_reason": {
   "nfl_replay: no current-season plays before this week for a team (the live model has no projection either)": 241,
-  "live_archive: no Boolin model for this league": 196,
-  "live_archive: no confirmed final score on file": 11
+  "live_archive: no Boolin model for this league": 200,
+  "live_archive: no confirmed final score on file": 14
  },
  "replay": {
   "version": "nfl-replay-1",
-  "built_at_et": "2026-11-10T16:23-05:00",
+  "built_at_et": "2026-11-10T20:22-05:00",
   "status": {
    "2012": "kept",
    "2013": "kept",
@@ -108,8 +108,8 @@
   "present": true
  },
  "replay_fidelity": {
-  "n_overlap": 87,
-  "identical": 78,
+  "n_overlap": 88,
+  "identical": 79,
   "mean_abs_prob_diff": 0.0028,
   "max_abs_prob_diff": 0.0541,
   "note": "Live card vs replay for the same game, same model version. Gaps mean the live pull saw different inputs than the replay (cause not confirmed per game)."
@@ -129,13 +129,13 @@
    "recommendation": "CALIBRATION NEEDED"
   },
   "NHL": {
-   "sample_size": 236,
-   "brier": 0.2253,
+   "sample_size": 239,
+   "brier": 0.226,
    "market_brier": 0.2274,
-   "log_loss": 0.6415,
-   "calibration_error": 0.0424,
-   "market_comparison": "no detectable difference in Brier (t=-0.2)",
-   "spread_mae": 2.006,
+   "log_loss": 0.6428,
+   "calibration_error": 0.0431,
+   "market_comparison": "no detectable difference in Brier (t=0.1)",
+   "spread_mae": 2.003,
    "confidence_validated": null,
    "calibration_status": "needs_calibration",
    "validation_status": "validated: calibration off",
