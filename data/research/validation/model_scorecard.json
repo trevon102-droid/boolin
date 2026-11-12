@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-11-09",
+ "data_cutoff": "2026-11-10",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -75,17 +75,17 @@
  "NHL": {
   "model_version": "baseline-0.1",
   "validation_version": "validation-1.0",
-  "data_cutoff": "2026-11-09",
+  "data_cutoff": "2026-11-10",
   "primary_evidence": "live_archive holdout (games after 2026-10-05)",
-  "sample_size": 239,
+  "sample_size": 246,
   "development_size": 35,
-  "brier": 0.226,
+  "brier": 0.2269,
   "market_brier": 0.2274,
-  "log_loss": 0.6428,
+  "log_loss": 0.6448,
   "market_log_loss": 0.6456,
-  "accuracy": 0.6444,
-  "calibration_error": 0.0431,
-  "favorite_overconfidence": -0.0399,
+  "accuracy": 0.6382,
+  "calibration_error": 0.0355,
+  "favorite_overconfidence": -0.0348,
   "market_comparison": "no detectable difference in Brier (t=0.1)",
   "spread_mae": 2.003,
   "market_spread_mae": null,
@@ -94,13 +94,13 @@
   "validation_status": "validated: calibration off",
   "recommendation": "PROMISING BUT UNCALIBRATED",
   "reasons": [
-   "holdout calibration error 0.0431, favourite overconfidence -0.0399 (needs <= 0.025 / +-0.02 with n >= 300)",
+   "holdout calibration error 0.0355, favourite overconfidence -0.0348 (needs <= 0.025 / +-0.02 with n >= 300)",
    "holdout vs market: no detectable difference in Brier (t=0.1)"
   ],
   "lean_allowed": false,
   "live_archive": {
    "n": 103,
-   "holdout": 239,
+   "holdout": 246,
    "older_version_rows": 0,
    "boolin": {
     "brier": 0.2266,
