@@ -207,6 +207,84 @@
    "new": "1 player(s) listed",
    "source": "NFL injury report week 10",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-13T16:30-05:00",
+   "game_key": "2026-11-12-NFL-WAS-NYG",
+   "type": "starter",
+   "field": "WAS starter",
+   "old": "Jayden Daniels (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-13T16:30-05:00",
+   "game_key": "2026-11-12-NFL-WAS-NYG",
+   "type": "starter",
+   "field": "NYG starter",
+   "old": "J.J. McCarthy (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-13T16:30-05:00",
+   "game_key": "2026-11-12-NFL-WAS-NYG",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "NYG -4.3",
+   "new": "NYG -4.5",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 62.5% to 63.0% (home margin +4.35 \u2192 +4.51). Model components that moved: 1. Offense (EPA/play, regressed) +0.10 (home +0.018 vs away -0.008 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +0.06 (home allows -0.007 vs away allows +0.026 x 32.45). Data updates in the same pull: WAS starter: Jayden Daniels (projected) \u2192 unknown (unknown); NYG starter: J.J. McCarthy (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 62.5% to 63.0% (home margin +4.35 \u2192 +4.51). Model components that moved: 1. Offense (EPA/play, regressed) +0.10 (home +0.018 vs away -0.008 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +0.06 (home allows -0.007 vs away allows +0.026 x 32.45). Data updates in the same pull: WAS starter: Jayden Daniels (projected) \u2192 unknown (unknown); NYG starter: J.J. McCarthy (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 0.1,
+      "now": "home +0.018 vs away -0.008 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": 0.06,
+      "now": "home allows -0.007 vs away allows +0.026 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "WAS starter: Jayden Daniels (projected) \u2192 unknown (unknown)",
+     "NYG starter: J.J. McCarthy (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-13T16:30-05:00",
+   "game_key": "2026-11-12-NFL-WAS-NYG",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 45.7,
+   "new": 46.1,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 62.5% to 63.0% (home margin +4.35 \u2192 +4.51). Model components that moved: 1. Offense (EPA/play, regressed) +0.10 (home +0.018 vs away -0.008 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +0.06 (home allows -0.007 vs away allows +0.026 x 32.45). Data updates in the same pull: WAS starter: Jayden Daniels (projected) \u2192 unknown (unknown); NYG starter: J.J. McCarthy (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 62.5% to 63.0% (home margin +4.35 \u2192 +4.51). Model components that moved: 1. Offense (EPA/play, regressed) +0.10 (home +0.018 vs away -0.008 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +0.06 (home allows -0.007 vs away allows +0.026 x 32.45). Data updates in the same pull: WAS starter: Jayden Daniels (projected) \u2192 unknown (unknown); NYG starter: J.J. McCarthy (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 0.1,
+      "now": "home +0.018 vs away -0.008 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": 0.06,
+      "now": "home allows -0.007 vs away allows +0.026 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "WAS starter: Jayden Daniels (projected) \u2192 unknown (unknown)",
+     "NYG starter: J.J. McCarthy (projected) \u2192 unknown (unknown)"
+    ]
+   }
   }
  ],
  "2026-11-12-NHL-MIN-TOR": [
