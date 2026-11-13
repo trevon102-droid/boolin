@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-11-10",
+ "data_cutoff": "2026-11-11",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -383,11 +383,11 @@
    },
    "holdout": {
     "boolin_total": {
-     "n": 246,
-     "mae": 1.769,
-     "rmse": 2.141,
-     "mean_error": -0.277,
-     "median_error": -0.305
+     "n": 252,
+     "mae": 1.78,
+     "rmse": 2.152,
+     "mean_error": -0.278,
+     "median_error": -0.335
     },
     "same_games": {
      "n": 68,
@@ -423,11 +423,11 @@
    },
    "all": {
     "boolin_total": {
-     "n": 281,
-     "mae": 1.761,
-     "rmse": 2.165,
+     "n": 287,
+     "mae": 1.771,
+     "rmse": 2.174,
      "mean_error": -0.318,
-     "median_error": -0.39
+     "median_error": -0.41
     },
     "same_games": {
      "n": 103,
