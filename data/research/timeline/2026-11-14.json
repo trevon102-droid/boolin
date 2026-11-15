@@ -1,0 +1,228 @@
+{
+ "2026-11-14-NHL-SEA-CAR": [
+  {
+   "t": "2026-11-14T20:11-05:00",
+   "game_key": "2026-11-14-NHL-SEA-CAR",
+   "type": "starter",
+   "field": "SEA starter",
+   "old": "Philipp Grubauer (projected)",
+   "new": "Joey Daccord (projected)",
+   "source": "NHL API goalie usage",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-14T20:11-05:00",
+   "game_key": "2026-11-14-NHL-SEA-CAR",
+   "type": "model",
+   "field": "Boolin CAR win probability",
+   "old": 0.8108,
+   "new": 0.847,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 81.1% to 84.7% (home margin +2.11 \u2192 +2.46). Model components that moved: 1. Goaltending (GSAx/gp, regressed) +0.17 (Pyotr Kochetkov vs Joey Daccord (projected starters)); 2. Shot quality against (5v5 xGA/gp, blended) +0.10 (home allows 1.82 vs away allows 2.25); 3. Shot quality for (5v5 xGF/gp, blended) +0.07 (home 2.57 vs away 1.81 (league ~1.95)). Data updates in the same pull: SEA starter: Philipp Grubauer (projected) \u2192 Joey Daccord (projected).",
+   "detail": {
+    "text": "Boolin moved from 81.1% to 84.7% (home margin +2.11 \u2192 +2.46). Model components that moved: 1. Goaltending (GSAx/gp, regressed) +0.17 (Pyotr Kochetkov vs Joey Daccord (projected starters)); 2. Shot quality against (5v5 xGA/gp, blended) +0.10 (home allows 1.82 vs away allows 2.25); 3. Shot quality for (5v5 xGF/gp, blended) +0.07 (home 2.57 vs away 1.81 (league ~1.95)). Data updates in the same pull: SEA starter: Philipp Grubauer (projected) \u2192 Joey Daccord (projected).",
+    "components": [
+     {
+      "component": "Goaltending (GSAx/gp, regressed)",
+      "margin_change": 0.171,
+      "now": "Pyotr Kochetkov vs Joey Daccord (projected starters)"
+     },
+     {
+      "component": "Shot quality against (5v5 xGA/gp, blended)",
+      "margin_change": 0.099,
+      "now": "home allows 1.82 vs away allows 2.25"
+     },
+     {
+      "component": "Shot quality for (5v5 xGF/gp, blended)",
+      "margin_change": 0.073,
+      "now": "home 2.57 vs away 1.81 (league ~1.95)"
+     }
+    ],
+    "same_pull_updates": [
+     "SEA starter: Philipp Grubauer (projected) \u2192 Joey Daccord (projected)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-14T20:11-05:00",
+   "game_key": "2026-11-14-NHL-SEA-CAR",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "CAR -2.1",
+   "new": "CAR -2.5",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 81.1% to 84.7% (home margin +2.11 \u2192 +2.46). Model components that moved: 1. Goaltending (GSAx/gp, regressed) +0.17 (Pyotr Kochetkov vs Joey Daccord (projected starters)); 2. Shot quality against (5v5 xGA/gp, blended) +0.10 (home allows 1.82 vs away allows 2.25); 3. Shot quality for (5v5 xGF/gp, blended) +0.07 (home 2.57 vs away 1.81 (league ~1.95)). Data updates in the same pull: SEA starter: Philipp Grubauer (projected) \u2192 Joey Daccord (projected).",
+   "detail": {
+    "text": "Boolin moved from 81.1% to 84.7% (home margin +2.11 \u2192 +2.46). Model components that moved: 1. Goaltending (GSAx/gp, regressed) +0.17 (Pyotr Kochetkov vs Joey Daccord (projected starters)); 2. Shot quality against (5v5 xGA/gp, blended) +0.10 (home allows 1.82 vs away allows 2.25); 3. Shot quality for (5v5 xGF/gp, blended) +0.07 (home 2.57 vs away 1.81 (league ~1.95)). Data updates in the same pull: SEA starter: Philipp Grubauer (projected) \u2192 Joey Daccord (projected).",
+    "components": [
+     {
+      "component": "Goaltending (GSAx/gp, regressed)",
+      "margin_change": 0.171,
+      "now": "Pyotr Kochetkov vs Joey Daccord (projected starters)"
+     },
+     {
+      "component": "Shot quality against (5v5 xGA/gp, blended)",
+      "margin_change": 0.099,
+      "now": "home allows 1.82 vs away allows 2.25"
+     },
+     {
+      "component": "Shot quality for (5v5 xGF/gp, blended)",
+      "margin_change": 0.073,
+      "now": "home 2.57 vs away 1.81 (league ~1.95)"
+     }
+    ],
+    "same_pull_updates": [
+     "SEA starter: Philipp Grubauer (projected) \u2192 Joey Daccord (projected)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-14T20:11-05:00",
+   "game_key": "2026-11-14-NHL-SEA-CAR",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 7.15,
+   "new": 7.34,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 81.1% to 84.7% (home margin +2.11 \u2192 +2.46). Model components that moved: 1. Goaltending (GSAx/gp, regressed) +0.17 (Pyotr Kochetkov vs Joey Daccord (projected starters)); 2. Shot quality against (5v5 xGA/gp, blended) +0.10 (home allows 1.82 vs away allows 2.25); 3. Shot quality for (5v5 xGF/gp, blended) +0.07 (home 2.57 vs away 1.81 (league ~1.95)). Data updates in the same pull: SEA starter: Philipp Grubauer (projected) \u2192 Joey Daccord (projected).",
+   "detail": {
+    "text": "Boolin moved from 81.1% to 84.7% (home margin +2.11 \u2192 +2.46). Model components that moved: 1. Goaltending (GSAx/gp, regressed) +0.17 (Pyotr Kochetkov vs Joey Daccord (projected starters)); 2. Shot quality against (5v5 xGA/gp, blended) +0.10 (home allows 1.82 vs away allows 2.25); 3. Shot quality for (5v5 xGF/gp, blended) +0.07 (home 2.57 vs away 1.81 (league ~1.95)). Data updates in the same pull: SEA starter: Philipp Grubauer (projected) \u2192 Joey Daccord (projected).",
+    "components": [
+     {
+      "component": "Goaltending (GSAx/gp, regressed)",
+      "margin_change": 0.171,
+      "now": "Pyotr Kochetkov vs Joey Daccord (projected starters)"
+     },
+     {
+      "component": "Shot quality against (5v5 xGA/gp, blended)",
+      "margin_change": 0.099,
+      "now": "home allows 1.82 vs away allows 2.25"
+     },
+     {
+      "component": "Shot quality for (5v5 xGF/gp, blended)",
+      "margin_change": 0.073,
+      "now": "home 2.57 vs away 1.81 (league ~1.95)"
+     }
+    ],
+    "same_pull_updates": [
+     "SEA starter: Philipp Grubauer (projected) \u2192 Joey Daccord (projected)"
+    ]
+   }
+  }
+ ],
+ "2026-11-14-NHL-WPG-CHI": [
+  {
+   "t": "2026-11-14T20:11-05:00",
+   "game_key": "2026-11-14-NHL-WPG-CHI",
+   "type": "injury_status",
+   "field": "Tyler Bertuzzi (CHI)",
+   "old": "not listed",
+   "new": "Day-To-Day",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-11-14-NHL-COL-MTL": [
+  {
+   "t": "2026-11-14T20:11-05:00",
+   "game_key": "2026-11-14-NHL-COL-MTL",
+   "type": "injury_status",
+   "field": "Mike Matheson (MTL)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-11-14-NHL-DET-TBL": [
+  {
+   "t": "2026-11-14T20:11-05:00",
+   "game_key": "2026-11-14-NHL-DET-TBL",
+   "type": "injury_status",
+   "field": "Anthony Cirelli (TBL)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-11-14T20:11-05:00",
+   "game_key": "2026-11-14-NHL-DET-TBL",
+   "type": "injury_status",
+   "field": "Erik Cernak (TBL)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-11-14-NHL-EDM-TOR": [
+  {
+   "t": "2026-11-14T20:11-05:00",
+   "game_key": "2026-11-14-NHL-EDM-TOR",
+   "type": "injury_status",
+   "field": "Morgan Rielly (TOR)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-11-14-NHL-OTT-PIT": [
+  {
+   "t": "2026-11-14T20:11-05:00",
+   "game_key": "2026-11-14-NHL-OTT-PIT",
+   "type": "injury_status",
+   "field": "Trevor van Riemsdyk (PIT)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  }
+ ],
+ "2026-11-14-NHL-BUF-DAL": [
+  {
+   "t": "2026-11-14T20:11-05:00",
+   "game_key": "2026-11-14-NHL-BUF-DAL",
+   "type": "injury_status",
+   "field": "Matt Duchene (DAL)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  }
+ ],
+ "2026-11-14-NHL-SJS-UTA": [
+  {
+   "t": "2026-11-14T20:11-05:00",
+   "game_key": "2026-11-14-NHL-SJS-UTA",
+   "type": "injury_status",
+   "field": "Alexander Wennberg (SJS)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-11-14-NHL-CGY-LAK": [
+  {
+   "t": "2026-11-14T20:11-05:00",
+   "game_key": "2026-11-14-NHL-CGY-LAK",
+   "type": "injury_status",
+   "field": "Erik Gustafsson (LAK)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ]
+}
