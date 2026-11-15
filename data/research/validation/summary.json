@@ -9,8 +9,8 @@
   "baseline-0.1",
   "baseline-0.2"
  ],
- "built_at": "2026-11-14T20:11-05:00",
- "data_cutoff": "2026-11-13",
+ "built_at": "2026-11-15T15:29-05:00",
+ "data_cutoff": "2026-11-15",
  "filters": {
   "league": null,
   "since": null,
@@ -26,18 +26,18 @@
   "nfl_replay": "development = seasons < 2022; holdout = 2022+"
  },
  "warning": "rows span model versions ['baseline-0.1', 'baseline-0.2']: each table is per league and per source, and rows from an older version sit in their own '<source> @<version>' slice",
- "rows": 4145,
- "excluded": 464,
+ "rows": 4147,
+ "excluded": 463,
  "by_source": {
   "NFL nfl_replay": {
-   "rows": 3725,
+   "rows": 3726,
    "development": 2529,
-   "holdout": 1196,
+   "holdout": 1197,
    "model_versions": [
     "baseline-0.2"
    ],
    "first": "2012-09-13",
-   "last": "2026-11-12"
+   "last": "2026-11-15"
   },
   "NFL live_archive @baseline-0.1": {
    "rows": 15,
@@ -60,14 +60,14 @@
    "last": "2026-11-12"
   },
   "NHL live_archive": {
-   "rows": 299,
+   "rows": 300,
    "development": 35,
-   "holdout": 264,
+   "holdout": 265,
    "model_versions": [
     "baseline-0.1"
    ],
    "first": "2026-10-01",
-   "last": "2026-11-13"
+   "last": "2026-11-14"
   },
   "MLB live_archive": {
    "rows": 32,
@@ -83,11 +83,11 @@
  "excluded_by_reason": {
   "nfl_replay: no current-season plays before this week for a team (the live model has no projection either)": 241,
   "live_archive: no Boolin model for this league": 203,
-  "live_archive: no confirmed final score on file": 20
+  "live_archive: no confirmed final score on file": 19
  },
  "replay": {
   "version": "nfl-replay-1",
-  "built_at_et": "2026-11-14T20:11-05:00",
+  "built_at_et": "2026-11-15T15:29-05:00",
   "status": {
    "2012": "kept",
    "2013": "kept",
@@ -103,7 +103,7 @@
    "2023": "kept",
    "2024": "kept",
    "2025": "kept",
-   "2026": "built 137 games"
+   "2026": "built 138 games"
   },
   "present": true
  },
@@ -116,26 +116,26 @@
  },
  "headline": {
   "NFL": {
-   "sample_size": 1196,
-   "brier": 0.227,
+   "sample_size": 1197,
+   "brier": 0.2269,
    "market_brier": 0.2096,
-   "log_loss": 0.6456,
-   "calibration_error": 0.028,
+   "log_loss": 0.6455,
+   "calibration_error": 0.0277,
    "market_comparison": "market Brier better (t=5.8)",
-   "spread_mae": 10.139,
+   "spread_mae": 10.149,
    "confidence_validated": false,
    "calibration_status": "needs_calibration",
    "validation_status": "validated: calibration off",
    "recommendation": "CALIBRATION NEEDED"
   },
   "NHL": {
-   "sample_size": 264,
-   "brier": 0.2282,
+   "sample_size": 265,
+   "brier": 0.228,
    "market_brier": 0.2274,
-   "log_loss": 0.6475,
-   "calibration_error": 0.0279,
+   "log_loss": 0.6469,
+   "calibration_error": 0.0292,
    "market_comparison": "no detectable difference in Brier (t=0.1)",
-   "spread_mae": 2.016,
+   "spread_mae": 2.01,
    "confidence_validated": null,
    "calibration_status": "needs_calibration",
    "validation_status": "validated: calibration off",
