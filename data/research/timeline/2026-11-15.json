@@ -278,6 +278,84 @@
    "new": "unknown",
    "source": "weather feed",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-NE-DET",
+   "type": "model",
+   "field": "Boolin DET win probability",
+   "old": 0.5991,
+   "new": 0.6717,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 59.9% to 67.2% (home margin +3.42 \u2192 +6.06). Model components that moved: 1. Offense (EPA/play, regressed) +1.59 (home +0.080 vs away +0.011 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +1.05 (home allows +0.039 vs away allows +0.043 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 59.9% to 67.2% (home margin +3.42 \u2192 +6.06). Model components that moved: 1. Offense (EPA/play, regressed) +1.59 (home +0.080 vs away +0.011 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +1.05 (home allows +0.039 vs away allows +0.043 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 1.59,
+      "now": "home +0.080 vs away +0.011 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": 1.05,
+      "now": "home allows +0.039 vs away allows +0.043 x 32.45"
+     }
+    ],
+    "same_pull_updates": []
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-NE-DET",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "DET -3.4",
+   "new": "DET -6.1",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 59.9% to 67.2% (home margin +3.42 \u2192 +6.06). Model components that moved: 1. Offense (EPA/play, regressed) +1.59 (home +0.080 vs away +0.011 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +1.05 (home allows +0.039 vs away allows +0.043 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 59.9% to 67.2% (home margin +3.42 \u2192 +6.06). Model components that moved: 1. Offense (EPA/play, regressed) +1.59 (home +0.080 vs away +0.011 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +1.05 (home allows +0.039 vs away allows +0.043 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 1.59,
+      "now": "home +0.080 vs away +0.011 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": 1.05,
+      "now": "home allows +0.039 vs away allows +0.043 x 32.45"
+     }
+    ],
+    "same_pull_updates": []
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-NE-DET",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 49.5,
+   "new": 49.3,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 59.9% to 67.2% (home margin +3.42 \u2192 +6.06). Model components that moved: 1. Offense (EPA/play, regressed) +1.59 (home +0.080 vs away +0.011 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +1.05 (home allows +0.039 vs away allows +0.043 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 59.9% to 67.2% (home margin +3.42 \u2192 +6.06). Model components that moved: 1. Offense (EPA/play, regressed) +1.59 (home +0.080 vs away +0.011 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +1.05 (home allows +0.039 vs away allows +0.043 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 1.59,
+      "now": "home +0.080 vs away +0.011 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": 1.05,
+      "now": "home allows +0.039 vs away allows +0.043 x 32.45"
+     }
+    ],
+    "same_pull_updates": []
+   }
   }
  ],
  "2026-11-15-NFL-BUF-NYJ": [
@@ -492,6 +570,128 @@
    "new": "9 player(s) listed",
    "source": "NFL injury report week 10",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-BUF-NYJ",
+   "type": "starter",
+   "field": "BUF starter",
+   "old": "Josh Allen (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-BUF-NYJ",
+   "type": "starter",
+   "field": "NYJ starter",
+   "old": "Geno Smith (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-BUF-NYJ",
+   "type": "model",
+   "field": "Boolin NYJ win probability",
+   "old": 0.3787,
+   "new": 0.303,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 37.9% to 30.3% (home margin -4.21 \u2192 -7.03). Model components that moved: 1. Offense (EPA/play, regressed) -1.71 (home -0.009 vs away +0.112 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.04 (home allows +0.061 vs away allows +0.001 x 32.45); 3. Rest -0.07 (rest unknown). Data updates in the same pull: BUF starter: Josh Allen (projected) \u2192 unknown (unknown); NYJ starter: Geno Smith (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 37.9% to 30.3% (home margin -4.21 \u2192 -7.03). Model components that moved: 1. Offense (EPA/play, regressed) -1.71 (home -0.009 vs away +0.112 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.04 (home allows +0.061 vs away allows +0.001 x 32.45); 3. Rest -0.07 (rest unknown). Data updates in the same pull: BUF starter: Josh Allen (projected) \u2192 unknown (unknown); NYJ starter: Geno Smith (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.71,
+      "now": "home -0.009 vs away +0.112 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -1.04,
+      "now": "home allows +0.061 vs away allows +0.001 x 32.45"
+     },
+     {
+      "component": "Rest",
+      "margin_change": -0.07,
+      "now": "rest unknown"
+     }
+    ],
+    "same_pull_updates": [
+     "BUF starter: Josh Allen (projected) \u2192 unknown (unknown)",
+     "NYJ starter: Geno Smith (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-BUF-NYJ",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "NYJ +4.2",
+   "new": "NYJ +7.0",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 37.9% to 30.3% (home margin -4.21 \u2192 -7.03). Model components that moved: 1. Offense (EPA/play, regressed) -1.71 (home -0.009 vs away +0.112 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.04 (home allows +0.061 vs away allows +0.001 x 32.45); 3. Rest -0.07 (rest unknown). Data updates in the same pull: BUF starter: Josh Allen (projected) \u2192 unknown (unknown); NYJ starter: Geno Smith (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 37.9% to 30.3% (home margin -4.21 \u2192 -7.03). Model components that moved: 1. Offense (EPA/play, regressed) -1.71 (home -0.009 vs away +0.112 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.04 (home allows +0.061 vs away allows +0.001 x 32.45); 3. Rest -0.07 (rest unknown). Data updates in the same pull: BUF starter: Josh Allen (projected) \u2192 unknown (unknown); NYJ starter: Geno Smith (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.71,
+      "now": "home -0.009 vs away +0.112 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -1.04,
+      "now": "home allows +0.061 vs away allows +0.001 x 32.45"
+     },
+     {
+      "component": "Rest",
+      "margin_change": -0.07,
+      "now": "rest unknown"
+     }
+    ],
+    "same_pull_updates": [
+     "BUF starter: Josh Allen (projected) \u2192 unknown (unknown)",
+     "NYJ starter: Geno Smith (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-BUF-NYJ",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 48.8,
+   "new": 49.1,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 37.9% to 30.3% (home margin -4.21 \u2192 -7.03). Model components that moved: 1. Offense (EPA/play, regressed) -1.71 (home -0.009 vs away +0.112 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.04 (home allows +0.061 vs away allows +0.001 x 32.45); 3. Rest -0.07 (rest unknown). Data updates in the same pull: BUF starter: Josh Allen (projected) \u2192 unknown (unknown); NYJ starter: Geno Smith (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 37.9% to 30.3% (home margin -4.21 \u2192 -7.03). Model components that moved: 1. Offense (EPA/play, regressed) -1.71 (home -0.009 vs away +0.112 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.04 (home allows +0.061 vs away allows +0.001 x 32.45); 3. Rest -0.07 (rest unknown). Data updates in the same pull: BUF starter: Josh Allen (projected) \u2192 unknown (unknown); NYJ starter: Geno Smith (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.71,
+      "now": "home -0.009 vs away +0.112 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -1.04,
+      "now": "home allows +0.061 vs away allows +0.001 x 32.45"
+     },
+     {
+      "component": "Rest",
+      "margin_change": -0.07,
+      "now": "rest unknown"
+     }
+    ],
+    "same_pull_updates": [
+     "BUF starter: Josh Allen (projected) \u2192 unknown (unknown)",
+     "NYJ starter: Geno Smith (projected) \u2192 unknown (unknown)"
+    ]
+   }
   }
  ],
  "2026-11-15-NFL-CAR-NO": [
@@ -622,6 +822,126 @@
    "new": "6 player(s) listed",
    "source": "NFL injury report week 10",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-CAR-NO",
+   "type": "starter",
+   "field": "CAR starter",
+   "old": "Bryce Young (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-CAR-NO",
+   "type": "starter",
+   "field": "NO starter",
+   "old": "Tyler Shough (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-CAR-NO",
+   "type": "weather",
+   "field": "wind (mph)",
+   "old": 0,
+   "new": "unknown",
+   "source": "weather feed",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-CAR-NO",
+   "type": "model",
+   "field": "Boolin NO win probability",
+   "old": 0.4912,
+   "new": 0.4579,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 49.1% to 45.8% (home margin -0.30 \u2192 -1.44). Model components that moved: 1. Offense (EPA/play, regressed) -0.69 (home -0.037 vs away +0.011 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.45 (home allows +0.029 vs away allows +0.011 x 32.45). Data updates in the same pull: CAR starter: Bryce Young (projected) \u2192 unknown (unknown); NO starter: Tyler Shough (projected) \u2192 unknown (unknown); wind (mph): 0 \u2192 unknown.",
+   "detail": {
+    "text": "Boolin moved from 49.1% to 45.8% (home margin -0.30 \u2192 -1.44). Model components that moved: 1. Offense (EPA/play, regressed) -0.69 (home -0.037 vs away +0.011 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.45 (home allows +0.029 vs away allows +0.011 x 32.45). Data updates in the same pull: CAR starter: Bryce Young (projected) \u2192 unknown (unknown); NO starter: Tyler Shough (projected) \u2192 unknown (unknown); wind (mph): 0 \u2192 unknown.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.69,
+      "now": "home -0.037 vs away +0.011 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.45,
+      "now": "home allows +0.029 vs away allows +0.011 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "CAR starter: Bryce Young (projected) \u2192 unknown (unknown)",
+     "NO starter: Tyler Shough (projected) \u2192 unknown (unknown)",
+     "wind (mph): 0 \u2192 unknown"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-CAR-NO",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "NO +0.3",
+   "new": "NO +1.4",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 49.1% to 45.8% (home margin -0.30 \u2192 -1.44). Model components that moved: 1. Offense (EPA/play, regressed) -0.69 (home -0.037 vs away +0.011 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.45 (home allows +0.029 vs away allows +0.011 x 32.45). Data updates in the same pull: CAR starter: Bryce Young (projected) \u2192 unknown (unknown); NO starter: Tyler Shough (projected) \u2192 unknown (unknown); wind (mph): 0 \u2192 unknown.",
+   "detail": {
+    "text": "Boolin moved from 49.1% to 45.8% (home margin -0.30 \u2192 -1.44). Model components that moved: 1. Offense (EPA/play, regressed) -0.69 (home -0.037 vs away +0.011 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.45 (home allows +0.029 vs away allows +0.011 x 32.45). Data updates in the same pull: CAR starter: Bryce Young (projected) \u2192 unknown (unknown); NO starter: Tyler Shough (projected) \u2192 unknown (unknown); wind (mph): 0 \u2192 unknown.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.69,
+      "now": "home -0.037 vs away +0.011 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.45,
+      "now": "home allows +0.029 vs away allows +0.011 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "CAR starter: Bryce Young (projected) \u2192 unknown (unknown)",
+     "NO starter: Tyler Shough (projected) \u2192 unknown (unknown)",
+     "wind (mph): 0 \u2192 unknown"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-CAR-NO",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 47.0,
+   "new": 45.8,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 49.1% to 45.8% (home margin -0.30 \u2192 -1.44). Model components that moved: 1. Offense (EPA/play, regressed) -0.69 (home -0.037 vs away +0.011 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.45 (home allows +0.029 vs away allows +0.011 x 32.45). Data updates in the same pull: CAR starter: Bryce Young (projected) \u2192 unknown (unknown); NO starter: Tyler Shough (projected) \u2192 unknown (unknown); wind (mph): 0 \u2192 unknown.",
+   "detail": {
+    "text": "Boolin moved from 49.1% to 45.8% (home margin -0.30 \u2192 -1.44). Model components that moved: 1. Offense (EPA/play, regressed) -0.69 (home -0.037 vs away +0.011 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.45 (home allows +0.029 vs away allows +0.011 x 32.45). Data updates in the same pull: CAR starter: Bryce Young (projected) \u2192 unknown (unknown); NO starter: Tyler Shough (projected) \u2192 unknown (unknown); wind (mph): 0 \u2192 unknown.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.69,
+      "now": "home -0.037 vs away +0.011 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.45,
+      "now": "home allows +0.029 vs away allows +0.011 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "CAR starter: Bryce Young (projected) \u2192 unknown (unknown)",
+     "NO starter: Tyler Shough (projected) \u2192 unknown (unknown)",
+     "wind (mph): 0 \u2192 unknown"
+    ]
+   }
   }
  ],
  "2026-11-15-NFL-HOU-CLE": [
@@ -752,6 +1072,74 @@
    "new": "3 player(s) listed",
    "source": "NFL injury report week 10",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-HOU-CLE",
+   "type": "starter",
+   "field": "HOU starter",
+   "old": "C.J. Stroud (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-HOU-CLE",
+   "type": "starter",
+   "field": "CLE starter",
+   "old": "Deshaun Watson (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-HOU-CLE",
+   "type": "model",
+   "field": "Boolin CLE win probability",
+   "old": 0.429,
+   "new": 0.4446,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 42.9% to 44.5% (home margin -2.44 \u2192 -1.90). Model components that moved: 1. Offense (EPA/play, regressed) +0.56 (home -0.041 vs away +0.039 EPA/play x 58.15). Data updates in the same pull: HOU starter: C.J. Stroud (projected) \u2192 unknown (unknown); CLE starter: Deshaun Watson (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 42.9% to 44.5% (home margin -2.44 \u2192 -1.90). Model components that moved: 1. Offense (EPA/play, regressed) +0.56 (home -0.041 vs away +0.039 EPA/play x 58.15). Data updates in the same pull: HOU starter: C.J. Stroud (projected) \u2192 unknown (unknown); CLE starter: Deshaun Watson (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 0.56,
+      "now": "home -0.041 vs away +0.039 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": [
+     "HOU starter: C.J. Stroud (projected) \u2192 unknown (unknown)",
+     "CLE starter: Deshaun Watson (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-HOU-CLE",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "CLE +2.4",
+   "new": "CLE +1.9",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 42.9% to 44.5% (home margin -2.44 \u2192 -1.90). Model components that moved: 1. Offense (EPA/play, regressed) +0.56 (home -0.041 vs away +0.039 EPA/play x 58.15). Data updates in the same pull: HOU starter: C.J. Stroud (projected) \u2192 unknown (unknown); CLE starter: Deshaun Watson (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 42.9% to 44.5% (home margin -2.44 \u2192 -1.90). Model components that moved: 1. Offense (EPA/play, regressed) +0.56 (home -0.041 vs away +0.039 EPA/play x 58.15). Data updates in the same pull: HOU starter: C.J. Stroud (projected) \u2192 unknown (unknown); CLE starter: Deshaun Watson (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 0.56,
+      "now": "home -0.041 vs away +0.039 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": [
+     "HOU starter: C.J. Stroud (projected) \u2192 unknown (unknown)",
+     "CLE starter: Deshaun Watson (projected) \u2192 unknown (unknown)"
+    ]
+   }
   }
  ],
  "2026-11-15-NFL-KC-ATL": [
@@ -882,6 +1270,113 @@
    "new": "5 player(s) listed",
    "source": "NFL injury report week 10",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-KC-ATL",
+   "type": "starter",
+   "field": "KC starter",
+   "old": "Patrick Mahomes (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-KC-ATL",
+   "type": "starter",
+   "field": "ATL starter",
+   "old": "Michael Penix Jr. (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-KC-ATL",
+   "type": "model",
+   "field": "Boolin ATL win probability",
+   "old": 0.322,
+   "new": 0.2501,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 32.2% to 25.0% (home margin -6.30 \u2192 -9.19). Model components that moved: 1. Offense (EPA/play, regressed) -1.74 (home -0.065 vs away +0.087 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.15 (home allows +0.012 vs away allows -0.059 x 32.45). Data updates in the same pull: KC starter: Patrick Mahomes (projected) \u2192 unknown (unknown); ATL starter: Michael Penix Jr. (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 32.2% to 25.0% (home margin -6.30 \u2192 -9.19). Model components that moved: 1. Offense (EPA/play, regressed) -1.74 (home -0.065 vs away +0.087 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.15 (home allows +0.012 vs away allows -0.059 x 32.45). Data updates in the same pull: KC starter: Patrick Mahomes (projected) \u2192 unknown (unknown); ATL starter: Michael Penix Jr. (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.74,
+      "now": "home -0.065 vs away +0.087 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -1.15,
+      "now": "home allows +0.012 vs away allows -0.059 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "KC starter: Patrick Mahomes (projected) \u2192 unknown (unknown)",
+     "ATL starter: Michael Penix Jr. (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-KC-ATL",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "ATL +6.3",
+   "new": "ATL +9.2",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 32.2% to 25.0% (home margin -6.30 \u2192 -9.19). Model components that moved: 1. Offense (EPA/play, regressed) -1.74 (home -0.065 vs away +0.087 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.15 (home allows +0.012 vs away allows -0.059 x 32.45). Data updates in the same pull: KC starter: Patrick Mahomes (projected) \u2192 unknown (unknown); ATL starter: Michael Penix Jr. (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 32.2% to 25.0% (home margin -6.30 \u2192 -9.19). Model components that moved: 1. Offense (EPA/play, regressed) -1.74 (home -0.065 vs away +0.087 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.15 (home allows +0.012 vs away allows -0.059 x 32.45). Data updates in the same pull: KC starter: Patrick Mahomes (projected) \u2192 unknown (unknown); ATL starter: Michael Penix Jr. (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.74,
+      "now": "home -0.065 vs away +0.087 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -1.15,
+      "now": "home allows +0.012 vs away allows -0.059 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "KC starter: Patrick Mahomes (projected) \u2192 unknown (unknown)",
+     "ATL starter: Michael Penix Jr. (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-KC-ATL",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 45.6,
+   "new": 45.0,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 32.2% to 25.0% (home margin -6.30 \u2192 -9.19). Model components that moved: 1. Offense (EPA/play, regressed) -1.74 (home -0.065 vs away +0.087 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.15 (home allows +0.012 vs away allows -0.059 x 32.45). Data updates in the same pull: KC starter: Patrick Mahomes (projected) \u2192 unknown (unknown); ATL starter: Michael Penix Jr. (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 32.2% to 25.0% (home margin -6.30 \u2192 -9.19). Model components that moved: 1. Offense (EPA/play, regressed) -1.74 (home -0.065 vs away +0.087 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.15 (home allows +0.012 vs away allows -0.059 x 32.45). Data updates in the same pull: KC starter: Patrick Mahomes (projected) \u2192 unknown (unknown); ATL starter: Michael Penix Jr. (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.74,
+      "now": "home -0.065 vs away +0.087 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -1.15,
+      "now": "home allows +0.012 vs away allows -0.059 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "KC starter: Patrick Mahomes (projected) \u2192 unknown (unknown)",
+     "ATL starter: Michael Penix Jr. (projected) \u2192 unknown (unknown)"
+    ]
+   }
   }
  ],
  "2026-11-15-NFL-MIA-IND": [
@@ -1007,6 +1502,113 @@
    "new": "Kyle McCord (projected)",
    "source": "nflverse schedule (expected starter)",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-MIA-IND",
+   "type": "starter",
+   "field": "MIA starter",
+   "old": "Kyle McCord (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-MIA-IND",
+   "type": "starter",
+   "field": "IND starter",
+   "old": "Daniel Jones (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-MIA-IND",
+   "type": "model",
+   "field": "Boolin IND win probability",
+   "old": 0.5301,
+   "new": 0.5041,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 53.0% to 50.4% (home margin +1.03 \u2192 +0.14). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.45 (home allows +0.022 vs away allows +0.047 x 32.45); 2. Offense (EPA/play, regressed) -0.44 (home -0.096 vs away -0.051 EPA/play x 58.15). Data updates in the same pull: MIA starter: Kyle McCord (projected) \u2192 unknown (unknown); IND starter: Daniel Jones (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 53.0% to 50.4% (home margin +1.03 \u2192 +0.14). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.45 (home allows +0.022 vs away allows +0.047 x 32.45); 2. Offense (EPA/play, regressed) -0.44 (home -0.096 vs away -0.051 EPA/play x 58.15). Data updates in the same pull: MIA starter: Kyle McCord (projected) \u2192 unknown (unknown); IND starter: Daniel Jones (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.45,
+      "now": "home allows +0.022 vs away allows +0.047 x 32.45"
+     },
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.44,
+      "now": "home -0.096 vs away -0.051 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": [
+     "MIA starter: Kyle McCord (projected) \u2192 unknown (unknown)",
+     "IND starter: Daniel Jones (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-MIA-IND",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "IND -1.0",
+   "new": "IND -0.1",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 53.0% to 50.4% (home margin +1.03 \u2192 +0.14). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.45 (home allows +0.022 vs away allows +0.047 x 32.45); 2. Offense (EPA/play, regressed) -0.44 (home -0.096 vs away -0.051 EPA/play x 58.15). Data updates in the same pull: MIA starter: Kyle McCord (projected) \u2192 unknown (unknown); IND starter: Daniel Jones (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 53.0% to 50.4% (home margin +1.03 \u2192 +0.14). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.45 (home allows +0.022 vs away allows +0.047 x 32.45); 2. Offense (EPA/play, regressed) -0.44 (home -0.096 vs away -0.051 EPA/play x 58.15). Data updates in the same pull: MIA starter: Kyle McCord (projected) \u2192 unknown (unknown); IND starter: Daniel Jones (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.45,
+      "now": "home allows +0.022 vs away allows +0.047 x 32.45"
+     },
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.44,
+      "now": "home -0.096 vs away -0.051 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": [
+     "MIA starter: Kyle McCord (projected) \u2192 unknown (unknown)",
+     "IND starter: Daniel Jones (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-MIA-IND",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 45.1,
+   "new": 43.8,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 53.0% to 50.4% (home margin +1.03 \u2192 +0.14). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.45 (home allows +0.022 vs away allows +0.047 x 32.45); 2. Offense (EPA/play, regressed) -0.44 (home -0.096 vs away -0.051 EPA/play x 58.15). Data updates in the same pull: MIA starter: Kyle McCord (projected) \u2192 unknown (unknown); IND starter: Daniel Jones (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 53.0% to 50.4% (home margin +1.03 \u2192 +0.14). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.45 (home allows +0.022 vs away allows +0.047 x 32.45); 2. Offense (EPA/play, regressed) -0.44 (home -0.096 vs away -0.051 EPA/play x 58.15). Data updates in the same pull: MIA starter: Kyle McCord (projected) \u2192 unknown (unknown); IND starter: Daniel Jones (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.45,
+      "now": "home allows +0.022 vs away allows +0.047 x 32.45"
+     },
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.44,
+      "now": "home -0.096 vs away -0.051 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": [
+     "MIA starter: Kyle McCord (projected) \u2192 unknown (unknown)",
+     "IND starter: Daniel Jones (projected) \u2192 unknown (unknown)"
+    ]
+   }
   }
  ],
  "2026-11-15-NFL-MIN-GB": [
@@ -1234,6 +1836,128 @@
    "new": "12 player(s) listed",
    "source": "NFL injury report week 10",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-MIN-GB",
+   "type": "starter",
+   "field": "MIN starter",
+   "old": "Kirk Cousins (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-MIN-GB",
+   "type": "starter",
+   "field": "GB starter",
+   "old": "Jordan Love (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-MIN-GB",
+   "type": "model",
+   "field": "Boolin GB win probability",
+   "old": 0.7001,
+   "new": 0.6346,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 70.0% to 63.5% (home margin +7.15 \u2192 +4.69). Model components that moved: 1. Offense (EPA/play, regressed) -1.85 (home +0.013 vs away -0.087 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.54 (home allows -0.029 vs away allows -0.123 x 32.45); 3. Rest -0.07 (rest unknown). Data updates in the same pull: MIN starter: Kirk Cousins (projected) \u2192 unknown (unknown); GB starter: Jordan Love (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 70.0% to 63.5% (home margin +7.15 \u2192 +4.69). Model components that moved: 1. Offense (EPA/play, regressed) -1.85 (home +0.013 vs away -0.087 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.54 (home allows -0.029 vs away allows -0.123 x 32.45); 3. Rest -0.07 (rest unknown). Data updates in the same pull: MIN starter: Kirk Cousins (projected) \u2192 unknown (unknown); GB starter: Jordan Love (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.85,
+      "now": "home +0.013 vs away -0.087 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.54,
+      "now": "home allows -0.029 vs away allows -0.123 x 32.45"
+     },
+     {
+      "component": "Rest",
+      "margin_change": -0.07,
+      "now": "rest unknown"
+     }
+    ],
+    "same_pull_updates": [
+     "MIN starter: Kirk Cousins (projected) \u2192 unknown (unknown)",
+     "GB starter: Jordan Love (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-MIN-GB",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "GB -7.2",
+   "new": "GB -4.7",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 70.0% to 63.5% (home margin +7.15 \u2192 +4.69). Model components that moved: 1. Offense (EPA/play, regressed) -1.85 (home +0.013 vs away -0.087 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.54 (home allows -0.029 vs away allows -0.123 x 32.45); 3. Rest -0.07 (rest unknown). Data updates in the same pull: MIN starter: Kirk Cousins (projected) \u2192 unknown (unknown); GB starter: Jordan Love (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 70.0% to 63.5% (home margin +7.15 \u2192 +4.69). Model components that moved: 1. Offense (EPA/play, regressed) -1.85 (home +0.013 vs away -0.087 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.54 (home allows -0.029 vs away allows -0.123 x 32.45); 3. Rest -0.07 (rest unknown). Data updates in the same pull: MIN starter: Kirk Cousins (projected) \u2192 unknown (unknown); GB starter: Jordan Love (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.85,
+      "now": "home +0.013 vs away -0.087 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.54,
+      "now": "home allows -0.029 vs away allows -0.123 x 32.45"
+     },
+     {
+      "component": "Rest",
+      "margin_change": -0.07,
+      "now": "rest unknown"
+     }
+    ],
+    "same_pull_updates": [
+     "MIN starter: Kirk Cousins (projected) \u2192 unknown (unknown)",
+     "GB starter: Jordan Love (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-MIN-GB",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 40.8,
+   "new": 40.6,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 70.0% to 63.5% (home margin +7.15 \u2192 +4.69). Model components that moved: 1. Offense (EPA/play, regressed) -1.85 (home +0.013 vs away -0.087 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.54 (home allows -0.029 vs away allows -0.123 x 32.45); 3. Rest -0.07 (rest unknown). Data updates in the same pull: MIN starter: Kirk Cousins (projected) \u2192 unknown (unknown); GB starter: Jordan Love (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 70.0% to 63.5% (home margin +7.15 \u2192 +4.69). Model components that moved: 1. Offense (EPA/play, regressed) -1.85 (home +0.013 vs away -0.087 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.54 (home allows -0.029 vs away allows -0.123 x 32.45); 3. Rest -0.07 (rest unknown). Data updates in the same pull: MIN starter: Kirk Cousins (projected) \u2192 unknown (unknown); GB starter: Jordan Love (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.85,
+      "now": "home +0.013 vs away -0.087 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.54,
+      "now": "home allows -0.029 vs away allows -0.123 x 32.45"
+     },
+     {
+      "component": "Rest",
+      "margin_change": -0.07,
+      "now": "rest unknown"
+     }
+    ],
+    "same_pull_updates": [
+     "MIN starter: Kirk Cousins (projected) \u2192 unknown (unknown)",
+     "GB starter: Jordan Love (projected) \u2192 unknown (unknown)"
+    ]
+   }
   }
  ],
  "2026-11-15-NFL-LA-ARI": [
@@ -1364,6 +2088,113 @@
    "new": "9 player(s) listed",
    "source": "NFL injury report week 10",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-LA-ARI",
+   "type": "starter",
+   "field": "LA starter",
+   "old": "Matthew Stafford (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-LA-ARI",
+   "type": "starter",
+   "field": "ARI starter",
+   "old": "Gardner Minshew (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-LA-ARI",
+   "type": "model",
+   "field": "Boolin ARI win probability",
+   "old": 0.3798,
+   "new": 0.2801,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 38.0% to 28.0% (home margin -4.17 \u2192 -7.94). Model components that moved: 1. Offense (EPA/play, regressed) -2.40 (home -0.035 vs away +0.046 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.37 (home allows +0.077 vs away allows -0.082 x 32.45). Data updates in the same pull: LA starter: Matthew Stafford (projected) \u2192 unknown (unknown); ARI starter: Gardner Minshew (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 38.0% to 28.0% (home margin -4.17 \u2192 -7.94). Model components that moved: 1. Offense (EPA/play, regressed) -2.40 (home -0.035 vs away +0.046 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.37 (home allows +0.077 vs away allows -0.082 x 32.45). Data updates in the same pull: LA starter: Matthew Stafford (projected) \u2192 unknown (unknown); ARI starter: Gardner Minshew (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -2.4,
+      "now": "home -0.035 vs away +0.046 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -1.37,
+      "now": "home allows +0.077 vs away allows -0.082 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "LA starter: Matthew Stafford (projected) \u2192 unknown (unknown)",
+     "ARI starter: Gardner Minshew (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-LA-ARI",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "ARI +4.2",
+   "new": "ARI +7.9",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 38.0% to 28.0% (home margin -4.17 \u2192 -7.94). Model components that moved: 1. Offense (EPA/play, regressed) -2.40 (home -0.035 vs away +0.046 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.37 (home allows +0.077 vs away allows -0.082 x 32.45). Data updates in the same pull: LA starter: Matthew Stafford (projected) \u2192 unknown (unknown); ARI starter: Gardner Minshew (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 38.0% to 28.0% (home margin -4.17 \u2192 -7.94). Model components that moved: 1. Offense (EPA/play, regressed) -2.40 (home -0.035 vs away +0.046 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.37 (home allows +0.077 vs away allows -0.082 x 32.45). Data updates in the same pull: LA starter: Matthew Stafford (projected) \u2192 unknown (unknown); ARI starter: Gardner Minshew (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -2.4,
+      "now": "home -0.035 vs away +0.046 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -1.37,
+      "now": "home allows +0.077 vs away allows -0.082 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "LA starter: Matthew Stafford (projected) \u2192 unknown (unknown)",
+     "ARI starter: Gardner Minshew (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-LA-ARI",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 45.8,
+   "new": 45.6,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 38.0% to 28.0% (home margin -4.17 \u2192 -7.94). Model components that moved: 1. Offense (EPA/play, regressed) -2.40 (home -0.035 vs away +0.046 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.37 (home allows +0.077 vs away allows -0.082 x 32.45). Data updates in the same pull: LA starter: Matthew Stafford (projected) \u2192 unknown (unknown); ARI starter: Gardner Minshew (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 38.0% to 28.0% (home margin -4.17 \u2192 -7.94). Model components that moved: 1. Offense (EPA/play, regressed) -2.40 (home -0.035 vs away +0.046 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -1.37 (home allows +0.077 vs away allows -0.082 x 32.45). Data updates in the same pull: LA starter: Matthew Stafford (projected) \u2192 unknown (unknown); ARI starter: Gardner Minshew (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -2.4,
+      "now": "home -0.035 vs away +0.046 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -1.37,
+      "now": "home allows +0.077 vs away allows -0.082 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "LA starter: Matthew Stafford (projected) \u2192 unknown (unknown)",
+     "ARI starter: Gardner Minshew (projected) \u2192 unknown (unknown)"
+    ]
+   }
   }
  ],
  "2026-11-15-NFL-SEA-LV": [
@@ -1478,6 +2309,126 @@
    "new": "2 player(s) listed",
    "source": "NFL injury report week 10",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-SEA-LV",
+   "type": "starter",
+   "field": "SEA starter",
+   "old": "Sam Darnold (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-SEA-LV",
+   "type": "starter",
+   "field": "LV starter",
+   "old": "Fernando Mendoza (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-SEA-LV",
+   "type": "weather",
+   "field": "wind (mph)",
+   "old": 0,
+   "new": "unknown",
+   "source": "weather feed",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-SEA-LV",
+   "type": "model",
+   "field": "Boolin LV win probability",
+   "old": 0.502,
+   "new": 0.4463,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 50.2% to 44.6% (home margin +0.07 \u2192 -1.84). Model components that moved: 1. Offense (EPA/play, regressed) -1.40 (home -0.009 vs away -0.015 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.51 (home allows +0.058 vs away allows -0.069 x 32.45). Data updates in the same pull: SEA starter: Sam Darnold (projected) \u2192 unknown (unknown); LV starter: Fernando Mendoza (projected) \u2192 unknown (unknown); wind (mph): 0 \u2192 unknown.",
+   "detail": {
+    "text": "Boolin moved from 50.2% to 44.6% (home margin +0.07 \u2192 -1.84). Model components that moved: 1. Offense (EPA/play, regressed) -1.40 (home -0.009 vs away -0.015 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.51 (home allows +0.058 vs away allows -0.069 x 32.45). Data updates in the same pull: SEA starter: Sam Darnold (projected) \u2192 unknown (unknown); LV starter: Fernando Mendoza (projected) \u2192 unknown (unknown); wind (mph): 0 \u2192 unknown.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.4,
+      "now": "home -0.009 vs away -0.015 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.51,
+      "now": "home allows +0.058 vs away allows -0.069 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "SEA starter: Sam Darnold (projected) \u2192 unknown (unknown)",
+     "LV starter: Fernando Mendoza (projected) \u2192 unknown (unknown)",
+     "wind (mph): 0 \u2192 unknown"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-SEA-LV",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "LV -0.1",
+   "new": "LV +1.8",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 50.2% to 44.6% (home margin +0.07 \u2192 -1.84). Model components that moved: 1. Offense (EPA/play, regressed) -1.40 (home -0.009 vs away -0.015 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.51 (home allows +0.058 vs away allows -0.069 x 32.45). Data updates in the same pull: SEA starter: Sam Darnold (projected) \u2192 unknown (unknown); LV starter: Fernando Mendoza (projected) \u2192 unknown (unknown); wind (mph): 0 \u2192 unknown.",
+   "detail": {
+    "text": "Boolin moved from 50.2% to 44.6% (home margin +0.07 \u2192 -1.84). Model components that moved: 1. Offense (EPA/play, regressed) -1.40 (home -0.009 vs away -0.015 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.51 (home allows +0.058 vs away allows -0.069 x 32.45). Data updates in the same pull: SEA starter: Sam Darnold (projected) \u2192 unknown (unknown); LV starter: Fernando Mendoza (projected) \u2192 unknown (unknown); wind (mph): 0 \u2192 unknown.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.4,
+      "now": "home -0.009 vs away -0.015 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.51,
+      "now": "home allows +0.058 vs away allows -0.069 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "SEA starter: Sam Darnold (projected) \u2192 unknown (unknown)",
+     "LV starter: Fernando Mendoza (projected) \u2192 unknown (unknown)",
+     "wind (mph): 0 \u2192 unknown"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-SEA-LV",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 45.2,
+   "new": 44.8,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 50.2% to 44.6% (home margin +0.07 \u2192 -1.84). Model components that moved: 1. Offense (EPA/play, regressed) -1.40 (home -0.009 vs away -0.015 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.51 (home allows +0.058 vs away allows -0.069 x 32.45). Data updates in the same pull: SEA starter: Sam Darnold (projected) \u2192 unknown (unknown); LV starter: Fernando Mendoza (projected) \u2192 unknown (unknown); wind (mph): 0 \u2192 unknown.",
+   "detail": {
+    "text": "Boolin moved from 50.2% to 44.6% (home margin +0.07 \u2192 -1.84). Model components that moved: 1. Offense (EPA/play, regressed) -1.40 (home -0.009 vs away -0.015 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.51 (home allows +0.058 vs away allows -0.069 x 32.45). Data updates in the same pull: SEA starter: Sam Darnold (projected) \u2192 unknown (unknown); LV starter: Fernando Mendoza (projected) \u2192 unknown (unknown); wind (mph): 0 \u2192 unknown.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.4,
+      "now": "home -0.009 vs away -0.015 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.51,
+      "now": "home allows +0.058 vs away allows -0.069 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "SEA starter: Sam Darnold (projected) \u2192 unknown (unknown)",
+     "LV starter: Fernando Mendoza (projected) \u2192 unknown (unknown)",
+     "wind (mph): 0 \u2192 unknown"
+    ]
+   }
   }
  ],
  "2026-11-15-NFL-SF-DAL": [
@@ -1593,6 +2544,113 @@
    "new": "11 player(s) listed",
    "source": "NFL injury report week 10",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-SF-DAL",
+   "type": "starter",
+   "field": "SF starter",
+   "old": "Brock Purdy (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-SF-DAL",
+   "type": "starter",
+   "field": "DAL starter",
+   "old": "Dak Prescott (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-SF-DAL",
+   "type": "model",
+   "field": "Boolin DAL win probability",
+   "old": 0.397,
+   "new": 0.3615,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 39.7% to 36.1% (home margin -3.56 \u2192 -4.83). Model components that moved: 1. Offense (EPA/play, regressed) -1.16 (home +0.093 vs away +0.145 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.11 (home allows +0.103 vs away allows -0.012 x 32.45). Data updates in the same pull: SF starter: Brock Purdy (projected) \u2192 unknown (unknown); DAL starter: Dak Prescott (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 39.7% to 36.1% (home margin -3.56 \u2192 -4.83). Model components that moved: 1. Offense (EPA/play, regressed) -1.16 (home +0.093 vs away +0.145 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.11 (home allows +0.103 vs away allows -0.012 x 32.45). Data updates in the same pull: SF starter: Brock Purdy (projected) \u2192 unknown (unknown); DAL starter: Dak Prescott (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.16,
+      "now": "home +0.093 vs away +0.145 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.11,
+      "now": "home allows +0.103 vs away allows -0.012 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "SF starter: Brock Purdy (projected) \u2192 unknown (unknown)",
+     "DAL starter: Dak Prescott (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-SF-DAL",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "DAL +3.6",
+   "new": "DAL +4.8",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 39.7% to 36.1% (home margin -3.56 \u2192 -4.83). Model components that moved: 1. Offense (EPA/play, regressed) -1.16 (home +0.093 vs away +0.145 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.11 (home allows +0.103 vs away allows -0.012 x 32.45). Data updates in the same pull: SF starter: Brock Purdy (projected) \u2192 unknown (unknown); DAL starter: Dak Prescott (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 39.7% to 36.1% (home margin -3.56 \u2192 -4.83). Model components that moved: 1. Offense (EPA/play, regressed) -1.16 (home +0.093 vs away +0.145 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.11 (home allows +0.103 vs away allows -0.012 x 32.45). Data updates in the same pull: SF starter: Brock Purdy (projected) \u2192 unknown (unknown); DAL starter: Dak Prescott (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.16,
+      "now": "home +0.093 vs away +0.145 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.11,
+      "now": "home allows +0.103 vs away allows -0.012 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "SF starter: Brock Purdy (projected) \u2192 unknown (unknown)",
+     "DAL starter: Dak Prescott (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-SF-DAL",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 50.2,
+   "new": 52.7,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 39.7% to 36.1% (home margin -3.56 \u2192 -4.83). Model components that moved: 1. Offense (EPA/play, regressed) -1.16 (home +0.093 vs away +0.145 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.11 (home allows +0.103 vs away allows -0.012 x 32.45). Data updates in the same pull: SF starter: Brock Purdy (projected) \u2192 unknown (unknown); DAL starter: Dak Prescott (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 39.7% to 36.1% (home margin -3.56 \u2192 -4.83). Model components that moved: 1. Offense (EPA/play, regressed) -1.16 (home +0.093 vs away +0.145 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.11 (home allows +0.103 vs away allows -0.012 x 32.45). Data updates in the same pull: SF starter: Brock Purdy (projected) \u2192 unknown (unknown); DAL starter: Dak Prescott (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -1.16,
+      "now": "home +0.093 vs away +0.145 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.11,
+      "now": "home allows +0.103 vs away allows -0.012 x 32.45"
+     }
+    ],
+    "same_pull_updates": [
+     "SF starter: Brock Purdy (projected) \u2192 unknown (unknown)",
+     "DAL starter: Dak Prescott (projected) \u2192 unknown (unknown)"
+    ]
+   }
   }
  ],
  "2026-11-15-NFL-PIT-CIN": [
@@ -1775,6 +2833,189 @@
    "new": "6 player(s) listed",
    "source": "NFL injury report week 10",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-JAX-TEN",
+   "type": "starter",
+   "field": "JAX starter",
+   "old": "Trevor Lawrence (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-JAX-TEN",
+   "type": "starter",
+   "field": "TEN starter",
+   "old": "Cam Ward (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-JAX-TEN",
+   "type": "model",
+   "field": "Boolin TEN win probability",
+   "old": 0.2604,
+   "new": 0.2195,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 26.0% to 21.9% (home margin -8.75 \u2192 -10.55). Model components that moved: 1. Offense (EPA/play, regressed) -0.96 (home -0.051 vs away +0.092 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.55 (home allows +0.057 vs away allows -0.071 x 32.45); 3. Rest -0.29 (rest unknown). Data updates in the same pull: JAX starter: Trevor Lawrence (projected) \u2192 unknown (unknown); TEN starter: Cam Ward (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 26.0% to 21.9% (home margin -8.75 \u2192 -10.55). Model components that moved: 1. Offense (EPA/play, regressed) -0.96 (home -0.051 vs away +0.092 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.55 (home allows +0.057 vs away allows -0.071 x 32.45); 3. Rest -0.29 (rest unknown). Data updates in the same pull: JAX starter: Trevor Lawrence (projected) \u2192 unknown (unknown); TEN starter: Cam Ward (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.96,
+      "now": "home -0.051 vs away +0.092 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.55,
+      "now": "home allows +0.057 vs away allows -0.071 x 32.45"
+     },
+     {
+      "component": "Rest",
+      "margin_change": -0.29,
+      "now": "rest unknown"
+     }
+    ],
+    "same_pull_updates": [
+     "JAX starter: Trevor Lawrence (projected) \u2192 unknown (unknown)",
+     "TEN starter: Cam Ward (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-JAX-TEN",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "TEN +8.8",
+   "new": "TEN +10.6",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 26.0% to 21.9% (home margin -8.75 \u2192 -10.55). Model components that moved: 1. Offense (EPA/play, regressed) -0.96 (home -0.051 vs away +0.092 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.55 (home allows +0.057 vs away allows -0.071 x 32.45); 3. Rest -0.29 (rest unknown). Data updates in the same pull: JAX starter: Trevor Lawrence (projected) \u2192 unknown (unknown); TEN starter: Cam Ward (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 26.0% to 21.9% (home margin -8.75 \u2192 -10.55). Model components that moved: 1. Offense (EPA/play, regressed) -0.96 (home -0.051 vs away +0.092 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.55 (home allows +0.057 vs away allows -0.071 x 32.45); 3. Rest -0.29 (rest unknown). Data updates in the same pull: JAX starter: Trevor Lawrence (projected) \u2192 unknown (unknown); TEN starter: Cam Ward (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.96,
+      "now": "home -0.051 vs away +0.092 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.55,
+      "now": "home allows +0.057 vs away allows -0.071 x 32.45"
+     },
+     {
+      "component": "Rest",
+      "margin_change": -0.29,
+      "now": "rest unknown"
+     }
+    ],
+    "same_pull_updates": [
+     "JAX starter: Trevor Lawrence (projected) \u2192 unknown (unknown)",
+     "TEN starter: Cam Ward (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NFL-JAX-TEN",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 45.3,
+   "new": 46.1,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 26.0% to 21.9% (home margin -8.75 \u2192 -10.55). Model components that moved: 1. Offense (EPA/play, regressed) -0.96 (home -0.051 vs away +0.092 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.55 (home allows +0.057 vs away allows -0.071 x 32.45); 3. Rest -0.29 (rest unknown). Data updates in the same pull: JAX starter: Trevor Lawrence (projected) \u2192 unknown (unknown); TEN starter: Cam Ward (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 26.0% to 21.9% (home margin -8.75 \u2192 -10.55). Model components that moved: 1. Offense (EPA/play, regressed) -0.96 (home -0.051 vs away +0.092 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.55 (home allows +0.057 vs away allows -0.071 x 32.45); 3. Rest -0.29 (rest unknown). Data updates in the same pull: JAX starter: Trevor Lawrence (projected) \u2192 unknown (unknown); TEN starter: Cam Ward (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.96,
+      "now": "home -0.051 vs away +0.092 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.55,
+      "now": "home allows +0.057 vs away allows -0.071 x 32.45"
+     },
+     {
+      "component": "Rest",
+      "margin_change": -0.29,
+      "now": "rest unknown"
+     }
+    ],
+    "same_pull_updates": [
+     "JAX starter: Trevor Lawrence (projected) \u2192 unknown (unknown)",
+     "TEN starter: Cam Ward (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  }
+ ],
+ "2026-11-15-NHL-EDM-PHI": [
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NHL-EDM-PHI",
+   "type": "injury_status",
+   "field": "Denver Barkey (PHI)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NHL-EDM-PHI",
+   "type": "injury_status",
+   "field": "Mattias Janmark (EDM)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  },
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NHL-EDM-PHI",
+   "type": "injury_status",
+   "field": "Ryan Nugent-Hopkins (EDM)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-11-15-NHL-CGY-ANA": [
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NHL-CGY-ANA",
+   "type": "injury_status",
+   "field": "Ian Moore (ANA)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  }
+ ],
+ "2026-11-15-NHL-NSH-SJS": [
+  {
+   "t": "2026-11-15T20:17-05:00",
+   "game_key": "2026-11-15-NHL-NSH-SJS",
+   "type": "injury_status",
+   "field": "Alexander Wennberg (SJS)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
   }
  ]
 }
