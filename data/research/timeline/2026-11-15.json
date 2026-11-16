@@ -2781,6 +2781,128 @@
    "new": "4 player(s) listed",
    "source": "NFL injury report week 10",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-16T18:48-05:00",
+   "game_key": "2026-11-15-NFL-PIT-CIN",
+   "type": "starter",
+   "field": "PIT starter",
+   "old": "Aaron Rodgers (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-16T18:48-05:00",
+   "game_key": "2026-11-15-NFL-PIT-CIN",
+   "type": "starter",
+   "field": "CIN starter",
+   "old": "Joe Burrow (projected)",
+   "new": "unknown (unknown)",
+   "source": "nflverse",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-16T18:48-05:00",
+   "game_key": "2026-11-15-NFL-PIT-CIN",
+   "type": "model",
+   "field": "Boolin CIN win probability",
+   "old": 0.6637,
+   "new": 0.749,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 66.4% to 74.9% (home margin +5.76 \u2192 +9.15). Model components that moved: 1. Offense (EPA/play, regressed) +1.60 (home +0.125 vs away -0.006 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +1.29 (home allows +0.006 vs away allows -0.006 x 32.45); 3. Rest +0.50 (rest unknown). Data updates in the same pull: PIT starter: Aaron Rodgers (projected) \u2192 unknown (unknown); CIN starter: Joe Burrow (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 66.4% to 74.9% (home margin +5.76 \u2192 +9.15). Model components that moved: 1. Offense (EPA/play, regressed) +1.60 (home +0.125 vs away -0.006 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +1.29 (home allows +0.006 vs away allows -0.006 x 32.45); 3. Rest +0.50 (rest unknown). Data updates in the same pull: PIT starter: Aaron Rodgers (projected) \u2192 unknown (unknown); CIN starter: Joe Burrow (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 1.6,
+      "now": "home +0.125 vs away -0.006 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": 1.29,
+      "now": "home allows +0.006 vs away allows -0.006 x 32.45"
+     },
+     {
+      "component": "Rest",
+      "margin_change": 0.5,
+      "now": "rest unknown"
+     }
+    ],
+    "same_pull_updates": [
+     "PIT starter: Aaron Rodgers (projected) \u2192 unknown (unknown)",
+     "CIN starter: Joe Burrow (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-16T18:48-05:00",
+   "game_key": "2026-11-15-NFL-PIT-CIN",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "CIN -5.8",
+   "new": "CIN -9.2",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 66.4% to 74.9% (home margin +5.76 \u2192 +9.15). Model components that moved: 1. Offense (EPA/play, regressed) +1.60 (home +0.125 vs away -0.006 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +1.29 (home allows +0.006 vs away allows -0.006 x 32.45); 3. Rest +0.50 (rest unknown). Data updates in the same pull: PIT starter: Aaron Rodgers (projected) \u2192 unknown (unknown); CIN starter: Joe Burrow (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 66.4% to 74.9% (home margin +5.76 \u2192 +9.15). Model components that moved: 1. Offense (EPA/play, regressed) +1.60 (home +0.125 vs away -0.006 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +1.29 (home allows +0.006 vs away allows -0.006 x 32.45); 3. Rest +0.50 (rest unknown). Data updates in the same pull: PIT starter: Aaron Rodgers (projected) \u2192 unknown (unknown); CIN starter: Joe Burrow (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 1.6,
+      "now": "home +0.125 vs away -0.006 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": 1.29,
+      "now": "home allows +0.006 vs away allows -0.006 x 32.45"
+     },
+     {
+      "component": "Rest",
+      "margin_change": 0.5,
+      "now": "rest unknown"
+     }
+    ],
+    "same_pull_updates": [
+     "PIT starter: Aaron Rodgers (projected) \u2192 unknown (unknown)",
+     "CIN starter: Joe Burrow (projected) \u2192 unknown (unknown)"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-16T18:48-05:00",
+   "game_key": "2026-11-15-NFL-PIT-CIN",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 46.6,
+   "new": 48.1,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 66.4% to 74.9% (home margin +5.76 \u2192 +9.15). Model components that moved: 1. Offense (EPA/play, regressed) +1.60 (home +0.125 vs away -0.006 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +1.29 (home allows +0.006 vs away allows -0.006 x 32.45); 3. Rest +0.50 (rest unknown). Data updates in the same pull: PIT starter: Aaron Rodgers (projected) \u2192 unknown (unknown); CIN starter: Joe Burrow (projected) \u2192 unknown (unknown).",
+   "detail": {
+    "text": "Boolin moved from 66.4% to 74.9% (home margin +5.76 \u2192 +9.15). Model components that moved: 1. Offense (EPA/play, regressed) +1.60 (home +0.125 vs away -0.006 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +1.29 (home allows +0.006 vs away allows -0.006 x 32.45); 3. Rest +0.50 (rest unknown). Data updates in the same pull: PIT starter: Aaron Rodgers (projected) \u2192 unknown (unknown); CIN starter: Joe Burrow (projected) \u2192 unknown (unknown).",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 1.6,
+      "now": "home +0.125 vs away -0.006 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": 1.29,
+      "now": "home allows +0.006 vs away allows -0.006 x 32.45"
+     },
+     {
+      "component": "Rest",
+      "margin_change": 0.5,
+      "now": "rest unknown"
+     }
+    ],
+    "same_pull_updates": [
+     "PIT starter: Aaron Rodgers (projected) \u2192 unknown (unknown)",
+     "CIN starter: Joe Burrow (projected) \u2192 unknown (unknown)"
+    ]
+   }
   }
  ],
  "2026-11-15-NFL-JAX-TEN": [
