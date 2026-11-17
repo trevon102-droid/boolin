@@ -43,5 +43,95 @@
    "graded_components": 1
   },
   "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ },
+ "2026-11-16-NFL-LAC-BAL": {
+  "key": "2026-11-16-NFL-LAC-BAL",
+  "league": "NFL",
+  "result": {
+   "home_score": 20.0,
+   "away_score": 23.0,
+   "home_margin": -3.0,
+   "total": 43.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 0.0,
+    "grade": "F",
+    "brier": 0.574,
+    "pregame_home_win_p": 0.7576,
+    "margin_error": -12.52,
+    "total_error": 0.5
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "pregame or recorded wind missing"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 0.0,
+   "grade": "F",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ },
+ "2026-11-16-NHL-VAN-UTA": {
+  "key": "2026-11-16-NHL-VAN-UTA",
+  "league": "NHL",
+  "result": {
+   "home_score": 2.0,
+   "away_score": 3.0,
+   "home_margin": -1.0,
+   "total": 5.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 0.0,
+    "grade": "F",
+    "brier": 0.6464,
+    "pregame_home_win_p": 0.804,
+    "margin_error": -3.05,
+    "total_error": -2.01
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 0.0,
+   "grade": "F",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
  }
 }

@@ -1,7 +1,7 @@
 {
- "pulled_at_et": "2026-11-16T23:05-05:00",
- "slate_date": "2026-11-16",
- "run_at_et": "2026-11-16T23:04-05:00",
+ "pulled_at_et": "2026-11-17T18:04-05:00",
+ "slate_date": "2026-11-17",
+ "run_at_et": "2026-11-17T18:04-05:00",
  "sources": {
   "nfl": {
    "status": "ok",
@@ -14,37 +14,38 @@
    "component_detail": {
     "schedule": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:04:38-05:00",
+     "fetched_at": "2026-11-17T18:04:05-05:00",
      "source": "nflverse games.csv",
      "error": null
     },
     "history": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:04:38-05:00",
+     "fetched_at": "2026-11-17T18:04:05-05:00",
      "source": "nflverse games.csv",
      "error": null
     },
     "team_epa": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:04:38-05:00",
+     "fetched_at": "2026-11-17T18:04:05-05:00",
      "source": "nflverse play-by-play",
      "error": null
     },
     "injuries": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:04:38-05:00",
+     "fetched_at": "2026-11-17T18:04:05-05:00",
      "source": "nflverse injury reports",
      "error": null
     }
    },
-   "games": 14,
-   "seconds": 1.1,
-   "pulled_at_et": "2026-11-16T23:04-05:00"
+   "games": 13,
+   "seconds": 0.9,
+   "pulled_at_et": "2026-11-17T18:04-05:00"
   },
   "cfb": {
    "status": "ok",
    "components": {
     "scoreboard": "ok",
+    "summaries": "ok",
     "next_3_days": "ok",
     "ap_poll": "ok",
     "cfbd": "skipped"
@@ -52,41 +53,47 @@
    "component_detail": {
     "scoreboard": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:04:39-05:00",
+     "fetched_at": "2026-11-17T18:04:06-05:00",
+     "source": "ESPN",
+     "error": null
+    },
+    "summaries": {
+     "status": "ok",
+     "fetched_at": "2026-11-17T18:04:06-05:00",
      "source": "ESPN",
      "error": null
     },
     "next_3_days": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:04:39-05:00",
+     "fetched_at": "2026-11-17T18:04:06-05:00",
      "source": "ESPN",
      "error": null
     },
     "ap_poll": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:04:40-05:00",
+     "fetched_at": "2026-11-17T18:04:06-05:00",
      "source": "ESPN",
      "error": null
     },
     "cfbd": {
      "status": "skipped",
-     "fetched_at": "2026-11-16T23:04:40-05:00",
+     "fetched_at": "2026-11-17T18:04:06-05:00",
      "source": "CollegeFootballData",
      "error": null
     }
    },
-   "games": 0,
+   "games": 3,
    "ranked_games": 0,
-   "upcoming_3d": 6,
+   "upcoming_3d": 9,
    "cfbd": "skipped",
-   "seconds": 1.5,
-   "pulled_at_et": "2026-11-16T23:04-05:00"
+   "seconds": 0.7,
+   "pulled_at_et": "2026-11-17T18:04-05:00"
   },
   "mlb": {
    "status": "ok",
    "games": 0,
-   "seconds": 0.2,
-   "pulled_at_et": "2026-11-16T23:04-05:00"
+   "seconds": 0.1,
+   "pulled_at_et": "2026-11-17T18:04-05:00"
   },
   "nhl": {
    "status": "ok",
@@ -101,56 +108,56 @@
    "component_detail": {
     "schedule": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:04:40-05:00",
+     "fetched_at": "2026-11-17T18:04:06-05:00",
      "source": "NHL API",
      "error": null
     },
     "back_to_back": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:04:40-05:00",
+     "fetched_at": "2026-11-17T18:04:06-05:00",
      "source": "NHL API",
      "error": null
     },
     "standings": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:04:40-05:00",
+     "fetched_at": "2026-11-17T18:04:07-05:00",
      "source": "NHL API",
      "error": null
     },
     "moneypuck_this_season": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:04:41-05:00",
+     "fetched_at": "2026-11-17T18:04:07-05:00",
      "source": "MoneyPuck",
      "error": null
     },
     "moneypuck_last_season": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:04:41-05:00",
+     "fetched_at": "2026-11-17T18:04:07-05:00",
      "source": "MoneyPuck",
      "error": null
     },
     "club_goalies": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:04:41-05:00",
+     "fetched_at": "2026-11-17T18:04:07-05:00",
      "source": "NHL API club stats",
      "error": null
     }
    },
-   "games": 2,
-   "seconds": 2.3,
-   "pulled_at_et": "2026-11-16T23:04-05:00"
+   "games": 11,
+   "seconds": 3.7,
+   "pulled_at_et": "2026-11-17T18:04-05:00"
   },
   "wnba": {
    "status": "ok",
    "games": 0,
-   "seconds": 0.5,
-   "pulled_at_et": "2026-11-16T23:04-05:00"
+   "seconds": 0.2,
+   "pulled_at_et": "2026-11-17T18:04-05:00"
   },
   "nba": {
    "status": "ok",
-   "games": 8,
-   "seconds": 3.6,
-   "pulled_at_et": "2026-11-16T23:04-05:00"
+   "games": 5,
+   "seconds": 0.9,
+   "pulled_at_et": "2026-11-17T18:04-05:00"
   },
   "ncaab": {
    "status": "ok",
@@ -162,34 +169,34 @@
    "component_detail": {
     "scoreboard": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:04:47-05:00",
+     "fetched_at": "2026-11-17T18:04:11-05:00",
      "source": "ESPN",
      "error": null
     },
     "summaries": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:05:00-05:00",
+     "fetched_at": "2026-11-17T18:04:36-05:00",
      "source": "ESPN",
      "error": null
     },
     "team_stats": {
      "status": "ok",
-     "fetched_at": "2026-11-16T23:05:00-05:00",
+     "fetched_at": "2026-11-17T18:04:36-05:00",
      "source": "ESPN",
      "error": null
     }
    },
-   "games": 33,
-   "detailed": 33,
-   "ranked": 1,
-   "seconds": 13.7,
-   "pulled_at_et": "2026-11-16T23:05-05:00"
+   "games": 68,
+   "detailed": 60,
+   "ranked": 11,
+   "seconds": 24.7,
+   "pulled_at_et": "2026-11-17T18:04-05:00"
   },
   "injuries": {
    "status": "ok",
-   "games": 2,
-   "seconds": 0.4,
-   "pulled_at_et": "2026-11-16T23:05-05:00"
+   "games": 11,
+   "seconds": 0.6,
+   "pulled_at_et": "2026-11-17T18:04-05:00"
   }
  },
  "health": "ok",
