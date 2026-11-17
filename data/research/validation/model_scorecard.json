@@ -38,35 +38,35 @@
   ],
   "lean_allowed": false,
   "live_archive": {
-   "n": 57,
-   "holdout": 84,
+   "n": 58,
+   "holdout": 85,
    "older_version_rows": 15,
    "boolin": {
-    "brier": 0.2038,
-    "log_loss": 0.6059,
-    "accuracy": 0.7321,
-    "calibration_error": 0.1703,
-    "favorite_overconfidence": -0.114
+    "brier": 0.2023,
+    "log_loss": 0.6025,
+    "accuracy": 0.7368,
+    "calibration_error": 0.1731,
+    "favorite_overconfidence": -0.1178
    },
    "market": {
-    "brier": 0.1793,
-    "log_loss": 0.5509,
-    "accuracy": 0.7143,
-    "calibration_error": 0.1676,
-    "favorite_overconfidence": -0.0536
+    "brier": 0.1784,
+    "log_loss": 0.5491,
+    "accuracy": 0.7193,
+    "calibration_error": 0.1709,
+    "favorite_overconfidence": -0.0589
    },
    "brier_paired": {
-    "n": 57,
-    "mean_diff": 0.02458,
-    "se": 0.01133,
-    "t": 2.17,
-    "verdict": "market Brier better (t=2.2)",
+    "n": 58,
+    "mean_diff": 0.02389,
+    "se": 0.01115,
+    "t": 2.14,
+    "verdict": "market Brier better (t=2.1)",
     "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
    }
   },
   "replay_fidelity": {
-   "n_overlap": 100,
-   "identical": 91,
+   "n_overlap": 101,
+   "identical": 92,
    "mean_abs_prob_diff": 0.0024,
    "max_abs_prob_diff": 0.0541,
    "note": "Live card vs replay for the same game, same model version. Gaps mean the live pull saw different inputs than the replay (cause not confirmed per game)."
@@ -75,32 +75,32 @@
  "NHL": {
   "model_version": "baseline-0.1",
   "validation_version": "validation-1.0",
-  "data_cutoff": "2026-11-14",
+  "data_cutoff": "2026-11-15",
   "primary_evidence": "live_archive holdout (games after 2026-10-05)",
-  "sample_size": 277,
+  "sample_size": 282,
   "development_size": 35,
-  "brier": 0.231,
+  "brier": 0.2323,
   "market_brier": 0.2274,
-  "log_loss": 0.6533,
+  "log_loss": 0.6564,
   "market_log_loss": 0.6456,
-  "accuracy": 0.6245,
-  "calibration_error": 0.0369,
-  "favorite_overconfidence": -0.0239,
+  "accuracy": 0.6241,
+  "calibration_error": 0.0453,
+  "favorite_overconfidence": -0.0235,
   "market_comparison": "no detectable difference in Brier (t=0.1)",
-  "spread_mae": 2.034,
+  "spread_mae": 2.053,
   "market_spread_mae": null,
   "confidence_validated": null,
   "calibration_status": "needs_calibration",
   "validation_status": "validated: calibration off",
   "recommendation": "PROMISING BUT UNCALIBRATED",
   "reasons": [
-   "holdout calibration error 0.0369, favourite overconfidence -0.0239 (needs <= 0.025 / +-0.02 with n >= 300)",
+   "holdout calibration error 0.0453, favourite overconfidence -0.0235 (needs <= 0.025 / +-0.02 with n >= 300)",
    "holdout vs market: no detectable difference in Brier (t=0.1)"
   ],
   "lean_allowed": false,
   "live_archive": {
    "n": 103,
-   "holdout": 277,
+   "holdout": 282,
    "older_version_rows": 0,
    "boolin": {
     "brier": 0.2266,
