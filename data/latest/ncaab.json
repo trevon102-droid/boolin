@@ -1,697 +1,937 @@
 {
- "pulled_at_et": "2026-11-17T22:02-05:00",
- "date": "2026-11-17",
+ "pulled_at_et": "2026-11-18T17:39-05:00",
+ "date": "2026-11-18",
  "note": "Main lines only: college player props aren't offered. Games sorted ranked-first; injuries/projection/team stats only for the first 60 (ranked, then lined).",
  "games": [
   {
-   "espn_id": "401925879",
-   "name": "MTST @ GONZ",
-   "start_et": "11:00 PM ET",
+   "espn_id": "401920682",
+   "name": "SIE @ SJU",
+   "start_et": "7:00 PM ET",
    "status": "Scheduled",
    "completed": false,
    "away_score": 0.0,
    "home_score": 0.0,
    "note": null,
    "away": {
-    "id": "147",
-    "abbr": "MTST",
-    "name": "Montana State Bobcats",
+    "id": "2561",
+    "abbr": "SIE",
+    "name": "Siena Saints",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "13",
+    "team_stats": {
+     "avgRebounds": 41.0,
+     "avgPoints": 83.75,
+     "avgAssists": 15.5,
+     "avgTurnovers": 12.75,
+     "fieldGoalPct": 44.04761791229248,
+     "threePointFieldGoalPct": 27.450981736183167
+    }
+   },
+   "home": {
+    "id": "2599",
+    "abbr": "SJU",
+    "name": "St. John's Red Storm",
+    "score": "0",
+    "record": "4-0",
+    "rank": 13,
+    "conference_id": "4",
+    "team_stats": {
+     "avgRebounds": 37.75,
+     "avgPoints": 87.75,
+     "avgAssists": 18.75,
+     "avgTurnovers": 10.5,
+     "fieldGoalPct": 48.41269850730896,
+     "threePointFieldGoalPct": 37.5
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Carnesecca Arena",
+   "indoor": true,
+   "tv": "truTV",
+   "espn_line": {
+    "details": "SJU -29.5",
+    "total": 171.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "97.6",
+    "away_win_pct": "2.4"
+   }
+  },
+  {
+   "espn_id": "401921134",
+   "name": "NOLA @ TTU",
+   "start_et": "7:30 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2443",
+    "abbr": "NOLA",
+    "name": "LSU New Orleans Privateers",
+    "score": "0",
+    "record": "2-1",
+    "rank": null,
+    "conference_id": "25",
+    "team_stats": {
+     "avgRebounds": 44.0,
+     "avgPoints": 81.666664,
+     "avgAssists": 13.0,
+     "avgTurnovers": 13.333333,
+     "fieldGoalPct": 40.096619725227356,
+     "threePointFieldGoalPct": 25.0
+    }
+   },
+   "home": {
+    "id": "2641",
+    "abbr": "TTU",
+    "name": "Texas Tech Red Raiders",
+    "score": "0",
+    "record": "4-0",
+    "rank": 9,
+    "conference_id": "8",
+    "team_stats": {
+     "avgRebounds": 45.0,
+     "avgPoints": 81.0,
+     "avgAssists": 13.0,
+     "avgTurnovers": 12.5,
+     "fieldGoalPct": 44.08163130283356,
+     "threePointFieldGoalPct": 28.205129504203796
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "United Supermarkets Arena",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "TTU -35.5",
+    "total": 157.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "99.6",
+    "away_win_pct": "0.4"
+   }
+  },
+  {
+   "espn_id": "401920515",
+   "name": "KU VS WVU",
+   "start_et": "7:30 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": "Players Era 8",
+   "away": {
+    "id": "2305",
+    "abbr": "KU",
+    "name": "Kansas Jayhawks",
+    "score": "0",
+    "record": "4-0",
+    "rank": 11,
+    "conference_id": "8",
+    "team_stats": {
+     "avgRebounds": 43.25,
+     "avgPoints": 93.75,
+     "avgAssists": 19.0,
+     "avgTurnovers": 13.25,
+     "fieldGoalPct": 56.84647560119629,
+     "threePointFieldGoalPct": 35.22727191448212
+    }
+   },
+   "home": {
+    "id": "277",
+    "abbr": "WVU",
+    "name": "West Virginia Mountaineers",
+    "score": "0",
+    "record": "4-0",
+    "rank": null,
+    "conference_id": "8",
+    "team_stats": {
+     "avgRebounds": 39.5,
+     "avgPoints": 83.25,
+     "avgAssists": 14.25,
+     "avgTurnovers": 10.25,
+     "fieldGoalPct": 46.83544337749481,
+     "threePointFieldGoalPct": 36.36363744735718
+    }
+   },
+   "neutral_site": true,
+   "conference_game": true,
+   "venue": "Michelob ULTRA Arena",
+   "indoor": true,
+   "tv": "ESPN2",
+   "espn_line": {
+    "details": "KU -7.5",
+    "total": 150.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "28.9",
+    "away_win_pct": "71.1"
+   }
+  },
+  {
+   "espn_id": "401917982",
+   "name": "ULM @ LSU",
+   "start_et": "8:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2433",
+    "abbr": "ULM",
+    "name": "UL Monroe Warhawks",
+    "score": "0",
+    "record": "2-5",
+    "rank": null,
+    "conference_id": "27",
+    "team_stats": {
+     "avgRebounds": 44.285713,
+     "avgPoints": 81.14286,
+     "avgAssists": 12.285714,
+     "avgTurnovers": 14.571428,
+     "fieldGoalPct": 41.92139804363251,
+     "threePointFieldGoalPct": 33.33333432674408
+    }
+   },
+   "home": {
+    "id": "99",
+    "abbr": "LSU",
+    "name": "LSU Tigers",
+    "score": "0",
+    "record": "4-0",
+    "rank": 25,
+    "conference_id": "23",
+    "team_stats": {
+     "avgRebounds": 45.0,
+     "avgPoints": 90.75,
+     "avgAssists": 20.75,
+     "avgTurnovers": 13.25,
+     "fieldGoalPct": 51.73745155334473,
+     "threePointFieldGoalPct": 31.999999284744263
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Pete Maravich Assembly Center",
+   "indoor": true,
+   "tv": "SECN+",
+   "espn_line": {
+    "details": "LSU -37.5",
+    "total": 159.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "98.5",
+    "away_win_pct": "1.5"
+   }
+  },
+  {
+   "espn_id": "401926064",
+   "name": "SDAK @ NEB",
+   "start_et": "8:30 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "233",
+    "abbr": "SDAK",
+    "name": "South Dakota Coyotes",
+    "score": "0",
+    "record": "2-4",
+    "rank": null,
+    "conference_id": "49",
+    "team_stats": {
+     "avgRebounds": 35.0,
+     "avgPoints": 83.833336,
+     "avgAssists": 14.5,
+     "avgTurnovers": 15.0,
+     "fieldGoalPct": 50.764524936676025,
+     "threePointFieldGoalPct": 30.985915660858154
+    }
+   },
+   "home": {
+    "id": "158",
+    "abbr": "NEB",
+    "name": "Nebraska Cornhuskers",
+    "score": "0",
+    "record": "4-0",
+    "rank": 24,
+    "conference_id": "7",
+    "team_stats": {
+     "avgRebounds": 37.0,
+     "avgPoints": 92.25,
+     "avgAssists": 21.0,
+     "avgTurnovers": 13.0,
+     "fieldGoalPct": 54.46808338165283,
+     "threePointFieldGoalPct": 37.168142199516296
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Pinnacle Bank Arena",
+   "indoor": true,
+   "tv": "BTN",
+   "espn_line": {
+    "details": "NEB -32.5",
+    "total": 155.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "99.3",
+    "away_win_pct": "0.7"
+   }
+  },
+  {
+   "espn_id": "401909742",
+   "name": "CONN @ ARIZ",
+   "start_et": "9:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "41",
+    "abbr": "CONN",
+    "name": "UConn Huskies",
+    "score": "0",
+    "record": "4-0",
+    "rank": 3,
+    "conference_id": "4",
+    "team_stats": {
+     "avgRebounds": 35.5,
+     "avgPoints": 84.5,
+     "avgAssists": 15.75,
+     "avgTurnovers": 11.5,
+     "fieldGoalPct": 49.12280738353729,
+     "threePointFieldGoalPct": 36.000001430511475
+    }
+   },
+   "home": {
+    "id": "12",
+    "abbr": "ARIZ",
+    "name": "Arizona Wildcats",
+    "score": "0",
+    "record": "3-1",
+    "rank": 12,
+    "conference_id": "8",
+    "team_stats": {
+     "avgRebounds": 42.0,
+     "avgPoints": 87.25,
+     "avgAssists": 17.25,
+     "avgTurnovers": 11.0,
+     "fieldGoalPct": 49.39759075641632,
+     "threePointFieldGoalPct": 30.12048304080963
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "McKale Center at ALKEME Arena",
+   "indoor": true,
+   "tv": "FS1",
+   "espn_line": {
+    "details": "ARIZ -3.5",
+    "total": 147.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "55",
+    "away_win_pct": "45"
+   }
+  },
+  {
+   "espn_id": "401921742",
+   "name": "UNCO @ BYU",
+   "start_et": "9:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2458",
+    "abbr": "UNCO",
+    "name": "Northern Colorado Bears",
     "score": "0",
     "record": "2-2",
     "rank": null,
     "conference_id": "5",
     "team_stats": {
-     "avgRebounds": 31.75,
-     "avgPoints": 76.25,
-     "avgAssists": 13.5,
-     "avgTurnovers": 11.75,
-     "fieldGoalPct": 45.606693625450134,
-     "threePointFieldGoalPct": 34.88371968269348
+     "avgRebounds": 40.25,
+     "avgPoints": 82.0,
+     "avgAssists": 18.25,
+     "avgTurnovers": 14.75,
+     "fieldGoalPct": 49.35064911842346,
+     "threePointFieldGoalPct": 38.14432919025421
     }
    },
    "home": {
-    "id": "2250",
-    "abbr": "GONZ",
-    "name": "Gonzaga Bulldogs",
+    "id": "252",
+    "abbr": "BYU",
+    "name": "BYU Cougars",
     "score": "0",
-    "record": "2-1",
-    "rank": 22,
-    "conference_id": "21",
+    "record": "4-0",
+    "rank": 21,
+    "conference_id": "8",
     "team_stats": {
-     "avgRebounds": 35.333332,
-     "avgPoints": 89.0,
-     "avgAssists": 17.333334,
-     "avgTurnovers": 7.6666665,
-     "fieldGoalPct": 49.735450744628906,
-     "threePointFieldGoalPct": 42.105263471603394
+     "avgRebounds": 38.25,
+     "avgPoints": 96.5,
+     "avgAssists": 17.25,
+     "avgTurnovers": 10.0,
+     "fieldGoalPct": 55.020081996917725,
+     "threePointFieldGoalPct": 44.16666626930237
     }
    },
    "neutral_site": false,
    "conference_game": false,
-   "venue": "McCarthey Athletic Center",
+   "venue": "Marriott Center",
    "indoor": true,
-   "tv": "CBSSN",
+   "tv": "ESPN+",
    "espn_line": {
-    "details": "GONZ -23.5",
-    "total": 152.5,
+    "details": "BYU -28.5",
+    "total": 163.5,
     "provider": "DraftKings"
    },
    "injuries": {},
    "espn_projection": {
-    "home_win_pct": "93.5",
-    "away_win_pct": "6.5"
+    "home_win_pct": "97.2",
+    "away_win_pct": "2.8"
    }
   },
   {
-   "espn_id": "401920511",
-   "name": "RUTG VS HOU",
-   "start_et": "2:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 73.0,
-   "home_score": 85.0,
-   "note": "Players Era 8",
+   "espn_id": "401920158",
+   "name": "CSUF @ UCLA",
+   "start_et": "10:30 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
    "away": {
-    "id": "164",
-    "abbr": "RUTG",
-    "name": "Rutgers Scarlet Knights",
-    "score": "73",
-    "record": "3-1",
+    "id": "2239",
+    "abbr": "CSUF",
+    "name": "Cal State Fullerton Titans",
+    "score": "0",
+    "record": "2-1",
     "rank": null,
-    "conference_id": "7",
+    "conference_id": "9",
     "team_stats": {
-     "avgRebounds": 43.333332,
-     "avgPoints": 84.666664,
-     "avgAssists": 12.333333,
-     "avgTurnovers": 8.333333,
-     "fieldGoalPct": 48.29545319080353,
-     "threePointFieldGoalPct": 38.18181753158569
+     "avgRebounds": 36.666668,
+     "avgPoints": 88.666664,
+     "avgAssists": 18.0,
+     "avgTurnovers": 9.0,
+     "fieldGoalPct": 44.39461827278137,
+     "threePointFieldGoalPct": 31.999999284744263
     }
    },
    "home": {
+    "id": "26",
+    "abbr": "UCLA",
+    "name": "UCLA Bruins",
+    "score": "0",
+    "record": "4-0",
+    "rank": 7,
+    "conference_id": "7",
+    "team_stats": {
+     "avgRebounds": 41.0,
+     "avgPoints": 102.25,
+     "avgAssists": 21.5,
+     "avgTurnovers": 9.0,
+     "fieldGoalPct": 53.15985083580017,
+     "threePointFieldGoalPct": 43.13725531101227
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Pauley Pavilion",
+   "indoor": true,
+   "tv": "BTN",
+   "espn_line": {
+    "details": "UCLA -31.5",
+    "total": 166.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "99.2",
+    "away_win_pct": "0.8"
+   }
+  },
+  {
+   "espn_id": "401920514",
+   "name": "HOU VS FLA",
+   "start_et": "4:48 PM ET",
+   "status": "In Progress",
+   "completed": false,
+   "away_score": 33.0,
+   "home_score": 34.0,
+   "note": "Players Era 8",
+   "away": {
     "id": "248",
     "abbr": "HOU",
     "name": "Houston Cougars",
-    "score": "85",
+    "score": "33",
     "record": "4-0",
     "rank": 8,
     "conference_id": "8",
     "team_stats": {
-     "avgRebounds": 43.0,
-     "avgPoints": 90.666664,
-     "avgAssists": 18.666666,
-     "avgTurnovers": 10.666667,
-     "fieldGoalPct": 53.072625398635864,
-     "threePointFieldGoalPct": 34.61538553237915
-    }
-   },
-   "neutral_site": true,
-   "conference_game": false,
-   "venue": "Michelob ULTRA Arena",
-   "indoor": true,
-   "tv": "ESPN",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401906773",
-   "name": "ND VS FLA",
-   "start_et": "4:51 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 78.0,
-   "home_score": 86.0,
-   "note": "Players Era 8",
-   "away": {
-    "id": "87",
-    "abbr": "ND",
-    "name": "Notre Dame Fighting Irish",
-    "score": "78",
-    "record": "4-1",
-    "rank": null,
-    "conference_id": "2",
-    "team_stats": {
-     "avgRebounds": 36.75,
-     "avgPoints": 87.5,
-     "avgAssists": 18.75,
-     "avgTurnovers": 12.0,
-     "fieldGoalPct": 50.431036949157715,
-     "threePointFieldGoalPct": 47.787609696388245
+     "avgRebounds": 41.25,
+     "avgPoints": 89.25,
+     "avgAssists": 17.5,
+     "avgTurnovers": 11.0,
+     "fieldGoalPct": 51.68067216873169,
+     "threePointFieldGoalPct": 35.38461625576019
     }
    },
    "home": {
     "id": "57",
     "abbr": "FLA",
     "name": "Florida Gators",
-    "score": "86",
+    "score": "34",
     "record": "5-0",
     "rank": 1,
     "conference_id": "23",
     "team_stats": {
-     "avgRebounds": 44.0,
-     "avgPoints": 82.25,
-     "avgAssists": 16.25,
-     "avgTurnovers": 13.0,
-     "fieldGoalPct": 46.296295523643494,
-     "threePointFieldGoalPct": 38.235294818878174
-    }
-   },
-   "neutral_site": true,
-   "conference_game": false,
-   "venue": "Michelob ULTRA Arena",
-   "indoor": true,
-   "tv": "ESPN",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401909566",
-   "name": "ILL @ DUKE",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 99.0,
-   "home_score": 78.0,
-   "note": null,
-   "away": {
-    "id": "356",
-    "abbr": "ILL",
-    "name": "Illinois Fighting Illini",
-    "score": "99",
-    "record": "4-1",
-    "rank": 10,
-    "conference_id": "7",
-    "team_stats": {
-     "avgRebounds": 51.0,
-     "avgPoints": 104.5,
-     "avgAssists": 22.25,
-     "avgTurnovers": 12.0,
-     "fieldGoalPct": 54.63917255401611,
-     "threePointFieldGoalPct": 35.76158881187439
-    }
-   },
-   "home": {
-    "id": "150",
-    "abbr": "DUKE",
-    "name": "Duke Blue Devils",
-    "score": "78",
-    "record": "3-2",
-    "rank": 5,
-    "conference_id": "2",
-    "team_stats": {
-     "avgRebounds": 45.25,
-     "avgPoints": 90.0,
-     "avgAssists": 19.25,
-     "avgTurnovers": 12.5,
-     "fieldGoalPct": 47.36842215061188,
-     "threePointFieldGoalPct": 30.392158031463623
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Cameron Indoor Stadium",
-   "indoor": true,
-   "tv": "ESPN",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401921722",
-   "name": "RID @ MIA",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 48.0,
-   "home_score": 95.0,
-   "note": null,
-   "away": {
-    "id": "2520",
-    "abbr": "RID",
-    "name": "Rider Broncs",
-    "score": "48",
-    "record": "1-5",
-    "rank": null,
-    "conference_id": "13",
-    "team_stats": {
-     "avgRebounds": 37.4,
-     "avgPoints": 64.0,
-     "avgAssists": 9.4,
-     "avgTurnovers": 12.4,
-     "fieldGoalPct": 37.012988328933716,
-     "threePointFieldGoalPct": 25.961539149284363
-    }
-   },
-   "home": {
-    "id": "2390",
-    "abbr": "MIA",
-    "name": "Miami Hurricanes",
-    "score": "95",
-    "record": "4-1",
-    "rank": 17,
-    "conference_id": "2",
-    "team_stats": {
-     "avgRebounds": 45.75,
-     "avgPoints": 83.25,
-     "avgAssists": 17.25,
-     "avgTurnovers": 12.25,
-     "fieldGoalPct": 45.75645625591278,
-     "threePointFieldGoalPct": 30.909091234207153
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Watsco Center",
-   "indoor": true,
-   "tv": "ACCNX",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401906761",
-   "name": "KENN @ ALA",
-   "start_et": "7:30 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 91.0,
-   "home_score": 109.0,
-   "note": null,
-   "away": {
-    "id": "338",
-    "abbr": "KENN",
-    "name": "Kennesaw State Owls",
-    "score": "91",
-    "record": "4-1",
-    "rank": null,
-    "conference_id": "11",
-    "team_stats": {
-     "avgRebounds": 52.75,
-     "avgPoints": 95.5,
-     "avgAssists": 19.0,
-     "avgTurnovers": 14.0,
-     "fieldGoalPct": 46.666666865348816,
-     "threePointFieldGoalPct": 28.985506296157837
-    }
-   },
-   "home": {
-    "id": "333",
-    "abbr": "ALA",
-    "name": "Alabama Crimson Tide",
-    "score": "109",
-    "record": "5-0",
-    "rank": 16,
-    "conference_id": "23",
-    "team_stats": {
-     "avgRebounds": 42.75,
-     "avgPoints": 97.0,
-     "avgAssists": 20.25,
-     "avgTurnovers": 13.5,
-     "fieldGoalPct": 47.16981053352356,
-     "threePointFieldGoalPct": 37.837839126586914
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Coleman Coliseum",
-   "indoor": true,
-   "tv": "SECN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401916289",
-   "name": "ARK VS IU",
-   "start_et": "7:30 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 76.0,
-   "home_score": 81.0,
-   "note": "Bad Boy Mowers Series",
-   "away": {
-    "id": "8",
-    "abbr": "ARK",
-    "name": "Arkansas Razorbacks",
-    "score": "76",
-    "record": "3-2",
-    "rank": 20,
-    "conference_id": "23",
-    "team_stats": {
-     "avgRebounds": 39.25,
-     "avgPoints": 83.25,
-     "avgAssists": 18.25,
-     "avgTurnovers": 11.75,
-     "fieldGoalPct": 50.62240958213806,
-     "threePointFieldGoalPct": 36.000001430511475
-    }
-   },
-   "home": {
-    "id": "84",
-    "abbr": "IU",
-    "name": "Indiana Hoosiers",
-    "score": "81",
-    "record": "5-0",
-    "rank": null,
-    "conference_id": "7",
-    "team_stats": {
-     "avgRebounds": 38.5,
-     "avgPoints": 89.0,
-     "avgAssists": 14.75,
-     "avgTurnovers": 12.0,
-     "fieldGoalPct": 48.72881472110748,
-     "threePointFieldGoalPct": 34.951457381248474
-    }
-   },
-   "neutral_site": true,
-   "conference_game": false,
-   "venue": "Madison Square Garden",
-   "indoor": true,
-   "tv": "Peacock",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401921826",
-   "name": "EIU @ VAN",
-   "start_et": "8:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 50.0,
-   "home_score": 96.0,
-   "note": null,
-   "away": {
-    "id": "2197",
-    "abbr": "EIU",
-    "name": "Eastern Illinois Panthers",
-    "score": "50",
-    "record": "1-5",
-    "rank": null,
-    "conference_id": "20",
-    "team_stats": {
-     "avgRebounds": 30.2,
-     "avgPoints": 70.0,
-     "avgAssists": 16.8,
-     "avgTurnovers": 14.4,
-     "fieldGoalPct": 46.268656849861145,
-     "threePointFieldGoalPct": 34.65346395969391
-    }
-   },
-   "home": {
-    "id": "238",
-    "abbr": "VAN",
-    "name": "Vanderbilt Commodores",
-    "score": "96",
-    "record": "5-0",
-    "rank": 15,
-    "conference_id": "23",
-    "team_stats": {
-     "avgRebounds": 43.5,
-     "avgPoints": 90.25,
-     "avgAssists": 17.0,
-     "avgTurnovers": 11.5,
-     "fieldGoalPct": 52.399998903274536,
-     "threePointFieldGoalPct": 38.383838534355164
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Memorial Gymnasium (TN)",
-   "indoor": true,
-   "tv": "SECN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401906851",
-   "name": "MSU @ TENN",
-   "start_et": "9:00 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 23.0,
-   "home_score": 27.0,
-   "note": null,
-   "away": {
-    "id": "127",
-    "abbr": "MSU",
-    "name": "Michigan State Spartans",
-    "score": "23",
-    "record": "4-0",
-    "rank": 2,
-    "conference_id": "7",
-    "team_stats": {
-     "avgRebounds": 45.5,
-     "avgPoints": 93.0,
-     "avgAssists": 20.25,
-     "avgTurnovers": 13.25,
-     "fieldGoalPct": 50.64377784729004,
-     "threePointFieldGoalPct": 42.307692766189575
-    }
-   },
-   "home": {
-    "id": "2633",
-    "abbr": "TENN",
-    "name": "Tennessee Volunteers",
-    "score": "27",
-    "record": "3-0",
-    "rank": 14,
-    "conference_id": "23",
-    "team_stats": {
-     "avgRebounds": 42.666668,
-     "avgPoints": 81.0,
-     "avgAssists": 17.333334,
-     "avgTurnovers": 14.333333,
-     "fieldGoalPct": 47.647058963775635,
-     "threePointFieldGoalPct": 30.882352590560913
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Food City Center",
-   "indoor": true,
-   "tv": "ESPN2",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401920426",
-   "name": "ODU @ UVA",
-   "start_et": "9:00 PM ET",
-   "status": "Halftime",
-   "completed": false,
-   "away_score": 28.0,
-   "home_score": 40.0,
-   "note": null,
-   "away": {
-    "id": "295",
-    "abbr": "ODU",
-    "name": "Old Dominion Monarchs",
-    "score": "28",
-    "record": "5-0",
-    "rank": null,
-    "conference_id": "27",
-    "team_stats": {
-     "avgRebounds": 39.4,
-     "avgPoints": 77.0,
-     "avgAssists": 15.0,
-     "avgTurnovers": 12.8,
-     "fieldGoalPct": 46.93877696990967,
-     "threePointFieldGoalPct": 36.56716346740723
-    }
-   },
-   "home": {
-    "id": "258",
-    "abbr": "UVA",
-    "name": "Virginia Cavaliers",
-    "score": "40",
-    "record": "5-0",
-    "rank": 4,
-    "conference_id": "2",
-    "team_stats": {
-     "avgRebounds": 41.2,
-     "avgPoints": 91.8,
-     "avgAssists": 20.4,
+     "avgRebounds": 42.8,
+     "avgPoints": 83.0,
+     "avgAssists": 16.4,
      "avgTurnovers": 13.2,
-     "fieldGoalPct": 51.692306995391846,
-     "threePointFieldGoalPct": 36.496350169181824
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "John Paul Jones Arena",
-   "indoor": true,
-   "tv": "ACC Network",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401909787",
-   "name": "UNLV VS KU",
-   "start_et": "9:30 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 10.0,
-   "home_score": 19.0,
-   "note": "Players Era 8",
-   "away": {
-    "id": "2439",
-    "abbr": "UNLV",
-    "name": "UNLV Rebels",
-    "score": "10",
-    "record": "3-0",
-    "rank": null,
-    "conference_id": "44",
-    "team_stats": {
-     "avgRebounds": 35.0,
-     "avgPoints": 84.333336,
-     "avgAssists": 11.0,
-     "avgTurnovers": 12.666667,
-     "fieldGoalPct": 51.21951103210449,
-     "threePointFieldGoalPct": 41.66666567325592
-    }
-   },
-   "home": {
-    "id": "2305",
-    "abbr": "KU",
-    "name": "Kansas Jayhawks",
-    "score": "19",
-    "record": "3-0",
-    "rank": 11,
-    "conference_id": "8",
-    "team_stats": {
-     "avgRebounds": 43.666668,
-     "avgPoints": 91.0,
-     "avgAssists": 18.666666,
-     "avgTurnovers": 13.0,
-     "fieldGoalPct": 55.13513684272766,
-     "threePointFieldGoalPct": 37.142857909202576
+     "fieldGoalPct": 47.601476311683655,
+     "threePointFieldGoalPct": 39.83050882816315
     }
    },
    "neutral_site": true,
    "conference_game": false,
    "venue": "Michelob ULTRA Arena",
    "indoor": true,
-   "tv": "ESPNEWS",
+   "tv": "ESPN",
    "espn_line": null,
    "injuries": {},
    "espn_projection": null
   },
   {
-   "espn_id": "401917533",
-   "name": "SEA @ CBU",
-   "start_et": "10:00 PM ET",
+   "espn_id": "401922292",
+   "name": "TNTC @ UNCA",
+   "start_et": "6:30 PM ET",
    "status": "Scheduled",
    "completed": false,
    "away_score": 0.0,
    "home_score": 0.0,
    "note": null,
    "away": {
-    "id": "2547",
-    "abbr": "SEA",
-    "name": "Seattle U Redhawks",
+    "id": "2635",
+    "abbr": "TNTC",
+    "name": "Tennessee Tech Golden Eagles",
     "score": "0",
-    "record": "2-2",
+    "record": "3-2",
     "rank": null,
-    "conference_id": "29",
+    "conference_id": "24",
     "team_stats": {
-     "avgRebounds": 33.0,
-     "avgPoints": 72.0,
-     "avgAssists": 10.75,
-     "avgTurnovers": 13.75,
-     "fieldGoalPct": 43.77880096435547,
-     "threePointFieldGoalPct": 30.487805604934692
+     "avgRebounds": 43.2,
+     "avgPoints": 93.8,
+     "avgAssists": 19.4,
+     "avgTurnovers": 13.2,
+     "fieldGoalPct": 44.594594836235046,
+     "threePointFieldGoalPct": 36.216217279434204
     }
    },
    "home": {
-    "id": "2856",
-    "abbr": "CBU",
-    "name": "California Baptist Lancers",
+    "id": "2427",
+    "abbr": "UNCA",
+    "name": "UNC Asheville Bulldogs",
     "score": "0",
-    "record": "1-3",
+    "record": "2-3",
     "rank": null,
-    "conference_id": "9",
+    "conference_id": "6",
     "team_stats": {
-     "avgRebounds": 28.25,
-     "avgPoints": 66.75,
-     "avgAssists": 10.5,
-     "avgTurnovers": 11.25,
-     "fieldGoalPct": 39.06976878643036,
-     "threePointFieldGoalPct": 29.47368323802948
+     "avgRebounds": 35.4,
+     "avgPoints": 80.0,
+     "avgAssists": 16.0,
+     "avgTurnovers": 14.6,
+     "fieldGoalPct": 47.79660999774933,
+     "threePointFieldGoalPct": 37.77777850627899
     }
    },
    "neutral_site": false,
    "conference_game": false,
-   "venue": "Dale E. and Sarah Ann Fowler Events Center",
+   "venue": "Kimmel Arena",
    "indoor": true,
    "tv": "ESPN+",
    "espn_line": {
-    "details": "SEA -8.5",
-    "total": 133.5,
+    "details": "TNTC -3.5",
+    "total": 163.5,
     "provider": "DraftKings"
    },
    "injuries": {},
    "espn_projection": {
-    "home_win_pct": "30.7",
-    "away_win_pct": "69.3"
+    "home_win_pct": "54.8",
+    "away_win_pct": "45.2"
    }
   },
   {
-   "espn_id": "401920512",
-   "name": "WVU VS AUB",
-   "start_et": "11:59 PM ET",
+   "espn_id": "401922283",
+   "name": "SAM @ UPST",
+   "start_et": "6:30 PM ET",
    "status": "Scheduled",
    "completed": false,
    "away_score": 0.0,
    "home_score": 0.0,
-   "note": "Players Era 8",
+   "note": null,
    "away": {
-    "id": "277",
-    "abbr": "WVU",
-    "name": "West Virginia Mountaineers",
+    "id": "2535",
+    "abbr": "SAM",
+    "name": "Samford Bulldogs",
     "score": "0",
-    "record": "3-0",
+    "record": "1-2",
     "rank": null,
-    "conference_id": "8",
+    "conference_id": "24",
     "team_stats": {
-     "avgRebounds": 41.0,
-     "avgPoints": 85.666664,
-     "avgAssists": 15.333333,
-     "avgTurnovers": 9.0,
-     "fieldGoalPct": 47.51381278038025,
-     "threePointFieldGoalPct": 37.5
+     "avgRebounds": 29.666666,
+     "avgPoints": 77.333336,
+     "avgAssists": 14.333333,
+     "avgTurnovers": 9.333333,
+     "fieldGoalPct": 48.571428656578064,
+     "threePointFieldGoalPct": 25.0
     }
    },
    "home": {
-    "id": "2",
-    "abbr": "AUB",
-    "name": "Auburn Tigers",
+    "id": "2908",
+    "abbr": "UPST",
+    "name": "South Carolina Upstate Spartans",
+    "score": "0",
+    "record": "1-4",
+    "rank": null,
+    "conference_id": "6",
+    "team_stats": {
+     "avgRebounds": 41.0,
+     "avgPoints": 75.4,
+     "avgAssists": 14.2,
+     "avgTurnovers": 13.4,
+     "fieldGoalPct": 43.8775509595871,
+     "threePointFieldGoalPct": 29.032257199287415
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "G.B. Hodge Center",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "SAM -7.5",
+    "total": 150.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "39.1",
+    "away_win_pct": "60.9"
+   }
+  },
+  {
+   "espn_id": "401920974",
+   "name": "UTC @ WIN",
+   "start_et": "6:30 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "236",
+    "abbr": "UTC",
+    "name": "Chattanooga Mocs",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "24",
+    "team_stats": {
+     "avgRebounds": 42.25,
+     "avgPoints": 84.25,
+     "avgAssists": 18.75,
+     "avgTurnovers": 14.5,
+     "fieldGoalPct": 45.84980309009552,
+     "threePointFieldGoalPct": 32.231405377388
+    }
+   },
+   "home": {
+    "id": "2737",
+    "abbr": "WIN",
+    "name": "Winthrop Eagles",
+    "score": "0",
+    "record": "0-4",
+    "rank": null,
+    "conference_id": "6",
+    "team_stats": {
+     "avgRebounds": 40.0,
+     "avgPoints": 84.75,
+     "avgAssists": 12.5,
+     "avgTurnovers": 16.25,
+     "fieldGoalPct": 45.679011940956116,
+     "threePointFieldGoalPct": 34.54545438289642
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Winthrop Coliseum",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "UTC -3.5",
+    "total": 164.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "49.9",
+    "away_win_pct": "50.1"
+   }
+  },
+  {
+   "espn_id": "401920947",
+   "name": "DETM @ EMU",
+   "start_et": "6:30 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": "Cancun Challenge - Campus Game",
+   "away": {
+    "id": "2174",
+    "abbr": "DETM",
+    "name": "Detroit Mercy Titans",
+    "score": "0",
+    "record": "0-3",
+    "rank": null,
+    "conference_id": "45",
+    "team_stats": {
+     "avgRebounds": 38.666668,
+     "avgPoints": 53.0,
+     "avgAssists": 11.333333,
+     "avgTurnovers": 17.666666,
+     "fieldGoalPct": 30.927833914756775,
+     "threePointFieldGoalPct": 24.09638613462448
+    }
+   },
+   "home": {
+    "id": "2199",
+    "abbr": "EMU",
+    "name": "Eastern Michigan Eagles",
     "score": "0",
     "record": "2-1",
     "rank": null,
-    "conference_id": "23",
+    "conference_id": "14",
     "team_stats": {
-     "avgRebounds": 42.333332,
-     "avgPoints": 78.666664,
-     "avgAssists": 13.0,
-     "avgTurnovers": 10.0,
-     "fieldGoalPct": 42.105263471603394,
-     "threePointFieldGoalPct": 38.27160596847534
+     "avgRebounds": 41.666668,
+     "avgPoints": 77.333336,
+     "avgAssists": 16.0,
+     "avgTurnovers": 13.333333,
+     "fieldGoalPct": 42.07650125026703,
+     "threePointFieldGoalPct": 39.0625
     }
    },
-   "neutral_site": true,
+   "neutral_site": false,
    "conference_game": false,
-   "venue": "Michelob ULTRA Arena",
+   "venue": "Gervin GameAbove Center",
    "indoor": true,
-   "tv": "ESPN",
+   "tv": "ESPN+",
    "espn_line": {
-    "details": "AUB -1.5",
-    "total": 144.5,
+    "details": "EMU -10.5",
+    "total": 140.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "88.2",
+    "away_win_pct": "11.8"
+   }
+  },
+  {
+   "espn_id": "401917181",
+   "name": "IUIN @ PSU",
+   "start_et": "6:30 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "85",
+    "abbr": "IUIN",
+    "name": "IU Indianapolis Jaguars",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "45",
+    "team_stats": {
+     "avgRebounds": 36.0,
+     "avgPoints": 84.25,
+     "avgAssists": 17.25,
+     "avgTurnovers": 8.0,
+     "fieldGoalPct": 39.92932736873627,
+     "threePointFieldGoalPct": 28.947368264198303
+    }
+   },
+   "home": {
+    "id": "213",
+    "abbr": "PSU",
+    "name": "Penn State Nittany Lions",
+    "score": "0",
+    "record": "4-1",
+    "rank": null,
+    "conference_id": "7",
+    "team_stats": {
+     "avgRebounds": 40.2,
+     "avgPoints": 85.6,
+     "avgAssists": 15.2,
+     "avgTurnovers": 11.6,
+     "fieldGoalPct": 50.0,
+     "threePointFieldGoalPct": 31.707316637039185
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Bryce Jordan Center",
+   "indoor": true,
+   "tv": "BTN",
+   "espn_line": {
+    "details": "PSU -16.5",
+    "total": 168.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "96.4",
+    "away_win_pct": "3.6"
+   }
+  },
+  {
+   "espn_id": "401909516",
+   "name": "NAVY @ GTWN",
+   "start_et": "6:30 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2426",
+    "abbr": "NAVY",
+    "name": "Navy Midshipmen",
+    "score": "0",
+    "record": "4-1",
+    "rank": null,
+    "conference_id": "22",
+    "team_stats": {
+     "avgRebounds": 38.4,
+     "avgPoints": 69.2,
+     "avgAssists": 12.6,
+     "avgTurnovers": 14.4,
+     "fieldGoalPct": 40.63604176044464,
+     "threePointFieldGoalPct": 32.499998807907104
+    }
+   },
+   "home": {
+    "id": "46",
+    "abbr": "GTWN",
+    "name": "Georgetown Hoyas",
+    "score": "0",
+    "record": "4-0",
+    "rank": null,
+    "conference_id": "4",
+    "team_stats": {
+     "avgRebounds": 32.5,
+     "avgPoints": 83.5,
+     "avgAssists": 17.5,
+     "avgTurnovers": 10.0,
+     "fieldGoalPct": 49.35064911842346,
+     "threePointFieldGoalPct": 37.38317787647247
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Capital One Arena",
+   "indoor": true,
+   "tv": "ESPN+, Patriot League TV",
+   "espn_line": {
+    "details": "GTWN -20.5",
+    "total": 138.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "91.7",
+    "away_win_pct": "8.3"
+   }
+  },
+  {
+   "espn_id": "401928347",
+   "name": "MER @ PRES",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2382",
+    "abbr": "MER",
+    "name": "Mercer Bears",
+    "score": "0",
+    "record": "2-3",
+    "rank": null,
+    "conference_id": "24",
+    "team_stats": {
+     "avgRebounds": 39.6,
+     "avgPoints": 78.2,
+     "avgAssists": 11.4,
+     "avgTurnovers": 13.6,
+     "fieldGoalPct": 42.331287264823914,
+     "threePointFieldGoalPct": 26.57342553138733
+    }
+   },
+   "home": {
+    "id": "2506",
+    "abbr": "PRES",
+    "name": "Presbyterian Blue Hose",
+    "score": "0",
+    "record": "0-3",
+    "rank": null,
+    "conference_id": "6",
+    "team_stats": {
+     "avgRebounds": 31.0,
+     "avgPoints": 71.666664,
+     "avgAssists": 10.0,
+     "avgTurnovers": 12.0,
+     "fieldGoalPct": 43.90243887901306,
+     "threePointFieldGoalPct": 26.66666805744171
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Templeton Center",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "PRES -1.5",
+    "total": 152.5,
     "provider": "DraftKings"
    },
    "injuries": {},
@@ -701,2690 +941,2250 @@
    }
   },
   {
-   "espn_id": "401920904",
-   "name": "WLSN @ DEL",
-   "start_et": "11:00 AM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 47.0,
-   "home_score": 93.0,
-   "note": null,
-   "away": {
-    "id": "111914",
-    "abbr": "WLSN",
-    "name": "Wilson Phoenix",
-    "score": "47",
-    "record": null,
-    "rank": null,
-    "conference_id": null,
-    "team_stats": {
-     "avgRebounds": 26.0,
-     "avgPoints": 62.0,
-     "avgAssists": 15.0,
-     "avgTurnovers": 14.0,
-     "fieldGoalPct": 33.33333432674408,
-     "threePointFieldGoalPct": 27.77777910232544
-    }
-   },
-   "home": {
-    "id": "48",
-    "abbr": "DEL",
-    "name": "Delaware Blue Hens",
-    "score": "93",
-    "record": "3-2",
-    "rank": null,
-    "conference_id": "11",
-    "team_stats": {
-     "avgRebounds": 37.5,
-     "avgPoints": 73.5,
-     "avgAssists": 16.0,
-     "avgTurnovers": 10.0,
-     "fieldGoalPct": 44.62809860706329,
-     "threePointFieldGoalPct": 41.66666567325592
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Bob Carpenter Center",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401928360",
-   "name": "LCHR @ SOU",
-   "start_et": "12:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 58.0,
-   "home_score": 100.0,
-   "note": null,
-   "away": {
-    "id": "2347",
-    "abbr": "LCHR",
-    "name": "Louisiana Christian Wildcats",
-    "score": "58",
-    "record": null,
-    "rank": null,
-    "conference_id": null,
-    "team_stats": {
-     "avgRebounds": 28.0,
-     "avgPoints": 45.0,
-     "avgAssists": 9.0,
-     "avgTurnovers": 28.0,
-     "fieldGoalPct": 32.07547068595886,
-     "threePointFieldGoalPct": 26.0869562625885
-    }
-   },
-   "home": {
-    "id": "2582",
-    "abbr": "SOU",
-    "name": "Southern Jaguars",
-    "score": "100",
-    "record": "1-5",
-    "rank": null,
-    "conference_id": "26",
-    "team_stats": {
-     "avgRebounds": 27.8,
-     "avgPoints": 60.4,
-     "avgAssists": 10.8,
-     "avgTurnovers": 20.6,
-     "fieldGoalPct": 41.603052616119385,
-     "threePointFieldGoalPct": 33.33333432674408
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "F.G. Clark Activity Center",
-   "indoor": true,
-   "tv": null,
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401927381",
-   "name": "HOF VS MUR",
-   "start_et": "12:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 66.0,
-   "home_score": 82.0,
-   "note": null,
-   "away": {
-    "id": "2275",
-    "abbr": "HOF",
-    "name": "Hofstra Pride",
-    "score": "66",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "10",
-    "team_stats": {
-     "avgRebounds": 41.25,
-     "avgPoints": 70.0,
-     "avgAssists": 12.0,
-     "avgTurnovers": 12.0,
-     "fieldGoalPct": 42.46031641960144,
-     "threePointFieldGoalPct": 34.736841917037964
-    }
-   },
-   "home": {
-    "id": "93",
-    "abbr": "MUR",
-    "name": "Murray State Racers",
-    "score": "82",
-    "record": "5-0",
-    "rank": null,
-    "conference_id": "18",
-    "team_stats": {
-     "avgRebounds": 45.0,
-     "avgPoints": 95.0,
-     "avgAssists": 18.75,
-     "avgTurnovers": 14.75,
-     "fieldGoalPct": 47.328245639801025,
-     "threePointFieldGoalPct": 36.36363744735718
-    }
-   },
-   "neutral_site": true,
-   "conference_game": false,
-   "venue": "Landers Center",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401923325",
-   "name": "SPU @ UML",
-   "start_et": "6:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 51.0,
-   "home_score": 66.0,
-   "note": null,
-   "away": {
-    "id": "2612",
-    "abbr": "SPU",
-    "name": "Saint Peter's Peacocks",
-    "score": "51",
-    "record": "0-5",
-    "rank": null,
-    "conference_id": "13",
-    "team_stats": {
-     "avgRebounds": 30.75,
-     "avgPoints": 47.5,
-     "avgAssists": 6.25,
-     "avgTurnovers": 13.75,
-     "fieldGoalPct": 30.14354109764099,
-     "threePointFieldGoalPct": 26.37362778186798
-    }
-   },
-   "home": {
-    "id": "2349",
-    "abbr": "UML",
-    "name": "UMass Lowell River Hawks",
-    "score": "66",
-    "record": "4-1",
-    "rank": null,
-    "conference_id": "1",
-    "team_stats": {
-     "avgRebounds": 41.75,
-     "avgPoints": 79.25,
-     "avgAssists": 15.5,
-     "avgTurnovers": 8.5,
-     "fieldGoalPct": 44.44444477558136,
-     "threePointFieldGoalPct": 33.33333432674408
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Kennedy Family Athletic Complex",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401920953",
-   "name": "LIB VS SIU",
-   "start_et": "6:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 87.0,
-   "home_score": 78.0,
-   "note": null,
-   "away": {
-    "id": "2335",
-    "abbr": "LIB",
-    "name": "Liberty Flames",
-    "score": "87",
-    "record": "3-1",
-    "rank": null,
-    "conference_id": "11",
-    "team_stats": {
-     "avgRebounds": 36.0,
-     "avgPoints": 81.333336,
-     "avgAssists": 17.666666,
-     "avgTurnovers": 8.333333,
-     "fieldGoalPct": 50.810807943344116,
-     "threePointFieldGoalPct": 37.03703582286835
-    }
-   },
-   "home": {
-    "id": "79",
-    "abbr": "SIU",
-    "name": "Southern Illinois Salukis",
-    "score": "78",
-    "record": "2-2",
-    "rank": null,
-    "conference_id": "18",
-    "team_stats": {
-     "avgRebounds": 37.666668,
-     "avgPoints": 85.0,
-     "avgAssists": 16.333334,
-     "avgTurnovers": 11.333333,
-     "fieldGoalPct": 47.22222089767456,
-     "threePointFieldGoalPct": 37.64705955982208
-    }
-   },
-   "neutral_site": true,
-   "conference_game": false,
-   "venue": "Curry Arena",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401912230",
-   "name": "MRST @ ARMY",
-   "start_et": "6:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 73.0,
-   "home_score": 68.0,
-   "note": null,
-   "away": {
-    "id": "2368",
-    "abbr": "MRST",
-    "name": "Marist Red Foxes",
-    "score": "73",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "13",
-    "team_stats": {
-     "avgRebounds": 34.5,
-     "avgPoints": 67.75,
-     "avgAssists": 10.75,
-     "avgTurnovers": 14.0,
-     "fieldGoalPct": 42.12962985038757,
-     "threePointFieldGoalPct": 35.211268067359924
-    }
-   },
-   "home": {
-    "id": "349",
-    "abbr": "ARMY",
-    "name": "Army Black Knights",
-    "score": "68",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "22",
-    "team_stats": {
-     "avgRebounds": 36.25,
-     "avgPoints": 75.5,
-     "avgAssists": 14.5,
-     "avgTurnovers": 10.25,
-     "fieldGoalPct": 45.90163826942444,
-     "threePointFieldGoalPct": 39.16666805744171
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Christl Arena",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401926834",
-   "name": "NYPM @ STBK",
-   "start_et": "6:30 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 47.0,
-   "home_score": 104.0,
-   "note": null,
-   "away": {
-    "id": "182",
-    "abbr": "NYPM",
-    "name": "SUNY Potsdam SUNY-POTSDAM",
-    "score": "47",
-    "record": null,
-    "rank": null,
-    "conference_id": null,
-    "team_stats": {
-     "avgRebounds": 33.0,
-     "avgPoints": 59.0,
-     "avgAssists": 7.0,
-     "avgTurnovers": 21.0,
-     "fieldGoalPct": 33.84615480899811,
-     "threePointFieldGoalPct": 21.052631735801697
-    }
-   },
-   "home": {
-    "id": "2619",
-    "abbr": "STBK",
-    "name": "Stony Brook Seawolves",
-    "score": "104",
-    "record": "2-2",
-    "rank": null,
-    "conference_id": "10",
-    "team_stats": {
-     "avgRebounds": 36.333332,
-     "avgPoints": 73.666664,
-     "avgAssists": 13.666667,
-     "avgTurnovers": 10.0,
-     "fieldGoalPct": 45.88235318660736,
-     "threePointFieldGoalPct": 28.915661573410034
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Stony Brook Arena",
-   "indoor": true,
-   "tv": "SNY",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401920706",
-   "name": "LIP @ PUR",
-   "start_et": "6:30 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 78.0,
-   "home_score": 95.0,
-   "note": null,
-   "away": {
-    "id": "288",
-    "abbr": "LIP",
-    "name": "Lipscomb Bisons",
-    "score": "78",
-    "record": "3-3",
-    "rank": null,
-    "conference_id": "46",
-    "team_stats": {
-     "avgRebounds": 33.8,
-     "avgPoints": 74.8,
-     "avgAssists": 12.0,
-     "avgTurnovers": 13.2,
-     "fieldGoalPct": 44.363635778427124,
-     "threePointFieldGoalPct": 28.79999876022339
-    }
-   },
-   "home": {
-    "id": "2509",
-    "abbr": "PUR",
-    "name": "Purdue Boilermakers",
-    "score": "95",
-    "record": "3-2",
-    "rank": null,
-    "conference_id": "7",
-    "team_stats": {
-     "avgRebounds": 36.0,
-     "avgPoints": 77.0,
-     "avgAssists": 16.5,
-     "avgTurnovers": 10.5,
-     "fieldGoalPct": 45.33333480358124,
-     "threePointFieldGoalPct": 28.282827138900757
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Mackey Arena",
-   "indoor": true,
-   "tv": "BTN",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401920236",
-   "name": "UMA @ DART",
-   "start_et": "6:30 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 67.0,
-   "home_score": 117.0,
-   "note": null,
-   "away": {
-    "id": "126890",
-    "abbr": "UMA",
-    "name": "Maine Augusta Moose",
-    "score": "67",
-    "record": null,
-    "rank": null,
-    "conference_id": null,
-    "team_stats": {
-     "avgRebounds": 24.0,
-     "avgPoints": 68.0,
-     "avgAssists": 15.0,
-     "avgTurnovers": 13.0,
-     "fieldGoalPct": 39.393940567970276,
-     "threePointFieldGoalPct": 28.125
-    }
-   },
-   "home": {
-    "id": "159",
-    "abbr": "DART",
-    "name": "Dartmouth Big Green",
-    "score": "117",
-    "record": "4-2",
-    "rank": null,
-    "conference_id": "12",
-    "team_stats": {
-     "avgRebounds": 35.6,
-     "avgPoints": 81.4,
-     "avgAssists": 14.8,
-     "avgTurnovers": 13.8,
-     "fieldGoalPct": 47.249191999435425,
-     "threePointFieldGoalPct": 33.766233921051025
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Leede Arena",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401930568",
-   "name": "SPRH @ USA",
+   "espn_id": "401926838",
+   "name": "JMU @ TOW",
    "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 69.0,
-   "home_score": 122.0,
-   "note": null,
-   "away": {
-    "id": "2590",
-    "abbr": "SPRH",
-    "name": "Spring Hill Badgers",
-    "score": "69",
-    "record": null,
-    "rank": null,
-    "conference_id": null,
-    "team_stats": {
-     "avgRebounds": 32.0,
-     "avgPoints": 50.0,
-     "avgAssists": 11.0,
-     "avgTurnovers": 18.0,
-     "fieldGoalPct": 30.645161867141724,
-     "threePointFieldGoalPct": 26.1904776096344
-    }
-   },
-   "home": {
-    "id": "6",
-    "abbr": "USA",
-    "name": "South Alabama Jaguars",
-    "score": "122",
-    "record": "3-3",
-    "rank": null,
-    "conference_id": "27",
-    "team_stats": {
-     "avgRebounds": 30.0,
-     "avgPoints": 74.6,
-     "avgAssists": 13.6,
-     "avgTurnovers": 8.8,
-     "fieldGoalPct": 49.12891983985901,
-     "threePointFieldGoalPct": 29.906541109085083
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Mitchell Center",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401927342",
-   "name": "CHEY @ DSU",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 70.0,
-   "home_score": 90.0,
-   "note": null,
-   "away": {
-    "id": "2129",
-    "abbr": "CHEY",
-    "name": "Cheyney (PA) Wolves",
-    "score": "70",
-    "record": null,
-    "rank": null,
-    "conference_id": null,
-    "team_stats": {
-     "avgRebounds": 31.75,
-     "avgPoints": 59.0,
-     "avgAssists": 6.75,
-     "avgTurnovers": 15.5,
-     "fieldGoalPct": 32.765957713127136,
-     "threePointFieldGoalPct": 22.66666740179062
-    }
-   },
-   "home": {
-    "id": "2169",
-    "abbr": "DSU",
-    "name": "Delaware State Hornets",
-    "score": "90",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "16",
-    "team_stats": {
-     "avgRebounds": 34.5,
-     "avgPoints": 68.0,
-     "avgAssists": 13.25,
-     "avgTurnovers": 14.75,
-     "fieldGoalPct": 46.75324559211731,
-     "threePointFieldGoalPct": 36.70886158943176
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Memorial Hall (DE)",
-   "indoor": true,
-   "tv": null,
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401925775",
-   "name": "CLT @ DAV",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 73.0,
-   "home_score": 66.0,
-   "note": null,
-   "away": {
-    "id": "2429",
-    "abbr": "CLT",
-    "name": "Charlotte 49ers",
-    "score": "73",
-    "record": "3-2",
-    "rank": null,
-    "conference_id": "62",
-    "team_stats": {
-     "avgRebounds": 38.5,
-     "avgPoints": 69.25,
-     "avgAssists": 12.25,
-     "avgTurnovers": 12.5,
-     "fieldGoalPct": 42.98642575740814,
-     "threePointFieldGoalPct": 38.297873735427856
-    }
-   },
-   "home": {
-    "id": "2166",
-    "abbr": "DAV",
-    "name": "Davidson Wildcats",
-    "score": "66",
-    "record": "3-2",
-    "rank": null,
-    "conference_id": "3",
-    "team_stats": {
-     "avgRebounds": 40.25,
-     "avgPoints": 71.0,
-     "avgAssists": 12.75,
-     "avgTurnovers": 10.25,
-     "fieldGoalPct": 44.21487748622894,
-     "threePointFieldGoalPct": 35.48386991024017
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "John M. Belk Arena",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401925751",
-   "name": "VTSL @ CCSU",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 55.0,
-   "home_score": 98.0,
-   "note": null,
-   "away": {
-    "id": "551",
-    "abbr": "VTSL",
-    "name": "Vermont State Lyndon Hornets",
-    "score": "55",
-    "record": null,
-    "rank": null,
-    "conference_id": null,
-    "team_stats": {
-     "avgRebounds": 23.0,
-     "avgPoints": 51.0,
-     "avgAssists": 11.0,
-     "avgTurnovers": 24.0,
-     "fieldGoalPct": 35.41666567325592,
-     "threePointFieldGoalPct": 33.33333432674408
-    }
-   },
-   "home": {
-    "id": "2115",
-    "abbr": "CCSU",
-    "name": "Central Connecticut Blue Devils",
-    "score": "98",
-    "record": "4-2",
-    "rank": null,
-    "conference_id": "19",
-    "team_stats": {
-     "avgRebounds": 31.4,
-     "avgPoints": 66.8,
-     "avgAssists": 11.0,
-     "avgTurnovers": 11.2,
-     "fieldGoalPct": 42.16027855873108,
-     "threePointFieldGoalPct": 36.20689511299133
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Detrick Gymnasium",
-   "indoor": true,
-   "tv": "NEC Front Row",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401924941",
-   "name": "AKR @ BUCK",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 49.0,
-   "home_score": 53.0,
-   "note": null,
-   "away": {
-    "id": "2006",
-    "abbr": "AKR",
-    "name": "Akron Zips",
-    "score": "49",
-    "record": "3-1",
-    "rank": null,
-    "conference_id": "14",
-    "team_stats": {
-     "avgRebounds": 46.333332,
-     "avgPoints": 84.0,
-     "avgAssists": 18.333334,
-     "avgTurnovers": 12.333333,
-     "fieldGoalPct": 47.8723406791687,
-     "threePointFieldGoalPct": 31.91489279270172
-    }
-   },
-   "home": {
-    "id": "2083",
-    "abbr": "BUCK",
-    "name": "Bucknell Bison",
-    "score": "53",
-    "record": "1-4",
-    "rank": null,
-    "conference_id": "22",
-    "team_stats": {
-     "avgRebounds": 24.75,
-     "avgPoints": 62.25,
-     "avgAssists": 15.25,
-     "avgTurnovers": 13.25,
-     "fieldGoalPct": 38.11659216880798,
-     "threePointFieldGoalPct": 30.833333730697632
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Sojka Pavilion",
-   "indoor": true,
-   "tv": null,
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401922251",
-   "name": "GB @ UWF",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 69.0,
-   "home_score": 87.0,
-   "note": null,
-   "away": {
-    "id": "2739",
-    "abbr": "GB",
-    "name": "Green Bay Phoenix",
-    "score": "69",
-    "record": "3-3",
-    "rank": null,
-    "conference_id": "45",
-    "team_stats": {
-     "avgRebounds": 34.8,
-     "avgPoints": 75.2,
-     "avgAssists": 15.4,
-     "avgTurnovers": 13.0,
-     "fieldGoalPct": 45.964911580085754,
-     "threePointFieldGoalPct": 32.608696818351746
-    }
-   },
-   "home": {
-    "id": "2697",
-    "abbr": "UWF",
-    "name": "West Florida Argonauts",
-    "score": "87",
-    "record": "3-3",
-    "rank": null,
-    "conference_id": "46",
-    "team_stats": {
-     "avgRebounds": 40.2,
-     "avgPoints": 92.4,
-     "avgAssists": 17.6,
-     "avgTurnovers": 12.4,
-     "fieldGoalPct": 47.05882370471954,
-     "threePointFieldGoalPct": 40.15151560306549
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "UWF Field House",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401922221",
-   "name": "UFTL @ UNF",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 59.0,
-   "home_score": 98.0,
-   "note": null,
-   "away": {
-    "id": "123362",
-    "abbr": "UFTL",
-    "name": "Fort Lauderdale Eagles",
-    "score": "59",
-    "record": null,
-    "rank": null,
-    "conference_id": null,
-    "team_stats": {
-     "avgRebounds": 29.666666,
-     "avgPoints": 66.666664,
-     "avgAssists": 12.333333,
-     "avgTurnovers": 13.0,
-     "fieldGoalPct": 35.960590839385986,
-     "threePointFieldGoalPct": 28.125
-    }
-   },
-   "home": {
-    "id": "2454",
-    "abbr": "UNF",
-    "name": "North Florida Ospreys",
-    "score": "98",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "46",
-    "team_stats": {
-     "avgRebounds": 34.75,
-     "avgPoints": 64.75,
-     "avgAssists": 10.75,
-     "avgTurnovers": 16.5,
-     "fieldGoalPct": 37.651821970939636,
-     "threePointFieldGoalPct": 29.1262149810791
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "UNF Arena",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401921756",
-   "name": "MSST @ UCF",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 86.0,
-   "home_score": 83.0,
-   "note": null,
-   "away": {
-    "id": "344",
-    "abbr": "MSST",
-    "name": "Mississippi State Bulldogs",
-    "score": "86",
-    "record": "4-1",
-    "rank": null,
-    "conference_id": "23",
-    "team_stats": {
-     "avgRebounds": 45.25,
-     "avgPoints": 87.25,
-     "avgAssists": 15.5,
-     "avgTurnovers": 13.5,
-     "fieldGoalPct": 47.47081696987152,
-     "threePointFieldGoalPct": 31.730768084526062
-    }
-   },
-   "home": {
-    "id": "2116",
-    "abbr": "UCF",
-    "name": "UCF Knights",
-    "score": "83",
-    "record": "4-1",
-    "rank": null,
-    "conference_id": "8",
-    "team_stats": {
-     "avgRebounds": 35.5,
-     "avgPoints": 85.75,
-     "avgAssists": 15.0,
-     "avgTurnovers": 8.0,
-     "fieldGoalPct": 49.18032884597778,
-     "threePointFieldGoalPct": 36.55914068222046
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Addition Financial Arena",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401920921",
-   "name": "LEH @ MSM",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 99.0,
-   "home_score": 65.0,
-   "note": null,
-   "away": {
-    "id": "2329",
-    "abbr": "LEH",
-    "name": "Lehigh Mountain Hawks",
-    "score": "99",
-    "record": "3-2",
-    "rank": null,
-    "conference_id": "22",
-    "team_stats": {
-     "avgRebounds": 33.75,
-     "avgPoints": 64.5,
-     "avgAssists": 10.75,
-     "avgTurnovers": 12.0,
-     "fieldGoalPct": 39.25233781337738,
-     "threePointFieldGoalPct": 25.882354378700256
-    }
-   },
-   "home": {
-    "id": "116",
-    "abbr": "MSM",
-    "name": "Mount St. Mary's Mountaineers",
-    "score": "65",
-    "record": "1-3",
-    "rank": null,
-    "conference_id": "13",
-    "team_stats": {
-     "avgRebounds": 36.0,
-     "avgPoints": 60.666668,
-     "avgAssists": 11.0,
-     "avgTurnovers": 17.333334,
-     "fieldGoalPct": 37.79069781303406,
-     "threePointFieldGoalPct": 23.880596458911896
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Knott Arena",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401920857",
-   "name": "ETSU @ MRSH",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 55.0,
-   "home_score": 67.0,
-   "note": null,
-   "away": {
-    "id": "2193",
-    "abbr": "ETSU",
-    "name": "East Tennessee State Buccaneers",
-    "score": "55",
-    "record": "1-3",
-    "rank": null,
-    "conference_id": "24",
-    "team_stats": {
-     "avgRebounds": 34.333332,
-     "avgPoints": 65.333336,
-     "avgAssists": 12.0,
-     "avgTurnovers": 13.333333,
-     "fieldGoalPct": 45.625001192092896,
-     "threePointFieldGoalPct": 37.5
-    }
-   },
-   "home": {
-    "id": "276",
-    "abbr": "MRSH",
-    "name": "Marshall Thundering Herd",
-    "score": "67",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "27",
-    "team_stats": {
-     "avgRebounds": 41.5,
-     "avgPoints": 78.25,
-     "avgAssists": 11.5,
-     "avgTurnovers": 15.0,
-     "fieldGoalPct": 45.01992166042328,
-     "threePointFieldGoalPct": 31.999999284744263
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Cam Henderson Center",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401920308",
-   "name": "NORF @ GT",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 79.0,
-   "home_score": 93.0,
-   "note": null,
-   "away": {
-    "id": "2450",
-    "abbr": "NORF",
-    "name": "Norfolk State Spartans",
-    "score": "79",
-    "record": "2-4",
-    "rank": null,
-    "conference_id": "16",
-    "team_stats": {
-     "avgRebounds": 32.4,
-     "avgPoints": 66.4,
-     "avgAssists": 11.0,
-     "avgTurnovers": 13.2,
-     "fieldGoalPct": 40.51094949245453,
-     "threePointFieldGoalPct": 28.81355881690979
-    }
-   },
-   "home": {
-    "id": "59",
-    "abbr": "GT",
-    "name": "Georgia Tech Yellow Jackets",
-    "score": "93",
-    "record": "5-0",
-    "rank": null,
-    "conference_id": "2",
-    "team_stats": {
-     "avgRebounds": 47.0,
-     "avgPoints": 82.5,
-     "avgAssists": 14.5,
-     "avgTurnovers": 13.25,
-     "fieldGoalPct": 42.741936445236206,
-     "threePointFieldGoalPct": 29.29292917251587
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "McCamish Pavilion",
-   "indoor": true,
-   "tv": "ACCNX",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401920297",
-   "name": "CSUN @ TROY",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 74.0,
-   "home_score": 84.0,
-   "note": null,
-   "away": {
-    "id": "2463",
-    "abbr": "CSUN",
-    "name": "Cal State Northridge Matadors",
-    "score": "74",
-    "record": "1-3",
-    "rank": null,
-    "conference_id": "9",
-    "team_stats": {
-     "avgRebounds": 47.666668,
-     "avgPoints": 84.333336,
-     "avgAssists": 16.333334,
-     "avgTurnovers": 13.0,
-     "fieldGoalPct": 44.6601927280426,
-     "threePointFieldGoalPct": 31.343284249305725
-    }
-   },
-   "home": {
-    "id": "2653",
-    "abbr": "TROY",
-    "name": "Troy Trojans",
-    "score": "84",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "27",
-    "team_stats": {
-     "avgRebounds": 34.0,
-     "avgPoints": 66.0,
-     "avgAssists": 10.5,
-     "avgTurnovers": 10.0,
-     "fieldGoalPct": 38.62660825252533,
-     "threePointFieldGoalPct": 30.09708821773529
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Trojan Arena",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401920194",
-   "name": "WAG @ JOES",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 65.0,
-   "home_score": 84.0,
-   "note": null,
-   "away": {
-    "id": "2681",
-    "abbr": "WAG",
-    "name": "Wagner Seahawks",
-    "score": "65",
-    "record": "1-4",
-    "rank": null,
-    "conference_id": "19",
-    "team_stats": {
-     "avgRebounds": 41.5,
-     "avgPoints": 66.25,
-     "avgAssists": 10.5,
-     "avgTurnovers": 18.5,
-     "fieldGoalPct": 40.495866537094116,
-     "threePointFieldGoalPct": 30.95238208770752
-    }
-   },
-   "home": {
-    "id": "2603",
-    "abbr": "JOES",
-    "name": "Saint Joseph's Hawks",
-    "score": "84",
-    "record": "5-0",
-    "rank": null,
-    "conference_id": "3",
-    "team_stats": {
-     "avgRebounds": 38.25,
-     "avgPoints": 78.75,
-     "avgAssists": 14.25,
-     "avgTurnovers": 8.75,
-     "fieldGoalPct": 40.15151560306549,
-     "threePointFieldGoalPct": 34.3137264251709
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Michael J. Hagan '85 Arena",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401918994",
-   "name": "TNST @ USF",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 71.0,
-   "home_score": 98.0,
-   "note": null,
-   "away": {
-    "id": "2634",
-    "abbr": "TNST",
-    "name": "Tennessee State Tigers",
-    "score": "71",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "20",
-    "team_stats": {
-     "avgRebounds": 45.0,
-     "avgPoints": 98.0,
-     "avgAssists": 20.0,
-     "avgTurnovers": 14.0,
-     "fieldGoalPct": 45.63106894493103,
-     "threePointFieldGoalPct": 25.663715600967407
-    }
-   },
-   "home": {
-    "id": "58",
-    "abbr": "USF",
-    "name": "South Florida Bulls",
-    "score": "98",
-    "record": "3-2",
-    "rank": null,
-    "conference_id": "62",
-    "team_stats": {
-     "avgRebounds": 43.25,
-     "avgPoints": 82.75,
-     "avgAssists": 14.5,
-     "avgTurnovers": 11.25,
-     "fieldGoalPct": 44.88188922405243,
-     "threePointFieldGoalPct": 29.411765933036804
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Yuengling Center",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401911198",
-   "name": "FOR @ MAN",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 80.0,
-   "home_score": 61.0,
-   "note": null,
-   "away": {
-    "id": "2230",
-    "abbr": "FOR",
-    "name": "Fordham Rams",
-    "score": "80",
-    "record": "4-1",
-    "rank": null,
-    "conference_id": "3",
-    "team_stats": {
-     "avgRebounds": 34.75,
-     "avgPoints": 76.5,
-     "avgAssists": 15.75,
-     "avgTurnovers": 15.0,
-     "fieldGoalPct": 45.378151535987854,
-     "threePointFieldGoalPct": 39.78494703769684
-    }
-   },
-   "home": {
-    "id": "2363",
-    "abbr": "MAN",
-    "name": "Manhattan Jaspers",
-    "score": "61",
-    "record": "1-4",
-    "rank": null,
-    "conference_id": "13",
-    "team_stats": {
-     "avgRebounds": 33.5,
-     "avgPoints": 63.75,
-     "avgAssists": 8.75,
-     "avgTurnovers": 12.5,
-     "fieldGoalPct": 39.65517282485962,
-     "threePointFieldGoalPct": 20.000000298023224
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Draddy Gymnasium",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401911019",
-   "name": "CMU @ DAY",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 63.0,
-   "home_score": 88.0,
-   "note": null,
-   "away": {
-    "id": "2117",
-    "abbr": "CMU",
-    "name": "Central Michigan Chippewas",
-    "score": "63",
-    "record": "4-1",
-    "rank": null,
-    "conference_id": "14",
-    "team_stats": {
-     "avgRebounds": 41.25,
-     "avgPoints": 83.75,
-     "avgAssists": 13.5,
-     "avgTurnovers": 14.0,
-     "fieldGoalPct": 48.72881472110748,
-     "threePointFieldGoalPct": 37.20930218696594
-    }
-   },
-   "home": {
-    "id": "2168",
-    "abbr": "DAY",
-    "name": "Dayton Flyers",
-    "score": "88",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "3",
-    "team_stats": {
-     "avgRebounds": 35.75,
-     "avgPoints": 81.5,
-     "avgAssists": 15.0,
-     "avgTurnovers": 13.5,
-     "fieldGoalPct": 47.84482717514038,
-     "threePointFieldGoalPct": 29.16666567325592
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "UD Arena",
-   "indoor": true,
-   "tv": "ESPN+, Spectrum News 1",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401911018",
-   "name": "BGSU @ W&M",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 73.0,
-   "home_score": 77.0,
-   "note": null,
-   "away": {
-    "id": "189",
-    "abbr": "BGSU",
-    "name": "Bowling Green Falcons",
-    "score": "73",
-    "record": "3-1",
-    "rank": null,
-    "conference_id": "14",
-    "team_stats": {
-     "avgRebounds": 37.666668,
-     "avgPoints": 86.333336,
-     "avgAssists": 15.333333,
-     "avgTurnovers": 12.0,
-     "fieldGoalPct": 53.14285755157471,
-     "threePointFieldGoalPct": 41.77215099334717
-    }
-   },
-   "home": {
-    "id": "2729",
-    "abbr": "W&M",
-    "name": "William & Mary Tribe",
-    "score": "77",
-    "record": "3-2",
-    "rank": null,
-    "conference_id": "10",
-    "team_stats": {
-     "avgRebounds": 38.0,
-     "avgPoints": 88.25,
-     "avgAssists": 20.25,
-     "avgTurnovers": 13.25,
-     "fieldGoalPct": 47.69230782985687,
-     "threePointFieldGoalPct": 35.537189245224
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Kaplan Arena",
-   "indoor": true,
-   "tv": "FloSports",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401909729",
-   "name": "MONM @ WAKE",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 76.0,
-   "home_score": 81.0,
-   "note": null,
-   "away": {
-    "id": "2405",
-    "abbr": "MONM",
-    "name": "Monmouth Hawks",
-    "score": "76",
-    "record": "1-3",
-    "rank": null,
-    "conference_id": "10",
-    "team_stats": {
-     "avgRebounds": 32.0,
-     "avgPoints": 67.666664,
-     "avgAssists": 12.0,
-     "avgTurnovers": 12.333333,
-     "fieldGoalPct": 41.66666567325592,
-     "threePointFieldGoalPct": 30.50847351551056
-    }
-   },
-   "home": {
-    "id": "154",
-    "abbr": "WAKE",
-    "name": "Wake Forest Demon Deacons",
-    "score": "81",
-    "record": "4-1",
-    "rank": null,
-    "conference_id": "2",
-    "team_stats": {
-     "avgRebounds": 36.0,
-     "avgPoints": 76.25,
-     "avgAssists": 13.25,
-     "avgTurnovers": 11.0,
-     "fieldGoalPct": 46.05809152126312,
-     "threePointFieldGoalPct": 31.25
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "LJVM Coliseum",
-   "indoor": true,
-   "tv": "ACCNX",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401909708",
-   "name": "VILL @ PITT",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 61.0,
-   "home_score": 81.0,
-   "note": null,
-   "away": {
-    "id": "222",
-    "abbr": "VILL",
-    "name": "Villanova Wildcats",
-    "score": "61",
-    "record": "3-2",
-    "rank": null,
-    "conference_id": "4",
-    "team_stats": {
-     "avgRebounds": 45.0,
-     "avgPoints": 86.5,
-     "avgAssists": 19.5,
-     "avgTurnovers": 12.0,
-     "fieldGoalPct": 49.01960790157318,
-     "threePointFieldGoalPct": 35.514017939567566
-    }
-   },
-   "home": {
-    "id": "221",
-    "abbr": "PITT",
-    "name": "Pittsburgh Panthers",
-    "score": "81",
-    "record": "5-0",
-    "rank": null,
-    "conference_id": "2",
-    "team_stats": {
-     "avgRebounds": 39.5,
-     "avgPoints": 83.25,
-     "avgAssists": 15.5,
-     "avgTurnovers": 11.0,
-     "fieldGoalPct": 45.798319578170776,
-     "threePointFieldGoalPct": 33.68421196937561
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Petersen Events Center",
-   "indoor": true,
-   "tv": "ACC Network",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401909697",
-   "name": "BALL @ FSU",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 71.0,
-   "home_score": 85.0,
-   "note": null,
-   "away": {
-    "id": "2050",
-    "abbr": "BALL",
-    "name": "Ball State Cardinals",
-    "score": "71",
-    "record": "1-4",
-    "rank": null,
-    "conference_id": "14",
-    "team_stats": {
-     "avgRebounds": 38.75,
-     "avgPoints": 68.75,
-     "avgAssists": 10.75,
-     "avgTurnovers": 12.75,
-     "fieldGoalPct": 38.62660825252533,
-     "threePointFieldGoalPct": 27.522936463356018
-    }
-   },
-   "home": {
-    "id": "52",
-    "abbr": "FSU",
-    "name": "Florida State Seminoles",
-    "score": "85",
-    "record": "4-1",
-    "rank": null,
-    "conference_id": "2",
-    "team_stats": {
-     "avgRebounds": 45.0,
-     "avgPoints": 90.0,
-     "avgAssists": 13.75,
-     "avgTurnovers": 11.25,
-     "fieldGoalPct": 45.059287548065186,
-     "threePointFieldGoalPct": 22.340425848960876
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Donald L. Tucker Center",
-   "indoor": true,
-   "tv": "ACCNX",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401909544",
-   "name": "CLE @ XAV",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 67.0,
-   "home_score": 75.0,
-   "note": null,
-   "away": {
-    "id": "325",
-    "abbr": "CLE",
-    "name": "Cleveland State Vikings",
-    "score": "67",
-    "record": "3-3",
-    "rank": null,
-    "conference_id": "45",
-    "team_stats": {
-     "avgRebounds": 33.4,
-     "avgPoints": 75.0,
-     "avgAssists": 12.4,
-     "avgTurnovers": 12.4,
-     "fieldGoalPct": 48.239436745643616,
-     "threePointFieldGoalPct": 27.659574151039124
-    }
-   },
-   "home": {
-    "id": "2752",
-    "abbr": "XAV",
-    "name": "Xavier Musketeers",
-    "score": "75",
-    "record": "5-0",
-    "rank": null,
-    "conference_id": "4",
-    "team_stats": {
-     "avgRebounds": 46.25,
-     "avgPoints": 88.5,
-     "avgAssists": 21.0,
-     "avgTurnovers": 13.0,
-     "fieldGoalPct": 49.042144417762756,
-     "threePointFieldGoalPct": 31.06796145439148
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Cintas Center",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401909535",
-   "name": "SHU @ PROV",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 67.0,
-   "home_score": 86.0,
-   "note": null,
-   "away": {
-    "id": "2529",
-    "abbr": "SHU",
-    "name": "Sacred Heart Pioneers",
-    "score": "67",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "13",
-    "team_stats": {
-     "avgRebounds": 45.5,
-     "avgPoints": 84.75,
-     "avgAssists": 14.25,
-     "avgTurnovers": 10.5,
-     "fieldGoalPct": 44.609665870666504,
-     "threePointFieldGoalPct": 34.69387888908386
-    }
-   },
-   "home": {
-    "id": "2507",
-    "abbr": "PROV",
-    "name": "Providence Friars",
-    "score": "86",
-    "record": "4-1",
-    "rank": null,
-    "conference_id": "4",
-    "team_stats": {
-     "avgRebounds": 38.5,
-     "avgPoints": 71.5,
-     "avgAssists": 15.75,
-     "avgTurnovers": 13.75,
-     "fieldGoalPct": 40.310078859329224,
-     "threePointFieldGoalPct": 25.757575035095215
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Amica Mutual Pavilion",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401902279",
-   "name": "WCU @ BTLR",
-   "start_et": "7:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 64.0,
-   "home_score": 89.0,
-   "note": null,
-   "away": {
-    "id": "2717",
-    "abbr": "WCU",
-    "name": "Western Carolina Catamounts",
-    "score": "64",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "24",
-    "team_stats": {
-     "avgRebounds": 43.75,
-     "avgPoints": 89.75,
-     "avgAssists": 16.75,
-     "avgTurnovers": 8.25,
-     "fieldGoalPct": 43.893128633499146,
-     "threePointFieldGoalPct": 40.15151560306549
-    }
-   },
-   "home": {
-    "id": "2086",
-    "abbr": "BTLR",
-    "name": "Butler Bulldogs",
-    "score": "89",
-    "record": "3-2",
-    "rank": null,
-    "conference_id": "4",
-    "team_stats": {
-     "avgRebounds": 43.25,
-     "avgPoints": 85.0,
-     "avgAssists": 20.5,
-     "avgTurnovers": 15.25,
-     "fieldGoalPct": 43.49442422389984,
-     "threePointFieldGoalPct": 32.48407542705536
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Hinkle Fieldhouse",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401911020",
-   "name": "BRY @ MASS",
-   "start_et": "7:30 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 82.0,
-   "home_score": 79.0,
-   "note": null,
-   "away": {
-    "id": "2803",
-    "abbr": "BRY",
-    "name": "Bryant Bulldogs",
-    "score": "82",
-    "record": "1-4",
-    "rank": null,
-    "conference_id": "1",
-    "team_stats": {
-     "avgRebounds": 35.2,
-     "avgPoints": 60.2,
-     "avgAssists": 13.0,
-     "avgTurnovers": 15.6,
-     "fieldGoalPct": 37.41258680820465,
-     "threePointFieldGoalPct": 25.609755516052246
-    }
-   },
-   "home": {
-    "id": "113",
-    "abbr": "MASS",
-    "name": "Massachusetts Minutemen",
-    "score": "79",
-    "record": "2-1",
-    "rank": null,
-    "conference_id": "14",
-    "team_stats": {
-     "avgRebounds": 47.0,
-     "avgPoints": 66.0,
-     "avgAssists": 14.333333,
-     "avgTurnovers": 14.0,
-     "fieldGoalPct": 41.62162244319916,
-     "threePointFieldGoalPct": 27.692309021949768
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Mullins Center",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401926781",
-   "name": "JXST @ LT",
-   "start_et": "7:30 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 63.0,
-   "home_score": 68.0,
-   "note": null,
-   "away": {
-    "id": "55",
-    "abbr": "JXST",
-    "name": "Jacksonville State Gamecocks",
-    "score": "63",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "11",
-    "team_stats": {
-     "avgRebounds": 38.25,
-     "avgPoints": 80.0,
-     "avgAssists": 16.5,
-     "avgTurnovers": 12.5,
-     "fieldGoalPct": 44.31372582912445,
-     "threePointFieldGoalPct": 37.704917788505554
-    }
-   },
-   "home": {
-    "id": "2348",
-    "abbr": "LT",
-    "name": "Louisiana Tech Bulldogs",
-    "score": "68",
-    "record": "3-2",
-    "rank": null,
-    "conference_id": "27",
-    "team_stats": {
-     "avgRebounds": 37.25,
-     "avgPoints": 69.75,
-     "avgAssists": 13.75,
-     "avgTurnovers": 14.5,
-     "fieldGoalPct": 44.14414465427399,
-     "threePointFieldGoalPct": 28.00000011920929
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Thomas Assembly Center",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401919018",
-   "name": "FIU @ UAB",
-   "start_et": "7:30 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 82.0,
-   "home_score": 94.0,
-   "note": null,
-   "away": {
-    "id": "2229",
-    "abbr": "FIU",
-    "name": "Florida International Panthers",
-    "score": "82",
-    "record": "3-1",
-    "rank": null,
-    "conference_id": "11",
-    "team_stats": {
-     "avgRebounds": 43.333332,
-     "avgPoints": 91.666664,
-     "avgAssists": 17.666666,
-     "avgTurnovers": 12.0,
-     "fieldGoalPct": 47.11538553237915,
-     "threePointFieldGoalPct": 31.91489279270172
-    }
-   },
-   "home": {
-    "id": "5",
-    "abbr": "UAB",
-    "name": "UAB Blazers",
-    "score": "94",
-    "record": "3-2",
-    "rank": null,
-    "conference_id": "62",
-    "team_stats": {
-     "avgRebounds": 39.0,
-     "avgPoints": 77.0,
-     "avgAssists": 12.25,
-     "avgTurnovers": 11.25,
-     "fieldGoalPct": 41.152262687683105,
-     "threePointFieldGoalPct": 35.555556416511536
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Bartow Arena",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401929358",
-   "name": "UTA @ USM",
-   "start_et": "8:00 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 72.0,
-   "home_score": 64.0,
-   "note": null,
-   "away": {
-    "id": "250",
-    "abbr": "UTA",
-    "name": "UT Arlington Mavericks",
-    "score": "72",
-    "record": "4-1",
-    "rank": null,
-    "conference_id": "30",
-    "team_stats": {
-     "avgRebounds": 48.8,
-     "avgPoints": 88.2,
-     "avgAssists": 17.0,
-     "avgTurnovers": 13.6,
-     "fieldGoalPct": 45.77259421348572,
-     "threePointFieldGoalPct": 35.555556416511536
-    }
-   },
-   "home": {
-    "id": "2572",
-    "abbr": "USM",
-    "name": "Southern Miss Golden Eagles",
-    "score": "64",
-    "record": "2-2",
-    "rank": null,
-    "conference_id": "27",
-    "team_stats": {
-     "avgRebounds": 41.0,
-     "avgPoints": 72.0,
-     "avgAssists": 11.0,
-     "avgTurnovers": 19.0,
-     "fieldGoalPct": 41.30434691905975,
-     "threePointFieldGoalPct": 28.23529541492462
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Reed Green Coliseum",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401927867",
-   "name": "ERAZ @ NAU",
-   "start_et": "8:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 59.0,
-   "home_score": 72.0,
-   "note": null,
-   "away": {
-    "id": "111226",
-    "abbr": "ERAZ",
-    "name": "Embry Riddle (AZ) Eagles",
-    "score": "59",
-    "record": null,
-    "rank": null,
-    "conference_id": null,
-    "team_stats": {
-     "avgRebounds": 30.0,
-     "avgPoints": 79.0,
-     "avgAssists": 19.0,
-     "avgTurnovers": 16.0,
-     "fieldGoalPct": 47.69230782985687,
-     "threePointFieldGoalPct": 46.666666865348816
-    }
-   },
-   "home": {
-    "id": "2464",
-    "abbr": "NAU",
-    "name": "Northern Arizona Lumberjacks",
-    "score": "72",
-    "record": "1-4",
-    "rank": null,
-    "conference_id": "5",
-    "team_stats": {
-     "avgRebounds": 29.0,
-     "avgPoints": 69.5,
-     "avgAssists": 12.5,
-     "avgTurnovers": 14.75,
-     "fieldGoalPct": 46.700507402420044,
-     "threePointFieldGoalPct": 37.5
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Rolle Activity Center",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401927388",
-   "name": "LIN @ UNI",
-   "start_et": "8:00 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 68.0,
-   "home_score": 76.0,
-   "note": null,
-   "away": {
-    "id": "2815",
-    "abbr": "LIN",
-    "name": "Lindenwood Lions",
-    "score": "68",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "20",
-    "team_stats": {
-     "avgRebounds": 46.2,
-     "avgPoints": 82.0,
-     "avgAssists": 17.0,
-     "avgTurnovers": 14.6,
-     "fieldGoalPct": 48.46625626087189,
-     "threePointFieldGoalPct": 34.951457381248474
-    }
-   },
-   "home": {
-    "id": "2460",
-    "abbr": "UNI",
-    "name": "Northern Iowa Panthers",
-    "score": "76",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "18",
-    "team_stats": {
-     "avgRebounds": 32.8,
-     "avgPoints": 85.2,
-     "avgAssists": 14.8,
-     "avgTurnovers": 13.2,
-     "fieldGoalPct": 48.19672107696533,
-     "threePointFieldGoalPct": 35.9375
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "McLeod Center",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401926143",
-   "name": "SIUE @ UND",
-   "start_et": "8:00 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 64.0,
-   "home_score": 71.0,
-   "note": null,
-   "away": {
-    "id": "2565",
-    "abbr": "SIUE",
-    "name": "SIU Edwardsville Cougars",
-    "score": "64",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "20",
-    "team_stats": {
-     "avgRebounds": 34.6,
-     "avgPoints": 71.6,
-     "avgAssists": 13.2,
-     "avgTurnovers": 12.8,
-     "fieldGoalPct": 45.954692363739014,
-     "threePointFieldGoalPct": 24.468085169792175
-    }
-   },
-   "home": {
-    "id": "155",
-    "abbr": "UND",
-    "name": "North Dakota Fighting Hawks",
-    "score": "71",
-    "record": "1-3",
-    "rank": null,
-    "conference_id": "49",
-    "team_stats": {
-     "avgRebounds": 30.25,
-     "avgPoints": 72.75,
-     "avgAssists": 10.0,
-     "avgTurnovers": 10.5,
-     "fieldGoalPct": 39.83739912509918,
-     "threePointFieldGoalPct": 29.523810744285583
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Betty Engelstad Sioux Center",
-   "indoor": true,
-   "tv": "Summit League Network",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401925012",
-   "name": "LAM @ OMA",
-   "start_et": "8:00 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 93.0,
-   "home_score": 64.0,
-   "note": null,
-   "away": {
-    "id": "2320",
-    "abbr": "LAM",
-    "name": "Lamar Cardinals",
-    "score": "93",
-    "record": "2-1",
-    "rank": null,
-    "conference_id": "25",
-    "team_stats": {
-     "avgRebounds": 55.0,
-     "avgPoints": 109.0,
-     "avgAssists": 21.666666,
-     "avgTurnovers": 13.0,
-     "fieldGoalPct": 48.523205518722534,
-     "threePointFieldGoalPct": 36.274510622024536
-    }
-   },
-   "home": {
-    "id": "2437",
-    "abbr": "OMA",
-    "name": "Omaha Mavericks",
-    "score": "64",
-    "record": "3-2",
-    "rank": null,
-    "conference_id": "49",
-    "team_stats": {
-     "avgRebounds": 42.0,
-     "avgPoints": 68.2,
-     "avgAssists": 12.0,
-     "avgTurnovers": 13.4,
-     "fieldGoalPct": 37.41496503353119,
-     "threePointFieldGoalPct": 26.446279883384705
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Baxter Arena",
-   "indoor": true,
-   "tv": "Summit League Network",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401921106",
-   "name": "BELL @ ILST",
-   "start_et": "8:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 59.0,
-   "home_score": 76.0,
-   "note": null,
-   "away": {
-    "id": "91",
-    "abbr": "BELL",
-    "name": "Bellarmine Knights",
-    "score": "59",
-    "record": "1-5",
-    "rank": null,
-    "conference_id": "46",
-    "team_stats": {
-     "avgRebounds": 28.8,
-     "avgPoints": 70.4,
-     "avgAssists": 11.0,
-     "avgTurnovers": 14.0,
-     "fieldGoalPct": 45.55984437465668,
-     "threePointFieldGoalPct": 27.659574151039124
-    }
-   },
-   "home": {
-    "id": "2287",
-    "abbr": "ILST",
-    "name": "Illinois State Redbirds",
-    "score": "76",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "18",
-    "team_stats": {
-     "avgRebounds": 28.25,
-     "avgPoints": 81.25,
-     "avgAssists": 18.0,
-     "avgTurnovers": 12.75,
-     "fieldGoalPct": 50.68492889404297,
-     "threePointFieldGoalPct": 37.837839126586914
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "CEFCU Arena",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401921097",
-   "name": "AMCC @ RICE",
-   "start_et": "8:00 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 64.0,
-   "home_score": 71.0,
-   "note": null,
-   "away": {
-    "id": "357",
-    "abbr": "AMCC",
-    "name": "Texas A&M-Corpus Christi Islanders",
-    "score": "64",
-    "record": "2-2",
-    "rank": null,
-    "conference_id": "25",
-    "team_stats": {
-     "avgRebounds": 35.75,
-     "avgPoints": 71.0,
-     "avgAssists": 11.25,
-     "avgTurnovers": 13.75,
-     "fieldGoalPct": 45.652174949645996,
-     "threePointFieldGoalPct": 27.692309021949768
-    }
-   },
-   "home": {
-    "id": "242",
-    "abbr": "RICE",
-    "name": "Rice Owls",
-    "score": "71",
-    "record": "2-2",
-    "rank": null,
-    "conference_id": "62",
-    "team_stats": {
-     "avgRebounds": 42.5,
-     "avgPoints": 81.25,
-     "avgAssists": 14.0,
-     "avgTurnovers": 14.0,
-     "fieldGoalPct": 42.06642210483551,
-     "threePointFieldGoalPct": 33.043476939201355
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Tudor Fieldhouse",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401921027",
-   "name": "MTSU @ GASO",
-   "start_et": "8:00 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 77.0,
-   "home_score": 71.0,
-   "note": null,
-   "away": {
-    "id": "2393",
-    "abbr": "MTSU",
-    "name": "Middle Tennessee Blue Raiders",
-    "score": "77",
-    "record": "3-1",
-    "rank": null,
-    "conference_id": "11",
-    "team_stats": {
-     "avgRebounds": 36.0,
-     "avgPoints": 80.75,
-     "avgAssists": 16.25,
-     "avgTurnovers": 11.75,
-     "fieldGoalPct": 45.56451737880707,
-     "threePointFieldGoalPct": 39.62264060974121
-    }
-   },
-   "home": {
-    "id": "290",
-    "abbr": "GASO",
-    "name": "Georgia Southern Eagles",
-    "score": "71",
-    "record": "1-3",
-    "rank": null,
-    "conference_id": "27",
-    "team_stats": {
-     "avgRebounds": 39.75,
-     "avgPoints": 77.75,
-     "avgAssists": 9.0,
-     "avgTurnovers": 10.75,
-     "fieldGoalPct": 36.94029748439789,
-     "threePointFieldGoalPct": 30.708661675453186
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Jack and Ruth Ann Hill Convocation Center",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401921006",
-   "name": "NWM @ KC",
-   "start_et": "8:00 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 62.0,
-   "home_score": 62.0,
-   "note": null,
-   "away": {
-    "id": "580",
-    "abbr": "NWM",
-    "name": "Newman Jets",
-    "score": "62",
-    "record": null,
-    "rank": null,
-    "conference_id": null,
-    "team_stats": {
-     "avgRebounds": 41.0,
-     "avgPoints": 62.0,
-     "avgAssists": 6.0,
-     "avgTurnovers": 12.0,
-     "fieldGoalPct": 24.637681245803833,
-     "threePointFieldGoalPct": 14.814814925193787
-    }
-   },
-   "home": {
-    "id": "140",
-    "abbr": "KC",
-    "name": "Kansas City Roos",
-    "score": "62",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "49",
-    "team_stats": {
-     "avgRebounds": 30.4,
-     "avgPoints": 75.4,
-     "avgAssists": 16.2,
-     "avgTurnovers": 13.0,
-     "fieldGoalPct": 47.03703820705414,
-     "threePointFieldGoalPct": 41.66666567325592
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Swinney Center",
-   "indoor": true,
-   "tv": "Summit League Network",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401919783",
-   "name": "LEM @ EVAN",
-   "start_et": "8:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 65.0,
-   "home_score": 79.0,
-   "note": null,
-   "away": {
-    "id": "2330",
-    "abbr": "LEM",
-    "name": "Le Moyne Dolphins",
-    "score": "65",
-    "record": "2-3",
-    "rank": null,
-    "conference_id": "19",
-    "team_stats": {
-     "avgRebounds": 38.0,
-     "avgPoints": 76.0,
-     "avgAssists": 19.5,
-     "avgTurnovers": 16.25,
-     "fieldGoalPct": 46.15384638309479,
-     "threePointFieldGoalPct": 33.5999995470047
-    }
-   },
-   "home": {
-    "id": "339",
-    "abbr": "EVAN",
-    "name": "Evansville Purple Aces",
-    "score": "79",
-    "record": "3-2",
-    "rank": null,
-    "conference_id": "18",
-    "team_stats": {
-     "avgRebounds": 35.75,
-     "avgPoints": 76.0,
-     "avgAssists": 17.25,
-     "avgTurnovers": 9.5,
-     "fieldGoalPct": 41.17647111415863,
-     "threePointFieldGoalPct": 33.8709682226181
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Ford Center",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401918970",
-   "name": "ORU @ SMU",
-   "start_et": "8:00 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 72.0,
-   "home_score": 74.0,
-   "note": null,
-   "away": {
-    "id": "198",
-    "abbr": "ORU",
-    "name": "Oral Roberts Golden Eagles",
-    "score": "72",
-    "record": "2-2",
-    "rank": null,
-    "conference_id": "49",
-    "team_stats": {
-     "avgRebounds": 41.5,
-     "avgPoints": 75.5,
-     "avgAssists": 15.0,
-     "avgTurnovers": 12.25,
-     "fieldGoalPct": 41.97530746459961,
-     "threePointFieldGoalPct": 28.79999876022339
-    }
-   },
-   "home": {
-    "id": "2567",
-    "abbr": "SMU",
-    "name": "SMU Mustangs",
-    "score": "74",
-    "record": "4-0",
-    "rank": null,
-    "conference_id": "2",
-    "team_stats": {
-     "avgRebounds": 40.5,
-     "avgPoints": 92.0,
-     "avgAssists": 21.25,
-     "avgTurnovers": 14.75,
-     "fieldGoalPct": 49.77578520774841,
-     "threePointFieldGoalPct": 41.17647111415863
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Moody Coliseum (Dallas)",
-   "indoor": true,
-   "tv": "ACCNX",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401917952",
-   "name": "LIFE @ APSU",
-   "start_et": "8:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 57.0,
-   "home_score": 70.0,
-   "note": null,
-   "away": {
-    "id": "124721",
-    "abbr": "LIFE",
-    "name": "Life University Running Eagles",
-    "score": "57",
-    "record": null,
-    "rank": null,
-    "conference_id": null,
-    "team_stats": {
-     "avgRebounds": 43.0,
-     "avgPoints": 72.0,
-     "avgAssists": 12.0,
-     "avgTurnovers": 16.0,
-     "fieldGoalPct": 45.90163826942444,
-     "threePointFieldGoalPct": 25.925925374031067
-    }
-   },
-   "home": {
-    "id": "2046",
-    "abbr": "APSU",
-    "name": "Austin Peay Governors",
-    "score": "70",
-    "record": "3-2",
-    "rank": null,
-    "conference_id": "30",
-    "team_stats": {
-     "avgRebounds": 39.5,
-     "avgPoints": 80.0,
-     "avgAssists": 13.75,
-     "avgTurnovers": 12.0,
-     "fieldGoalPct": 42.1875,
-     "threePointFieldGoalPct": 26.966291666030884
-    }
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "F&M Bank Arena",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null,
-   "injuries": {},
-   "espn_projection": null
-  },
-  {
-   "espn_id": "401909504",
-   "name": "UMES @ DEP",
-   "start_et": "8:00 PM ET",
-   "status": "Final",
-   "completed": true,
-   "away_score": 39.0,
-   "home_score": 83.0,
-   "note": null,
-   "away": {
-    "id": "2379",
-    "abbr": "UMES",
-    "name": "Maryland Eastern Shore Hawks",
-    "score": "39",
-    "record": "1-5",
-    "rank": null,
-    "conference_id": "16"
-   },
-   "home": {
-    "id": "305",
-    "abbr": "DEP",
-    "name": "DePaul Blue Demons",
-    "score": "83",
-    "record": "5-0",
-    "rank": null,
-    "conference_id": "4"
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Wintrust Arena",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null
-  },
-  {
-   "espn_id": "401925064",
-   "name": "NICH @ MISS",
-   "start_et": "8:30 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 26.0,
-   "home_score": 58.0,
-   "note": null,
-   "away": {
-    "id": "2447",
-    "abbr": "NICH",
-    "name": "Nicholls Colonels",
-    "score": "26",
-    "record": "2-2",
-    "rank": null,
-    "conference_id": "25"
-   },
-   "home": {
-    "id": "145",
-    "abbr": "MISS",
-    "name": "Ole Miss Rebels",
-    "score": "58",
-    "record": "3-0",
-    "rank": null,
-    "conference_id": "23"
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "The Sandy and John Black Pavilion at Ole Miss",
-   "indoor": true,
-   "tv": "SECN+",
-   "espn_line": null
-  },
-  {
-   "espn_id": "401924922",
-   "name": "SHSU @ WYO",
-   "start_et": "8:30 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 50.0,
-   "home_score": 54.0,
-   "note": null,
-   "away": {
-    "id": "2534",
-    "abbr": "SHSU",
-    "name": "Sam Houston Bearkats",
-    "score": "50",
-    "record": "2-2",
-    "rank": null,
-    "conference_id": "11"
-   },
-   "home": {
-    "id": "2751",
-    "abbr": "WYO",
-    "name": "Wyoming Cowboys",
-    "score": "54",
-    "record": "3-1",
-    "rank": null,
-    "conference_id": "44"
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Arena-Auditorium",
-   "indoor": true,
-   "tv": "MW+",
-   "espn_line": null
-  },
-  {
-   "espn_id": "401920720",
-   "name": "EWU @ UTAH",
-   "start_et": "8:30 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 41.0,
-   "home_score": 49.0,
-   "note": null,
-   "away": {
-    "id": "331",
-    "abbr": "EWU",
-    "name": "Eastern Washington Eagles",
-    "score": "41",
-    "record": "1-3",
-    "rank": null,
-    "conference_id": "5"
-   },
-   "home": {
-    "id": "254",
-    "abbr": "UTAH",
-    "name": "Utah Utes",
-    "score": "49",
-    "record": "3-0",
-    "rank": null,
-    "conference_id": "8"
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Jon M. Huntsman Center",
-   "indoor": true,
-   "tv": "ESPN+",
-   "espn_line": null
-  },
-  {
-   "espn_id": "401911521",
-   "name": "ALST @ UCD",
-   "start_et": "9:00 PM ET",
-   "status": "Halftime",
-   "completed": false,
-   "away_score": 37.0,
-   "home_score": 25.0,
-   "note": null,
-   "away": {
-    "id": "2011",
-    "abbr": "ALST",
-    "name": "Alabama State Hornets",
-    "score": "37",
-    "record": "1-3",
-    "rank": null,
-    "conference_id": "26"
-   },
-   "home": {
-    "id": "302",
-    "abbr": "UCD",
-    "name": "UC Davis Aggies",
-    "score": "25",
-    "record": "3-1",
-    "rank": null,
-    "conference_id": "44"
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "University Credit Union Center",
-   "indoor": true,
-   "tv": "MW+",
-   "espn_line": null
-  },
-  {
-   "espn_id": "401934595",
-   "name": "SFRU @ WASH",
-   "start_et": "10:00 PM ET",
-   "status": "In Progress",
-   "completed": false,
-   "away_score": 3.0,
-   "home_score": 0.0,
-   "note": null,
-   "away": {
-    "id": "2829",
-    "abbr": "SFRU",
-    "name": "Simon Fraser Red Leafs",
-    "score": "3",
-    "record": null,
-    "rank": null,
-    "conference_id": null
-   },
-   "home": {
-    "id": "264",
-    "abbr": "WASH",
-    "name": "Washington Huskies",
-    "score": "0",
-    "record": "2-0",
-    "rank": null,
-    "conference_id": "7"
-   },
-   "neutral_site": false,
-   "conference_game": false,
-   "venue": "Alaska Airlines Arena",
-   "indoor": true,
-   "tv": "B1G+",
-   "espn_line": null
-  },
-  {
-   "espn_id": "401921729",
-   "name": "UCI @ STAN",
-   "start_et": "10:00 PM ET",
-   "status": "In Progress",
+   "status": "Scheduled",
    "completed": false,
    "away_score": 0.0,
    "home_score": 0.0,
    "note": null,
    "away": {
-    "id": "300",
-    "abbr": "UCI",
-    "name": "UC Irvine Anteaters",
+    "id": "256",
+    "abbr": "JMU",
+    "name": "James Madison Dukes",
     "score": "0",
-    "record": "3-0",
+    "record": "2-2",
     "rank": null,
-    "conference_id": "9"
+    "conference_id": "27",
+    "team_stats": {
+     "avgRebounds": 39.5,
+     "avgPoints": 77.0,
+     "avgAssists": 14.25,
+     "avgTurnovers": 10.25,
+     "fieldGoalPct": 40.40000140666962,
+     "threePointFieldGoalPct": 34.61538553237915
+    }
    },
    "home": {
-    "id": "24",
-    "abbr": "STAN",
-    "name": "Stanford Cardinal",
+    "id": "119",
+    "abbr": "TOW",
+    "name": "Towson Tigers",
     "score": "0",
-    "record": "3-1",
+    "record": "3-2",
     "rank": null,
-    "conference_id": "2"
+    "conference_id": "10",
+    "team_stats": {
+     "avgRebounds": 39.6,
+     "avgPoints": 70.2,
+     "avgAssists": 11.6,
+     "avgTurnovers": 12.0,
+     "fieldGoalPct": 44.86301243305206,
+     "threePointFieldGoalPct": 32.32323229312897
+    }
    },
    "neutral_site": false,
    "conference_game": false,
-   "venue": "Maples Pavilion",
+   "venue": "SECU Arena",
    "indoor": true,
-   "tv": "ACCNX",
-   "espn_line": null
+   "tv": "FloSports",
+   "espn_line": {
+    "details": "TOW -3.5",
+    "total": 138.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "69.4",
+    "away_win_pct": "30.6"
+   }
   },
   {
-   "espn_id": "401917534",
-   "name": "PUC @ PAC",
+   "espn_id": "401925782",
+   "name": "HOW VS DUQ",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": "Sunshine Slam",
+   "away": {
+    "id": "47",
+    "abbr": "HOW",
+    "name": "Howard Bison",
+    "score": "0",
+    "record": "3-2",
+    "rank": null,
+    "conference_id": "16",
+    "team_stats": {
+     "avgRebounds": 36.8,
+     "avgPoints": 72.0,
+     "avgAssists": 15.2,
+     "avgTurnovers": 12.6,
+     "fieldGoalPct": 44.81605291366577,
+     "threePointFieldGoalPct": 36.000001430511475
+    }
+   },
+   "home": {
+    "id": "2184",
+    "abbr": "DUQ",
+    "name": "Duquesne Dukes",
+    "score": "0",
+    "record": "4-0",
+    "rank": null,
+    "conference_id": "3",
+    "team_stats": {
+     "avgRebounds": 34.75,
+     "avgPoints": 72.25,
+     "avgAssists": 14.25,
+     "avgTurnovers": 12.5,
+     "fieldGoalPct": 48.27586114406586,
+     "threePointFieldGoalPct": 28.00000011920929
+    }
+   },
+   "neutral_site": true,
+   "conference_game": false,
+   "venue": "Ocean Center",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "DUQ -4.5",
+    "total": 139.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "44.5",
+    "away_win_pct": "55.5"
+   }
+  },
+  {
+   "espn_id": "401925632",
+   "name": "COPP @ LAS",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2154",
+    "abbr": "COPP",
+    "name": "Coppin State Eagles",
+    "score": "0",
+    "record": "1-4",
+    "rank": null,
+    "conference_id": "16",
+    "team_stats": {
+     "avgRebounds": 33.2,
+     "avgPoints": 62.4,
+     "avgAssists": 10.4,
+     "avgTurnovers": 16.0,
+     "fieldGoalPct": 42.27941036224365,
+     "threePointFieldGoalPct": 27.710843086242676
+    }
+   },
+   "home": {
+    "id": "2325",
+    "abbr": "LAS",
+    "name": "La Salle Explorers",
+    "score": "0",
+    "record": "1-3",
+    "rank": null,
+    "conference_id": "3",
+    "team_stats": {
+     "avgRebounds": 37.25,
+     "avgPoints": 68.25,
+     "avgAssists": 15.0,
+     "avgTurnovers": 14.75,
+     "fieldGoalPct": 36.800000071525574,
+     "threePointFieldGoalPct": 31.3043475151062
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "John Glaser Arena",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "LAS -15.5",
+    "total": 141.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "85.5",
+    "away_win_pct": "14.5"
+   }
+  },
+  {
+   "espn_id": "401923401",
+   "name": "BU @ MRMK",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "104",
+    "abbr": "BU",
+    "name": "Boston University Terriers",
+    "score": "0",
+    "record": "4-1",
+    "rank": null,
+    "conference_id": "22",
+    "team_stats": {
+     "avgRebounds": 36.8,
+     "avgPoints": 82.0,
+     "avgAssists": 13.4,
+     "avgTurnovers": 14.4,
+     "fieldGoalPct": 52.671754360198975,
+     "threePointFieldGoalPct": 36.55914068222046
+    }
+   },
+   "home": {
+    "id": "2771",
+    "abbr": "MRMK",
+    "name": "Merrimack Warriors",
+    "score": "0",
+    "record": "1-3",
+    "rank": null,
+    "conference_id": "13",
+    "team_stats": {
+     "avgRebounds": 26.5,
+     "avgPoints": 59.25,
+     "avgAssists": 9.25,
+     "avgTurnovers": 11.5,
+     "fieldGoalPct": 41.12149477005005,
+     "threePointFieldGoalPct": 32.258063554763794
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Lawler Arena",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "MRMK -3.5",
+    "total": 132.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "64.3",
+    "away_win_pct": "35.7"
+   }
+  },
+  {
+   "espn_id": "401922212",
+   "name": "FGCU @ FAU",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "526",
+    "abbr": "FGCU",
+    "name": "Florida Gulf Coast Eagles",
+    "score": "0",
+    "record": "2-3",
+    "rank": null,
+    "conference_id": "46",
+    "team_stats": {
+     "avgRebounds": 39.0,
+     "avgPoints": 87.0,
+     "avgAssists": 14.6,
+     "avgTurnovers": 11.0,
+     "fieldGoalPct": 47.151899337768555,
+     "threePointFieldGoalPct": 35.50295829772949
+    }
+   },
+   "home": {
+    "id": "2226",
+    "abbr": "FAU",
+    "name": "Florida Atlantic Owls",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "62",
+    "team_stats": {
+     "avgRebounds": 42.0,
+     "avgPoints": 79.5,
+     "avgAssists": 12.75,
+     "avgTurnovers": 14.25,
+     "fieldGoalPct": 44.16666626930237,
+     "threePointFieldGoalPct": 36.000001430511475
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Abessinio Court at Eleanor R. Baldwin Arena",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "FAU -6.5",
+    "total": 154.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "68.3",
+    "away_win_pct": "31.7"
+   }
+  },
+  {
+   "espn_id": "401922055",
+   "name": "FUR @ RAD",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "231",
+    "abbr": "FUR",
+    "name": "Furman Paladins",
+    "score": "0",
+    "record": "4-1",
+    "rank": null,
+    "conference_id": "24",
+    "team_stats": {
+     "avgRebounds": 40.4,
+     "avgPoints": 88.0,
+     "avgAssists": 17.6,
+     "avgTurnovers": 9.8,
+     "fieldGoalPct": 45.928338170051575,
+     "threePointFieldGoalPct": 36.70886158943176
+    }
+   },
+   "home": {
+    "id": "2515",
+    "abbr": "RAD",
+    "name": "Radford Highlanders",
+    "score": "0",
+    "record": "1-3",
+    "rank": null,
+    "conference_id": "6",
+    "team_stats": {
+     "avgRebounds": 35.5,
+     "avgPoints": 70.25,
+     "avgAssists": 13.25,
+     "avgTurnovers": 14.5,
+     "fieldGoalPct": 44.155845046043396,
+     "threePointFieldGoalPct": 30.1075279712677
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "The Dedmon Center",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "FUR -3.5",
+    "total": 150.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "35.5",
+    "away_win_pct": "64.5"
+   }
+  },
+  {
+   "espn_id": "401922047",
+   "name": "VMI @ LONG",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2678",
+    "abbr": "VMI",
+    "name": "VMI Keydets",
+    "score": "0",
+    "record": "3-2",
+    "rank": null,
+    "conference_id": "24",
+    "team_stats": {
+     "avgRebounds": 44.0,
+     "avgPoints": 77.8,
+     "avgAssists": 14.6,
+     "avgTurnovers": 15.6,
+     "fieldGoalPct": 41.12149477005005,
+     "threePointFieldGoalPct": 34.01360511779785
+    }
+   },
+   "home": {
+    "id": "2344",
+    "abbr": "LONG",
+    "name": "Longwood Lancers",
+    "score": "0",
+    "record": "3-2",
+    "rank": null,
+    "conference_id": "6",
+    "team_stats": {
+     "avgRebounds": 46.2,
+     "avgPoints": 90.2,
+     "avgAssists": 16.8,
+     "avgTurnovers": 12.8,
+     "fieldGoalPct": 46.47887349128723,
+     "threePointFieldGoalPct": 33.7579607963562
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Joan Perry Brock Center",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "LONG -7.5",
+    "total": 154.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "82.7",
+    "away_win_pct": "17.3"
+   }
+  },
+  {
+   "espn_id": "401921156",
+   "name": "MORG @ NCAT",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2415",
+    "abbr": "MORG",
+    "name": "Morgan State Bears",
+    "score": "0",
+    "record": "4-1",
+    "rank": null,
+    "conference_id": "16",
+    "team_stats": {
+     "avgRebounds": 46.8,
+     "avgPoints": 80.8,
+     "avgAssists": 11.8,
+     "avgTurnovers": 14.8,
+     "fieldGoalPct": 41.99395775794983,
+     "threePointFieldGoalPct": 31.666666269302368
+    }
+   },
+   "home": {
+    "id": "2448",
+    "abbr": "NCAT",
+    "name": "North Carolina A&T Aggies",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "10",
+    "team_stats": {
+     "avgRebounds": 41.0,
+     "avgPoints": 83.25,
+     "avgAssists": 14.25,
+     "avgTurnovers": 11.75,
+     "fieldGoalPct": 40.22556245326996,
+     "threePointFieldGoalPct": 32.35294222831726
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Ellis Corbett Sports Center",
+   "indoor": true,
+   "tv": "FloSports",
+   "espn_line": {
+    "details": "NCAT -8.5",
+    "total": 150.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "70.8",
+    "away_win_pct": "29.2"
+   }
+  },
+  {
+   "espn_id": "401921141",
+   "name": "ELON @ SC",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2210",
+    "abbr": "ELON",
+    "name": "Elon Phoenix",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "10",
+    "team_stats": {
+     "avgRebounds": 36.5,
+     "avgPoints": 69.5,
+     "avgAssists": 13.0,
+     "avgTurnovers": 13.5,
+     "fieldGoalPct": 41.59291982650757,
+     "threePointFieldGoalPct": 31.81818127632141
+    }
+   },
+   "home": {
+    "id": "2579",
+    "abbr": "SC",
+    "name": "South Carolina Gamecocks",
+    "score": "0",
+    "record": "4-0",
+    "rank": null,
+    "conference_id": "23",
+    "team_stats": {
+     "avgRebounds": 33.25,
+     "avgPoints": 78.75,
+     "avgAssists": 13.0,
+     "avgTurnovers": 10.25,
+     "fieldGoalPct": 50.248754024505615,
+     "threePointFieldGoalPct": 40.57970941066742
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Colonial Life Arena",
+   "indoor": true,
+   "tv": "SEC Network",
+   "espn_line": {
+    "details": "SC -15.5",
+    "total": 136.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "90.3",
+    "away_win_pct": "9.7"
+   }
+  },
+  {
+   "espn_id": "401920963",
+   "name": "MORE @ OHIO",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2413",
+    "abbr": "MORE",
+    "name": "Morehead State Eagles",
+    "score": "0",
+    "record": "3-2",
+    "rank": null,
+    "conference_id": "20",
+    "team_stats": {
+     "avgRebounds": 39.4,
+     "avgPoints": 82.4,
+     "avgAssists": 18.6,
+     "avgTurnovers": 11.0,
+     "fieldGoalPct": 47.64890372753143,
+     "threePointFieldGoalPct": 32.743361592292786
+    }
+   },
+   "home": {
+    "id": "195",
+    "abbr": "OHIO",
+    "name": "Ohio Bobcats",
+    "score": "0",
+    "record": "2-1",
+    "rank": null,
+    "conference_id": "14",
+    "team_stats": {
+     "avgRebounds": 35.0,
+     "avgPoints": 76.0,
+     "avgAssists": 14.0,
+     "avgTurnovers": 14.333333,
+     "fieldGoalPct": 47.204968333244324,
+     "threePointFieldGoalPct": 37.87878751754761
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Convocation Center (OH)",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "OHIO -15.5",
+    "total": 150.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "89.1",
+    "away_win_pct": "10.9"
+   }
+  },
+  {
+   "espn_id": "401920694",
+   "name": "UVM @ YALE",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "261",
+    "abbr": "UVM",
+    "name": "Vermont Catamounts",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "1",
+    "team_stats": {
+     "avgRebounds": 40.75,
+     "avgPoints": 78.5,
+     "avgAssists": 12.5,
+     "avgTurnovers": 11.25,
+     "fieldGoalPct": 50.22026300430298,
+     "threePointFieldGoalPct": 30.769231915473938
+    }
+   },
+   "home": {
+    "id": "43",
+    "abbr": "YALE",
+    "name": "Yale Bulldogs",
+    "score": "0",
+    "record": "2-3",
+    "rank": null,
+    "conference_id": "12",
+    "team_stats": {
+     "avgRebounds": 39.0,
+     "avgPoints": 76.8,
+     "avgAssists": 16.6,
+     "avgTurnovers": 12.4,
+     "fieldGoalPct": 44.6540892124176,
+     "threePointFieldGoalPct": 38.58267664909363
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "John J. Lee Amphitheater",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "YALE -7.5",
+    "total": 137.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "72.3",
+    "away_win_pct": "27.7"
+   }
+  },
+  {
+   "espn_id": "401920075",
+   "name": "NCCU @ GMU",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2428",
+    "abbr": "NCCU",
+    "name": "North Carolina Central Eagles",
+    "score": "0",
+    "record": "1-4",
+    "rank": null,
+    "conference_id": "16",
+    "team_stats": {
+     "avgRebounds": 37.6,
+     "avgPoints": 74.2,
+     "avgAssists": 14.6,
+     "avgTurnovers": 11.8,
+     "fieldGoalPct": 46.081504225730896,
+     "threePointFieldGoalPct": 35.10638177394867
+    }
+   },
+   "home": {
+    "id": "2244",
+    "abbr": "GMU",
+    "name": "George Mason Patriots",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "3",
+    "team_stats": {
+     "avgRebounds": 38.25,
+     "avgPoints": 71.75,
+     "avgAssists": 12.0,
+     "avgTurnovers": 11.75,
+     "fieldGoalPct": 44.65116262435913,
+     "threePointFieldGoalPct": 31.42857253551483
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "EagleBank Arena",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "GMU -22.5",
+    "total": 132.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "93.5",
+    "away_win_pct": "6.5"
+   }
+  },
+  {
+   "espn_id": "401919808",
+   "name": "UNCW @ LIU",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "350",
+    "abbr": "UNCW",
+    "name": "UNC Wilmington Seahawks",
+    "score": "0",
+    "record": "4-0",
+    "rank": null,
+    "conference_id": "10",
+    "team_stats": {
+     "avgRebounds": 50.5,
+     "avgPoints": 92.5,
+     "avgAssists": 17.75,
+     "avgTurnovers": 13.75,
+     "fieldGoalPct": 47.191011905670166,
+     "threePointFieldGoalPct": 34.78260934352875
+    }
+   },
+   "home": {
+    "id": "112358",
+    "abbr": "LIU",
+    "name": "Long Island University Sharks",
+    "score": "0",
+    "record": "0-6",
+    "rank": null,
+    "conference_id": "19",
+    "team_stats": {
+     "avgRebounds": 32.833332,
+     "avgPoints": 62.333332,
+     "avgAssists": 12.0,
+     "avgTurnovers": 15.833333,
+     "fieldGoalPct": 39.23303782939911,
+     "threePointFieldGoalPct": 26.153847575187683
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Brooklyn Athletic Center",
+   "indoor": true,
+   "tv": "NEC Front Row",
+   "espn_line": {
+    "details": "UNCW -8.5",
+    "total": 147.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "21.9",
+    "away_win_pct": "78"
+   }
+  },
+  {
+   "espn_id": "401919760",
+   "name": "NJIT @ FDU",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2885",
+    "abbr": "NJIT",
+    "name": "NJIT Highlanders",
+    "score": "0",
+    "record": "1-5",
+    "rank": null,
+    "conference_id": "1",
+    "team_stats": {
+     "avgRebounds": 32.0,
+     "avgPoints": 55.666668,
+     "avgAssists": 9.5,
+     "avgTurnovers": 12.166667,
+     "fieldGoalPct": 32.14285671710968,
+     "threePointFieldGoalPct": 20.74074000120163
+    }
+   },
+   "home": {
+    "id": "161",
+    "abbr": "FDU",
+    "name": "Fairleigh Dickinson Knights",
+    "score": "0",
+    "record": "2-3",
+    "rank": null,
+    "conference_id": "19",
+    "team_stats": {
+     "avgRebounds": 30.4,
+     "avgPoints": 68.2,
+     "avgAssists": 13.6,
+     "avgTurnovers": 10.6,
+     "fieldGoalPct": 40.95562994480133,
+     "threePointFieldGoalPct": 25.581395626068115
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Bogota Savings Bank Center",
+   "indoor": true,
+   "tv": "NEC Front Row",
+   "espn_line": {
+    "details": "FDU -4.5",
+    "total": 136.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "70",
+    "away_win_pct": "30"
+   }
+  },
+  {
+   "espn_id": "401919735",
+   "name": "CHST @ UIC",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2130",
+    "abbr": "CHST",
+    "name": "Chicago State Cougars",
+    "score": "0",
+    "record": "2-4",
+    "rank": null,
+    "conference_id": "19",
+    "team_stats": {
+     "avgRebounds": 30.833334,
+     "avgPoints": 64.833336,
+     "avgAssists": 10.166667,
+     "avgTurnovers": 15.0,
+     "fieldGoalPct": 40.24767875671387,
+     "threePointFieldGoalPct": 33.62831771373749
+    }
+   },
+   "home": {
+    "id": "82",
+    "abbr": "UIC",
+    "name": "UIC Flames",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "18",
+    "team_stats": {
+     "avgRebounds": 32.25,
+     "avgPoints": 79.5,
+     "avgAssists": 17.25,
+     "avgTurnovers": 9.5,
+     "fieldGoalPct": 47.033897042274475,
+     "threePointFieldGoalPct": 30.588236451148987
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Credit Union 1 Arena",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "UIC -23.5",
+    "total": 138.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "96.5",
+    "away_win_pct": "3.5"
+   }
+  },
+  {
+   "espn_id": "401911377",
+   "name": "WOF @ CHSO",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2747",
+    "abbr": "WOF",
+    "name": "Wofford Terriers",
+    "score": "0",
+    "record": "2-3",
+    "rank": null,
+    "conference_id": "24",
+    "team_stats": {
+     "avgRebounds": 39.6,
+     "avgPoints": 82.4,
+     "avgAssists": 17.4,
+     "avgTurnovers": 13.2,
+     "fieldGoalPct": 44.82758641242981,
+     "threePointFieldGoalPct": 32.6241135597229
+    }
+   },
+   "home": {
+    "id": "2127",
+    "abbr": "CHSO",
+    "name": "Charleston Southern Buccaneers",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "6",
+    "team_stats": {
+     "avgRebounds": 42.25,
+     "avgPoints": 78.25,
+     "avgAssists": 15.75,
+     "avgTurnovers": 15.75,
+     "fieldGoalPct": 42.500001192092896,
+     "threePointFieldGoalPct": 31.531530618667603
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Buccaneer Fieldhouse",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "WOF -1.5",
+    "total": 163.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "60.2",
+    "away_win_pct": "39.8"
+   }
+  },
+  {
+   "espn_id": "401911309",
+   "name": "BRWN @ HC",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "225",
+    "abbr": "BRWN",
+    "name": "Brown Bears",
+    "score": "0",
+    "record": "1-4",
+    "rank": null,
+    "conference_id": "12",
+    "team_stats": {
+     "avgRebounds": 36.6,
+     "avgPoints": 68.4,
+     "avgAssists": 16.4,
+     "avgTurnovers": 14.0,
+     "fieldGoalPct": 44.3708598613739,
+     "threePointFieldGoalPct": 32.407405972480774
+    }
+   },
+   "home": {
+    "id": "107",
+    "abbr": "HC",
+    "name": "Holy Cross Crusaders",
+    "score": "0",
+    "record": "0-4",
+    "rank": null,
+    "conference_id": "22",
+    "team_stats": {
+     "avgRebounds": 36.0,
+     "avgPoints": 63.0,
+     "avgAssists": 13.0,
+     "avgTurnovers": 12.5,
+     "fieldGoalPct": 36.32653057575226,
+     "threePointFieldGoalPct": 29.787233471870422
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Hart Center Arena",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "BRWN -6.5",
+    "total": 138.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "32.6",
+    "away_win_pct": "67.4"
+   }
+  },
+  {
+   "espn_id": "401911277",
+   "name": "BING @ LAF",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2066",
+    "abbr": "BING",
+    "name": "Binghamton Bearcats",
+    "score": "0",
+    "record": "3-2",
+    "rank": null,
+    "conference_id": "1",
+    "team_stats": {
+     "avgRebounds": 32.0,
+     "avgPoints": 67.6,
+     "avgAssists": 13.2,
+     "avgTurnovers": 11.0,
+     "fieldGoalPct": 45.66037654876709,
+     "threePointFieldGoalPct": 33.73493850231171
+    }
+   },
+   "home": {
+    "id": "322",
+    "abbr": "LAF",
+    "name": "Lafayette Leopards",
+    "score": "0",
+    "record": "2-3",
+    "rank": null,
+    "conference_id": "22",
+    "team_stats": {
+     "avgRebounds": 38.2,
+     "avgPoints": 73.6,
+     "avgAssists": 16.6,
+     "avgTurnovers": 15.4,
+     "fieldGoalPct": 44.44444477558136,
+     "threePointFieldGoalPct": 31.20567500591278
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Kirby Sports Center",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "LAF -3.5",
+    "total": 133.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "63.5",
+    "away_win_pct": "36.5"
+   }
+  },
+  {
+   "espn_id": "401920751",
+   "name": "YSU @ CIN",
+   "start_et": "7:30 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2754",
+    "abbr": "YSU",
+    "name": "Youngstown State Penguins",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "45",
+    "team_stats": {
+     "avgRebounds": 32.25,
+     "avgPoints": 74.0,
+     "avgAssists": 13.5,
+     "avgTurnovers": 12.75,
+     "fieldGoalPct": 42.97872483730316,
+     "threePointFieldGoalPct": 32.32323229312897
+    }
+   },
+   "home": {
+    "id": "2132",
+    "abbr": "CIN",
+    "name": "Cincinnati Bearcats",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "8",
+    "team_stats": {
+     "avgRebounds": 35.75,
+     "avgPoints": 79.0,
+     "avgAssists": 18.25,
+     "avgTurnovers": 11.5,
+     "fieldGoalPct": 47.15447127819061,
+     "threePointFieldGoalPct": 32.11009204387665
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Fifth Third Arena (OH)",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "CIN -28.5",
+    "total": 153.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "97.2",
+    "away_win_pct": "2.9"
+   }
+  },
+  {
+   "espn_id": "401909526",
+   "name": "NIU @ MARQ",
+   "start_et": "7:30 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2459",
+    "abbr": "NIU",
+    "name": "Northern Illinois Huskies",
+    "score": "0",
+    "record": "3-2",
+    "rank": null,
+    "conference_id": "45",
+    "team_stats": {
+     "avgRebounds": 39.6,
+     "avgPoints": 79.4,
+     "avgAssists": 15.2,
+     "avgTurnovers": 11.4,
+     "fieldGoalPct": 44.039735198020935,
+     "threePointFieldGoalPct": 34.16149020195007
+    }
+   },
+   "home": {
+    "id": "269",
+    "abbr": "MARQ",
+    "name": "Marquette Golden Eagles",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "4",
+    "team_stats": {
+     "avgRebounds": 40.25,
+     "avgPoints": 76.25,
+     "avgAssists": 18.75,
+     "avgTurnovers": 10.5,
+     "fieldGoalPct": 42.37918257713318,
+     "threePointFieldGoalPct": 29.31034564971924
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Fiserv Forum",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "MARQ -27.5",
+    "total": 146.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "98.3",
+    "away_win_pct": "1.7"
+   }
+  },
+  {
+   "espn_id": "401929420",
+   "name": "FAMU @ UTSA",
+   "start_et": "8:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "50",
+    "abbr": "FAMU",
+    "name": "Florida A&M Rattlers",
+    "score": "0",
+    "record": "0-5",
+    "rank": null,
+    "conference_id": "26",
+    "team_stats": {
+     "avgRebounds": 33.6,
+     "avgPoints": 62.8,
+     "avgAssists": 8.6,
+     "avgTurnovers": 17.0,
+     "fieldGoalPct": 41.281139850616455,
+     "threePointFieldGoalPct": 33.00970792770386
+    }
+   },
+   "home": {
+    "id": "2636",
+    "abbr": "UTSA",
+    "name": "UTSA Roadrunners",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "62",
+    "team_stats": {
+     "avgRebounds": 29.75,
+     "avgPoints": 74.25,
+     "avgAssists": 12.5,
+     "avgTurnovers": 11.0,
+     "fieldGoalPct": 43.42629611492157,
+     "threePointFieldGoalPct": 33.03571343421936
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "UTSA Convocation Center",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "UTSA -17.5",
+    "total": 148.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "93.1",
+    "away_win_pct": "6.9"
+   }
+  },
+  {
+   "espn_id": "401929201",
+   "name": "UIW @ TXST",
+   "start_et": "8:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2916",
+    "abbr": "UIW",
+    "name": "Incarnate Word Cardinals",
+    "score": "0",
+    "record": "0-4",
+    "rank": null,
+    "conference_id": "25",
+    "team_stats": {
+     "avgRebounds": 32.0,
+     "avgPoints": 60.75,
+     "avgAssists": 11.5,
+     "avgTurnovers": 17.5,
+     "fieldGoalPct": 37.10407316684723,
+     "threePointFieldGoalPct": 26.31579041481018
+    }
+   },
+   "home": {
+    "id": "326",
+    "abbr": "TXST",
+    "name": "Texas State Bobcats",
+    "score": "0",
+    "record": "5-0",
+    "rank": null,
+    "conference_id": "21",
+    "team_stats": {
+     "avgRebounds": 37.6,
+     "avgPoints": 89.2,
+     "avgAssists": 15.4,
+     "avgTurnovers": 15.0,
+     "fieldGoalPct": 54.3795645236969,
+     "threePointFieldGoalPct": 41.66666567325592
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Strahan Arena at the University Events Center",
+   "indoor": true,
+   "tv": "YouTube",
+   "espn_line": {
+    "details": "TXST -18.5",
+    "total": 139.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "95.5",
+    "away_win_pct": "4.5"
+   }
+  },
+  {
+   "espn_id": "401928398",
+   "name": "UAPB @ ARST",
+   "start_et": "8:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2029",
+    "abbr": "UAPB",
+    "name": "Arkansas-Pine Bluff Golden Lions",
+    "score": "0",
+    "record": "0-5",
+    "rank": null,
+    "conference_id": "26",
+    "team_stats": {
+     "avgRebounds": 27.6,
+     "avgPoints": 51.4,
+     "avgAssists": 7.6,
+     "avgTurnovers": 24.0,
+     "fieldGoalPct": 33.58778655529022,
+     "threePointFieldGoalPct": 19.587628543376923
+    }
+   },
+   "home": {
+    "id": "2032",
+    "abbr": "ARST",
+    "name": "Arkansas State Red Wolves",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "27",
+    "team_stats": {
+     "avgRebounds": 47.5,
+     "avgPoints": 80.25,
+     "avgAssists": 16.75,
+     "avgTurnovers": 13.0,
+     "fieldGoalPct": 39.47368562221527,
+     "threePointFieldGoalPct": 29.801324009895325
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "First National Bank Arena",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "ARST -28.5",
+    "total": 162.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "95.4",
+    "away_win_pct": "4.6"
+   }
+  },
+  {
+   "espn_id": "401927357",
+   "name": "PFW @ BRAD",
+   "start_et": "8:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2870",
+    "abbr": "PFW",
+    "name": "Purdue Fort Wayne Mastodons",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "45",
+    "team_stats": {
+     "avgRebounds": 30.75,
+     "avgPoints": 79.75,
+     "avgAssists": 14.0,
+     "avgTurnovers": 11.5,
+     "fieldGoalPct": 47.71784245967865,
+     "threePointFieldGoalPct": 39.423078298568726
+    }
+   },
+   "home": {
+    "id": "71",
+    "abbr": "BRAD",
+    "name": "Bradley Braves",
+    "score": "0",
+    "record": "3-2",
+    "rank": null,
+    "conference_id": "18",
+    "team_stats": {
+     "avgRebounds": 35.8,
+     "avgPoints": 60.0,
+     "avgAssists": 11.4,
+     "avgTurnovers": 13.8,
+     "fieldGoalPct": 37.226277589797974,
+     "threePointFieldGoalPct": 30.158731341362
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Carver Arena",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "BRAD -6.5",
+    "total": 136.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "73.2",
+    "away_win_pct": "26.8"
+   }
+  },
+  {
+   "espn_id": "401924721",
+   "name": "COR @ SYR",
+   "start_et": "8:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "172",
+    "abbr": "COR",
+    "name": "Cornell Big Red",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "12",
+    "team_stats": {
+     "avgRebounds": 38.0,
+     "avgPoints": 78.25,
+     "avgAssists": 17.5,
+     "avgTurnovers": 13.0,
+     "fieldGoalPct": 44.26877498626709,
+     "threePointFieldGoalPct": 33.09352397918701
+    }
+   },
+   "home": {
+    "id": "183",
+    "abbr": "SYR",
+    "name": "Syracuse Orange",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "2",
+    "team_stats": {
+     "avgRebounds": 36.25,
+     "avgPoints": 79.5,
+     "avgAssists": 15.25,
+     "avgTurnovers": 11.5,
+     "fieldGoalPct": 49.568966031074524,
+     "threePointFieldGoalPct": 33.33333432674408
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "JMA Wireless Dome",
+   "indoor": true,
+   "tv": "ACC Network",
+   "espn_line": {
+    "details": "SYR -18.5",
+    "total": 155.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "91.8",
+    "away_win_pct": "8.2"
+   }
+  },
+  {
+   "espn_id": "401919848",
+   "name": "UNH @ STO",
+   "start_et": "8:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "160",
+    "abbr": "UNH",
+    "name": "New Hampshire Wildcats",
+    "score": "0",
+    "record": "3-2",
+    "rank": null,
+    "conference_id": "1",
+    "team_stats": {
+     "avgRebounds": 38.6,
+     "avgPoints": 74.0,
+     "avgAssists": 13.8,
+     "avgTurnovers": 12.6,
+     "fieldGoalPct": 44.13793087005615,
+     "threePointFieldGoalPct": 32.478633522987366
+    }
+   },
+   "home": {
+    "id": "284",
+    "abbr": "STO",
+    "name": "Stonehill Skyhawks",
+    "score": "0",
+    "record": "1-3",
+    "rank": null,
+    "conference_id": "19",
+    "team_stats": {
+     "avgRebounds": 35.75,
+     "avgPoints": 59.75,
+     "avgAssists": 10.75,
+     "avgTurnovers": 16.0,
+     "fieldGoalPct": 35.94470024108887,
+     "threePointFieldGoalPct": 23.52941185235977
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Merkert Gymnasium",
+   "indoor": true,
+   "tv": "NEC Front Row",
+   "espn_line": {
+    "details": "UNH -1.5",
+    "total": 130.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "36.8",
+    "away_win_pct": "63.2"
+   }
+  },
+  {
+   "espn_id": "401911393",
+   "name": "UNCG @ GWEB",
+   "start_et": "8:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2430",
+    "abbr": "UNCG",
+    "name": "UNC Greensboro Spartans",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "24",
+    "team_stats": {
+     "avgRebounds": 37.5,
+     "avgPoints": 81.0,
+     "avgAssists": 12.5,
+     "avgTurnovers": 10.5,
+     "fieldGoalPct": 45.27558982372284,
+     "threePointFieldGoalPct": 30.70175349712372
+    }
+   },
+   "home": {
+    "id": "2241",
+    "abbr": "GWEB",
+    "name": "Gardner-Webb Runnin' Bulldogs",
+    "score": "0",
+    "record": "1-3",
+    "rank": null,
+    "conference_id": "6",
+    "team_stats": {
+     "avgRebounds": 32.0,
+     "avgPoints": 61.5,
+     "avgAssists": 8.25,
+     "avgTurnovers": 15.25,
+     "fieldGoalPct": 36.53846085071564,
+     "threePointFieldGoalPct": 29.21348214149475
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Paul Porter Arena",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "UNCG -2.5",
+    "total": 148.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "33.7",
+    "away_win_pct": "66.3"
+   }
+  },
+  {
+   "espn_id": "401911232",
+   "name": "WICH @ LUC",
+   "start_et": "8:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2724",
+    "abbr": "WICH",
+    "name": "Wichita State Shockers",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "62",
+    "team_stats": {
+     "avgRebounds": 43.0,
+     "avgPoints": 88.5,
+     "avgAssists": 18.25,
+     "avgTurnovers": 11.75,
+     "fieldGoalPct": 49.59999918937683,
+     "threePointFieldGoalPct": 45.54455578327179
+    }
+   },
+   "home": {
+    "id": "2350",
+    "abbr": "LUC",
+    "name": "Loyola Chicago Ramblers",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "3",
+    "team_stats": {
+     "avgRebounds": 39.75,
+     "avgPoints": 79.75,
+     "avgAssists": 16.75,
+     "avgTurnovers": 12.0,
+     "fieldGoalPct": 46.12403213977814,
+     "threePointFieldGoalPct": 29.357796907424927
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Gentile Arena",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "WICH -1.5",
+    "total": 151.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "42",
+    "away_win_pct": "58"
+   }
+  },
+  {
+   "espn_id": "401909555",
+   "name": "BC @ HARV",
+   "start_et": "8:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "103",
+    "abbr": "BC",
+    "name": "Boston College Eagles",
+    "score": "0",
+    "record": "4-0",
+    "rank": null,
+    "conference_id": "2",
+    "team_stats": {
+     "avgRebounds": 38.5,
+     "avgPoints": 74.0,
+     "avgAssists": 12.0,
+     "avgTurnovers": 10.0,
+     "fieldGoalPct": 41.850221157073975,
+     "threePointFieldGoalPct": 28.155338764190674
+    }
+   },
+   "home": {
+    "id": "108",
+    "abbr": "HARV",
+    "name": "Harvard Crimson",
+    "score": "0",
+    "record": "2-3",
+    "rank": null,
+    "conference_id": "12",
+    "team_stats": {
+     "avgRebounds": 33.0,
+     "avgPoints": 65.4,
+     "avgAssists": 14.2,
+     "avgTurnovers": 11.0,
+     "fieldGoalPct": 43.35664212703705,
+     "threePointFieldGoalPct": 30.30303120613098
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Lavietes Pavilion",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "BC -4.5",
+    "total": 128.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "26.9",
+    "away_win_pct": "73.1"
+   }
+  },
+  {
+   "espn_id": "401906805",
+   "name": "CAM @ OU",
+   "start_et": "8:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2097",
+    "abbr": "CAM",
+    "name": "Campbell Fighting Camels",
+    "score": "0",
+    "record": "1-3",
+    "rank": null,
+    "conference_id": "10",
+    "team_stats": {
+     "avgRebounds": 29.0,
+     "avgPoints": 70.25,
+     "avgAssists": 14.75,
+     "avgTurnovers": 8.5,
+     "fieldGoalPct": 44.03292238712311,
+     "threePointFieldGoalPct": 31.81818127632141
+    }
+   },
+   "home": {
+    "id": "201",
+    "abbr": "OU",
+    "name": "Oklahoma Sooners",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "23",
+    "team_stats": {
+     "avgRebounds": 36.25,
+     "avgPoints": 75.75,
+     "avgAssists": 16.75,
+     "avgTurnovers": 9.25,
+     "fieldGoalPct": 43.220338225364685,
+     "threePointFieldGoalPct": 30.769231915473938
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Lloyd Noble Center",
+   "indoor": true,
+   "tv": "SECN+",
+   "espn_line": {
+    "details": "OU -20.5",
+    "total": 147.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "96.1",
+    "away_win_pct": "3.9"
+   }
+  },
+  {
+   "espn_id": "401929176",
+   "name": "NDSU @ CSU",
+   "start_et": "9:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2449",
+    "abbr": "NDSU",
+    "name": "North Dakota State Bison",
+    "score": "0",
+    "record": "2-4",
+    "rank": null,
+    "conference_id": "49",
+    "team_stats": {
+     "avgRebounds": 34.166668,
+     "avgPoints": 75.833336,
+     "avgAssists": 11.5,
+     "avgTurnovers": 11.833333,
+     "fieldGoalPct": 41.37931168079376,
+     "threePointFieldGoalPct": 32.57142901420593
+    }
+   },
+   "home": {
+    "id": "36",
+    "abbr": "CSU",
+    "name": "Colorado State Rams",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "21",
+    "team_stats": {
+     "avgRebounds": 33.0,
+     "avgPoints": 76.75,
+     "avgAssists": 14.75,
+     "avgTurnovers": 12.75,
+     "fieldGoalPct": 47.8672981262207,
+     "threePointFieldGoalPct": 34.04255211353302
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Moby Arena",
+   "indoor": true,
+   "tv": "YouTube",
+   "espn_line": {
+    "details": "CSU -12.5",
+    "total": 147.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "91",
+    "away_win_pct": "9"
+   }
+  },
+  {
+   "espn_id": "401925949",
+   "name": "WEB @ USU",
+   "start_et": "9:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2692",
+    "abbr": "WEB",
+    "name": "Weber State Wildcats",
+    "score": "0",
+    "record": "1-3",
+    "rank": null,
+    "conference_id": "5",
+    "team_stats": {
+     "avgRebounds": 36.25,
+     "avgPoints": 74.5,
+     "avgAssists": 13.5,
+     "avgTurnovers": 10.75,
+     "fieldGoalPct": 43.065693974494934,
+     "threePointFieldGoalPct": 25.242719054222107
+    }
+   },
+   "home": {
+    "id": "328",
+    "abbr": "USU",
+    "name": "Utah State Aggies",
+    "score": "0",
+    "record": "4-0",
+    "rank": null,
+    "conference_id": "21",
+    "team_stats": {
+     "avgRebounds": 42.25,
+     "avgPoints": 105.5,
+     "avgAssists": 23.75,
+     "avgTurnovers": 8.75,
+     "fieldGoalPct": 56.15941882133484,
+     "threePointFieldGoalPct": 44.03669834136963
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Dee Glen Smith Spectrum",
+   "indoor": true,
+   "tv": "YouTube",
+   "espn_line": {
+    "details": "USU -28.5",
+    "total": 171.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "98.1",
+    "away_win_pct": "1.9"
+   }
+  },
+  {
+   "espn_id": "401921816",
+   "name": "ALCN @ MIZ",
+   "start_et": "9:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2016",
+    "abbr": "ALCN",
+    "name": "Alcorn State Braves",
+    "score": "0",
+    "record": "0-5",
+    "rank": null,
+    "conference_id": "26",
+    "team_stats": {
+     "avgRebounds": 32.8,
+     "avgPoints": 64.8,
+     "avgAssists": 10.6,
+     "avgTurnovers": 16.8,
+     "fieldGoalPct": 36.42384111881256,
+     "threePointFieldGoalPct": 29.0909081697464
+    }
+   },
+   "home": {
+    "id": "142",
+    "abbr": "MIZ",
+    "name": "Missouri Tigers",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "23",
+    "team_stats": {
+     "avgRebounds": 38.5,
+     "avgPoints": 90.0,
+     "avgAssists": 20.0,
+     "avgTurnovers": 11.5,
+     "fieldGoalPct": 52.47933864593506,
+     "threePointFieldGoalPct": 43.15789341926575
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Mizzou Arena",
+   "indoor": true,
+   "tv": "SEC Network",
+   "espn_line": {
+    "details": "MIZ -40.5",
+    "total": 153.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "99.5",
+    "away_win_pct": "0.5"
+   }
+  },
+  {
+   "espn_id": "401921734",
+   "name": "OAK @ ASU",
+   "start_et": "9:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2473",
+    "abbr": "OAK",
+    "name": "Oakland Golden Grizzlies",
+    "score": "0",
+    "record": "1-5",
+    "rank": null,
+    "conference_id": "45",
+    "team_stats": {
+     "avgRebounds": 34.333332,
+     "avgPoints": 70.833336,
+     "avgAssists": 10.833333,
+     "avgTurnovers": 15.0,
+     "fieldGoalPct": 41.47058725357056,
+     "threePointFieldGoalPct": 28.030303120613098
+    }
+   },
+   "home": {
+    "id": "9",
+    "abbr": "ASU",
+    "name": "Arizona State Sun Devils",
+    "score": "0",
+    "record": "4-0",
+    "rank": null,
+    "conference_id": "8",
+    "team_stats": {
+     "avgRebounds": 42.75,
+     "avgPoints": 85.5,
+     "avgAssists": 17.25,
+     "avgTurnovers": 9.0,
+     "fieldGoalPct": 47.80876636505127,
+     "threePointFieldGoalPct": 36.44067943096161
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Desert Financial Arena",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "ASU -22.5",
+    "total": 147.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "95.4",
+    "away_win_pct": "4.6"
+   }
+  },
+  {
+   "espn_id": "401911473",
+   "name": "FRES @ SJSU",
+   "start_et": "9:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "278",
+    "abbr": "FRES",
+    "name": "Fresno State Bulldogs",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "21",
+    "team_stats": {
+     "avgRebounds": 41.25,
+     "avgPoints": 84.25,
+     "avgAssists": 14.25,
+     "avgTurnovers": 11.75,
+     "fieldGoalPct": 46.3709682226181,
+     "threePointFieldGoalPct": 34.567901492118835
+    }
+   },
+   "home": {
+    "id": "23",
+    "abbr": "SJSU",
+    "name": "San José State Spartans",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "44",
+    "team_stats": {
+     "avgRebounds": 32.5,
+     "avgPoints": 82.25,
+     "avgAssists": 18.25,
+     "avgTurnovers": 15.75,
+     "fieldGoalPct": 53.48837375640869,
+     "threePointFieldGoalPct": 40.21739065647125
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Provident Credit Union Event Center",
+   "indoor": true,
+   "tv": "MW+",
+   "espn_line": {
+    "details": "SJSU -6.5",
+    "total": 156.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "74",
+    "away_win_pct": "26"
+   }
+  },
+  {
+   "espn_id": "401909762",
+   "name": "PORT @ COLO",
+   "start_et": "9:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2501",
+    "abbr": "PORT",
+    "name": "Portland Pilots",
+    "score": "0",
+    "record": "3-2",
+    "rank": null,
+    "conference_id": "29",
+    "team_stats": {
+     "avgRebounds": 45.0,
+     "avgPoints": 101.8,
+     "avgAssists": 20.2,
+     "avgTurnovers": 17.2,
+     "fieldGoalPct": 56.86274766921997,
+     "threePointFieldGoalPct": 39.62264060974121
+    }
+   },
+   "home": {
+    "id": "38",
+    "abbr": "COLO",
+    "name": "Colorado Buffaloes",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "8",
+    "team_stats": {
+     "avgRebounds": 35.25,
+     "avgPoints": 74.0,
+     "avgAssists": 14.75,
+     "avgTurnovers": 15.25,
+     "fieldGoalPct": 45.70135772228241,
+     "threePointFieldGoalPct": 40.21739065647125
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "CU Events Center",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "COLO -14.5",
+    "total": 156.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "89.6",
+    "away_win_pct": "10.4"
+   }
+  },
+  {
+   "espn_id": "401909494",
+   "name": "BCU @ CREI",
+   "start_et": "9:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2065",
+    "abbr": "BCU",
+    "name": "Bethune-Cookman Wildcats",
+    "score": "0",
+    "record": "1-4",
+    "rank": null,
+    "conference_id": "26",
+    "team_stats": {
+     "avgRebounds": 32.2,
+     "avgPoints": 74.4,
+     "avgAssists": 11.8,
+     "avgTurnovers": 13.4,
+     "fieldGoalPct": 45.26315927505493,
+     "threePointFieldGoalPct": 40.20618498325348
+    }
+   },
+   "home": {
+    "id": "156",
+    "abbr": "CREI",
+    "name": "Creighton Bluejays",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "4",
+    "team_stats": {
+     "avgRebounds": 35.0,
+     "avgPoints": 77.75,
+     "avgAssists": 15.25,
+     "avgTurnovers": 12.0,
+     "fieldGoalPct": 41.999998688697815,
+     "threePointFieldGoalPct": 32.06106722354889
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "CHI Health Center Omaha",
+   "indoor": true,
+   "tv": "truTV",
+   "espn_line": {
+    "details": "CREI -24.5",
+    "total": 153.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "95.9",
+    "away_win_pct": "4.1"
+   }
+  },
+  {
+   "espn_id": "401917535",
+   "name": "UCR @ USD",
+   "start_et": "9:30 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "27",
+    "abbr": "UCR",
+    "name": "UC Riverside Highlanders",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "9",
+    "team_stats": {
+     "avgRebounds": 35.75,
+     "avgPoints": 83.5,
+     "avgAssists": 16.75,
+     "avgTurnovers": 9.25,
+     "fieldGoalPct": 46.00760340690613,
+     "threePointFieldGoalPct": 35.593220591545105
+    }
+   },
+   "home": {
+    "id": "301",
+    "abbr": "USD",
+    "name": "San Diego Toreros",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "29",
+    "team_stats": {
+     "avgRebounds": 33.75,
+     "avgPoints": 84.25,
+     "avgAssists": 18.0,
+     "avgTurnovers": 11.25,
+     "fieldGoalPct": 46.28099203109741,
+     "threePointFieldGoalPct": 40.229883790016174
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Jenny Craig Pavilion",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "USD -6.5",
+    "total": 147.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "59.6",
+    "away_win_pct": "40.4"
+   }
+  },
+  {
+   "espn_id": "401929146",
+   "name": "TXSO @ SDSU",
    "start_et": "10:00 PM ET",
    "status": "Scheduled",
    "completed": false,
@@ -3392,32 +3192,719 @@
    "home_score": 0.0,
    "note": null,
    "away": {
-    "id": "594",
-    "abbr": "PUC",
-    "name": "Pacific Union Pioneers",
+    "id": "2640",
+    "abbr": "TXSO",
+    "name": "Texas Southern Tigers",
+    "score": "0",
+    "record": "1-4",
+    "rank": null,
+    "conference_id": "26",
+    "team_stats": {
+     "avgRebounds": 34.2,
+     "avgPoints": 79.6,
+     "avgAssists": 11.8,
+     "avgTurnovers": 14.6,
+     "fieldGoalPct": 44.694533944129944,
+     "threePointFieldGoalPct": 29.29292917251587
+    }
+   },
+   "home": {
+    "id": "21",
+    "abbr": "SDSU",
+    "name": "San Diego State Aztecs",
+    "score": "0",
+    "record": "4-0",
+    "rank": null,
+    "conference_id": "21",
+    "team_stats": {
+     "avgRebounds": 35.75,
+     "avgPoints": 85.0,
+     "avgAssists": 17.75,
+     "avgTurnovers": 14.0,
+     "fieldGoalPct": 51.58371329307556,
+     "threePointFieldGoalPct": 35.13513505458832
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Viejas Arena",
+   "indoor": true,
+   "tv": "YouTube",
+   "espn_line": {
+    "details": "SDSU -25.5",
+    "total": 157.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "96.5",
+    "away_win_pct": "3.5"
+   }
+  },
+  {
+   "espn_id": "401929004",
+   "name": "WSU VS HAW",
+   "start_et": "10:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "265",
+    "abbr": "WSU",
+    "name": "Washington State Cougars",
+    "score": "0",
+    "record": "1-3",
+    "rank": null,
+    "conference_id": "21",
+    "team_stats": {
+     "avgRebounds": 37.0,
+     "avgPoints": 81.5,
+     "avgAssists": 17.75,
+     "avgTurnovers": 14.5,
+     "fieldGoalPct": 48.76033067703247,
+     "threePointFieldGoalPct": 36.73469424247742
+    }
+   },
+   "home": {
+    "id": "62",
+    "abbr": "HAW",
+    "name": "Hawai'i Rainbow Warriors",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "44",
+    "team_stats": {
+     "avgRebounds": 41.0,
+     "avgPoints": 81.75,
+     "avgAssists": 15.5,
+     "avgTurnovers": 10.25,
+     "fieldGoalPct": 44.28044259548187,
+     "threePointFieldGoalPct": 29.46428656578064
+    }
+   },
+   "neutral_site": true,
+   "conference_game": false,
+   "venue": "Angel of the Winds Arena",
+   "indoor": true,
+   "tv": null,
+   "espn_line": {
+    "details": "HAW -1.5",
+    "total": 137.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "57.2",
+    "away_win_pct": "42.8"
+   }
+  },
+  {
+   "espn_id": "401921064",
+   "name": "UL @ SF",
+   "start_et": "10:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "309",
+    "abbr": "UL",
+    "name": "Louisiana Ragin' Cajuns",
+    "score": "0",
+    "record": "1-2",
+    "rank": null,
+    "conference_id": "27",
+    "team_stats": {
+     "avgRebounds": 32.0,
+     "avgPoints": 59.0,
+     "avgAssists": 11.0,
+     "avgTurnovers": 11.666667,
+     "fieldGoalPct": 27.810651063919067,
+     "threePointFieldGoalPct": 27.710843086242676
+    }
+   },
+   "home": {
+    "id": "2539",
+    "abbr": "SF",
+    "name": "San Francisco Dons",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "29",
+    "team_stats": {
+     "avgRebounds": 37.75,
+     "avgPoints": 71.5,
+     "avgAssists": 11.25,
+     "avgTurnovers": 12.75,
+     "fieldGoalPct": 39.91031348705292,
+     "threePointFieldGoalPct": 29.411765933036804
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "The Sobrato Center",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": {
+    "details": "SF -10.5",
+    "total": 134.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "80.6",
+    "away_win_pct": "19.4"
+   }
+  },
+  {
+   "espn_id": "401920516",
+   "name": "UNLV VS AUB",
+   "start_et": "10:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": "Players Era 8",
+   "away": {
+    "id": "2439",
+    "abbr": "UNLV",
+    "name": "UNLV Rebels",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "44",
+    "team_stats": {
+     "avgRebounds": 33.5,
+     "avgPoints": 82.5,
+     "avgAssists": 10.75,
+     "avgTurnovers": 12.0,
+     "fieldGoalPct": 47.826087474823,
+     "threePointFieldGoalPct": 35.211268067359924
+    }
+   },
+   "home": {
+    "id": "2",
+    "abbr": "AUB",
+    "name": "Auburn Tigers",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "23",
+    "team_stats": {
+     "avgRebounds": 39.0,
+     "avgPoints": 76.5,
+     "avgAssists": 12.75,
+     "avgTurnovers": 11.75,
+     "fieldGoalPct": 43.44262182712555,
+     "threePointFieldGoalPct": 34.61538553237915
+    }
+   },
+   "neutral_site": true,
+   "conference_game": false,
+   "venue": "Michelob ULTRA Arena",
+   "indoor": true,
+   "tv": "ESPN2",
+   "espn_line": {
+    "details": "AUB -9.5",
+    "total": 157.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "82.4",
+    "away_win_pct": "17.6"
+   }
+  },
+  {
+   "espn_id": "401911456",
+   "name": "IDHO @ NEV",
+   "start_et": "10:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "70",
+    "abbr": "IDHO",
+    "name": "Idaho Vandals",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "5",
+    "team_stats": {
+     "avgRebounds": 44.5,
+     "avgPoints": 86.5,
+     "avgAssists": 17.0,
+     "avgTurnovers": 9.5,
+     "fieldGoalPct": 47.79411852359772,
+     "threePointFieldGoalPct": 34.1269850730896
+    }
+   },
+   "home": {
+    "id": "2440",
+    "abbr": "NEV",
+    "name": "Nevada Wolf Pack",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "44",
+    "team_stats": {
+     "avgRebounds": 40.0,
+     "avgPoints": 79.0,
+     "avgAssists": 17.75,
+     "avgTurnovers": 11.75,
+     "fieldGoalPct": 44.57831382751465,
+     "threePointFieldGoalPct": 23.456789553165436
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Lawlor Events Center",
+   "indoor": true,
+   "tv": "MW+",
+   "espn_line": {
+    "details": "NEV -18.5",
+    "total": 146.5,
+    "provider": "DraftKings"
+   },
+   "injuries": {},
+   "espn_projection": {
+    "home_win_pct": "94.6",
+    "away_win_pct": "5.4"
+   }
+  },
+  {
+   "espn_id": "401909753",
+   "name": "JKST @ BAY",
+   "start_et": "12:00 PM ET",
+   "status": "Final",
+   "completed": true,
+   "away_score": 55.0,
+   "home_score": 104.0,
+   "note": null,
+   "away": {
+    "id": "2296",
+    "abbr": "JKST",
+    "name": "Jackson State Tigers",
+    "score": "55",
+    "record": "2-4",
+    "rank": null,
+    "conference_id": "26",
+    "team_stats": {
+     "avgRebounds": 29.8,
+     "avgPoints": 68.4,
+     "avgAssists": 11.0,
+     "avgTurnovers": 15.4,
+     "fieldGoalPct": 39.59731459617615,
+     "threePointFieldGoalPct": 28.888890147209167
+    }
+   },
+   "home": {
+    "id": "239",
+    "abbr": "BAY",
+    "name": "Baylor Bears",
+    "score": "104",
+    "record": "4-1",
+    "rank": null,
+    "conference_id": "8",
+    "team_stats": {
+     "avgRebounds": 42.25,
+     "avgPoints": 89.5,
+     "avgAssists": 17.25,
+     "avgTurnovers": 10.75,
+     "fieldGoalPct": 46.415093541145325,
+     "threePointFieldGoalPct": 31.13207519054413
+    }
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Foster Pavilion",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": null,
+   "injuries": {},
+   "espn_projection": null
+  },
+  {
+   "espn_id": "401920513",
+   "name": "RUTG VS ND",
+   "start_et": "2:00 PM ET",
+   "status": "Final",
+   "completed": true,
+   "away_score": 100.0,
+   "home_score": 110.0,
+   "note": "Players Era 8",
+   "away": {
+    "id": "164",
+    "abbr": "RUTG",
+    "name": "Rutgers Scarlet Knights",
+    "score": "100",
+    "record": "3-2",
+    "rank": null,
+    "conference_id": "7"
+   },
+   "home": {
+    "id": "87",
+    "abbr": "ND",
+    "name": "Notre Dame Fighting Irish",
+    "score": "110",
+    "record": "5-1",
+    "rank": null,
+    "conference_id": "2"
+   },
+   "neutral_site": true,
+   "conference_game": false,
+   "venue": "Michelob ULTRA Arena",
+   "indoor": true,
+   "tv": "ESPN",
+   "espn_line": null
+  },
+  {
+   "espn_id": "401929014",
+   "name": "MCLA @ NHVN",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "343",
+    "abbr": "MCLA",
+    "name": "MCLA Mohawks",
     "score": "0",
     "record": null,
     "rank": null,
     "conference_id": null
    },
    "home": {
-    "id": "279",
-    "abbr": "PAC",
-    "name": "Pacific Tigers",
+    "id": "2441",
+    "abbr": "NHVN",
+    "name": "New Haven Chargers",
     "score": "0",
-    "record": "3-1",
+    "record": "1-3",
     "rank": null,
-    "conference_id": "29"
+    "conference_id": "19"
    },
    "neutral_site": false,
    "conference_game": false,
-   "venue": "Alex G. Spanos Center",
+   "venue": "Jeffery P. Hazell Athletics Center",
+   "indoor": true,
+   "tv": null,
+   "espn_line": null
+  },
+  {
+   "espn_id": "401928843",
+   "name": "DFC @ M-OH",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "190",
+    "abbr": "DFC",
+    "name": "Defiance Yellow Jackets",
+    "score": "0",
+    "record": null,
+    "rank": null,
+    "conference_id": null
+   },
+   "home": {
+    "id": "193",
+    "abbr": "M-OH",
+    "name": "Miami (OH) RedHawks",
+    "score": "0",
+    "record": "3-0",
+    "rank": null,
+    "conference_id": "14"
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Millett Hall",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": null
+  },
+  {
+   "espn_id": "401924763",
+   "name": "SJBK @ FAIR",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2990",
+    "abbr": "SJBK",
+    "name": "St. Joseph's Brooklyn Bears",
+    "score": "0",
+    "record": null,
+    "rank": null,
+    "conference_id": null
+   },
+   "home": {
+    "id": "2217",
+    "abbr": "FAIR",
+    "name": "Fairfield Stags",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "13"
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Leo D. Mahoney Arena",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": null
+  },
+  {
+   "espn_id": "401920772",
+   "name": "UTIC @ COLG",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "390",
+    "abbr": "UTIC",
+    "name": "Utica Pioneers",
+    "score": "0",
+    "record": null,
+    "rank": null,
+    "conference_id": null
+   },
+   "home": {
+    "id": "2142",
+    "abbr": "COLG",
+    "name": "Colgate Raiders",
+    "score": "0",
+    "record": "0-4",
+    "rank": null,
+    "conference_id": "22"
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Cotterell Court",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": null
+  },
+  {
+   "espn_id": "401917902",
+   "name": "CCSC @ WGA",
+   "start_et": "7:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "130401",
+    "abbr": "CCSC",
+    "name": "Columbia (SC) Fighting Koalas",
+    "score": "0",
+    "record": null,
+    "rank": null,
+    "conference_id": null
+   },
+   "home": {
+    "id": "2698",
+    "abbr": "WGA",
+    "name": "West Georgia Wolves",
+    "score": "0",
+    "record": "0-4",
+    "rank": null,
+    "conference_id": "30"
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "The Coliseum",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": null
+  },
+  {
+   "espn_id": "401928829",
+   "name": "MLN @ WRST",
+   "start_et": "7:30 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "556",
+    "abbr": "MLN",
+    "name": "Malone Pioneers",
+    "score": "0",
+    "record": null,
+    "rank": null,
+    "conference_id": null
+   },
+   "home": {
+    "id": "2750",
+    "abbr": "WRST",
+    "name": "Wright State Raiders",
+    "score": "0",
+    "record": "4-0",
+    "rank": null,
+    "conference_id": "45"
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Nutter Center",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": null
+  },
+  {
+   "espn_id": "401925109",
+   "name": "CBS @ RGV",
+   "start_et": "7:30 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "128256",
+    "abbr": "CBS",
+    "name": "College of Biblical Studies Ambassadors",
+    "score": "0",
+    "record": null,
+    "rank": null,
+    "conference_id": null
+   },
+   "home": {
+    "id": "292",
+    "abbr": "RGV",
+    "name": "UT Rio Grande Valley Vaqueros",
+    "score": "0",
+    "record": "2-2",
+    "rank": null,
+    "conference_id": "25"
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "UTRGV Fieldhouse",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": null
+  },
+  {
+   "espn_id": "401920761",
+   "name": "UNKY @ BEL",
+   "start_et": "7:30 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2841",
+    "abbr": "UNKY",
+    "name": "Union Commonwealth (KY) Bulldogs",
+    "score": "0",
+    "record": null,
+    "rank": null,
+    "conference_id": null
+   },
+   "home": {
+    "id": "2057",
+    "abbr": "BEL",
+    "name": "Belmont Bruins",
+    "score": "0",
+    "record": "3-1",
+    "rank": null,
+    "conference_id": "18"
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Curb Event Center Arena",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": null
+  },
+  {
+   "espn_id": "401923394",
+   "name": "LWU @ USI",
+   "start_et": "8:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "2877",
+    "abbr": "LWU",
+    "name": "Lindsey Wilson Blue Raiders",
+    "score": "0",
+    "record": null,
+    "rank": null,
+    "conference_id": null
+   },
+   "home": {
+    "id": "88",
+    "abbr": "USI",
+    "name": "Southern Indiana Screaming Eagles",
+    "score": "0",
+    "record": "1-4",
+    "rank": null,
+    "conference_id": "20"
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Liberty Arena (IN)",
+   "indoor": true,
+   "tv": "ESPN+",
+   "espn_line": null
+  },
+  {
+   "espn_id": "401917965",
+   "name": "MCM @ ACU",
+   "start_et": "9:00 PM ET",
+   "status": "Scheduled",
+   "completed": false,
+   "away_score": 0.0,
+   "home_score": 0.0,
+   "note": null,
+   "away": {
+    "id": "241",
+    "abbr": "MCM",
+    "name": "McMurry War Hawks",
+    "score": "0",
+    "record": null,
+    "rank": null,
+    "conference_id": null
+   },
+   "home": {
+    "id": "2000",
+    "abbr": "ACU",
+    "name": "Abilene Christian Wildcats",
+    "score": "0",
+    "record": "1-3",
+    "rank": null,
+    "conference_id": "30"
+   },
+   "neutral_site": false,
+   "conference_game": false,
+   "venue": "Moody Coliseum (Abilene)",
    "indoor": true,
    "tv": "ESPN+",
    "espn_line": null
   }
  ],
- "games_ranked": 11,
+ "games_ranked": 9,
  "components": {
   "scoreboard": "ok",
   "summaries": "ok",
