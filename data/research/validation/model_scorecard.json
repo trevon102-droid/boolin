@@ -39,7 +39,7 @@
   "lean_allowed": false,
   "live_archive": {
    "n": 58,
-   "holdout": 85,
+   "holdout": 86,
    "older_version_rows": 15,
    "boolin": {
     "brier": 0.2023,
@@ -65,7 +65,7 @@
    }
   },
   "replay_fidelity": {
-   "n_overlap": 101,
+   "n_overlap": 102,
    "identical": 0,
    "mean_abs_prob_diff": 0.0186,
    "max_abs_prob_diff": 0.0716,
@@ -77,30 +77,30 @@
   "validation_version": "validation-1.0",
   "data_cutoff": "2026-11-16",
   "primary_evidence": "live_archive holdout (games after 2026-10-05)",
-  "sample_size": 283,
+  "sample_size": 284,
   "development_size": 35,
-  "brier": 0.2324,
+  "brier": 0.2338,
   "market_brier": 0.2274,
-  "log_loss": 0.6565,
+  "log_loss": 0.6599,
   "market_log_loss": 0.6456,
-  "accuracy": 0.6254,
-  "calibration_error": 0.0469,
-  "favorite_overconfidence": -0.0251,
+  "accuracy": 0.6232,
+  "calibration_error": 0.0439,
+  "favorite_overconfidence": -0.0222,
   "market_comparison": "no detectable difference in Brier (t=0.1)",
-  "spread_mae": 2.052,
+  "spread_mae": 2.056,
   "market_spread_mae": null,
   "confidence_validated": null,
   "calibration_status": "needs_calibration",
   "validation_status": "validated: calibration off",
   "recommendation": "PROMISING BUT UNCALIBRATED",
   "reasons": [
-   "holdout calibration error 0.0469, favourite overconfidence -0.0251 (needs <= 0.025 / +-0.02 with n >= 300)",
+   "holdout calibration error 0.0439, favourite overconfidence -0.0222 (needs <= 0.025 / +-0.02 with n >= 300)",
    "holdout vs market: no detectable difference in Brier (t=0.1)"
   ],
   "lean_allowed": false,
   "live_archive": {
    "n": 103,
-   "holdout": 283,
+   "holdout": 284,
    "older_version_rows": 0,
    "boolin": {
     "brier": 0.2266,
