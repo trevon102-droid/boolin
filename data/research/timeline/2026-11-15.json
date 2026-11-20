@@ -1502,6 +1502,84 @@
    "new": "7 player(s) listed",
    "source": "NFL injury report week 11",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-20T17:18-05:00",
+   "game_key": "2026-11-15-NFL-HOU-CLE",
+   "type": "model",
+   "field": "Boolin CLE win probability",
+   "old": 0.4658,
+   "new": 0.4457,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 46.6% to 44.6% (home margin -1.17 \u2192 -1.86). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.54 (home allows -0.006 vs away allows -0.002 x 32.45); 2. Offense (EPA/play, regressed) -0.15 (home -0.025 vs away +0.042 EPA/play x 58.15). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 46.6% to 44.6% (home margin -1.17 \u2192 -1.86). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.54 (home allows -0.006 vs away allows -0.002 x 32.45); 2. Offense (EPA/play, regressed) -0.15 (home -0.025 vs away +0.042 EPA/play x 58.15). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.54,
+      "now": "home allows -0.006 vs away allows -0.002 x 32.45"
+     },
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.15,
+      "now": "home -0.025 vs away +0.042 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": []
+   }
+  },
+  {
+   "t": "2026-11-20T17:18-05:00",
+   "game_key": "2026-11-15-NFL-HOU-CLE",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "CLE +1.2",
+   "new": "CLE +1.9",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 46.6% to 44.6% (home margin -1.17 \u2192 -1.86). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.54 (home allows -0.006 vs away allows -0.002 x 32.45); 2. Offense (EPA/play, regressed) -0.15 (home -0.025 vs away +0.042 EPA/play x 58.15). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 46.6% to 44.6% (home margin -1.17 \u2192 -1.86). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.54 (home allows -0.006 vs away allows -0.002 x 32.45); 2. Offense (EPA/play, regressed) -0.15 (home -0.025 vs away +0.042 EPA/play x 58.15). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.54,
+      "now": "home allows -0.006 vs away allows -0.002 x 32.45"
+     },
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.15,
+      "now": "home -0.025 vs away +0.042 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": []
+   }
+  },
+  {
+   "t": "2026-11-20T17:18-05:00",
+   "game_key": "2026-11-15-NFL-HOU-CLE",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 46.0,
+   "new": 45.7,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 46.6% to 44.6% (home margin -1.17 \u2192 -1.86). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.54 (home allows -0.006 vs away allows -0.002 x 32.45); 2. Offense (EPA/play, regressed) -0.15 (home -0.025 vs away +0.042 EPA/play x 58.15). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 46.6% to 44.6% (home margin -1.17 \u2192 -1.86). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.54 (home allows -0.006 vs away allows -0.002 x 32.45); 2. Offense (EPA/play, regressed) -0.15 (home -0.025 vs away +0.042 EPA/play x 58.15). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.54,
+      "now": "home allows -0.006 vs away allows -0.002 x 32.45"
+     },
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.15,
+      "now": "home -0.025 vs away +0.042 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": []
+   }
   }
  ],
  "2026-11-15-NFL-KC-ATL": [
@@ -2157,6 +2235,84 @@
    "new": "8 player(s) listed",
    "source": "NFL injury report week 11",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-20T17:18-05:00",
+   "game_key": "2026-11-15-NFL-MIA-IND",
+   "type": "model",
+   "field": "Boolin IND win probability",
+   "old": 0.5123,
+   "new": 0.4886,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 51.2% to 48.9% (home margin +0.42 \u2192 -0.39). Model components that moved: 1. Offense (EPA/play, regressed) -0.67 (home -0.085 vs away -0.036 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.14 (home allows +0.026 vs away allows +0.042 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 51.2% to 48.9% (home margin +0.42 \u2192 -0.39). Model components that moved: 1. Offense (EPA/play, regressed) -0.67 (home -0.085 vs away -0.036 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.14 (home allows +0.026 vs away allows +0.042 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.67,
+      "now": "home -0.085 vs away -0.036 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.14,
+      "now": "home allows +0.026 vs away allows +0.042 x 32.45"
+     }
+    ],
+    "same_pull_updates": []
+   }
+  },
+  {
+   "t": "2026-11-20T17:18-05:00",
+   "game_key": "2026-11-15-NFL-MIA-IND",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "IND -0.4",
+   "new": "IND +0.4",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 51.2% to 48.9% (home margin +0.42 \u2192 -0.39). Model components that moved: 1. Offense (EPA/play, regressed) -0.67 (home -0.085 vs away -0.036 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.14 (home allows +0.026 vs away allows +0.042 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 51.2% to 48.9% (home margin +0.42 \u2192 -0.39). Model components that moved: 1. Offense (EPA/play, regressed) -0.67 (home -0.085 vs away -0.036 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.14 (home allows +0.026 vs away allows +0.042 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.67,
+      "now": "home -0.085 vs away -0.036 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.14,
+      "now": "home allows +0.026 vs away allows +0.042 x 32.45"
+     }
+    ],
+    "same_pull_updates": []
+   }
+  },
+  {
+   "t": "2026-11-20T17:18-05:00",
+   "game_key": "2026-11-15-NFL-MIA-IND",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 44.5,
+   "new": 44.4,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 51.2% to 48.9% (home margin +0.42 \u2192 -0.39). Model components that moved: 1. Offense (EPA/play, regressed) -0.67 (home -0.085 vs away -0.036 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.14 (home allows +0.026 vs away allows +0.042 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 51.2% to 48.9% (home margin +0.42 \u2192 -0.39). Model components that moved: 1. Offense (EPA/play, regressed) -0.67 (home -0.085 vs away -0.036 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.14 (home allows +0.026 vs away allows +0.042 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.67,
+      "now": "home -0.085 vs away -0.036 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.14,
+      "now": "home allows +0.026 vs away allows +0.042 x 32.45"
+     }
+    ],
+    "same_pull_updates": []
+   }
   }
  ],
  "2026-11-15-NFL-MIN-GB": [
