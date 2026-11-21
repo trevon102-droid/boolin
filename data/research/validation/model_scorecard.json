@@ -39,7 +39,7 @@
   "lean_allowed": false,
   "live_archive": {
    "n": 58,
-   "holdout": 86,
+   "holdout": 87,
    "older_version_rows": 15,
    "boolin": {
     "brier": 0.2023,
@@ -65,9 +65,9 @@
    }
   },
   "replay_fidelity": {
-   "n_overlap": 102,
-   "identical": 0,
-   "mean_abs_prob_diff": 0.0186,
+   "n_overlap": 103,
+   "identical": 1,
+   "mean_abs_prob_diff": 0.0184,
    "max_abs_prob_diff": 0.0716,
    "note": "Live card vs replay for the same game, same model version. Gaps mean the live pull saw different inputs than the replay (cause not confirmed per game)."
   }
@@ -75,32 +75,32 @@
  "NHL": {
   "model_version": "baseline-0.1",
   "validation_version": "validation-1.0",
-  "data_cutoff": "2026-11-18",
+  "data_cutoff": "2026-11-19",
   "primary_evidence": "live_archive holdout (games after 2026-10-05)",
-  "sample_size": 298,
+  "sample_size": 310,
   "development_size": 35,
-  "brier": 0.2341,
+  "brier": 0.2345,
   "market_brier": 0.2274,
-  "log_loss": 0.6605,
+  "log_loss": 0.6614,
   "market_log_loss": 0.6456,
-  "accuracy": 0.6208,
-  "calibration_error": 0.0374,
-  "favorite_overconfidence": -0.0219,
+  "accuracy": 0.6194,
+  "calibration_error": 0.04,
+  "favorite_overconfidence": -0.0196,
   "market_comparison": "no detectable difference in Brier (t=0.1)",
-  "spread_mae": 2.072,
+  "spread_mae": 2.07,
   "market_spread_mae": null,
   "confidence_validated": null,
   "calibration_status": "needs_calibration",
   "validation_status": "validated: calibration off",
   "recommendation": "PROMISING BUT UNCALIBRATED",
   "reasons": [
-   "holdout calibration error 0.0374, favourite overconfidence -0.0219 (needs <= 0.025 / +-0.02 with n >= 300)",
+   "holdout calibration error 0.04, favourite overconfidence -0.0196 (needs <= 0.025 / +-0.02 with n >= 300)",
    "holdout vs market: no detectable difference in Brier (t=0.1)"
   ],
   "lean_allowed": false,
   "live_archive": {
    "n": 103,
-   "holdout": 298,
+   "holdout": 310,
    "older_version_rows": 0,
    "boolin": {
     "brier": 0.2266,
