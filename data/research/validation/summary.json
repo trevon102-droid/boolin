@@ -9,7 +9,7 @@
   "baseline-0.1",
   "baseline-0.2"
  ],
- "built_at": "2026-11-21T15:59-05:00",
+ "built_at": "2026-11-21T20:29-05:00",
  "data_cutoff": "2026-11-19",
  "filters": {
   "league": null,
@@ -27,7 +27,7 @@
  },
  "warning": "rows span model versions ['baseline-0.1', 'baseline-0.2']: each table is per league and per source, and rows from an older version sit in their own '<source> @<version>' slice",
  "rows": 4219,
- "excluded": 451,
+ "excluded": 463,
  "by_source": {
   "NFL nfl_replay": {
    "rows": 3739,
@@ -83,11 +83,11 @@
  "excluded_by_reason": {
   "nfl_replay: no current-season plays before this week for a team (the live model has no projection either)": 241,
   "live_archive: no Boolin model for this league": 203,
-  "live_archive: no confirmed final score on file": 7
+  "live_archive: no confirmed final score on file": 19
  },
  "replay": {
   "version": "nfl-replay-1",
-  "built_at_et": "2026-11-21T15:59-05:00",
+  "built_at_et": "2026-11-21T20:29-05:00",
   "status": {
    "2012": "kept",
    "2013": "kept",

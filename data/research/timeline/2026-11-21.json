@@ -1,0 +1,134 @@
+{
+ "2026-11-21-NHL-EDM-CAR": [
+  {
+   "t": "2026-11-21T20:29-05:00",
+   "game_key": "2026-11-21-NHL-EDM-CAR",
+   "type": "injury_report",
+   "field": "CAR injury list",
+   "old": "not covered",
+   "new": "1 player(s) listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-21T20:29-05:00",
+   "game_key": "2026-11-21-NHL-EDM-CAR",
+   "type": "model",
+   "field": "Boolin CAR win probability",
+   "old": 0.7354,
+   "new": 0.754,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 73.5% to 75.4% (home margin +1.51 \u2192 +1.65). Model components that moved: 1. Shot quality against (5v5 xGA/gp, blended) +0.07 (home allows 1.81 vs away allows 1.96). Data updates in the same pull: CAR injury list: not covered \u2192 1 player(s) listed.",
+   "detail": {
+    "text": "Boolin moved from 73.5% to 75.4% (home margin +1.51 \u2192 +1.65). Model components that moved: 1. Shot quality against (5v5 xGA/gp, blended) +0.07 (home allows 1.81 vs away allows 1.96). Data updates in the same pull: CAR injury list: not covered \u2192 1 player(s) listed.",
+    "components": [
+     {
+      "component": "Shot quality against (5v5 xGA/gp, blended)",
+      "margin_change": 0.074,
+      "now": "home allows 1.81 vs away allows 1.96"
+     }
+    ],
+    "same_pull_updates": [
+     "CAR injury list: not covered \u2192 1 player(s) listed"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-21T20:29-05:00",
+   "game_key": "2026-11-21-NHL-EDM-CAR",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "CAR -1.5",
+   "new": "CAR -1.6",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 73.5% to 75.4% (home margin +1.51 \u2192 +1.65). Model components that moved: 1. Shot quality against (5v5 xGA/gp, blended) +0.07 (home allows 1.81 vs away allows 1.96). Data updates in the same pull: CAR injury list: not covered \u2192 1 player(s) listed.",
+   "detail": {
+    "text": "Boolin moved from 73.5% to 75.4% (home margin +1.51 \u2192 +1.65). Model components that moved: 1. Shot quality against (5v5 xGA/gp, blended) +0.07 (home allows 1.81 vs away allows 1.96). Data updates in the same pull: CAR injury list: not covered \u2192 1 player(s) listed.",
+    "components": [
+     {
+      "component": "Shot quality against (5v5 xGA/gp, blended)",
+      "margin_change": 0.074,
+      "now": "home allows 1.81 vs away allows 1.96"
+     }
+    ],
+    "same_pull_updates": [
+     "CAR injury list: not covered \u2192 1 player(s) listed"
+    ]
+   }
+  }
+ ],
+ "2026-11-21-NHL-CHI-CGY": [
+  {
+   "t": "2026-11-21T20:29-05:00",
+   "game_key": "2026-11-21-NHL-CHI-CGY",
+   "type": "injury_status",
+   "field": "Anton Frondell (CHI)",
+   "old": "not listed",
+   "new": "Day-To-Day",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-11-21T20:29-05:00",
+   "game_key": "2026-11-21-NHL-CHI-CGY",
+   "type": "injury_status",
+   "field": "Martin Pospisil (CGY)",
+   "old": "not listed",
+   "new": "Day-To-Day",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-11-21-NHL-PIT-NSH": [
+  {
+   "t": "2026-11-21T20:29-05:00",
+   "game_key": "2026-11-21-NHL-PIT-NSH",
+   "type": "injury_status",
+   "field": "Ryan O'Reilly (NSH)",
+   "old": "Day-To-Day",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  }
+ ],
+ "2026-11-21-NHL-LAK-OTT": [
+  {
+   "t": "2026-11-21T20:29-05:00",
+   "game_key": "2026-11-21-NHL-LAK-OTT",
+   "type": "injury_status",
+   "field": "Hayden Hodgson (OTT)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-11-21-NHL-NYI-DET": [
+  {
+   "t": "2026-11-21T20:29-05:00",
+   "game_key": "2026-11-21-NHL-NYI-DET",
+   "type": "injury_status",
+   "field": "William Wallinder (DET)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-11-21T20:29-05:00",
+   "game_key": "2026-11-21-NHL-NYI-DET",
+   "type": "injury_status",
+   "field": "Logan Stanley (NYI)",
+   "old": "Day-To-Day",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  }
+ ]
+}
