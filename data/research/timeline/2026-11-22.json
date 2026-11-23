@@ -1957,5 +1957,94 @@
    "source": "NFL injury report week 11",
    "cause": "Change detected; cause not confirmed."
   }
+ ],
+ "2026-11-22-NHL-CAR-NYR": [
+  {
+   "t": "2026-11-22T20:54-05:00",
+   "game_key": "2026-11-22-NHL-CAR-NYR",
+   "type": "model",
+   "field": "Boolin NYR win probability",
+   "old": 0.3591,
+   "new": 0.3518,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 35.9% to 35.2% (home margin -0.87 \u2192 -0.91). Projection changed after these updates, but the stored data does not identify a single confirmed cause.",
+   "detail": {
+    "text": "Boolin moved from 35.9% to 35.2% (home margin -0.87 \u2192 -0.91). Projection changed after these updates, but the stored data does not identify a single confirmed cause.",
+    "components": [],
+    "same_pull_updates": []
+   }
+  }
+ ],
+ "2026-11-22-NHL-EDM-STL": [
+  {
+   "t": "2026-11-22T20:54-05:00",
+   "game_key": "2026-11-22-NHL-EDM-STL",
+   "type": "injury_status",
+   "field": "Connor McMichael (STL)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-11-22T20:54-05:00",
+   "game_key": "2026-11-22-NHL-EDM-STL",
+   "type": "injury_status",
+   "field": "Zach Hyman (EDM)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-11-22-NHL-PIT-DAL": [
+  {
+   "t": "2026-11-22T20:54-05:00",
+   "game_key": "2026-11-22-NHL-PIT-DAL",
+   "type": "injury_status",
+   "field": "Ryan Graves (PIT)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  },
+  {
+   "t": "2026-11-22T20:54-05:00",
+   "game_key": "2026-11-22-NHL-PIT-DAL",
+   "type": "injury_status",
+   "field": "Declan Carlile (PIT)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-11-22T20:54-05:00",
+   "game_key": "2026-11-22-NHL-PIT-DAL",
+   "type": "injury_status",
+   "field": "Matt Duchene (DAL)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  }
+ ],
+ "2026-11-22-NHL-CHI-VAN": [
+  {
+   "t": "2026-11-22T20:54-05:00",
+   "game_key": "2026-11-22-NHL-CHI-VAN",
+   "type": "injury_status",
+   "field": "Anton Frondell (CHI)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
  ]
 }
