@@ -448,5 +448,185 @@
    "graded_components": 1
   },
   "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ },
+ "2026-11-22-NHL-EDM-STL": {
+  "key": "2026-11-22-NHL-EDM-STL",
+  "league": "NHL",
+  "result": {
+   "home_score": 5.0,
+   "away_score": 4.0,
+   "home_margin": 1.0,
+   "total": 9.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 2.7,
+    "grade": "B-",
+    "brier": 0.1632,
+    "pregame_home_win_p": 0.596,
+    "margin_error": 0.42,
+    "total_error": 2.75
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 2.7,
+   "grade": "B-",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ },
+ "2026-11-22-NHL-PIT-DAL": {
+  "key": "2026-11-22-NHL-PIT-DAL",
+  "league": "NHL",
+  "result": {
+   "home_score": 1.0,
+   "away_score": 0.0,
+   "home_margin": 1.0,
+   "total": 1.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 2.7,
+    "grade": "B-",
+    "brier": 0.1711,
+    "pregame_home_win_p": 0.5864,
+    "margin_error": 0.48,
+    "total_error": -5.81
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 2.7,
+   "grade": "B-",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ },
+ "2026-11-22-NHL-CHI-VAN": {
+  "key": "2026-11-22-NHL-CHI-VAN",
+  "league": "NHL",
+  "result": {
+   "home_score": 3.0,
+   "away_score": 6.0,
+   "home_margin": -3.0,
+   "total": 9.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 2.0,
+    "grade": "C",
+    "brier": 0.243,
+    "pregame_home_win_p": 0.4929,
+    "margin_error": -2.96,
+    "total_error": 2.3
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "weather not a factor (indoor or not NFL)"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 2.0,
+   "grade": "C",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ },
+ "2026-11-22-NFL-MIN-SF": {
+  "key": "2026-11-22-NFL-MIN-SF",
+  "league": "NFL",
+  "result": {
+   "home_score": 35.0,
+   "away_score": 10.0,
+   "home_margin": 25.0,
+   "total": 45.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 4.0,
+    "grade": "A",
+    "brier": 0.0522,
+    "pregame_home_win_p": 0.7715,
+    "margin_error": 14.86,
+    "total_error": 0.4
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "pregame or recorded wind missing"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 4.0,
+   "grade": "A",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
  }
 }

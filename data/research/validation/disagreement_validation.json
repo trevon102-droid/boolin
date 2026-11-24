@@ -6119,44 +6119,44 @@
     "groups": [
      {
       "group": "all extreme disagreements",
-      "n": 424,
-      "boolin_brier": 0.2505,
-      "market_brier": 0.2109,
+      "n": 425,
+      "boolin_brier": 0.2503,
+      "market_brier": 0.2108,
       "brier_paired": {
-       "n": 424,
-       "mean_diff": 0.03959,
-       "se": 0.00775,
-       "t": 5.11,
+       "n": 425,
+       "mean_diff": 0.03944,
+       "se": 0.00773,
+       "t": 5.1,
        "verdict": "market Brier better (t=5.1)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3396,
-      "boolin_side_market_implied": 0.356,
-      "boolin_side_boolin_implied": 0.5218,
-      "boolin_side_z_vs_market": -0.74,
-      "boolin_beat_market_rate": 0.3396,
-      "boolin_pick_win_rate": 0.5189,
-      "market_favorite_win_rate": 0.6792,
+      "boolin_side_actual_rate": 0.3412,
+      "boolin_side_market_implied": 0.3569,
+      "boolin_side_boolin_implied": 0.5225,
+      "boolin_side_z_vs_market": -0.71,
+      "boolin_beat_market_rate": 0.3412,
+      "boolin_pick_win_rate": 0.5176,
+      "market_favorite_win_rate": 0.68,
       "interpretable": true
      },
      {
       "group": "high confidence",
       "n": 236,
-      "boolin_brier": 0.2401,
-      "market_brier": 0.2014,
+      "boolin_brier": 0.2395,
+      "market_brier": 0.2015,
       "brier_paired": {
        "n": 236,
-       "mean_diff": 0.03867,
-       "se": 0.00978,
-       "t": 3.95,
-       "verdict": "market Brier better (t=4.0)",
+       "mean_diff": 0.03803,
+       "se": 0.00979,
+       "t": 3.88,
+       "verdict": "market Brier better (t=3.9)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3369,
-      "boolin_side_market_implied": 0.3594,
-      "boolin_side_boolin_implied": 0.5191,
-      "boolin_side_z_vs_market": -0.76,
-      "boolin_beat_market_rate": 0.3347,
+      "boolin_side_actual_rate": 0.3411,
+      "boolin_side_market_implied": 0.3607,
+      "boolin_side_boolin_implied": 0.5205,
+      "boolin_side_z_vs_market": -0.66,
+      "boolin_beat_market_rate": 0.339,
       "boolin_pick_win_rate": 0.5699,
       "market_favorite_win_rate": 0.6801,
       "interpretable": true
@@ -6164,19 +6164,19 @@
      {
       "group": "medium confidence",
       "n": 111,
-      "boolin_brier": 0.2607,
+      "boolin_brier": 0.261,
       "market_brier": 0.2128,
       "brier_paired": {
        "n": 111,
-       "mean_diff": 0.04784,
-       "se": 0.01447,
-       "t": 3.31,
+       "mean_diff": 0.04813,
+       "se": 0.01445,
+       "t": 3.33,
        "verdict": "market Brier better (t=3.3)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
       "boolin_side_actual_rate": 0.3198,
       "boolin_side_market_implied": 0.3679,
-      "boolin_side_boolin_implied": 0.5284,
+      "boolin_side_boolin_implied": 0.5283,
       "boolin_side_z_vs_market": -1.08,
       "boolin_beat_market_rate": 0.3243,
       "boolin_pick_win_rate": 0.473,
@@ -6185,66 +6185,66 @@
      },
      {
       "group": "low confidence",
-      "n": 77,
+      "n": 78,
       "boolin_brier": 0.2676,
-      "market_brier": 0.2371,
+      "market_brier": 0.2363,
       "brier_paired": {
-       "n": 77,
-       "mean_diff": 0.03053,
-       "se": 0.02226,
-       "t": 1.37,
+       "n": 78,
+       "mean_diff": 0.03133,
+       "se": 0.02197,
+       "t": 1.43,
        "verdict": "no detectable difference in Brier (t=1.4)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3766,
-      "boolin_side_market_implied": 0.3282,
-      "boolin_side_boolin_implied": 0.5204,
-      "boolin_side_z_vs_market": 0.92,
-      "boolin_beat_market_rate": 0.3766,
-      "boolin_pick_win_rate": 0.4286,
-      "market_favorite_win_rate": 0.6364,
+      "boolin_side_actual_rate": 0.3718,
+      "boolin_side_market_implied": 0.3293,
+      "boolin_side_boolin_implied": 0.5203,
+      "boolin_side_z_vs_market": 0.82,
+      "boolin_beat_market_rate": 0.3718,
+      "boolin_pick_win_rate": 0.4231,
+      "market_favorite_win_rate": 0.641,
       "interpretable": true
      },
      {
       "group": "small samples",
-      "n": 77,
+      "n": 78,
       "boolin_brier": 0.2676,
-      "market_brier": 0.2371,
+      "market_brier": 0.2363,
       "brier_paired": {
-       "n": 77,
-       "mean_diff": 0.03053,
-       "se": 0.02226,
-       "t": 1.37,
+       "n": 78,
+       "mean_diff": 0.03133,
+       "se": 0.02197,
+       "t": 1.43,
        "verdict": "no detectable difference in Brier (t=1.4)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3766,
-      "boolin_side_market_implied": 0.3282,
-      "boolin_side_boolin_implied": 0.5204,
-      "boolin_side_z_vs_market": 0.92,
-      "boolin_beat_market_rate": 0.3766,
-      "boolin_pick_win_rate": 0.4286,
-      "market_favorite_win_rate": 0.6364,
+      "boolin_side_actual_rate": 0.3718,
+      "boolin_side_market_implied": 0.3293,
+      "boolin_side_boolin_implied": 0.5203,
+      "boolin_side_z_vs_market": 0.82,
+      "boolin_beat_market_rate": 0.3718,
+      "boolin_pick_win_rate": 0.4231,
+      "market_favorite_win_rate": 0.641,
       "interpretable": true
      },
      {
       "group": "normal samples",
       "n": 347,
-      "boolin_brier": 0.2467,
+      "boolin_brier": 0.2464,
       "market_brier": 0.2051,
       "brier_paired": {
        "n": 347,
-       "mean_diff": 0.0416,
+       "mean_diff": 0.04126,
        "se": 0.0081,
-       "t": 5.14,
+       "t": 5.1,
        "verdict": "market Brier better (t=5.1)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3314,
-      "boolin_side_market_implied": 0.3622,
-      "boolin_side_boolin_implied": 0.5221,
-      "boolin_side_z_vs_market": -1.25,
-      "boolin_beat_market_rate": 0.3314,
+      "boolin_side_actual_rate": 0.3343,
+      "boolin_side_market_implied": 0.363,
+      "boolin_side_boolin_implied": 0.523,
+      "boolin_side_z_vs_market": -1.17,
+      "boolin_beat_market_rate": 0.3343,
       "boolin_pick_win_rate": 0.5389,
       "market_favorite_win_rate": 0.6888,
       "interpretable": true
@@ -6252,112 +6252,93 @@
      {
       "group": "injury / player uncertainty",
       "n": 108,
-      "boolin_brier": 0.2584,
-      "market_brier": 0.195,
+      "boolin_brier": 0.2592,
+      "market_brier": 0.1955,
       "brier_paired": {
        "n": 108,
-       "mean_diff": 0.0634,
-       "se": 0.0157,
-       "t": 4.04,
-       "verdict": "market Brier better (t=4.0)",
+       "mean_diff": 0.06372,
+       "se": 0.01572,
+       "t": 4.05,
+       "verdict": "market Brier better (t=4.1)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
       "boolin_side_actual_rate": 0.2963,
-      "boolin_side_market_implied": 0.3542,
-      "boolin_side_boolin_implied": 0.5335,
-      "boolin_side_z_vs_market": -1.31,
+      "boolin_side_market_implied": 0.3549,
+      "boolin_side_boolin_implied": 0.5344,
+      "boolin_side_z_vs_market": -1.33,
       "boolin_beat_market_rate": 0.2963,
-      "boolin_pick_win_rate": 0.5278,
+      "boolin_pick_win_rate": 0.5185,
       "market_favorite_win_rate": 0.6852,
       "interpretable": true
      },
      {
       "group": "clean data",
-      "n": 316,
-      "boolin_brier": 0.2478,
-      "market_brier": 0.2163,
+      "n": 317,
+      "boolin_brier": 0.2472,
+      "market_brier": 0.2161,
       "brier_paired": {
-       "n": 316,
-       "mean_diff": 0.03145,
-       "se": 0.00888,
-       "t": 3.54,
+       "n": 317,
+       "mean_diff": 0.03116,
+       "se": 0.00885,
+       "t": 3.52,
        "verdict": "market Brier better (t=3.5)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3544,
-      "boolin_side_market_implied": 0.3566,
-      "boolin_side_boolin_implied": 0.5178,
-      "boolin_side_z_vs_market": -0.08,
-      "boolin_beat_market_rate": 0.3544,
-      "boolin_pick_win_rate": 0.5158,
-      "market_favorite_win_rate": 0.6772,
+      "boolin_side_actual_rate": 0.3565,
+      "boolin_side_market_implied": 0.3575,
+      "boolin_side_boolin_implied": 0.5184,
+      "boolin_side_z_vs_market": -0.04,
+      "boolin_beat_market_rate": 0.3565,
+      "boolin_pick_win_rate": 0.5174,
+      "market_favorite_win_rate": 0.6782,
       "interpretable": true
      },
      {
       "group": "early season (<=3 games)",
-      "n": 119,
-      "boolin_brier": 0.2555,
-      "market_brier": 0.2136,
+      "n": 120,
+      "boolin_brier": 0.2556,
+      "market_brier": 0.2133,
       "brier_paired": {
-       "n": 119,
-       "mean_diff": 0.04191,
-       "se": 0.01632,
-       "t": 2.57,
+       "n": 120,
+       "mean_diff": 0.04236,
+       "se": 0.01618,
+       "t": 2.62,
        "verdict": "market Brier better (t=2.6)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3403,
-      "boolin_side_market_implied": 0.3382,
+      "boolin_side_actual_rate": 0.3375,
+      "boolin_side_market_implied": 0.3388,
       "boolin_side_boolin_implied": 0.5198,
-      "boolin_side_z_vs_market": 0.05,
-      "boolin_beat_market_rate": 0.3445,
-      "boolin_pick_win_rate": 0.4664,
-      "market_favorite_win_rate": 0.6765,
+      "boolin_side_z_vs_market": -0.03,
+      "boolin_beat_market_rate": 0.3417,
+      "boolin_pick_win_rate": 0.4625,
+      "market_favorite_win_rate": 0.6792,
       "interpretable": true
      },
      {
       "group": "later season",
       "n": 305,
-      "boolin_brier": 0.2485,
-      "market_brier": 0.2098,
+      "boolin_brier": 0.2482,
+      "market_brier": 0.2099,
       "brier_paired": {
        "n": 305,
-       "mean_diff": 0.03869,
+       "mean_diff": 0.03828,
        "se": 0.00871,
-       "t": 4.44,
+       "t": 4.39,
        "verdict": "market Brier better (t=4.4)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3393,
-      "boolin_side_market_implied": 0.3629,
-      "boolin_side_boolin_implied": 0.5225,
-      "boolin_side_z_vs_market": -0.9,
-      "boolin_beat_market_rate": 0.3377,
+      "boolin_side_actual_rate": 0.3426,
+      "boolin_side_market_implied": 0.3639,
+      "boolin_side_boolin_implied": 0.5235,
+      "boolin_side_z_vs_market": -0.82,
+      "boolin_beat_market_rate": 0.341,
       "boolin_pick_win_rate": 0.5393,
       "market_favorite_win_rate": 0.6803,
       "interpretable": true
      }
     ],
     "games": [
-     {
-      "key": "2023-10-22-NFL-GB-DEN",
-      "date": "2023-10-22",
-      "reasons": [
-       "win probability -11.1 pp"
-      ],
-      "boolin_win_p": 0.4063,
-      "market_win_p": 0.5174,
-      "boolin_pick_won": false,
-      "market_favorite_won": true,
-      "boolin_beat_market": false,
-      "model_confidence": "medium",
-      "sample": 5,
-      "unresolved_injuries": null,
-      "qb_change": false,
-      "starter_unconfirmed": null,
-      "data_health": "clean",
-      "model_version": "baseline-0.2"
-     },
      {
       "key": "2023-10-22-NFL-MIA-PHI",
       "date": "2023-10-22",
@@ -10939,12 +10920,31 @@
       "model_version": "baseline-0.2"
      },
      {
+      "key": "2026-09-20-NFL-CAR-ATL",
+      "date": "2026-09-20",
+      "reasons": [
+       "win probability +10.8 pp"
+      ],
+      "boolin_win_p": 0.5246,
+      "market_win_p": 0.417,
+      "boolin_pick_won": false,
+      "market_favorite_won": true,
+      "boolin_beat_market": false,
+      "model_confidence": "low",
+      "sample": 1,
+      "unresolved_injuries": null,
+      "qb_change": true,
+      "starter_unconfirmed": null,
+      "data_health": "clean",
+      "model_version": "baseline-0.2"
+     },
+     {
       "key": "2026-09-20-NFL-CLE-TB",
       "date": "2026-09-20",
       "reasons": [
-       "win probability -14.7 pp"
+       "win probability -14.9 pp"
       ],
-      "boolin_win_p": 0.6296,
+      "boolin_win_p": 0.628,
       "market_win_p": 0.7768,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -10961,10 +10961,10 @@
       "key": "2026-09-20-NFL-GB-NYJ",
       "date": "2026-09-20",
       "reasons": [
-       "win probability +29.4 pp",
+       "win probability +29.5 pp",
        "spread -9.6 pts"
       ],
-      "boolin_win_p": 0.6717,
+      "boolin_win_p": 0.6722,
       "market_win_p": 0.3775,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -10981,9 +10981,9 @@
       "key": "2026-09-20-NFL-NO-BAL",
       "date": "2026-09-20",
       "reasons": [
-       "win probability -12.4 pp"
+       "win probability -11.9 pp"
       ],
-      "boolin_win_p": 0.6332,
+      "boolin_win_p": 0.6385,
       "market_win_p": 0.7572,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -11000,10 +11000,10 @@
       "key": "2026-09-20-NFL-PHI-TEN",
       "date": "2026-09-20",
       "reasons": [
-       "win probability +23.2 pp",
-       "spread -7.0 pts"
+       "win probability +22.6 pp",
+       "spread -6.7 pts"
       ],
-      "boolin_win_p": 0.4988,
+      "boolin_win_p": 0.4921,
       "market_win_p": 0.2665,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11020,9 +11020,9 @@
       "key": "2026-09-20-NFL-PIT-NE",
       "date": "2026-09-20",
       "reasons": [
-       "win probability -11.4 pp"
+       "win probability -10.9 pp"
       ],
-      "boolin_win_p": 0.5499,
+      "boolin_win_p": 0.5549,
       "market_win_p": 0.6636,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11039,10 +11039,10 @@
       "key": "2026-09-20-NFL-JAX-DEN",
       "date": "2026-09-20",
       "reasons": [
-       "win probability -25.1 pp",
+       "win probability -25.0 pp",
        "spread +8.8 pts"
       ],
-      "boolin_win_p": 0.3212,
+      "boolin_win_p": 0.322,
       "market_win_p": 0.5721,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -11059,10 +11059,10 @@
       "key": "2026-09-20-NFL-LV-LAC",
       "date": "2026-09-20",
       "reasons": [
-       "win probability -26.6 pp",
-       "spread +7.6 pts"
+       "win probability -26.4 pp",
+       "spread +7.5 pts"
       ],
-      "boolin_win_p": 0.4678,
+      "boolin_win_p": 0.4693,
       "market_win_p": 0.7335,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -11079,10 +11079,10 @@
       "key": "2026-09-20-NFL-MIA-SF",
       "date": "2026-09-20",
       "reasons": [
-       "win probability -16.9 pp",
+       "win probability -17.0 pp",
        "spread +5.6 pts"
       ],
-      "boolin_win_p": 0.6942,
+      "boolin_win_p": 0.6929,
       "market_win_p": 0.863,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11099,10 +11099,10 @@
       "key": "2026-09-20-NFL-SEA-ARI",
       "date": "2026-09-20",
       "reasons": [
-       "win probability +24.1 pp",
-       "spread -6.4 pts"
+       "win probability +24.7 pp",
+       "spread -6.6 pts"
       ],
-      "boolin_win_p": 0.584,
+      "boolin_win_p": 0.5897,
       "market_win_p": 0.3425,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -11119,10 +11119,10 @@
       "key": "2026-09-21-NFL-NYG-LA",
       "date": "2026-09-21",
       "reasons": [
-       "win probability -30.4 pp",
-       "spread +9.5 pts"
+       "win probability -29.7 pp",
+       "spread +9.2 pts"
       ],
-      "boolin_win_p": 0.414,
+      "boolin_win_p": 0.4212,
       "market_win_p": 0.718,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -11139,10 +11139,10 @@
       "key": "2026-09-27-NFL-KC-MIA",
       "date": "2026-09-27",
       "reasons": [
-       "win probability +19.9 pp",
-       "spread -5.7 pts"
+       "win probability +20.2 pp",
+       "spread -5.8 pts"
       ],
-      "boolin_win_p": 0.3768,
+      "boolin_win_p": 0.3795,
       "market_win_p": 0.1777,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11159,10 +11159,10 @@
       "key": "2026-09-27-NFL-NYJ-DET",
       "date": "2026-09-27",
       "reasons": [
-       "win probability -20.8 pp",
-       "spread +6.1 pts"
+       "win probability -21.1 pp",
+       "spread +6.2 pts"
       ],
-      "boolin_win_p": 0.5257,
+      "boolin_win_p": 0.5225,
       "market_win_p": 0.7335,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11199,9 +11199,9 @@
       "key": "2026-09-27-NFL-BAL-DAL",
       "date": "2026-09-27",
       "reasons": [
-       "win probability +14.3 pp"
+       "win probability +14.0 pp"
       ],
-      "boolin_win_p": 0.5394,
+      "boolin_win_p": 0.5362,
       "market_win_p": 0.3962,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -11218,10 +11218,10 @@
       "key": "2026-09-28-NFL-PHI-CHI",
       "date": "2026-09-28",
       "reasons": [
-       "win probability +23.2 pp",
-       "spread -6.8 pts"
+       "win probability +23.7 pp",
+       "spread -7.0 pts"
       ],
-      "boolin_win_p": 0.5954,
+      "boolin_win_p": 0.6002,
       "market_win_p": 0.3631,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -11238,10 +11238,10 @@
       "key": "2026-10-01-NFL-PIT-CLE",
       "date": "2026-10-01",
       "reasons": [
-       "win probability +17.1 pp",
-       "spread -5.9 pts"
+       "win probability +17.4 pp",
+       "spread -6.0 pts"
       ],
-      "boolin_win_p": 0.5985,
+      "boolin_win_p": 0.6019,
       "market_win_p": 0.4279,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -11258,10 +11258,10 @@
       "key": "2026-10-04-NFL-IND-WAS",
       "date": "2026-10-04",
       "reasons": [
-       "win probability +27.4 pp",
-       "spread -8.1 pts"
+       "win probability +27.6 pp",
+       "spread -8.2 pts"
       ],
-      "boolin_win_p": 0.605,
+      "boolin_win_p": 0.6075,
       "market_win_p": 0.331,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -11278,9 +11278,9 @@
       "key": "2026-10-04-NFL-DAL-HOU",
       "date": "2026-10-04",
       "reasons": [
-       "win probability -12.8 pp"
+       "win probability -12.7 pp"
       ],
-      "boolin_win_p": 0.455,
+      "boolin_win_p": 0.4556,
       "market_win_p": 0.583,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -11297,9 +11297,9 @@
       "key": "2026-10-04-NFL-GB-TB",
       "date": "2026-10-04",
       "reasons": [
-       "win probability +13.9 pp"
+       "win probability +14.1 pp"
       ],
-      "boolin_win_p": 0.556,
+      "boolin_win_p": 0.5575,
       "market_win_p": 0.417,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -11316,9 +11316,9 @@
       "key": "2026-10-04-NFL-LA-PHI",
       "date": "2026-10-04",
       "reasons": [
-       "win probability +12.8 pp"
+       "win probability +12.3 pp"
       ],
-      "boolin_win_p": 0.4912,
+      "boolin_win_p": 0.4865,
       "market_win_p": 0.3631,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11335,9 +11335,9 @@
       "key": "2026-10-04-NFL-TEN-BAL",
       "date": "2026-10-04",
       "reasons": [
-       "win probability -16.0 pp"
+       "win probability -15.7 pp"
       ],
-      "boolin_win_p": 0.6929,
+      "boolin_win_p": 0.6957,
       "market_win_p": 0.8525,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11354,9 +11354,9 @@
       "key": "2026-10-04-NFL-MIA-MIN",
       "date": "2026-10-04",
       "reasons": [
-       "win probability -11.6 pp"
+       "win probability -11.8 pp"
       ],
-      "boolin_win_p": 0.6918,
+      "boolin_win_p": 0.69,
       "market_win_p": 0.8082,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11373,10 +11373,10 @@
       "key": "2026-10-04-NFL-DEN-SF",
       "date": "2026-10-04",
       "reasons": [
-       "win probability +17.0 pp",
-       "spread -7.1 pts"
+       "win probability +17.6 pp",
+       "spread -7.3 pts"
       ],
-      "boolin_win_p": 0.7698,
+      "boolin_win_p": 0.7753,
       "market_win_p": 0.5996,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11393,9 +11393,9 @@
       "key": "2026-10-04-NFL-KC-LV",
       "date": "2026-10-04",
       "reasons": [
-       "win probability +16.8 pp"
+       "win probability +17.5 pp"
       ],
-      "boolin_win_p": 0.5047,
+      "boolin_win_p": 0.5111,
       "market_win_p": 0.3364,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -11412,10 +11412,10 @@
       "key": "2026-10-04-NFL-DET-CAR",
       "date": "2026-10-04",
       "reasons": [
-       "win probability +20.8 pp",
-       "spread -6.0 pts"
+       "win probability +20.0 pp",
+       "spread -5.7 pts"
       ],
-      "boolin_win_p": 0.5444,
+      "boolin_win_p": 0.536,
       "market_win_p": 0.3364,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -11432,9 +11432,9 @@
       "key": "2026-10-05-NFL-ATL-NO",
       "date": "2026-10-05",
       "reasons": [
-       "win probability +10.6 pp"
+       "win probability +10.2 pp"
       ],
-      "boolin_win_p": 0.6238,
+      "boolin_win_p": 0.6196,
       "market_win_p": 0.5174,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -11451,9 +11451,9 @@
       "key": "2026-10-08-NFL-TB-DAL",
       "date": "2026-10-08",
       "reasons": [
-       "win probability -10.9 pp"
+       "win probability -10.7 pp"
       ],
-      "boolin_win_p": 0.6996,
+      "boolin_win_p": 0.7011,
       "market_win_p": 0.8082,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -11470,9 +11470,9 @@
       "key": "2026-10-11-NFL-CIN-MIA",
       "date": "2026-10-11",
       "reasons": [
-       "win probability +12.4 pp"
+       "win probability +12.0 pp"
       ],
-      "boolin_win_p": 0.3765,
+      "boolin_win_p": 0.372,
       "market_win_p": 0.2522,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11509,10 +11509,10 @@
       "key": "2026-10-11-NFL-LV-NE",
       "date": "2026-10-11",
       "reasons": [
-       "win probability -16.1 pp",
-       "spread +5.0 pts"
+       "win probability -16.8 pp",
+       "spread +5.3 pts"
       ],
-      "boolin_win_p": 0.4556,
+      "boolin_win_p": 0.4483,
       "market_win_p": 0.6164,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -11529,9 +11529,9 @@
       "key": "2026-10-11-NFL-DEN-LAC",
       "date": "2026-10-11",
       "reasons": [
-       "win probability +11.6 pp"
+       "win probability +11.9 pp"
       ],
-      "boolin_win_p": 0.4851,
+      "boolin_win_p": 0.488,
       "market_win_p": 0.3691,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11548,10 +11548,9 @@
       "key": "2026-10-11-NFL-DET-ARI",
       "date": "2026-10-11",
       "reasons": [
-       "win probability +18.4 pp",
-       "spread -5.1 pts"
+       "win probability +18.0 pp"
       ],
-      "boolin_win_p": 0.488,
+      "boolin_win_p": 0.4845,
       "market_win_p": 0.3042,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11568,10 +11567,10 @@
       "key": "2026-10-11-NFL-SF-SEA",
       "date": "2026-10-11",
       "reasons": [
-       "win probability -17.8 pp",
-       "spread +5.7 pts"
+       "win probability -17.3 pp",
+       "spread +5.5 pts"
       ],
-      "boolin_win_p": 0.4215,
+      "boolin_win_p": 0.4264,
       "market_win_p": 0.5996,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -11588,10 +11587,10 @@
       "key": "2026-10-11-NFL-BAL-ATL",
       "date": "2026-10-11",
       "reasons": [
-       "win probability -16.6 pp",
-       "spread +5.4 pts"
+       "win probability -16.2 pp",
+       "spread +5.3 pts"
       ],
-      "boolin_win_p": 0.4437,
+      "boolin_win_p": 0.4472,
       "market_win_p": 0.6092,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -11608,9 +11607,9 @@
       "key": "2026-10-12-NFL-BUF-LA",
       "date": "2026-10-12",
       "reasons": [
-       "win probability -11.7 pp"
+       "win probability -11.2 pp"
       ],
-      "boolin_win_p": 0.5059,
+      "boolin_win_p": 0.5102,
       "market_win_p": 0.6225,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -11627,9 +11626,9 @@
       "key": "2026-10-15-NFL-SEA-DEN",
       "date": "2026-10-15",
       "reasons": [
-       "win probability +11.8 pp"
+       "win probability +11.3 pp"
       ],
-      "boolin_win_p": 0.5351,
+      "boolin_win_p": 0.5301,
       "market_win_p": 0.417,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -11646,9 +11645,9 @@
       "key": "2026-10-18-NFL-NYJ-NE",
       "date": "2026-10-18",
       "reasons": [
-       "win probability -14.6 pp"
+       "win probability -15.8 pp"
       ],
-      "boolin_win_p": 0.5985,
+      "boolin_win_p": 0.5865,
       "market_win_p": 0.7441,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11665,9 +11664,9 @@
       "key": "2026-10-18-NFL-TEN-IND",
       "date": "2026-10-18",
       "reasons": [
-       "win probability -10.0 pp"
+       "win probability -10.1 pp"
       ],
-      "boolin_win_p": 0.6179,
+      "boolin_win_p": 0.6171,
       "market_win_p": 0.718,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -11684,10 +11683,10 @@
       "key": "2026-10-18-NFL-ARI-LA",
       "date": "2026-10-18",
       "reasons": [
-       "win probability -16.1 pp",
-       "spread +6.2 pts"
+       "win probability -16.0 pp",
+       "spread +6.1 pts"
       ],
-      "boolin_win_p": 0.6791,
+      "boolin_win_p": 0.6801,
       "market_win_p": 0.84,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -11704,9 +11703,9 @@
       "key": "2026-10-18-NFL-BUF-LV",
       "date": "2026-10-18",
       "reasons": [
-       "win probability +15.4 pp"
+       "win probability +15.5 pp"
       ],
-      "boolin_win_p": 0.4792,
+      "boolin_win_p": 0.4801,
       "market_win_p": 0.325,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11742,10 +11741,10 @@
       "key": "2026-10-25-NFL-CIN-BAL",
       "date": "2026-10-25",
       "reasons": [
-       "win probability +16.2 pp",
+       "win probability +16.3 pp",
        "spread -5.4 pts"
       ],
-      "boolin_win_p": 0.569,
+      "boolin_win_p": 0.5693,
       "market_win_p": 0.4066,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -11762,10 +11761,10 @@
       "key": "2026-10-25-NFL-NYG-HOU",
       "date": "2026-10-25",
       "reasons": [
-       "win probability -19.1 pp",
-       "spread +6.1 pts"
+       "win probability -18.9 pp",
+       "spread +6.0 pts"
       ],
-      "boolin_win_p": 0.6137,
+      "boolin_win_p": 0.6149,
       "market_win_p": 0.8043,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -11782,10 +11781,10 @@
       "key": "2026-10-25-NFL-DEN-ARI",
       "date": "2026-10-25",
       "reasons": [
-       "win probability +18.6 pp",
+       "win probability +18.7 pp",
        "spread -5.1 pts"
       ],
-      "boolin_win_p": 0.517,
+      "boolin_win_p": 0.5181,
       "market_win_p": 0.331,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -11802,9 +11801,9 @@
       "key": "2026-10-25-NFL-LA-LV",
       "date": "2026-10-25",
       "reasons": [
-       "win probability +14.6 pp"
+       "win probability +15.2 pp"
       ],
-      "boolin_win_p": 0.5298,
+      "boolin_win_p": 0.5357,
       "market_win_p": 0.3836,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -11821,10 +11820,10 @@
       "key": "2026-10-25-NFL-KC-SEA",
       "date": "2026-10-25",
       "reasons": [
-       "win probability -19.0 pp",
-       "spread +6.3 pts"
+       "win probability -18.5 pp",
+       "spread +6.2 pts"
       ],
-      "boolin_win_p": 0.4032,
+      "boolin_win_p": 0.408,
       "market_win_p": 0.5934,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -11841,9 +11840,9 @@
       "key": "2026-11-01-NFL-NE-MIA",
       "date": "2026-11-01",
       "reasons": [
-       "win probability +15.4 pp"
+       "win probability +15.3 pp"
       ],
-      "boolin_win_p": 0.4095,
+      "boolin_win_p": 0.4089,
       "market_win_p": 0.2559,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11860,30 +11859,11 @@
       "key": "2026-11-05-NFL-JAX-BAL",
       "date": "2026-11-05",
       "reasons": [
-       "win probability +19.9 pp",
-       "spread -5.5 pts"
+       "win probability +19.6 pp",
+       "spread -5.4 pts"
       ],
-      "boolin_win_p": 0.4126,
+      "boolin_win_p": 0.4098,
       "market_win_p": 0.2133,
-      "boolin_pick_won": true,
-      "market_favorite_won": true,
-      "boolin_beat_market": false,
-      "model_confidence": "high",
-      "sample": 7,
-      "unresolved_injuries": null,
-      "qb_change": true,
-      "starter_unconfirmed": null,
-      "data_health": "clean",
-      "model_version": "baseline-0.2"
-     },
-     {
-      "key": "2026-11-08-NFL-CLE-NO",
-      "date": "2026-11-08",
-      "reasons": [
-       "win probability -10.1 pp"
-      ],
-      "boolin_win_p": 0.5624,
-      "market_win_p": 0.6636,
       "boolin_pick_won": true,
       "market_favorite_won": true,
       "boolin_beat_market": false,
@@ -11899,9 +11879,9 @@
       "key": "2026-11-08-NFL-DEN-CAR",
       "date": "2026-11-08",
       "reasons": [
-       "win probability +13.3 pp"
+       "win probability +13.0 pp"
       ],
-      "boolin_win_p": 0.5496,
+      "boolin_win_p": 0.5473,
       "market_win_p": 0.417,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -11918,9 +11898,9 @@
       "key": "2026-11-08-NFL-DET-MIA",
       "date": "2026-11-08",
       "reasons": [
-       "win probability +13.4 pp"
+       "win probability +12.3 pp"
       ],
-      "boolin_win_p": 0.4118,
+      "boolin_win_p": 0.4007,
       "market_win_p": 0.2779,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11937,9 +11917,9 @@
       "key": "2026-11-08-NFL-LA-WAS",
       "date": "2026-11-08",
       "reasons": [
-       "win probability +10.8 pp"
+       "win probability +10.1 pp"
       ],
-      "boolin_win_p": 0.4443,
+      "boolin_win_p": 0.437,
       "market_win_p": 0.3364,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11956,9 +11936,9 @@
       "key": "2026-11-08-NFL-NYJ-KC",
       "date": "2026-11-08",
       "reasons": [
-       "win probability -14.7 pp"
+       "win probability -15.2 pp"
       ],
-      "boolin_win_p": 0.6578,
+      "boolin_win_p": 0.6527,
       "market_win_p": 0.8043,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11975,10 +11955,10 @@
       "key": "2026-11-08-NFL-ARI-SEA",
       "date": "2026-11-08",
       "reasons": [
-       "win probability -18.8 pp",
+       "win probability -18.9 pp",
        "spread +5.1 pts"
       ],
-      "boolin_win_p": 0.5985,
+      "boolin_win_p": 0.5976,
       "market_win_p": 0.7867,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -11995,10 +11975,9 @@
       "key": "2026-11-15-NFL-BUF-NYJ",
       "date": "2026-11-15",
       "reasons": [
-       "win probability +19.8 pp",
-       "spread -5.1 pts"
+       "win probability +19.4 pp"
       ],
-      "boolin_win_p": 0.4021,
+      "boolin_win_p": 0.3981,
       "market_win_p": 0.2042,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -12015,9 +11994,9 @@
       "key": "2026-11-15-NFL-JAX-TEN",
       "date": "2026-11-15",
       "reasons": [
-       "win probability +13.5 pp"
+       "win probability +13.3 pp"
       ],
-      "boolin_win_p": 0.3033,
+      "boolin_win_p": 0.3017,
       "market_win_p": 0.1684,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -12034,9 +12013,9 @@
       "key": "2026-11-15-NFL-MIA-IND",
       "date": "2026-11-15",
       "reasons": [
-       "win probability -13.8 pp"
+       "win probability -13.4 pp"
       ],
-      "boolin_win_p": 0.5252,
+      "boolin_win_p": 0.5298,
       "market_win_p": 0.6636,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -12056,7 +12035,7 @@
        "win probability +20.7 pp",
        "spread -6.4 pts"
       ],
-      "boolin_win_p": 0.395,
+      "boolin_win_p": 0.3953,
       "market_win_p": 0.1881,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -12073,10 +12052,10 @@
       "key": "2026-11-15-NFL-SEA-LV",
       "date": "2026-11-15",
       "reasons": [
-       "win probability +23.3 pp",
-       "spread -7.0 pts"
+       "win probability +24.3 pp",
+       "spread -7.3 pts"
       ],
-      "boolin_win_p": 0.5149,
+      "boolin_win_p": 0.5246,
       "market_win_p": 0.282,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -12093,9 +12072,9 @@
       "key": "2026-11-19-NFL-IND-HOU",
       "date": "2026-11-19",
       "reasons": [
-       "win probability -10.9 pp"
+       "win probability -10.7 pp"
       ],
-      "boolin_win_p": 0.7386,
+      "boolin_win_p": 0.7415,
       "market_win_p": 0.8481,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -12112,10 +12091,10 @@
       "key": "2026-11-22-NFL-MIA-BUF",
       "date": "2026-11-22",
       "reasons": [
-       "win probability -12.7 pp",
-       "spread +5.8 pts"
+       "win probability -12.2 pp",
+       "spread +5.6 pts"
       ],
-      "boolin_win_p": 0.784,
+      "boolin_win_p": 0.7889,
       "market_win_p": 0.911,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -12132,9 +12111,9 @@
       "key": "2026-11-22-NFL-NO-CHI",
       "date": "2026-11-22",
       "reasons": [
-       "win probability -14.8 pp"
+       "win probability -15.3 pp"
       ],
-      "boolin_win_p": 0.688,
+      "boolin_win_p": 0.6838,
       "market_win_p": 0.8365,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -12151,10 +12130,10 @@
       "key": "2026-11-22-NFL-NYJ-LAC",
       "date": "2026-11-22",
       "reasons": [
-       "win probability -19.2 pp",
-       "spread +5.5 pts"
+       "win probability -18.9 pp",
+       "spread +5.4 pts"
       ],
-      "boolin_win_p": 0.4272,
+      "boolin_win_p": 0.4293,
       "market_win_p": 0.6188,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -12171,14 +12150,34 @@
       "key": "2026-11-22-NFL-LV-DEN",
       "date": "2026-11-22",
       "reasons": [
-       "win probability -19.4 pp",
-       "spread +6.7 pts"
+       "win probability -20.2 pp",
+       "spread +6.9 pts"
       ],
-      "boolin_win_p": 0.6387,
+      "boolin_win_p": 0.631,
       "market_win_p": 0.8326,
       "boolin_pick_won": true,
       "market_favorite_won": true,
       "boolin_beat_market": false,
+      "model_confidence": "high",
+      "sample": 9,
+      "unresolved_injuries": null,
+      "qb_change": false,
+      "starter_unconfirmed": null,
+      "data_health": "clean",
+      "model_version": "baseline-0.2"
+     },
+     {
+      "key": "2026-11-22-NFL-MIN-SF",
+      "date": "2026-11-22",
+      "reasons": [
+       "win probability +12.5 pp",
+       "spread -5.5 pts"
+      ],
+      "boolin_win_p": 0.7687,
+      "market_win_p": 0.644,
+      "boolin_pick_won": true,
+      "market_favorite_won": true,
+      "boolin_beat_market": true,
       "model_confidence": "high",
       "sample": 9,
       "unresolved_injuries": null,
@@ -12192,12 +12191,12 @@
      {
       "hypothesis": "useful contrarian signal",
       "verdict": "contradicted",
-      "evidence": "n=424; Boolin side won 0.3396 vs market-implied 0.356 (Boolin said 0.5218); market Brier better (t=5.1)"
+      "evidence": "n=425; Boolin side won 0.3412 vs market-implied 0.3569 (Boolin said 0.5225); market Brier better (t=5.1)"
      },
      {
       "hypothesis": "early-season / small-sample instability",
       "verdict": "supported",
-      "evidence": "119 of 424 extremes (28%) vs 20% of all games; extreme rate 50% in this context vs 31% outside (x1.6)"
+      "evidence": "120 of 425 extremes (28%) vs 20% of all games; extreme rate 50% in this context vs 31% outside (x1.6)"
      },
      {
       "hypothesis": "stale or incomplete data",
@@ -12207,12 +12206,12 @@
      {
       "hypothesis": "missing player-level information",
       "verdict": "not supported",
-      "evidence": "108 of 424 extremes (25%) vs 21% of all games; extreme rate 41% in this context vs 33% outside (x1.3)"
+      "evidence": "108 of 425 extremes (25%) vs 21% of all games; extreme rate 41% in this context vs 33% outside (x1.3)"
      },
      {
       "hypothesis": "systematic model bias",
       "verdict": "supported",
-      "evidence": "Boolin's side is the market underdog in 89% of extremes and the home team in 55%; overall home calibration-in-the-large 0.006 (mean predicted minus actual home win)"
+      "evidence": "Boolin's side is the market underdog in 88% of extremes and the home team in 56%; overall home calibration-in-the-large 0.006 (mean predicted minus actual home win)"
      }
     ]
    },
@@ -12228,44 +12227,44 @@
     "groups": [
      {
       "group": "all extreme disagreements",
-      "n": 1270,
-      "boolin_brier": 0.2409,
+      "n": 1271,
+      "boolin_brier": 0.2408,
       "market_brier": 0.2055,
       "brier_paired": {
-       "n": 1270,
-       "mean_diff": 0.03536,
+       "n": 1271,
+       "mean_diff": 0.03532,
        "se": 0.0043,
-       "t": 8.22,
+       "t": 8.21,
        "verdict": "market Brier better (t=8.2)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3264,
-      "boolin_side_market_implied": 0.3372,
-      "boolin_side_boolin_implied": 0.4986,
-      "boolin_side_z_vs_market": -0.85,
-      "boolin_beat_market_rate": 0.3268,
-      "boolin_pick_win_rate": 0.576,
-      "market_favorite_win_rate": 0.6862,
+      "boolin_side_actual_rate": 0.3269,
+      "boolin_side_market_implied": 0.3375,
+      "boolin_side_boolin_implied": 0.4989,
+      "boolin_side_z_vs_market": -0.83,
+      "boolin_beat_market_rate": 0.3273,
+      "boolin_pick_win_rate": 0.5755,
+      "market_favorite_win_rate": 0.6865,
       "interpretable": true
      },
      {
       "group": "high confidence",
       "n": 725,
-      "boolin_brier": 0.2329,
+      "boolin_brier": 0.2327,
       "market_brier": 0.1966,
       "brier_paired": {
        "n": 725,
-       "mean_diff": 0.03631,
-       "se": 0.00546,
-       "t": 6.64,
+       "mean_diff": 0.0361,
+       "se": 0.00547,
+       "t": 6.6,
        "verdict": "market Brier better (t=6.6)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3124,
-      "boolin_side_market_implied": 0.3358,
-      "boolin_side_boolin_implied": 0.4927,
-      "boolin_side_z_vs_market": -1.39,
-      "boolin_beat_market_rate": 0.3117,
+      "boolin_side_actual_rate": 0.3138,
+      "boolin_side_market_implied": 0.3363,
+      "boolin_side_boolin_implied": 0.4931,
+      "boolin_side_z_vs_market": -1.34,
+      "boolin_beat_market_rate": 0.3131,
       "boolin_pick_win_rate": 0.5938,
       "market_favorite_win_rate": 0.711,
       "interpretable": true
@@ -12273,13 +12272,13 @@
      {
       "group": "medium confidence",
       "n": 304,
-      "boolin_brier": 0.256,
+      "boolin_brier": 0.2561,
       "market_brier": 0.2177,
       "brier_paired": {
        "n": 304,
-       "mean_diff": 0.03831,
+       "mean_diff": 0.03841,
        "se": 0.00866,
-       "t": 4.42,
+       "t": 4.44,
        "verdict": "market Brier better (t=4.4)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
@@ -12294,66 +12293,66 @@
      },
      {
       "group": "low confidence",
-      "n": 241,
-      "boolin_brier": 0.2458,
-      "market_brier": 0.217,
+      "n": 242,
+      "boolin_brier": 0.2459,
+      "market_brier": 0.2169,
       "brier_paired": {
-       "n": 241,
-       "mean_diff": 0.02881,
-       "se": 0.01121,
-       "t": 2.57,
+       "n": 242,
+       "mean_diff": 0.02907,
+       "se": 0.01116,
+       "t": 2.6,
        "verdict": "market Brier better (t=2.6)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3755,
-      "boolin_side_market_implied": 0.3238,
+      "boolin_side_actual_rate": 0.374,
+      "boolin_side_market_implied": 0.3242,
       "boolin_side_boolin_implied": 0.5042,
-      "boolin_side_z_vs_market": 1.77,
-      "boolin_beat_market_rate": 0.3776,
-      "boolin_pick_win_rate": 0.5539,
-      "market_favorite_win_rate": 0.6452,
+      "boolin_side_z_vs_market": 1.71,
+      "boolin_beat_market_rate": 0.376,
+      "boolin_pick_win_rate": 0.5517,
+      "market_favorite_win_rate": 0.6467,
       "interpretable": true
      },
      {
       "group": "small samples",
-      "n": 241,
-      "boolin_brier": 0.2458,
-      "market_brier": 0.217,
+      "n": 242,
+      "boolin_brier": 0.2459,
+      "market_brier": 0.2169,
       "brier_paired": {
-       "n": 241,
-       "mean_diff": 0.02881,
-       "se": 0.01121,
-       "t": 2.57,
+       "n": 242,
+       "mean_diff": 0.02907,
+       "se": 0.01116,
+       "t": 2.6,
        "verdict": "market Brier better (t=2.6)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3755,
-      "boolin_side_market_implied": 0.3238,
+      "boolin_side_actual_rate": 0.374,
+      "boolin_side_market_implied": 0.3242,
       "boolin_side_boolin_implied": 0.5042,
-      "boolin_side_z_vs_market": 1.77,
-      "boolin_beat_market_rate": 0.3776,
-      "boolin_pick_win_rate": 0.5539,
-      "market_favorite_win_rate": 0.6452,
+      "boolin_side_z_vs_market": 1.71,
+      "boolin_beat_market_rate": 0.376,
+      "boolin_pick_win_rate": 0.5517,
+      "market_favorite_win_rate": 0.6467,
       "interpretable": true
      },
      {
       "group": "normal samples",
       "n": 1029,
-      "boolin_brier": 0.2398,
+      "boolin_brier": 0.2397,
       "market_brier": 0.2029,
       "brier_paired": {
        "n": 1029,
-       "mean_diff": 0.0369,
+       "mean_diff": 0.03679,
        "se": 0.00462,
-       "t": 7.99,
+       "t": 7.96,
        "verdict": "market Brier better (t=8.0)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3149,
-      "boolin_side_market_implied": 0.3404,
-      "boolin_side_boolin_implied": 0.4973,
-      "boolin_side_z_vs_market": -1.8,
-      "boolin_beat_market_rate": 0.3149,
+      "boolin_side_actual_rate": 0.3158,
+      "boolin_side_market_implied": 0.3407,
+      "boolin_side_boolin_implied": 0.4976,
+      "boolin_side_z_vs_market": -1.75,
+      "boolin_beat_market_rate": 0.3158,
       "boolin_pick_win_rate": 0.5811,
       "market_favorite_win_rate": 0.6958,
       "interpretable": true
@@ -12361,112 +12360,93 @@
      {
       "group": "injury / player uncertainty",
       "n": 283,
-      "boolin_brier": 0.2513,
-      "market_brier": 0.1927,
+      "boolin_brier": 0.2517,
+      "market_brier": 0.1929,
       "brier_paired": {
        "n": 283,
-       "mean_diff": 0.05861,
+       "mean_diff": 0.05872,
        "se": 0.01,
-       "t": 5.86,
+       "t": 5.87,
        "verdict": "market Brier better (t=5.9)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
       "boolin_side_actual_rate": 0.2862,
-      "boolin_side_market_implied": 0.3271,
-      "boolin_side_boolin_implied": 0.507,
-      "boolin_side_z_vs_market": -1.53,
+      "boolin_side_market_implied": 0.3273,
+      "boolin_side_boolin_implied": 0.5073,
+      "boolin_side_z_vs_market": -1.54,
       "boolin_beat_market_rate": 0.2862,
-      "boolin_pick_win_rate": 0.5548,
+      "boolin_pick_win_rate": 0.5512,
       "market_favorite_win_rate": 0.7173,
       "interpretable": true
      },
      {
       "group": "clean data",
-      "n": 987,
-      "boolin_brier": 0.2379,
-      "market_brier": 0.2092,
+      "n": 988,
+      "boolin_brier": 0.2378,
+      "market_brier": 0.2091,
       "brier_paired": {
-       "n": 987,
-       "mean_diff": 0.0287,
+       "n": 988,
+       "mean_diff": 0.02861,
        "se": 0.00472,
-       "t": 6.08,
+       "t": 6.07,
        "verdict": "market Brier better (t=6.1)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3379,
-      "boolin_side_market_implied": 0.3401,
-      "boolin_side_boolin_implied": 0.4962,
-      "boolin_side_z_vs_market": -0.15,
-      "boolin_beat_market_rate": 0.3384,
-      "boolin_pick_win_rate": 0.5821,
-      "market_favorite_win_rate": 0.6773,
+      "boolin_side_actual_rate": 0.3386,
+      "boolin_side_market_implied": 0.3405,
+      "boolin_side_boolin_implied": 0.4965,
+      "boolin_side_z_vs_market": -0.13,
+      "boolin_beat_market_rate": 0.3391,
+      "boolin_pick_win_rate": 0.5825,
+      "market_favorite_win_rate": 0.6776,
       "interpretable": true
      },
      {
       "group": "early season (<=3 games)",
-      "n": 354,
+      "n": 355,
       "boolin_brier": 0.2472,
-      "market_brier": 0.2121,
+      "market_brier": 0.212,
       "brier_paired": {
-       "n": 354,
-       "mean_diff": 0.03509,
-       "se": 0.0089,
-       "t": 3.94,
-       "verdict": "market Brier better (t=3.9)",
+       "n": 355,
+       "mean_diff": 0.03527,
+       "se": 0.00887,
+       "t": 3.98,
+       "verdict": "market Brier better (t=4.0)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3503,
-      "boolin_side_market_implied": 0.3302,
+      "boolin_side_actual_rate": 0.3493,
+      "boolin_side_market_implied": 0.3304,
       "boolin_side_boolin_implied": 0.5055,
-      "boolin_side_z_vs_market": 0.83,
-      "boolin_beat_market_rate": 0.3531,
-      "boolin_pick_win_rate": 0.5621,
-      "market_favorite_win_rate": 0.6525,
+      "boolin_side_z_vs_market": 0.78,
+      "boolin_beat_market_rate": 0.3521,
+      "boolin_pick_win_rate": 0.5606,
+      "market_favorite_win_rate": 0.6535,
       "interpretable": true
      },
      {
       "group": "later season",
       "n": 916,
-      "boolin_brier": 0.2385,
+      "boolin_brier": 0.2384,
       "market_brier": 0.203,
       "brier_paired": {
        "n": 916,
-       "mean_diff": 0.03547,
+       "mean_diff": 0.03534,
        "se": 0.00488,
-       "t": 7.27,
-       "verdict": "market Brier better (t=7.3)",
+       "t": 7.24,
+       "verdict": "market Brier better (t=7.2)",
        "note": "mean of Boolin minus market per-game Brier; negative favours Boolin"
       },
-      "boolin_side_actual_rate": 0.3171,
-      "boolin_side_market_implied": 0.34,
-      "boolin_side_boolin_implied": 0.496,
-      "boolin_side_z_vs_market": -1.52,
-      "boolin_beat_market_rate": 0.3166,
+      "boolin_side_actual_rate": 0.3182,
+      "boolin_side_market_implied": 0.3403,
+      "boolin_side_boolin_implied": 0.4963,
+      "boolin_side_z_vs_market": -1.47,
+      "boolin_beat_market_rate": 0.3177,
       "boolin_pick_win_rate": 0.5813,
       "market_favorite_win_rate": 0.6992,
       "interpretable": true
      }
     ],
     "games": [
-     {
-      "key": "2023-10-22-NFL-GB-DEN",
-      "date": "2023-10-22",
-      "reasons": [
-       "win probability -11.1 pp"
-      ],
-      "boolin_win_p": 0.4063,
-      "market_win_p": 0.5174,
-      "boolin_pick_won": false,
-      "market_favorite_won": true,
-      "boolin_beat_market": false,
-      "model_confidence": "medium",
-      "sample": 5,
-      "unresolved_injuries": null,
-      "qb_change": false,
-      "starter_unconfirmed": null,
-      "data_health": "clean",
-      "model_version": "baseline-0.2"
-     },
      {
       "key": "2023-10-22-NFL-MIA-PHI",
       "date": "2023-10-22",
@@ -17048,12 +17028,31 @@
       "model_version": "baseline-0.2"
      },
      {
+      "key": "2026-09-20-NFL-CAR-ATL",
+      "date": "2026-09-20",
+      "reasons": [
+       "win probability +10.8 pp"
+      ],
+      "boolin_win_p": 0.5246,
+      "market_win_p": 0.417,
+      "boolin_pick_won": false,
+      "market_favorite_won": true,
+      "boolin_beat_market": false,
+      "model_confidence": "low",
+      "sample": 1,
+      "unresolved_injuries": null,
+      "qb_change": true,
+      "starter_unconfirmed": null,
+      "data_health": "clean",
+      "model_version": "baseline-0.2"
+     },
+     {
       "key": "2026-09-20-NFL-CLE-TB",
       "date": "2026-09-20",
       "reasons": [
-       "win probability -14.7 pp"
+       "win probability -14.9 pp"
       ],
-      "boolin_win_p": 0.6296,
+      "boolin_win_p": 0.628,
       "market_win_p": 0.7768,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -17070,10 +17069,10 @@
       "key": "2026-09-20-NFL-GB-NYJ",
       "date": "2026-09-20",
       "reasons": [
-       "win probability +29.4 pp",
+       "win probability +29.5 pp",
        "spread -9.6 pts"
       ],
-      "boolin_win_p": 0.6717,
+      "boolin_win_p": 0.6722,
       "market_win_p": 0.3775,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -17090,9 +17089,9 @@
       "key": "2026-09-20-NFL-NO-BAL",
       "date": "2026-09-20",
       "reasons": [
-       "win probability -12.4 pp"
+       "win probability -11.9 pp"
       ],
-      "boolin_win_p": 0.6332,
+      "boolin_win_p": 0.6385,
       "market_win_p": 0.7572,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -17109,10 +17108,10 @@
       "key": "2026-09-20-NFL-PHI-TEN",
       "date": "2026-09-20",
       "reasons": [
-       "win probability +23.2 pp",
-       "spread -7.0 pts"
+       "win probability +22.6 pp",
+       "spread -6.7 pts"
       ],
-      "boolin_win_p": 0.4988,
+      "boolin_win_p": 0.4921,
       "market_win_p": 0.2665,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17129,9 +17128,9 @@
       "key": "2026-09-20-NFL-PIT-NE",
       "date": "2026-09-20",
       "reasons": [
-       "win probability -11.4 pp"
+       "win probability -10.9 pp"
       ],
-      "boolin_win_p": 0.5499,
+      "boolin_win_p": 0.5549,
       "market_win_p": 0.6636,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17148,10 +17147,10 @@
       "key": "2026-09-20-NFL-JAX-DEN",
       "date": "2026-09-20",
       "reasons": [
-       "win probability -25.1 pp",
+       "win probability -25.0 pp",
        "spread +8.8 pts"
       ],
-      "boolin_win_p": 0.3212,
+      "boolin_win_p": 0.322,
       "market_win_p": 0.5721,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -17168,10 +17167,10 @@
       "key": "2026-09-20-NFL-LV-LAC",
       "date": "2026-09-20",
       "reasons": [
-       "win probability -26.6 pp",
-       "spread +7.6 pts"
+       "win probability -26.4 pp",
+       "spread +7.5 pts"
       ],
-      "boolin_win_p": 0.4678,
+      "boolin_win_p": 0.4693,
       "market_win_p": 0.7335,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -17188,10 +17187,10 @@
       "key": "2026-09-20-NFL-MIA-SF",
       "date": "2026-09-20",
       "reasons": [
-       "win probability -16.9 pp",
+       "win probability -17.0 pp",
        "spread +5.6 pts"
       ],
-      "boolin_win_p": 0.6942,
+      "boolin_win_p": 0.6929,
       "market_win_p": 0.863,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17208,10 +17207,10 @@
       "key": "2026-09-20-NFL-SEA-ARI",
       "date": "2026-09-20",
       "reasons": [
-       "win probability +24.1 pp",
-       "spread -6.4 pts"
+       "win probability +24.7 pp",
+       "spread -6.6 pts"
       ],
-      "boolin_win_p": 0.584,
+      "boolin_win_p": 0.5897,
       "market_win_p": 0.3425,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -17228,10 +17227,10 @@
       "key": "2026-09-21-NFL-NYG-LA",
       "date": "2026-09-21",
       "reasons": [
-       "win probability -30.4 pp",
-       "spread +9.5 pts"
+       "win probability -29.7 pp",
+       "spread +9.2 pts"
       ],
-      "boolin_win_p": 0.414,
+      "boolin_win_p": 0.4212,
       "market_win_p": 0.718,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -17248,10 +17247,10 @@
       "key": "2026-09-27-NFL-KC-MIA",
       "date": "2026-09-27",
       "reasons": [
-       "win probability +19.9 pp",
-       "spread -5.7 pts"
+       "win probability +20.2 pp",
+       "spread -5.8 pts"
       ],
-      "boolin_win_p": 0.3768,
+      "boolin_win_p": 0.3795,
       "market_win_p": 0.1777,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17268,10 +17267,10 @@
       "key": "2026-09-27-NFL-NYJ-DET",
       "date": "2026-09-27",
       "reasons": [
-       "win probability -20.8 pp",
-       "spread +6.1 pts"
+       "win probability -21.1 pp",
+       "spread +6.2 pts"
       ],
-      "boolin_win_p": 0.5257,
+      "boolin_win_p": 0.5225,
       "market_win_p": 0.7335,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17308,9 +17307,9 @@
       "key": "2026-09-27-NFL-BAL-DAL",
       "date": "2026-09-27",
       "reasons": [
-       "win probability +14.3 pp"
+       "win probability +14.0 pp"
       ],
-      "boolin_win_p": 0.5394,
+      "boolin_win_p": 0.5362,
       "market_win_p": 0.3962,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -17327,10 +17326,10 @@
       "key": "2026-09-28-NFL-PHI-CHI",
       "date": "2026-09-28",
       "reasons": [
-       "win probability +23.2 pp",
-       "spread -6.8 pts"
+       "win probability +23.7 pp",
+       "spread -7.0 pts"
       ],
-      "boolin_win_p": 0.5954,
+      "boolin_win_p": 0.6002,
       "market_win_p": 0.3631,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -17347,10 +17346,10 @@
       "key": "2026-10-01-NFL-PIT-CLE",
       "date": "2026-10-01",
       "reasons": [
-       "win probability +17.1 pp",
-       "spread -5.9 pts"
+       "win probability +17.4 pp",
+       "spread -6.0 pts"
       ],
-      "boolin_win_p": 0.5985,
+      "boolin_win_p": 0.6019,
       "market_win_p": 0.4279,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -17367,10 +17366,10 @@
       "key": "2026-10-04-NFL-IND-WAS",
       "date": "2026-10-04",
       "reasons": [
-       "win probability +27.4 pp",
-       "spread -8.1 pts"
+       "win probability +27.6 pp",
+       "spread -8.2 pts"
       ],
-      "boolin_win_p": 0.605,
+      "boolin_win_p": 0.6075,
       "market_win_p": 0.331,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -17387,9 +17386,9 @@
       "key": "2026-10-04-NFL-DAL-HOU",
       "date": "2026-10-04",
       "reasons": [
-       "win probability -12.8 pp"
+       "win probability -12.7 pp"
       ],
-      "boolin_win_p": 0.455,
+      "boolin_win_p": 0.4556,
       "market_win_p": 0.583,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -17406,9 +17405,9 @@
       "key": "2026-10-04-NFL-GB-TB",
       "date": "2026-10-04",
       "reasons": [
-       "win probability +13.9 pp"
+       "win probability +14.1 pp"
       ],
-      "boolin_win_p": 0.556,
+      "boolin_win_p": 0.5575,
       "market_win_p": 0.417,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -17425,9 +17424,9 @@
       "key": "2026-10-04-NFL-LA-PHI",
       "date": "2026-10-04",
       "reasons": [
-       "win probability +12.8 pp"
+       "win probability +12.3 pp"
       ],
-      "boolin_win_p": 0.4912,
+      "boolin_win_p": 0.4865,
       "market_win_p": 0.3631,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17444,9 +17443,9 @@
       "key": "2026-10-04-NFL-TEN-BAL",
       "date": "2026-10-04",
       "reasons": [
-       "win probability -16.0 pp"
+       "win probability -15.7 pp"
       ],
-      "boolin_win_p": 0.6929,
+      "boolin_win_p": 0.6957,
       "market_win_p": 0.8525,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17463,9 +17462,9 @@
       "key": "2026-10-04-NFL-MIA-MIN",
       "date": "2026-10-04",
       "reasons": [
-       "win probability -11.6 pp"
+       "win probability -11.8 pp"
       ],
-      "boolin_win_p": 0.6918,
+      "boolin_win_p": 0.69,
       "market_win_p": 0.8082,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17482,10 +17481,10 @@
       "key": "2026-10-04-NFL-DEN-SF",
       "date": "2026-10-04",
       "reasons": [
-       "win probability +17.0 pp",
-       "spread -7.1 pts"
+       "win probability +17.6 pp",
+       "spread -7.3 pts"
       ],
-      "boolin_win_p": 0.7698,
+      "boolin_win_p": 0.7753,
       "market_win_p": 0.5996,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17502,9 +17501,9 @@
       "key": "2026-10-04-NFL-KC-LV",
       "date": "2026-10-04",
       "reasons": [
-       "win probability +16.8 pp"
+       "win probability +17.5 pp"
       ],
-      "boolin_win_p": 0.5047,
+      "boolin_win_p": 0.5111,
       "market_win_p": 0.3364,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -17521,10 +17520,10 @@
       "key": "2026-10-04-NFL-DET-CAR",
       "date": "2026-10-04",
       "reasons": [
-       "win probability +20.8 pp",
-       "spread -6.0 pts"
+       "win probability +20.0 pp",
+       "spread -5.7 pts"
       ],
-      "boolin_win_p": 0.5444,
+      "boolin_win_p": 0.536,
       "market_win_p": 0.3364,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -17541,9 +17540,9 @@
       "key": "2026-10-05-NFL-ATL-NO",
       "date": "2026-10-05",
       "reasons": [
-       "win probability +10.6 pp"
+       "win probability +10.2 pp"
       ],
-      "boolin_win_p": 0.6238,
+      "boolin_win_p": 0.6196,
       "market_win_p": 0.5174,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -17560,9 +17559,9 @@
       "key": "2026-10-08-NFL-TB-DAL",
       "date": "2026-10-08",
       "reasons": [
-       "win probability -10.9 pp"
+       "win probability -10.7 pp"
       ],
-      "boolin_win_p": 0.6996,
+      "boolin_win_p": 0.7011,
       "market_win_p": 0.8082,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -17579,9 +17578,9 @@
       "key": "2026-10-11-NFL-CIN-MIA",
       "date": "2026-10-11",
       "reasons": [
-       "win probability +12.4 pp"
+       "win probability +12.0 pp"
       ],
-      "boolin_win_p": 0.3765,
+      "boolin_win_p": 0.372,
       "market_win_p": 0.2522,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17618,10 +17617,10 @@
       "key": "2026-10-11-NFL-LV-NE",
       "date": "2026-10-11",
       "reasons": [
-       "win probability -16.1 pp",
-       "spread +5.0 pts"
+       "win probability -16.8 pp",
+       "spread +5.3 pts"
       ],
-      "boolin_win_p": 0.4556,
+      "boolin_win_p": 0.4483,
       "market_win_p": 0.6164,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -17638,9 +17637,9 @@
       "key": "2026-10-11-NFL-DEN-LAC",
       "date": "2026-10-11",
       "reasons": [
-       "win probability +11.6 pp"
+       "win probability +11.9 pp"
       ],
-      "boolin_win_p": 0.4851,
+      "boolin_win_p": 0.488,
       "market_win_p": 0.3691,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17657,10 +17656,9 @@
       "key": "2026-10-11-NFL-DET-ARI",
       "date": "2026-10-11",
       "reasons": [
-       "win probability +18.4 pp",
-       "spread -5.1 pts"
+       "win probability +18.0 pp"
       ],
-      "boolin_win_p": 0.488,
+      "boolin_win_p": 0.4845,
       "market_win_p": 0.3042,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17677,10 +17675,10 @@
       "key": "2026-10-11-NFL-SF-SEA",
       "date": "2026-10-11",
       "reasons": [
-       "win probability -17.8 pp",
-       "spread +5.7 pts"
+       "win probability -17.3 pp",
+       "spread +5.5 pts"
       ],
-      "boolin_win_p": 0.4215,
+      "boolin_win_p": 0.4264,
       "market_win_p": 0.5996,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -17697,10 +17695,10 @@
       "key": "2026-10-11-NFL-BAL-ATL",
       "date": "2026-10-11",
       "reasons": [
-       "win probability -16.6 pp",
-       "spread +5.4 pts"
+       "win probability -16.2 pp",
+       "spread +5.3 pts"
       ],
-      "boolin_win_p": 0.4437,
+      "boolin_win_p": 0.4472,
       "market_win_p": 0.6092,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -17717,9 +17715,9 @@
       "key": "2026-10-12-NFL-BUF-LA",
       "date": "2026-10-12",
       "reasons": [
-       "win probability -11.7 pp"
+       "win probability -11.2 pp"
       ],
-      "boolin_win_p": 0.5059,
+      "boolin_win_p": 0.5102,
       "market_win_p": 0.6225,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -17736,9 +17734,9 @@
       "key": "2026-10-15-NFL-SEA-DEN",
       "date": "2026-10-15",
       "reasons": [
-       "win probability +11.8 pp"
+       "win probability +11.3 pp"
       ],
-      "boolin_win_p": 0.5351,
+      "boolin_win_p": 0.5301,
       "market_win_p": 0.417,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -17755,9 +17753,9 @@
       "key": "2026-10-18-NFL-NYJ-NE",
       "date": "2026-10-18",
       "reasons": [
-       "win probability -14.6 pp"
+       "win probability -15.8 pp"
       ],
-      "boolin_win_p": 0.5985,
+      "boolin_win_p": 0.5865,
       "market_win_p": 0.7441,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17774,9 +17772,9 @@
       "key": "2026-10-18-NFL-TEN-IND",
       "date": "2026-10-18",
       "reasons": [
-       "win probability -10.0 pp"
+       "win probability -10.1 pp"
       ],
-      "boolin_win_p": 0.6179,
+      "boolin_win_p": 0.6171,
       "market_win_p": 0.718,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -17793,10 +17791,10 @@
       "key": "2026-10-18-NFL-ARI-LA",
       "date": "2026-10-18",
       "reasons": [
-       "win probability -16.1 pp",
-       "spread +6.2 pts"
+       "win probability -16.0 pp",
+       "spread +6.1 pts"
       ],
-      "boolin_win_p": 0.6791,
+      "boolin_win_p": 0.6801,
       "market_win_p": 0.84,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -17813,9 +17811,9 @@
       "key": "2026-10-18-NFL-BUF-LV",
       "date": "2026-10-18",
       "reasons": [
-       "win probability +15.4 pp"
+       "win probability +15.5 pp"
       ],
-      "boolin_win_p": 0.4792,
+      "boolin_win_p": 0.4801,
       "market_win_p": 0.325,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17851,10 +17849,10 @@
       "key": "2026-10-25-NFL-CIN-BAL",
       "date": "2026-10-25",
       "reasons": [
-       "win probability +16.2 pp",
+       "win probability +16.3 pp",
        "spread -5.4 pts"
       ],
-      "boolin_win_p": 0.569,
+      "boolin_win_p": 0.5693,
       "market_win_p": 0.4066,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -17871,10 +17869,10 @@
       "key": "2026-10-25-NFL-NYG-HOU",
       "date": "2026-10-25",
       "reasons": [
-       "win probability -19.1 pp",
-       "spread +6.1 pts"
+       "win probability -18.9 pp",
+       "spread +6.0 pts"
       ],
-      "boolin_win_p": 0.6137,
+      "boolin_win_p": 0.6149,
       "market_win_p": 0.8043,
       "boolin_pick_won": false,
       "market_favorite_won": false,
@@ -17891,10 +17889,10 @@
       "key": "2026-10-25-NFL-DEN-ARI",
       "date": "2026-10-25",
       "reasons": [
-       "win probability +18.6 pp",
+       "win probability +18.7 pp",
        "spread -5.1 pts"
       ],
-      "boolin_win_p": 0.517,
+      "boolin_win_p": 0.5181,
       "market_win_p": 0.331,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -17911,9 +17909,9 @@
       "key": "2026-10-25-NFL-LA-LV",
       "date": "2026-10-25",
       "reasons": [
-       "win probability +14.6 pp"
+       "win probability +15.2 pp"
       ],
-      "boolin_win_p": 0.5298,
+      "boolin_win_p": 0.5357,
       "market_win_p": 0.3836,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -17930,10 +17928,10 @@
       "key": "2026-10-25-NFL-KC-SEA",
       "date": "2026-10-25",
       "reasons": [
-       "win probability -19.0 pp",
-       "spread +6.3 pts"
+       "win probability -18.5 pp",
+       "spread +6.2 pts"
       ],
-      "boolin_win_p": 0.4032,
+      "boolin_win_p": 0.408,
       "market_win_p": 0.5934,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -17950,9 +17948,9 @@
       "key": "2026-11-01-NFL-NE-MIA",
       "date": "2026-11-01",
       "reasons": [
-       "win probability +15.4 pp"
+       "win probability +15.3 pp"
       ],
-      "boolin_win_p": 0.4095,
+      "boolin_win_p": 0.4089,
       "market_win_p": 0.2559,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -17969,30 +17967,11 @@
       "key": "2026-11-05-NFL-JAX-BAL",
       "date": "2026-11-05",
       "reasons": [
-       "win probability +19.9 pp",
-       "spread -5.5 pts"
+       "win probability +19.6 pp",
+       "spread -5.4 pts"
       ],
-      "boolin_win_p": 0.4126,
+      "boolin_win_p": 0.4098,
       "market_win_p": 0.2133,
-      "boolin_pick_won": true,
-      "market_favorite_won": true,
-      "boolin_beat_market": false,
-      "model_confidence": "high",
-      "sample": 7,
-      "unresolved_injuries": null,
-      "qb_change": true,
-      "starter_unconfirmed": null,
-      "data_health": "clean",
-      "model_version": "baseline-0.2"
-     },
-     {
-      "key": "2026-11-08-NFL-CLE-NO",
-      "date": "2026-11-08",
-      "reasons": [
-       "win probability -10.1 pp"
-      ],
-      "boolin_win_p": 0.5624,
-      "market_win_p": 0.6636,
       "boolin_pick_won": true,
       "market_favorite_won": true,
       "boolin_beat_market": false,
@@ -18008,9 +17987,9 @@
       "key": "2026-11-08-NFL-DEN-CAR",
       "date": "2026-11-08",
       "reasons": [
-       "win probability +13.3 pp"
+       "win probability +13.0 pp"
       ],
-      "boolin_win_p": 0.5496,
+      "boolin_win_p": 0.5473,
       "market_win_p": 0.417,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -18027,9 +18006,9 @@
       "key": "2026-11-08-NFL-DET-MIA",
       "date": "2026-11-08",
       "reasons": [
-       "win probability +13.4 pp"
+       "win probability +12.3 pp"
       ],
-      "boolin_win_p": 0.4118,
+      "boolin_win_p": 0.4007,
       "market_win_p": 0.2779,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -18046,9 +18025,9 @@
       "key": "2026-11-08-NFL-LA-WAS",
       "date": "2026-11-08",
       "reasons": [
-       "win probability +10.8 pp"
+       "win probability +10.1 pp"
       ],
-      "boolin_win_p": 0.4443,
+      "boolin_win_p": 0.437,
       "market_win_p": 0.3364,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -18065,9 +18044,9 @@
       "key": "2026-11-08-NFL-NYJ-KC",
       "date": "2026-11-08",
       "reasons": [
-       "win probability -14.7 pp"
+       "win probability -15.2 pp"
       ],
-      "boolin_win_p": 0.6578,
+      "boolin_win_p": 0.6527,
       "market_win_p": 0.8043,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -18084,10 +18063,10 @@
       "key": "2026-11-08-NFL-ARI-SEA",
       "date": "2026-11-08",
       "reasons": [
-       "win probability -18.8 pp",
+       "win probability -18.9 pp",
        "spread +5.1 pts"
       ],
-      "boolin_win_p": 0.5985,
+      "boolin_win_p": 0.5976,
       "market_win_p": 0.7867,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -18104,10 +18083,9 @@
       "key": "2026-11-15-NFL-BUF-NYJ",
       "date": "2026-11-15",
       "reasons": [
-       "win probability +19.8 pp",
-       "spread -5.1 pts"
+       "win probability +19.4 pp"
       ],
-      "boolin_win_p": 0.4021,
+      "boolin_win_p": 0.3981,
       "market_win_p": 0.2042,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -18124,9 +18102,9 @@
       "key": "2026-11-15-NFL-JAX-TEN",
       "date": "2026-11-15",
       "reasons": [
-       "win probability +13.5 pp"
+       "win probability +13.3 pp"
       ],
-      "boolin_win_p": 0.3033,
+      "boolin_win_p": 0.3017,
       "market_win_p": 0.1684,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -18143,9 +18121,9 @@
       "key": "2026-11-15-NFL-MIA-IND",
       "date": "2026-11-15",
       "reasons": [
-       "win probability -13.8 pp"
+       "win probability -13.4 pp"
       ],
-      "boolin_win_p": 0.5252,
+      "boolin_win_p": 0.5298,
       "market_win_p": 0.6636,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -18165,7 +18143,7 @@
        "win probability +20.7 pp",
        "spread -6.4 pts"
       ],
-      "boolin_win_p": 0.395,
+      "boolin_win_p": 0.3953,
       "market_win_p": 0.1881,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -18182,10 +18160,10 @@
       "key": "2026-11-15-NFL-SEA-LV",
       "date": "2026-11-15",
       "reasons": [
-       "win probability +23.3 pp",
-       "spread -7.0 pts"
+       "win probability +24.3 pp",
+       "spread -7.3 pts"
       ],
-      "boolin_win_p": 0.5149,
+      "boolin_win_p": 0.5246,
       "market_win_p": 0.282,
       "boolin_pick_won": false,
       "market_favorite_won": true,
@@ -18202,9 +18180,9 @@
       "key": "2026-11-19-NFL-IND-HOU",
       "date": "2026-11-19",
       "reasons": [
-       "win probability -10.9 pp"
+       "win probability -10.7 pp"
       ],
-      "boolin_win_p": 0.7386,
+      "boolin_win_p": 0.7415,
       "market_win_p": 0.8481,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -18221,10 +18199,10 @@
       "key": "2026-11-22-NFL-MIA-BUF",
       "date": "2026-11-22",
       "reasons": [
-       "win probability -12.7 pp",
-       "spread +5.8 pts"
+       "win probability -12.2 pp",
+       "spread +5.6 pts"
       ],
-      "boolin_win_p": 0.784,
+      "boolin_win_p": 0.7889,
       "market_win_p": 0.911,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -18241,9 +18219,9 @@
       "key": "2026-11-22-NFL-NO-CHI",
       "date": "2026-11-22",
       "reasons": [
-       "win probability -14.8 pp"
+       "win probability -15.3 pp"
       ],
-      "boolin_win_p": 0.688,
+      "boolin_win_p": 0.6838,
       "market_win_p": 0.8365,
       "boolin_pick_won": true,
       "market_favorite_won": true,
@@ -18260,10 +18238,10 @@
       "key": "2026-11-22-NFL-NYJ-LAC",
       "date": "2026-11-22",
       "reasons": [
-       "win probability -19.2 pp",
-       "spread +5.5 pts"
+       "win probability -18.9 pp",
+       "spread +5.4 pts"
       ],
-      "boolin_win_p": 0.4272,
+      "boolin_win_p": 0.4293,
       "market_win_p": 0.6188,
       "boolin_pick_won": true,
       "market_favorite_won": false,
@@ -18280,14 +18258,34 @@
       "key": "2026-11-22-NFL-LV-DEN",
       "date": "2026-11-22",
       "reasons": [
-       "win probability -19.4 pp",
-       "spread +6.7 pts"
+       "win probability -20.2 pp",
+       "spread +6.9 pts"
       ],
-      "boolin_win_p": 0.6387,
+      "boolin_win_p": 0.631,
       "market_win_p": 0.8326,
       "boolin_pick_won": true,
       "market_favorite_won": true,
       "boolin_beat_market": false,
+      "model_confidence": "high",
+      "sample": 9,
+      "unresolved_injuries": null,
+      "qb_change": false,
+      "starter_unconfirmed": null,
+      "data_health": "clean",
+      "model_version": "baseline-0.2"
+     },
+     {
+      "key": "2026-11-22-NFL-MIN-SF",
+      "date": "2026-11-22",
+      "reasons": [
+       "win probability +12.5 pp",
+       "spread -5.5 pts"
+      ],
+      "boolin_win_p": 0.7687,
+      "market_win_p": 0.644,
+      "boolin_pick_won": true,
+      "market_favorite_won": true,
+      "boolin_beat_market": true,
       "model_confidence": "high",
       "sample": 9,
       "unresolved_injuries": null,
@@ -18301,12 +18299,12 @@
      {
       "hypothesis": "useful contrarian signal",
       "verdict": "contradicted",
-      "evidence": "n=1270; Boolin side won 0.3264 vs market-implied 0.3372 (Boolin said 0.4986); market Brier better (t=8.2)"
+      "evidence": "n=1271; Boolin side won 0.3269 vs market-implied 0.3375 (Boolin said 0.4989); market Brier better (t=8.2)"
      },
      {
       "hypothesis": "early-season / small-sample instability",
       "verdict": "supported",
-      "evidence": "354 of 1270 extremes (28%) vs 19% of all games; extreme rate 49% in this context vs 30% outside (x1.6)"
+      "evidence": "355 of 1271 extremes (28%) vs 19% of all games; extreme rate 49% in this context vs 30% outside (x1.6)"
      },
      {
       "hypothesis": "stale or incomplete data",
@@ -18316,7 +18314,7 @@
      {
       "hypothesis": "missing player-level information",
       "verdict": "not supported",
-      "evidence": "283 of 1270 extremes (22%) vs 19% of all games; extreme rate 41% in this context vs 32% outside (x1.3)"
+      "evidence": "283 of 1271 extremes (22%) vs 19% of all games; extreme rate 41% in this context vs 32% outside (x1.3)"
      },
      {
       "hypothesis": "systematic model bias",

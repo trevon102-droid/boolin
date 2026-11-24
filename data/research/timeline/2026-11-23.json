@@ -92,6 +92,32 @@
    "new": "4 player(s) listed",
    "source": "NFL injury report week 11",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-23T21:28-05:00",
+   "game_key": "2026-11-23-NFL-CIN-WAS",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 48.6,
+   "new": 48.8,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 35.1% to 35.0% (home margin -5.22 \u2192 -5.25). Model components that moved: 1. Offense (EPA/play, regressed) -0.12 (home -0.003 vs away +0.114 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +0.09 (home allows +0.028 vs away allows +0.010 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 35.1% to 35.0% (home margin -5.22 \u2192 -5.25). Model components that moved: 1. Offense (EPA/play, regressed) -0.12 (home -0.003 vs away +0.114 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) +0.09 (home allows +0.028 vs away allows +0.010 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.12,
+      "now": "home -0.003 vs away +0.114 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": 0.09,
+      "now": "home allows +0.028 vs away allows +0.010 x 32.45"
+     }
+    ],
+    "same_pull_updates": []
+   }
   }
  ]
 }
