@@ -1,0 +1,47 @@
+{
+ "2026-11-23-NFL-CIN-WAS": {
+  "key": "2026-11-23-NFL-CIN-WAS",
+  "league": "NFL",
+  "result": {
+   "home_score": 22.0,
+   "away_score": 20.0,
+   "home_margin": 2.0,
+   "total": 42.0,
+   "source": "ESPN scoreboard",
+   "kind": "confirmed"
+  },
+  "components": {
+   "model": {
+    "gradable": true,
+    "score": 0.0,
+    "grade": "F",
+    "brier": 0.4213,
+    "pregame_home_win_p": 0.3509,
+    "margin_error": 7.22,
+    "total_error": -6.6
+   },
+   "market_read": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "thesis": {
+    "gradable": false,
+    "reason": "no thesis recorded"
+   },
+   "weather": {
+    "gradable": false,
+    "reason": "pregame or recorded wind missing"
+   },
+   "availability": {
+    "gradable": false,
+    "reason": "actual starters / inactives aren't stored yet, so availability calls can't be checked against what happened"
+   }
+  },
+  "overall": {
+   "score": 0.0,
+   "grade": "F",
+   "graded_components": 1
+  },
+  "note": "Grades the research process. A sound read can lose and a weak one can win; look at many games."
+ }
+}
