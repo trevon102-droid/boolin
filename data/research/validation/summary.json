@@ -9,7 +9,7 @@
   "baseline-0.1",
   "baseline-0.2"
  ],
- "built_at": "2026-11-24T19:00-05:00",
+ "built_at": "2026-11-24T23:27-05:00",
  "data_cutoff": "2026-11-23",
  "filters": {
   "league": null,
@@ -26,8 +26,8 @@
   "nfl_replay": "development = seasons < 2022; holdout = 2022+"
  },
  "warning": "rows span model versions ['baseline-0.1', 'baseline-0.2']: each table is per league and per source, and rows from an older version sit in their own '<source> @<version>' slice",
- "rows": 4258,
- "excluded": 454,
+ "rows": 4260,
+ "excluded": 452,
  "by_source": {
   "NFL nfl_replay": {
    "rows": 3751,
@@ -60,14 +60,14 @@
    "last": "2026-11-23"
   },
   "NHL live_archive": {
-   "rows": 361,
+   "rows": 363,
    "development": 35,
-   "holdout": 326,
+   "holdout": 328,
    "model_versions": [
     "baseline-0.1"
    ],
    "first": "2026-10-01",
-   "last": "2026-11-22"
+   "last": "2026-11-23"
   },
   "MLB live_archive": {
    "rows": 32,
@@ -83,11 +83,11 @@
  "excluded_by_reason": {
   "nfl_replay: no current-season plays before this week for a team (the live model has no projection either)": 241,
   "live_archive: no Boolin model for this league": 203,
-  "live_archive: no confirmed final score on file": 10
+  "live_archive: no confirmed final score on file": 8
  },
  "replay": {
   "version": "nfl-replay-1",
-  "built_at_et": "2026-11-24T19:00-05:00",
+  "built_at_et": "2026-11-24T23:27-05:00",
   "status": {
    "2012": "kept",
    "2013": "kept",
@@ -129,13 +129,13 @@
    "recommendation": "CALIBRATION NEEDED"
   },
   "NHL": {
-   "sample_size": 326,
-   "brier": 0.2356,
+   "sample_size": 328,
+   "brier": 0.2352,
    "market_brier": 0.2274,
-   "log_loss": 0.6638,
-   "calibration_error": 0.0467,
+   "log_loss": 0.6631,
+   "calibration_error": 0.0458,
    "market_comparison": "no detectable difference in Brier (t=0.1)",
-   "spread_mae": 2.045,
+   "spread_mae": 2.041,
    "confidence_validated": null,
    "calibration_status": "needs_calibration",
    "validation_status": "validated: calibration off",
