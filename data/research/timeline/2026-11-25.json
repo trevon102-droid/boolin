@@ -128,5 +128,174 @@
    "source": "NFL injury report week 12",
    "cause": "Change detected; cause not confirmed."
   }
+ ],
+ "2026-11-25-NHL-CAR-TBL": [
+  {
+   "t": "2026-11-25T22:42-05:00",
+   "game_key": "2026-11-25-NHL-CAR-TBL",
+   "type": "injury_status",
+   "field": "K'Andre Miller (CAR)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-11-25T22:42-05:00",
+   "game_key": "2026-11-25-NHL-CAR-TBL",
+   "type": "injury_status",
+   "field": "Pontus Holmberg (TBL)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-11-25-NHL-CGY-PIT": [
+  {
+   "t": "2026-11-25T22:42-05:00",
+   "game_key": "2026-11-25-NHL-CGY-PIT",
+   "type": "injury_status",
+   "field": "Egor Chinakhov (PIT)",
+   "old": "Out",
+   "new": "Injured Reserve",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-11-25-NHL-NJD-CBJ": [
+  {
+   "t": "2026-11-25T22:42-05:00",
+   "game_key": "2026-11-25-NHL-NJD-CBJ",
+   "type": "injury_status",
+   "field": "Denton Mateychuk (CBJ)",
+   "old": "not listed",
+   "new": "Day-To-Day",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-11-25T22:42-05:00",
+   "game_key": "2026-11-25-NHL-NJD-CBJ",
+   "type": "starter",
+   "field": "NJD starter",
+   "old": "Jake Allen (projected)",
+   "new": "Connor Hellebuyck (projected)",
+   "source": "NHL API goalie usage",
+   "cause": "Change detected; cause not confirmed."
+  }
+ ],
+ "2026-11-25-NHL-NYR-BUF": [
+  {
+   "t": "2026-11-25T22:42-05:00",
+   "game_key": "2026-11-25-NHL-NYR-BUF",
+   "type": "injury_status",
+   "field": "Tyson Kozak (BUF)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-11-25T22:42-05:00",
+   "game_key": "2026-11-25-NHL-NYR-BUF",
+   "type": "injury_status",
+   "field": "Mattias Samuelsson (BUF)",
+   "old": "Day-To-Day",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  }
+ ],
+ "2026-11-25-NHL-PHI-WSH": [
+  {
+   "t": "2026-11-25T22:42-05:00",
+   "game_key": "2026-11-25-NHL-PHI-WSH",
+   "type": "starter",
+   "field": "PHI starter",
+   "old": "Dan Vladar (projected)",
+   "new": "Joseph Woll (projected)",
+   "source": "NHL API goalie usage",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-25T22:42-05:00",
+   "game_key": "2026-11-25-NHL-PHI-WSH",
+   "type": "model",
+   "field": "Boolin WSH win probability",
+   "old": 0.6599,
+   "new": 0.669,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 66.0% to 66.9% (home margin +0.99 \u2192 +1.05). Model components that moved: 1. Goaltending (GSAx/gp, regressed) +0.06 (Logan Thompson vs Joseph Woll (projected starters)). Data updates in the same pull: PHI starter: Dan Vladar (projected) \u2192 Joseph Woll (projected).",
+   "detail": {
+    "text": "Boolin moved from 66.0% to 66.9% (home margin +0.99 \u2192 +1.05). Model components that moved: 1. Goaltending (GSAx/gp, regressed) +0.06 (Logan Thompson vs Joseph Woll (projected starters)). Data updates in the same pull: PHI starter: Dan Vladar (projected) \u2192 Joseph Woll (projected).",
+    "components": [
+     {
+      "component": "Goaltending (GSAx/gp, regressed)",
+      "margin_change": 0.06,
+      "now": "Logan Thompson vs Joseph Woll (projected starters)"
+     }
+    ],
+    "same_pull_updates": [
+     "PHI starter: Dan Vladar (projected) \u2192 Joseph Woll (projected)"
+    ]
+   }
+  }
+ ],
+ "2026-11-25-NHL-VAN-DET": [
+  {
+   "t": "2026-11-25T22:42-05:00",
+   "game_key": "2026-11-25-NHL-VAN-DET",
+   "type": "injury_status",
+   "field": "William Wallinder (DET)",
+   "old": "Day-To-Day",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  }
+ ],
+ "2026-11-25-NHL-NSH-DAL": [
+  {
+   "t": "2026-11-25T22:42-05:00",
+   "game_key": "2026-11-25-NHL-NSH-DAL",
+   "type": "injury_status",
+   "field": "Oskar Back (DAL)",
+   "old": "Injured Reserve",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  }
+ ],
+ "2026-11-25-NHL-CHI-SEA": [
+  {
+   "t": "2026-11-25T22:42-05:00",
+   "game_key": "2026-11-25-NHL-CHI-SEA",
+   "type": "injury_status",
+   "field": "Tyler Bertuzzi (CHI)",
+   "old": "not listed",
+   "new": "Out",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "downgrade"
+  },
+  {
+   "t": "2026-11-25T22:42-05:00",
+   "game_key": "2026-11-25-NHL-CHI-SEA",
+   "type": "injury_status",
+   "field": "Anton Frondell (CHI)",
+   "old": "Day-To-Day",
+   "new": "not listed",
+   "source": "ESPN injury list",
+   "cause": "Change detected; cause not confirmed.",
+   "direction": "upgrade"
+  }
  ]
 }
