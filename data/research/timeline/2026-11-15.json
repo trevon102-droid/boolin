@@ -594,6 +594,44 @@
    "new": "week 12",
    "source": "NFL injury report (nflverse)",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-26T18:56-05:00",
+   "game_key": "2026-11-15-NFL-NE-DET",
+   "type": "injury_report",
+   "field": "DET injury list",
+   "old": "not covered",
+   "new": "4 player(s) listed",
+   "source": "NFL injury report week 12",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-26T18:56-05:00",
+   "game_key": "2026-11-15-NFL-NE-DET",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 49.8,
+   "new": 50.2,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 67.1% to 66.9% (home margin +6.02 \u2192 +5.95). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.35 (home allows +0.057 vs away allows +0.037 x 32.45); 2. Offense (EPA/play, regressed) +0.28 (home +0.099 vs away +0.019 EPA/play x 58.15). Data updates in the same pull: DET injury list: not covered \u2192 4 player(s) listed.",
+   "detail": {
+    "text": "Boolin moved from 67.1% to 66.9% (home margin +6.02 \u2192 +5.95). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.35 (home allows +0.057 vs away allows +0.037 x 32.45); 2. Offense (EPA/play, regressed) +0.28 (home +0.099 vs away +0.019 EPA/play x 58.15). Data updates in the same pull: DET injury list: not covered \u2192 4 player(s) listed.",
+    "components": [
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.35,
+      "now": "home allows +0.057 vs away allows +0.037 x 32.45"
+     },
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 0.28,
+      "now": "home +0.099 vs away +0.019 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": [
+     "DET injury list: not covered \u2192 4 player(s) listed"
+    ]
+   }
   }
  ],
  "2026-11-15-NFL-BUF-NYJ": [
@@ -1140,6 +1178,16 @@
    "old": "week 11",
    "new": "week 12",
    "source": "NFL injury report (nflverse)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-26T18:56-05:00",
+   "game_key": "2026-11-15-NFL-BUF-NYJ",
+   "type": "injury_report",
+   "field": "BUF injury list",
+   "old": "not covered",
+   "new": "5 player(s) listed",
+   "source": "NFL injury report week 12",
    "cause": "Change detected; cause not confirmed."
   }
  ],
@@ -2576,6 +2624,16 @@
    "new": "week 12",
    "source": "NFL injury report (nflverse)",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-26T18:56-05:00",
+   "game_key": "2026-11-15-NFL-KC-ATL",
+   "type": "injury_report",
+   "field": "KC injury list",
+   "old": "not covered",
+   "new": "5 player(s) listed",
+   "source": "NFL injury report week 12",
+   "cause": "Change detected; cause not confirmed."
   }
  ],
  "2026-11-15-NFL-MIA-IND": [
@@ -3669,6 +3727,58 @@
    "new": "8 player(s) listed",
    "source": "NFL injury report week 12",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-26T18:56-05:00",
+   "game_key": "2026-11-15-NFL-MIN-GB",
+   "type": "model",
+   "field": "Boolin GB win probability",
+   "old": 0.6343,
+   "new": 0.6202,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 63.4% to 62.0% (home margin +4.68 \u2192 +4.17). Model components that moved: 1. Offense (EPA/play, regressed) -0.40 (home +0.007 vs away -0.061 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.11 (home allows -0.010 vs away allows -0.063 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 63.4% to 62.0% (home margin +4.68 \u2192 +4.17). Model components that moved: 1. Offense (EPA/play, regressed) -0.40 (home +0.007 vs away -0.061 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.11 (home allows -0.010 vs away allows -0.063 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.4,
+      "now": "home +0.007 vs away -0.061 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.11,
+      "now": "home allows -0.010 vs away allows -0.063 x 32.45"
+     }
+    ],
+    "same_pull_updates": []
+   }
+  },
+  {
+   "t": "2026-11-26T18:56-05:00",
+   "game_key": "2026-11-15-NFL-MIN-GB",
+   "type": "model",
+   "field": "Boolin projected spread",
+   "old": "GB -4.7",
+   "new": "GB -4.2",
+   "source": "Boolin model",
+   "cause": "Boolin moved from 63.4% to 62.0% (home margin +4.68 \u2192 +4.17). Model components that moved: 1. Offense (EPA/play, regressed) -0.40 (home +0.007 vs away -0.061 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.11 (home allows -0.010 vs away allows -0.063 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 63.4% to 62.0% (home margin +4.68 \u2192 +4.17). Model components that moved: 1. Offense (EPA/play, regressed) -0.40 (home +0.007 vs away -0.061 EPA/play x 58.15); 2. Defense (EPA/play allowed, regressed) -0.11 (home allows -0.010 vs away allows -0.063 x 32.45). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": -0.4,
+      "now": "home +0.007 vs away -0.061 EPA/play x 58.15"
+     },
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.11,
+      "now": "home allows -0.010 vs away allows -0.063 x 32.45"
+     }
+    ],
+    "same_pull_updates": []
+   }
   }
  ],
  "2026-11-15-NFL-LA-ARI": [
@@ -4102,6 +4212,32 @@
    "new": "3 player(s) listed",
    "source": "NFL injury report week 12",
    "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-26T18:56-05:00",
+   "game_key": "2026-11-15-NFL-LA-ARI",
+   "type": "model",
+   "field": "Boolin projected total",
+   "old": 46.9,
+   "new": 46.8,
+   "source": "Boolin model",
+   "cause": "Boolin moved from 29.1% to 28.9% (home margin -7.52 \u2192 -7.57). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.14 (home allows +0.089 vs away allows -0.058 x 32.45); 2. Offense (EPA/play, regressed) +0.09 (home -0.026 vs away +0.055 EPA/play x 58.15). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+   "detail": {
+    "text": "Boolin moved from 29.1% to 28.9% (home margin -7.52 \u2192 -7.57). Model components that moved: 1. Defense (EPA/play allowed, regressed) -0.14 (home allows +0.089 vs away allows -0.058 x 32.45); 2. Offense (EPA/play, regressed) +0.09 (home -0.026 vs away +0.055 EPA/play x 58.15). No other tracked field changed in the same pull, so the input change behind it is not identified.",
+    "components": [
+     {
+      "component": "Defense (EPA/play allowed, regressed)",
+      "margin_change": -0.14,
+      "now": "home allows +0.089 vs away allows -0.058 x 32.45"
+     },
+     {
+      "component": "Offense (EPA/play, regressed)",
+      "margin_change": 0.09,
+      "now": "home -0.026 vs away +0.055 EPA/play x 58.15"
+     }
+    ],
+    "same_pull_updates": []
+   }
   }
  ],
  "2026-11-15-NFL-SEA-LV": [
@@ -5080,6 +5216,16 @@
    "old": "week 11",
    "new": "week 12",
    "source": "NFL injury report (nflverse)",
+   "cause": "Change detected; cause not confirmed."
+  },
+  {
+   "t": "2026-11-26T18:56-05:00",
+   "game_key": "2026-11-15-NFL-SF-DAL",
+   "type": "injury_report",
+   "field": "DAL injury list",
+   "old": "not covered",
+   "new": "6 player(s) listed",
+   "source": "NFL injury report week 12",
    "cause": "Change detected; cause not confirmed."
   }
  ],

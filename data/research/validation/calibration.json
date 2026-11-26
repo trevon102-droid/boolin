@@ -5,7 +5,7 @@
   "NHL": "baseline-0.1",
   "MLB": "baseline-0.1"
  },
- "data_cutoff": "2026-11-24",
+ "data_cutoff": "2026-11-26",
  "calibration_status": {
   "NFL": "baseline-0.2 (NFL fit 2012-2021): coefficients fit on replay seasons < 2022 (research/fit_nfl.py); holdout result in model_scorecard.json",
   "NHL": "baseline-0.1: never fit to outcomes (uncalibrated)",
@@ -163,14 +163,14 @@
    },
    "holdout": {
     "boolin": {
-     "n": 1222,
+     "n": 1224,
      "brier": 0.2265,
      "log_loss": 0.6445,
-     "accuracy": 0.6092,
-     "mean_predicted_home": 0.5552,
-     "actual_home_win_rate": 0.5495,
-     "calibration_error": 0.0313,
-     "favorite_overconfidence": 0.0169,
+     "accuracy": 0.609,
+     "mean_predicted_home": 0.5553,
+     "actual_home_win_rate": 0.5494,
+     "calibration_error": 0.0304,
+     "favorite_overconfidence": 0.0171,
      "buckets": [
       {
        "bucket": "50-55%",
@@ -190,19 +190,19 @@
       },
       {
        "bucket": "60-65%",
-       "n": 224,
-       "avg_predicted": 0.6234,
-       "actual_win_rate": 0.6362,
-       "abs_calibration_error": 0.0128,
-       "brier": 0.2305
+       "n": 225,
+       "avg_predicted": 0.6233,
+       "actual_win_rate": 0.6333,
+       "abs_calibration_error": 0.01,
+       "brier": 0.2311
       },
       {
        "bucket": "65-70%",
-       "n": 164,
-       "avg_predicted": 0.6755,
-       "actual_win_rate": 0.6402,
-       "abs_calibration_error": 0.0353,
-       "brier": 0.2323
+       "n": 165,
+       "avg_predicted": 0.6754,
+       "actual_win_rate": 0.6424,
+       "abs_calibration_error": 0.033,
+       "brier": 0.2316
       },
       {
        "bucket": "70-75%",
@@ -231,30 +231,30 @@
      ]
     },
     "market_same_games": {
-     "n": 1222,
+     "n": 1224,
      "brier": 0.209,
      "log_loss": 0.6062,
-     "accuracy": 0.6744,
-     "mean_predicted_home": 0.5502,
-     "actual_home_win_rate": 0.5495,
-     "calibration_error": 0.0327,
-     "favorite_overconfidence": -0.0119,
+     "accuracy": 0.6749,
+     "mean_predicted_home": 0.5501,
+     "actual_home_win_rate": 0.5494,
+     "calibration_error": 0.0326,
+     "favorite_overconfidence": -0.0126,
      "buckets": [
       {
        "bucket": "50-55%",
-       "n": 155,
-       "avg_predicted": 0.5251,
-       "actual_win_rate": 0.4742,
-       "abs_calibration_error": 0.0509,
-       "brier": 0.2496
+       "n": 156,
+       "avg_predicted": 0.525,
+       "actual_win_rate": 0.4776,
+       "abs_calibration_error": 0.0475,
+       "brier": 0.2495
       },
       {
        "bucket": "55-60%",
-       "n": 271,
-       "avg_predicted": 0.5763,
-       "actual_win_rate": 0.6273,
-       "abs_calibration_error": 0.051,
-       "brier": 0.2352
+       "n": 272,
+       "avg_predicted": 0.5762,
+       "actual_win_rate": 0.6287,
+       "abs_calibration_error": 0.0524,
+       "brier": 0.235
       },
       {
        "bucket": "60-65%",
@@ -299,26 +299,26 @@
      ]
     },
     "boolin_same_games": {
-     "n": 1222,
+     "n": 1224,
      "brier": 0.2265,
      "log_loss": 0.6445,
-     "accuracy": 0.6092,
-     "mean_predicted_home": 0.5552,
-     "actual_home_win_rate": 0.5495,
-     "calibration_error": 0.0313,
-     "favorite_overconfidence": 0.0169
+     "accuracy": 0.609,
+     "mean_predicted_home": 0.5553,
+     "actual_home_win_rate": 0.5494,
+     "calibration_error": 0.0304,
+     "favorite_overconfidence": 0.0171
     }
    },
    "all": {
     "boolin": {
-     "n": 3751,
+     "n": 3753,
      "brier": 0.2245,
      "log_loss": 0.641,
-     "accuracy": 0.6216,
-     "mean_predicted_home": 0.5553,
+     "accuracy": 0.6215,
+     "mean_predicted_home": 0.5554,
      "actual_home_win_rate": 0.5557,
-     "calibration_error": 0.0181,
-     "favorite_overconfidence": 0.0024,
+     "calibration_error": 0.018,
+     "favorite_overconfidence": 0.0025,
      "buckets": [
       {
        "bucket": "50-55%",
@@ -338,19 +338,19 @@
       },
       {
        "bucket": "60-65%",
-       "n": 678,
-       "avg_predicted": 0.6237,
-       "actual_win_rate": 0.6394,
-       "abs_calibration_error": 0.0157,
-       "brier": 0.2297
+       "n": 679,
+       "avg_predicted": 0.6236,
+       "actual_win_rate": 0.6384,
+       "abs_calibration_error": 0.0148,
+       "brier": 0.2299
       },
       {
        "bucket": "65-70%",
-       "n": 538,
+       "n": 539,
        "avg_predicted": 0.6738,
-       "actual_win_rate": 0.6942,
-       "abs_calibration_error": 0.0204,
-       "brier": 0.2116
+       "actual_win_rate": 0.6948,
+       "abs_calibration_error": 0.021,
+       "brier": 0.2114
       },
       {
        "bucket": "70-75%",
@@ -379,29 +379,29 @@
      ]
     },
     "market_same_games": {
-     "n": 3750,
+     "n": 3752,
      "brier": 0.2098,
-     "log_loss": 0.6084,
-     "accuracy": 0.6674,
+     "log_loss": 0.6085,
+     "accuracy": 0.6676,
      "mean_predicted_home": 0.5608,
      "actual_home_win_rate": 0.5556,
      "calibration_error": 0.0155,
-     "favorite_overconfidence": -0.0019,
+     "favorite_overconfidence": -0.0021,
      "buckets": [
       {
        "bucket": "50-55%",
-       "n": 501,
-       "avg_predicted": 0.5263,
-       "actual_win_rate": 0.517,
-       "abs_calibration_error": 0.0093,
+       "n": 502,
+       "avg_predicted": 0.5262,
+       "actual_win_rate": 0.5179,
+       "abs_calibration_error": 0.0083,
        "brier": 0.2482
       },
       {
        "bucket": "55-60%",
-       "n": 668,
-       "avg_predicted": 0.5753,
-       "actual_win_rate": 0.5838,
-       "abs_calibration_error": 0.0086,
+       "n": 669,
+       "avg_predicted": 0.5752,
+       "actual_win_rate": 0.5845,
+       "abs_calibration_error": 0.0092,
        "brier": 0.2416
       },
       {
@@ -447,14 +447,14 @@
      ]
     },
     "boolin_same_games": {
-     "n": 3750,
+     "n": 3752,
      "brier": 0.2245,
      "log_loss": 0.6411,
-     "accuracy": 0.6215,
+     "accuracy": 0.6214,
      "mean_predicted_home": 0.5553,
      "actual_home_win_rate": 0.5556,
-     "calibration_error": 0.018,
-     "favorite_overconfidence": 0.0025
+     "calibration_error": 0.0179,
+     "favorite_overconfidence": 0.0026
     }
    }
   },
@@ -1251,46 +1251,46 @@
    },
    "holdout": {
     "boolin": {
-     "n": 329,
-     "brier": 0.2351,
-     "log_loss": 0.6628,
+     "n": 337,
+     "brier": 0.236,
+     "log_loss": 0.6645,
      "accuracy": 0.6231,
-     "mean_predicted_home": 0.5181,
-     "actual_home_win_rate": 0.5167,
-     "calibration_error": 0.047,
-     "favorite_overconfidence": -0.0242,
+     "mean_predicted_home": 0.5186,
+     "actual_home_win_rate": 0.5163,
+     "calibration_error": 0.0546,
+     "favorite_overconfidence": -0.0248,
      "buckets": [
       {
        "bucket": "50-55%",
-       "n": 116,
-       "avg_predicted": 0.5232,
-       "actual_win_rate": 0.5431,
-       "abs_calibration_error": 0.0199,
-       "brier": 0.2518
+       "n": 120,
+       "avg_predicted": 0.5233,
+       "actual_win_rate": 0.5583,
+       "abs_calibration_error": 0.0351,
+       "brier": 0.251
       },
       {
        "bucket": "55-60%",
-       "n": 72,
+       "n": 73,
        "avg_predicted": 0.5738,
-       "actual_win_rate": 0.6944,
-       "abs_calibration_error": 0.1207,
-       "brier": 0.2248
+       "actual_win_rate": 0.6849,
+       "abs_calibration_error": 0.1111,
+       "brier": 0.2263
       },
       {
        "bucket": "60-65%",
-       "n": 59,
-       "avg_predicted": 0.6232,
-       "actual_win_rate": 0.6102,
-       "abs_calibration_error": 0.0131,
-       "brier": 0.2387
+       "n": 61,
+       "avg_predicted": 0.6236,
+       "actual_win_rate": 0.5902,
+       "abs_calibration_error": 0.0335,
+       "brier": 0.2441
       },
       {
        "bucket": "65-70%",
-       "n": 42,
-       "avg_predicted": 0.6739,
-       "actual_win_rate": 0.6905,
-       "abs_calibration_error": 0.0166,
-       "brier": 0.2155
+       "n": 43,
+       "avg_predicted": 0.6736,
+       "actual_win_rate": 0.6977,
+       "abs_calibration_error": 0.0241,
+       "brier": 0.2132
       },
       {
        "bucket": "70-75%",
@@ -1395,46 +1395,46 @@
    },
    "all": {
     "boolin": {
-     "n": 364,
-     "brier": 0.234,
-     "log_loss": 0.6602,
-     "accuracy": 0.6236,
-     "mean_predicted_home": 0.5188,
-     "actual_home_win_rate": 0.522,
-     "calibration_error": 0.0473,
-     "favorite_overconfidence": -0.0253,
+     "n": 372,
+     "brier": 0.2347,
+     "log_loss": 0.6618,
+     "accuracy": 0.6237,
+     "mean_predicted_home": 0.5193,
+     "actual_home_win_rate": 0.5215,
+     "calibration_error": 0.0542,
+     "favorite_overconfidence": -0.0258,
      "buckets": [
       {
        "bucket": "50-55%",
-       "n": 126,
-       "avg_predicted": 0.523,
-       "actual_win_rate": 0.5476,
-       "abs_calibration_error": 0.0246,
-       "brier": 0.2518
+       "n": 130,
+       "avg_predicted": 0.5231,
+       "actual_win_rate": 0.5615,
+       "abs_calibration_error": 0.0385,
+       "brier": 0.251
       },
       {
        "bucket": "55-60%",
-       "n": 84,
-       "avg_predicted": 0.5738,
-       "actual_win_rate": 0.6667,
-       "abs_calibration_error": 0.0928,
-       "brier": 0.23
+       "n": 85,
+       "avg_predicted": 0.5739,
+       "actual_win_rate": 0.6588,
+       "abs_calibration_error": 0.085,
+       "brier": 0.2312
       },
       {
        "bucket": "60-65%",
-       "n": 64,
-       "avg_predicted": 0.6228,
-       "actual_win_rate": 0.5938,
-       "abs_calibration_error": 0.0291,
-       "brier": 0.2423
+       "n": 66,
+       "avg_predicted": 0.6232,
+       "actual_win_rate": 0.5758,
+       "abs_calibration_error": 0.0474,
+       "brier": 0.2472
       },
       {
        "bucket": "65-70%",
-       "n": 47,
-       "avg_predicted": 0.6746,
-       "actual_win_rate": 0.7234,
-       "abs_calibration_error": 0.0488,
-       "brier": 0.2035
+       "n": 48,
+       "avg_predicted": 0.6743,
+       "actual_win_rate": 0.7292,
+       "abs_calibration_error": 0.0549,
+       "brier": 0.2016
       },
       {
        "bucket": "70-75%",
