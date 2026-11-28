@@ -297,13 +297,13 @@
     "levels": [
      {
       "confidence": "high",
-      "n": 65,
-      "brier": 0.2079,
-      "log_loss": 0.606,
-      "accuracy": 0.7077,
-      "calibration_error": 0.1083,
-      "favorite_overconfidence": -0.0787,
-      "avg_margin_error": 9.941,
+      "n": 66,
+      "brier": 0.2084,
+      "log_loss": 0.607,
+      "accuracy": 0.7121,
+      "calibration_error": 0.1141,
+      "favorite_overconfidence": -0.085,
+      "avg_margin_error": 9.831,
       "market_brier_same_games": 0.1611,
       "vs_market": "market Brier better (t=3.1)",
       "interpretable": true
@@ -336,20 +336,20 @@
      }
     ],
     "validated": false,
-    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2079 (market 0.1611), medium Brier 0.2576 (market 0.2165). Higher confidence is not reliably better.",
+    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2084 (market 0.1611), medium Brier 0.2576 (market 0.2165). Higher confidence is not reliably better.",
     "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
    },
    "all": {
     "levels": [
      {
       "confidence": "high",
-      "n": 65,
-      "brier": 0.2079,
-      "log_loss": 0.606,
-      "accuracy": 0.7077,
-      "calibration_error": 0.1083,
-      "favorite_overconfidence": -0.0787,
-      "avg_margin_error": 9.941,
+      "n": 66,
+      "brier": 0.2084,
+      "log_loss": 0.607,
+      "accuracy": 0.7121,
+      "calibration_error": 0.1141,
+      "favorite_overconfidence": -0.085,
+      "avg_margin_error": 9.831,
       "market_brier_same_games": 0.1611,
       "vs_market": "market Brier better (t=3.1)",
       "interpretable": true
@@ -382,7 +382,7 @@
      }
     ],
     "validated": false,
-    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2079 (market 0.1611), medium Brier 0.2615 (market 0.2201). Higher confidence is not reliably better.",
+    "verdict": "Labels do NOT line up with realized performance: high Brier 0.2084 (market 0.1611), medium Brier 0.2615 (market 0.2201). Higher confidence is not reliably better.",
     "note": "Thresholds unchanged (high >= 0.6 regression weight, medium >= 0.35). Not redefined here."
    }
   }

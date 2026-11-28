@@ -39,7 +39,7 @@
   "lean_allowed": false,
   "live_archive": {
    "n": 58,
-   "holdout": 100,
+   "holdout": 101,
    "older_version_rows": 15,
    "boolin": {
     "brier": 0.2023,
@@ -65,9 +65,9 @@
    }
   },
   "replay_fidelity": {
-   "n_overlap": 116,
-   "identical": 4,
-   "mean_abs_prob_diff": 0.0166,
+   "n_overlap": 117,
+   "identical": 5,
+   "mean_abs_prob_diff": 0.0165,
    "max_abs_prob_diff": 0.0713,
    "note": "Live card vs replay for the same game, same model version. Gaps mean the live pull saw different inputs than the replay (cause not confirmed per game)."
   }

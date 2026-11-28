@@ -9,7 +9,7 @@
   "baseline-0.1",
   "baseline-0.2"
  ],
- "built_at": "2026-11-27T18:39-05:00",
+ "built_at": "2026-11-27T22:26-05:00",
  "data_cutoff": "2026-11-27",
  "filters": {
   "league": null,
@@ -26,8 +26,8 @@
   "nfl_replay": "development = seasons < 2022; holdout = 2022+"
  },
  "warning": "rows span model versions ['baseline-0.1', 'baseline-0.2']: each table is per league and per source, and rows from an older version sit in their own '<source> @<version>' slice",
- "rows": 4282,
- "excluded": 452,
+ "rows": 4283,
+ "excluded": 454,
  "by_source": {
   "NFL nfl_replay": {
    "rows": 3756,
@@ -50,9 +50,9 @@
    "last": "2026-10-04"
   },
   "NFL live_archive": {
-   "rows": 101,
+   "rows": 102,
    "development": 1,
-   "holdout": 100,
+   "holdout": 101,
    "model_versions": [
     "baseline-0.2"
    ],
@@ -83,11 +83,11 @@
  "excluded_by_reason": {
   "nfl_replay: no current-season plays before this week for a team (the live model has no projection either)": 241,
   "live_archive: no Boolin model for this league": 203,
-  "live_archive: no confirmed final score on file": 8
+  "live_archive: no confirmed final score on file": 10
  },
  "replay": {
   "version": "nfl-replay-1",
-  "built_at_et": "2026-11-27T18:39-05:00",
+  "built_at_et": "2026-11-27T22:26-05:00",
   "status": {
    "2012": "kept",
    "2013": "kept",
@@ -108,9 +108,9 @@
   "present": true
  },
  "replay_fidelity": {
-  "n_overlap": 116,
-  "identical": 4,
-  "mean_abs_prob_diff": 0.0166,
+  "n_overlap": 117,
+  "identical": 5,
+  "mean_abs_prob_diff": 0.0165,
   "max_abs_prob_diff": 0.0713,
   "note": "Live card vs replay for the same game, same model version. Gaps mean the live pull saw different inputs than the replay (cause not confirmed per game)."
  },
